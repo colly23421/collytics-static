@@ -1,0 +1,18 @@
+/* css/main.css - wspólne style */
+:root {
+    --primary-color: #6366f1;
+    --dark-bg: #0a0a0a;
+    --dark-secondary: #141414;
+    --text-primary: #ffffff;
+    --text-secondary: #94969c;
+}
+
+/* Nawigacja */
+nav { /* style nawigacji */ }
+
+/* Footer */
+footer { /* style stopki */ }
+
+/* Komponenty */
+.btn { /* style przycisków */ }
+.container { /* style kontenerów */ }
