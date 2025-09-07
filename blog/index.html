@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Techniczna strona marketingu online | Collytics</title>
+    <meta name="description" content="Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online. Blog o marketingu cyfrowym, SEO, Google Ads i analityce.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --dark-bg: #0a0a0a;
+            --dark-secondary: #141414;
+            --dark-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #94969c;
+            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 5%;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Blog Header */
+        .blog-header {
+            padding: 140px 5% 80px;
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%);
+        }
+
+        .blog-header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .blog-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .blog-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 40px 5%;
+            background: var(--dark-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .categories-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .category-pill {
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-pill:hover,
+        .category-pill.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Blog Grid */
+        .blog-section {
+            padding: 80px 5%;
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .blog-card {
+            background: var(--dark-card);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        }
+
+        .blog-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .blog-category {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .blog-card-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .blog-excerpt {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 12px;
+        }
+
+        /* Featured Post */
+        .featured-post {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .featured-text h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .featured-text p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 60px;
+        }
+
+        .page-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .page-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .page-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .page-dots {
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 5%;
+            background: var(--dark-secondary);
+            text-align: center;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .featured-content {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-title {
+                font-size: 32px;
+            }
+
+            .categories-container {
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo-transparent.png" alt="Collytics" style="height: 80px;">
+                </a>
+            </div>
+            <div class="nav-buttons">
+                <a href="../index.html#kontakt" class="btn btn-outline">Kontakt</a>
+                <a href="../index.html" class="btn btn-outline">Strona główna</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="blog-header">
+        <div class="blog-header-container">
+            <h1 class="blog-title">Blog</h1>
+            <p class="blog-subtitle">
+                Techniczna strona marketingu online. Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
+            </p>
+        </div>
+    </header>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="categories-container">
+            <a href="#" class="category-pill active">Wszystkie</a>
+            <a href="#" class="category-pill">Analityka</a>
+            <a href="#" class="category-pill">Google Ads</a>
+            <a href="#" class="category-pill">SEO</a>
+            <a href="#" class="category-pill">Marketing</a>
+            <a href="#" class="category-pill">Case Studies</a>
+            <a href="#" class="category-pill">AI</a>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-section">
+        <div class="blog-container">
+            <!-- Featured Post -->
+            <div class="featured-post">
+                <span class="featured-badge">Wyróżniony artykuł</span>
+                <div class="featured-content">
+                    <div class="featured-text">
+                        <h2>Najnowsze wytyczne Google Ads - Kwiecień 2025</h2>
+                        <p>
+                            Google wprowadza znaczące zmiany w zasadach reklamowych. Dowiedz się, jak nowe wytyczne wpłyną na Twoje kampanie i jak się do nich przygotować.
+                        </p>
+                        <a href="#" class="read-more">Czytaj więcej →</a>
+                    </div>
+                    <img src="../assets/images/blog/google-analytics.png" alt="Google Ads" class="featured-image">
+                </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <a href="znaczenie-tagowania-strony-za-pomoca-google-tag-manager.html" class="blog-card">
+                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677310d5b3e1d58c2c732f10_Znaczenie-Tagowania-Strony-za-Pomoca-Google-Tag-Manager-2048x1222.jpeg" 
+                         alt="Google Tag Manager" 
+                         class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Marketing</span>
+                            <span>11 grudnia 2024</span>
+                        </div>
+                        <h3 class="blog-card-title">Znaczenie Tagowania Strony za Pomocą Google Tag Manager</h3>
+                        <p class="blog-excerpt">
+                            Google Tag Manager (GTM) i narzędzia do śledzenia danych analitycznych są nieocenionymi zasobami, które pomagają w lepszym zrozumieniu ruchu na stronie.
+                        </p>
+                        <span class="read-more">Czytaj więcej →</span>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card">
+                    <img src="../assets/images/blog/analityka-webowa.jpg" alt="JSON-LD" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">SEO</span>
+                            <span>18 sierpnia 2025</span>
+                        </div>
+                        <h3 class="blog-card-title">Zrobiliśmy test: Jak JSON-LD zwiększa widoczność w wyszukiwarkach AI</h3>
+                        <p class="blog-excerpt">
+                            Przeprowadziliśmy kompleksowy test implementacji danych strukturalnych JSON-LD. Zobacz, jak wpłynęło to na widoczność w AI-powered search.
+                        </p>
+                        <span class="read-more">Czytaj więcej →</span>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card">
+                    <img src="../assets/images/blog/labwet-case.jpg" alt="Facebook Ads" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Facebook Ads</span>
+                            <span>2 sierpnia 2025</span>
+                        </div>
+                        <h3 class="blog-card-title">Sekretne dane Facebook Ads, które zmienią twoje kampanie</h3>
+                        <p class="blog-excerpt">
+                            Odkryj prosty sposób na odkrycie wzorców aktywności klientów w Facebook Ads. Dane, które zmienią Twoje podejście do targetowania.
+                        </p>
+                        <span class="read-more">Czytaj więcej →</span>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card">
+                    <img src="../assets/images/blog/uslugi-marketing.jpg" alt="LLMs.txt" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">AI</span>
+                            <span>15 lipca 2025</span>
+                        </div>
+                        <h3 class="blog-card-title">Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?</h3>
+                        <p class="blog-excerpt">
+                            Nowy standard LLMs.txt może zrewolucjonizować sposób, w jaki AI interpretuje treści na stronach internetowych. Sprawdź, jak go wdrożyć.
+                        </p>
+                        <span class="read-more">Czytaj więcej →</span>
+                    </div>
+                </a>
+
+                <a href="../use-case-lab-wet.html" class="blog-card">
+                    <img src="../assets/images/blog/labwet-case.jpg" alt="Lab-Wet Case Study" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Case Study</span>
+                            <span>15 czerwca 2025</span>
+                        </div>
+                        <h3 class="blog-card-title">Lab-Wet: Wzrost widoczności o 47% w 45 dni</h3>
+                        <p class="blog-excerpt">
+                            Zobacz jak nowa, zorientowana na konwersję platforma B2B dla lidera branży weterynaryjnej przyniosła 44% wzrostu ruchu na stronie.
+                        </p>
+                        <span class="read-more">Czytaj więcej →</span>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card">
+                    <img src="../assets/images/blog/google-analytics.png" alt="Google Analytics 4" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Analityka</span>
+                            <span>10 lipca 2025</span>
+                        </div>
+                        <h3 class="blog-card-title">AI w raportach Google Analytics 4</h3>
+                        <p class="blog-excerpt">
+                            Jak wykorzystać zaawansowane funkcje napędzane przez sztuczną inteligencję w Google Analytics 4 do lepszej analizy danych.
+                        </p>
+                        <span class="read-more">Czytaj więcej →</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-btn">←</a>
+                <a href="#" class="page-btn active">1</a>
+                <a href="#" class="page-btn">2</a>
+                <a href="#" class="page-btn">3</a>
+                <span class="page-dots">...</span>
+                <a href="#" class="page-btn">12</a>
+                <a href="#" class="page-btn">→</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo" style="justify-content: center; margin-bottom: 24px;">
+            <img src="../assets/images/logo-transparent.png" alt="Collytics" style="height: 48px;">
+        </div>
+        <p style="color: var(--text-secondary);">© Collytics. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hide/show navigation on scroll
+        let lastScrollTop = 0;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        // Category filter
+        document.querySelectorAll('.category-pill').forEach(pill => {
+            pill.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
