@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collytics - Innowacyjny marketing i technologie AI</title>
+    <meta name="description" content="Specjalizujemy się w skutecznych kampaniach SEM. Tworzymy nowoczesne rozwiązania webowe.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --dark-bg: #0f0f0f;
+            --dark-secondary: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 5%;
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo::before {
+            content: "🔶";
+            margin-right: 8px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
+
+        .btn-outline {
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-menu {
+            background: transparent;
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0 5%;
+            margin-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.3) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--accent-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Services Pills */
+        .services-pills {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .pill:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Case Study Section */
+        .case-study {
+            padding: 100px 5%;
+            background: var(--dark-secondary);
+        }
+
+        .case-study-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .client-logo {
+            width: 100%;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .case-content h2 {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .case-content h3 {
+            font-size: 32px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .case-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .btn-case {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 32px;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-case:hover {
+            background: #5558e3;
+            transform: translateY(-2px);
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 100px 5%;
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 60px;
+        }
+
+        .blog-header h2 {
+            font-size: 48px;
+            margin-bottom: 8px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--dark-secondary);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .blog-content {
+            padding: 24px;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .blog-title {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 5%;
+            background: var(--dark-secondary);
+            margin-top: 100px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-cta {
+            background: var(--primary-color);
+            padding: 60px;
+            border-radius: 24px;
+            margin-bottom: 60px;
+        }
+
+        .footer-cta h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .footer-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Newsletter Form */
+        .newsletter-form {
+            max-width: 500px;
+            margin: 40px auto;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-input {
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .form-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .form-checkbox input {
+            margin-top: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .case-study-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-pills {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">COLLYTICS</div>
+            <div class="nav-buttons">
+                <a href="#kontakt" class="btn btn-outline">Kontakt</a>
+                <button class="btn btn-menu">Menu</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Innowacyjny marketing<br>i technologie AI</h1>
+            <p class="hero-description">
+                Nasza siła napędowa jest zaawansowana analityka internetowa. Na jej podstawie precyzyjnie rozpoznajemy rynek i działania konkurencji, co pozwala nam na planowanie działań i tworzenie kompleksowego planu marketingowego dopasowanego do Twoich celów.
+            </p>
+            <a href="#kontakt" class="cta-button">Nawiąż współpracę</a>
+            
+            <div class="services-pills">
+                <div class="pill">Analityka</div>
+                <div class="pill">Kampanie SEM</div>
+                <div class="pill">Marketing</div>
+                <div class="pill">Branding</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study">
+        <div class="case-study-container">
+            <div class="client-logo">LAB-WET</div>
+            <div class="case-content">
+                <p style="color: var(--text-secondary); margin-bottom: 16px;">KLIENT:</p>
+                <h2>Lab-Wet</h2>
+                <h3>Wzrost widoczności w Google o 47% w 45 dni.</h3>
+                <p class="case-description">
+                    Zobacz, jak nowa, zorientowana na konwersję platforma B2B dla lidera branży weterynaryjnej, przyniosła 44% wzrostu ruchu na stronie w nieco ponad sześć tygodni.
+                </p>
+                <a href="#" class="btn-case">Szczegóły</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="blog-container">
+            <div class="blog-header">
+                <h2>Najnowsze<br>wpisy</h2>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">📊</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>Analizy i Trendy</span>
+                            <span>18 Aug, 25</span>
+                        </div>
+                        <h3 class="blog-title">Zrobiliśmy test: Jak JSON-LD zwiększa widoczność w wyszukiwarkach AI</h3>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">📈</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>Analizy i Trendy</span>
+                            <span>2 Aug, 25</span>
+                        </div>
+                        <h3 class="blog-title">Sekretne dane Facebook Ads, które zmienią twoje kampanie: prosty sposób na odkrycie wzorców aktywności klientów</h3>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">🤖</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>Analizy i Trendy</span>
+                            <span>15 Jul, 25</span>
+                        </div>
+                        <h3 class="blog-title">Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?</h3>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="kontakt" style="padding: 100px 5%; background: var(--dark-secondary);">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 36px; margin-bottom: 16px;">Newsletter</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 32px;">
+                Zapisz się na newsletter i bądź na bieżąco z najnowszymi trendami w marketingu
+            </p>
+            <form class="newsletter-form">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Imię" required>
+                    <input type="email" class="form-input" placeholder="Email" required>
+                    <input type="text" class="form-input" placeholder="Powiedz nam o swoim projekcie">
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent">
+                            Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w niniejszym formularzu przez Collytics OÜ w celu odpowiedzi na zapytanie.
+                        </label>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">Wyślij</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-cta">
+                <h2>Gotowy, aby rozpocząć projekt?</h2>
+                <p>
+                    Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
+                </p>
+                <a href="#kontakt" class="cta-button">Kontakt</a>
+            </div>
+            
+            <div class="logo" style="justify-content: center; margin-bottom: 24px;">COLLYTICS</div>
+            <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
+            
+            <div class="footer-bottom">
+                <p>© Collytics. All rights reserved. Polityka Prywatności</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Dziękujemy za zgłoszenie! Skontaktujemy się wkrótce.');
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.blog-card, .case-study-container').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
