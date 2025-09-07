@@ -6,6 +6,13 @@
     --text-primary: #ffffff;
     --text-secondary: #94969c;
 }
+.logo img {
+    height: var(--logo-height);
+}
+
+footer .logo img {
+    height: calc(var(--logo-height) * 0.8); /* mniejsze w stopce */
+}
 
 /* Nawigacja */
 nav { /* style nawigacji */ }
