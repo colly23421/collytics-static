@@ -6,6 +6,9 @@
     <title>Collytics - Innowacyjny marketing i technologie AI</title>
     <meta name="description" content="Specjalizujemy się w skutecznych kampaniach SEM. Tworzymy nowoczesne rozwiązania webowe.">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,11 +23,14 @@
 
         :root {
             --primary-color: #6366f1;
-            --dark-bg: #0f0f0f;
-            --dark-secondary: #1a1a1a;
+            --dark-bg: #0a0a0a;
+            --dark-secondary: #141414;
+            --dark-card: #1a1a1a;
             --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --text-secondary: #94969c;
+            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            --orange-accent: #ff6b6b;
+            --yellow-accent: #ffe66d;
         }
 
         body {
@@ -56,13 +62,19 @@
         .logo {
             display: flex;
             align-items: center;
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
         }
 
-        .logo::before {
-            content: "🔶";
-            margin-right: 8px;
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+            display: block;
+            transform: rotate(45deg);
+            flex-shrink: 0;
         }
 
         .nav-buttons {
@@ -105,6 +117,19 @@
             position: relative;
             padding: 0 5%;
             margin-top: 80px;
+            background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(99, 102, 241, 0.03) 100px, rgba(99, 102, 241, 0.03) 101px),
+                repeating-linear-gradient(0deg, transparent, transparent 100px, rgba(139, 92, 246, 0.03) 100px, rgba(139, 92, 246, 0.03) 101px);
+            pointer-events: none;
         }
 
         .hero-bg {
@@ -241,6 +266,7 @@
         /* Blog Section */
         .blog-section {
             padding: 100px 5%;
+            background: var(--dark-bg);
         }
 
         .blog-container {
@@ -253,8 +279,9 @@
         }
 
         .blog-header h2 {
-            font-size: 48px;
+            font-size: clamp(2rem, 4vw, 3rem);
             margin-bottom: 8px;
+            font-weight: 600;
         }
 
         .blog-grid {
@@ -264,25 +291,45 @@
         }
 
         .blog-card {
-            background: var(--dark-secondary);
-            border-radius: 16px;
+            background: var(--dark-card);
+            border-radius: 20px;
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .blog-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(99, 102, 241, 0.3);
         }
 
         .blog-image {
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 220px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
+            font-size: 72px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(20px, 20px); }
         }
 
         .blog-content {
@@ -399,7 +446,9 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">COLLYTICS</div>
+            <div class="logo">
+                <img src="assets/images/logo.svg" alt="Collytics" style="height: 32px;" onerror="this.src='assets/images/logo.png'">
+            </div>
             <div class="nav-buttons">
                 <a href="#kontakt" class="btn btn-outline">Kontakt</a>
                 <button class="btn btn-menu">Menu</button>
@@ -413,7 +462,7 @@
         <div class="hero-content">
             <h1>Innowacyjny marketing<br>i technologie AI</h1>
             <p class="hero-description">
-                Nasza siła napędowa jest zaawansowana analityka internetowa. Na jej podstawie precyzyjnie rozpoznajemy rynek i działania konkurencji, co pozwala nam na planowanie działań i tworzenie kompleksowego planu marketingowego dopasowanego do Twoich celów.
+                Nasza siła napędowa jest zaawansowana analityka internetowa. Na jej podstawie precyzyjnie rozpoznajemy rynek i działania konkurencji, co pozwala nam na planowanie działań i tworzenie kompleksowego planu marketingowego dopasowanego do Twoich celów. Specjalizujemy się w skutecznych kampaniach SEM. Tworzymy nowoczesne rozwiązania webowe — strony i aplikacje, które nie tylko wyglądają świetnie, ale przede wszystkim efektywnie wspierają Twój biznes.
             </p>
             <a href="#kontakt" class="cta-button">Nawiąż współpracę</a>
             
@@ -429,7 +478,7 @@
     <!-- Case Study Section -->
     <section class="case-study">
         <div class="case-study-container">
-            <div class="client-logo">LAB-WET</div>
+            <img src="assets/images/partners/labwet.png" alt="Lab-Wet" style="width: 200px; height: auto;">
             <div class="case-content">
                 <p style="color: var(--text-secondary); margin-bottom: 16px;">KLIENT:</p>
                 <h2>Lab-Wet</h2>
@@ -450,7 +499,8 @@
             </div>
             <div class="blog-grid">
                 <article class="blog-card">
-                    <div class="blog-image">📊</div>
+                    <div class="blog-image" style="background-image: url('assets/images/blog/analityka-webowa.jpg'); background-size: cover; background-position: center;">
+                    </div>
                     <div class="blog-content">
                         <div class="blog-meta">
                             <span>Analizy i Trendy</span>
@@ -460,7 +510,8 @@
                     </div>
                 </article>
                 <article class="blog-card">
-                    <div class="blog-image">📈</div>
+                    <div class="blog-image" style="background-image: url('assets/images/blog/uslugi-marketing.jpg'); background-size: cover; background-position: center;">
+                    </div>
                     <div class="blog-content">
                         <div class="blog-meta">
                             <span>Analizy i Trendy</span>
@@ -470,7 +521,8 @@
                     </div>
                 </article>
                 <article class="blog-card">
-                    <div class="blog-image">🤖</div>
+                    <div class="blog-image" style="background-image: url('assets/images/blog/labwet-case.jpg'); background-size: cover; background-position: center;">
+                    </div>
                     <div class="blog-content">
                         <div class="blog-meta">
                             <span>Analizy i Trendy</span>
@@ -479,6 +531,21 @@
                         <h3 class="blog-title">Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?</h3>
                     </div>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section style="padding: 80px 5%; background: var(--dark-bg);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px; font-weight: 500;">
+                Marki, które napędzamy danymi
+            </h2>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
+                <img src="assets/images/partners/bdental.png" alt="Bdental" style="height: 40px; opacity: 0.7; filter: grayscale(100%);">
+                <img src="assets/images/partners/labwet.png" alt="Lab-Wet" style="height: 40px; opacity: 0.7; filter: grayscale(100%);">
+                <img src="assets/images/partners/esteclinic.png" alt="EstClinic" style="height: 40px; opacity: 0.7; filter: grayscale(100%);">
+                <img src="assets/images/partners/chemiczna.png" alt="Chemiczna" style="height: 40px; opacity: 0.7; filter: grayscale(100%);">
             </div>
         </div>
     </section>
@@ -504,21 +571,6 @@
                     <button type="submit" class="cta-button" style="width: 100%;">Wyślij</button>
                 </div>
             </form>
-        </div>
-    </section>
-
-    <!-- Partners Section -->
-    <section style="padding: 80px 5%; background: var(--dark-bg);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px; font-weight: 500;">
-                Marki, które napędzamy danymi
-            </h2>
-            <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap; opacity: 0.7;">
-                <div style="font-size: 1.5rem; font-weight: 600; color: var(--text-secondary);">BDENTAL</div>
-                <div style="font-size: 1.5rem; font-weight: 600; color: var(--text-secondary);">LAB-WET</div>
-                <div style="font-size: 1.5rem; font-weight: 600; color: var(--text-secondary);">ESTECLINIC</div>
-                <div style="font-size: 1.5rem; font-weight: 600; color: var(--text-secondary);">CHEMICZNA</div>
-            </div>
         </div>
     </section>
 
