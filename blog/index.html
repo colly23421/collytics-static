@@ -7,9 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/navigation.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; }
         .blog-hero { margin-top: 70px; padding: 80px 20px; text-align: center; background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%); }
         .blog-hero h1 { font-size: 3rem; margin-bottom: 20px; }
         .blog-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
@@ -24,7 +23,6 @@
     </style>
 </head>
 <body>
-    <!-- Nawigacja taka sama jak na index.html -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="../index.html" class="logo">
@@ -36,6 +34,11 @@
                 <a href="../index.html#about">O nas</a>
                 <a href="../blog/">Blog</a>
                 <a href="../index.html#contact" class="btn-contact">Kontakt</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
@@ -58,16 +61,25 @@
             </a>
         </div>
     </div>
-    <!-- Footer taki sam jak na index.html -->
-    <footer style="background: #1a1a1a; padding: 60px 20px 40px; margin-top: 100px;">
-        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <img src="../assets/images/logo.png" alt="Collytics" style="height: 40px; margin-bottom: 20px;">
-            <p style="color: #666; font-size: 16px; margin-bottom: 30px;">Twój partner w analizie danych i marketingu</p>
-            <div style="padding-top: 30px; border-top: 1px solid #333; margin-top: 30px;">
-                <p style="color: #555; font-size: 13px;">© Collytics. All rights reserved. <a href="../legal/privacy-policy.html" style="color: #667eea; text-decoration: none;">Polityka Prywatności</a></p>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-cta">
+                <h2>Gotowy, aby rozpocząć projekt?</h2>
+                <p>
+                    Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
+                </p>
+                <a href="../index.html#kontakt" class="cta-button">Kontakt</a>
             </div>
+            
+            <div class="logo" style="justify-content: center; margin-bottom: 24px;">
+                <img src="../assets/images/logo.png" alt="Collytics" style="height: 40px;">
+            </div>
+            
+            <p style="color: #666; text-align: center;">© Collytics. All rights reserved. Polityka Prywatności</p>
         </div>
     </footer>
+    
     <script src="../js/navigation.js"></script>
 </body>
 </html>

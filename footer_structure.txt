@@ -1,0 +1,13 @@
+    </div>
+</section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-cta">
+                <h2>Gotowy, aby rozpocząć projekt?</h2>
+                <p>
+                    Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
+                </p>
+                <a href="#kontakt" class="cta-button">Kontakt</a>
+            </div>
+            
+            <div class="logo" style="justify-content: center; margin-bottom: 24px;">
