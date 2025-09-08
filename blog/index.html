@@ -3,624 +3,866 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab-Wet Case Study - Wzrost widoczności o 47% | Collytics</title>
-    <meta name="description" content="Zobacz jak zwiększyliśmy widoczność Lab-Wet w Google o 47% w 45 dni. Case study kampanii marketingowej.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>Blog - Insights & Resources | Collytics</title>
+    <meta name="description" content="Najnowsze artykuły o marketingu cyfrowym, analityce, SEO i strategiach data-driven.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/main.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            background-color: #0a0a0a;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0a0a0a;
             color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 20px 5%;
-            background: rgba(15, 15, 15, 0.8);
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
+        
+        /* Blog Hero */
+        .blog-hero {
+            margin-top: 70px;
+            padding: 100px 20px 80px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+            text-align: center;
         }
-
-        .nav-container {
+        
+        .blog-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .blog-hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 50px 0;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 10px 25px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            color: rgba(255,255,255,0.8);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+            color: #ffffff;
+        }
+        
+        /* Blog Grid */
+        .blog-container {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 0 20px 100px;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn {
-            padding: 10px 24px;
-            border-radius: 24px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 14px;
-            color: #ffffff;
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Case Study Styles */
-        .case-study-full {
-            padding: 80px 20px;
-            background: transparent;
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            margin-top: 80px;
-        }
-
-        .case-study-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* Hero Section */
-        .hero-section {
+        
+        .blog-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            margin-bottom: 100px;
-            align-items: center;
-            position: relative;
-            padding: 40px 0;
-        }
-
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            width: 120%;
-            height: 120%;
-            top: -10%;
-            left: -10%;
-            background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.1) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            order: 1;
-        }
-
-        .hero-image {
-            order: 2;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-        }
-
-        .case-badge {
-            display: inline-block;
-            background: rgba(99, 102, 241, 0.2);
-            color: #6366f1;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero-title {
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 30px;
-        }
-
-        .hero-subtitle {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .hero-meta {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .meta-item {
-            margin-bottom: 10px;
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .meta-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .meta-label {
-            font-weight: 600;
-            color: #6366f1;
-        }
-
-        .metrics-row {
-            display: flex;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 40px;
-            margin-top: 50px;
+            margin-top: 60px;
         }
-
-        .metric-item {
-            flex: 1;
-        }
-
-        .metric-value {
-            font-size: 48px;
-            font-weight: 700;
-            color: #6366f1;
-            margin-bottom: 5px;
-        }
-
-        .metric-label {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Content Grid */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            margin-bottom: 80px;
-        }
-
-        .content-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .card-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        .card-text {
-            font-size: 16px;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Solutions Section */
-        .solutions-section {
-            background: rgba(99, 102, 241, 0.05);
-            border-radius: 30px;
-            padding: 60px;
-            margin-bottom: 80px;
-        }
-
-        .solutions-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-
-        .solution-card {
-            text-align: center;
-        }
-
-        .solution-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(99, 102, 241, 0.2);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 36px;
-        }
-
-        .solution-name {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .solution-desc {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-        }
-
-        /* Results Section */
-        .results-section {
-            margin-bottom: 80px;
-        }
-
-        .results-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .results-subtitle {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .result-card {
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .result-icon {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .result-metric {
-            font-size: 36px;
-            font-weight: 700;
-            color: #6366f1;
-            margin-bottom: 10px;
-        }
-
-        .result-description {
-            font-size: 14px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .result-description strong {
-            color: #ffffff;
-        }
-
-        /* Impact Section */
-        .impact-section {
-            text-align: center;
-            padding: 60px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 30px;
-            margin-top: 80px;
-        }
-
-        .impact-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        .impact-text {
-            font-size: 18px;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .highlight {
-            color: #6366f1;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            padding: 60px 5%;
+        
+        /* Article Card */
+        .article-card {
             background: #141414;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .article-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .article-content {
+            padding: 30px;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .article-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .article-excerpt {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s;
+        }
+        
+        .article-card:hover .read-more {
+            gap: 10px;
+        }
+        
+        /* Featured Article */
+        .featured-article {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: linear-gradient(135deg, #1e1e1e 0%, #141414 100%);
+        }
+        
+        .featured-article .article-image {
+            height: 100%;
+        }
+        
+        .featured-article .article-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .featured-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        /* Newsletter CTA */
+        .newsletter-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 20px;
             text-align: center;
-            margin-top: 100px;
+            margin: 100px 0;
         }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-section {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .hero-image {
-                order: 1;
-            }
-
-            .hero-content {
-                order: 2;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .solutions-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .results-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .hero-title {
-                font-size: 42px;
-            }
+        
+        .newsletter-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
         }
-
+        
+        .newsletter-section p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.95);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            background: rgba(255,255,255,0.2);
+            color: #ffffff;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .newsletter-form button {
+            padding: 15px 40px;
+            background: #ffffff;
+            color: #764ba2;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+        }
+        
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 32px;
+            .blog-hero h1 { font-size: 2.5rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .featured-article { 
+                grid-column: span 1;
+                grid-template-columns: 1fr;
             }
-
-            .metrics-row {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .metric-value {
-                font-size: 36px;
-            }
-
-            .solutions-section {
-                padding: 40px 20px;
-            }
+            .newsletter-form { flex-direction: column; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+    <!-- Nawigacja - wspólna -->
+    <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/images/logo-transparent.png" alt="Collytics" style="height: 80px;">
-                </a>
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.png" alt="Collytics">
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#services">Usługi</a>
+                <a href="../index.html#about">O nas</a>
+                <a href="../index.html#blog">Blog</a>
+                <a href="../index.html#contact" class="btn-contact">Kontakt</a>
             </div>
-            <div class="nav-buttons">
-                <a href="index.html#kontakt" class="btn btn-outline">Kontakt</a>
-                <a href="index.html" class="btn btn-outline">Strona główna</a>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
-
-    <section class="case-study-full">
-        <div class="case-study-wrapper">
+    
+    <div class="blog-hero">
+        <h1>Insights & Resources</h1>
+        <p>Najnowsze trendy, case studies i praktyczne porady z świata marketingu cyfrowego</p>
+    </div>
+    
+    <div class="categories">
+        <button class="category-btn active">Wszystkie</button>
+        <button class="category-btn">Marketing</button>
+        <button class="category-btn">Analytics</button>
+        <button class="category-btn">SEO</button>
+        <button class="category-btn">Case Studies</button>
+        <button class="category-btn">Technologie</button>
+    </div>
+    
+    <div class="blog-container">
+        <div class="blog-grid">
+            <!-- Featured Article -->
+            <a href="znaczenie-tagowania-strony-gtm.html" class="article-card featured-article">
+                <div class="article-image">
+                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677310d5b3e1d58c2c732f10_Znaczenie-Tagowania-Strony-za-Pomoca-Google-Tag-Manager-2048x1222.jpeg" alt="Google Tag Manager">
+                </div>
+                <div class="article-content">
+                    <span class="featured-badge">Wyróżniony artykuł</span>
+                    <h2 class="article-title">Znaczenie Tagowania Strony za Pomocą Google Tag Manager</h2>
+                    <p class="article-excerpt">Kompleksowy przewodnik po implementacji i zarządzaniu tagami na stronie internetowej. Dowiedz się, jak GTM może zrewolucjonizować sposób zbierania danych.</p>
+                    <div class="article-meta">
+                        <span>10 min czytania</span>
+                        <span>•</span>
+                        <span>8 września 2024</span>
+                    </div>
+                    <span class="read-more">Czytaj więcej →</span>
+                </div>
+            </a>
             
-            <!-- Hero Section -->
-            <div class="hero-section">
-                <div class="hero-content">
-                    <span class="case-badge">Case study</span>
-                    <h1 class="hero-title">Lab-Wet: Jak nowa strona zwiększyła widoczność w Google o 47% w 45 dni</h1>
-                    <p class="hero-subtitle">
-                        Kompleksowa transformacja cyfrowa lidera diagnostyki weterynaryjnej
-                    </p>
-                    
-                    <div class="hero-meta">
-                        <div class="meta-item">
-                            <span class="meta-label">Klient:</span> Lab-Wet (Lider w diagnostyce weterynaryjnej)
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Cel:</span> Stworzenie nowoczesnej strony WWW, która efektywnie konwertuje i wspiera biznes
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Wynik:</span> +47% wzrostu widoczności w Google w 45 dni
-                        </div>
-                    </div>
-                    
-                    <div class="metrics-row">
-                        <div class="metric-item">
-                            <div class="metric-value">+47%</div>
-                            <div class="metric-label">Wzrost widoczności</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-value">+44%</div>
-                            <div class="metric-label">Wzrost ruchu</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-value">45 dni</div>
-                            <div class="metric-label">Do rezultatów</div>
-                        </div>
-                    </div>
+            <!-- Article 2 -->
+            <a href="#" class="article-card">
+                <div class="article-image">
+                    <span class="article-category">SEO</span>
                 </div>
-                
-                <div class="hero-image">
-                    <img src="assets/images/blog/labwet-case.jpg" 
-                         alt="Wyniki Lab-Wet w Google Search Console">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>8 min czytania</span>
+                        <span>•</span>
+                        <span>5 września 2024</span>
+                    </div>
+                    <h3 class="article-title">JSON-LD: Jak zwiększa widoczność w wyszukiwarkach AI</h3>
+                    <p class="article-excerpt">Strukturyzowane dane to przyszłość SEO. Zobacz jak implementacja JSON-LD wpływa na widoczność w AI-powered search.</p>
+                    <span class="read-more">Czytaj więcej →</span>
                 </div>
-            </div>
-
-            <!-- Challenge & Solution Grid -->
-            <div class="content-grid">
-                <div class="content-card">
-                    <h2 class="card-title">🎯 Wyzwanie: Strona na miarę lidera branży</h2>
-                    <p class="card-text">
-                        Lab-Wet, jako czołowe laboratorium weterynaryjne w Polsce, potrzebowało strony internetowej, 
-                        która odzwierciedlałaby ich wysoką pozycję na rynku. Celem był jasny: zastąpić dotychczasową 
-                        witrynę nowoczesnym, wydajnym rozwiązaniem. Nowa strona miała być nie tylko estetyczna, ale 
-                        przede wszystkim stać się skutecznym narzędziem do pozyskiwania klientów i budowania zaufania 
-                        w tej wysoce specjalistycznej branży.
-                    </p>
-                </div>
-                
-                <div class="content-card">
-                    <h2 class="card-title">💡 Rozwiązanie: Strategia data-driven</h2>
-                    <p class="card-text">
-                        Zastosowane podejście opierało się na strategii data-driven. Wdrożono kompleksowe rozwiązanie 
-                        obejmujące analizę SEO i identyfikację potencjału, projektowanie UX zorientowane na konwersję 
-                        oraz pełną optymalizację techniczną. Zidentyfikowano kluczowe usługi i frazy o największym 
-                        potencjale biznesowym, zaprojektowano intuicyjne ścieżki dla użytkowników i opublikowano 
-                        w pełni responsywną stronę.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Solutions Section -->
-            <div class="solutions-section">
-                <h2 class="solutions-title">Nasze rozwiązanie krok po kroku</h2>
-                <div class="solutions-grid">
-                    <div class="solution-card">
-                        <div class="solution-icon">🔍</div>
-                        <h3 class="solution-name">Analiza SEO i identyfikacja potencjału</h3>
-                        <p class="solution-desc">
-                            Zidentyfikowano kluczowe usługi i frazy o największym potencjale biznesowym, 
-                            aby wokół nich zbudować architekturę nowej witryny
-                        </p>
-                    </div>
-                    <div class="solution-card">
-                        <div class="solution-icon">🎨</div>
-                        <h3 class="solution-name">Projektowanie UX zorientowane na konwersję</h3>
-                        <p class="solution-desc">
-                            Zaprojektowano intuicyjne ścieżki dla użytkowników (lekarzy weterynarii i hodowców), 
-                            aby maksymalnie ułatwić im dostęp do informacji o badaniach
-                        </p>
-                    </div>
-                    <div class="solution-card">
-                        <div class="solution-icon">⚡</div>
-                        <h3 class="solution-name">Wdrożenie i optymalizacja techniczna</h3>
-                        <p class="solution-desc">
-                            Opublikowano w pełni responsywną i zoptymalizowaną pod kątem wyszukiwarek stronę, 
-                            gwarantując jej szybkość i nienaganne działanie
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Results Section -->
-            <div class="results-section">
-                <h2 class="results-title">Rezultaty: Mierzalny wzrost w 6 tygodni</h2>
-                <p class="results-subtitle">
-                    Wystarczyło zaledwie 45 dni, aby dane z Google Search Console potwierdziły skuteczność nowej strategii
-                </p>
-                
-                <div class="results-grid">
-                    <div class="result-card">
-                        <div class="result-icon">📈</div>
-                        <div class="result-metric">+47%</div>
-                        <div class="result-description">
-                            <strong>Wzrost widoczności</strong><br>
-                            Osiągając <strong>63,6 tys.</strong> wyświetleń, strona Lab-Wet dociera do niemal 
-                            o połowę większej liczby potencjalnych klientów
-                        </div>
-                    </div>
-                    
-                    <div class="result-card">
-                        <div class="result-icon">🖱️</div>
-                        <div class="result-metric">+44%</div>
-                        <div class="result-description">
-                            <strong>Wzrost ruchu</strong><br>
-                            Wzrost widoczności przełożył się na <strong>2,19 tys.</strong> wartościowych odwiedzin
-                        </div>
-                    </div>
-                    
-                    <div class="result-card">
-                        <div class="result-icon">🚀</div>
-                        <div class="result-metric">+128%</div>
-                        <div class="result-description">
-                            <strong>Wzrost kluczowych usług</strong><br>
-                            Strona dotycząca współczynnika tarczycy u psów i kotów zanotowała rekordowy wzrost
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Business Impact -->
-            <div class="impact-section">
-                <h2 class="impact-title">Wpływ na biznes: Od kliknięć do wyższych obrotów</h2>
-                <p class="impact-text">
-                    W branży opartej na zaufaniu i specjalistycznej wiedzy, każdy punkt procentowy wzrostu 
-                    widoczności ma bezpośrednie przełożenie na wyniki. Dla Lab-Wet więcej wartościowych wizyt 
-                    na stronie oznacza więcej zapytań o badania, więcej dostarczonych próbek i w konsekwencji – 
-                    <span class="highlight">wyższe obroty</span>. Podjęte działania sprawiły, że strona internetowa 
-                    stała się aktywnym i w pełni mierzalnym kanałem pozyskiwania nowych klientów.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="logo" style="justify-content: center; margin-bottom: 24px;">
-            <img src="assets/images/logo-transparent.png" alt="Collytics" style="height: 48px;">
-        </div>
-        <p style="color: rgba(255, 255, 255, 0.6);">© Collytics. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Hide/show navigation on scroll
-        let lastScrollTop = 0;
-        const nav = document.querySelector('nav');
-
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            </a>
             
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                nav.style.transform = 'translateY(-100%)';
-            } else {
-                nav.style.transform = 'translateY(0)';
+            <!-- Article 3 -->
+            <a href="#" class="article-card">
+                <div class="article-image">
+                    <span class="article-category">Analytics</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>12 min czytania</span>
+                        <span>•</span>
+                        <span>1 września 2024</span>
+                    </div>
+                    <h3 class="article-title">Google Analytics 4: Kompletny przewodnik po migracji</h3>
+                    <p class="article-excerpt">Wszystko co musisz wiedzieć o przejściu z Universal Analytics na GA4. Praktyczne wskazówki i najlepsze praktyki.</p>
+                    <span class="read-more">Czytaj więcej →</span>
+                </div>
+            </a>
+            
+            <!-- Article 4 -->
+            <a href="#" class="article-card">
+                <div class="article-image">
+                    <span class="article-category">Marketing</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>6 min czytania</span>
+                        <span>•</span>
+                        <span>28 sierpnia 2024</span>
+                    </div>
+                    <h3 class="article-title">Facebook Conversion API vs Pixel: Co wybrać?</h3>
+                    <p class="article-excerpt">Porównanie dwóch metod śledzenia konwersji. Dowiedz się, która opcja będzie najlepsza dla Twojego biznesu.</p>
+                    <span class="read-more">Czytaj więcej →</span>
+                </div>
+            </a>
+            
+            <!-- Article 5 -->
+            <a href="#" class="article-card">
+                <div class="article-image">
+                    <span class="article-category">Case Study</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>5 min czytania</span>
+                        <span>•</span>
+                        <span>20 sierpnia 2024</span>
+                    </div>
+                    <h3 class="article-title">Niski koszt CPC w kampanii Facebook Ads</h3>
+                    <p class="article-excerpt">Case study pokazujące jak osiągnęliśmy 70% niższy CPC dla wymagającego klienta w branży B2B.</p>
+                    <span class="read-more">Czytaj więcej →</span>
+                </div>
+            </a>
+            
+            <!-- Article 6 -->
+            <a href="#" class="article-card">
+                <div class="article-image">
+                    <span class="article-category">Technologie</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>7 min czytania</span>
+                        <span>•</span>
+                        <span>15 sierpnia 2024</span>
+                    </div>
+                    <h3 class="article-title">Server-Side Tagging: Przyszłość śledzenia</h3>
+                    <p class="article-excerpt">Jak server-side GTM rozwiązuje problemy z blokowaniem cookies i zwiększa dokładność danych.</p>
+                    <span class="read-more">Czytaj więcej →</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="newsletter-section">
+        <h2>Bądź na bieżąco</h2>
+        <p>Otrzymuj najnowsze artykuły i case studies prosto na swoją skrzynkę</p>
+        <fo
+
+cat > blog/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Insights & Resources | Collytics</title>
+    <meta name="description" content="Najnowsze artykuły o marketingu cyfrowym, analityce, SEO i strategiach data-driven.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        /* Blog Hero */
+        .blog-hero {
+            margin-top: 70px;
+            padding: 100px 20px 80px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+            text-align: center;
+        }
+        
+        .blog-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .blog-hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 50px 0;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 10px 25px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            color: rgba(255,255,255,0.8);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+            color: #ffffff;
+        }
+        
+        /* Blog Grid */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        /* Article Card */
+        .article-card {
+            background: #141414;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .article-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .article-content {
+            padding: 30px;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .article-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .article-excerpt {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s;
+        }
+        
+        .article-card:hover .read-more {
+            gap: 10px;
+        }
+        
+        /* Featured Article */
+        .featured-article {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: linear-gradient(135deg, #1e1e1e 0%, #141414 100%);
+        }
+        
+        .featured-article .article-image {
+            height: 100%;
+        }
+        
+        .featured-article .article-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .featured-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        /* Newsletter CTA */
+        .newsletter-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 20px;
+            text-align: center;
+            margin: 100px 0;
+        }
+        
+        .newsletter-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        
+        .newsletter-section p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.95);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            background: rgba(255,255,255,0.2);
+            color: #ffffff;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .newsletter-form button {
+            padding: 15px 40px;
+            background: #ffffff;
+            color: #764ba2;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .blog-hero h1 { font-size: 2.5rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .featured-article { 
+                grid-column: span 1;
+                grid-template-columns: 1fr;
             }
+            .newsletter-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nawigacja - wspólna -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.png" alt="Collytics">
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#services">Usługi</a>
+                <a href="../index.html#about">O nas</a>
+                <a href="../index.html#blog">Blog</a>
+                <a href="../index.html#contact" class="btn-contact">Kontakt</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="blog-hero">
+        <h1>Insights & Resources</h1>
+        <p>Najnowsze trendy, case studies i praktyczne porady z świata marketingu cyfrowego</p>
+    </div>
+    
+    <div class="categories">
+        <button class="category-btn active">Wszystkie</button>
+        <button class="category-btn">Marketing</button>
+        <button class="category-btn">Analytics</button>
+        <button class="category-btn">SEO</button>
+        <button class="category-btn">Case Studies</button>
+        <button class="category-btn">Technologie</button>
+    </div>
+    
+    <div class="blog-container">
+        <div class="blog-grid">
+            <!-- Featured Article -->
+            <a href="znaczenie-tagowania-strony-gtm.html" class="article-card featured-article">
+                <div class="article-image">
+                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677310d5b3e1d58c2c732f10_Znaczenie-Tagowania-Strony-za-Pomoca-Google-Tag-Manager-2048x1222.jpeg" alt="Google Tag Manager">
+                </div>
+                <div class="article-content">
+                    <span class="featured-badge">Wyróżniony artykuł</span>
+                    <h2 class="article-title">Znaczenie Tagowania Strony za Pomocą Google Tag Manager</h2>
+                    <p class="article-excerpt">Kompleksowy przewodnik po implementacji i zarządzaniu tagami na stronie internetowej. Dowiedz się, jak GTM może zrewolucjonizować sposób zbierania danych.</p>
+                    <div class="article-meta">
+                        <span>10 min czytania</span>
+                        <span>•</span>
+                        <span>8 września 2024</span>
+                    </div>
+                    <span class="read-more">Czytaj więcej →</span>
+                </div>
+            </a>
             
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            <!-- Article 2 -->
+            <a href="#" class="article-card">
+                <div class="article-image">
+                    <span class="article-category">SEO</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>8 min czytania</span>
+                        <span>•</span>
+                        <span>5 września 2024</span>
+                    </div>
+                    <h3 class="article-title">JSON-LD: Jak zwiększa widoczność w wyszukiwarkach AI</h3>
+                    <p class="article-excerpt">Strukturyzowane dane to przyszłość SEO. Zobacz jak implementacja JSON-LD wpływa na widoczność w AI-powered search.</p>
+                    <span class="read-more">Czytaj więcej →</span>
+                </div>
+            </a>
+            
+            <!-- Article 3 -->
+            <a href="#" class="article-card">
+                <div class="article-image">
+                    <span class="article-category">Analytics</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>12 min czytania</span>
+                        <span>•</span>
+                        <span>1 września 2024</span>
+                    </div>
+                    <h3 class="article-title">Google Analytics 4: Kompletny przewodnik po migracji</h3>
+                    <p class="article-excerpt">Wszystko co musisz wiedzieć o przejściu z Universal Analytics na GA4. Praktyczne wskazówki i najlepsze praktyki.</p>
+                    <span class="read-more">Czytaj więcej →</span>
+                </div>
+            </a>
+            
+            <!-- Article 4 -->
+            <a href="#" class="article-card">
+                <div class="article-image">
+                    <span class="article-category">Marketing</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>6 min czytania</span>
+                        <span>•</span>
+                        <span>28 sierpnia 2024</span>
+                    </div>
+                    <h3 class="article-title">Facebook Conversion API vs Pixel: Co wybrać?</h3>
+                    <p class="article-excerpt">Porównanie dwóch metod śledzenia konwersji. Dowiedz się, która opcja będzie najlepsza dla Twojego biznesu.</p>
+                    <span class="read-more">Czytaj więcej →</span>
+                </div>
+            </a>
+            
+            <!-- Article 5 -->
+            <a href="#" class="article-card">
+                <div class="article-image">
+                    <span class="article-category">Case Study</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>5 min czytania</span>
+                        <span>•</span>
+                        <span>20 sierpnia 2024</span>
+                    </div>
+                    <h3 class="article-title">Niski koszt CPC w kampanii Facebook Ads</h3>
+                    <p class="article-excerpt">Case study pokazujące jak osiągnęliśmy 70% niższy CPC dla wymagającego klienta w branży B2B.</p>
+                    <span class="read-more">Czytaj więcej →</span>
+                </div>
+            </a>
+            
+            <!-- Article 6 -->
+            <a href="#" class="article-card">
+                <div class="article-image">
+                    <span class="article-category">Technologie</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>7 min czytania</span>
+                        <span>•</span>
+                        <span>15 sierpnia 2024</span>
+                    </div>
+                    <h3 class="article-title">Server-Side Tagging: Przyszłość śledzenia</h3>
+                    <p class="article-excerpt">Jak server-side GTM rozwiązuje problemy z blokowaniem cookies i zwiększa dokładność danych.</p>
+                    <span class="read-more">Czytaj więcej →</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="newsletter-section">
+        <h2>Bądź na bieżąco</h2>
+        <p>Otrzymuj najnowsze artykuły i case studies prosto na swoją skrzynkę</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Twój adres email" required>
+            <button type="submit">Subskrybuj</button>
+        </form>
+    </div>
+    
+    <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); font-size: 14px;">
+        <img src="../assets/images/logo.png" alt="Collytics" style="height: 24px; margin-bottom: 20px; opacity: 0.7;">
+        <div>© 2024 Collytics. All rights reserved.</div>
+    </footer>
+    
+    <!-- Wspólne skrypty -->
+    <script src="../js/navigation.js"></script>
+    <script>
+        // Filtrowanie kategorii
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
         });
     </script>
 </body>
