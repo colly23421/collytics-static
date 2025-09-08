@@ -3,614 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab-Wet Case Study - Wzrost widoczności o 47% | Collytics</title>
-    <meta name="description" content="Zobacz jak zwiększyliśmy widoczność Lab-Wet w Google o 47% w 45 dni. Case study kampanii marketingowej.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Lab-Wet Case Study | Collytics</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="css/mode.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/style.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            background-color: #1a1a1a;
-            color: #1a1a1a;
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
+            background: #ffffff;
+            color: #1a1a1a;
         }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 20px 5%;
-            background: rgba(15, 15, 15, 0.8);
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
+        
+        .navbar {
+            background: #fff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
-        .nav-container {
+        
+        .navbar img {
+            height: 40px;
+        }
+        
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 60px 20px;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn {
-            padding: 10px 24px;
-            border-radius: 24px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 14px;
-            color: #1a1a1a;
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Case Study Styles */
-        .case-study-full {
-            padding: 80px 20px;
-            background: transparent;
-            color: #1a1a1a;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            margin-top: 80px;
-        }
-
-        .case-study-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            margin-bottom: 100px;
-            align-items: center;
-        }
-
-        .hero-content {
-            order: 1;
-        }
-
-        .hero-image {
-            order: 2;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
+        
+        .badge {
+            background: #e8eaff;
+            color: #5b5fc7;
+            padding: 6px 16px;
             border-radius: 20px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-        }
-
-        .case-badge {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
             display: inline-block;
-            background: rgba(99, 102, 241, 0.2);
-            color: #6366f1;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
             margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
-
-        .hero-title {
-            font-size: 48px;
-            font-weight: 700;
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
             line-height: 1.2;
-            margin-bottom: 30px;
         }
-
-        .hero-subtitle {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .hero-meta {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            padding: 20px;
+        
+        .meta {
             margin-bottom: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #666;
         }
-
-        .meta-item {
-            margin-bottom: 10px;
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .meta-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .meta-label {
-            font-weight: 600;
-            color: #6366f1;
-        }
-
-        .metrics-row {
-            display: flex;
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .metric-item {
-            flex: 1;
-        }
-
-        .metric-value {
-            font-size: 48px;
-            font-weight: 700;
-            color: #6366f1;
-            margin-bottom: 5px;
-        }
-
-        .metric-label {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Content Grid */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            margin-bottom: 80px;
-        }
-
-        .content-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .card-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #1a1a1a;
-        }
-
-        .card-text {
-            font-size: 16px;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Solutions Section */
-        .solutions-section {
-            background: rgba(99, 102, 241, 0.05);
-            border-radius: 30px;
-            padding: 60px;
-            margin-bottom: 80px;
-        }
-
-        .solutions-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-
-        .solution-card {
-            text-align: center;
-        }
-
-        .solution-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(99, 102, 241, 0.2);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 36px;
-        }
-
-        .solution-name {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .solution-desc {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-        }
-
-        /* Results Section */
-        .results-section {
-            margin-bottom: 80px;
-        }
-
-        .results-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .results-subtitle {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .results-grid {
+        
+        .stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
+            margin: 50px 0;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 12px;
         }
-
-        .result-card {
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 16px;
-            padding: 30px;
+        
+        .stat {
             text-align: center;
         }
-
-        .result-icon {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .result-metric {
-            font-size: 36px;
-            font-weight: 700;
-            color: #6366f1;
+        
+        .stat-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #5b5fc7;
             margin-bottom: 10px;
         }
-
-        .result-description {
+        
+        .stat-label {
+            color: #666;
             font-size: 14px;
+        }
+        
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        p {
             line-height: 1.6;
-            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            color: #4a4a4a;
         }
-
-        .result-description strong {
-            color: #1a1a1a;
-        }
-
-        /* Impact Section */
-        .impact-section {
-            text-align: center;
-            padding: 60px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 30px;
-            margin-top: 80px;
-        }
-
-        .impact-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        .impact-text {
-            font-size: 18px;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .highlight {
-            color: #6366f1;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            padding: 60px 5%;
-            background: #141414;
-            text-align: center;
-            margin-top: 100px;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-section {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .hero-image {
-                order: 1;
-            }
-
-            .hero-content {
-                order: 2;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .solutions-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .results-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .hero-title {
-                font-size: 42px;
-            }
-        }
-
+        
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 32px;
+            .stats { 
+                grid-template-columns: 1fr;
+                padding: 20px;
             }
-
-            .metrics-row {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .metric-value {
-                font-size: 36px;
-            }
-
-            .solutions-section {
-                padding: 40px 20px;
+            h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/images/logo.png" alt="Collytics" style="height: 80px;">
-                </a>
-            </div>
-            <div class="nav-buttons">
-                <a href="index.html#kontakt" class="btn btn-outline">Kontakt</a>
-                <a href="index.html" class="btn btn-outline">Strona główna</a>
-            </div>
-        </div>
+    <nav class="navbar">
+        <a href="index.html">
+            <img src="assets/images/logo.png" alt="Collytics">
+        </a>
     </nav>
-
-    <section class="case-study-full">
-        <div class="case-study-wrapper">
-            
-            <!-- Hero Section -->
-            <div class="hero-section">
-                <div class="hero-content">
-                    <span class="case-badge">Case study</span>
-                    <h1 class="hero-title">Lab-Wet: Jak nowa strona zwiększyła widoczność w Google o 47% w 45 dni</h1>
-                    <p class="hero-subtitle">
-                        Kompleksowa transformacja cyfrowa lidera diagnostyki weterynaryjnej
-                    </p>
-                    
-                    <div class="hero-meta">
-                        <div class="meta-item">
-                            <span class="meta-label">Klient:</span> Lab-Wet (Lider w diagnostyce weterynaryjnej)
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Cel:</span> Stworzenie nowoczesnej strony WWW, która efektywnie konwertuje i wspiera biznes
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Wynik:</span> +47% wzrostu widoczności w Google w 45 dni
-                        </div>
-                    </div>
-                    
-                    <div class="metrics-row">
-                        <div class="metric-item">
-                            <div class="metric-value">+47%</div>
-                            <div class="metric-label">Wzrost widoczności</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-value">+44%</div>
-                            <div class="metric-label">Wzrost ruchu</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-value">45 dni</div>
-                            <div class="metric-label">Do rezultatów</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-image">
-                    <img src="assets/images/blog/labwet-case.jpg" 
-                         alt="Wyniki Lab-Wet w Google Search Console">
-                </div>
-            </div>
-
-            <!-- Challenge & Solution Grid -->
-            <div class="content-grid">
-                <div class="content-card">
-                    <h2 class="card-title">🎯 Wyzwanie: Strona na miarę lidera branży</h2>
-                    <p class="card-text">
-                        Lab-Wet, jako czołowe laboratorium weterynaryjne w Polsce, potrzebowało strony internetowej, 
-                        która odzwierciedlałaby ich wysoką pozycję na rynku. Celem był jasny: zastąpić dotychczasową 
-                        witrynę nowoczesnym, wydajnym rozwiązaniem. Nowa strona miała być nie tylko estetyczna, ale 
-                        przede wszystkim stać się skutecznym narzędziem do pozyskiwania klientów i budowania zaufania 
-                        w tej wysoce specjalistycznej branży.
-                    </p>
-                </div>
-                
-                <div class="content-card">
-                    <h2 class="card-title">💡 Rozwiązanie: Strategia data-driven</h2>
-                    <p class="card-text">
-                        Zastosowane podejście opierało się na strategii data-driven. Wdrożono kompleksowe rozwiązanie 
-                        obejmujące analizę SEO i identyfikację potencjału, projektowanie UX zorientowane na konwersję 
-                        oraz pełną optymalizację techniczną. Zidentyfikowano kluczowe usługi i frazy o największym 
-                        potencjale biznesowym, zaprojektowano intuicyjne ścieżki dla użytkowników i opublikowano 
-                        w pełni responsywną stronę.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Solutions Section -->
-            <div class="solutions-section">
-                <h2 class="solutions-title">Nasze rozwiązanie krok po kroku</h2>
-                <div class="solutions-grid">
-                    <div class="solution-card">
-                        <div class="solution-icon">🔍</div>
-                        <h3 class="solution-name">Analiza SEO i identyfikacja potencjału</h3>
-                        <p class="solution-desc">
-                            Zidentyfikowano kluczowe usługi i frazy o największym potencjale biznesowym, 
-                            aby wokół nich zbudować architekturę nowej witryny
-                        </p>
-                    </div>
-                    <div class="solution-card">
-                        <div class="solution-icon">🎨</div>
-                        <h3 class="solution-name">Projektowanie UX zorientowane na konwersję</h3>
-                        <p class="solution-desc">
-                            Zaprojektowano intuicyjne ścieżki dla użytkowników (lekarzy weterynarii i hodowców), 
-                            aby maksymalnie ułatwić im dostęp do informacji o badaniach
-                        </p>
-                    </div>
-                    <div class="solution-card">
-                        <div class="solution-icon">⚡</div>
-                        <h3 class="solution-name">Wdrożenie i optymalizacja techniczna</h3>
-                        <p class="solution-desc">
-                            Opublikowano w pełni responsywną i zoptymalizowaną pod kątem wyszukiwarek stronę, 
-                            gwarantując jej szybkość i nienaganne działanie
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Results Section -->
-            <div class="results-section">
-                <h2 class="results-title">Rezultaty: Mierzalny wzrost w 6 tygodni</h2>
-                <p class="results-subtitle">
-                    Wystarczyło zaledwie 45 dni, aby dane z Google Search Console potwierdziły skuteczność nowej strategii
-                </p>
-                
-                <div class="results-grid">
-                    <div class="result-card">
-                        <div class="result-icon">📈</div>
-                        <div class="result-metric">+47%</div>
-                        <div class="result-description">
-                            <strong>Wzrost widoczności</strong><br>
-                            Osiągając <strong>63,6 tys.</strong> wyświetleń, strona Lab-Wet dociera do niemal 
-                            o połowę większej liczby potencjalnych klientów
-                        </div>
-                    </div>
-                    
-                    <div class="result-card">
-                        <div class="result-icon">🖱️</div>
-                        <div class="result-metric">+44%</div>
-                        <div class="result-description">
-                            <strong>Wzrost ruchu</strong><br>
-                            Wzrost widoczności przełożył się na <strong>2,19 tys.</strong> wartościowych odwiedzin
-                        </div>
-                    </div>
-                    
-                    <div class="result-card">
-                        <div class="result-icon">🚀</div>
-                        <div class="result-metric">+128%</div>
-                        <div class="result-description">
-                            <strong>Wzrost kluczowych usług</strong><br>
-                            Strona dotycząca współczynnika tarczycy u psów i kotów zanotowała rekordowy wzrost
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Business Impact -->
-            <div class="impact-section">
-                <h2 class="impact-title">Wpływ na biznes: Od kliknięć do wyższych obrotów</h2>
-                <p class="impact-text">
-                    W branży opartej na zaufaniu i specjalistycznej wiedzy, każdy punkt procentowy wzrostu 
-                    widoczności ma bezpośrednie przełożenie na wyniki. Dla Lab-Wet więcej wartościowych wizyt 
-                    na stronie oznacza więcej zapytań o badania, więcej dostarczonych próbek i w konsekwencji – 
-                    <span class="highlight">wyższe obroty</span>. Podjęte działania sprawiły, że strona internetowa 
-                    stała się aktywnym i w pełni mierzalnym kanałem pozyskiwania nowych klientów.
-                </p>
-            </div>
-
+    
+    <div class="container">
+        <span class="badge">Case Study</span>
+        
+        <h1>Lab-Wet: Jak zwiększyliśmy widoczność w Google o 47% w 45 dni</h1>
+        
+        <div class="meta">
+            <strong>Klient:</strong> Lab-Wet<br>
+            <strong>Cel:</strong> Wzrost widoczności w wyszukiwarkach<br>
+            <strong>Wynik:</strong> +47% wzrost ruchu organicznego
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="logo" style="justify-content: center; margin-bottom: 24px;">
-            <img src="assets/images/logo.png" alt="Collytics" style="height: 48px;">
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">+47%</div>
+                <div class="stat-label">Wzrost widoczności</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">+44%</div>
+                <div class="stat-label">Wzrost ruchu</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">45 dni</div>
+                <div class="stat-label">Czas realizacji</div>
+            </div>
         </div>
-        <p style="color: rgba(255, 255, 255, 0.6);">© Collytics. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Hide/show navigation on scroll
-        let lastScrollTop = 0;
-        const nav = document.querySelector('nav');
-
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                nav.style.transform = 'translateY(-100%)';
-            } else {
-                nav.style.transform = 'translateY(0)';
-            }
-            
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        });
-    </script>
+        
+        <h2>Wyzwanie</h2>
+        <p>Lab-Wet to wiodący producent weterynaryjnych testów diagnostycznych. Firma potrzebowała zwiększenia widoczności online, aby dotrzeć do większej liczby klientów.</p>
+        
+        <h2>Rozwiązanie</h2>
+        <p>Zastosowaliśmy kompleksową strategię SEO obejmującą optymalizację techniczną, tworzenie wartościowych treści oraz budowanie profilu linków.</p>
+        
+        <h2>Rezultaty</h2>
+        <p>W ciągu zaledwie 45 dni osiągnęliśmy wzrost widoczności o 47%, co przełożyło się na znaczący wzrost ruchu i konwersji.</p>
+    </div>
 </body>
 </html>
