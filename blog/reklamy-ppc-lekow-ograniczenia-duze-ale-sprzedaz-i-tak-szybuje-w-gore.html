@@ -11,8 +11,10 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; }
         .article-hero { margin-top: 70px; padding: 60px 20px; background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%); }
+        .article-hero img { width: 100%; max-width: 1200px; height: 400px; object-fit: cover; margin: 40px auto 0; display: block; border-radius: 12px; }
         .article-container { max-width: 800px; margin: 0 auto; }
-        .article-meta { display: flex; gap: 20px; margin-bottom: 30px; color: #999; font-size: 14px; }
+        .article-meta { display: flex; gap: 20px; margin-bottom: 30px; padding: 20px; background: rgba(99, 102, 241, 0.1); border-radius: 12px; align-items: center; }
+        .category-badge { background: #667eea; color: white; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; }
         .article-title { font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2; }
         .article-content { padding: 40px 20px; line-height: 1.8; font-size: 18px; color: #e0e0e0; }
         .article-content h2 { font-size: 2rem; margin: 40px 0 20px; color: #fff; }
@@ -26,7 +28,6 @@
         .stat-card { background: #141414; padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #222; }
         .stat-value { font-size: 2.5rem; font-weight: bold; color: #667eea; }
         .stat-label { color: #999; margin-top: 10px; font-size: 14px; }
-        .article-lead { font-size: 1.2rem; color: #ccc; line-height: 1.6; margin-bottom: 30px; }
     </style>
 </head>
 <body>
@@ -46,13 +47,14 @@
     <article class="article-hero">
         <div class="article-container">
             <div class="article-meta">
-                <span>4 kwietnia 2025</span>
-                <span>10 min czytania</span>
-                <span>Zespół Collytics</span>
+                <span class="category-badge">MARKETING</span>
+                <span style="color: #999;">10 min czytania</span>
+                <span style="color: #999;">•</span>
+                <span style="color: #999;">4 kwietnia 2025</span>
             </div>
             <h1 class="article-title">Reklamy PPC leków: ograniczenia duże, ale sprzedaż i tak szybuje w górę</h1>
-            <p class="article-lead">Branża farmaceutyczna stoi przed wyjątkowym wyzwaniem w świecie marketingu cyfrowego. Z jednej strony restrykcyjne przepisy prawne ograniczają możliwości reklamowe, z drugiej – rynek e-commerce farmaceutycznego rośnie w zawrotnym tempie.</p>
         </div>
+        <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/67efc8aa38d57737fa9e8add_Bez%20nazwy.png" alt="Reklamy PPC leków">
     </article>
 
     <div class="article-content">
@@ -71,6 +73,8 @@
                     <div class="stat-label">Aptek prowadzących sprzedaż online</div>
                 </div>
             </div>
+
+            <p>Branża farmaceutyczna stoi przed wyjątkowym wyzwaniem w świecie marketingu cyfrowego. Z jednej strony restrykcyjne przepisy prawne ograniczają możliwości reklamowe, z drugiej – rynek e-commerce farmaceutycznego rośnie w zawrotnym tempie.</p>
 
             <h2>Dlaczego reklamy leków są tak restrykcyjnie regulowane?</h2>
             
@@ -165,18 +169,16 @@
         <div class="footer-container">
             <div class="footer-cta">
                 <h2>Gotowy, aby rozpocząć projekt?</h2>
-                <p>
-                    Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
-                </p>
+                <p>Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.</p>
                 <a href="../index.html#kontakt" class="cta-button">Kontakt</a>
             </div>
-
+            
             <div class="logo" style="justify-content: center; margin-bottom: 24px;">
                 <img src="../assets/images/logo.png" alt="Collytics" style="height: 40px;">
             </div>
-
+            
             <p style="color: #666; text-align: center;">© Collytics. All rights reserved. Polityka Prywatności</p>
-            <p style="color: #999; margin: 20px 0;"><a href="https://www.podbean.com/ep/pb-h2whi-17d9dea" style="color: #667eea; text-decoration: none;">🎧 Posłuchaj naszego podcastu</a></p>
+            <p style="color: #999; margin: 20px 0; text-align: center;"><a href="https://www.podbean.com/ep/pb-h2whi-17d9dea" style="color: #667eea; text-decoration: none;">🎧 Posłuchaj naszego podcastu</a></p>
         </div>
     </footer>
 
