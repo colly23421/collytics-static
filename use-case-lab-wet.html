@@ -6,6 +6,8 @@
     <title>Lab-Wet: +47% widoczności w Google w 45 dni | Collytics</title>
     <meta name="description" content="Jak zwiększyliśmy widoczność Lab-Wet o 47% w 45 dni. Case study kompleksowej transformacji cyfrowej lidera diagnostyki weterynaryjnej.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/main.css">
     <style>
         * {
             margin: 0;
@@ -18,46 +20,6 @@
             background: #0a0a0a;
             color: #ffffff;
             line-height: 1.6;
-        }
-        
-        /* Navbar - dopasowane do głównej strony */
-        .navbar {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 30px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .navbar .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .navbar img {
-            height: 28px; /* Małe logo jak na głównej stronie */
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .nav-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #ffffff;
         }
         
         /* Hero Section */
@@ -354,20 +316,27 @@
             .results-grid { grid-template-columns: 1fr; }
             .impact-section { padding: 40px 20px; }
             .section h2 { font-size: 1.8rem; }
-            .navbar img { height: 24px; }
         }
     </style>
 </head>
 <body>
+    <!-- Nawigacja - ta sama co na głównej stronie -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html">
+            <a href="index.html" class="logo">
                 <img src="assets/images/logo.png" alt="Collytics">
             </a>
             <div class="nav-links">
-                <a href="index.html">Strona główna</a>
+                <a href="index.html">Home</a>
                 <a href="index.html#services">Usługi</a>
-                <a href="index.html#contact">Kontakt</a>
+                <a href="index.html#about">O nas</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact" class="btn-contact">Kontakt</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
@@ -484,5 +453,8 @@
         <img src="assets/images/logo.png" alt="Collytics">
         <div>© 2024 Collytics. All rights reserved.</div>
     </footer>
+    
+    <!-- Wspólne skrypty -->
+    <script src="js/navigation.js"></script>
 </body>
 </html>
