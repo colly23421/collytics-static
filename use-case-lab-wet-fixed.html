@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-Wet Case Study | Collytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: #fff;
+            padding: 16px 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar img {
+            height: 32px; /* Małe logo */
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: #e8eaff;
+            color: #5b5fc7;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        
+        /* Title */
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #0a0a0a;
+        }
+        
+        /* Meta info */
+        .meta {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 48px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .meta strong {
+            color: #333;
+        }
+        
+        /* Stats Grid */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 48px 0;
+        }
+        
+        .stat {
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #5b5fc7;
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        /* Content sections */
+        .section {
+            margin: 48px 0;
+        }
+        
+        .section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #0a0a0a;
+        }
+        
+        .section p {
+            font-size: 15px;
+            color: #4a4a4a;
+            margin-bottom: 12px;
+        }
+        
+        /* Dashboard mockup */
+        .dashboard {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        
+        .dashboard-header {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            text-align: center;
+            padding: 32px;
+            margin-top: 80px;
+            font-size: 13px;
+        }
+        
+        footer img {
+            height: 24px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 16px;
+        }
+        
+        @media (max-width: 768px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="assets/images/logo.png" alt="Collytics">
+        <div class="nav-links">
+            <a href="index.html">Strona główna</a>
+            <a href="#">Kontakt</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <span class="badge">Case Study</span>
+        
+        <h1>Lab-Wet: Jak nowa strona zwiększyła widoczność w Google o 47% w 45 dni</h1>
+        
+        <div class="meta">
+            <div><strong>Klient:</strong> Lab-Wet</div>
+            <div><strong>Cel:</strong> Wzrost widoczności</div>
+            <div><strong>Wynik:</strong> +47% w 45 dni</div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">+47%</div>
+                <div class="stat-label">Wzrost widoczności</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">+44%</div>
+                <div class="stat-label">Wzrost ruchu</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">45 dni</div>
+                <div class="stat-label">Czas realizacji</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Wyzwanie: Strona na miarę lidera branży</h2>
+            <p>Lab-Wet to wiodący producent weterynaryjnych testów diagnostycznych. Firma potrzebowała strony, która odzwierciedli jej pozycję lidera rynku i przyciągnie nowych klientów.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Rozwiązanie: Strategia data-driven</h2>
+            <p>Zastosowaliśmy kompleksowe podejście oparte na danych. Analiza konkurencji, optymalizacja techniczna i content marketing przyniosły spektakularne rezultaty.</p>
+        </div>
+        
+        <div class="dashboard">
+            <div class="dashboard-header">Insights - Last 28 days</div>
+            <p style="color: #999; text-align: center; padding: 20px;">Dashboard Analytics Preview</p>
+        </div>
+        
+        <div class="section">
+            <h2>Nasze rozwiązanie krok po kroku</h2>
+            <p>1. Analiza SEO i identyfikacja potencjału<br>
+            2. Projektowanie UX zorientowane na konwersję<br>
+            3. Wdrożenie i optymalizacja techniczna</p>
+        </div>
+        
+        <div class="section">
+            <h2>Rezultaty: Mierzalny wzrost w 6 tygodni</h2>
+            <p>Efekty przeszły najśmielsze oczekiwania. Wzrost widoczności o 47% przełożył się na 44% więcej ruchu organicznego i 128% wzrost kluczowych usług.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <img src="assets/images/logo.png" alt="Collytics">
+        <div>© Collytics. All rights reserved.</div>
+    </footer>
+</body>
+</html>
