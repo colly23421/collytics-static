@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI w raportach Google Analytics 4 - Jak wykorzystać sztuczną inteligencję | Collytics</title>
+    <meta name="description" content="Poznaj zaawansowane funkcje AI w Google Analytics 4: przewidywanie zakupów, prognozowanie przychodów i analiza rezygnacji użytkowników.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; line-height: 1.8; }
+        .article-hero { margin-top: 70px; padding: 80px 20px 40px; background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%); }
+        .article-container { max-width: 800px; margin: 0 auto; }
+        .article-meta { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; color: rgba(255,255,255,0.6); font-size: 14px; }
+        .category-badge { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #ffffff; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; }
+        .article-hero h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 30px; background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .article-hero .lead { font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.6; }
+        .featured-image { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .featured-image img { width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .article-content { max-width: 800px; margin: 0 auto; padding: 0 20px 80px; }
+        .article-content h2 { font-size: 1.8rem; font-weight: 700; margin: 50px 0 20px; color: #ffffff; }
+        .article-content h3 { font-size: 1.4rem; font-weight: 600; margin: 35px 0 15px; color: #ffffff; }
+        .article-content p { font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.85); margin-bottom: 20px; }
+        .article-content ul, .article-content ol { margin: 20px 0 30px 20px; }
+        .article-content li { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 12px; line-height: 1.8; }
+        .article-content strong { color: #ffffff; font-weight: 600; }
+        .ai-feature { background: #141414; border-radius: 12px; padding: 30px; margin: 30px 0; border: 1px solid rgba(255,255,255,0.05); border-left: 4px solid #667eea; }
+        .ai-feature h3 { color: #667eea; margin-bottom: 15px; }
+        .requirement-box { background: rgba(102, 126, 234, 0.1); border: 1px solid #667eea; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .article-cta { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 50px 35px; border-radius: 16px; margin: 60px 0; text-align: center; }
+        .article-cta h3 { font-size: 1.8rem; margin-bottom: 15px; color: #ffffff; }
+        .article-cta p { font-size: 1rem; margin-bottom: 25px; color: #ffffff; opacity: 0.95; }
+        .btn-white { display: inline-block; padding: 12px 35px; background: #ffffff; color: #764ba2; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.png" alt="Collytics">
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#services">Usługi</a>
+                <a href="../index.html#about">O nas</a>
+                <a href="../blog/">Blog</a>
+                <a href="../index.html#contact" class="btn-contact">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="article-hero">
+        <div class="article-container">
+            <div class="article-meta">
+                <span class="category-badge">AI & Analytics</span>
+                <span>12 min czytania</span>
+                <span>•</span>
+                <span>30 sierpnia 2024</span>
+            </div>
+            <h1>AI w raportach Google Analytics 4. Jak wykorzystać zaawansowane funkcje napędzane przez sztuczną inteligencję</h1>
+            <p class="lead">Sztuczna inteligencja może być niezwykle pomocna w analizie danych. Google Analytics 4 zintegrowało wiele zaawansowanych funkcji napędzanych przez AI, które pomagają przewidywać zachowania użytkowników.</p>
+        </div>
+    </div>
+    
+    <div class="featured-image">
+        <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6773394308235e8c6cb24fc1_ai-w-raportach-google-analytics-4-jak-wykorzystac.png" alt="AI w Google Analytics 4">
+    </div>
+    
+    <div class="article-content">
+        <p>Google Analytics 4 (GA4) wprowadza rewolucyjne funkcje oparte na sztucznej inteligencji, które pozwalają nie tylko analizować przeszłe dane, ale także <strong>przewidywać przyszłe zachowania użytkowników</strong>.</p>
+        
+        <h2>Trzy kluczowe funkcje AI w Google Analytics</h2>
+        
+        <div class="ai-feature">
+            <h3>🛒 Prawdopodobieństwo zakupu (Purchase probability)</h3>
+            <p>Przewiduje prawdopodobieństwo, że użytkownik dokona zakupu w ciągu najbliższych 7 dni. Ta funkcja pozwala identyfikować użytkowników o wysokim potencjale konwersji.</p>
+        </div>
+        
+        <div class="ai-feature">
+            <h3>📉 Prawdopodobieństwo rezygnacji (Churn probability)</h3>
+            <p>Określa prawdopodobieństwo, że użytkownik, który był aktywny w ciągu ostatnich 7 dni, nie będzie aktywny w ciągu kolejnych 7 dni. Pomaga to w retencji użytkowników.</p>
+        </div>
+        
+        <div class="ai-feature">
+            <h3>💰 Prognozowane przychody (Predicted revenue)</h3>
+            <p>Szacuje oczekiwane przychody z zakupów w ciągu najbliższych 28 dni od użytkowników aktywnych w ostatnich 28 dniach.</p>
+        </div>
+        
+        <h2>Wymagania do korzystania z funkcji AI</h2>
+        
+        <div class="requirement-box">
+            <h3>Minimalne wymagania dotyczące danych:</h3>
+            <ul>
+                <li><strong>Minimalna liczba użytkowników:</strong> W ciągu ostatnich 28 dni, przez co najmniej 7 kolejnych dni, muszą być zebrane dane co najmniej 1000 użytkowników powracających, którzy dokonali zakupu lub zrezygnowali</li>
+                <li><strong>Jakość modeli:</strong> Należy utrzymać jakość modeli predykcyjnych przez dłuższy okres poprzez ciągłe i precyzyjne zbieranie danych</li>
+                <li><strong>Wymagane zdarzenia:</strong> Konieczne jest zbieranie zdarzeń purchase (zalecane) lub in_app_purchase z parametrami value i currency</li>
+            </ul>
+        </div>
+        
+        <div class="featured-image">
+            <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677316cf0c3ae5ed95e71fbf_modelowanie-biznesowe-1024x551.png" alt="Modelowanie biznesowe w GA4">
+        </div>
+        
+        <h2>Jak skonfigurować raporty AI w GA4?</h2>
+        
+        <ol>
+            <li><strong>Wejdź w sekcję "Eksplorowanie"</strong> w panelu GA4</li>
+            <li><strong>Wybierz "Eksploracja swobodna"</strong> aby utworzyć nowy raport</li>
+            <li><strong>W ustawieniach wyczyść wszystkie wyjściowe dane</strong> tak by pole po prawej było puste</li>
+            <li><strong>Kliknij w "+ Segmenty"</strong> aby dodać nowy segment</li>
+            <li><strong>Wybierz "Utwórz nowy segment"</strong></li>
+            <li><strong>Przejdź do zakładki "Przewidywania"</strong></li>
+            <li><strong>Wybierz interesujący Cię raport predykcyjny</strong></li>
+        </ol>
+        
+        <div class="featured-image">
+            <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6792e4622cc7f9bd90fc5dd1_6792e2d10a90eb5bcc60c9f8_eksplorowanie.png" alt="Eksplorowanie w GA4">
+        </div>
+        
+        <h2>Dostępne raporty predykcyjne</h2>
+        
+        <ul>
+            <li><strong>Prawdopodobieństwo rezygnacji</strong> – prawdopodobieństwo, że użytkownik aktywny w ostatnich 7 dniach nie będzie aktywny w kolejnych 7 dniach</li>
+            <li><strong>Prawdopodobieństwo zakupu</strong> – prawdopodobieństwo, że użytkownik aktywny w ostatnich 28 dniach dokona zakupu w najbliższych 7 dniach</li>
+            <li><strong>Prawdopodobieństwo zakupu w aplikacji</strong> – dedykowane dla aplikacji mobilnych</li>
+            <li><strong>Prognozowane przychody</strong> – oczekiwane przychody w najbliższych 28 dniach od aktywnych użytkowników</li>
+        </ul>
+        
+        <h2>Jak wykorzystać te dane w praktyce?</h2>
+        
+        <p>Funkcje AI w GA4 otwierają nowe możliwości targetowania i personalizacji:</p>
+        
+        <ul>
+            <li><strong>Remarketing inteligentny:</strong> Targetuj użytkowników z wysokim prawdopodobieństwem zakupu specjalnymi ofertami</li>
+            <li><strong>Retencja proaktywna:</strong> Identyfikuj użytkowników zagrożonych rezygnacją i podejmuj działania zatrzymujące</li>
+            <li><strong>Optymalizacja budżetu:</strong> Skup wydatki reklamowe na użytkownikach o najwyższym prognozowanym przychodzie</li>
+            <li><strong>Personalizacja treści:</strong> Dostosuj komunikację do przewidywanych zachowań użytkowników</li>
+        </ul>
+        
+        <h2>Podsumowanie</h2>
+        
+        <p>Google Analytics 4, z jego zaawansowanymi funkcjami AI, oferuje narzędzia, które <strong>nie tylko analizują przeszłość, ale przewidują przyszłe działania użytkownika</strong>. Dzięki predykcyjnym widowniom i metrykom, marketerzy mają do dyspozycji narzędzia pozwalające na bardziej precyzyjne i strategiczne podejście do komunikacji z klientami.</p>
+        
+        <p>GA4 to już nie tylko narzędzie analityczne, ale nowy rozdział w marketingu i analizie danych, gdzie sztuczna inteligencja pomaga podejmować lepsze decyzje biznesowe.</p>
+        
+        <div class="article-cta">
+            <h3>Chcesz w pełni wykorzystać AI w Google Analytics?</h3>
+            <p>Pomożemy Ci skonfigurować i wykorzystać zaawansowane funkcje predykcyjne GA4 dla Twojego biznesu.</p>
+            <a href="../index.html#contact" class="btn-white">Skontaktuj się z nami</a>
+        </div>
+    </div>
+    
+    <footer style="background: #1a1a1a; padding: 60px 20px 40px; margin-top: 100px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2rem; margin-bottom: 20px; color: #fff;">Gotowy, aby rozpocząć projekt?</h2>
+                <p style="color: #999; margin-bottom: 30px;">Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online.</p>
+                <a href="../index.html#contact" style="display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; text-decoration: none; border-radius: 30px; font-weight: 600;">Kontakt</a>
+            </div>
+            <div style="text-align: center; padding-top: 40px; border-top: 1px solid #333;">
+                <img src="../assets/images/logo.png" alt="Collytics" style="height: 40px; margin-bottom: 20px;">
+                <p style="color: #666; font-size: 14px;">© Collytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../js/navigation.js"></script>
+</body>
+</html>
