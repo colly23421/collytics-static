@@ -6,14 +6,11 @@
     <title>Collytics - Innowacyjny marketing i technologie AI</title>
     <meta name="description" content="Specjalizujemy się w skutecznych kampaniach SEM. Tworzymy nowoczesne rozwiązania webowe.">
 
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Favicon Original.ico">
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/Favicon Original.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS dla nowej nawigacji -->
-    <link rel="stylesheet" href="css/navigation-updated-fix.css">
 
     <style>
         * {
@@ -39,6 +36,75 @@
             background-color: var(--dark-bg);
             color: var(--text-primary);
             overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 5%;
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+            display: block;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
+
+        .btn-outline {
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-menu {
+            background: transparent;
+            color: var(--text-primary);
         }
 
         /* Hero Section */
@@ -151,6 +217,18 @@
             align-items: center;
         }
 
+        .client-logo {
+            width: 100%;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
         .case-content h2 {
             font-size: 48px;
             margin-bottom: 16px;
@@ -238,6 +316,21 @@
             overflow: hidden;
         }
 
+        .blog-image::after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(20px, 20px); }
+        }
+
         .blog-content {
             padding: 24px;
         }
@@ -271,28 +364,35 @@
         }
 
         .footer-cta {
-            background: rgba(20, 35, 30, 0.5);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(60, 255, 170, 0.2);
-            box-shadow: inset 0 0 0 1px rgba(60, 255, 170, 0.25);
-            border-radius: 24px;
-            padding: 60px;
-            margin-bottom: 60px;
-            position: relative;
-            overflow: hidden;
-        }
+          /* Ustawienia tła - klucz do efektu "szkła" */
+          background: rgba(20, 35, 30, 0.5); /* Ciemne, lekko zielonkawe i półprzezroczyste tło */
+          backdrop-filter: blur(15px);      /* Efekt "oszronionego szkła" */
 
-        .footer-cta::before {
-            content: '';
-            position: absolute;
-            top: -80px;
-            left: -150px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0, 242, 234, 0.15) 0%, transparent 60%);
-            filter: blur(80px);
-            z-index: -1;
-        }
+          /* "Świecąca" ramka zrobiona za pomocą cienia i obramowania */
+          border: 1px solid rgba(60, 255, 170, 0.2);
+          box-shadow: inset 0 0 0 1px rgba(60, 255, 170, 0.25); /* Wewnętrzna, ostra linia światła */
+
+          /* Pozostałe style, które już mieliśmy */
+          border-radius: 24px;
+          padding: 60px;
+          margin-bottom: 60px;
+          position: relative;
+          overflow: hidden;
+      }
+
+    /* Poświata pozostaje bez zmian */
+    .footer-cta::before {
+        content: '';
+        position: absolute;
+        top: -80px;
+        left: -150px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(0, 242, 234, 0.15) 0%, transparent 60%);
+        filter: blur(80px);
+        z-index: -1;
+    }
+
 
         .footer-cta h2 {
             font-size: 36px;
@@ -348,63 +448,7 @@
             margin-top: 2px;
         }
 
-        /* Contact Section */
-        .contact-container {
-            display: flex;
-            gap: 50px;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .contact-column {
-            flex: 1;
-        }
-
-        .contact-column h2 {
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
-
-        .contact-column p {
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-
-        .contact-info p {
-            margin-bottom: 16px;
-            font-size: 16px;
-        }
-
-        .map-embed {
-            width: 100%;
-            height: 350px;
-            border-radius: 8px;
-            border: 0;
-            margin-top: 20px;
-        }
-
-        .podcast-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            max-width: 600px;
-            margin: 0 auto 60px auto;
-        }
-
         /* Responsive */
-        @media (max-width: 992px) {
-            .contact-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .contact-column {
-                width: 100%;
-            }
-        }
-
         @media (max-width: 768px) {
             .case-study-container {
                 grid-template-columns: 1fr;
@@ -418,60 +462,50 @@
             .services-pills {
                 padding: 0 20px;
             }
+
+
+
+
+
         }
+
+
+
+
+
     </style>
 </head>
 <body>
-    <!-- Navigation with dropdown menu -->
-    <nav class="navbar">
+    <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo main transparent.png" alt="Collytics">
-            </a>
-            <button class="menu-trigger" id="menuTrigger">Menu</button>
+            <div class="logo">
+                <img src="assets/images/logo main transparent.png" alt="Collytics" style="height: 40px;" onerror="this.src='assets/images/logo.png'">
+            </div>
+            <div class="nav-buttons">
+                <a href="#kontakt" class="btn btn-outline">Kontakt</a>
+                <button class="btn btn-menu">Menu</button>
+            </div>
         </div>
     </nav>
-
-    <!-- Dropdown Menu -->
-    <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-close" id="closeMenu">Close</button>
-        <div class="dropdown-menu-inner">
-            <div class="menu-section">
-                <a href="index.html">Home</a>
-                <a href="services.html">Serwis</a>
-                <a href="blog/">Blog</a>
-                <a href="about.html">O nas</a>
-                <a href="kontakt.html">Kontakt</a>
-            </div>
-            <div class="menu-divider"></div>
-            <div class="social-links">
-                <a href="https://facebook.com/collytics" title="Facebook"><img src="assets/images/facebook.png" alt="Facebook"></a>
-                <a href="https://linkedin.com/company/collytics" title="LinkedIn"><img src="assets/images/cons8-linkedin-500.svg" alt="LinkedIn"></a>
-                <a href="https://twitter.com/collytics" title="Twitter"><img src="assets/images/cons8-twitter-500.svg" alt="Twitter"></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Overlay -->
-    <div class="menu-overlay" id="menuOverlay"></div>
+    
 
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Marketing Intelligence.<br>Powered by AI.</h1>
-            <p class="hero-description">
-                Wykorzystujemy AI do analizy milionów danych rynkowych, dając Ci wgląd, który wyprzedza konkurencję. Od precyzyjnych kampanii SEM po inteligentne rozwiązania webowe – przekształcamy dane w strategie, które generują realny wzrost.
-            </p>
-            <a href="#kontakt" class="cta-button">Zbuduj swoją przewagę</a>
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+          <h1>Marketing Intelligence.<br>Powered by AI.</h1>
+          <p class="hero-description">
+              Wykorzystujemy AI do analizy milionów danych rynkowych, dając Ci wgląd, który wyprzedza konkurencję. Od precyzyjnych kampanii SEM po inteligentne rozwiązania webowe – przekształcamy dane w strategie, które generują realny wzrost.
+          </p>
+          <a href="#kontakt" class="cta-button">Zbuduj swoją przewagę</a>
 
-            <div class="services-pills">
-                <div class="pill">Analityka</div>
-                <div class="pill">Kampanie SEM</div>
-                <div class="pill">Marketing</div>
-                <div class="pill">Branding</div>
-            </div>
-        </div>
-    </section>
+          <div class="services-pills">
+              <div class="pill">Analityka</div>
+              <div class="pill">Kampanie SEM</div>
+              <div class="pill">Marketing</div>
+              <div class="pill">Branding</div>
+          </div>
+      </div>
+  </section>
 
     <section class="case-study">
         <div class="case-study-container">
@@ -483,62 +517,68 @@
                 <p class="case-description">
                     Zobacz, jak nowa, zorientowana na konwersję platforma B2B dla lidera branży weterynaryjnej, przyniosła 44% wzrostu ruchu na stronie w nieco ponad sześć tygodni.
                 </p>
-                <a href="use-case-lab-wet.html" class="btn-case">Szczegóły</a>
+               <a href="use-case-lab-wet.html" class="btn-case">Szczegóły</a>
             </div>
         </div>
     </section>
+
+
+
+
+
 
     <section class="blog-section">
-        <div class="blog-container">
-            <div class="blog-header">
-                <h2>Najnowsze<br>wpisy</h2>
-            </div>
-            <div class="blog-grid">
-                <a href="blog/jak-json-ld-dominuje-rynek-stomatologiczny-gliwice-case-study.html" style="text-decoration: none; color: inherit;">
-                    <article class="blog-card">
-                        <div class="blog-image" style="background-image: url('https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Case Study</span>
-                                <span>20 Sie, 25</span>
-                            </div>
-                            <h3 class="blog-title">Jak JSON-LD Decyduje o Widoczności w AI - Case Study Stomatologiczne</h3>
-                        </div>
-                    </article>
-                </a>
+          <div class="blog-container">
+              <div class="blog-header">
+                  <h2>Najnowsze<br>wpisy</h2>
+              </div>
+              <div class="blog-grid">
 
-                <a href="blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" style="text-decoration: none; color: inherit;">
-                    <article class="blog-card">
-                        <div class="blog-image" style="background-image: url('https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/688e0ded690333d20e7aa5be_Code_Generated_Image.png'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Tips & Tricks</span>
-                                <span>8 Wrz, 25</span>
-                            </div>
-                            <h3 class="blog-title">Sekretne dane Facebook Ads: Odkryj wzorce aktywności klientów</h3>
-                        </div>
-                    </article>
-                </a>
+                  <a href="blog/jak-json-ld-dominuje-rynek-stomatologiczny-gliwice-case-study.html" style="text-decoration: none; color: inherit;">
+                      <article class="blog-card">
+                          <div class="blog-image" style="background-image: url('https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg'); background-size: cover; background-position: center;">
+                          </div>
+                          <div class="blog-content">
+                              <div class="blog-meta">
+                                  <span>Case Study</span>
+                                  <span>20 Sie, 25</span>
+                              </div>
+                              <h3 class="blog-title">Jak JSON-LD Decyduje o Widoczności w AI - Case Study Stomatologiczne</h3>
+                          </div>
+                      </article>
+                  </a>
 
-                <a href="blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" style="text-decoration: none; color: inherit;">
-                    <article class="blog-card">
-                        <div class="blog-image" style="background-image: url('https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6876194656c6edf5453ea3b7_llms-txt-p-3200.jpeg'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>SEO</span>
-                                <span>25 Wrz, 25</span>
-                            </div>
-                            <h3 class="blog-title">Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?</h3>
-                        </div>
-                    </article>
-                </a>
-            </div>
-        </div>
-    </section>
+                  <a href="blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" style="text-decoration: none; color: inherit;">
+                      <article class="blog-card">
+                          <div class="blog-image" style="background-image: url('https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/688e0ded690333d20e7aa5be_Code_Generated_Image.png'); background-size: cover; background-position: center;">
+                          </div>
+                          <div class="blog-content">
+                              <div class="blog-meta">
+                                  <span>Tips & Tricks</span>
+                                  <span>8 Wrz, 25</span>
+                              </div>
+                              <h3 class="blog-title">Sekretne dane Facebook Ads: Odkryj wzorce aktywności klientów</h3>
+                          </div>
+                      </article>
+                  </a>
 
+                  <a href="blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" style="text-decoration: none; color: inherit;">
+                      <article class="blog-card">
+                          <div class="blog-image" style="background-image: url('https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6876194656c6edf5453ea3b7_llms-txt-p-3200.jpeg'); background-size: cover; background-position: center;">
+                          </div>
+                          <div class="blog-content">
+                              <div class="blog-meta">
+                                  <span>SEO</span>
+                                  <span>25 Wrz, 25</span>
+                              </div>
+                              <h3 class="blog-title">Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?</h3>
+                          </div>
+                      </article>
+                  </a>
+
+              </div>
+          </div>
+      </section>
     <section style="padding: 80px 5%; background: var(--dark-bg);">
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px; font-weight: 500;">
@@ -553,10 +593,68 @@
         </div>
     </section>
 
+    <style>
+        /* Style dla nowej sekcji kontaktowej */
+        .contact-container {
+            display: flex;
+            gap: 50px; /* Odstęp między kolumnami */
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-column {
+            flex: 1; /* Każda kolumna zajmuje tyle samo miejsca */
+        }
+
+        .contact-column h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .contact-column p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .contact-info p {
+            margin-bottom: 16px; /* Mniejszy margines dla danych adresowych */
+            font-size: 16px;
+        }
+
+        .map-embed {
+            width: 100%;
+            height: 350px;
+            border-radius: 8px;
+            border: 0;
+            margin-top: 20px;
+        }
+
+        /* Dostosowanie do urządzeń mobilnych */
+        @media (max-width: 992px) {
+            .contact-container {
+                flex-direction: column; /* Kolumny jedna pod drugą */
+                text-align: center;
+            }
+            .contact-column {
+                width: 100%;
+            }
+            .contact-column h2,
+            .contact-column p {
+                text-align: center;
+            }
+            .contact-info {
+                text-align: center;
+            }
+        }
+    </style>
+
     <section id="kontakt" style="padding: 100px 5%; background: var(--dark-secondary);">
         <div class="contact-container">
             <div class="contact-column">
-                <h2>Porozmawiajmy o Twoim projekcie</h2>
+                <h2>Porozmawiajmy o Twoim Projekcie</h2>
                 <p>
                     Wypełnij formularz, a my odezwiemy się, aby omówić, jak możemy pomóc Ci rosnąć. Jesteśmy dostępni również w języku angielskim.
                 </p>
@@ -577,7 +675,7 @@
             </div>
 
             <div class="contact-column">
-                <h2>Nasze biuro</h2>
+                <h2>Nasze Biuro</h2>
                 <div class="contact-info">
                     <p>
                         <strong>Collytics OÜ</strong><br>
@@ -601,31 +699,33 @@
     </section>
 
     <section id="podcast" style="padding: 100px 5%; background: var(--dark-secondary);">
-        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; font-weight: 600;">Posłuchaj naszego podcastu</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 60px; font-size: 1.1rem;">
-                Rozmawiamy o marketingu, analityce i technologiach.
-            </p>
+      <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; font-weight: 600;">Posłuchaj naszego podcastu</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 60px; font-size: 1.1rem;">
+              Rozmawiamy o marketingu, analityce i technologiach.
+          </p>
 
-            <div class="podcast-grid">
-                <div class="podcast-card">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6xqQCMvuJPKUQPiTu69jj1?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
+          <div class="podcast-grid">
 
-                <div class="podcast-card">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6tAcHgHFh3omhmxG3wFKE3?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
+              <div class="podcast-card">
+                  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6xqQCMvuJPKUQPiTu69jj1?utm_source=generator" width="50%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
 
-                <div class="podcast-card">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/1xOWdlZ4pDe2YK2LG5pjN1?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-            </div>
+              <div class="podcast-card">
+                  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6tAcHgHFh3omhmxG3wFKE3?utm_source=generator" width="50%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
 
-            <div class="podcast-cta">
-                <a href="https://open.spotify.com/show/5XI8Rescgn7ss1Li5nj8No" rel="nofollow" target="_blank" class="cta-button">Zobacz wszystkie odcinki</a>
-            </div>
-        </div>
-    </section>
+              <div class="podcast-card">
+                  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/1xOWdlZ4pDe2YK2LG5pjN1?utm_source=generator" width="50%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+
+          </div>
+
+          <div class="podcast-cta">
+              <a href="https://open.spotify.com/show/5XI8Rescgn7ss1Li5nj8No" rel="nofollow" target="_blank" class="cta-button">Zobacz wszystkie odcinki</a>
+          </div>
+      </div>
+  </section>
 
     <footer>
         <div class="footer-container">
@@ -637,8 +737,8 @@
                 <a href="#kontakt" class="cta-button">Kontakt</a>
             </div>
 
-            <div class="logo" style="display: flex; justify-content: center; margin-bottom: 24px;">
-                <img src="assets/images/logo main transparent.png" alt="Collytics" style="height: 40px;">
+            <div class="logo" style="justify-content: center; margin-bottom: 24px;">
+                <img src="assets/images/logo main transparent.png" alt="Collytics" style="height: 40px;" onerror="this.src='assets/images/logo.png'">
             </div>
             <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
 
@@ -648,53 +748,69 @@
         </div>
     </footer>
 
-    <!-- JavaScript dla menu -->
-    <script src="js/menu.js"></script>
-
-    <!-- Pozostałe skrypty -->
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+     // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            alert('Dziękujemy za zgłoszenie! Skontaktujemy się wkrótce.');
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
+    });
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    // Hide/show ENTIRE navigation on scroll
+    let lastScrollTop = 0;
+    const nav = document.querySelector('nav');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Observe elements
-        document.querySelectorAll('.blog-card, .case-study-container').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Scrolling down - hide entire nav
+            nav.style.transform = 'translateY(-100%)';
+            nav.style.transition = 'transform 0.3s ease';
+        } else {
+            // Scrolling up - show entire nav
+            nav.style.transform = 'translateY(0)';
+            nav.style.transition = 'transform 0.3s ease';
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // Form submission
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Dziękujemy za zgłoszenie! Skontaktujemy się wkrótce.');
+    });
+
+    // Add animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
         });
+    }, observerOptions);
+
+    // Observe elements
+    document.querySelectorAll('.blog-card, .case-study-container').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
     </script>
 </body>
 </html>

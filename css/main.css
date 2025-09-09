@@ -23,3 +23,11 @@ footer { /* style stopki */ }
 /* Komponenty */
 .btn { /* style przycisków */ }
 .container { /* style kontenerów */ }
+
+.podcast-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;                /* Zwiększony odstęp między podcastami */
+    max-width: 600px;         /* ZNACZNIE zwęża całą sekcję */
+    margin: 0 auto 60px auto; /* Centruje i utrzymuje duży odstęp od przycisku */
+}

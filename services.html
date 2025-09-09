@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usługi - Collytics</title>
+    <link rel="stylesheet" href="css/navigation-updated-fix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; margin: 0; }
+        .content { max-width: 1200px; margin: 120px auto; padding: 0 20px; }
+        h1 { font-size: 3rem; margin-bottom: 2rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 3rem; }
+        .service-card { background: #1a1a1a; padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .service-card h3 { color: #6366f1; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo main transparent.png" alt="Collytics">
+            </a>
+            <button class="menu-trigger" id="menuTrigger">Menu</button>
+        </div>
+    </nav>
+    
+    <div class="dropdown-menu" id="dropdownMenu">
+        <button class="dropdown-close" id="closeMenu">Close</button>
+        <div class="dropdown-menu-inner">
+            <div class="menu-section">
+                <a href="index.html">Home</a>
+                <a href="services.html">Serwis</a>
+                <a href="blog/">Blog</a>
+                <a href="about.html">O nas</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
+    <div class="content">
+        <h1>Nasze usługi</h1>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Analityka</h3>
+                <p>Zaawansowana analiza danych dla lepszych decyzji biznesowych.</p>
+            </div>
+            <div class="service-card">
+                <h3>Kampanie SEM</h3>
+                <p>Skuteczne kampanie reklamowe w Google Ads i Facebook Ads.</p>
+            </div>
+            <div class="service-card">
+                <h3>Marketing</h3>
+                <p>Kompleksowe strategie marketingowe oparte na danych.</p>
+            </div>
+            <div class="service-card">
+                <h3>Branding</h3>
+                <p>Budowanie silnej marki w środowisku cyfrowym.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/menu.js"></script>
+</body>
+</html>

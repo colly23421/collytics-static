@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/navigation-updated.css">
+    <style>
+        body { background: #1a1a1a; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="assets/images/logo main transparent.png" alt="Collytics">
+            </a>
+            <button class="menu-trigger" id="menuTrigger">Menu</button>
+        </div>
+    </nav>
+    
+    <div class="dropdown-menu" id="dropdownMenu">
+        <button class="dropdown-close" id="closeMenu">Close</button>
+        <div class="dropdown-menu-inner">
+            <a href="/">Home</a>
+            <a href="/services.html">Serwis</a>
+            <a href="/blog/">Blog</a>
+        </div>
+    </div>
+    
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
+    <script src="js/menu.js"></script>
+</body>
+</html>

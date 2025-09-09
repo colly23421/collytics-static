@@ -26,20 +26,44 @@
         .article-content strong { color: #fff; font-weight: 600; }
         .code-prompt { background: #1a1a1a; border: 1px solid #333; padding: 20px; margin: 20px 0; border-radius: 8px; font-family: 'Courier New', Courier, monospace; }
     </style>
-</head>
+<link rel="stylesheet" href="../css/navigation-updated-fix.css"></head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html"><img src="../assets/images/logo.png" alt="Collytics" style="height: 28px;"></a>
-            <div class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="../index.html#services">Usługi</a>
-                <a href="../index.html#about">O nas</a>
-                <a href="../blog/">Blog</a>
-                <a href="../index.html#contact">Kontakt</a>
-            </div>
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo main transparent.png" alt="Collytics">
+            </a>
+            <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
     </nav>
+    
+    <div class="dropdown-menu" id="dropdownMenu">
+        <button class="dropdown-close" id="closeMenu">Close</button>
+        <div class="dropdown-menu-inner">
+            <div class="menu-section">
+                <a href="../index.html">Home</a>
+                <a href="../services.html">Serwis</a>
+                <a href="../blog/index.html">Blog</a>
+                <a href="../about.html">O nas</a>
+                <a href="../kontakt.html">Kontakt</a>
+            </div>
+            <div class="menu-divider"></div>
+            <div class="social-links">
+                <a href="https://facebook.com/collytics" title="Facebook">
+                    <img src="../assets/images/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://linkedin.com/company/collytics" title="LinkedIn">
+                    <img src="../assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
+                </a>
+                <a href="https://twitter.com/collytics" title="Twitter">
+                    <img src="../assets/images/cons8-twitter-500.svg" alt="Twitter">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
 
     <article class="article-hero">
         <div class="article-container">
@@ -113,22 +137,20 @@
         </div>
     </div>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-cta">
-                <h2>Gotowy, aby rozpocząć projekt?</h2>
-                <p>Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.</p>
-                <a href="../index.html#kontakt" class="cta-button">Kontakt</a>
-            </div>
-            
-            <div class="logo" style="justify-content: center; margin-bottom: 24px;">
-                <img src="../assets/images/logo.png" alt="Collytics" style="height: 40px;">
-            </div>
-            
-            <p style="color: #666; text-align: center;">© Collytics. All rights reserved. Polityka Prywatności</p>
-        </div>
-    </footer>
+    
 
     <script src="../js/navigation.js"></script>
+<script src="../js/menu.js"></script>
+    <footer style="padding: 60px 5%; background: #141414; margin-top: 100px;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <div style="background: rgba(20, 35, 30, 0.5); backdrop-filter: blur(15px); border: 1px solid rgba(60, 255, 170, 0.2); border-radius: 24px; padding: 60px; margin-bottom: 60px;">
+                <h2 style="font-size: 36px; margin-bottom: 16px; color: #fff;">Gotowy, aby rozpocząć projekt?</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 32px;">Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online.</p>
+                <a href="../kontakt.html" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; text-decoration: none; border-radius: 30px; font-weight: 600;">Kontakt</a>
+            </div>
+            <img src="../assets/images/logo main transparent.png" alt="Collytics" style="height: 40px; margin-bottom: 20px;">
+            <p style="color: #94969c;">© Collytics. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
