@@ -1,0 +1,86 @@
+
+        </div>
+    </div>
+
+    <!-- Footer z pełną zawartością -->
+    <footer style="background: #0a0a0a; border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 60px 20px 40px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <!-- Kolumna 1 - O nas -->
+                <div>
+                    <h3 style="color: #fff; margin-bottom: 20px; font-size: 1.2rem;">Collytics</h3>
+                    <p style="color: #9ca3af; line-height: 1.6;">Twój partner w analizie danych i marketingu. Specjalizujemy się w skutecznych kampaniach SEM, tworzeniu nowoczesnych rozwiązań webowych i aplikacji.</p>
+                </div>
+                
+                <!-- Kolumna 2 - Serwis -->
+                <div>
+                    <h3 style="color: #fff; margin-bottom: 20px; font-size: 1.2rem;">Serwis</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="../services.html" style="color: #9ca3af; text-decoration: none;">Analityka</a></li>
+                        <li style="margin-bottom: 10px;"><a href="../services.html" style="color: #9ca3af; text-decoration: none;">Kampanie SEM</a></li>
+                        <li style="margin-bottom: 10px;"><a href="../services.html" style="color: #9ca3af; text-decoration: none;">Marketing</a></li>
+                        <li style="margin-bottom: 10px;"><a href="../services.html" style="color: #9ca3af; text-decoration: none;">Branding</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Kolumna 3 - Kontakt -->
+                <div>
+                    <h3 style="color: #fff; margin-bottom: 20px; font-size: 1.2rem;">Kontakt</h3>
+                    <p style="color: #9ca3af; margin-bottom: 10px;">Marszałkowska Centre</p>
+                    <p style="color: #9ca3af; margin-bottom: 10px;">ul. Marszałkowska 126/134</p>
+                    <p style="color: #9ca3af; margin-bottom: 10px;">00-008 Warszawa</p>
+                    <p style="color: #9ca3af;"><a href="mailto:hello@collytics.io" style="color: #818cf8; text-decoration: none;">hello@collytics.io</a></p>
+                </div>
+                
+                <!-- Kolumna 4 - Social Media -->
+                <div>
+                    <h3 style="color: #fff; margin-bottom: 20px; font-size: 1.2rem;">Śledź nas</h3>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="https://facebook.com/collytics" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <img src="../assets/images/facebook.png" alt="Facebook" style="width: 20px; height: 20px;">
+                        </a>
+                        <a href="https://linkedin.com/company/collytics" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <img src="../assets/images/cons8-linkedin-500.svg" alt="LinkedIn" style="width: 20px; height: 20px;">
+                        </a>
+                        <a href="https://twitter.com/collytics" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <img src="../assets/images/cons8-twitter-500.svg" alt="Twitter" style="width: 20px; height: 20px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px; text-align: center;">
+                <p style="color: #6b7280; margin-bottom: 10px;">&copy; 2025 Collytics. All rights reserved. Polityka Prywatności</p>
+                <p style="color: #6b7280; font-size: 0.85rem;">Twój partner w analizie danych i marketingu</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript dla menu - inline zamiast zewnętrznego pliku -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuTrigger = document.getElementById("menuTrigger");
+            const dropdownMenu = document.getElementById("dropdownMenu");
+            const menuOverlay = document.getElementById("menuOverlay");
+            const closeMenu = document.getElementById("closeMenu");
+            
+            function toggleMenu() {
+                if (menuTrigger) menuTrigger.classList.toggle("active");
+                if (dropdownMenu) dropdownMenu.classList.toggle("active");
+                if (menuOverlay) menuOverlay.classList.toggle("active");
+            }
+            
+            if(menuTrigger) menuTrigger.addEventListener("click", toggleMenu);
+            if(closeMenu) closeMenu.addEventListener("click", toggleMenu);
+            if(menuOverlay) menuOverlay.addEventListener("click", toggleMenu);
+            
+            document.addEventListener("keydown", function(e) {
+                if (e.key === "Escape" && dropdownMenu && dropdownMenu.classList.contains("active")) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
