@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/navigation-updated.css">
     <style>
-        body { background: #1a1a1a; }
+        body { background: #000; color: white; }
+        #menu { display: none; position: fixed; top: 0; right: 0; width: 300px; height: 100vh; background: red; }
+        #menu.show { display: block; }
     </style>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/hero-gradient.css">
@@ -22,26 +23,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="" class="logo">
-                <img src="assets/images/logo main transparent.png" alt="Collytics">
-            </a>
-            <button class="menu-trigger" id="menuTrigger">Menu</button>
-        </div>
-    </nav>
-    
-    <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-close" id="closeMenu">Close</button>
-        <div class="dropdown-menu-inner">
-            <a href="">Home</a>
-            <a href="services.html">Serwis</a>
-            <a href="blog/index.html">Blog</a>
-        </div>
-    </div>
-    
-    <div class="menu-overlay" id="menuOverlay"></div>
-    
-    <script src="js/menu.js"></script>
+    <button onclick="document.getElementById('menu').classList.toggle('show')">TEST MENU</button>
+    <div id="menu">MENU DZIAŁA!</div>
 </body>
 </html>

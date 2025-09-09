@@ -3,38 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Search Console: Kompleksowe narzędzie nie tylko dla webmasterów | Collytics</title>
-    <meta name="description" content="Poznaj możliwości Google Search Console - bezpłatnego narzędzia do monitorowania i optymalizacji widoczności w Google.">
+    <title>Google Search Console - Kompletny przewodnik SEO 2024 | Collytics</title>
+    <meta name="description" content="Jak skutecznie używać Google Search Console do monitorowania SEO, analizy ruchu i optymalizacji pozycjonowania. Praktyczny poradnik z przykładami.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/navigation.css">
     <link rel="stylesheet" href="../css/main.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; line-height: 1.8; }
-        .article-hero { margin-top: 70px; padding: 80px 20px 40px; background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%); }
-        .article-container { max-width: 800px; margin: 0 auto; }
-        .article-meta { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; color: rgba(255,255,255,0.6); font-size: 14px; }
-        .category-badge { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #ffffff; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; }
-        .article-hero h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 30px; background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .article-hero .lead { font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.6; }
-        .featured-image { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        .featured-image img { width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .article-content { max-width: 800px; margin: 0 auto; padding: 0 20px 80px; }
-        .article-content h2 { font-size: 1.8rem; font-weight: 700; margin: 50px 0 20px; color: #ffffff; }
-        .article-content h3 { font-size: 1.4rem; font-weight: 600; margin: 35px 0 15px; color: #ffffff; }
-        .article-content p { font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.85); margin-bottom: 20px; }
-        .article-content ul, .article-content ol { margin: 20px 0 30px 20px; }
-        .article-content li { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 12px; line-height: 1.8; }
-        .article-content strong { color: #ffffff; font-weight: 600; }
-        .feature-box { background: #141414; border-radius: 12px; padding: 30px; margin: 30px 0; border: 1px solid rgba(255,255,255,0.05); }
-        .feature-box h3 { color: #667eea; margin-bottom: 15px; }
-        .article-cta { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 50px 35px; border-radius: 16px; margin: 60px 0; text-align: center; }
-        .article-cta h3 { font-size: 1.8rem; margin-bottom: 15px; color: #ffffff; }
-        .article-cta p { font-size: 1rem; margin-bottom: 25px; color: #ffffff; opacity: 0.95; }
-        .btn-white { display: inline-block; padding: 12px 35px; background: #ffffff; color: #764ba2; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; }
-        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-    </style>
-<link rel="stylesheet" href="../css/navigation-updated-fix.css"></head>
+    <link rel="stylesheet" href="../css/hero-gradient.css">
+    <link rel="stylesheet" href="../css/mode.css">
+    <link rel="stylesheet" href="../css/navigation-updated-fix.css">
+    <link rel="stylesheet" href="../css/navigation-updated.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+<style>
+/* Reset i podstawowe */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #0a0a0a !important;
+    color: #ffffff !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    line-height: 1.6 !important;
+}
+
+/* Nawigacja */
+nav, .navbar, header {
+    background: rgba(10, 10, 10, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+/* Menu dropdown */
+.dropdown-menu {
+    background: rgba(17, 17, 17, 0.98) !important;
+}
+
+.dropdown-menu a, .menu-section a {
+    color: #FFFFFF !important;
+    opacity: 0.9;
+}
+
+.dropdown-menu a:hover {
+    color: #FFFFFF !important;
+    opacity: 1;
+}
+
+.dropdown-close {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
+}
+
+/* Przyciski */
+.menu-trigger, button, .btn, .cta-button {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
+    opacity: 0.9;
+}
+
+.menu-trigger:hover, button:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #FFFFFF !important;
+    opacity: 1;
+}
+
+/* Nagłówki */
+h1 {
+    color: #FFFFFF !important;
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
+}
+
+h2 {
+    color: #FFFFFF !important;
+    font-size: 1.75rem !important;
+    margin: 30px 0 15px !important;
+}
+
+h3 {
+    color: #FFFFFF !important;
+    font-size: 1.35rem !important;
+    margin: 25px 0 12px !important;
+}
+
+/* Tekst */
+p, li, td, span {
+    color: #a1a1aa !important;
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+}
+
+/* Tagi/kategorie */
+.tag, .category, .badge, .category-badge {
+    background: rgba(99, 102, 241, 0.1) !important;
+    border: 1px solid rgba(99, 102, 241, 0.3) !important;
+    color: #FFFFFF !important;
+    padding: 6px 16px !important;
+    border-radius: 50px !important;
+    font-size: 0.875rem !important;
+}
+
+/* Linki */
+a {
+    color: #6366f1 !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #818cf8 !important;
+}
+
+/* POPRAWKA HERO SECTION */
+.article-hero {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 60px 20px !important;
+    background: transparent !important;
+}
+
+.article-container {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+.article-meta {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-bottom: 20px !important;
+    color: #a1a1aa !important;
+}
+
+.lead {
+    color: #a1a1aa !important;
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+}
+
+/* POPRAWKA OBRAZÓW */
+.featured-image {
+    width: 100% !important;
+    max-width: 800px !important;
+    height: 400px !important;
+    overflow: hidden !important;
+    margin: 40px auto !important;
+    display: block !important;
+}
+
+.featured-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Content area */
+.article-content {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    padding: 60px 20px !important;
+}
+
+.article-content .featured-image {
+    margin: 40px 0 !important;
+}
+
+/* Feature Box */
+.feature-box {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 25px !important;
+    margin: 25px 0 !important;
+    border-radius: 12px !important;
+}
+
+.feature-box h3 {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+}
+
+/* BREADCRUMBS */
+.breadcrumbs {
+    background: #1a1a1a !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 25px 0 !important;
+    margin-top: 80px !important;
+    margin-bottom: 40px !important;
+}
+
+.breadcrumbs-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+.breadcrumbs-list {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    font-size: 0.95rem !important;
+}
+
+.breadcrumbs-list a {
+    color: #6366f1 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    border-bottom: 1px solid transparent !important;
+}
+
+.breadcrumbs-list a:hover {
+    color: #818cf8 !important;
+    border-bottom: 1px solid #818cf8 !important;
+}
+
+.breadcrumbs-separator {
+    color: #6b7280 !important;
+    font-size: 1.1rem !important;
+}
+
+.breadcrumbs-current {
+    color: #FFFFFF !important;
+    font-weight: 500 !important;
+}
+
+/* Article CTA */
+.article-cta {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%) !important;
+    border: 1px solid rgba(99, 102, 241, 0.3) !important;
+    padding: 40px !important;
+    border-radius: 16px !important;
+    margin: 50px 0 !important;
+    text-align: center !important;
+}
+
+.article-cta h3 {
+    margin-bottom: 15px !important;
+}
+
+.btn-white {
+    background: #FFFFFF !important;
+    color: #0a0a0a !important;
+    padding: 14px 32px !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
+    margin-top: 20px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-white:hover {
+    background: #f0f0f0 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Footer */
+footer {
+    background: #111111 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 60px 5% 40px !important;
+}
+
+footer h2 {
+    color: #FFFFFF !important;
+    font-size: 2rem !important;
+    margin-bottom: 20px !important;
+}
+
+footer p {
+    color: #a1a1aa !important;
+}
+
+/* FOOTER KONTAKT BUTTON - BIAŁY */
+footer a[href="../kontakt.html"],
+footer a[href*="kontakt"] {
+    background: #FFFFFF !important;
+    color: #0a0a0a !important;
+    padding: 16px 40px !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+footer a[href="../kontakt.html"]:hover,
+footer a[href*="kontakt"]:hover {
+    background: #f0f0f0 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 1.8rem !important; }
+    h2 { font-size: 1.4rem !important; }
+    h3 { font-size: 1.2rem !important; }
+    p, li { font-size: 0.95rem !important; }
+
+    .article-hero {
+        padding: 40px 20px !important;
+    }
+
+    .featured-image {
+        height: 250px !important;
+    }
+}
+</style>
+
+</head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
@@ -44,7 +322,7 @@
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
     </nav>
-    
+
     <div class="dropdown-menu" id="dropdownMenu">
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
@@ -69,10 +347,22 @@
             </div>
         </div>
     </div>
-    
+
     <div class="menu-overlay" id="menuOverlay"></div>
-    
-    
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <div class="breadcrumbs-list">
+                <a href="../index.html">Strona główna</a>
+                <span class="breadcrumbs-separator">→</span>
+                <a href="index.html">Blog</a>
+                <span class="breadcrumbs-separator">→</span>
+                <span class="breadcrumbs-current">Artykuł</span>
+            </div>
+        </div>
+    </div>
+
     <div class="article-hero">
         <div class="article-container">
             <div class="article-meta">
@@ -85,88 +375,87 @@
             <p class="lead">Google Search Console to bezpłatne narzędzie oferowane przez Google, które umożliwia monitorowanie i optymalizację widoczności stron internetowych w bezpłatnych wynikach wyszukiwania Google.</p>
         </div>
     </div>
-    
+
     <div class="featured-image">
         <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677314625a8000f04b5e7582_google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow.jpeg" alt="Google Search Console Dashboard">
     </div>
-    
+
     <div class="article-content">
         <p>Google Search Console (GSC) to nieoceniona platforma dla właścicieli stron internetowych, SEO specjalistów oraz marketerów, którzy chcą zrozumieć, jak ich witryny radzą sobie w wyszukiwarce Google oraz jak można poprawić ich pozycjonowanie.</p>
-        
+
         <h2>Główne funkcje Google Search Console</h2>
-        
+
         <div class="feature-box">
             <h3>📊 Monitorowanie ruchu i wyników w wyszukiwarce</h3>
             <p>GSC dostarcza szczegółowych danych na temat tego, jak użytkownicy trafiają na naszą stronę za pośrednictwem Google. Można zobaczyć, jakie zapytania (słowa kluczowe) przyciągają ruch, które strony są najczęściej wyświetlane i klikane oraz jak wyglądają dane na temat wskaźnika CTR (Click-Through Rate).</p>
         </div>
-        
+
         <div class="feature-box">
             <h3>🔍 Indeksowanie strony</h3>
             <p>Za pomocą GSC możemy sprawdzić, które strony naszej witryny zostały zaindeksowane przez Google, a które napotkały problemy techniczne uniemożliwiające indeksowanie. Możemy również przesłać do Google mapy witryny XML, które ułatwiają algorytmom Google szybkie i poprawne indeksowanie wszystkich podstron.</p>
         </div>
-        
+
         <div class="feature-box">
             <h3>🔧 Wykrywanie i naprawa problemów</h3>
             <p>Google Search Console informuje o potencjalnych problemach technicznych na stronie, takich jak błędy w indeksowaniu, niedziałające linki (404), problemy z mobilnością czy nieodpowiednia optymalizacja stron pod kątem wyświetlania na urządzeniach mobilnych.</p>
         </div>
-        
+
         <div class="feature-box">
             <h3>🔗 Analiza linków przychodzących (backlinków)</h3>
             <p>Narzędzie pokazuje, które strony zewnętrzne linkują do naszej witryny. Backlinki są jednym z kluczowych czynników wpływających na pozycjonowanie strony, dlatego ich monitorowanie oraz analiza mogą pomóc w budowie silnego profilu linków.</p>
         </div>
-        
+
         <div class="feature-box">
             <h3>📱 Optymalizacja mobilna</h3>
             <p>Google kładzie duży nacisk na responsywność stron. GSC oferuje raporty dotyczące problemów z wyświetlaniem strony na smartfonach i tabletach, co pozwala na wprowadzenie niezbędnych optymalizacji.</p>
         </div>
-        
+
         <div class="feature-box">
             <h3>🔒 Sprawdzanie stanu bezpieczeństwa</h3>
             <p>Google Search Console informuje właścicieli stron o potencjalnych zagrożeniach, takich jak złośliwe oprogramowanie czy ataki hakerskie, które mogą wpływać na bezpieczeństwo użytkowników odwiedzających witrynę.</p>
         </div>
-        
+
         <h2>Dlaczego warto korzystać z Google Search Console?</h2>
-        
+
         <p>Google Search Console to nie tylko narzędzie analityczne, ale również potężna platforma do zarządzania i poprawy widoczności strony w wynikach wyszukiwania. Korzystanie z GSC umożliwia:</p>
-        
+
         <ul>
             <li><strong>Zwiększenie widoczności witryny:</strong> Dzięki analizie wyników wyszukiwania oraz optymalizacji technicznej można skutecznie poprawić pozycję strony na liście wyników Google.</li>
             <li><strong>Rozwiązywanie problemów technicznych:</strong> GSC pozwala na szybkie zidentyfikowanie problemów związanych z indeksowaniem, bezpieczeństwem czy kompatybilnością mobilną.</li>
             <li><strong>Śledzenie skuteczności działań SEO:</strong> Dzięki szczegółowym raportom można monitorować, jak wprowadzane zmiany wpływają na ruch i widoczność strony.</li>
             <li><strong>Integracja z Google Analytics:</strong> Przy integracji GSC z GA4 część danych z GSC możemy wyświetlać w raportach w Google Analytics.</li>
         </ul>
-        
+
         <h2>Jak zacząć korzystać z Google Search Console?</h2>
-        
+
         <ol>
             <li><strong>Dodaj swoją stronę do GSC:</strong> Wymaga to posiadania konta Google oraz potwierdzenia, że jesteśmy właścicielami witryny poprzez jedną z metod (np. umieszczenie pliku HTML na serwerze, dodanie kodu do domeny, weryfikację za pomocą Google Analytics).</li>
             <li><strong>Zgłoś mapę witryny:</strong> Po potwierdzeniu własności warto przesłać mapę witryny (sitemap.xml), co ułatwi Google zrozumienie struktury strony i przyspieszy proces indeksowania.</li>
             <li><strong>Monitoruj wyniki:</strong> Regularne sprawdzanie raportów i wprowadzanie poprawek pozwala na utrzymanie strony w jak najlepszej kondycji pod kątem SEO.</li>
         </ol>
-        
+
         <h2>Podsumowanie</h2>
-        
+
         <p>Google Search Console to jedno z <strong>kluczowych narzędzi w arsenale każdego webmastera i specjalisty SEO</strong>. Umożliwia kompleksowe monitorowanie wyników witryny w wyszukiwarce Google, analizę ruchu, identyfikację problemów technicznych i optymalizację strony pod kątem wyszukiwarek.</p>
-        
+
         <p>Dzięki regularnemu korzystaniu z GSC można znacząco poprawić widoczność strony w wynikach wyszukiwania, co przekłada się na większy ruch i lepsze wyniki biznesowe.</p>
-        
+
         <div class="article-cta">
             <h3>Potrzebujesz pomocy z Google Search Console?</h3>
             <p>Pomożemy Ci w konfiguracji i optymalizacji GSC, aby maksymalnie wykorzystać potencjał Twojej strony w wynikach wyszukiwania.</p>
             <a href="../index.html#contact" class="btn-white">Skontaktuj się z nami</a>
         </div>
     </div>
-    
-    
-    
+
     <script src="../js/navigation.js"></script>
-<script src="../js/menu.js"></script>
+    <script src="../js/menu.js"></script>
+
     <footer style="padding: 60px 5%; background: #141414; margin-top: 100px;">
         <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
             <div style="background: rgba(20, 35, 30, 0.5); backdrop-filter: blur(15px); border: 1px solid rgba(60, 255, 170, 0.2); border-radius: 24px; padding: 60px; margin-bottom: 60px;">
                 <h2 style="font-size: 36px; margin-bottom: 16px; color: #fff;">Gotowy, aby rozpocząć projekt?</h2>
                 <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 32px;">Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online.</p>
-                <a href="../kontakt.html" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; text-decoration: none; border-radius: 30px; font-weight: 600;">Kontakt</a>
+                <a href="../kontakt.html">Kontakt</a>
             </div>
             <img src="../assets/images/logo main transparent.png" alt="Collytics" style="height: 40px; margin-bottom: 20px;">
             <p style="color: #94969c;">© Collytics. All rights reserved.</p>

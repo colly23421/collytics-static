@@ -1,0 +1,66 @@
+/* GLOBALNA TYPOGRAFIA - SPÓJNA DLA CAŁEJ STRONY */
+:root {
+    /* Rozmiary czcionek */
+    --font-h1: 2.5rem;
+    --font-h2: 1.75rem;
+    --font-h3: 1.35rem;
+    --font-h4: 1.15rem;
+    --font-body: 1rem;
+    --font-small: 0.875rem;
+    
+    /* Rozmiary mobile */
+    --font-h1-mobile: 1.8rem;
+    --font-h2-mobile: 1.4rem;
+    --font-h3-mobile: 1.2rem;
+    --font-body-mobile: 0.95rem;
+    
+    /* Wysokość linii */
+    --line-height-heading: 1.2;
+    --line-height-body: 1.7;
+}
+
+/* Zastosowanie dla wszystkich stron */
+h1 {
+    font-size: var(--font-h1) !important;
+    line-height: var(--line-height-heading) !important;
+    font-weight: 700 !important;
+    margin-bottom: 20px !important;
+}
+
+h2 {
+    font-size: var(--font-h2) !important;
+    line-height: var(--line-height-heading) !important;
+    font-weight: 600 !important;
+    margin: 30px 0 15px !important;
+}
+
+h3 {
+    font-size: var(--font-h3) !important;
+    line-height: var(--line-height-heading) !important;
+    font-weight: 600 !important;
+    margin: 25px 0 12px !important;
+}
+
+h4 {
+    font-size: var(--font-h4) !important;
+    line-height: var(--line-height-heading) !important;
+    font-weight: 500 !important;
+    margin: 20px 0 10px !important;
+}
+
+p, li, td, span, div {
+    font-size: var(--font-body) !important;
+    line-height: var(--line-height-body) !important;
+}
+
+small, .small-text {
+    font-size: var(--font-small) !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    h1 { font-size: var(--font-h1-mobile) !important; }
+    h2 { font-size: var(--font-h2-mobile) !important; }
+    h3 { font-size: var(--font-h3-mobile) !important; }
+    p, li, td, span { font-size: var(--font-body-mobile) !important; }
+}

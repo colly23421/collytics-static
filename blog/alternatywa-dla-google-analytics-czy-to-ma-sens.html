@@ -3,37 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alternatywa dla Google Analytics – czy to ma sens? | Collytics</title>
-    <meta name="description" content="Czy warto szukać alternatywy dla Google Analytics? Poznaj zalety, wady i najlepsze alternatywne narzędzia analityczne.">
+    <title>AI w Google Analytics 4 - Przewidywanie zachowań użytkowników | Collytics</title>
+    <meta name="description" content="Odkryj możliwości sztucznej inteligencji w GA4: prognozowanie przychodów, prawdopodobieństwo zakupu i analiza rezygnacji. Praktyczny przewodnik po funkcjach AI.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/navigation.css">
     <link rel="stylesheet" href="../css/main.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; line-height: 1.8; }
-        .article-hero { margin-top: 70px; padding: 80px 20px 40px; background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%); }
-        .article-container { max-width: 800px; margin: 0 auto; }
-        .article-meta { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; color: rgba(255,255,255,0.6); font-size: 14px; }
-        .category-badge { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #ffffff; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; }
-        .article-hero h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 30px; background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .article-hero .lead { font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.6; }
-        .featured-image { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        .featured-image img { width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .article-content { max-width: 800px; margin: 0 auto; padding: 0 20px 80px; }
-        .article-content h2 { font-size: 1.8rem; font-weight: 700; margin: 50px 0 20px; color: #ffffff; }
-        .article-content h3 { font-size: 1.4rem; font-weight: 600; margin: 35px 0 15px; color: #ffffff; }
-        .article-content p { font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.85); margin-bottom: 20px; }
-        .article-content ul, .article-content ol { margin: 20px 0 30px 20px; }
-        .article-content li { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 12px; line-height: 1.8; }
-        .article-content strong { color: #ffffff; font-weight: 600; }
-        .highlight-box { background: linear-gradient(135deg, #1e1e1e 0%, #141414 100%); border-left: 4px solid #667eea; padding: 25px; margin: 35px 0; border-radius: 8px; }
-        .article-cta { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 50px 35px; border-radius: 16px; margin: 60px 0; text-align: center; }
-        .article-cta h3 { font-size: 1.8rem; margin-bottom: 15px; color: #ffffff; }
-        .article-cta p { font-size: 1rem; margin-bottom: 25px; color: #ffffff; opacity: 0.95; }
-        .btn-white { display: inline-block; padding: 12px 35px; background: #ffffff; color: #764ba2; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; }
-        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-    </style>
-<link rel="stylesheet" href="../css/navigation-updated-fix.css"></head>
+    <link rel="stylesheet" href="../css/hero-gradient.css">
+    <link rel="stylesheet" href="../css/mode.css">
+    <link rel="stylesheet" href="../css/navigation-updated-fix.css">
+    <link rel="stylesheet" href="../css/navigation-updated.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+<style>
+/* Reset i podstawowe */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #0a0a0a !important;
+    color: #ffffff !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    line-height: 1.6 !important;
+}
+
+/* Nawigacja */
+nav, .navbar, header {
+    background: rgba(10, 10, 10, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+/* Menu dropdown - poprawka kolorów */
+.dropdown-menu {
+    background: rgba(17, 17, 17, 0.98) !important;
+}
+
+.dropdown-menu a, .menu-section a {
+    color: #FFFFFF !important;
+    opacity: 0.9;
+}
+
+.dropdown-menu a:hover {
+    color: #FFFFFF !important;
+    opacity: 1;
+}
+
+.dropdown-close {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
+}
+
+/* Przyciski - lepsza widoczność tekstu */
+.menu-trigger, button, .btn, .cta-button {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
+    opacity: 0.9;
+}
+
+.menu-trigger:hover, button:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #FFFFFF !important;
+    opacity: 1;
+}
+
+/* Nagłówki - zmniejszone rozmiary */
+h1 {
+    color: #FFFFFF !important;
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
+}
+
+h2 {
+    color: #FFFFFF !important;
+    font-size: 1.75rem !important;
+    margin: 30px 0 15px !important;
+}
+
+h3 {
+    color: #FFFFFF !important;
+    font-size: 1.35rem !important;
+    margin: 25px 0 12px !important;
+}
+
+/* Tekst */
+p, li, td, span {
+    color: #a1a1aa !important;
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+}
+
+/* Tagi/kategorie */
+.tag, .category, .badge {
+    background: rgba(99, 102, 241, 0.1) !important;
+    border: 1px solid rgba(99, 102, 241, 0.3) !important;
+    color: #FFFFFF !important;
+    padding: 6px 16px !important;
+    border-radius: 50px !important;
+    font-size: 0.875rem !important;
+}
+
+/* Linki */
+a {
+    color: #6366f1 !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #818cf8 !important;
+}
+
+/* Footer - spójny z resztą */
+footer {
+    background: #111111 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 60px 5% 40px !important;
+}
+
+.footer-container {
+    text-align: center !important;
+}
+
+footer h2 {
+    color: #FFFFFF !important;
+    font-size: 2rem !important;
+    margin-bottom: 20px !important;
+}
+
+footer p {
+    color: #a1a1aa !important;
+}
+
+footer .logo img {
+    height: 60px !important;
+    max-height: 60px !important;
+}
+
+.footer-bottom {
+    padding-top: 40px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #a1a1aa !important;
+    font-size: 0.875rem !important;
+}
+
+/* Content area */
+.article-content, article, main, .content {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    padding: 60px 20px !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 1.8rem !important; }
+    h2 { font-size: 1.4rem !important; }
+    h3 { font-size: 1.2rem !important; }
+    p, li { font-size: 0.95rem !important; }
+}
+
+/* POPRAWKA HERO SECTION */
+.article-hero {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 60px 20px !important;
+    background: transparent !important;
+}
+
+.article-container {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+/* POPRAWKA OBRAZÓW */
+.featured-image {
+    width: 100% !important;
+    max-width: 800px !important;
+    height: 400px !important;
+    overflow: hidden !important;
+    margin: 40px auto !important;
+    display: block !important;
+}
+
+.featured-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Obrazy w treści */
+.article-content .featured-image {
+    margin: 40px 0 !important;
+}
+
+.article-content img:not(.featured-image img) {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 30px auto !important;
+}
+
+/* BREADCRUMBS */
+.breadcrumbs {
+    background: #1a1a1a !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 25px 0 !important;
+    margin-top: 80px !important;
+    margin-bottom: 40px !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.breadcrumbs-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+.breadcrumbs-list {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    font-size: 0.95rem !important;
+}
+
+.breadcrumbs-list a {
+    color: #6366f1 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    border-bottom: 1px solid transparent !important;
+}
+
+.breadcrumbs-list a:hover {
+    color: #818cf8 !important;
+    border-bottom: 1px solid #818cf8 !important;
+}
+
+.breadcrumbs-separator {
+    color: #6b7280 !important;
+    font-size: 1.1rem !important;
+}
+
+.breadcrumbs-current {
+    color: #FFFFFF !important;
+    font-weight: 500 !important;
+}
+
+/* FOOTER KONTAKT BUTTON - BIAŁY */
+footer a[href="../kontakt.html"],
+footer a[href*="kontakt"] {
+    background: #FFFFFF !important;
+    color: #0a0a0a !important;
+    padding: 16px 40px !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+footer a[href="../kontakt.html"]:hover,
+footer a[href*="kontakt"]:hover {
+    background: #f0f0f0 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Responsive dla hero i obrazów */
+@media (max-width: 768px) {
+    .article-hero {
+        padding: 40px 20px !important;
+    }
+
+    .featured-image {
+        height: 250px !important;
+    }
+}
+</style>
+
+</head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
@@ -43,7 +293,7 @@
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
     </nav>
-    
+
     <div class="dropdown-menu" id="dropdownMenu">
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
@@ -68,88 +318,132 @@
             </div>
         </div>
     </div>
-    
+
     <div class="menu-overlay" id="menuOverlay"></div>
-    
-    
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <div class="breadcrumbs-list">
+                <a href="../index.html">Strona główna</a>
+                <span class="breadcrumbs-separator">→</span>
+                <a href="index.html">Blog</a>
+                <span class="breadcrumbs-separator">→</span>
+                <span class="breadcrumbs-current">Artykuł</span>
+            </div>
+        </div>
+    </div>
+
     <div class="article-hero">
         <div class="article-container">
             <div class="article-meta">
-                <span class="category-badge">Analytics</span>
-                <span>8 min czytania</span>
+                <span class="category-badge">AI & Analytics</span>
+                <span>12 min czytania</span>
                 <span>•</span>
-                <span>17 sierpnia 2024</span>
+                <span>15 października 2024</span>
             </div>
-            <h1>Alternatywa dla Google Analytics – czy to ma sens?</h1>
-            <p class="lead">Google Analytics to najpopularniejsze narzędzie analityczne, ale czy zawsze jest najlepszym wyborem? Poznaj zalety, wady i alternatywy.</p>
+            <h1>AI w raportach Google Analytics 4. Jak wykorzystać zaawansowane funkcje napędzane przez sztuczną inteligencję</h1>
+            <p class="lead">Sztuczna inteligencja może być niezwykle pomocna w analizie danych. Google Analytics 4 zintegrowało wiele zaawansowanych funkcji napędzanych przez AI, które pomagają przewidywać zachowania użytkowników.</p>
         </div>
     </div>
-    
+
     <div class="featured-image">
-        <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6773150c83e90917f5806357_analityka-internetowa-c-2048x1544.png" alt="Analityka internetowa">
+        <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6773394308235e8c6cb24fc1_ai-w-raportach-google-analytics-4-jak-wykorzystac.png" alt="AI w Google Analytics 4">
     </div>
-    
+
     <div class="article-content">
-        <p>Google Analytics (GA4) to bez wątpienia <strong>najpopularniejsza platforma analityczna</strong> do monitorowania ruchu na stronach internetowych i w aplikacjach mobilnych, co w dużej mierze wynika z jej dostępności za darmo. Istnieje także płatna wersja – Google Analytics 360, przeznaczona dla dużych firm, której ceny, zależnie od ruchu na stronie i/lub w aplikacjach mobilnych, zaczynają się od dziesiątek tysięcy dolarów rocznie.</p>
-        
-        <h2>Ograniczenia Google Analytics</h2>
-        <p>Pomimo popularności, Google Analytics ma pewne istotne ograniczenia. Najnowsza wersja znacznie różni się od poprzednich, co może stanowić wyzwanie dla użytkowników. <strong>Nie ma już gotowych raportów</strong>, a nawet najprostsze z nich trzeba konfigurować samodzielnie.</p>
-        
-        <p>Choć można nauczyć się obsługi GA4, korzystając z materiałów dostępnych online, Google nie oferuje wsparcia w zakresie konfiguracji raportów analitycznych. Wiele terminów i nazw może być trudnych do zrozumienia dla przeciętnego użytkownika, co może zniechęcać do korzystania z tego narzędzia.</p>
-        
-        <p>Ponadto, jak wszystkie inne narzędzia Google, GA4 jest regularnie modyfikowane, co wymaga od użytkowników ciągłego śledzenia zmian i aktualizacji.</p>
-        
-        <div class="highlight-box">
-            <p><strong>Ważne:</strong> Jak to często bywa, gdy otrzymujemy coś za darmo, to my stajemy się produktem. W przypadku GA4 nasze dane o ruchu na stronie internetowej stanowią wartość dla Google.</p>
+        <p>Google Analytics 4 (GA4) wprowadza rewolucyjne funkcje oparte na sztucznej inteligencji, które pozwalają nie tylko analizować przeszłe dane, ale także <strong>przewidywać przyszłe zachowania użytkowników</strong>.</p>
+
+        <h2>Trzy kluczowe funkcje AI w Google Analytics</h2>
+
+        <div class="ai-feature">
+            <h3>🛒 Prawdopodobieństwo zakupu (Purchase probability)</h3>
+            <p>Przewiduje prawdopodobieństwo, że użytkownik dokona zakupu w ciągu najbliższych 7 dni. Ta funkcja pozwala identyfikować użytkowników o wysokim potencjale konwersji.</p>
         </div>
-        
-        <div class="featured-image" style="margin: 40px auto;">
-            <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677315b50341c194684439e0_google-analytics-4-1024x616.png" alt="Google Analytics 4 Dashboard">
+
+        <div class="ai-feature">
+            <h3>📉 Prawdopodobieństwo rezygnacji (Churn probability)</h3>
+            <p>Określa prawdopodobieństwo, że użytkownik, który był aktywny w ciągu ostatnich 7 dni, nie będzie aktywny w ciągu kolejnych 7 dni. Pomaga to w retencji użytkowników.</p>
         </div>
-        
-        <h2>Kiedy warto rozważyć zmianę?</h2>
-        <p>Jeśli rozważamy przejście na inną platformę analityczną, kluczowe są dwie kwestie:</p>
-        
-        <h3>1. Czy mamy budżet na konkurencyjne rozwiązanie?</h3>
-        <p>Konkurencyjne rozwiązania dla małych i średnich firm zaczynają się od <strong>kilkunastu dolarów miesięcznie</strong>. Warto jednak pamiętać, że koszt będzie rósł wraz ze wzrostem liczby wejść na naszą stronę www. W podstawowej cenie dostaniemy niewiele wartości dodanej.</p>
-        
-        <h3>2. Czy prowadzimy kampanie Google Ads?</h3>
-        <p>Jeśli tak, i są one istotnym źródłem ruchu na naszej stronie, warto pozostać przy GA4, ponieważ <strong>żadne inne narzędzie analityczne nie będzie tak dobrze zintegrowane z danymi z Google Ads</strong> jak Google Analytics.</p>
-        
-        <p>Należy również wspomnieć o integracji Google Analytics z Google Search Console, która jest narzędziem do zarządzania naszą obecnością w bezpłatnych wynikach wyszukiwania Google, czyli w tzw. SERP-ach.</p>
-        
-        <h2>Popularne alternatywy dla Google Analytics</h2>
-        <p>Jeśli jednak zdecydujemy się na zmianę, dostępnych jest wiele alternatyw. Do najpopularniejszych należą:</p>
-        
+
+        <div class="ai-feature">
+            <h3>💰 Prognozowane przychody (Predicted revenue)</h3>
+            <p>Szacuje oczekiwane przychody z zakupów w ciągu najbliższych 28 dni od użytkowników aktywnych w ostatnich 28 dniach.</p>
+        </div>
+
+        <h2>Wymagania do korzystania z funkcji AI</h2>
+
+        <div class="requirement-box">
+            <h3>Minimalne wymagania dotyczące danych:</h3>
+            <ul>
+                <li><strong>Minimalna liczba użytkowników:</strong> W ciągu ostatnich 28 dni, przez co najmniej 7 kolejnych dni, muszą być zebrane dane co najmniej 1000 użytkowników powracających, którzy dokonali zakupu lub zrezygnowali</li>
+                <li><strong>Jakość modeli:</strong> Należy utrzymać jakość modeli predykcyjnych przez dłuższy okres poprzez ciągłe i precyzyjne zbieranie danych</li>
+                <li><strong>Wymagane zdarzenia:</strong> Konieczne jest zbieranie zdarzeń purchase (zalecane) lub in_app_purchase z parametrami value i currency</li>
+            </ul>
+        </div>
+
+        <div class="featured-image">
+            <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677316cf0c3ae5ed95e71fbf_modelowanie-biznesowe-1024x551.png" alt="Modelowanie biznesowe w GA4">
+        </div>
+
+        <h2>Jak skonfigurować raporty AI w GA4?</h2>
+
+        <ol>
+            <li><strong>Wejdź w sekcję "Eksplorowanie"</strong> w panelu GA4</li>
+            <li><strong>Wybierz "Eksploracja swobodna"</strong> aby utworzyć nowy raport</li>
+            <li><strong>W ustawieniach wyczyść wszystkie wyjściowe dane</strong> tak by pole po prawej było puste</li>
+            <li><strong>Kliknij w "+ Segmenty"</strong> aby dodać nowy segment</li>
+            <li><strong>Wybierz "Utwórz nowy segment"</strong></li>
+            <li><strong>Przejdź do zakładki "Przewidywania"</strong></li>
+            <li><strong>Wybierz interesujący Cię raport predykcyjny</strong></li>
+        </ol>
+
+        <div class="featured-image">
+            <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6792e4622cc7f9bd90fc5dd1_6792e2d10a90eb5bcc60c9f8_eksplorowanie.png" alt="Eksplorowanie w GA4">
+        </div>
+
+        <h2>Dostępne raporty predykcyjne</h2>
+
         <ul>
-            <li><strong>Mixpanel</strong> - skupia się na analizie zachowań użytkowników</li>
-            <li><strong>Heap</strong> - automatyczne śledzenie wszystkich interakcji</li>
-            <li><strong>KissMetrics</strong> - zorientowany na śledzenie konwersji</li>
-            <li><strong>Amplitude</strong> - zaawansowana analiza produktowa</li>
-            <li><strong>Optimizely</strong> - łączy analitykę z testami A/B</li>
+            <li><strong>Prawdopodobieństwo rezygnacji</strong> – prawdopodobieństwo, że użytkownik aktywny w ostatnich 7 dniach nie będzie aktywny w kolejnych 7 dniach</li>
+            <li><strong>Prawdopodobieństwo zakupu</strong> – prawdopodobieństwo, że użytkownik aktywny w ostatnich 28 dniach dokona zakupu w najbliższych 7 dniach</li>
+            <li><strong>Prawdopodobieństwo zakupu w aplikacji</strong> – dedykowane dla aplikacji mobilnych</li>
+            <li><strong>Prognozowane przychody</strong> – oczekiwane przychody w najbliższych 28 dniach od aktywnych użytkowników</li>
         </ul>
-        
+
+        <h2>Jak wykorzystać te dane w praktyce?</h2>
+
+        <p>Funkcje AI w GA4 otwierają nowe możliwości targetowania i personalizacji:</p>
+
+        <ul>
+            <li><strong>Remarketing inteligentny:</strong> Targetuj użytkowników z wysokim prawdopodobieństwem zakupu specjalnymi ofertami</li>
+            <li><strong>Retencja proaktywna:</strong> Identyfikuj użytkowników zagrożonych rezygnacją i podejmuj działania zatrzymujące</li>
+            <li><strong>Optymalizacja budżetu:</strong> Skup wydatki reklamowe na użytkownikach o najwyższym prognozowanym przychodzie</li>
+            <li><strong>Personalizacja treści:</strong> Dostosuj komunikację do przewidywanych zachowań użytkowników</li>
+        </ul>
+
         <h2>Podsumowanie</h2>
-        <p>Wybór narzędzia analitycznego powinien być podyktowany <strong>specyficznymi potrzebami biznesowymi</strong>. Google Analytics pozostaje solidnym wyborem dla większości firm, szczególnie tych korzystających z ekosystemu Google. Jednak dla firm szukających bardziej specjalistycznych funkcji lub większej kontroli nad danymi, alternatywy mogą okazać się lepszym rozwiązaniem.</p>
-        
+
+        <p>Google Analytics 4, z jego zaawansowanymi funkcjami AI, oferuje narzędzia, które <strong>nie tylko analizują przeszłość, ale przewidują przyszłe działania użytkownika</strong>. Dzięki predykcyjnym widowniom i metrykom, marketerzy mają do dyspozycji narzędzia pozwalające na bardziej precyzyjne i strategiczne podejście do komunikacji z klientami.</p>
+
+        <p>GA4 to już nie tylko narzędzie analityczne, ale nowy rozdział w marketingu i analizie danych, gdzie sztuczna inteligencja pomaga podejmować lepsze decyzje biznesowe.</p>
+
         <div class="article-cta">
-            <h3>Potrzebujesz pomocy z analityką?</h3>
-            <p>Jeśli masz problemy w korzystaniu z Google Analytics lub szukasz najlepszego rozwiązania dla swojej firmy, pomożemy Ci wybrać i wdrożyć odpowiednie narzędzia.</p>
+            <h3>Chcesz w pełni wykorzystać AI w Google Analytics?</h3>
+            <p>Pomożemy Ci skonfigurować i wykorzystać zaawansowane funkcje predykcyjne GA4 dla Twojego biznesu.</p>
             <a href="../index.html#contact" class="btn-white">Skontaktuj się z nami</a>
         </div>
     </div>
-    
-    
-    
-    
+
     <script src="../js/navigation.js"></script>
-<script src="../js/menu.js"></script>
+    <script src="../js/menu.js"></script>
+
     <footer style="padding: 60px 5%; background: #141414; margin-top: 100px;">
         <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
             <div style="background: rgba(20, 35, 30, 0.5); backdrop-filter: blur(15px); border: 1px solid rgba(60, 255, 170, 0.2); border-radius: 24px; padding: 60px; margin-bottom: 60px;">
                 <h2 style="font-size: 36px; margin-bottom: 16px; color: #fff;">Gotowy, aby rozpocząć projekt?</h2>
                 <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 32px;">Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online.</p>
-                <a href="../kontakt.html" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; text-decoration: none; border-radius: 30px; font-weight: 600;">Kontakt</a>
+                <a href="../kontakt.html">Kontakt</a>
             </div>
             <img src="../assets/images/logo main transparent.png" alt="Collytics" style="height: 40px; margin-bottom: 20px;">
             <p style="color: #94969c;">© Collytics. All rights reserved.</p>

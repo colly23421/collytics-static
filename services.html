@@ -5,286 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serwis - Collytics | Nasze Usługi</title>
     <meta name="description" content="Skuteczne kampanie SEM, analizy AI, rozwiązania webowe i kompleksowy marketing cyfrowy">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Favicon Original.ico">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/hero-gradient.css">
+    <link rel="stylesheet" href="css/mode.css">
+    <link rel="stylesheet" href="css/navigation-updated-fix.css">
     <link rel="stylesheet" href="css/navigation-updated.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* Background i style dla services page */
+    body {
+        background-color: #0a0a0a !important;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-            background: #000000;
-            color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    /* Naprawka dla nawigacji */
+    .navbar {
+        background: rgba(15, 15, 15, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+    }
 
-        /* Gradient backgrounds */
-        .gradient-bg {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(34, 197, 94, 0.08) 0%, transparent 40%);
-            z-index: -1;
-        }
+    .nav-container {
+        background: transparent !important;
+    }
 
-        /* Hero Section */
-        .hero {
-            padding: 180px 40px 100px;
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-        }
+    .logo img {
+        filter: none !important;
+    }
 
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.1;
-        }
+    .services-hero {
+        min-height: auto !important;
+        padding: 180px 40px 100px !important;
+        background: transparent !important;
+    }
 
-        .hero p {
-            font-size: 1.3rem;
-            color: #9ca3af;
-            max-width: 800px;
-            margin: 0 auto 50px;
-        }
+    .services-hero h1 {
+        font-size: 4rem !important;
+        background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
 
-        /* Services Grid */
-        .services-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px 100px;
-        }
+    .services-hero p {
+        font-size: 1.3rem !important;
+        color: #9ca3af !important;
+    }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-            gap: 30px;
-        }
+    /* Przycisk menu */
+    .menu-trigger {
+        background: transparent !important;
+        border: 2px solid #667eea !important;
+        color: #667eea !important;
+        padding: 10px 24px;
+        border-radius: 24px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+    }
 
-        .service-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
+    .menu-trigger:hover {
+        background: rgba(102, 126, 234, 0.1) !important;
+    }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #667eea, transparent);
-            transform: translateX(-100%);
-            animation: shimmer 3s infinite;
-        }
+    /* Stats Section - naprawka */
+    .stats-section {
+        padding: 100px 40px !important;
+        background: rgba(20, 20, 25, 0.5) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        margin-top: 50px;
+    }
 
-        @keyframes shimmer {
-            100% {
-                transform: translateX(100%);
-            }
-        }
+    .stats-container {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 60px !important;
+        position: relative !important;
+    }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(102, 126, 234, 0.3);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
-        }
+    .stat-card {
+        text-align: center !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
 
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
+    .stat-icon {
+        width: 60px !important;
+        height: 60px !important;
+        margin: 0 auto 20px !important;
+        background: rgba(99, 102, 241, 0.1) !important;
+        border-radius: 15px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.5rem !important;
+    }
 
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #ffffff;
-        }
+    .stat-number {
+        font-size: 3.5rem !important;
+        font-weight: 700 !important;
+        background: linear-gradient(135deg, #667eea 0%, #22c55e 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        margin-bottom: 10px !important;
+    }
 
-        .service-description {
-            color: #9ca3af;
-            margin-bottom: 25px;
-            line-height: 1.7;
-        }
+    .stat-label {
+        font-size: 1.2rem !important;
+        color: #9ca3af !important;
+        margin-bottom: 10px !important;
+    }
 
-        .service-features {
-            list-style: none;
-        }
+    .stat-description {
+        color: #6b7280 !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+    }
 
-        .service-features li {
-            padding: 10px 0;
-            color: #d1d5db;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-top: -2px;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            padding: 100px 40px;
-            background: rgba(255, 255, 255, 0.02);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
+    /* Responsywność */
+    @media (max-width: 768px) {
         .stats-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 60px;
-            position: relative;
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
         }
 
-        .stats-container::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.3), rgba(34, 197, 94, 0.3), transparent);
-            z-index: 0;
+        .services-hero h1 {
+            font-size: 2.5rem !important;
         }
 
-        .stat-card {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
+        .footer-cta h2 {
+    font-size: 36px !important;
+    margin-bottom: 16px !important;
+    color: #ffffff !important;
+}
 
-        .stat-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 20px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
+    }
 
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #22c55e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
 
-        .stat-label {
-            font-size: 1.2rem;
-            color: #9ca3af;
-            margin-bottom: 10px;
-        }
-
-        .stat-description {
-            color: #6b7280;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 40px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%);
-            border-radius: 30px;
-            max-width: 1200px;
-            margin: 50px auto;
-        }
-
-        .cta-title {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #ec4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 18px 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            margin-top: 30px;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .stats-container::before {
-                display: none;
-            }
-        }
-
-        /* Menu override styles */
-        .dropdown-menu {
-            z-index: 10000 !important;
-        }
-        .menu-overlay {
-            z-index: 9999 !important;
-        }
-        .navbar {
-            z-index: 1000 !important;
-        }
     </style>
-    <link rel="stylesheet" href="css/navigation-updated.css">
+
+
+<style>
+/* Naprawka dla services.html */
+footer h2, .footer-cta h2 {
+    color: #FFFFFF !important;
+}
+footer p, .footer-cta p {
+    color: #a1a1aa !important;
+}
+.footer-container {
+    background: #111111 !important;
+}
+/* Upewnij się że wszystkie h2 są białe */
+h2 {
+    color: #FFFFFF !important;
+}
+</style>
+
 </head>
 <body>
-        <nav class="navbar">
+    <div class="gradient-bg"></div>
+
+    <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="assets/images/logo main transparent.png" alt="Collytics">
@@ -292,7 +181,7 @@
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
     </nav>
-    
+
     <div class="dropdown-menu" id="dropdownMenu">
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
@@ -303,25 +192,23 @@
                 <a href="about.html">O nas</a>
                 <a href="kontakt.html">Kontakt</a>
             </div>
-            <div class="menu-divider"></div>
             <div class="social-links">
-                <a href="https://facebook.com/collytics" title="Facebook">
+                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
                     <img src="assets/images/facebook.png" alt="Facebook">
                 </a>
-                <a href="https://linkedin.com/company/collytics" title="LinkedIn">
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
                     <img src="assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
                 </a>
-                <a href="https://twitter.com/collytics" title="Twitter">
-                    <img src="assets/images/cons8-twitter-500.svg" alt="Twitter">
+                <a href="https://x.com/collytics" target="_blank" title="Twitter">
+                    <img src="assets/images/cons8-twitter-500.svg" alt="X">
                 </a>
             </div>
         </div>
     </div>
-    
+
     <div class="menu-overlay" id="menuOverlay"></div>
 
-
-    <section class="hero">
+    <section class="hero services-hero">
         <h1>Nasze Usługi</h1>
         <p>Przestań zgadywać, zacznij rosnąć. Marketing cyfrowy oparty na danych, który przynosi efekty.</p>
     </section>
@@ -391,46 +278,91 @@
     </div>
 
     <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-card">
-                <div class="stat-icon">⬇️</div>
-                <div class="stat-number">88%</div>
-                <div class="stat-label">oszczędności</div>
-                <div class="stat-description">
-                    Nasze kompleksowe rozwiązania zastępują potrzebę korzystania z dziesiątek innych narzędzi.
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">⬇️</div>
-                <div class="stat-number">1.1 dnia</div>
-                <div class="stat-label">zaoszczędzonego tygodniowo</div>
-                <div class="stat-description">
-                    Oszczędzamy czas automatyzując żmudną pracę i upraszczając wykonanie zadań.
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">⬆️</div>
-                <div class="stat-number">3x szybciej</div>
-                <div class="stat-label">realizacja zadań</div>
-                <div class="stat-description">
-                    Zastąp wiele narzędzi i subskrypcji jedną zintegrowaną platformą.
-                </div>
+    <!-- Stats Section -->
+<section class="stats-section" style="background-color: #0a0a0a !important; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div class="stats-container">
+        <div class="stat-card" style="background: transparent;">
+            <div class="stat-icon">⬇️</div>
+            <div class="stat-number">88%</div>
+            <div class="stat-label">oszczędności</div>
+            <div class="stat-description">
+                Nasze kompleksowe rozwiązania zastępują potrzebę korzystania z dziesiątek innych narzędzi.
             </div>
         </div>
-    </section>
+        <div class="stat-card" style="background: transparent;">
+            <div class="stat-icon">⬇️</div>
+            <div class="stat-number">1.1 dnia</div>
+            <div class="stat-label">zaoszczędzonego tygodniowo</div>
+            <div class="stat-description">
+                Oszczędzamy czas automatyzując żmudną pracę i upraszczając wykonanie zadań.
+            </div>
+        </div>
+        <div class="stat-card" style="background: transparent;">
+            <div class="stat-icon">⬆️</div>
+            <div class="stat-number">3x szybciej</div>
+            <div class="stat-label">realizacja zadań</div>
+            <div class="stat-description">
+                Zastąp wiele narzędzi i subskrypcji jedną zintegrowaną platformą.
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <h2 class="cta-title">Porozmawiajmy o Twoim projekcie</h2>
-        <p style="color: #9ca3af; font-size: 1.2rem;">
-            Gotowy na transformację cyfrową? Skontaktuj się z nami i odkryj, jak możemy pomóc Twojej firmie rosnąć.
-        </p>
+        <h3 style="color: #ffffff ">Gotowy, aby rozpocząć projekt?</h3>
         <a href="kontakt.html" class="cta-button">Rozpocznij współpracę</a>
     </section>
 
-    <!-- Script for menu -->
-    <script src="js/menu.js"></script>
-    <script src="js/menu.js"></script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-cta">
+                <h2>Gotowy, aby rozpocząć projekt?</h2>
+                <p>
+                    Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
+                </p>
+                <a href="kontakt.html" class="cta-button">Kontakt</a>
+            </div>
+
+            <div class="logo" style="justify-content: center; margin-bottom: 24px;">
+                <img src="assets/images/logo main transparent.png" style="max-height: 40px;" alt="Collytics" onerror="this.src='assets/images/logo.png'">
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
+
+            <div class="footer-bottom">
+                <p>© Collytics. All rights reserved. <a href="legal/privacy-policy.html">Polityka Prywatności</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuTrigger = document.getElementById('menuTrigger');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const closeMenu = document.getElementById('closeMenu');
+
+        if(menuTrigger && dropdownMenu && menuOverlay) {
+            menuTrigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                dropdownMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+            });
+
+            if(closeMenu) {
+                closeMenu.addEventListener('click', function() {
+                    dropdownMenu.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                });
+            }
+
+            menuOverlay.addEventListener('click', function() {
+                dropdownMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+        }
+    });
+    </script>
 </body>
 </html>

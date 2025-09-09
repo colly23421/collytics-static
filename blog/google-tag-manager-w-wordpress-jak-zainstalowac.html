@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Znaczenie tagowania strony Google Tag Manager - Przewodnik 2024 | Collytics</title>
-    <meta name="description" content="Kompleksowy przewodnik po tagowaniu strony z GTM. Dowiedz się jak śledzić dane analityczne, implementować tagi i optymalizować kampanie marketingowe.">
+    <title>Google Tag Manager w WordPress - Instalacja krok po kroku 2024 | Collytics</title>
+    <meta name="description" content="Praktyczny poradnik jak zainstalować Google Tag Manager w WordPress. Instrukcja krok po kroku z obrazkami. GTM dla Google Analytics, Facebook Pixel i więcej.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/navigation.css">
     <link rel="stylesheet" href="../css/main.css">
@@ -87,12 +87,6 @@ h3 {
     margin: 25px 0 12px !important;
 }
 
-h4 {
-    color: #FFFFFF !important;
-    font-size: 1.15rem !important;
-    margin: 20px 0 10px !important;
-}
-
 /* Tekst */
 p, li, td, span {
     color: #a1a1aa !important;
@@ -120,7 +114,7 @@ a:hover {
     color: #818cf8 !important;
 }
 
-/* POPRAWKA HERO SECTION */
+/* Hero Section */
 .article-hero {
     width: 100% !important;
     max-width: 1200px !important;
@@ -148,7 +142,7 @@ a:hover {
     line-height: 1.6 !important;
 }
 
-/* POPRAWKA OBRAZÓW */
+/* Featured Image */
 .featured-image {
     width: 100% !important;
     max-width: 800px !important;
@@ -165,48 +159,53 @@ a:hover {
     object-position: center !important;
 }
 
-/* Content area */
+/* Content Area */
 .article-content {
     max-width: 800px !important;
     margin: 0 auto !important;
     padding: 60px 20px !important;
 }
 
-/* Benefits Grid */
-.benefits-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-    gap: 20px !important;
-    margin: 30px 0 !important;
+.article-content .featured-image {
+    margin: 40px 0 !important;
 }
 
-.benefit-card {
+.article-content img:not(.featured-image img) {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 30px auto !important;
+}
+
+/* Code Blocks */
+.code-block {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin: 20px 0 !important;
+    font-family: 'Courier New', monospace !important;
+    overflow-x: auto !important;
+}
+
+code {
+    background: rgba(99, 102, 241, 0.1) !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    font-family: 'Courier New', monospace !important;
+    color: #818cf8 !important;
+}
+
+/* Feature List */
+.feature-list {
     background: rgba(255, 255, 255, 0.03) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 20px !important;
+    padding: 25px !important;
+    margin: 25px 0 !important;
     border-radius: 12px !important;
 }
 
-.benefit-card h4 {
-    margin-top: 0 !important;
-    margin-bottom: 10px !important;
-}
-
-/* Highlight Box */
-.highlight-box {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    padding: 30px !important;
-    margin: 40px 0 !important;
-    border-radius: 12px !important;
-}
-
-.highlight-box h3 {
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
-}
-
-/* BREADCRUMBS */
+/* Breadcrumbs */
 .breadcrumbs {
     background: #1a1a1a !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -297,7 +296,7 @@ footer p {
     color: #a1a1aa !important;
 }
 
-/* FOOTER KONTAKT BUTTON - BIAŁY */
+/* Footer Kontakt Button - Biały */
 footer a[href="../kontakt.html"],
 footer a[href*="kontakt"] {
     background: #FFFFFF !important;
@@ -330,10 +329,6 @@ footer a[href*="kontakt"]:hover {
 
     .featured-image {
         height: 250px !important;
-    }
-
-    .benefits-grid {
-        grid-template-columns: 1fr !important;
     }
 }
 </style>
@@ -392,87 +387,102 @@ footer a[href*="kontakt"]:hover {
     <div class="article-hero">
         <div class="article-container">
             <div class="article-meta">
-                <span class="category-badge">Marketing</span>
-                <span>10 min czytania</span>
+                <span class="category-badge">WordPress</span>
+                <span>8 min czytania</span>
                 <span>•</span>
-                <span>1 sierpnia 2024</span>
+                <span>14 listopada 2024</span>
             </div>
-            <h1>Znaczenie Tagowania Strony za Pomocą Google Tag Manager</h1>
-            <p class="lead">Google Tag Manager i narzędzia do śledzenia danych analitycznych są nieocenionymi zasobami, które pomagają w lepszym zrozumieniu ruchu na stronie oraz optymalizacji działań marketingowych.</p>
+            <h1>Google Tag Manager w WordPress – jak zainstalować</h1>
+            <p class="lead">Google Tag Manager (GTM) to bezpłatna platforma od Google, która służy do zarządzania tagami na stronach internetowych. Po jednorazowej instalacji umożliwia nieograniczoną instalację kodów śledzących.</p>
         </div>
     </div>
 
     <div class="featured-image">
-        <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677310d5b3e1d58c2c732f10_Znaczenie-Tagowania-Strony-za-Pomoca-Google-Tag-Manager-2048x1222.jpeg" alt="Google Tag Manager Dashboard">
+        <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg" alt="Google Tag Manager WordPress">
     </div>
 
     <div class="article-content">
-        <h2>Co to jest Google Tag Manager?</h2>
-        <p>Google Tag Manager to <strong>darmowe narzędzie od Google</strong>, które umożliwia łatwe dodawanie i zarządzanie tagami (fragmentami kodu) na stronie internetowej bez potrzeby ingerencji w kod źródłowy. GTM pozwala na implementację różnych tagów, takich jak tagi śledzenia Google Analytics, tagi remarketingowe, czy piksele śledzące, w sposób bardziej efektywny i uporządkowany.</p>
-        <p>Za pomocą GTM można również tagować stronę kodami platform takich jak Facebook czy LinkedIn.</p>
+        <p>GTM ma całą masę wbudowanych skryptów które ułatwiają pracę na tym narzędziu. Bez dwóch zdań jest to narzędzie które warto wykorzystywać w pracy przy digital marketingu.</p>
 
-        <h2>Zalety Korzystania z Google Tag Manager</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <h4>🎯 Łatwość Zarządzania</h4>
-                <p>Zarządzanie wieloma tagami staje się prostsze i bardziej przejrzyste. Można dodawać, edytować lub usuwać tagi bezpośrednio z interfejsu GTM.</p>
-            </div>
-            <div class="benefit-card">
-                <h4>⚡ Szybka Implementacja</h4>
-                <p>GTM pozwala na szybkie wdrażanie nowych tagów bez konieczności angażowania zespołu deweloperskiego.</p>
-            </div>
-            <div class="benefit-card">
-                <h4>✅ Redukcja Błędów</h4>
-                <p>Centralne zarządzanie tagami minimalizuje ryzyko błędów podczas ręcznego wstawiania kodów.</p>
-            </div>
-            <div class="benefit-card">
-                <h4>🔧 Uniwersalność</h4>
-                <p>GTM wspiera różnorodne tagi, w tym te od zewnętrznych dostawców.</p>
-            </div>
-        </div>
+        <h2>Najpopularniejsze integracje w GTM</h2>
 
-        <h2>Śledzenie Danych Analitycznych</h2>
-        <p>Śledzenie danych analitycznych polega na zbieraniu i analizie danych dotyczących zachowań użytkowników na stronie internetowej. Narzędzia takie jak Google Analytics umożliwiają monitorowanie różnorodnych metryk:</p>
-        <ul>
-            <li>Liczba odwiedzin i unikalnych użytkowników</li>
-            <li>Czas spędzony na stronie</li>
-            <li>Źródła ruchu (organic, paid, social, direct)</li>
-            <li>Współczynnik odrzuceń (bounce rate)</li>
-            <li>Ścieżki konwersji i osiąganie celów</li>
-        </ul>
-
-        <div class="highlight-box">
-            <h3>Dlaczego Śledzenie Danych jest Kluczowe?</h3>
+        <div class="feature-list">
             <ul>
-                <li><strong>Zrozumienie Użytkowników:</strong> Analiza pozwala lepiej zrozumieć, jak użytkownicy wchodzą w interakcje z witryną</li>
-                <li><strong>Optymalizacja UX:</strong> Identyfikacja elementów wymagających poprawy</li>
-                <li><strong>ROI Kampanii:</strong> Ocena skuteczności działań marketingowych</li>
-                <li><strong>Decyzje Biznesowe:</strong> Podejmowanie decyzji opartych na danych</li>
+                <li><strong>Google Analytics 4</strong> - kompletna analityka strony</li>
+                <li><strong>Google Ads Conversion Tracking</strong> - śledzenie konwersji z reklam</li>
+                <li><strong>Google Ads Remarketing</strong> - retargeting użytkowników</li>
+                <li><strong>AdWords Conversion Listener</strong> - nasłuchiwanie konwersji</li>
+                <li><strong>Floodlight Counter</strong> - zaawansowane śledzenie kampanii</li>
+                <li><strong>Google Analytics Event Tracking</strong> - śledzenie zdarzeń</li>
+                <li><strong>Hotjar</strong> - mapy ciepła i nagrania sesji</li>
+                <li><strong>Facebook Pixel</strong> - śledzenie dla Facebook Ads</li>
+                <li><strong>LinkedIn Insight Tag</strong> - analityka LinkedIn</li>
+                <li><strong>Custom HTML</strong> - własne skrypty</li>
             </ul>
         </div>
 
-        <h2>Integracja GTM z Google Analytics</h2>
-        <p>Integracja GTM z Google Analytics pozwala na efektywne śledzenie danych bez konieczności bezpośredniej edycji kodu strony. GTM umożliwia szybkie i precyzyjne wdrażanie kodów śledzących, co pozwala na zbieranie dokładnych i szczegółowych danych analitycznych.</p>
+        <h2>Instalacja Google Tag Manager w WordPress - krok po kroku</h2>
 
-        <h3>Krok po kroku: Jak zacząć?</h3>
-        <ol>
-            <li>Załóż konto Google Tag Manager</li>
-            <li>Zainstaluj kontener GTM na swojej stronie</li>
-            <li>Skonfiguruj tag Google Analytics 4</li>
-            <li>Ustaw triggery dla ważnych wydarzeń</li>
-            <li>Przetestuj implementację w trybie Preview</li>
-            <li>Opublikuj kontener i monitoruj dane</li>
-        </ol>
+        <h3>Krok 1: Utworzenie konta GTM</h3>
+        <p>Przejdź na stronę <a href="https://tagmanager.google.com" target="_blank">Google Tag Manager</a> logując się adresem email w domenie gmail.com.</p>
 
-        <div class="article-cta">
-            <h3>Gotowy na profesjonalne tagowanie?</h3>
-            <p>Skontaktuj się z nami, aby rozpocząć swoją przygodę z zaawansowanym śledzeniem i analizą danych.</p>
-            <a href="../index.html#contact" class="btn-white">Rozpocznij współpracę</a>
+        <p>Kliknij „Utwórz konto", nadaj mu nazwę i wybierz przestrzeń roboczą, a następnie kliknij „Kontynuuj". Wpisz nazwę swojej strony internetowej, wybierz typ jako „Web" i kliknij „Utwórz".</p>
+
+        <h3>Krok 2: Pobranie kodów instalacyjnych</h3>
+        <p>Po utworzeniu konta Google Tag Manager, otrzymasz dwa fragmenty kodu:</p>
+        <ul>
+            <li>Kod instalacyjny dla sekcji <code>&lt;head&gt;</code></li>
+            <li>Kod instalacyjny dla tuż po otwarciu tagu <code>&lt;body&gt;</code></li>
+        </ul>
+        <p>Skopiuj oba fragmenty kodu.</p>
+
+        <h3>Krok 3: Instalacja w WordPress</h3>
+        <p>Zaloguj się do panelu administracyjnego WordPress.</p>
+        <p>Przejdź do „Wygląd" > „Edytor motywów".</p>
+
+        <div class="featured-image">
+            <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6792e7de02034a92325f6fa6_6792e7b5f651b8679a436990_edytor.png" alt="Edytor motywów WordPress">
         </div>
 
+        <p>Otwórz plik „header.php".</p>
+
+        <h3>Krok 4: Wklejenie kodów</h3>
+        <p>Wklej pierwszy kod jak najwyżej w elemencie <code>&lt;head&gt;</code>.</p>
+        <p>Wklej drugi fragment kodu zaraz po otwarciu znacznika <code>&lt;body&gt;</code>.</p>
+
+        <div class="featured-image">
+            <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6792e7de02034a92325f6fb9_6792e7d7b95297293dfdc932_kod.png" alt="Kod GTM w WordPress">
+        </div>
+
+        <p>Po wklejeniu kodów, kliknij „Zaktualizuj plik", aby zapisać zmiany.</p>
+
+        <h3>Krok 5: Weryfikacja instalacji</h3>
+        <p>Sprawdź instalację - przejdź do swojej strony i użyj narzędzia do sprawdzania poprawności instalacji Tag Managera (np. Google Tag Assistant), aby upewnić się, że kody zostały poprawnie wdrożone.</p>
+
+        <h2>Instalacja przez wtyczkę vs ręczna</h2>
+
+        <p>Opisaliśmy tutaj ręczną instalację, jest też możliwa instalacja za pomocą wtyczki w WordPress. Instalacja poprzez wtyczkę jest prostsza, ale ręczna metoda daje większą kontrolę nad kodem i jego umiejscowieniem.</p>
+
+        <h2>Dlaczego warto używać GTM?</h2>
+
+        <ul>
+            <li><strong>Centralne zarządzanie tagami</strong> - wszystkie kody w jednym miejscu</li>
+            <li><strong>Bez edycji kodu strony</strong> - po instalacji GTM nie musisz już edytować plików WordPress</li>
+            <li><strong>Wersjonowanie</strong> - możliwość cofnięcia zmian</li>
+            <li><strong>Testowanie</strong> - tryb debugowania przed publikacją</li>
+            <li><strong>Szybkość</strong> - asynchroniczne ładowanie tagów</li>
+            <li><strong>Bezpieczeństwo</strong> - kontrola nad tym, jakie skrypty są uruchamiane</li>
+        </ul>
+
         <h2>Podsumowanie</h2>
-        <p>Tagowanie strony za pomocą Google Tag Manager oraz śledzenie danych analitycznych jest <strong>niezbędnym elementem skutecznego zarządzania stroną internetową</strong>. Pozwala na zrozumienie zachowań użytkowników, optymalizację działań marketingowych oraz podejmowanie decyzji opartych na danych.</p>
-        <p>Inwestycja w te narzędzia przynosi długofalowe korzyści, przyczyniając się do wzrostu efektywności i sukcesu w cyfrowym świecie. Jeśli jeszcze nie korzystasz z GTM i narzędzi analitycznych, teraz jest najlepszy moment, aby zacząć.</p>
+
+        <p>Google Tag Manager to potężne narzędzie, które znacznie ułatwia zarządzanie kodami śledzącymi na stronie WordPress. Jednorazowa instalacja GTM pozwala na dodawanie nieograniczonej liczby tagów bez konieczności edycji kodu strony.</p>
+
+        <div class="article-cta">
+            <h3>Potrzebujesz pomocy z Google Tag Manager?</h3>
+            <p>Nasz zespół ekspertów pomoże Ci w profesjonalnej instalacji i konfiguracji GTM na Twojej stronie WordPress. Skonfigurujemy wszystkie potrzebne tagi i nauczymy Cię jak z nich korzystać.</p>
+            <a href="../kontakt.html" class="btn-white">Skontaktuj się z nami</a>
+        </div>
     </div>
 
     <script src="../js/navigation.js"></script>

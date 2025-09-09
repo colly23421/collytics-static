@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Menu - Debug</title>
+    <link rel="stylesheet" href="css/navigation-updated.css">
+    <style>
+        body { background: #1a1a1a; color: white; padding: 100px 20px; }
+        .debug-info { background: #333; padding: 20px; margin: 20px; border-radius: 10px; }
+        .success { color: #4ade80; }
+        .error { color: #ef4444; }
+    </style>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/hero-gradient.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/mode.css">
+<link rel="stylesheet" href="css/navigation-updated-fix.css">
+<link rel="stylesheet" href="css/navigation-updated.css">
+<link rel="stylesheet" href="css/navigation.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/hero-gradient.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/mode.css">
+<link rel="stylesheet" href="css/navigation-updated-fix.css">
+<link rel="stylesheet" href="css/navigation-updated.css">
+<link rel="stylesheet" href="css/navigation.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Menu z use-case-lab-wet.html -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo main transparent.png" alt="Collytics">
+            </a>
+            <button class="menu-trigger" id="menuTrigger">Menu</button>
+        </div>
+    </nav>
+    
+    <div class="dropdown-menu" id="dropdownMenu">
+        <button class="dropdown-close" id="closeMenu">Close</button>
+        <div class="dropdown-menu-inner">
+            <div class="menu-section">
+                <a href="index.html">Home</a>
+                <a href="services.html">Serwis</a>
+                <a href="blog/index.html">Blog</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Panel debugowania -->
+    <div class="debug-info">
+        <h2>🔍 Test Menu - Debugowanie</h2>
+        <div id="test-results"></div>
+        <br>
+        <button onclick="testMenu()" style="padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Uruchom Test Menu
+        </button>
+    </div>
+
+    <script>
+        // Test wszystkich elementów
+        window.onload = function() {
+            const results = document.getElementById('test-results');
+            let html = '<h3>Status elementów:</h3>';
+            
+            // Sprawdź elementy
+            const elements = {
+                'menuTrigger': document.getElementById('menuTrigger'),
+                'dropdownMenu': document.getElementById('dropdownMenu'),
+                'menuOverlay': document.getElementById('menuOverlay'),
+                'closeMenu': document.getElementById('closeMenu')
+            };
+            
+            for(let [name, el] of Object.entries(elements)) {
+                if(el) {
+                    html += `<p class="success">✓ ${name} - znaleziony</p>`;
+                } else {
+                    html += `<p class="error">✗ ${name} - NIE ZNALEZIONY!</p>`;
+                }
+            }
+            
+            // Sprawdź CSS
+            html += '<h3>Status plików:</h3>';
+            
+            // Sprawdź menu.js
+            if(typeof toggleMenu !== 'undefined') {
+                html += '<p class="success">✓ menu.js załadowany</p>';
+            } else {
+                html += '<p class="error">✗ menu.js NIE załadowany</p>';
+            }
+            
+            results.innerHTML = html;
+        };
+        
+        function testMenu() {
+            console.log('Test menu kliknięty');
+            const dropdown = document.getElementById('dropdownMenu');
+            const overlay = document.getElementById('menuOverlay');
+            
+            if(dropdown && overlay) {
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                overlay.style.display = dropdown.style.display;
+                alert('Menu powinno się pokazać/schować');
+            } else {
+                alert('BŁĄD: Brak elementów menu!');
+            }
+        }
+    </script>
+    
+    <!-- Załaduj menu.js -->
+    <script src="js/menu.js"></script>
+</body>
+</html>
