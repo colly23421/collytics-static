@@ -4,21 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab-Wet Case Study - Wzrost widoczności o 47% - Collytics</title>
-    <link rel="stylesheet" href="css/navigation-updated-fix.css">
+    <meta name="description" content="Jak zwiększyliśmy widoczność Lab-Wet w Google o 47% w 45 dni. Case study kompleksowej transformacji cyfrowej lidera diagnostyki weterynaryjnej.">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/Wordpress Transparent.png">
+
+    <!-- Czcionki -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Pliki CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/hero-gradient.css">
+    <link rel="stylesheet" href="css/mode.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/navigation-updated.css">
+    <link rel="stylesheet" href="css/navigation-updated-fix.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <style>
+        /* Reset i podstawy */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body { 
-            background: #0a0a0a; 
-            color: #fff; 
-            font-family: 'Inter', sans-serif;
+
+        /* Białe nagłówki */
+h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF !important;
+}
+
+.section-title {
+    color: #FFFFFF !important;
+}
+
+.hero-case h1 {
+    color: #FFFFFF !important;
+}
+
+.content h2,
+.content h3 {
+    color: #FFFFFF !important;
+}
+
+        body {
+            background: #0a0a0a !important;
+            color: #fff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             overflow-x: hidden;
+            line-height: 1.6;
         }
+
+        /* Grid pattern tło */
         body::before {
             content: "";
             position: fixed;
@@ -29,19 +68,68 @@
                 repeating-linear-gradient(0deg, transparent, transparent 100px, rgba(139, 92, 246, 0.03) 100px, rgba(139, 92, 246, 0.03) 101px);
             pointer-events: none;
             z-index: -1;
-                }
-        body::before {
-            content: "";
+        }
+
+        /* Nawigacja */
+        .navbar {
             position: fixed;
-            width: 100%;
-            height: 100%;
-            background-image:
-                repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(99, 102, 241, 0.03) 100px, rgba(99, 102, 241, 0.03) 101px),
-                repeating-linear-gradient(0deg, transparent, transparent 100px, rgba(139, 92, 246, 0.03) 100px, rgba(139, 92, 246, 0.03) 101px);
-            pointer-events: none;
-            z-index: -1;
-                }
-        
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: transform 0.3s ease-in-out, background 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .navbar.hidden {
+            transform: translateY(-100%);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.98);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: height 0.3s ease;
+        }
+
+        .navbar.scrolled .logo img {
+            height: 40px;
+        }
+
+        .menu-trigger {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+            padding: 10px 24px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .menu-trigger:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Hero section */
         .hero-case {
             padding: 140px 5% 80px;
             background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%);
@@ -53,26 +141,27 @@
             max-width: 1200px;
             height: 500px;
             margin: 40px auto;
-            background-image: url('assets/images/use_case_labwet.jpeg');
+
             background-size: cover;
             background-position: center;
             border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
-        
+
         .case-badge {
             display: inline-block;
-            background: #6366f1;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
             padding: 8px 20px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 20px;
+            letter-spacing: 1px;
         }
-        
+
         .hero-case h1 {
             font-size: clamp(2.5rem, 6vw, 4rem);
             line-height: 1.1;
-            margin-bottom: 30px;
             font-weight: 700;
             max-width: 1200px;
             margin: 0 auto 30px;
@@ -85,6 +174,7 @@
             margin: 0 auto;
         }
 
+        /* Meta informacje */
         .client-meta {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -92,9 +182,11 @@
             max-width: 1200px;
             margin: 60px auto;
             padding: 40px;
-            background: rgba(255,255,255,0.02);
+            background: rgba(0, 0, 0, 0.3) !important;
+            backdrop-filter: blur(10px);
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+             color: #FFFFFF !important;
         }
 
         .meta-item {
@@ -102,11 +194,15 @@
         }
 
         .meta-label {
-            color: #6366f1;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 600;
             margin-bottom: 8px;
         }
-        
+
+        /* Statystyki */
         .case-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -114,32 +210,42 @@
             margin: 60px auto;
             max-width: 1200px;
         }
-        
+
         .stat-item {
             text-align: center;
             padding: 30px;
-            background: rgba(99, 102, 241, 0.05);
+            background: rgba(0, 0, 0, 0.3) !important;
+            backdrop-filter: blur(10px);
             border-radius: 20px;
             border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: transform 0.3s ease;
         }
-        
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
         .stat-number {
             font-size: 3rem;
             font-weight: 700;
-            color: #6366f1;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
+
         .stat-label {
             color: #94969c;
             margin-top: 10px;
         }
-        
+
+        /* Zawartość */
         .content {
             max-width: 900px;
             margin: 0 auto;
             padding: 60px 40px;
         }
-        
+
         .section-title {
             font-size: 2rem;
             margin: 60px 0 30px;
@@ -151,7 +257,7 @@
         .section-icon {
             font-size: 2rem;
         }
-        
+
         .content p {
             line-height: 1.8;
             color: #b4b4b4;
@@ -163,16 +269,23 @@
             color: #fff;
         }
 
+        /* Kroki rozwiązania */
         .solution-steps {
             margin: 40px 0;
         }
 
         .step-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(0, 0, 0, 0.3) !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 30px;
             border-radius: 16px;
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateX(10px);
         }
 
         .step-card h3 {
@@ -183,29 +296,40 @@
             margin-bottom: 15px;
             font-size: 1.3rem;
         }
-        
+
+        /* Rezultaty */
         .results-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin: 40px 0;
         }
-        
+
         .result-card {
-            background: #141414;
+            background: rgba(0, 0, 0, 0.5) !important;
+            backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 16px;
             border: 1px solid rgba(99, 102, 241, 0.2);
             text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .result-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(99, 102, 241, 0.4);
         }
 
         .result-icon {
             font-size: 2.5rem;
             margin-bottom: 15px;
         }
-        
+
         .result-card h3 {
-            color: #6366f1;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
@@ -220,46 +344,162 @@
             color: #94969c;
             font-size: 0.95rem;
         }
-        
+
+        /* Footer */
+        footer {
+            padding: 60px 5%;
+            background: rgba(17, 17, 17, 0.98);
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-cta {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 60px;
+            margin-bottom: 60px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Menu dropdown */
+        .dropdown-menu {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: rgba(17, 17, 17, 0.98);
+            backdrop-filter: blur(20px);
+            transition: right 0.3s ease;
+            z-index: 10000;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .dropdown-menu.active {
+            right: 0;
+        }
+
+        .dropdown-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: transparent;
+            border: none;
+            color: #94969c;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .dropdown-close:hover {
+            color: #fff;
+        }
+
+        .dropdown-menu-inner {
+            margin-top: 80px;
+        }
+
+        .menu-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .menu-section a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 0;
+            transition: color 0.3s;
+        }
+
+        .menu-section a:hover {
+            color: #6366f1;
+        }
+
+        .menu-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 30px 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .social-links img:hover {
+            opacity: 1;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsywność */
         @media (max-width: 768px) {
             .hero-image {
                 height: 300px;
+
             }
+
             .case-stats {
                 grid-template-columns: 1fr;
             }
+
             .content {
                 padding: 40px 20px;
             }
+
+            .dropdown-menu {
+                width: 100%;
+                right: -100%;
+            }
         }
-        /* Poprawka dla menu */
-        .dropdown-menu {
-            z-index: 10000 !important;
-        }
-        .menu-overlay {
-            z-index: 9999 !important;
-        }
-        .navbar {
-            z-index: 1000 !important;
-        }    </style>
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/hero-gradient.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/mode.css">
-<link rel="stylesheet" href="css/navigation-updated-fix.css">
-<link rel="stylesheet" href="css/navigation-updated.css">
-<link rel="stylesheet" href="css/navigation.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/hero-gradient.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/mode.css">
-<link rel="stylesheet" href="css/navigation-updated-fix.css">
-<link rel="stylesheet" href="css/navigation-updated.css">
-<link rel="stylesheet" href="css/navigation.css">
-<link rel="stylesheet" href="css/style.css">
+    </style>
 </head>
 <body>
-    <nav class="navbar">
+    <!-- Nawigacja -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="assets/images/logo main transparent.png" alt="Collytics">
@@ -267,7 +507,8 @@
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
     </nav>
-    
+
+    <!-- Dropdown menu -->
     <div class="dropdown-menu" id="dropdownMenu">
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
@@ -280,21 +521,22 @@
             </div>
             <div class="menu-divider"></div>
             <div class="social-links">
-                <a href="https://facebook.com/collytics" title="Facebook">
+                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
                     <img src="assets/images/facebook.png" alt="Facebook">
                 </a>
-                <a href="https://linkedin.com/company/collytics" title="LinkedIn">
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
                     <img src="assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
                 </a>
-                <a href="https://twitter.com/collytics" title="Twitter">
-                    <img src="assets/images/cons8-twitter-500.svg" alt="Twitter">
+                <a href="https://x.com/collytics" target="_blank" title="Twitter">
+                    <img src="assets/images/cons8-twitter-500.svg" alt="X">
                 </a>
             </div>
         </div>
     </div>
-    
+
     <div class="menu-overlay" id="menuOverlay"></div>
-    
+
+    <!-- Hero section -->
     <section class="hero-case">
         <div style="text-align: center;">
             <span class="case-badge">CASE STUDY</span>
@@ -302,7 +544,10 @@
             <p class="hero-subtitle">Kompleksowa transformacja cyfrowa lidera diagnostyki weterynaryjnej</p>
         </div>
 
-        <div class="hero-image"></div>
+        <div class="hero-image">
+          <img src="assets/images/blog/labwet-case.jpg" alt="Lab-Wet Case Study" style="width: 100%;
+                height: 100%; object-fit: cover; border-radius: 20px;">
+      </div>
 
         <div class="client-meta">
             <div class="meta-item">
@@ -318,7 +563,7 @@
                 <div>+47% wzrostu widoczności w Google w 45 dni</div>
             </div>
         </div>
-        
+
         <div class="case-stats">
             <div class="stat-item">
                 <div class="stat-number">+47%</div>
@@ -334,22 +579,23 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- Content section -->
     <div class="content">
         <h2 class="section-title">
             <span class="section-icon">🎯</span>
             Wyzwanie: Strona na miarę lidera branży
         </h2>
         <p>Lab-Wet, jako czołowe laboratorium weterynaryjne w Polsce, potrzebowało strony internetowej, która odzwierciedlałaby ich wysoką pozycję na rynku. Celem był jasny: zastąpić dotychczasową witrynę nowoczesnym, wydajnym rozwiązaniem. Nowa strona miała być nie tylko estetyczna, ale przede wszystkim stać się skutecznym narzędziem do pozyskiwania klientów i budowania zaufania w tej wysoce specjalistycznej branży.</p>
-        
+
         <h2 class="section-title">
             <span class="section-icon">💡</span>
             Rozwiązanie: Strategia data-driven
         </h2>
         <p>Zastosowane podejście opierało się na strategii data-driven. Wdrożono kompleksowe rozwiązanie obejmujące analizę SEO i identyfikację potencjału, projektowanie UX zorientowane na konwersję oraz pełną optymalizację techniczną. Zidentyfikowano kluczowe usługi i frazy o największym potencjale biznesowym, zaprojektowano intuicyjne ścieżki dla użytkowników i opublikowano w pełni responsywną stronę.</p>
-        
+
         <h3 style="margin: 40px 0 30px; font-size: 1.5rem;">Nasze rozwiązanie krok po kroku</h3>
-        
+
         <div class="solution-steps">
             <div class="step-card">
                 <h3>
@@ -358,7 +604,7 @@
                 </h3>
                 <p>Zidentyfikowano kluczowe usługi i frazy o największym potencjale biznesowym, aby wokół nich zbudować architekturę nowej witryny</p>
             </div>
-            
+
             <div class="step-card">
                 <h3>
                     <span>🎨</span>
@@ -366,7 +612,7 @@
                 </h3>
                 <p>Zaprojektowano intuicyjne ścieżki dla użytkowników (lekarzy weterynarii i hodowców), aby maksymalnie ułatwić im dostęp do informacji o badaniach</p>
             </div>
-            
+
             <div class="step-card">
                 <h3>
                     <span>⚡</span>
@@ -375,10 +621,13 @@
                 <p>Opublikowano w pełni responsywną i zoptymalizowaną pod kątem wyszukiwarek stronę, gwarantując jej szybkość i nienaganne działanie</p>
             </div>
         </div>
-        
-        <h2 class="section-title" style="margin-top: 80px;">Rezultaty: Mierzalny wzrost w 6 tygodni</h2>
+
+        <h2 class="section-title" style="margin-top: 80px;">
+            <span class="section-icon">📊</span>
+            Rezultaty: Mierzalny wzrost w 6 tygodni
+        </h2>
         <p style="margin-bottom: 40px;">Wystarczyło zaledwie 45 dni, aby dane z Google Search Console potwierdziły skuteczność nowej strategii</p>
-        
+
         <div class="results-grid">
             <div class="result-card">
                 <div class="result-icon">📈</div>
@@ -399,26 +648,31 @@
                 <p>Strona dotycząca współczynnika tarczycy u psów i kotów zanotowała rekordowy wzrost</p>
             </div>
         </div>
-        
-        <h2 class="section-title" style="margin-top: 80px;">Wpływ na biznes: Od kliknięć do wyższych obrotów</h2>
+
+        <h2 class="section-title" style="margin-top: 80px;">
+            <span class="section-icon">💼</span>
+            Wpływ na biznes: Od kliknięć do wyższych obrotów
+        </h2>
         <p>W branży opartej na zaufaniu i specjalistycznej wiedzy, każdy punkt procentowy wzrostu widoczności ma bezpośrednie przełożenie na wyniki. Dla Lab-Wet więcej wartościowych wizyt na stronie oznacza więcej zapytań o badania, więcej dostarczonych próbek i w konsekwencji – <strong>wyższe obroty</strong>. Podjęte działania sprawiły, że strona internetowa stała się aktywnym i w pełni mierzalnym kanałem pozyskiwania nowych klientów.</p>
     </div>
-    
-    <footer style="padding: 60px 5%; background: #141414; margin-top: 100px;">
+
+    <!-- Footer -->
+    <footer>
         <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <div style="background: rgba(20, 35, 30, 0.5); backdrop-filter: blur(15px); border: 1px solid rgba(60, 255, 170, 0.2); border-radius: 24px; padding: 60px; margin-bottom: 60px;">
+            <div class="footer-cta">
                 <h2 style="font-size: 36px; margin-bottom: 16px; color: #fff;">Gotowy, aby rozpocząć projekt?</h2>
-                <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 32px;">
+                <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 32px;">
                     Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online.
                 </p>
-                <a href="kontakt.html" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; text-decoration: none; border-radius: 30px; font-weight: 600;">Kontakt</a>
+                <a href="kontakt.html" class="cta-button">Kontakt</a>
             </div>
-            
+
             <img src="assets/images/logo main transparent.png" alt="Collytics" style="height: 40px; margin-bottom: 20px;">
             <p style="color: #94969c;">© Collytics. All rights reserved.</p>
         </div>
     </footer>
-    
+
+    <!-- Skrypt menu.js -->
     <script src="js/menu.js"></script>
 </body>
 </html>

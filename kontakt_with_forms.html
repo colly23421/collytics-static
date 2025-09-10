@@ -31,36 +31,6 @@
             line-height: 1.6;
         }
 
-        /* Animated gradient background */
-        .gradient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #22c55e, #667eea);
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
-            z-index: -2;
-        }
-
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Dark overlay for better text readability */
-        .gradient-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 10, 10, 0.85);
-            z-index: -1;
-        }
-
         /* Nawigacja */
         .navbar {
             position: fixed;
@@ -86,8 +56,8 @@
 
         /* Większe logo */
         .logo img {
-            height: 60px !important;
-            max-height: 60px !important;
+            height: 50px !important;
+            max-height: 50px !important;
             width: auto;
         }
 
@@ -107,13 +77,11 @@
             border-color: rgba(255, 255, 255, 0.3);
         }
 
-        /* Sekcja kontakt - transparent background */
+        /* Sekcja kontakt */
         .contact-section {
             padding: 140px 40px 80px;
-            background: transparent !important;
+            background: var(--dark-bg);
             min-height: 100vh;
-            position: relative;
-            z-index: 1;
         }
 
         .contact-container {
@@ -124,20 +92,17 @@
             gap: 80px;
         }
 
-        /* Friendly intro text with better visibility */
+        /* Friendly intro text */
         .intro-text {
-            background: linear-gradient(135deg,
-                rgba(99, 102, 241, 0.08),
-                rgba(139, 92, 246, 0.05));
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.03));
             border-radius: 16px;
             padding: 24px;
             margin-bottom: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
         }
 
         .intro-text p {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
             line-height: 1.8;
             margin-bottom: 12px;
         }
@@ -145,7 +110,7 @@
         .intro-text p:last-child {
             margin-bottom: 0;
             font-style: italic;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.6);
         }
 
         h1 {
@@ -153,7 +118,6 @@
             margin-bottom: 20px;
             color: #FFFFFF !important;
             font-weight: 600;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         h2 {
@@ -161,16 +125,14 @@
             margin-bottom: 30px;
             color: #FFFFFF !important;
             font-weight: 600;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .form-input {
             width: 100%;
             padding: 15px 20px;
             margin-bottom: 20px;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 10px;
             color: var(--text-primary);
             font-size: 16px;
@@ -179,8 +141,8 @@
 
         .form-input:focus {
             outline: none;
-            background: rgba(0, 0, 0, 0.5);
             border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .form-checkbox {
@@ -198,7 +160,7 @@
         }
 
         .form-checkbox label {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
             font-size: 0.9rem;
             line-height: 1.5;
         }
@@ -206,9 +168,8 @@
         .submit-button {
             width: 100%;
             padding: 18px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
             border-radius: 50px;
             font-size: 1.1rem;
@@ -218,19 +179,13 @@
         }
 
         .submit-button:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
         }
 
         .contact-info {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 25px;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--text-secondary);
             line-height: 1.8;
             margin-bottom: 30px;
         }
@@ -241,7 +196,7 @@
 
         /* Email obfuscation */
         .email-link {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -263,15 +218,14 @@
             height: 400px;
             border-radius: 12px;
             overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
         }
 
         /* Menu dropdown */
         .dropdown-menu {
             position: fixed;
             top: 0;
-            right: -400px;
+            transform: translate(-50%, -50%) translateX(100vw);
             width: 400px;
             height: 100vh;
             background: rgba(17, 17, 17, 0.98);
@@ -433,10 +387,6 @@
     </style>
 </head>
 <body>
-    <!-- Gradient background divs -->
-    <div class="gradient-bg"></div>
-    <div class="gradient-overlay"></div>
-
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -475,7 +425,7 @@
     <section class="contact-section">
         <div class="contact-container">
             <div>
-                <h1>Porozmawiajmy o Twoim projekcie</h1>
+                <h1>Porozmawiajmy o Twoim Projekcie</h1>
 
                 <div class="intro-text">
                     <p>Hej! Super, że tu jesteś! 😉 Współpracujemy z ludźmi z całego świata, robiąc razem super projekty. 🚀</p>
@@ -498,7 +448,7 @@
             </div>
 
             <div>
-
+                <h2>Nasze Biuro</h2>
                 <div class="contact-info">
                     <p>
                         <strong>Collytics OÜ</strong><br>
@@ -507,7 +457,7 @@
                         00-008 Warszawa
                     </p>
                     <p style="margin-top: 20px;">
-                    
+                        <strong>Email:</strong>
                         <a href="mailto:hello@collytics.io" class="email-link" data-user="hello" data-domain="collytics.io"></a>
                     </p>
                 </div>
@@ -526,6 +476,8 @@
 
     <footer>
         <div class="footer-container">
+
+
             <div class="footer-logo">
                 <img src="assets/images/logo main transparent.png" alt="Collytics">
             </div>
@@ -538,202 +490,245 @@
     </footer>
 
     <script>
-    // Kompletny kod JavaScript do wklejenia w index.html i kontakt.html
-    // Zastąp CAŁY blok <script> tym kodem:
+        // Menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuTrigger = document.getElementById('menuTrigger');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const closeMenu = document.getElementById('closeMenu');
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Obsługa formularzy
-        const contactForms = document.querySelectorAll('.contact-form');
+            if(menuTrigger && dropdownMenu && menuOverlay) {
+                menuTrigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdownMenu.classList.add('active');
+                    menuOverlay.classList.add('active');
+                });
 
-        contactForms.forEach(form => {
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault();
-
-                // Pobierz elementy formularza
-                const submitButton = form.querySelector('button[type="submit"], .cta-button, .submit-button');
-                const originalButtonText = submitButton.textContent;
-
-                // Zbierz dane z formularza
-                const formData = {
-                    name: form.querySelector('input[type="text"]').value,
-                    email: form.querySelector('input[type="email"]').value,
-                    message: form.querySelector('textarea').value,
-                    consent: form.querySelector('input[type="checkbox"]').checked
-                };
-
-                // Walidacja po stronie klienta
-                if (!formData.name || !formData.email || !formData.message) {
-                    showFormMessage(form, 'Wypełnij wszystkie pola formularza', 'error');
-                    return;
-                }
-
-                if (!formData.consent) {
-                    showFormMessage(form, 'Musisz wyrazić zgodę na przetwarzanie danych', 'error');
-                    return;
-                }
-
-                // Zmień tekst przycisku na czas wysyłania
-                submitButton.textContent = 'Wysyłanie...';
-                submitButton.disabled = true;
-
-                try {
-                    // Wysłanie danych do API
-                    const response = await fetch('/api/contact', {
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify(formData)
+                if(closeMenu) {
+                    closeMenu.addEventListener('click', function() {
+                        dropdownMenu.classList.remove('active');
+                        menuOverlay.classList.remove('active');
                     });
-
-                    const result = await response.json();
-
-                    if (result.success) {
-                        // Sukces - wyczyść formularz
-                        form.reset();
-
-                        // Pokaż komunikat sukcesu pod formularzem
-                        showFormMessage(form, result.message || 'Dziękujemy za wiadomość!', 'success');
-
-                        // Zmień przycisk na zielony z haczykiem na 3 sekundy
-                        submitButton.textContent = '✓ Wysłano!';
-                        submitButton.style.background = '#10b981';
-
-                        setTimeout(() => {
-                            submitButton.textContent = originalButtonText;
-                            submitButton.style.background = '';
-                        }, 3000);
-
-                    } else {
-                        // Błąd
-                        showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
-                    }
-                } catch (error) {
-                    console.error('Błąd wysyłania:', error);
-
-                    // Fallback - użyj mailto
-                    const mailtoLink = `mailto:hello@collytics.io?subject=Kontakt ze strony&body=Imię: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AWiadomość:%0D%0A${formData.message}`;
-
-                    showFormMessage(form, 'Problem z formularzem. Otwieramy program pocztowy...', 'error');
-                    setTimeout(() => {
-                        window.location.href = mailtoLink;
-                    }, 2000);
-                } finally {
-                    // Przywróć przycisk (jeśli nie był zmieniony na sukces)
-                    setTimeout(() => {
-                        submitButton.textContent = originalButtonText;
-                        submitButton.disabled = false;
-                    }, 3000);
                 }
-            });
-        });
 
-        // Funkcja do wyświetlania komunikatów pod formularzem
-        function showFormMessage(form, message, type) {
-            // Usuń istniejące komunikaty
-            const existing = form.parentElement.querySelector('.form-message');
-            if (existing) existing.remove();
-
-            // Utwórz nowy komunikat
-            const messageDiv = document.createElement('div');
-            messageDiv.className = 'form-message';
-            messageDiv.textContent = message;
-
-            // Style bazowe
-            messageDiv.style.cssText = `
-                margin-top: 20px;
-                padding: 15px 20px;
-                border-radius: 8px;
-                text-align: center;
-                animation: fadeIn 0.3s ease;
-                font-size: 14px;
-            `;
-
-            // Kolory w zależności od typu
-            if (type === 'success') {
-                messageDiv.style.cssText += `
-                    background: rgba(16, 185, 129, 0.1);
-                    color: #10b981;
-                    border: 1px solid rgba(16, 185, 129, 0.2);
-                `;
-            } else if (type === 'error') {
-                messageDiv.style.cssText += `
-                    background: rgba(239, 68, 68, 0.1);
-                    color: #ef4444;
-                    border: 1px solid rgba(239, 68, 68, 0.2);
-                `;
-            }
-
-            // Dodaj po formularzu
-            form.parentElement.appendChild(messageDiv);
-
-            // Usuń po 7 sekundach
-            setTimeout(() => {
-                messageDiv.style.animation = 'fadeOut 0.3s ease';
-                setTimeout(() => {
-                    if (messageDiv.parentNode) {
-                        messageDiv.remove();
-                    }
-                }, 300);
-            }, 7000);
-        }
-
-        // Dodaj animacje CSS
-        if (!document.getElementById('form-animations')) {
-            const style = document.createElement('style');
-            style.id = 'form-animations';
-            style.textContent = `
-                @keyframes fadeIn {
-                    from { opacity: 0; transform: translateY(-10px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                @keyframes fadeOut {
-                    from { opacity: 1; transform: translateY(0); }
-                    to { opacity: 0; transform: translateY(-10px); }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-
-        // Obsługa menu (pozostaje bez zmian)
-        const menuTrigger = document.getElementById('menuTrigger');
-        const dropdownMenu = document.getElementById('dropdownMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const closeMenu = document.getElementById('closeMenu');
-
-        if(menuTrigger && dropdownMenu && menuOverlay) {
-            menuTrigger.addEventListener('click', function(e) {
-                e.preventDefault();
-                dropdownMenu.classList.add('active');
-                menuOverlay.classList.add('active');
-            });
-
-            if(closeMenu) {
-                closeMenu.addEventListener('click', function() {
+                menuOverlay.addEventListener('click', function() {
                     dropdownMenu.classList.remove('active');
                     menuOverlay.classList.remove('active');
                 });
             }
 
-            menuOverlay.addEventListener('click', function() {
+            // Form submission
+            document.querySelector('.contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.');
+            });
+        });
+    </script>
+
+
+
+<script>
+// Kompletny kod JavaScript do wklejenia w index.html i kontakt.html
+// Zastąp CAŁY blok <script> tym kodem:
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Obsługa formularzy
+    const contactForms = document.querySelectorAll('.contact-form');
+
+    contactForms.forEach(form => {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Pobierz elementy formularza
+            const submitButton = form.querySelector('button[type="submit"], .cta-button, .submit-button');
+            const originalButtonText = submitButton.textContent;
+
+            // Zbierz dane z formularza
+            const formData = {
+                name: form.querySelector('input[type="text"]').value,
+                email: form.querySelector('input[type="email"]').value,
+                message: form.querySelector('textarea').value,
+                consent: form.querySelector('input[type="checkbox"]').checked
+            };
+
+            // Walidacja po stronie klienta
+            if (!formData.name || !formData.email || !formData.message) {
+                showFormMessage(form, 'Wypełnij wszystkie pola formularza', 'error');
+                return;
+            }
+
+            if (!formData.consent) {
+                showFormMessage(form, 'Musisz wyrazić zgodę na przetwarzanie danych', 'error');
+                return;
+            }
+
+            // Zmień tekst przycisku na czas wysyłania
+            submitButton.textContent = 'Wysyłanie...';
+            submitButton.disabled = true;
+
+            try {
+                // Wysłanie danych do API
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Sukces - wyczyść formularz
+                    form.reset();
+
+                    // Pokaż komunikat sukcesu pod formularzem
+                    showFormMessage(form, result.message || 'Dziękujemy za wiadomość!', 'success');
+
+                    // Zmień przycisk na zielony z haczykiem na 3 sekundy
+                    submitButton.textContent = '✓ Wysłano!';
+                    submitButton.style.background = '#10b981';
+
+                    setTimeout(() => {
+                        submitButton.textContent = originalButtonText;
+                        submitButton.style.background = '';
+                    }, 3000);
+
+                } else {
+                    // Błąd
+                    showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
+                }
+            } catch (error) {
+                console.error('Błąd wysyłania:', error);
+
+                // Fallback - użyj mailto
+                const mailtoLink = `mailto:hello@collytics.io?subject=Kontakt ze strony&body=Imię: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AWiadomość:%0D%0A${formData.message}`;
+
+                showFormMessage(form, 'Problem z formularzem. Otwieramy program pocztowy...', 'error');
+                setTimeout(() => {
+                    window.location.href = mailtoLink;
+                }, 2000);
+            } finally {
+                // Przywróć przycisk (jeśli nie był zmieniony na sukces)
+                setTimeout(() => {
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
+                }, 3000);
+            }
+        });
+    });
+
+    // Funkcja do wyświetlania komunikatów pod formularzem
+    function showFormMessage(form, message, type) {
+        // Usuń istniejące komunikaty
+        const existing = form.parentElement.querySelector('.form-message');
+        if (existing) existing.remove();
+
+        // Utwórz nowy komunikat
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'form-message';
+        messageDiv.textContent = message;
+
+        // Style bazowe
+        messageDiv.style.cssText = `
+            margin-top: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            animation: fadeIn 0.3s ease;
+            font-size: 14px;
+        `;
+
+        // Kolory w zależności od typu
+        if (type === 'success') {
+            messageDiv.style.cssText += `
+                background: rgba(16, 185, 129, 0.1);
+                color: #10b981;
+                border: 1px solid rgba(16, 185, 129, 0.2);
+            `;
+        } else if (type === 'error') {
+            messageDiv.style.cssText += `
+                background: rgba(239, 68, 68, 0.1);
+                color: #ef4444;
+                border: 1px solid rgba(239, 68, 68, 0.2);
+            `;
+        }
+
+        // Dodaj po formularzu
+        form.parentElement.appendChild(messageDiv);
+
+        // Usuń po 7 sekundach
+        setTimeout(() => {
+            messageDiv.style.animation = 'fadeOut 0.3s ease';
+            setTimeout(() => {
+                if (messageDiv.parentNode) {
+                    messageDiv.remove();
+                }
+            }, 300);
+        }, 7000);
+    }
+
+    // Dodaj animacje CSS
+    if (!document.getElementById('form-animations')) {
+        const style = document.createElement('style');
+        style.id = 'form-animations';
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(-10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // Obsługa menu (pozostaje bez zmian)
+    const menuTrigger = document.getElementById('menuTrigger');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const closeMenu = document.getElementById('closeMenu');
+
+    if(menuTrigger && dropdownMenu && menuOverlay) {
+        menuTrigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+        });
+
+        if(closeMenu) {
+            closeMenu.addEventListener('click', function() {
                 dropdownMenu.classList.remove('active');
                 menuOverlay.classList.remove('active');
             });
         }
 
-        // Smooth scrolling (pozostaje bez zmian)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        menuOverlay.addEventListener('click', function() {
+            dropdownMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        });
+    }
+
+    // Smooth scrolling (pozostaje bez zmian)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
-    </script>
+});
+</script>
+
+
+
+
+
 <script src="js/menu.js"></script>
 </body>
 </html>

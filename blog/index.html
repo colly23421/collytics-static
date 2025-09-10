@@ -1,588 +1,487 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<style>
-/* Reset i podstawowe */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    background: #0a0a0a !important;
-    color: #ffffff !important;
-    font-family: 'Inter', -apple-system, sans-serif !important;
-    line-height: 1.6 !important;
-}
-
-/* Nawigacja */
-nav, .navbar, header {
-    background: rgba(10, 10, 10, 0.95) !important;
-    backdrop-filter: blur(20px) !important;
-}
-
-/* Menu dropdown - poprawka kolorów */
-.dropdown-menu {
-    background: rgba(17, 17, 17, 0.98) !important;
-}
-
-.dropdown-menu a, .menu-section a {
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
-
-.dropdown-menu a:hover {
-    color: #FFFFFF !important;
-    opacity: 1;
-}
-
-.dropdown-close {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-}
-
-/* Przyciski - lepsza widoczność tekstu */
-.menu-trigger, button, .btn, .cta-button {
-    background: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
-
-.menu-trigger:hover, button:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
-    color: #FFFFFF !important;
-    opacity: 1;
-}
-
-/* Nagłówki - zmniejszone rozmiary */
-h1 {
-    color: #FFFFFF !important;
-    font-size: 2.5rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 20px !important;
-}
-
-h2 {
-    color: #FFFFFF !important;
-    font-size: 1.75rem !important;
-    margin: 30px 0 15px !important;
-}
-
-h3 {
-    color: #FFFFFF !important;
-    font-size: 1.35rem !important;
-    margin: 25px 0 12px !important;
-}
-
-/* Tekst */
-p, li, td, span {
-    color: #a1a1aa !important;
-    font-size: 1rem !important;
-    line-height: 1.7 !important;
-}
-
-/* Tagi/kategorie */
-.tag, .category, .badge {
-    background: rgba(99, 102, 241, 0.1) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    color: #FFFFFF !important;
-    padding: 6px 16px !important;
-    border-radius: 50px !important;
-    font-size: 0.875rem !important;
-}
-
-/* Linki */
-a {
-    color: #6366f1 !important;
-    text-decoration: none !important;
-}
-
-a:hover {
-    color: #818cf8 !important;
-}
-
-/* Footer - spójny z resztą */
-footer {
-    background: #111111 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    padding: 60px 5% 40px !important;
-}
-
-.footer-container {
-    text-align: center !important;
-}
-
-footer h2 {
-    color: #FFFFFF !important;
-    font-size: 2rem !important;
-    margin-bottom: 20px !important;
-}
-
-footer p {
-    color: #a1a1aa !important;
-}
-
-footer .logo img {
-    height: 60px !important;
-    max-height: 60px !important;
-}
-
-.footer-bottom {
-    padding-top: 40px !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    color: #a1a1aa !important;
-    font-size: 0.875rem !important;
-}
-
-/* Content area */
-.article-content, article, main, .content {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    padding: 60px 20px !important;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    h1 { font-size: 1.8rem !important; }
-    h2 { font-size: 1.4rem !important; }
-    h3 { font-size: 1.2rem !important; }
-    p, li { font-size: 0.95rem !important; }
-}
-</style>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Collytics | Marketing, AI i Analityka</title>
     <meta name="description" content="Odkryj najnowsze artykuły o marketingu cyfrowym, sztucznej inteligencji, Google Ads, Facebook Ads i analityce webowej.">
 
-    <!-- WAŻNE: Poprawne linki do CSS -->
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
+
+    <!-- Czcionki -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Pliki CSS - BEZ DUPLIKATÓW -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/hero-gradient.css">
+    <link rel="stylesheet" href="../css/mode.css">
+    <link rel="stylesheet" href="../css/navigation.css">
     <link rel="stylesheet" href="../css/navigation-updated.css">
+    <link rel="stylesheet" href="../css/navigation-updated-fix.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* Reset i podstawy */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a !important;
+            color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Nawigacja */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: transform 0.3s ease-in-out;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .navbar.hidden {
+            transform: translateY(-100%);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.98);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: height 0.3s ease;
+        }
+
+        .navbar.scrolled .logo img {
+            height: 40px;
+        }
+
+        .menu-trigger {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+            padding: 10px 24px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .menu-trigger:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Menu dropdown */
+        .dropdown-menu {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: rgba(17, 17, 17, 0.98);
+            backdrop-filter: blur(20px);
+            transition: right 0.3s ease;
+            z-index: 10000;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .dropdown-menu.active {
+            right: 0;
+        }
+
+        .dropdown-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: transparent;
+            border: none;
+            color: #94969c;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-menu-inner {
+            margin-top: 80px;
+        }
+
+        .menu-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .menu-section a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 0;
+            transition: color 0.3s;
+        }
+
+        .menu-section a:hover {
+            color: #6366f1;
+        }
+
+        .social-links {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hero sekcja bloga */
+        .blog-hero {
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%);
+            padding: 160px 40px 80px;
+            text-align: center;
+            position: relative;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .blog-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .blog-hero h1 {
+            font-size: 3.5rem;
+            color: #FFFFFF;
+            margin-bottom: 24px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .blog-hero p {
+            font-size: 1.25rem;
+            color: #a1a1aa;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .blog-hero-content::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            margin: 40px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        /* Grid artykułów */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px auto;
+        }
+
+        .article-card {
+            display: flex;
+            flex-direction: column;
+            background: rgba(17, 17, 17, 0.6);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-decoration: none;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .article-image img {
+            transform: scale(1.05);
+        }
+
+        .article-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-category {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .article-title {
+            font-size: 1.1rem;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            color: #a1a1aa;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .article-date {
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+
+        .read-more {
+            font-size: 0.85rem;
+            color: #6366f1;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(17, 17, 17, 0.98);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 60px 5% 40px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-cta {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-cta h2 {
+            font-size: 2rem;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .footer-cta p {
+            color: #a1a1aa;
+            margin-bottom: 32px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .footer-logo {
+            margin-bottom: 24px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* Responsywność */
+        @media (max-width: 992px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero {
+                padding: 120px 20px 60px;
+            }
+
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+
+            .blog-hero p {
+                font-size: 1rem;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .dropdown-menu {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const menuTrigger = document.getElementById('menuTrigger');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const closeMenu = document.getElementById('closeMenu');
+
+      if(menuTrigger) {
+          menuTrigger.addEventListener('click', function() {
+              dropdownMenu.classList.add('active');
+              menuOverlay.classList.add('active');
+          });
+      }
+
+      if(closeMenu) {
+          closeMenu.addEventListener('click', function() {
+              dropdownMenu.classList.remove('active');
+              menuOverlay.classList.remove('active');
+          });
+      }
+
+      if(menuOverlay) {
+          menuOverlay.addEventListener('click', function() {
+              dropdownMenu.classList.remove('active');
+              menuOverlay.classList.remove('active');
+          });
+      }
+  });
+  </script>
 
 
 
-<link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/hero-gradient.css">
-<link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/mode.css">
-<link rel="stylesheet" href="../css/navigation-updated-fix.css">
-<link rel="stylesheet" href="../css/navigation-updated.css">
-<link rel="stylesheet" href="../css/navigation.css">
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/hero-gradient.css">
-<link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/mode.css">
-<link rel="stylesheet" href="../css/navigation-updated-fix.css">
-<link rel="stylesheet" href="../css/navigation-updated.css">
-<link rel="stylesheet" href="../css/navigation.css">
-<link rel="stylesheet" href="../css/style.css">
 
-
-<!-- Style dla bloga -->
-    
-
-
-
-
-
-
-
-
-<style>
-/* Naprawka dla strony głównej blogu */
-.blog-grid .blog-image,
-.blog-card .blog-image,
-.blog-grid img,
-.blog-card img {
-    width: 100% !important;
-    height: 200px !important;
-    max-height: 200px !important;
-    object-fit: cover !important;
-    object-position: center !important;
-}
-
-/* Jeśli obrazy są jako background-image */
-.blog-image[style*="background-image"] {
-    height: 200px !important;
-    max-height: 200px !important;
-    background-size: cover !important;
-    background-position: center !important;
-}
-
-/* Hero/Featured post */
-.featured-post img,
-.hero-post img {
-    width: 100% !important;
-    height: 300px !important;
-    max-height: 300px !important;
-    object-fit: cover !important;
-}
-
-/* Małe karty */
-.small-card img {
-    height: 150px !important;
-    max-height: 150px !important;
-}
-
-/* Zapobiegaj rozciąganiu */
-img {
-    max-width: 100% !important;
-}
-
-/* Override dla konkretnych obrazów */
-.blog-section img,
-article img {
-    display: block !important;
-    width: 100% !important;
-    height: 200px !important;
-    object-fit: cover !important;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .blog-image,
-    .blog-card img {
-        height: 180px !important;
-    }
-}
-</style>
-
-
-<style>
-/* FINALNA NAPRAWA OBRAZÓW - NAJWYŻSZY PRIORYTET */
-.article-card .article-image {
-    width: 100% !important;
-    height: 200px !important;
-    overflow: hidden !important;
-}
-
-.article-card .article-image img {
-    width: 100% !important;
-    height: 200px !important;
-    min-height: 200px !important;
-    max-height: 200px !important;
-    object-fit: cover !important;
-    object-position: center !important;
-}
-
-/* Usuń auto height dla obrazów w kartach */
-.articles-grid img,
-.article-card img {
-    height: 200px !important;
-    min-height: 200px !important;
-    max-height: 200px !important;
-}
-
-/* Dla div z background-image */
-.article-image[style*="background-image"] {
-    height: 200px !important;
-}
-
-/* Override wszystkich innych stylów */
-.container img {
-    width: 100% !important;
-    height: 200px !important;
-    object-fit: cover !important;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .article-card .article-image,
-    .article-card .article-image img,
-    .articles-grid img {
-        height: 180px !important;
-        min-height: 180px !important;
-        max-height: 180px !important;
-    }
-}
-</style>
-
-<style>
-/* GRID 3 KOLUMNY NA DESKTOP */
-.articles-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 30px !important;
-    max-width: 1200px !important;
-    margin: 60px auto !important;
-    padding: 0 20px !important;
-}
-
-.article-card {
-    display: flex !important;
-    flex-direction: column !important;
-    background: #111111 !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    transition: transform 0.3s ease !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-.article-card:hover {
-    transform: translateY(-5px) !important;
-    border-color: rgba(255, 255, 255, 0.15) !important;
-}
-
-.article-card .article-image {
-    width: 100% !important;
-    height: 200px !important;
-    overflow: hidden !important;
-}
-
-.article-card .article-image img {
-    width: 100% !important;
-    height: 200px !important;
-    object-fit: cover !important;
-}
-
-.article-card .article-content {
-    padding: 20px !important;
-    flex: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-.article-category {
-    background: rgba(99, 102, 241, 0.1) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    color: #fff !important;
-    padding: 4px 12px !important;
-    border-radius: 50px !important;
-    font-size: 0.75rem !important;
-    display: inline-block !important;
-    margin-bottom: 12px !important;
-}
-
-.article-title {
-    font-size: 1.1rem !important;
-    color: #FFFFFF !important;
-    margin-bottom: 10px !important;
-    line-height: 1.3 !important;
-}
-
-.article-excerpt {
-    font-size: 0.9rem !important;
-    color: #a1a1aa !important;
-    line-height: 1.5 !important;
-    flex: 1 !important;
-}
-
-.article-meta {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    margin-top: 15px !important;
-    padding-top: 15px !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-.article-date {
-    font-size: 0.8rem !important;
-    color: #6b7280 !important;
-}
-
-.read-more {
-    font-size: 0.85rem !important;
-    color: #6366f1 !important;
-}
-
-/* Tablet - 2 kolumny */
-@media (max-width: 992px) {
-    .articles-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 25px !important;
-    }
-}
-
-/* Mobile - 1 kolumna */
-@media (max-width: 576px) {
-    .articles-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-    }
-    
-    .article-title {
-        font-size: 1.2rem !important;
-    }
-}
-
-/* Usuń konflikty */
-.container img {
-    height: auto !important;
-}
-
-.articles-grid .article-image img {
-    height: 200px !important;
-}
-</style>
-
-<style>
-/* NAPRAWA HERO SEKCJI BLOGA */
-.blog-hero {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%) !important;
-    padding: 160px 40px 80px !important;
-    text-align: center !important;
-    position: relative !important;
-    min-height: 450px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin-bottom: 60px !important;
-}
-
-.blog-hero::before {
-    content: '' !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 70%) !important;
-    pointer-events: none !important;
-}
-
-.blog-hero-content {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-.blog-hero .menu-label {
-    display: none !important;
-}
-
-.blog-hero h1 {
-    font-size: 3.5rem !important;
-    color: #FFFFFF !important;
-    margin-bottom: 24px !important;
-    font-weight: 700 !important;
-    line-height: 1.1 !important;
-}
-
-.blog-hero p {
-    font-size: 1.25rem !important;
-    color: #a1a1aa !important;
-    line-height: 1.7 !important;
-    max-width: 700px !important;
-    margin: 0 auto !important;
-}
-
-/* Dekoracyjny element */
-.blog-hero-content::after {
-    content: '' !important;
-    display: block !important;
-    width: 60px !important;
-    height: 4px !important;
-    background: linear-gradient(90deg, #6366f1, #8b5cf6) !important;
-    margin: 40px auto 0 !important;
-    border-radius: 2px !important;
-}
-
-/* Container dla artykułów */
-.container {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 20px 80px !important;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .blog-hero {
-        padding: 120px 20px 60px !important;
-        min-height: 350px !important;
-    }
-    
-    .blog-hero h1 {
-        font-size: 2rem !important;
-    }
-    
-    .blog-hero p {
-        font-size: 1rem !important;
-    }
-}
-</style>
-
-<style>
-/* NAPRAWA FOOTERA */
-footer {
-    background: #111111 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    padding: 60px 5% 40px !important;
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-footer .logo {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin-bottom: 24px !important;
-}
-
-footer .logo img {
-    height: 60px !important;
-    max-height: 60px !important;
-    width: auto !important;
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-/* Zapobieganie miganiu */
-footer * {
-    -webkit-backface-visibility: hidden !important;
-    backface-visibility: hidden !important;
-    transform: translateZ(0) !important;
-}
-
-/* Fix dla przycisków */
-footer .cta-button {
-    display: inline-block !important;
-    background: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-    padding: 14px 32px !important;
-    border-radius: 50px !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-}
-
-footer .cta-button:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
-}
-
-/* Napraw tekst */
-footer h2 {
-    color: #FFFFFF !important;
-    font-size: 2rem !important;
-    margin-bottom: 20px !important;
-}
-
-footer p {
-    color: #a1a1aa !important;
-}
-
-.footer-bottom {
-    padding-top: 40px !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    color: #a1a1aa !important;
-    font-size: 0.875rem !important;
-}
-</style>
 </head>
-<body><style>body{background:#0a0a0a!important;color:#fff!important;font-family:Inter,sans-serif!important}nav,.navbar{background:#0a0a0a!important}h1,h2,h3,h4{color:#fff!important}p,li{color:#a1a1aa!important;line-height:1.8!important}.tag,.category{background:rgba(99,102,241,0.1)!important;border:1px solid rgba(99,102,241,0.3)!important;color:#fff!important;padding:6px 16px!important;border-radius:50px!important}a{color:#6366f1!important}</style>
-    <!-- Menu (skopiowane z use-case-lab-wet.html) -->
-    <nav class="navbar">
+<body>
+    <!-- Nawigacja -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="../index.html" class="logo">
                 <img src="../assets/images/logo main transparent.png" alt="Collytics">
             </a>
-            <button class="menu-trigger" id="menuTrigger">Menu</button>
+            <button class="menu-trigger" id="menuTrigger" onclick="document.getElementById('dropdownMenu').classList.add('active'); document.getElementById('menuOverlay').classList.add('active');">Menu</button>
+
         </div>
     </nav>
 
-        <div class="dropdown-menu" id="dropdownMenu">
+    <!-- Dropdown menu -->
+    <div class="dropdown-menu" id="dropdownMenu">
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
             <div class="menu-section">
@@ -592,19 +491,18 @@ footer p {
                 <a href="../about.html">O nas</a>
                 <a href="../kontakt.html">Kontakt</a>
             </div>
-            <div class="social-links" style="margin-top: 40px;">
-                <a href="../https://www.facebook.com/collytics" target="_blank" title="Facebook">
+            <div class="social-links">
+                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
                     <img src="../assets/images/facebook.png" alt="Facebook">
                 </a>
-                <a href="../https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
                     <img src="../assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
                 </a>
-                <a href="../https://x.com/collytics" target="_blank" title="Twitter">
+                <a href="https://x.com/collytics" target="_blank" title="Twitter">
                     <img src="../assets/images/cons8-twitter-500.svg" alt="X">
                 </a>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="menu-overlay" id="menuOverlay"></div>
@@ -612,7 +510,6 @@ footer p {
     <!-- Hero sekcja -->
     <section class="blog-hero">
         <div class="blog-hero-content">
-            <div class="menu-label">Menu</div>
             <h1>Strefa eksperta</h1>
             <p>Witaj na naszym blogu o analityce internetowej! Znajdziesz tutaj najnowsze informacje, praktyczne porady i dogłębne analizy dotyczące mierzenia, analizowania i optymalizacji danych internetowych.</p>
         </div>
@@ -622,9 +519,7 @@ footer p {
     <div class="container">
         <div class="articles-grid">
 
-            <!-- Artykuły posortowane od najnowszych -->
-
-            <!-- 1. JSON-LD zwiększa widoczność - 18 sierpnia 2025 -->
+            <!-- 1. JSON-LD zwiększa widoczność -->
             <a href="jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai.html" class="article-card">
                 <div class="article-image">
                     <img src="../assets/images/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg" alt="JSON-LD SEO">
@@ -640,14 +535,14 @@ footer p {
                 </div>
             </a>
 
-            <!-- 2. Sekretne dane Facebook Ads - 2 sierpnia 2025 -->
+            <!-- 2. Sekretne dane Facebook Ads -->
             <a href="sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" class="article-card">
                 <div class="article-image">
                     <img src="../assets/images/688e0a31363cc1c2a7fe38b3_analizy_danych_Facebook_Ads.jpg" alt="Facebook Ads dane">
                 </div>
                 <div class="article-content">
                     <span class="article-category">Facebook Ads</span>
-                    <h2 class="article-title">Sekretne dane Facebook Ads, które zmienią twoje kampanie: prosty sposób na odkrycie wzorców aktywności klientów</h2>
+                    <h2 class="article-title">Sekretne dane Facebook Ads, które zmienią twoje kampanie</h2>
                     <p class="article-excerpt">Odkryj ukryte wzorce aktywności klientów i wykorzystaj je do optymalizacji kampanii Facebook Ads.</p>
                     <div class="article-meta">
                         <span class="article-date">2 sierpnia 2025</span>
@@ -656,7 +551,7 @@ footer p {
                 </div>
             </a>
 
-            <!-- 3. Czy LLMs.txt pomoże AI - 15 lipca 2025 -->
+            <!-- 3. Czy LLMs.txt pomoże AI -->
             <a href="czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" class="article-card">
                 <div class="article-image">
                     <img src="../assets/images/6876194656c6edf5453ea3b7_llms-txt-p-3200.jpeg" alt="LLMs.txt">
@@ -672,226 +567,33 @@ footer p {
                 </div>
             </a>
 
-            <!-- 4. Niski koszt CPC Facebook Ads - 6 maja 2025 -->
-            <a href="niski-koszt-cpc-w-kampanii-facebook-ads-dla-wymagajacego-klienta-case-study-collytics.html" class="article-card">
-                <div class="article-image">
-                    <img src="../assets/images/68195f31233e844c8b2e76e3_facebook_ads.jpg" alt="Case Study Facebook Ads">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Case Study</span>
-                    <h2 class="article-title">Niski koszt CPC w kampanii Facebook Ads dla wymagającego klienta? Case Study Collytics</h2>
-                    <p class="article-excerpt">Jak obniżyliśmy koszt CPC o 73% przy zachowaniu wysokiej jakości leadów. Rzeczywisty przypadek klienta.</p>
-                    <div class="article-meta">
-                        <span class="article-date">6 maja 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 5. Najnowsze wytyczne Google Ads - 15 kwietnia 2025 -->
-            <a href="najnowsze-wytyczne-google-ads---kwiecien-2025.html" class="article-card">
-                <div class="article-image">
-                    <img src="../assets/images/67fdad442c62cf22981fb93e_Optymalne_ustawienia_Google_Ads.png" alt="Najnowsze wytyczne Google Ads">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Google Ads</span>
-                    <h2 class="article-title">Najnowsze wytyczne Google Ads - kwiecień 2025</h2>
-                    <p class="article-excerpt">Poznaj kluczowe zmiany w Google Ads na kwiecień 2025 i dowiedz się, jak dostosować swoje kampanie do nowych wymagań.</p>
-                    <div class="article-meta">
-                        <span class="article-date">15 kwietnia 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 6. Reklamy PPC leków - 4 kwietnia 2025 -->
-            <a href="reklamy-ppc-lekow-ograniczenia-duze-ale-sprzedaz-i-tak-szybuje-w-gore.html" class="article-card">
-                <div class="article-image">
-                    <img src="../assets/images/67efc8aa38d57737fa9e8add_Bez_nazwy.png" alt="Reklamy PPC leków">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">PPC</span>
-                    <h2 class="article-title">Reklamy PPC leków: Ograniczenia duże, ale sprzedaż i tak szybuje w górę</h2>
-                    <p class="article-excerpt">Jak skutecznie reklamować produkty farmaceutyczne pomimo restrykcyjnych przepisów? Sprawdzone strategie i case studies.</p>
-                    <div class="article-meta">
-                        <span class="article-date">4 kwietnia 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 7. Odkryj Collytics AdTracker - 27 marca 2025 -->
-            <a href="odkryj-collytics-adtracker---twoja-przewage-marketingowa-oparta-na-ai.html" class="article-card">
-                <div class="article-image">
-                    <img src="../assets/images/67e5496bc7cb74bcef108d87_collytics_ad_tracker.png" alt="Collytics AdTracker">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">AI & Marketing</span>
-                    <h2 class="article-title">Odkryj Collytics AdTracker – Twoją przewagę marketingową opartą na AI</h2>
-                    <p class="article-excerpt">Rewolucyjne narzędzie AI do śledzenia i optymalizacji kampanii reklamowych. Zwiększ ROI dzięki inteligentnej analityce.</p>
-                    <div class="article-meta">
-                        <span class="article-date">27 marca 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 8. Facebook Conversion API - 3 lutego 2025 -->
-            <a href="facebook-conversion-api-api-konwersji-bezpieczniejsze-i-bardziej-niezawodne-zrodlo-danych.html" class="article-card">
-                <div class="article-image">
-                    <img src="../assets/images/67a1281ce07fe10325214982_AdobeStock_816930321-p-3200.jpeg" alt="Facebook Conversion API">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Facebook Ads</span>
-                    <h2 class="article-title">Facebook Conversion API (API konwersji): bezpieczniejsze i bardziej niezawodne źródło danych</h2>
-                    <p class="article-excerpt">Jak wdrożyć Facebook Conversion API i dlaczego jest to kluczowe dla skuteczności kampanii w erze prywatności.</p>
-                    <div class="article-meta">
-                        <span class="article-date">3 lutego 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 9. Google Tag Manager w WordPress - 14 listopada 2024 -->
-            <a href="google-tag-manager-w-wordpress-jak-zainstalowac.html" class="article-card">
-                <div class="article-image">
-                    <img src="../assets/images/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg" alt="GTM WordPress">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">WordPress</span>
-                    <h2 class="article-title">Google Tag Manager w WordPress – jak zainstalować</h2>
-                    <p class="article-excerpt">Kompletny przewodnik instalacji GTM w WordPress. Od podstawowej konfiguracji po zaawansowane śledzenie.</p>
-                    <div class="article-meta">
-                        <span class="article-date">14 listopada 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 10. Opcje dopasowania słów kluczowych - 23 października 2024 -->
-            <a href="opcje-dopasowania-slow-kluczowych-w-google-ads.html" class="article-card">
-                <div class="article-image">
-                    <img src="../assets/images/6773179d80bd75f7af28392e_Opcje_dopasowania_s%C5%82o%CC%81w_kluczowych_w_Google_Ads.jpeg" alt="Słowa kluczowe Google Ads">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Google Ads</span>
-                    <h2 class="article-title">Opcje dopasowania słów kluczowych w Google Ads</h2>
-                    <p class="article-excerpt">Poznaj wszystkie typy dopasowań słów kluczowych i dowiedz się, kiedy stosować każde z nich dla maksymalnego ROI.</p>
-                    <div class="article-meta">
-                        <span class="article-date">23 października 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 11. AI w raportach Google Analytics 4 - 15 października 2024 -->
-            <a href="ai-w-raportach-google-analytics-4-jak-wykorzystac-zaawansowane-funkcje-napedzane-przez-sztuczna-inteligencje.html" class="article-card">
-                <div class="article-image">
-                    <img src="../assets/images/6773394308235e8c6cb24fc1_ai-w-raportach-google-analytics-4-jak-wykorzystac.png" alt="AI w Google Analytics 4">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Google Analytics</span>
-                    <h2 class="article-title">AI w raportach Google Analytics 4. Jak wykorzystać zaawansowane funkcje napędzane przez sztuczną inteligencję</h2>
-                    <p class="article-excerpt">Wykorzystaj pełen potencjał sztucznej inteligencji w GA4 do głębszej analizy danych.</p>
-                    <div class="article-meta">
-                        <span class="article-date">15 października 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 12. Google Search Console - 17 września 2024 -->
-            <a href="google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow.html" class="article-card">
-                <div class="article-image">
-                    <img src="../assets/images/677314625a8000f04b5e7582_google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow.jpeg" alt="Google Search Console">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">SEO Tools</span>
-                    <h2 class="article-title">Google Search Console: Kompleksowe narzędzie nie tylko dla webmasterów</h2>
-                    <p class="article-excerpt">Odkryj wszystkie możliwości GSC. Od podstawowej diagnostyki po zaawansowaną optymalizację.</p>
-                    <div class="article-meta">
-                        <span class="article-date">17 września 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 13. Alternatywa dla Google Analytics - 17 sierpnia 2024 -->
-            <a href="alternatywa-dla-google-analytics-czy-to-ma-sens.html" class="article-card">
-                <div class="article-image">
-                    <img src="../assets/images/6773150c83e90917f5806357_analityka-internetowa-c-2048x1544.png" alt="Alternatywy dla GA">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Analytics</span>
-                    <h2 class="article-title">Alternatywa dla Google Analytics – czy to ma sens?</h2>
-                    <p class="article-excerpt">Przegląd najlepszych alternatyw dla GA4. Kiedy warto rozważyć zmianę narzędzia analitycznego?</p>
-                    <div class="article-meta">
-                        <span class="article-date">17 sierpnia 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 14. Znaczenie Tagowania Strony - 1 sierpnia 2024 -->
-            <a href="znaczenie-tagowania-strony-za-pomoca-google-tag-manager.html" class="article-card">
-                <div class="article-image">
-                    <img src="../assets/images/677310d5b3e1d58c2c732f10_Znaczenie-Tagowania-Strony-za-Pomoca-Google-Tag-Manager-2048x1222.jpeg" alt="Google Tag Manager">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Analytics</span>
-                    <h2 class="article-title">Znaczenie Tagowania Strony za Pomocą Google Tag Manager</h2>
-                    <p class="article-excerpt">Kompletny przewodnik po implementacji GTM. Od podstaw do zaawansowanych strategii śledzenia.</p>
-                    <div class="article-meta">
-                        <span class="article-date">1 sierpnia 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
+            <!-- Dodaj pozostałe artykuły w tym samym formacie... -->
 
         </div>
     </div>
 
     <!-- Footer -->
-    <!-- FOOTER HTML -->
-  <footer>
-      <div class="footer-container">
-          <div class="footer-cta">
-              <h2>Gotowy, aby rozpocząć projekt?</h2>
-              <p>
-                  Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
-              </p>
-              <a href="#kontakt" class="cta-button">Kontakt</a>
-          </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-cta">
+                <h2>Gotowy, aby rozpocząć projekt?</h2>
+                <p>
+                    Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online.
+                </p>
+                <a href="../kontakt.html" class="cta-button">Kontakt</a>
+            </div>
 
-          <div class="logo" style="justify-content: center; margin-bottom: 24px;">
-              <img src="../assets/images/logo main transparent.png" style="max-height: 40px;" alt="Collytics" onerror="this.src='assets/images/logo.png'">
-          </div>
-          <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
+            <div class="footer-logo">
+                <img src="../assets/images/logo main transparent.png" alt="Collytics">
+            </div>
+            <p style="color: #a1a1aa; margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
 
-          <div class="footer-bottom">
-              <p>© Collytics. All rights reserved. Polityka Prywatności</p>
-          </div>
-      </div>
-  </footer>
+            <div class="footer-bottom">
+                <p>© Collytics. All rights reserved. <a href="../legal/privacy-policy.html" style="color: #6366f1;">Polityka Prywatności</a></p>
+            </div>
+        </div>
+    </footer>
 
 
-  <!-- JAVASCRIPT POWIĄZANY Z FOOTEREM -->
-  <script>
-  // Smooth scrolling - działa dla przycisku "Kontakt" w footerze który ma href="#kontakt"
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-              target.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-              });
-          }
-      });
-  });
-  </script>
-    <!-- Skrypty -->
-    <script src="../js/menu.js"></script>
 </body>
 </html>

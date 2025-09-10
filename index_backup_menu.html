@@ -41,18 +41,17 @@
 
         /* Nawigacja - poprawka białego paska */
         .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: rgba(15, 15, 15, 0.85) !important; /* Zmniejsz z 0.95 na 0.85 */
-        backdrop-filter: blur(15px); /* Zwiększ blur z 10px na 15px */
-        -webkit-backdrop-filter: blur(15px);
-        z-index: 1000;
-        padding: 20px 0;
-        transition: transform 0.3s ease, background 0.3s ease;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtelniejsza linia */
-    }
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 15, 15, 0.95) !important;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: transform 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
         .nav-container {
             max-width: 1200px;
@@ -367,73 +366,54 @@
         }
 
         /* Dropdown Menu */
-  .dropdown-menu {
-      position: fixed;
-      top: 0;
-      right: -400px;
-      width: 400px;
-      height: 100vh;
-      background: var(--dark-secondary);
-      transition: right 0.3s ease;
-      z-index: 1002;
-      padding: 30px;
-      overflow-y: auto;
-  }
+        .dropdown-menu {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 600px;
+            max-height: 85vh;
+            background: rgba(30, 30, 30, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1002;
+            padding: 30px;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: rgba(30, 30, 30, 0.98);
+            transition: right 0.3s ease;
+            z-index: 1002;
+            padding: 30px;
+            overflow-y: auto;
+        }
 
-  .dropdown-menu.active {
-      right: 0;
-  }
+        .dropdown-menu.active {
+            right: 0;
+        }
 
-  .dropdown-close {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      background: transparent;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      cursor: pointer;
-  }
+        .dropdown-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
 
-  .dropdown-menu-inner {
-      margin-top: 80px;
-  }
-
-  .menu-section {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-  }
-
-  .menu-section a {
-      color: var(--text-primary);
-      font-size: 1.25rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      padding: 10px 0;
-  }
-
-  .menu-section a:hover {
-      color: var(--primary-color);
-  }
-
-  .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 999;
-  }
-
-  .menu-overlay.active {
-      opacity: 1;
-      visibility: visible;
-  }
+        .dropdown-menu-inner {
+            margin-top: 80px;
+        }
 
         .menu-section {
             display: flex;
@@ -546,6 +526,10 @@ footer img {
     width: auto;
 }
 
+/* Dostosowanie paddingu nawigacji dla większego logo */
+.navbar {
+    padding: 20px 0;
+}
 
 /* Opcjonalnie - jeszcze większe logo w footerze */
 .footer-container img {
@@ -561,7 +545,7 @@ footer img {
     </style>
 </head>
 <body>
-  <nav class="navbar" id="navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="assets/images/logo main transparent.png" alt="Collytics">
@@ -630,52 +614,52 @@ footer img {
     </section>
 
     <section class="blog-section">
-      <div class="blog-container">
-          <div class="blog-header">
-              <h2>Najnowsze<br>wpisy</h2>
-          </div>
-          <div class="blog-grid">
-              <a href="blog/jak-json-ld-dominuje-rynek-stomatologiczny-gliwice-case-study.html" style="text-decoration: none; color: inherit;">
-                  <article class="blog-card">
-                      <div class="blog-image" style="background-image: url('assets/images/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg');"></div>
-                      <div class="blog-content">
-                          <div class="blog-meta">
-                              <span>Case Study</span>
-                              <span>20 Sie, 25</span>
-                          </div>
-                          <h3 class="blog-title">Jak JSON-LD Decyduje o Widoczności w AI - Case Study Stomatologiczne</h3>
-                      </div>
-                  </article>
-              </a>
+        <div class="blog-container">
+            <div class="blog-header">
+                <h2>Najnowsze<br>wpisy</h2>
+            </div>
+            <div class="blog-grid">
+                <a href="blog/jak-json-ld-dominuje-rynek-stomatologiczny-gliwice-case-study.html" style="text-decoration: none; color: inherit;">
+                    <article class="blog-card">
+                        <div class="blog-image" style="background-image: url('assets/images/Gemini_Generated_Image_3irbye3irbye3irb.jpeg');"></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>Case Study</span>
+                                <span>20 Sie, 25</span>
+                            </div>
+                            <h3 class="blog-title">Jak JSON-LD Decyduje o Widoczności w AI - Case Study Stomatologiczne</h3>
+                        </div>
+                    </article>
+                </a>
 
-              <a href="blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" style="text-decoration: none; color: inherit;">
-                  <article class="blog-card">
-                      <div class="blog-image" style="background-image: url('assets/images/688e0ded690333d20e7aa5be_Code_Generated_Image.png');"></div>
-                      <div class="blog-content">
-                          <div class="blog-meta">
-                              <span>Tips & Tricks</span>
-                              <span>8 Wrz, 25</span>
-                          </div>
-                          <h3 class="blog-title">Sekretne dane Facebook Ads: Odkryj wzorce aktywności klientów</h3>
-                      </div>
-                  </article>
-              </a>
+                <a href="blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" style="text-decoration: none; color: inherit;">
+                    <article class="blog-card">
+                        <div class="blog-image" style="background-image: url('assets/images/Code_Generated_Image.png');"></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>Tips & Tricks</span>
+                                <span>8 Wrz, 25</span>
+                            </div>
+                            <h3 class="blog-title">Sekretne dane Facebook Ads: Odkryj wzorce aktywności klientów</h3>
+                        </div>
+                    </article>
+                </a>
 
-              <a href="blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" style="text-decoration: none; color: inherit;">
-                  <article class="blog-card">
-                      <div class="blog-image" style="background-image: url('assets/images/6876194656c6edf5453ea3b7_llms-txt-p-3200.jpeg');"></div>
-                      <div class="blog-content">
-                          <div class="blog-meta">
-                              <span>SEO</span>
-                              <span>25 Wrz, 25</span>
-                          </div>
-                          <h3 class="blog-title">Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?</h3>
-                      </div>
-                  </article>
-              </a>
-          </div>
-      </div>
-  </section>
+                <a href="blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" style="text-decoration: none; color: inherit;">
+                    <article class="blog-card">
+                        <div class="blog-image" style="background-image: url('assets/images/llms-txt-p-3200.jpeg');"></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>SEO</span>
+                                <span>25 Wrz, 25</span>
+                            </div>
+                            <h3 class="blog-title">Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?</h3>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <section style="padding: 80px 5%; background: var(--dark-bg);">
         <div style="max-width: 1200px; margin: 0 auto;">
@@ -787,192 +771,202 @@ footer img {
     </footer>
 
     <script>
+    // Kompletny kod JavaScript do wklejenia w index.html i kontakt.html
+// Zastąp CAŁY blok <script> tym kodem:
 
-  document.addEventListener('DOMContentLoaded', function() {
-      // Obsługa formularzy
-      const contactForms = document.querySelectorAll('.contact-form');
+document.addEventListener('DOMContentLoaded', function() {
+    // Obsługa formularzy
+    const contactForms = document.querySelectorAll('.contact-form');
 
-      contactForms.forEach(form => {
-          form.addEventListener('submit', async function(e) {
-              e.preventDefault();
+    contactForms.forEach(form => {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-              const submitButton = form.querySelector('button[type="submit"], .cta-button, .submit-button');
-              const originalButtonText = submitButton.textContent;
+            // Pobierz elementy formularza
+            const submitButton = form.querySelector('button[type="submit"], .cta-button, .submit-button');
+            const originalButtonText = submitButton.textContent;
 
-              const formData = {
-                  name: form.querySelector('input[type="text"]').value,
-                  email: form.querySelector('input[type="email"]').value,
-                  message: form.querySelector('textarea').value,
-                  consent: form.querySelector('input[type="checkbox"]').checked
-              };
+            // Zbierz dane z formularza
+            const formData = {
+                name: form.querySelector('input[type="text"]').value,
+                email: form.querySelector('input[type="email"]').value,
+                message: form.querySelector('textarea').value,
+                consent: form.querySelector('input[type="checkbox"]').checked
+            };
 
-              if (!formData.name || !formData.email || !formData.message) {
-                  showFormMessage(form, 'Wypełnij wszystkie pola formularza', 'error');
-                  return;
-              }
+            // Walidacja po stronie klienta
+            if (!formData.name || !formData.email || !formData.message) {
+                showFormMessage(form, 'Wypełnij wszystkie pola formularza', 'error');
+                return;
+            }
 
-              if (!formData.consent) {
-                  showFormMessage(form, 'Musisz wyrazić zgodę na przetwarzanie danych', 'error');
-                  return;
-              }
+            if (!formData.consent) {
+                showFormMessage(form, 'Musisz wyrazić zgodę na przetwarzanie danych', 'error');
+                return;
+            }
 
-              submitButton.textContent = 'Wysyłanie...';
-              submitButton.disabled = true;
+            // Zmień tekst przycisku na czas wysyłania
+            submitButton.textContent = 'Wysyłanie...';
+            submitButton.disabled = true;
 
-              try {
-                  const response = await fetch('/api/contact', {
-                      method: 'POST',
-                      headers: {'Content-Type': 'application/json'},
-                      body: JSON.stringify(formData)
-                  });
+            try {
+                // Wysłanie danych do API
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(formData)
+                });
 
-                  const result = await response.json();
+                const result = await response.json();
 
-                  if (result.success) {
-                      form.reset();
-                      showFormMessage(form, result.message || 'Dziękujemy za wiadomość!', 'success');
-                      submitButton.textContent = '✓ Wysłano!';
-                      submitButton.style.background = '#10b981';
+                if (result.success) {
+                    // Sukces - wyczyść formularz
+                    form.reset();
 
-                      setTimeout(() => {
-                          submitButton.textContent = originalButtonText;
-                          submitButton.style.background = '';
-                      }, 3000);
-                  } else {
-                      showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
-                  }
-              } catch (error) {
-                  console.error('Błąd wysyłania:', error);
-                  const mailtoLink = `mailto:hello@collytics.io?subject=Kontakt ze strony&body=Imię: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AWiadomość:%0D%0A${formData.message}`;
-                  showFormMessage(form, 'Problem z formularzem. Otwieramy program pocztowy...', 'error');
-                  setTimeout(() => {
-                      window.location.href = mailtoLink;
-                  }, 2000);
-              } finally {
-                  setTimeout(() => {
-                      submitButton.textContent = originalButtonText;
-                      submitButton.disabled = false;
-                  }, 3000);
-              }
-          });
-      });
+                    // Pokaż komunikat sukcesu pod formularzem
+                    showFormMessage(form, result.message || 'Dziękujemy za wiadomość!', 'success');
 
-      // Funkcja do wyświetlania komunikatów
-      function showFormMessage(form, message, type) {
-          const existing = form.parentElement.querySelector('.form-message');
-          if (existing) existing.remove();
+                    // Zmień przycisk na zielony z haczykiem na 3 sekundy
+                    submitButton.textContent = '✓ Wysłano!';
+                    submitButton.style.background = '#10b981';
 
-          const messageDiv = document.createElement('div');
-          messageDiv.className = 'form-message';
-          messageDiv.textContent = message;
+                    setTimeout(() => {
+                        submitButton.textContent = originalButtonText;
+                        submitButton.style.background = '';
+                    }, 3000);
 
-          messageDiv.style.cssText = `
-              margin-top: 20px;
-              padding: 15px 20px;
-              border-radius: 8px;
-              text-align: center;
-              animation: fadeIn 0.3s ease;
-              font-size: 14px;
-          `;
+                } else {
+                    // Błąd
+                    showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
+                }
+            } catch (error) {
+                console.error('Błąd wysyłania:', error);
 
-          if (type === 'success') {
-              messageDiv.style.cssText += `
-                  background: rgba(16, 185, 129, 0.1);
-                  color: #10b981;
-                  border: 1px solid rgba(16, 185, 129, 0.2);
-              `;
-          } else if (type === 'error') {
-              messageDiv.style.cssText += `
-                  background: rgba(239, 68, 68, 0.1);
-                  color: #ef4444;
-                  border: 1px solid rgba(239, 68, 68, 0.2);
-              `;
-          }
+                // Fallback - użyj mailto
+                const mailtoLink = `mailto:hello@collytics.io?subject=Kontakt ze strony&body=Imię: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AWiadomość:%0D%0A${formData.message}`;
 
-          form.parentElement.appendChild(messageDiv);
+                showFormMessage(form, 'Problem z formularzem. Otwieramy program pocztowy...', 'error');
+                setTimeout(() => {
+                    window.location.href = mailtoLink;
+                }, 2000);
+            } finally {
+                // Przywróć przycisk (jeśli nie był zmieniony na sukces)
+                setTimeout(() => {
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
+                }, 3000);
+            }
+        });
+    });
 
-          setTimeout(() => {
-              messageDiv.style.animation = 'fadeOut 0.3s ease';
-              setTimeout(() => {
-                  if (messageDiv.parentNode) {
-                      messageDiv.remove();
-                  }
-              }, 300);
-          }, 7000);
-      }
+    // Funkcja do wyświetlania komunikatów pod formularzem
+    function showFormMessage(form, message, type) {
+        // Usuń istniejące komunikaty
+        const existing = form.parentElement.querySelector('.form-message');
+        if (existing) existing.remove();
 
-      // Animacje CSS
-      if (!document.getElementById('form-animations')) {
-          const style = document.createElement('style');
-          style.id = 'form-animations';
-          style.textContent = `
-              @keyframes fadeIn {
-                  from { opacity: 0; transform: translateY(-10px); }
-                  to { opacity: 1; transform: translateY(0); }
-              }
-              @keyframes fadeOut {
-                  from { opacity: 1; transform: translateY(0); }
-                  to { opacity: 0; transform: translateY(-10px); }
-              }
-          `;
-          document.head.appendChild(style);
-      }
+        // Utwórz nowy komunikat
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'form-message';
+        messageDiv.textContent = message;
 
-  
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-              e.preventDefault();
-              const target = document.querySelector(this.getAttribute('href'));
-              if (target) {
-                  target.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start'
-                  });
-              }
-          });
-      });
+        // Style bazowe
+        messageDiv.style.cssText = `
+            margin-top: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            animation: fadeIn 0.3s ease;
+            font-size: 14px;
+        `;
 
-      // Animation on scroll
-      const observerOptions = {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-      };
+        // Kolory w zależności od typu
+        if (type === 'success') {
+            messageDiv.style.cssText += `
+                background: rgba(16, 185, 129, 0.1);
+                color: #10b981;
+                border: 1px solid rgba(16, 185, 129, 0.2);
+            `;
+        } else if (type === 'error') {
+            messageDiv.style.cssText += `
+                background: rgba(239, 68, 68, 0.1);
+                color: #ef4444;
+                border: 1px solid rgba(239, 68, 68, 0.2);
+            `;
+        }
 
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  entry.target.style.opacity = '1';
-                  entry.target.style.transform = 'translateY(0)';
-              }
-          });
-      }, observerOptions);
+        // Dodaj po formularzu
+        form.parentElement.appendChild(messageDiv);
 
-      document.querySelectorAll('.blog-card, .case-study-container').forEach(el => {
-          el.style.opacity = '0';
-          el.style.transform = 'translateY(20px)';
-          el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-          observer.observe(el);
-      });
-  });
+        // Usuń po 7 sekundach
+        setTimeout(() => {
+            messageDiv.style.animation = 'fadeOut 0.3s ease';
+            setTimeout(() => {
+                if (messageDiv.parentNode) {
+                    messageDiv.remove();
+                }
+            }, 300);
+        }, 7000);
+    }
 
-  // Navigation hide/show on scroll - MUSI BYĆ POZA DOMContentLoaded
-  let lastScrollTop = 0;
-  const nav = document.querySelector('.navbar');
+    // Dodaj animacje CSS
+    if (!document.getElementById('form-animations')) {
+        const style = document.createElement('style');
+        style.id = 'form-animations';
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(-10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
 
-  window.addEventListener('scroll', function() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // Obsługa menu (pozostaje bez zmian)
+    const menuTrigger = document.getElementById('menuTrigger');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const closeMenu = document.getElementById('closeMenu');
 
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
-          nav.style.transform = 'translateY(-100%)';
-      } else {
-          nav.style.transform = 'translateY(0)';
-      }
+    if(menuTrigger && dropdownMenu && menuOverlay) {
+        menuTrigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+        });
 
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  });
-  </script>
+        if(closeMenu) {
+            closeMenu.addEventListener('click', function() {
+                dropdownMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+        }
 
+        menuOverlay.addEventListener('click', function() {
+            dropdownMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        });
+    }
+
+    // Smooth scrolling (pozostaje bez zmian)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+    </script>
 <script src="js/menu.js"></script>
 </body>
 </html>

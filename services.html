@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collytics: Kompleksowe Rozwiązania Marketingu Cyfrowego i Analityki AI</title>
     <meta name="description" content="Skuteczne kampanie SEM, analizy AI, rozwiązania webowe i kompleksowy marketing cyfrowy">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Favicon Original.ico">
+    <link rel="shortcut icon" type="image/png" href="assets/images/Wordpress Transparent.png">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/main.css">
@@ -87,7 +87,16 @@
         gap: 60px !important;
         position: relative !important;
     }
-
+    .stats-container {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 60px !important;
+        position: relative !important;
+        background: transparent !important; /* Dodaj tę linię */
+        padding: 0 !important; /* I ewentualnie tę, jeśli padding psuje układ */
+    }
     .stat-card {
         text-align: center !important;
         position: relative !important;
@@ -141,30 +150,75 @@
             font-size: 2.5rem !important;
         }
 
-        .footer-cta h2 {
-            font-size: 36px !important;
-            margin-bottom: 16px !important;
-            color: #ffffff !important;
-        }
     }
+
+    /* Naprawka dla services.html - footer */
+    footer {
+        background: rgba(17, 17, 17, 0.98) !important; /* Zmień z #111111 */
+        padding: 60px 5% 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-container {
+        background: transparent !important; /* Zmień z #111111 */
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* Dodaj ramkę wokół CTA dla lepszej widoczności */
+    .footer-cta {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 60px;
+    }
+
+    /* Przycisk CTA */
+    .cta-button {
+        background: #8B5CF6;
+        color: white;
+        padding: 14px 32px;
+        border-radius: 50px;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .cta-button:hover {
+        background: #7C3AED;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Footer bottom */
+    .footer-bottom {
+        padding-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: #6b7280;
+        font-size: 0.875rem;
+    }
+
+    .footer-bottom a {
+        color: #8B5CF6;
+        text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+        text-decoration: underline;
+    }
+
+
+
+
     </style>
 
-    <style>
-    /* Naprawka dla services.html */
-    footer h2, .footer-cta h2 {
-        color: #FFFFFF !important;
-    }
-    footer p, .footer-cta p {
-        color: #a1a1aa !important;
-    }
-    .footer-container {
-        background: #111111 !important;
-    }
-    /* Upewnij się że wszystkie h2 są białe */
-    h2 {
-        color: #FFFFFF !important;
-    }
-    </style>
+
 
 </head>
 <body>
@@ -172,36 +226,37 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo main transparent.png" alt="Collytics">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo main transparent.png" alt="Collytics">
             </a>
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
     </nav>
 
-    <div class="dropdown-menu" id="dropdownMenu">
+        <div class="dropdown-menu" id="dropdownMenu">
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
             <div class="menu-section">
-                <a href="index.html">Home</a>
-                <a href="services.html">Serwis</a>
-                <a href="blog/index.html">Blog</a>
-                <a href="about.html">O nas</a>
-                <a href="kontakt.html">Kontakt</a>
+                <a href="../index.html">Home</a>
+                <a href="../services.html">Serwis</a>
+                <a href="index.html">Blog</a>
+                <a href="../about.html">O nas</a>
+                <a href="../kontakt.html">Kontakt</a>
             </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
-                    <img src="assets/images/facebook.png" alt="Facebook">
+            <div class="social-links" style="margin-top: 40px;">
+                <a href="../https://www.facebook.com/collytics" target="_blank" title="Facebook">
+                    <img src="../assets/images/facebook.png" alt="Facebook">
                 </a>
-                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
-                    <img src="assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
+                <a href="../https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+                    <img src="../assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
                 </a>
-                <a href="https://x.com/collytics" target="_blank" title="Twitter">
-                    <img src="assets/images/cons8-twitter-500.svg" alt="X">
+                <a href="../https://x.com/collytics" target="_blank" title="Twitter">
+                    <img src="../assets/images/cons8-twitter-500.svg" alt="X">
                 </a>
             </div>
         </div>
     </div>
+
 
     <div class="menu-overlay" id="menuOverlay"></div>
 
@@ -302,14 +357,13 @@
                 </div>
             </div>
         </div>
-    </section>
 
-  
+  </section>
 
     <footer>
         <div class="footer-container">
             <div class="footer-cta">
-                <h2>Gotowy, aby rozpocząć projekt?</h2>
+              <h2 style="color: #FFFFFF !important;">Gotowy, aby rozpocząć projekt?</h2>
                 <p>
                     Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
                 </p>
@@ -326,6 +380,8 @@
             </div>
         </div>
     </footer>
+
+
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -355,5 +411,6 @@
         }
     });
     </script>
+<script src="js/menu.js"></script>
 </body>
 </html>
