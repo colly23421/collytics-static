@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "api/send-mail.js": {
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/send-mail.php",
+      "destination": "/api/send-mail"
+    }
+  ]
+}

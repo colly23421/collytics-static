@@ -476,7 +476,7 @@
 
     <footer>
         <div class="footer-container">
-          
+
 
             <div class="footer-logo">
                 <img src="assets/images/logo main transparent.png" alt="Collytics">
@@ -524,5 +524,233 @@
             });
         });
     </script>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Znajdź wszystkie formularze kontaktowe na stronie
+    const contactForms = document.querySelectorAll('.contact-form');
+
+    contactForms.forEach(form => {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Pobierz elementy formularza
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+
+            // Zbierz dane z formularza
+            const formData = {
+                name: form.querySelector('input[type="text"]').value,
+                email: form.querySelector('input[type="email"]').value,
+                message: form.querySelector('textarea').value,
+                consent: form.querySelector('input[type="checkbox"]').checked
+            };
+
+            // Walidacja po stronie klienta
+            if (!formData.name || !formData.email || !formData.message) {
+                showNotification('Wypełnij wszystkie pola formularza', 'error');
+                return;
+            }
+
+            if (!formData.consent) {
+                showNotification('Musisz wyrazić zgodę na przetwarzanie danych', 'error');
+                return;
+            }
+
+            // Zmień tekst przycisku na czas wysyłania
+            submitButton.textContent = 'Wysyłanie...';
+            submitButton.disabled = true;
+
+            try {
+                // Wysłanie danych do PHP
+                const response = await fetch('/send-mail.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Sukces - wyczyść formularz
+                    form.reset();
+                    showNotification(result.message, 'success');
+
+                    // Opcjonalnie: przekieruj po sukcesie
+                    // setTimeout(() => {
+                    //     window.location.href = '/dziekujemy.html';
+                    // }, 3000);
+                } else {
+                    // Błąd
+                    showNotification(result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
+                }
+            } catch (error) {
+                console.error('Błąd wysyłania:', error);
+
+                // Fallback - użyj mailto jako zapasowej opcji
+                const mailtoLink = `mailto:hello@collytics.io?subject=Kontakt ze strony&body=Imię: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AWiadomość:%0D%0A${formData.message}`;
+
+                showNotification('Wystąpił problem z formularzem. Otwieramy Twój program pocztowy...', 'warning');
+                setTimeout(() => {
+                    window.location.href = mailtoLink;
+                }, 2000);
+            } finally {
+                // Przywróć przycisk
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            }
+        });
+    });
+
+    // Funkcja do wyświetlania powiadomień
+    function showNotification(message, type = 'info') {
+        // Usuń istniejące powiadomienia
+        const existingNotification = document.querySelector('.notification');
+        if (existingNotification) {
+            existingNotification.remove();
+        }
+
+        // Utwórz nowe powiadomienie
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <span class="notification-message">${message}</span>
+                <button class="notification-close">&times;</button>
+            </div>
+        `;
+
+        // Dodaj style dla powiadomienia (dodaj to do CSS)
+        notification.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 10000;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease;
+            max-width: 400px;
+        `;
+
+        // Kolory w zależności od typu
+        const colors = {
+            success: 'linear-gradient(135deg, #10b981, #059669)',
+            error: 'linear-gradient(135deg, #ef4444, #dc2626)',
+            warning: 'linear-gradient(135deg, #f59e0b, #d97706)',
+            info: 'linear-gradient(135deg, #3b82f6, #2563eb)'
+        };
+
+        notification.style.background = colors[type] || colors.info;
+        notification.style.color = 'white';
+
+        // Dodaj do strony
+        document.body.appendChild(notification);
+
+        // Obsługa zamykania
+        const closeBtn = notification.querySelector('.notification-close');
+        closeBtn.style.cssText = `
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: 16px;
+            opacity: 0.8;
+        `;
+
+        closeBtn.addEventListener('click', () => {
+            notification.remove();
+        });
+
+        // Automatyczne usunięcie po 5 sekundach
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }
+        }, 5000);
+    }
+
+    // Dodaj animacje CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .notification-message {
+            flex: 1;
+            margin-right: 16px;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Istniejący kod menu (pozostaw bez zmian)
+    const menuTrigger = document.getElementById('menuTrigger');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const closeMenu = document.getElementById('closeMenu');
+
+    if(menuTrigger && dropdownMenu && menuOverlay) {
+        menuTrigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+        });
+
+        if(closeMenu) {
+            closeMenu.addEventListener('click', function() {
+                dropdownMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+        }
+
+        menuOverlay.addEventListener('click', function() {
+            dropdownMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        });
+    }
+});
+
+// Funkcja pomocnicza do walidacji emaila
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+</script>
+
+
+
+
+
 </body>
 </html>
