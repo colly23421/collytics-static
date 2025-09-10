@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka Prywatności - Collytics</title>
+    <meta name="description" content="Polityka prywatności i ochrony danych osobowych Collytics">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/Favicon Original.ico">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/hero-gradient.css">
+    <link rel="stylesheet" href="../css/mode.css">
+    <link rel="stylesheet" href="../css/navigation-updated-fix.css">
+    <link rel="stylesheet" href="../css/navigation-updated.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+
+
+    body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif;
+}
+
+    /* Naprawka dla nawigacji */
+    .navbar {
+        background: rgba(15, 15, 15, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+
+    .menu-trigger {
+        background: transparent !important;
+        border: 2px solid #667eea !important;
+        color: #667eea !important;
+        padding: 10px 24px;
+        border-radius: 24px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .menu-trigger:hover {
+        background: rgba(102, 126, 234, 0.1) !important;
+    }
+
+    .privacy-container {
+        max-width: 900px;
+        margin: 120px auto 80px;
+        padding: 0 40px;
+    }
+
+    .privacy-header {
+        margin-bottom: 60px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .privacy-header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+
+    .privacy-content {
+        line-height: 1.8;
+        color: #e5e7eb;
+    }
+
+    .privacy-content h2 {
+        font-size: 1.8rem;
+        margin: 40px 0 25px;
+        color: #ffffff !important;
+        font-weight: 600;
+    }
+
+    .privacy-content h3 {
+        font-size: 1.3rem;
+        margin: 30px 0 15px;
+        color: #ffffff !important;
+        font-weight: 500;
+    }
+
+    .privacy-content p {
+        margin-bottom: 20px;
+        color: #a1a1aa;
+        font-size: 1.05rem;
+        text-align: justify;
+    }
+
+    /* Wszystkie cyfry i numeracje na biało */
+    .privacy-content p strong {
+        color: #ffffff !important;
+        font-weight: 600;
+    }
+
+    .privacy-content ul {
+        margin: 20px 0;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .privacy-content li {
+        margin-bottom: 12px;
+        color: #a1a1aa;
+        padding-left: 25px;
+        position: relative;
+    }
+
+    .privacy-content li:before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: #ffffff !important;
+    }
+
+    /* Numery sekcji rzymskie na biało */
+    .section-number {
+        color: #ffffff !important;
+        font-weight: 700;
+    }
+
+    /* Footer na ciemnym tle */
+    .footer-container {
+        background: #111111 !important;
+        padding: 60px 40px 40px;
+    }
+
+    @media (max-width: 768px) {
+        .privacy-header h1 {
+            font-size: 2.5rem;
+        }
+
+        .privacy-content h2 {
+            font-size: 1.5rem;
+        }
+
+        .privacy-container {
+            padding: 0 20px;
+        }
+
+        .privacy-content p {
+            text-align: left;
+        }
+    }
+
+    /* Czarne tło dla sekcji z tekstem */
+.privacy-container {
+    max-width: 900px;
+    margin: 120px auto 80px;
+    padding: 40px;
+    background-color: #000000 !important;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Alternatywnie, jeśli chcesz czarne tło dla samej treści */
+.privacy-content {
+    line-height: 1.8;
+    color: #e5e7eb;
+    background-color: #000000 !important;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Upewnij się, że tekst jest czytelny na czarnym tle */
+.privacy-content p {
+    margin-bottom: 20px;
+    color: #b0b0b0 !important;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+.privacy-content h2 {
+    color: #ffffff !important;
+}
+
+.privacy-content strong {
+    color: #ffffff !important;
+}
+</style>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo main transparent.png" alt="Collytics">
+            </a>
+            <button class="menu-trigger" id="menuTrigger">Menu</button>
+        </div>
+    </nav>
+
+    <div class="dropdown-menu" id="dropdownMenu">
+        <button class="dropdown-close" id="closeMenu">Close</button>
+        <div class="dropdown-menu-inner">
+            <div class="menu-section">
+                <a href="../index.html">Home</a>
+                <a href="../services.html">Serwis</a>
+                <a href="../blog/index.html">Blog</a>
+                <a href="../about.html">O nas</a>
+                <a href="../kontakt.html">Kontakt</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+                    <img src="../assets/images/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+                    <img src="../assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
+                </a>
+                <a href="https://x.com/collytics" target="_blank" title="Twitter">
+                    <img src="../assets/images/cons8-twitter-500.svg" alt="X">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="privacy-container">
+        <div class="privacy-header">
+            <h1>Polityka Prywatności</h1>
+        </div>
+
+        <div class="privacy-content">
+            <h2><span class="section-number">I</span> Postanowienia ogólne</h2>
+
+            <p>
+                <strong>1.</strong> Niniejsza Polityka ochrony prywatności określa sposób zbierania, przetwarzania i przechowywania danych osobowych koniecznych do świadczenia usług drogą elektroniczną za pośrednictwem serwisu internetowego w domenie www.collytics.io (dalej: Serwis).
+            </p>
+
+            <p>
+                <strong>2.</strong> Administratorem danych osobowych Użytkowników jest Collytics OÜ, Harju maakond, Tallinn, Kesklinna linnaosa, Karamelli tn 2 // Pärnu mnt 139b, 11317 (dalej: Administrator).
+            </p>
+
+            <p>
+                <strong>3.</strong> Dane osobowe przetwarzane są zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (dalej: RODO).
+            </p>
+
+            <p>
+                <strong>4.</strong> Zbierane przez Administratora dane będą:
+            </p>
+            <ul>
+                <li>przetwarzane zgodnie z prawem,</li>
+                <li>przetwarzane w wyraźnie określonych celach i niepoddawane dalszemu przetwarzaniu niezgodnemu z tymi celami,</li>
+                <li>merytorycznie poprawne i adekwatne w stosunku do celów, w jakich są przetwarzane,</li>
+                <li>przechowywane nie dłużej niż jest to niezbędne do osiągnięcia celu przetwarzania.</li>
+            </ul>
+
+            <h2><span class="section-number">II.</span> Cel i podstawy prawne przetwarzania danych</h2>
+
+            <p>
+                <strong>1.</strong> Administrator przetwarza dane osobowe niezbędne do świadczenia i rozwoju oferowanych usług dostępnych za pośrednictwem Serwisu oraz poszczególnych jego funkcjonalności.
+            </p>
+
+            <p>
+                <strong>2.</strong> Dane osobowe przetwarzane będą w następujących celach:
+            </p>
+
+            <p>
+                <strong>a.</strong> rejestracji konta, weryfikacji tożsamości Użytkownika oraz realizacji umowy o świadczeniu usług drogą elektroniczną zgodnie z ustawą z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną, w tym w szczególności poprzez zapewnienie możliwości korzystania z konta Użytkownika – na podstawie akceptacji warunków Regulaminu (art. 6 ust. 1 lit. b RODO);
+            </p>
+
+            <p>
+                <strong>b.</strong> komunikacji z Użytkownikiem w celu dostarczeniu mu niezbędnych informacji oraz budowania pozytywnych i rzetelnych relacji z Nim, co stanowi prawnie uzasadniony interes Administratora (art. 6 ust. 1 lit. f RODO);
+            </p>
+
+            <p>
+                <strong>c.</strong> promowania przez Administratora produktów i/lub usług własnych oraz swoich Partnerów poprzez kierowanie drogą elektroniczną Informacji marketingowych (newsletter) o ile Użytkownik wyraził zgodę na otrzymywanie takich powiadomień za pośrednictwem e-mail (art. 6 ust. 1 lit. a RODO);
+            </p>
+
+            <p>
+                <strong>d.</strong> udzielenia dostępu do informacji o nowościach z branży bezpośrednio powiązanej z działalnością Administratora, o ile Użytkownik wyraził zgodę na otrzymywanie takich powiadomień za pośrednictwem e-mail (art. 6 ust. 1 lit. a RODO);
+            </p>
+
+            <p>
+                <strong>e.</strong> w celach analitycznych i statystycznych na podstawie prawnie uzasadnionego interesu Administratora polegającego na prowadzeniu weryfikacji aktywności Użytkowników i ich preferencji dla optymalizacji usług i produktów oraz stosowanych funkcjonalności Serwisu (art. 6 ust. 1 lit. f RODO);
+            </p>
+
+            <p>
+                <strong>f.</strong> ewentualnego ustalenia, dochodzenia roszczeń lub obrony przed nimi na podstawie prawnie uzasadnionego interesu Administratora polegającego na ochronie jej praw (art. 6 ust. 1 lit. f RODO).
+            </p>
+
+            <p>
+                <strong>3.</strong> W każdym z wymienionych powyżej przypadków (ust 2) podanie danych jest dobrowolne, jednak konieczne do zawarcia umowy lub skorzystania z innych funkcjonalności Serwisu.
+            </p>
+
+            <h2><span class="section-number">III.</span> Okres przetwarzania danych osobowych</h2>
+
+            <p>
+                Dane osobowe będą przetwarzane przez okres, w którym osoba pozostaje aktywnym Użytkownikiem Serwisu (posiada konto Użytkownika), a po tym czasie przez okres niezbędny do zachowania zgodności z przepisami prawa, dochodzenia lub obrony przed ewentualnymi roszczeniami, jednak nie dłużej niż 3 lat liczone od dnia rozwiązania umowy o świadczeniu usług drogą elektroniczną.
+            </p>
+
+            <p>
+                Dane przetwarzane na podstawie zgody będą przetwarzane do czasu wycofania udzielonej zgody z zastrzeżeniem, że wycofanie tej zgody nie ma wpływu na zgodność przetwarzania danych, którego dokonano przed tym wycofaniem.
+            </p>
+
+            <h2><span class="section-number">IV.</span> Informacje o przetwarzaniu</h2>
+
+            <p>
+                <strong>1.</strong> Dane osobowe w zależności od celu przetwarzania mogą zostać ujawnione:
+            </p>
+            <ul>
+                <li>podmiotom powiązanym z Administratorem</li>
+                <li>podmiotom współpracującym z Administratorem,</li>
+                <li>podwykonawcom, w szczególności podmiotom dostarczającym i obsługującym wybrane systemy i rozwiązania informatyczne,</li>
+                <li>podmiotom obsługującym płatności internetowe,</li>
+                <li>podmiotom świadczącym usługi kuriersko-pocztowe,</li>
+                <li>kancelariom prawnym.</li>
+            </ul>
+
+            <p>
+                <strong>2.</strong> Dane osobowe przetwarzane przez Administratora, nie będą/będą przekazywane poza Europejski Obszar Gospodarczy ani do organizacji międzynarodowych.
+            </p>
+
+            <h2><span class="section-number">V.</span> Prawa osób, których dane dotyczą</h2>
+
+            <p>
+                <strong>1.</strong> Użytkownik Serwisu ma prawo:
+            </p>
+            <ul>
+                <li>dostępu do treści swoich danych osobowych</li>
+                <li>sprostowania danych</li>
+                <li>usunięcia danych</li>
+                <li>ograniczenia przetwarzania danych</li>
+                <li>przenoszenia danych</li>
+                <li>wniesienia sprzeciwu wobec przetwarzania odbywającego się na podstawie prawnie usprawiedliwionego interesu administratora</li>
+                <li>wycofania zgody w dowolnym momencie bez wpływu na zgodność z prawem przetwarzania, którego dokonano na podstawie tej zgody przed jej wycofaniem</li>
+            </ul>
+
+            <p>
+                <strong>2.</strong> Użytkownik ma prawo do wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych w sytuacji, w której uzna, że przetwarzanie narusza jego prawa i wolności.
+            </p>
+
+            <p>
+                <strong>3.</strong> W procesie przetwarzania danych nie dochodzi do zautomatyzowanego podejmowania decyzji w tym do profilowania.
+            </p>
+
+            <h2><span class="section-number">VI.</span> Postanowienia końcowe</h2>
+
+            <p>
+                <strong>1.</strong> Administrator zastrzega sobie prawo do wprowadzenia zmian w niniejszej Polityce prywatności jednocześnie zapewnia, że prawa Użytkowników wynikające z niniejszego dokumentu nie zostaną ograniczone.
+            </p>
+
+            <p>
+                <strong>2.</strong> O wszelkich zmianach w Polityce prywatności Użytkownik zostanie poinformowany poprzez komunikat dostępny w Serwisie.
+            </p>
+        </div>
+
+
+
+      
+    </div>
+
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuTrigger = document.getElementById('menuTrigger');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const closeMenu = document.getElementById('closeMenu');
+
+        if(menuTrigger && dropdownMenu && menuOverlay) {
+            menuTrigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                dropdownMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+            });
+
+            if(closeMenu) {
+                closeMenu.addEventListener('click', function() {
+                    dropdownMenu.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                });
+            }
+
+            menuOverlay.addEventListener('click', function() {
+                dropdownMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+        }
+    });
+    </script>
+</body>
+</html>

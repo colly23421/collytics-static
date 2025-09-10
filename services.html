@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serwis - Collytics | Nasze Usługi</title>
+    <title>Collytics: Kompleksowe Rozwiązania Marketingu Cyfrowego i Analityki AI</title>
     <meta name="description" content="Skuteczne kampanie SEM, analizy AI, rozwiązania webowe i kompleksowy marketing cyfrowy">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/Favicon Original.ico">
 
@@ -70,10 +70,10 @@
         background: rgba(102, 126, 234, 0.1) !important;
     }
 
-    /* Stats Section - naprawka */
+    /* Stats Section - naprawka dla ciemnego tła */
     .stats-section {
         padding: 100px 40px !important;
-        background: rgba(20, 20, 25, 0.5) !important;
+        background: #141418 !important;
         border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
         margin-top: 50px;
@@ -92,6 +92,7 @@
         text-align: center !important;
         position: relative !important;
         z-index: 1 !important;
+        background: transparent !important;
     }
 
     .stat-icon {
@@ -141,33 +142,29 @@
         }
 
         .footer-cta h2 {
-    font-size: 36px !important;
-    margin-bottom: 16px !important;
-    color: #ffffff !important;
-}
-
+            font-size: 36px !important;
+            margin-bottom: 16px !important;
+            color: #ffffff !important;
+        }
     }
-
-
     </style>
 
-
-<style>
-/* Naprawka dla services.html */
-footer h2, .footer-cta h2 {
-    color: #FFFFFF !important;
-}
-footer p, .footer-cta p {
-    color: #a1a1aa !important;
-}
-.footer-container {
-    background: #111111 !important;
-}
-/* Upewnij się że wszystkie h2 są białe */
-h2 {
-    color: #FFFFFF !important;
-}
-</style>
+    <style>
+    /* Naprawka dla services.html */
+    footer h2, .footer-cta h2 {
+        color: #FFFFFF !important;
+    }
+    footer p, .footer-cta p {
+        color: #a1a1aa !important;
+    }
+    .footer-container {
+        background: #111111 !important;
+    }
+    /* Upewnij się że wszystkie h2 są białe */
+    h2 {
+        color: #FFFFFF !important;
+    }
+    </style>
 
 </head>
 <body>
@@ -277,43 +274,37 @@ h2 {
         </div>
     </div>
 
-    <!-- Stats Section -->
-    <!-- Stats Section -->
-<section class="stats-section" style="background-color: #0a0a0a !important; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-    <div class="stats-container">
-        <div class="stat-card" style="background: transparent;">
-            <div class="stat-icon">⬇️</div>
-            <div class="stat-number">88%</div>
-            <div class="stat-label">oszczędności</div>
-            <div class="stat-description">
-                Nasze kompleksowe rozwiązania zastępują potrzebę korzystania z dziesiątek innych narzędzi.
+    <!-- Stats Section z ciemnym tłem -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">⬇️</div>
+                <div class="stat-number">88%</div>
+                <div class="stat-label">oszczędności</div>
+                <div class="stat-description">
+                    Nasze kompleksowe rozwiązania zastępują potrzebę korzystania z dziesiątek innych narzędzi.
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⬇️</div>
+                <div class="stat-number">1.1 dnia</div>
+                <div class="stat-label">zaoszczędzonego tygodniowo</div>
+                <div class="stat-description">
+                    Oszczędzamy czas automatyzując żmudną pracę i upraszczając wykonanie zadań.
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⬆️</div>
+                <div class="stat-number">3x szybciej</div>
+                <div class="stat-label">realizacja zadań</div>
+                <div class="stat-description">
+                    Zastąp wiele narzędzi i subskrypcji jedną zintegrowaną platformą.
+                </div>
             </div>
         </div>
-        <div class="stat-card" style="background: transparent;">
-            <div class="stat-icon">⬇️</div>
-            <div class="stat-number">1.1 dnia</div>
-            <div class="stat-label">zaoszczędzonego tygodniowo</div>
-            <div class="stat-description">
-                Oszczędzamy czas automatyzując żmudną pracę i upraszczając wykonanie zadań.
-            </div>
-        </div>
-        <div class="stat-card" style="background: transparent;">
-            <div class="stat-icon">⬆️</div>
-            <div class="stat-number">3x szybciej</div>
-            <div class="stat-label">realizacja zadań</div>
-            <div class="stat-description">
-                Zastąp wiele narzędzi i subskrypcji jedną zintegrowaną platformą.
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2 class="cta-title">Porozmawiajmy o Twoim projekcie</h2>
-        <h3 style="color: #ffffff ">Gotowy, aby rozpocząć projekt?</h3>
-        <a href="kontakt.html" class="cta-button">Rozpocznij współpracę</a>
     </section>
+
+  
 
     <footer>
         <div class="footer-container">
