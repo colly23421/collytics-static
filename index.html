@@ -856,13 +856,11 @@ footer img {
 
                 try {
                     // Wysłanie danych do PHP
-                    const response = await fetch('/send-mail.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formData)
-                    });
+                    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(formData)
+  });
 
                     const result = await response.json();
 
