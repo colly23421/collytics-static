@@ -1,12 +1,12 @@
 /* css/main.css - wspólne style */
 :root {
-    --primary-color: #6366f1;
+    --primary-color: #FFFFFF;
     --dark-bg: #0a0a0a;
     --dark-secondary: #141414;
     --dark-card: #1a1a1a;
     --text-primary: #ffffff;
     --text-secondary: #94969c;
-    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --accent-gradient: linear-gradient(135deg, #FFFFFF 0%, #8b5cf6 100%);
     --orange-accent: #ff6b6b;
     --yellow-accent: #ffe66d;
     --logo-height: 40px;
