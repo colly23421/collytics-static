@@ -225,7 +225,7 @@
         .dropdown-menu {
             position: fixed;
             top: 0;
-            transform: translate(-50%, -50%) translateX(100vw);
+            right: -400px;
             width: 400px;
             height: 100vh;
             background: rgba(17, 17, 17, 0.98);
@@ -307,7 +307,7 @@
 
         /* Footer */
         footer {
-            background: rgba(30, 30, 30, 0.98);
+            background: var(--dark-secondary);
             padding: 60px 5% 40px;
             border-top: 1px solid var(--border-color);
             margin-top: 80px;
