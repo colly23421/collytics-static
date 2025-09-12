@@ -1,100 +1,81 @@
-/* Wspólna nawigacja dla wszystkich stron */
 .navbar {
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 15px 30px;
     position: fixed;
-    width: 100%;
     top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 
-.navbar.scrolled {
-    padding: 10px 30px;
-    background: rgba(10, 10, 10, 0.98);
-}
-
-.navbar .nav-container {
-    max-width: 1200px;
+.nav-container {
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbar .logo img {
-    height: 28px;
-    transition: height 0.3s ease;
+.logo img {
+    height: 40px;
 }
 
-.navbar.scrolled .logo img {
-    height: 24px;
-}
-
-.nav-links {
+.nav-menu {
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
-.nav-links a {
-    color: rgba(255,255,255,0.8);
+.nav-link {
+    color: #fff;
     text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
     font-weight: 500;
+    transition: color 0.3s;
+    padding: 8px 16px;
+    border-radius: 8px;
 }
 
-.nav-links a:hover {
-    color: #ffffff;
+.nav-link:hover {
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
 }
 
-.nav-links .btn-contact {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 8px 20px;
-    border-radius: 20px;
-    color: #ffffff !important;
-}
-
-.nav-links .btn-contact:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-
-/* Mobile menu */
-.mobile-menu-toggle {
+.menu-toggle {
     display: none;
     flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
     cursor: pointer;
+    padding: 10px;
 }
 
-.mobile-menu-toggle span {
+.menu-toggle span {
     width: 25px;
     height: 2px;
-    background: #ffffff;
-    margin: 3px 0;
+    background: #fff;
     transition: 0.3s;
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .mobile-menu-toggle {
+    .menu-toggle {
         display: flex;
     }
     
-    .nav-links.active {
-        display: flex;
-        position: absolute;
-        top: 100%;
-        left: 0;
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        right: -100%;
         width: 100%;
-        background: rgba(10, 10, 10, 0.98);
+        height: calc(100vh - 80px);
+        background: rgba(0, 0, 0, 0.95);
         flex-direction: column;
-        padding: 20px;
-        gap: 20px;
+        padding: 40px;
+        transition: 0.3s;
+    }
+    
+    .nav-menu.active {
+        right: 0;
     }
 }
