@@ -391,5 +391,17 @@
 
   
 <script src="/js/menu.js"></script>
+<script>
+document.addEventListener("click", function(e) {
+  if(e.target.id === "menuTrigger") {
+    document.getElementById("dropdownMenu").classList.add("active");
+    document.getElementById("menuOverlay").classList.add("active");
+  }
+  if(e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
+    document.getElementById("dropdownMenu").classList.remove("active");
+    document.getElementById("menuOverlay").classList.remove("active");
+  }
+});
+</script>
 </body>
 </html>
