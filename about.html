@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O nas - Collytics | Wzrost oparty na danych</title>
-    <link rel="stylesheet" href="/css/navbar-universal.css">    <meta name="description" content="Jesteśmy Twoim partnerem w transformacji cyfrowej. Przekształcamy dane w rezultaty.">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/navigation.css">
-
+    <meta name="description" content="Jesteśmy Twoim partnerem w transformacji cyfrowej. Przekształcamy dane w rezultaty.">
+    <link rel="stylesheet" href="css/navigation-updated.css">
     <style>
         * {
             margin: 0;
@@ -19,7 +14,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
             background: #000000;
             color: #ffffff;
             line-height: 1.6;
@@ -258,6 +253,62 @@
             line-height: 1.7;
         }
 
+        /* Team Section (placeholder) */
+        .team-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, transparent 100%);
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .team-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .team-subtitle {
+            font-size: 1.2rem;
+            color: #9ca3af;
+            margin-bottom: 60px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .member-name {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: #9ca3af;
+        }
+
         /* CTA Section */
         .cta-section {
             padding: 100px 40px;
@@ -305,4 +356,142 @@
             }
         }
 
-        /* Navbar dark theme override */
+        /* Menu override styles */
+        .dropdown-menu {
+            z-index: 10000 !important;
+        }
+        .menu-overlay {
+            z-index: 9999 !important;
+        }
+        .navbar {
+            z-index: 1000 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+
+
+
+    <!-- Navigation -->
+
+
+
+
+
+
+    <!-- Navigation -->
+
+
+
+
+
+
+    <!-- Navigation -->
+
+
+
+    </div>
+
+
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h1>O nas</h1>
+        <p class="subtitle">Wzrost oparty na danych, wspierany przez AI</p>
+        <p>Jesteśmy Twoim partnerem w transformacji cyfrowej. Łączymy zaawansowaną analitykę z najnowocześniejszą sztuczną inteligencją, aby dostarczać rozwiązania, które naprawdę działają.</p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="mission-card">
+            <h2 class="mission-title">Nasza Misja: Przekształcamy Dane w Rezultaty</h2>
+            <p class="mission-text">
+                Rozumiemy wyzwania współczesnego biznesu. Naszą siłą napędową jest zaawansowana analityka
+                i najnowocześniejsza sztuczna inteligencja. Dostarczamy nie tylko informacje,
+                ale praktyczne rekomendacje, które przekładają się na realne rezultaty.
+                Każda decyzja oparta jest na twardych danych, każda strategia jest mierzalna,
+                a każdy sukces - powtarzalny.
+            </p>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="audience-section">
+        <div class="audience-container">
+            <h2 class="audience-title">Dla Kogo Pracujemy?</h2>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">🚀</div>
+                    <h3 class="audience-name">Ambitne Startupy</h3>
+                    <p class="audience-description">
+                        Wspieramy młode firmy w szybkim skalowaniu. Dostarczamy narzędzia i strategie,
+                        które pozwalają konkurować z większymi graczami na rynku.
+                    </p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">📈</div>
+                    <h3 class="audience-name">Małe i Średnie Przedsiębiorstwa</h3>
+                    <p class="audience-description">
+                        Pomagamy MŚP w optymalizacji procesów marketingowych i zwiększaniu efektywności.
+                        Nasze rozwiązania są skalowalne i dopasowane do Twojego budżetu.
+                    </p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">🛍️</div>
+                    <h3 class="audience-name">Marki E-commerce</h3>
+                    <p class="audience-description">
+                        Specjalizujemy się w zwiększaniu konwersji i optymalizacji ścieżki zakupowej.
+                        Nasze strategie przekładają się bezpośrednio na wzrost sprzedaży.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <h2 class="values-title">Nasze Wartości</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">💡</div>
+                <h3 class="value-name">Innowacyjność</h3>
+                <p class="value-description">
+                    Wdrażamy pionierskie technologie, aby zapewnić przewagę konkurencyjną.
+                    Zawsze szukamy nowych, lepszych rozwiązań.
+                </p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⚡</div>
+                <h3 class="value-name">Wydajność</h3>
+                <p class="value-description">
+                    Koncentrujemy się na działaniach, które maksymalizują zwrot z inwestycji.
+                    Każda złotówka pracuje na Twój sukces.
+                </p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🔍</div>
+                <h3 class="value-name">Przejrzystość</h3>
+                <p class="value-description">
+                    Nasze działania opierają się na twardych danych, a nie na przeczuciach.
+                    Zawsze wiesz, za co płacisz i jakie są efekty.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2 class="cta-title">Porozmawiajmy o Twoim projekcie</h2>
+        <p style="color: #9ca3af; font-size: 1.2rem;">
+            Jesteś gotowy, aby wyprzedzić konkurencję? Skontaktuj się z nami już dziś.
+        </p>
+        <a href="kontakt.html" class="cta-button">Rozpocznij współpracę</a>
+    </section>
+
+    <!-- Script for menu -->
+    <script src="js/menu.js"></script>
+</body>
+</html>
