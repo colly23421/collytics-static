@@ -112,6 +112,11 @@
       "permanent": true
     },
     {
+      "source": "/konfiguracja-google-analytics",
+      "destination": "https://www.collytics.io/",
+      "permanent": true
+    },
+    {
       "source": "/team/collytics-piotrjanczuk",
       "destination": "https://www.collytics.io/",
       "permanent": true
