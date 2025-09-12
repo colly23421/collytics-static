@@ -2,7 +2,7 @@
 <nav class="navbar">
     <div class="nav-container">
         <a href="" class="logo">
-            <img src="assets/images/logo main transparent.png" alt="Collytics">
+            <img src="/assets/images/logo main transparent.png" alt="Collytics">
         </a>
         <button class="menu-trigger" id="menuTrigger">
             Menu
@@ -38,41 +38,3 @@
 <!-- JavaScript for menu -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const menuTrigger = document.getElementById('menuTrigger');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const closeMenu = document.getElementById('closeMenu');
-    
-    function toggleMenu() {
-        menuTrigger.classList.toggle('active');
-        dropdownMenu.classList.toggle('active');
-        menuOverlay.classList.toggle('active');
-    }
-    
-    menuTrigger.addEventListener('click', toggleMenu);
-    closeMenu.addEventListener('click', toggleMenu);
-    menuOverlay.addEventListener('click', toggleMenu);
-    
-    // Close menu on ESC key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && dropdownMenu.classList.contains('active')) {
-            toggleMenu();
-        }
-    });
-    
-    // Navbar scroll effect
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        
-        lastScrollTop = scrollTop;
-    });
-});
-</script>

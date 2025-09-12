@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collytics: Kompleksowe Rozwiązania Marketingu Cyfrowego i Analityki AI</title>
-    <link rel="stylesheet" href="/css/navbar-universal.css">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/navigation.css">
-    <link rel="stylesheet" href="/css/style.css">    <meta name="description" content="Skuteczne kampanie SEM, analizy AI, rozwiązania webowe i kompleksowy marketing cyfrowy">
-    <link rel="stylesheet" href="/css/unified_nav.css">    <link rel="shortcut icon" type="image/png" href="assets/images/Wordpress Transparent.png">
+    <meta name="description" content="Skuteczne kampanie SEM, analizy AI, rozwiązania webowe i kompleksowy marketing cyfrowy">
+    <link rel="shortcut icon" type="image/png" href="assets/images/Wordpress Transparent.png">
 
     <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/hero-gradient.css">
+    <link rel="stylesheet" href="/css/mode.css">
+    <link rel="stylesheet" href="/css/navigation-updated-fix.css">
+    <link rel="stylesheet" href="/css/navigation-updated.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <style>
     /* Background i style dla services page */
@@ -222,10 +226,10 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="gradient-bg"></div>
 
-    <nav class="navbar" id="navbar">
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="logo">
-                <img src="/assets/images/logo main transparent.png" alt="Collytics">
+            <a href="/index.html" class="logo">
+                <img src="../assets/images/logo main transparent.png" alt="Collytics">
             </a>
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
@@ -235,9 +239,9 @@
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
             <div class="menu-section">
-                <a href="/">Home</a>
+                <a href="/index.html">Home</a>
                 <a href="/services.html">Serwis</a>
-                <a href="/">Blog</a>
+                <a href="index.html">Blog</a>
                 <a href="/about.html">O nas</a>
                 <a href="/kontakt.html">Kontakt</a>
             </div>
@@ -369,7 +373,7 @@
             </div>
 
             <div class="logo" style="justify-content: center; margin-bottom: 24px;">
-                <img src="/assets/images/logo main transparent.png" style="max-height: 40px;" alt="Collytics" onerror="this.src='assets/images/logo.png'">
+                <img src="assets/images/logo main transparent.png" style="max-height: 40px;" alt="Collytics" onerror="this.src='assets/images/logo.png'">
             </div>
             <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
 

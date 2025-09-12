@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collytics - Innowacyjny marketing i technologie AI</title>
-    <link rel="stylesheet" href="/css/navbar-universal.css">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/unified_nav.css">
+    <meta name="description" content="Specjalizujemy się w skutecznych kampaniach SEM. Tworzymy nowoczesne rozwiązania webowe.">
+
     <link rel="shortcut icon" type="image/png" href="assets/images/Wordpress Transparent.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/style.css">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/style.css">    <!-- CRITICAL CSS - Inline dla szybkiego ładowania -->
     <style>
         /* Reset i zmienne */
         * {
@@ -563,7 +568,7 @@ footer img {
   <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="/assets/images/logo main transparent.png" alt="Collytics">
+                <img src="assets/images/logo main transparent.png" alt="Collytics">
             </a>
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
@@ -775,7 +780,7 @@ footer img {
             </div>
 
             <div style="margin-bottom: 24px;">
-                <img src="/assets/images/logo main transparent.png" style="height: 60px;" alt="Collytics">
+                <img src="assets/images/logo main transparent.png" style="height: 60px;" alt="Collytics">
             </div>
             <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
 
@@ -866,7 +871,7 @@ footer img {
           messageDiv.textContent = message;
 
           messageDiv.style.cssText = `
-    <link rel="stylesheet" href="/css/unified_nav.css">              margin-top: 20px;
+              margin-top: 20px;
               padding: 15px 20px;
               border-radius: 8px;
               text-align: center;
@@ -876,13 +881,13 @@ footer img {
 
           if (type === 'success') {
               messageDiv.style.cssText += `
-    <link rel="stylesheet" href="/css/unified_nav.css">                  background: rgba(16, 185, 129, 0.1);
+                  background: rgba(16, 185, 129, 0.1);
                   color: #10b981;
                   border: 1px solid rgba(16, 185, 129, 0.2);
               `;
           } else if (type === 'error') {
               messageDiv.style.cssText += `
-    <link rel="stylesheet" href="/css/unified_nav.css">                  background: rgba(239, 68, 68, 0.1);
+                  background: rgba(239, 68, 68, 0.1);
                   color: #ef4444;
                   border: 1px solid rgba(239, 68, 68, 0.2);
               `;

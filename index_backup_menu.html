@@ -550,7 +550,7 @@ footer img {
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo main transparent.png" alt="Collytics">
+                <img src="/assets/images/logo main transparent.png" alt="Collytics">
             </a>
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
@@ -762,7 +762,7 @@ footer img {
             </div>
 
             <div style="margin-bottom: 24px;">
-                <img src="assets/images/logo main transparent.png" style="height: 60px;" alt="Collytics">
+                <img src="/assets/images/logo main transparent.png" style="height: 60px;" alt="Collytics">
             </div>
             <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
 
@@ -929,22 +929,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Obsługa menu (pozostaje bez zmian)
-    const menuTrigger = document.getElementById('menuTrigger');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const closeMenu = document.getElementById('closeMenu');
-
-    if(menuTrigger && dropdownMenu && menuOverlay) {
-        menuTrigger.addEventListener('click', function(e) {
-            e.preventDefault();
-            dropdownMenu.classList.add('active');
-            menuOverlay.classList.add('active');
-        });
-
-        if(closeMenu) {
-            closeMenu.addEventListener('click', function() {
-                dropdownMenu.classList.remove('active');
-                menuOverlay.classList.remove('active');
             });
         }
 
@@ -969,6 +953,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
     </script>
-<script src="js/menu.js"></script>
+<script src="/js/menu.js"></script>
 </body>
 </html>

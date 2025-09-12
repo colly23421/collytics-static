@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt - Collytics</title>
-    <link rel="stylesheet" href="/css/navbar-universal.css">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/unified_nav.css">    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/style.css">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/style.css">    <style>
         :root {
             --dark-bg: #0a0a0a;
             --dark-secondary: #111111;
@@ -440,10 +441,10 @@
     <div class="gradient-bg"></div>
     <div class="gradient-overlay"></div>
 
-    <nav class="navbar" id="navbar">
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="logo">
-                <img src="/assets/images/logo main transparent.png" alt="Collytics">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo main transparent.png" alt="Collytics">
             </a>
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
@@ -453,7 +454,7 @@
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
             <div class="menu-section">
-                <a href="/">Home</a>
+                <a href="index.html">Home</a>
                 <a href="services.html">Serwis</a>
                 <a href="blog/index.html">Blog</a>
                 <a href="about.html">O nas</a>
@@ -530,7 +531,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="/assets/images/logo main transparent.png" alt="Collytics">
+                <img src="assets/images/logo main transparent.png" alt="Collytics">
             </div>
             <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
 
@@ -642,7 +643,7 @@
 
             // Style bazowe
             messageDiv.style.cssText = `
-    <link rel="stylesheet" href="/css/unified_nav.css">                margin-top: 20px;
+                margin-top: 20px;
                 padding: 15px 20px;
                 border-radius: 8px;
                 text-align: center;
@@ -653,13 +654,13 @@
             // Kolory w zależności od typu
             if (type === 'success') {
                 messageDiv.style.cssText += `
-    <link rel="stylesheet" href="/css/unified_nav.css">                    background: rgba(16, 185, 129, 0.1);
+                    background: rgba(16, 185, 129, 0.1);
                     color: #10b981;
                     border: 1px solid rgba(16, 185, 129, 0.2);
                 `;
             } else if (type === 'error') {
                 messageDiv.style.cssText += `
-    <link rel="stylesheet" href="/css/unified_nav.css">                    background: rgba(239, 68, 68, 0.1);
+                    background: rgba(239, 68, 68, 0.1);
                     color: #ef4444;
                     border: 1px solid rgba(239, 68, 68, 0.2);
                 `;
@@ -697,22 +698,6 @@
         }
 
         // Obsługa menu (pozostaje bez zmian)
-        const menuTrigger = document.getElementById('menuTrigger');
-        const dropdownMenu = document.getElementById('dropdownMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const closeMenu = document.getElementById('closeMenu');
-
-        if(menuTrigger && dropdownMenu && menuOverlay) {
-            menuTrigger.addEventListener('click', function(e) {
-                e.preventDefault();
-                dropdownMenu.classList.add('active');
-                menuOverlay.classList.add('active');
-            });
-
-            if(closeMenu) {
-                closeMenu.addEventListener('click', function() {
-                    dropdownMenu.classList.remove('active');
-                    menuOverlay.classList.remove('active');
                 });
             }
 
@@ -737,4 +722,6 @@
         });
     });
     </script>
+<script src="/js/menu.js"></script>
+</body>
 </html>
