@@ -1,400 +1,60 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GT-5R3VKTJG");</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");</script>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="/assets/images/logo main transparent.png">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Tag Manager w WordPress - Instalacja krok po kroku 2024 | Collytics</title>
-    <link rel="stylesheet" href="/css/navbar-universal.css">    <meta name="description" content="Praktyczny poradnik jak zainstalować Google Tag Manager w WordPress. Instrukcja krok po kroku z obrazkami. GTM dla Google Analytics, Facebook Pixel i więcej.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/hero-gradient.css">
-    <link rel="stylesheet" href="../css/mode.css">
-    <link rel="stylesheet" href="../css/navigation-updated-fix.css">
-    <link rel="stylesheet" href="../css/navigation-updated.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Praktyczny poradnik jak zainstalować Google Tag Manager w WordPress. Instrukcja krok po kroku z obrazkami. GTM dla Google Analytics, Facebook Pixel i więcej.">
 
-<style>
-/* Reset i podstawowe */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');</script>
 
-body {
-    background: #0a0a0a !important;
-    color: #ffffff !important;
-    font-family: 'Inter', -apple-system, sans-serif !important;
-    line-height: 1.6 !important;
-}
+    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-/* Nawigacja */
-nav, .navbar, header {
-    background: rgba(10, 10, 10, 0.95) !important;
-    backdrop-filter: blur(20px) !important;
-}
-
-/* Menu dropdown */
-.dropdown-menu {
-    background: rgba(17, 17, 17, 0.98) !important;
-}
-
-.dropdown-menu a, .menu-section a {
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
-
-.dropdown-menu a:hover {
-    color: #FFFFFF !important;
-    opacity: 1;
-}
-
-.dropdown-close {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-}
-
-/* Przyciski */
-.menu-trigger, button, .btn, .cta-button {
-    background: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
-
-.menu-trigger:hover, button:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
-    color: #FFFFFF !important;
-    opacity: 1;
-}
-
-/* Nagłówki */
-h1 {
-    color: #FFFFFF !important;
-    font-size: 2.5rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 20px !important;
-}
-
-h2 {
-    color: #FFFFFF !important;
-    font-size: 1.75rem !important;
-    margin: 30px 0 15px !important;
-}
-
-h3 {
-    color: #FFFFFF !important;
-    font-size: 1.35rem !important;
-    margin: 25px 0 12px !important;
-}
-
-/* Tekst */
-p, li, td, span {
-    color: #a1a1aa !important;
-    font-size: 1rem !important;
-    line-height: 1.7 !important;
-}
-
-/* Tagi/kategorie */
-.tag, .category, .badge, .category-badge {
-    background: rgba(99, 102, 241, 0.1) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    color: #FFFFFF !important;
-    padding: 6px 16px !important;
-    border-radius: 50px !important;
-    font-size: 0.875rem !important;
-}
-
-/* Linki */
-a {
-    color: #FFFFFF !important;
-    text-decoration: none !important;
-}
-
-a:hover {
-    color: #818cf8 !important;
-}
-
-/* Hero Section */
-.article-hero {
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 60px 20px !important;
-    background: transparent !important;
-}
-
-.article-container {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-}
-
-.article-meta {
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
-    margin-bottom: 20px !important;
-    color: #a1a1aa !important;
-}
-
-.lead {
-    color: #a1a1aa !important;
-    font-size: 1.1rem !important;
-    line-height: 1.6 !important;
-}
-
-/* Featured Image */
-.featured-image {
-    width: 100% !important;
-    max-width: 800px !important;
-    height: 400px !important;
-    overflow: hidden !important;
-    margin: 40px auto !important;
-    display: block !important;
-}
-
-.featured-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-}
-
-/* Content Area */
-.article-content {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    padding: 60px 20px !important;
-}
-
-.article-content .featured-image {
-    margin: 40px 0 !important;
-}
-
-.article-content img:not(.featured-image img) {
-    max-width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    margin: 30px auto !important;
-}
-
-/* Code Blocks */
-.code-block {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 8px !important;
-    padding: 15px !important;
-    margin: 20px 0 !important;
-    font-family: 'Courier New', monospace !important;
-    overflow-x: auto !important;
-}
-
-code {
-    background: rgba(99, 102, 241, 0.1) !important;
-    padding: 2px 6px !important;
-    border-radius: 4px !important;
-    font-family: 'Courier New', monospace !important;
-    color: #818cf8 !important;
-}
-
-/* Feature List */
-.feature-list {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 25px !important;
-    margin: 25px 0 !important;
-    border-radius: 12px !important;
-}
-
-/* Breadcrumbs */
-.breadcrumbs {
-    background: #1a1a1a !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 25px 0 !important;
-    margin-top: 80px !important;
-    margin-bottom: 40px !important;
-}
-
-.breadcrumbs-container {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 20px !important;
-}
-
-.breadcrumbs-list {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-    font-size: 0.95rem !important;
-}
-
-.breadcrumbs-list a {
-    color: #FFFFFF !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-    border-bottom: 1px solid transparent !important;
-}
-
-.breadcrumbs-list a:hover {
-    color: #818cf8 !important;
-    border-bottom: 1px solid #818cf8 !important;
-}
-
-.breadcrumbs-separator {
-    color: #6b7280 !important;
-    font-size: 1.1rem !important;
-}
-
-.breadcrumbs-current {
-    color: #FFFFFF !important;
-    font-weight: 500 !important;
-}
-
-/* Article CTA */
-.article-cta {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    padding: 40px !important;
-    border-radius: 16px !important;
-    margin: 50px 0 !important;
-    text-align: center !important;
-}
-
-.article-cta h3 {
-    margin-bottom: 15px !important;
-}
-
-.btn-white {
-    background: #FFFFFF !important;
-    color: #0a0a0a !important;
-    padding: 14px 32px !important;
-    border-radius: 30px !important;
-    font-weight: 600 !important;
-    display: inline-block !important;
-    margin-top: 20px !important;
-    transition: all 0.3s ease !important;
-}
-
-.btn-white:hover {
-    background: #f0f0f0 !important;
-    transform: translateY(-2px) !important;
-}
-
-/* Footer */
-footer {
-    background: #111111 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    padding: 60px 5% 40px !important;
-}
-
-footer h2 {
-    color: #FFFFFF !important;
-    font-size: 2rem !important;
-    margin-bottom: 20px !important;
-}
-
-footer p {
-    color: #a1a1aa !important;
-}
-
-/* Footer Kontakt Button - Biały */
-footer a[href="../kontakt.html"],
-footer a[href*="kontakt"] {
-    background: #FFFFFF !important;
-    color: #0a0a0a !important;
-    padding: 16px 40px !important;
-    border-radius: 30px !important;
-    font-weight: 600 !important;
-    display: inline-block !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-}
-
-footer a[href="../kontakt.html"]:hover,
-footer a[href*="kontakt"]:hover {
-    background: #f0f0f0 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    h1 { font-size: 1.8rem !important; }
-    h2 { font-size: 1.4rem !important; }
-    h3 { font-size: 1.2rem !important; }
-    p, li { font-size: 0.95rem !important; }
-
-    .article-hero {
-        padding: 40px 20px !important;
-    }
-
-    .featured-image {
-        height: 250px !important;
-    }
-}
-</style>
-
-<meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification"/>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <nav class="navbar">
+
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo">
-                <img src="/assets/images/logo main transparent.png" alt="Collytics">
-            </a>
+            <a class="logo" href="/index.html"><img alt="Collytics" src="../assets/images/logo main transparent.png"/></a>
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
     </nav>
-
     <div class="dropdown-menu" id="dropdownMenu">
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
             <div class="menu-section">
-                <a href="../index.html">Home</a>
-                <a href="../services.html">Serwis</a>
-                <a href="../blog/index.html">Blog</a>
-                <a href="../about.html">O nas</a>
-                <a href="../kontakt.html">Kontakt</a>
+                <a href="/index.html">Home</a>
+                <a href="/services.html">Serwis</a>
+                <a href="/blog/index.html">Blog</a>
+                <a href="/about.html">O nas</a>
+                <a href="/kontakt.html">Kontakt</a>
             </div>
-            <div class="menu-divider"></div>
             <div class="social-links">
-                <a href="https://facebook.com/collytics" title="Facebook">
-                    <img src="../assets/images/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://linkedin.com/company/collytics" title="LinkedIn">
-                    <img src="../assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
-                </a>
-                <a href="https://twitter.com/collytics" title="Twitter">
-                    <img src="../assets/images/cons8-twitter-500.svg" alt="Twitter">
-                </a>
+                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook"><img alt="Facebook" src="../assets/images/facebook.png"/></a>
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"/></a>
+                <a href="https://x.com/collytics" target="_blank" title="Twitter"><img alt="X" src="../assets/images/cons8-twitter-500.svg"/></a>
             </div>
         </div>
     </div>
-
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Breadcrumbs -->
     <div class="breadcrumbs">
         <div class="breadcrumbs-container">
-            <div class="breadcrumbs-list">
-                <a href="../index.html">Strona główna</a>
-                <span class="breadcrumbs-separator">→</span>
-                <a href="index.html">Blog</a>
-                <span class="breadcrumbs-separator">→</span>
-                <span class="breadcrumbs-current">Artykuł</span>
-            </div>
+            <a href="../index.html">Strona główna</a>
+            <span class="breadcrumbs-separator">›</span>
+            <a href="index.html">Blog</a>
+            <span class="breadcrumbs-separator">›</span>
+            <span class="breadcrumbs-current">Google Tag Manager w WordPress...</span>
         </div>
     </div>
 
-    <div class="article-hero">
+    <header class="article-hero">
         <div class="article-container">
             <div class="article-meta">
                 <span class="category-badge">WordPress</span>
@@ -405,109 +65,105 @@ footer a[href*="kontakt"]:hover {
             <h1>Google Tag Manager w WordPress – jak zainstalować</h1>
             <p class="lead">Google Tag Manager (GTM) to bezpłatna platforma od Google, która służy do zarządzania tagami na stronach internetowych. Po jednorazowej instalacji umożliwia nieograniczoną instalację kodów śledzących.</p>
         </div>
-    </div>
-
-    <div class="featured-image">
-        <img src="../assets/images/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg" alt="Google Tag Manager WordPress">
-    </div>
-
-    <div class="article-content">
-        <p>GTM ma całą masę wbudowanych skryptów które ułatwiają pracę na tym narzędziu. Bez dwóch zdań jest to narzędzie które warto wykorzystywać w pracy przy digital marketingu.</p>
-
-        <h2>Najpopularniejsze integracje w GTM</h2>
-
-        <div class="feature-list">
-            <ul>
-                <li><strong>Google Analytics 4</strong> - kompletna analityka strony</li>
-                <li><strong>Google Ads Conversion Tracking</strong> - śledzenie konwersji z reklam</li>
-                <li><strong>Google Ads Remarketing</strong> - retargeting użytkowników</li>
-                <li><strong>AdWords Conversion Listener</strong> - nasłuchiwanie konwersji</li>
-                <li><strong>Floodlight Counter</strong> - zaawansowane śledzenie kampanii</li>
-                <li><strong>Google Analytics Event Tracking</strong> - śledzenie zdarzeń</li>
-                <li><strong>Hotjar</strong> - mapy ciepła i nagrania sesji</li>
-                <li><strong>Facebook Pixel</strong> - śledzenie dla Facebook Ads</li>
-                <li><strong>LinkedIn Insight Tag</strong> - analityka LinkedIn</li>
-                <li><strong>Custom HTML</strong> - własne skrypty</li>
-            </ul>
-        </div>
-
-        <h2>Instalacja Google Tag Manager w WordPress - krok po kroku</h2>
-
-        <h3>Krok 1: Utworzenie konta GTM</h3>
-        <p>Przejdź na stronę <a href="https://tagmanager.google.com" target="_blank">Google Tag Manager</a> logując się adresem email w domenie gmail.com.</p>
-
-        <p>Kliknij „Utwórz konto", nadaj mu nazwę i wybierz przestrzeń roboczą, a następnie kliknij „Kontynuuj". Wpisz nazwę swojej strony internetowej, wybierz typ jako „Web" i kliknij „Utwórz".</p>
-
-        <h3>Krok 2: Pobranie kodów instalacyjnych</h3>
-        <p>Po utworzeniu konta Google Tag Manager, otrzymasz dwa fragmenty kodu:</p>
-        <ul>
-            <li>Kod instalacyjny dla sekcji <code>&lt;head&gt;</code></li>
-            <li>Kod instalacyjny dla tuż po otwarciu tagu <code>&lt;body&gt;</code></li>
-        </ul>
-        <p>Skopiuj oba fragmenty kodu.</p>
-
-        <h3>Krok 3: Instalacja w WordPress</h3>
-        <p>Zaloguj się do panelu administracyjnego WordPress.</p>
-        <p>Przejdź do „Wygląd" > „Edytor motywów".</p>
-
         <div class="featured-image">
-            <img src="../assets/images/6792e7de02034a92325f6fa6_6792e7b5f651b8679a436990_edytor.png" alt="Edytor motywów WordPress">
+            <img src="../assets/images/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg" alt="Google Tag Manager WordPress">
         </div>
+    </header>
 
-        <p>Otwórz plik „header.php".</p>
-
-        <h3>Krok 4: Wklejenie kodów</h3>
-        <p>Wklej pierwszy kod jak najwyżej w elemencie <code>&lt;head&gt;</code>.</p>
-        <p>Wklej drugi fragment kodu zaraz po otwarciu znacznika <code>&lt;body&gt;</code>.</p>
-
-        <div class="featured-image">
-            <img src="../assets/images/6792e7de02034a92325f6fb9_6792e7d7b95297293dfdc932_kod.png" alt="Kod GTM w WordPress">
-        </div>
-
-        <p>Po wklejeniu kodów, kliknij „Zaktualizuj plik", aby zapisać zmiany.</p>
-
-        <h3>Krok 5: Weryfikacja instalacji</h3>
-        <p>Sprawdź instalację - przejdź do swojej strony i użyj narzędzia do sprawdzania poprawności instalacji Tag Managera (np. Google Tag Assistant), aby upewnić się, że kody zostały poprawnie wdrożone.</p>
-
-        <h2>Instalacja przez wtyczkę vs ręczna</h2>
-
-        <p>Opisaliśmy tutaj ręczną instalację, jest też możliwa instalacja za pomocą wtyczki w WordPress. Instalacja poprzez wtyczkę jest prostsza, ale ręczna metoda daje większą kontrolę nad kodem i jego umiejscowieniem.</p>
-
-        <h2>Dlaczego warto używać GTM?</h2>
-
-        <ul>
-            <li><strong>Centralne zarządzanie tagami</strong> - wszystkie kody w jednym miejscu</li>
-            <li><strong>Bez edycji kodu strony</strong> - po instalacji GTM nie musisz już edytować plików WordPress</li>
-            <li><strong>Wersjonowanie</strong> - możliwość cofnięcia zmian</li>
-            <li><strong>Testowanie</strong> - tryb debugowania przed publikacją</li>
-            <li><strong>Szybkość</strong> - asynchroniczne ładowanie tagów</li>
-            <li><strong>Bezpieczeństwo</strong> - kontrola nad tym, jakie skrypty są uruchamiane</li>
-        </ul>
-
-        <h2>Podsumowanie</h2>
-
-        <p>Google Tag Manager to potężne narzędzie, które znacznie ułatwia zarządzanie kodami śledzącymi na stronie WordPress. Jednorazowa instalacja GTM pozwala na dodawanie nieograniczonej liczby tagów bez konieczności edycji kodu strony.</p>
-
-        <div class="article-cta">
-            <h3>Potrzebujesz pomocy z Google Tag Manager?</h3>
-            <p>Nasz zespół ekspertów pomoże Ci w profesjonalnej instalacji i konfiguracji GTM na Twojej stronie WordPress. Skonfigurujemy wszystkie potrzebne tagi i nauczymy Cię jak z nich korzystać.</p>
-            <a href="../kontakt.html" class="btn-white">Skontaktuj się z nami</a>
-        </div>
-    </div>
-
-    <script src="../js/navigation.js"></script>
-    <script src="../js/menu.js"></script>
-
-    <footer style="padding: 60px 5%; background: #141414; margin-top: 100px;">
-        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <div style="background: rgba(20, 35, 30, 0.5); backdrop-filter: blur(15px); border: 1px solid rgba(60, 255, 170, 0.2); border-radius: 24px; padding: 60px; margin-bottom: 60px;">
-                <h2 style="font-size: 36px; margin-bottom: 16px; color: #fff;">Gotowy, aby rozpocząć projekt?</h2>
-                <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 32px;">Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online.</p>
-                <a href="../kontakt.html">Kontakt</a>
+    <main class="article-content">
+        <div class="article-container">
+            <p>GTM ma całą masę wbudowanych skryptów które ułatwiają pracę na tym narzędziu. Bez dwóch zdań jest to narzędzie które warto wykorzystywać w pracy przy digital marketingu.</p>
+            <h2>Najpopularniejsze integracje w GTM</h2>
+            <div class="feature-list">
+                <ul>
+                    <li><strong>Google Analytics 4</strong> - kompletna analityka strony</li>
+                    <li><strong>Google Ads Conversion Tracking</strong> - śledzenie konwersji z reklam</li>
+                    <li><strong>Google Ads Remarketing</strong> - retargeting użytkowników</li>
+                    <li><strong>AdWords Conversion Listener</strong> - nasłuchiwanie konwersji</li>
+                    <li><strong>Floodlight Counter</strong> - zaawansowane śledzenie kampanii</li>
+                    <li><strong>Google Analytics Event Tracking</strong> - śledzenie zdarzeń</li>
+                    <li><strong>Hotjar</strong> - mapy ciepła i nagrania sesji</li>
+                    <li><strong>Facebook Pixel</strong> - śledzenie dla Facebook Ads</li>
+                    <li><strong>LinkedIn Insight Tag</strong> - analityka LinkedIn</li>
+                    <li><strong>Custom HTML</strong> - własne skrypty</li>
+                </ul>
             </div>
-            <img src="/assets/images/logo main transparent.png" alt="Collytics" style="height: 40px; margin-bottom: 20px;">
-            <p style="color: #94969c;">© Collytics. All rights reserved.</p>
+
+            <h2>Instalacja Google Tag Manager w WordPress - krok po kroku</h2>
+            <h3>Krok 1: Utworzenie konta GTM</h3>
+            <p>Przejdź na stronę <a href="https://tagmanager.google.com" target="_blank">Google Tag Manager</a> logując się adresem email w domenie gmail.com.</p>
+            <p>Kliknij „Utwórz konto", nadaj mu nazwę i wybierz przestrzeń roboczą, a następnie kliknij „Kontynuuj". Wpisz nazwę swojej strony internetowej, wybierz typ jako „Web" i kliknij „Utwórz".</p>
+
+            <h3>Krok 2: Pobranie kodów instalacyjnych</h3>
+            <p>Po utworzeniu konta Google Tag Manager, otrzymasz dwa fragmenty kodu:</p>
+            <ul>
+                <li>Kod instalacyjny dla sekcji <code>&lt;head&gt;</code></li>
+                <li>Kod instalacyjny dla tuż po otwarciu tagu <code>&lt;body&gt;</code></li>
+            </ul>
+            <p>Skopiuj oba fragmenty kodu.</p>
+
+            <h3>Krok 3: Instalacja w WordPress</h3>
+            <p>Zaloguj się do panelu administracyjnego WordPress.</p>
+            <p>Przejdź do „Wygląd" > „Edytor motywów".</p>
+
+            <img src="../assets/images/6792e7de02034a92325f6fa6_6792e7b5f651b8679a436990_edytor.png" alt="Edytor motywów WordPress">
+
+            <p>Otwórz plik „header.php".</p>
+
+            <h3>Krok 4: Wklejenie kodów</h3>
+            <p>Wklej pierwszy kod jak najwyżej w elemencie <code>&lt;head&gt;</code>.</p>
+            <p>Wklej drugi fragment kodu zaraz po otwarciu znacznika <code>&lt;body&gt;</code>.</p>
+
+            <img src="../assets/images/6792e7de02034a92325f6fb9_6792e7d7b95297293dfdc932_kod.png" alt="Kod GTM w WordPress">
+
+            <p>Po wklejeniu kodów, kliknij „Zaktualizuj plik", aby zapisać zmiany.</p>
+
+            <h3>Krok 5: Weryfikacja instalacji</h3>
+            <p>Sprawdź instalację - przejdź do swojej strony i użyj narzędzia do sprawdzania poprawności instalacji Tag Managera (np. Google Tag Assistant), aby upewnić się, że kody zostały poprawnie wdrożone.</p>
+
+            <h2>Instalacja przez wtyczkę vs ręczna</h2>
+            <p>Opisaliśmy tutaj ręczną instalację, jest też możliwa instalacja za pomocą wtyczki w WordPress. Instalacja poprzez wtyczkę jest prostsza, ale ręczna metoda daje większą kontrolę nad kodem i jego umiejscowieniem.</p>
+
+            <h2>Dlaczego warto używać GTM?</h2>
+            <ul>
+                <li><strong>Centralne zarządzanie tagami</strong> - wszystkie kody w jednym miejscu</li>
+                <li><strong>Bez edycji kodu strony</strong> - po instalacji GTM nie musisz już edytować plików WordPress</li>
+                <li><strong>Wersjonowanie</strong> - możliwość cofnięcia zmian</li>
+                <li><strong>Testowanie</strong> - tryb debugowania przed publikacją</li>
+                <li><strong>Szybkość</strong> - asynchroniczne ładowanie tagów</li>
+                <li><strong>Bezpieczeństwo</strong> - kontrola nad tym, jakie skrypty są uruchamiane</li>
+            </ul>
+
+            <h2>Podsumowanie</h2>
+            <p>Google Tag Manager to potężne narzędzie, które znacznie ułatwia zarządzanie kodami śledzącymi na stronie WordPress. Jednorazowa instalacja GTM pozwala na dodawanie nieograniczonej liczby tagów bez konieczności edycji kodu strony.</p>
+
+            <div class="article-cta">
+                <h3>Potrzebujesz pomocy z Google Tag Manager?</h3>
+                <p>Nasz zespół ekspertów pomoże Ci w profesjonalnej instalacji i konfiguracji GTM na Twojej stronie WordPress. Skonfigurujemy wszystkie potrzebne tagi i nauczymy Cię jak z nich korzystać.</p>
+                <a href="../kontakt.html" class="cta-button">Skontaktuj się z nami</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>© Collytics. All rights reserved. <a href="/legal/privacy-policy.html">Polityka Prywatności</a></p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("click", function(e) {
+            if(e.target.id === "menuTrigger") {
+                document.getElementById("dropdownMenu").classList.add("active");
+                document.getElementById("menuOverlay").classList.add("active");
+            }
+            if(e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
+                document.getElementById("dropdownMenu").classList.remove("active");
+                document.getElementById("menuOverlay").classList.remove("active");
+            }
+        });
+    </script>
 </body>
 </html>

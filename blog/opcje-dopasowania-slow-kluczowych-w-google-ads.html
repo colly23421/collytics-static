@@ -1,396 +1,60 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GT-5R3VKTJG");</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");</script>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="/assets/images/logo main transparent.png">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opcje dopasowania słów kluczowych w Google Ads - Kompletny przewodnik | Collytics</title>
-    <link rel="stylesheet" href="/css/navbar-universal.css">    <meta name="description" content="Poznaj typy dopasowania słów kluczowych w Google Ads: przybliżone, do wyrażenia i ścisłe. Dowiedz się kiedy stosować każde z nich dla maksymalnego ROI.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/hero-gradient.css">
-    <link rel="stylesheet" href="../css/mode.css">
-    <link rel="stylesheet" href="../css/navigation-updated-fix.css">
-    <link rel="stylesheet" href="../css/navigation-updated.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Poznaj typy dopasowania słów kluczowych w Google Ads: przybliżone, do wyrażenia i ścisłe. Dowiedz się kiedy stosować każde z nich dla maksymalnego ROI.">
 
-<style>
-/* Reset i podstawowe */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');</script>
 
-body {
-    background: #0a0a0a !important;
-    color: #ffffff !important;
-    font-family: 'Inter', -apple-system, sans-serif !important;
-    line-height: 1.6 !important;
-}
+    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-/* Nawigacja */
-nav, .navbar, header {
-    background: rgba(10, 10, 10, 0.95) !important;
-    backdrop-filter: blur(20px) !important;
-}
-
-/* Menu dropdown */
-.dropdown-menu {
-    background: rgba(17, 17, 17, 0.98) !important;
-}
-
-.dropdown-menu a, .menu-section a {
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
-
-.dropdown-menu a:hover {
-    color: #FFFFFF !important;
-    opacity: 1;
-}
-
-.dropdown-close {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-}
-
-/* Przyciski */
-.menu-trigger, button, .btn, .cta-button {
-    background: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
-
-.menu-trigger:hover, button:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
-    color: #FFFFFF !important;
-    opacity: 1;
-}
-
-/* Nagłówki */
-h1 {
-    color: #FFFFFF !important;
-    font-size: 2.5rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 20px !important;
-}
-
-h2 {
-    color: #FFFFFF !important;
-    font-size: 1.75rem !important;
-    margin: 30px 0 15px !important;
-}
-
-h3 {
-    color: #FFFFFF !important;
-    font-size: 1.35rem !important;
-    margin: 25px 0 12px !important;
-}
-
-/* Tekst */
-p, li, td, span {
-    color: #a1a1aa !important;
-    font-size: 1rem !important;
-    line-height: 1.7 !important;
-}
-
-/* Tagi/kategorie */
-.tag, .category, .badge, .category-badge {
-    background: rgba(99, 102, 241, 0.1) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    color: #FFFFFF !important;
-    padding: 6px 16px !important;
-    border-radius: 50px !important;
-    font-size: 0.875rem !important;
-}
-
-/* Linki */
-a {
-    color: #FFFFFF !important;
-    text-decoration: none !important;
-}
-
-a:hover {
-    color: #818cf8 !important;
-}
-
-/* Hero Section */
-.article-hero {
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 60px 20px !important;
-    background: transparent !important;
-}
-
-.article-container {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-}
-
-.article-meta {
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
-    margin-bottom: 20px !important;
-    color: #a1a1aa !important;
-}
-
-.lead {
-    color: #a1a1aa !important;
-    font-size: 1.1rem !important;
-    line-height: 1.6 !important;
-}
-
-/* Featured Image */
-.featured-image {
-    width: 100% !important;
-    max-width: 800px !important;
-    height: 400px !important;
-    overflow: hidden !important;
-    margin: 40px auto !important;
-    display: block !important;
-}
-
-.featured-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-}
-
-/* Content Area */
-.article-content {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    padding: 60px 20px !important;
-}
-
-.article-content .featured-image {
-    margin: 40px 0 !important;
-}
-
-.article-content img:not(.featured-image img) {
-    max-width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    margin: 30px auto !important;
-}
-
-/* Match Type Box */
-.match-type-box {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border-left: 4px solid #FFFFFF !important;
-    padding: 25px !important;
-    margin: 25px 0 !important;
-    border-radius: 8px !important;
-}
-
-.match-type-box h3 {
-    margin-top: 0 !important;
-    margin-bottom: 15px !important;
-    color: #FFFFFF !important;
-}
-
-/* Highlight Box */
-.highlight-box {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    padding: 30px !important;
-    margin: 40px 0 !important;
-    border-radius: 12px !important;
-}
-
-/* Breadcrumbs */
-.breadcrumbs {
-    background: #1a1a1a !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 25px 0 !important;
-    margin-top: 80px !important;
-    margin-bottom: 40px !important;
-}
-
-.breadcrumbs-container {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 20px !important;
-}
-
-.breadcrumbs-list {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-    font-size: 0.95rem !important;
-}
-
-.breadcrumbs-list a {
-    color: #FFFFFF !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-    border-bottom: 1px solid transparent !important;
-}
-
-.breadcrumbs-list a:hover {
-    color: #818cf8 !important;
-    border-bottom: 1px solid #818cf8 !important;
-}
-
-.breadcrumbs-separator {
-    color: #6b7280 !important;
-    font-size: 1.1rem !important;
-}
-
-.breadcrumbs-current {
-    color: #FFFFFF !important;
-    font-weight: 500 !important;
-}
-
-/* Article CTA */
-.article-cta {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    padding: 40px !important;
-    border-radius: 16px !important;
-    margin: 50px 0 !important;
-    text-align: center !important;
-}
-
-.article-cta h3 {
-    margin-bottom: 15px !important;
-}
-
-.btn-white {
-    background: #FFFFFF !important;
-    color: #0a0a0a !important;
-    padding: 14px 32px !important;
-    border-radius: 30px !important;
-    font-weight: 600 !important;
-    display: inline-block !important;
-    margin-top: 20px !important;
-    transition: all 0.3s ease !important;
-}
-
-.btn-white:hover {
-    background: #f0f0f0 !important;
-    transform: translateY(-2px) !important;
-}
-
-/* Footer */
-footer {
-    background: #111111 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    padding: 60px 5% 40px !important;
-}
-
-footer h2 {
-    color: #FFFFFF !important;
-    font-size: 2rem !important;
-    margin-bottom: 20px !important;
-}
-
-footer p {
-    color: #a1a1aa !important;
-}
-
-/* Footer Kontakt Button - Biały */
-footer a[href="../kontakt.html"],
-footer a[href*="kontakt"] {
-    background: #FFFFFF !important;
-    color: #0a0a0a !important;
-    padding: 16px 40px !important;
-    border-radius: 30px !important;
-    font-weight: 600 !important;
-    display: inline-block !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-}
-
-footer a[href="../kontakt.html"]:hover,
-footer a[href*="kontakt"]:hover {
-    background: #f0f0f0 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    h1 { font-size: 1.8rem !important; }
-    h2 { font-size: 1.4rem !important; }
-    h3 { font-size: 1.2rem !important; }
-    p, li { font-size: 0.95rem !important; }
-
-    .article-hero {
-        padding: 40px 20px !important;
-    }
-
-    .featured-image {
-        height: 250px !important;
-    }
-}
-</style>
-
-<meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification"/>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <nav class="navbar">
+
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo">
-                <img src="/assets/images/logo main transparent.png" alt="Collytics">
-            </a>
+            <a class="logo" href="/index.html"><img alt="Collytics" src="../assets/images/logo main transparent.png"/></a>
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
     </nav>
-
     <div class="dropdown-menu" id="dropdownMenu">
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
             <div class="menu-section">
-                <a href="../index.html">Home</a>
-                <a href="../services.html">Serwis</a>
-                <a href="../blog/index.html">Blog</a>
-                <a href="../about.html">O nas</a>
-                <a href="../kontakt.html">Kontakt</a>
+                <a href="/index.html">Home</a>
+                <a href="/services.html">Serwis</a>
+                <a href="/blog/index.html">Blog</a>
+                <a href="/about.html">O nas</a>
+                <a href="/kontakt.html">Kontakt</a>
             </div>
-            <div class="menu-divider"></div>
             <div class="social-links">
-                <a href="https://facebook.com/collytics" title="Facebook">
-                    <img src="../assets/images/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://linkedin.com/company/collytics" title="LinkedIn">
-                    <img src="../assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
-                </a>
-                <a href="https://twitter.com/collytics" title="Twitter">
-                    <img src="../assets/images/cons8-twitter-500.svg" alt="Twitter">
-                </a>
+                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook"><img alt="Facebook" src="../assets/images/facebook.png"/></a>
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"/></a>
+                <a href="https://x.com/collytics" target="_blank" title="Twitter"><img alt="X" src="../assets/images/cons8-twitter-500.svg"/></a>
             </div>
         </div>
     </div>
-
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Breadcrumbs -->
     <div class="breadcrumbs">
         <div class="breadcrumbs-container">
-            <div class="breadcrumbs-list">
-                <a href="../index.html">Strona główna</a>
-                <span class="breadcrumbs-separator">→</span>
-                <a href="index.html">Blog</a>
-                <span class="breadcrumbs-separator">→</span>
-                <span class="breadcrumbs-current">Artykuł</span>
-            </div>
+            <a href="../index.html">Strona główna</a>
+            <span class="breadcrumbs-separator">›</span>
+            <a href="index.html">Blog</a>
+            <span class="breadcrumbs-separator">›</span>
+            <span class="breadcrumbs-current">Opcje dopasowania słów...</span>
         </div>
     </div>
 
-    <div class="article-hero">
+    <header class="article-hero">
         <div class="article-container">
             <div class="article-meta">
                 <span class="category-badge">Google Ads</span>
@@ -401,95 +65,84 @@ footer a[href*="kontakt"]:hover {
             <h1>Opcje dopasowania słów kluczowych w Google Ads</h1>
             <p class="lead">W kampaniach tekstowych Google Ads kluczowym ustawieniem jest wybór słów kluczowych, które wyzwalają udział kampanii w aukcji. Poznaj różnice między dopasowaniem przybliżonym, do wyrażenia i ścisłym.</p>
         </div>
-    </div>
-
-    <div class="featured-image">
-        <img src="../assets/images/6773179d80bd75f7af28392e_Opcje_dopasowania_s%C5%82o%CC%81w_kluczowych_w_Google_Ads.jpeg" alt="Opcje dopasowania słów kluczowych Google Ads">
-    </div>
-
-    <div class="article-content">
-        <p>W kampaniach tekstowych Google Ads kluczowym ustawieniem jest wybór „słów kluczowych", które wyzwalają udział naszej kampanii w aukcji, decydującej o „zwycięzcy" w wynikach wyszukiwania (SERP). Czyli, na której stronie wyników wyszukiwania w Google pojawi się nasza reklama tekstowa.</p>
-
-        <p>W Google Ads wyróżniamy trzy typy dopasowania słów kluczowych: <strong>dopasowanie przybliżone, dopasowanie do wyrażenia, dopasowanie ścisłe</strong>.</p>
-
-        <p>Warto od razu zaznaczyć, że w trakcie tworzenia planu mediów przydatnym jest określenie form targetowania dla konkretnych kampanii czy nawet reklam. Niestety, często w media planach nie określa się w ogóle słów kluczowych, a co dopiero form dopasowania. Choć w media planach które są często prezentowane osobom nie będącym specjalistami SEM, może to być usprawiedliwione, to przy analizie rynku dla nowego klienta lub kampanii jest to już poważnym błędem.</p>
-
-        <h2>Nasza metodologia w Collytics</h2>
-
-        <p>W Collytics zawsze przed stworzeniem samego planu mediów, korzystając z narzędzi takich jak <strong>Planer Słów Kluczowych, Google Search Console</strong> czy <strong>SEMRUSH</strong>, biorąc pod uwagę budżet, badamy możliwości zasięgu marki. Dobieramy słowa kluczowe oraz monitorujemy działania potencjalnej konkurencji.</p>
-
-        <p>W tym kontekście różnicowanie między typami dopasowania jest niezwykle istotne. Należy również dodać iż sprawdzenie konkurencji jest istotne nie tyle by się sugerować ich działaniami ale z uwagi na fakt, że właśnie z nimi będziemy konkurować o miejsce w przestrzeni digitalowej.</p>
-
         <div class="featured-image">
+            <img src="../assets/images/6773179d80bd75f7af28392e_Opcje dopasowania słów kluczowych w Google Ads.jpeg" alt="Opcje dopasowania słów kluczowych Google Ads">
+        </div>
+    </header>
+
+    <main class="article-content">
+        <div class="article-container">
+            <p>W kampaniach tekstowych Google Ads kluczowym ustawieniem jest wybór „słów kluczowych", które wyzwalają udział naszej kampanii w aukcji, decydującej o „zwycięzcy" w wynikach wyszukiwania (SERP). Czyli, na której stronie wyników wyszukiwania w Google pojawi się nasza reklama tekstowa.</p>
+            <p>W Google Ads wyróżniamy trzy typy dopasowania słów kluczowych: <strong>dopasowanie przybliżone, dopasowanie do wyrażenia, dopasowanie ścisłe</strong>.</p>
+            <p>Warto od razu zaznaczyć, że w trakcie tworzenia planu mediów przydatnym jest określenie form targetowania dla konkretnych kampanii czy nawet reklam. Niestety, często w media planach nie określa się w ogóle słów kluczowych, a co dopiero form dopasowania. Choć w media planach które są często prezentowane osobom nie będącym specjalistami SEM, może to być usprawiedliwione, to przy analizie rynku dla nowego klienta lub kampanii jest to już poważnym błędem.</p>
+
+            <h2>Nasza metodologia w Collytics</h2>
+            <p>W Collytics zawsze przed stworzeniem samego planu mediów, korzystając z narzędzi takich jak <strong>Planer Słów Kluczowych, Google Search Console</strong> czy <strong>SEMRUSH</strong>, biorąc pod uwagę budżet, badamy możliwości zasięgu marki. Dobieramy słowa kluczowe oraz monitorujemy działania potencjalnej konkurencji.</p>
+            <p>W tym kontekście różnicowanie między typami dopasowania jest niezwykle istotne. Należy również dodać iż sprawdzenie konkurencji jest istotne nie tyle by się sugerować ich działaniami ale z uwagi na fakt, że właśnie z nimi będziemy konkurować o miejsce w przestrzeni digitalowej.</p>
+
             <img src="../assets/images/677317cde9b5b36fd613afd0_Planer-slow-kluczowych-1024x434.png" alt="Planer słów kluczowych Google">
-        </div>
 
-        <h2>Czym są dopasowania i kiedy je wybierać</h2>
-
-        <div class="match-type-box">
-            <h3>Dopasowanie przybliżone</h3>
-            <p>Reklamy mogą być wyświetlane w wynikach wyszukiwań, które są luźno związane z Twoim słowem kluczowym, nawet jeśli w ogóle nie zawierają go w dokładnej formie. Dzięki temu przyciągasz na stronę www więcej użytkowników, mniej czasu spędzasz na tworzeniu list słów kluczowych.</p>
-            <p><strong>Kiedy stosować:</strong> Sprawdza się często w momencie startu zupełnie nowej kampanii, promocji nowego produktu, dużych budżetach. Jest to po prostu szerokie zarzucanie sieci gdy nie jesteśmy pewni które słowa będą miały wysoki CTR i na końcu CR czyli współczynnik konwersji.</p>
-            <p><strong>Wskazówka:</strong> Przy tym dopasowaniu należy wybierać inteligentne określanie stawek i pamiętać by jednak nie wrzucać bardzo podobnych słów.</p>
-        </div>
-
-        <div class="match-type-box">
-            <h3>Dopasowanie do wyrażenia</h3>
-            <p>Reklamy mogą pojawić się w wynikach wyszukiwań zawierających wyrażenia bliskie Twojemu słowu kluczowemu, oferując szerszy zasięg niż dopasowanie ścisłe, ale węższy niż przybliżone. Wyświetlają się dla zapytań, które bezpośrednio dotyczą Twojego produktu lub usługi.</p>
-            <p><strong>Kiedy stosować:</strong> Idealne gdy znasz już podstawowe frazy konwersyjne, ale chcesz zachować pewną elastyczność w dotarciu do użytkowników.</p>
-        </div>
-
-        <div class="match-type-box">
-            <h3>Dopasowanie ścisłe</h3>
-            <p>Reklamy mogą pojawiać się w wynikach wyszukiwań o podobnym znaczeniu lub zamiarze co Twoje słowo kluczowe. Dopasowanie ścisłe, najbardziej kontrolowane, dociera do mniej użytkowników niż dopasowanie do wyrażenia i przybliżone.</p>
-            <p><strong>Kiedy stosować:</strong> Sprawdza się często w momencie gdy chcemy szczególnie zawalczyć o słowa o których wiemy, że mają wysoki (CR) współczynnik konwersji a sama strona czy landing page jest dobrze zoptymalizowana pod te wyrażenia.</p>
-        </div>
-
-        <h2>Wykluczające słowa kluczowe</h2>
-
-        <p>Przy tej okazji należy również wspomnieć o <strong>wykluczających słowach kluczowych</strong>. Wykluczające słowa kluczowe pozwalają unikać wyświetlania reklam w wynikach wyszukiwań zawierających konkretne hasła.</p>
-
-        <div class="highlight-box">
-            <h3>💡 Wskazówka dla małych budżetów</h3>
-            <p>Obecnie Google Ads mocno skręca w stronę AI sztucznej inteligencji czyli jak największej automatyzacji kampanii dla osób które nie mają szerokiej wiedzy odnośnie kampanii reklamowych. W takim wypadku przy małych budżetach zalecane jest korzystanie z <strong>dopasowania przybliżonego</strong> razem z <strong>inteligentnym ustalaniem stawek</strong>.</p>
-        </div>
-
-        <h2>Najlepsze praktyki w doborze dopasowań</h2>
-
-        <ul>
-            <li><strong>Start z szerokim targetowaniem:</strong> Rozpocznij od dopasowania przybliżonego, aby zebrać dane</li>
-            <li><strong>Analiza raportów wyszukiwań:</strong> Regularnie sprawdzaj, jakie zapytania wyzwalają Twoje reklamy</li>
-            <li><strong>Stopniowe zawężanie:</strong> Przenoś najlepsze frazy do bardziej restrykcyjnych dopasowań</li>
-            <li><strong>Budowanie listy wykluczeń:</strong> Systematycznie dodawaj słowa wykluczające</li>
-            <li><strong>Testowanie różnych kombinacji:</strong> Używaj różnych typów dopasowań w różnych grupach reklam</li>
-        </ul>
-
-        <h2>Podsumowanie</h2>
-
-        <p>Wybór odpowiedniego typu dopasowania słów kluczowych to kluczowa decyzja wpływająca na skuteczność kampanii Google Ads. Nie ma uniwersalnej recepty – wszystko zależy od budżetu, celów kampanii i stopnia znajomości rynku.</p>
-
-        <p>Pamiętaj, że skuteczna kampania to nie tylko wybór dopasowań, ale ciągła optymalizacja oparta na danych. Regularne monitorowanie wyników i dostosowywanie strategii to klucz do sukcesu w Google Ads.</p>
-
-        <div class="article-cta">
-            <h3>Potrzebujesz pomocy z kampaniami Google Ads?</h3>
-            <p>Nasz zespół ekspertów pomoże Ci dobrać optymalne słowa kluczowe i typy dopasowań dla Twojego biznesu. Maksymalizujemy ROI z każdej złotówki wydanej na reklamę.</p>
-            <a href="../kontakt.html" class="btn-white">Skontaktuj się z nami</a>
-        </div>
-    </div>
-
-    <script src="../js/navigation.js"></script>
-    <script src="../js/menu.js"></script>
-
-    <footer style="padding: 60px 5%; background: #141414; margin-top: 100px;">
-        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <div style="background: rgba(20, 35, 30, 0.5); backdrop-filter: blur(15px); border: 1px solid rgba(60, 255, 170, 0.2); border-radius: 24px; padding: 60px; margin-bottom: 60px;">
-                <h2 style="font-size: 36px; margin-bottom: 16px; color: #fff;">Gotowy, aby rozpocząć projekt?</h2>
-                <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 32px;">Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online.</p>
-                <a href="../kontakt.html">Kontakt</a>
+            <h2>Czym są dopasowania i kiedy je wybierać</h2>
+            <div class="match-type-box">
+                <h3>Dopasowanie przybliżone</h3>
+                <p>Reklamy mogą być wyświetlane w wynikach wyszukiwań, które są luźno związane z Twoim słowem kluczowym...</p>
             </div>
-            <img src="/assets/images/logo main transparent.png" alt="Collytics" style="height: 40px; margin-bottom: 20px;">
-            <p style="color: #94969c;">© Collytics. All rights reserved.</p>
+            <div class="match-type-box">
+                <h3>Dopasowanie do wyrażenia</h3>
+                <p>Reklamy mogą pojawić się w wynikach wyszukiwań zawierających wyrażenia bliskie Twojemu słowu kluczowemu...</p>
+            </div>
+            <div class="match-type-box">
+                <h3>Dopasowanie ścisłe</h3>
+                <p>Reklamy mogą pojawiać się w wynikach wyszukiwań o podobnym znaczeniu lub zamiarze co Twoje słowo kluczowe...</p>
+            </div>
+
+            <h2>Wykluczające słowa kluczowe</h2>
+            <p>Przy tej okazji należy również wspomnieć o <strong>wykluczających słowach kluczowych</strong>...</p>
+
+            <div class="highlight-box">
+                <h3>💡 Wskazówka dla małych budżetów</h3>
+                <p>Obecnie Google Ads mocno skręca w stronę AI... zalecane jest korzystanie z <strong>dopasowania przybliżonego</strong> razem z <strong>inteligentnym ustalaniem stawek</strong>.</p>
+            </div>
+
+            <h2>Najlepsze praktyki w doborze dopasowań</h2>
+            <ul>
+                <li><strong>Start z szerokim targetowaniem:</strong> Rozpocznij od dopasowania przybliżonego, aby zebrać dane</li>
+                <li><strong>Analiza raportów wyszukiwań:</strong> Regularnie sprawdzaj, jakie zapytania wyzwalają Twoje reklamy</li>
+                <li><strong>Stopniowe zawężanie:</strong> Przenoś najlepsze frazy do bardziej restrykcyjnych dopasowań</li>
+                <li><strong>Budowanie listy wykluczeń:</strong> Systematycznie dodawaj słowa wykluczające</li>
+                <li><strong>Testowanie różnych kombinacji:</strong> Używaj różnych typów dopasowań w różnych grupach reklam</li>
+            </ul>
+
+            <h2>Podsumowanie</h2>
+            <p>Wybór odpowiedniego typu dopasowania słów kluczowych to kluczowa decyzja wpływająca na skuteczność kampanii Google Ads...</p>
+
+            <div class="article-cta">
+                <h3>Potrzebujesz pomocy z kampaniami Google Ads?</h3>
+                <p>Nasz zespół ekspertów pomoże Ci dobrać optymalne słowa kluczowe i typy dopasowań dla Twojego biznesu.</p>
+                <a href="/kontakt.html" class="cta-button">Skontaktuj się z nami</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>© Collytics. All rights reserved. <a href="/legal/privacy-policy.html">Polityka Prywatności</a></p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("click", function(e) {
+            if(e.target.id === "menuTrigger") {
+                document.getElementById("dropdownMenu").classList.add("active");
+                document.getElementById("menuOverlay").classList.add("active");
+            }
+            if(e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
+                document.getElementById("dropdownMenu").classList.remove("active");
+                document.getElementById("menuOverlay").classList.remove("active");
+            }
+        });
+    </script>
 </body>
 </html>

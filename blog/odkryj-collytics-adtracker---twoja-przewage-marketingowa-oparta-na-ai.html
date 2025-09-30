@@ -1,397 +1,60 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GT-5R3VKTJG");</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");</script>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="/assets/images/logo main transparent.png">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collytics AdTracker - Optymalizacja kampanii reklamowych z AI | Collytics</title>
-    <link rel="stylesheet" href="/css/navbar-universal.css">    <meta name="description" content="AdTracker wykorzystuje sztuczną inteligencję do analizy kampanii Facebook Ads i Google Ads. Oszczędź do 30% budżetu i zwiększ ROI o 45%.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/hero-gradient.css">
-    <link rel="stylesheet" href="../css/mode.css">
-    <link rel="stylesheet" href="../css/navigation-updated-fix.css">
-    <link rel="stylesheet" href="../css/navigation-updated.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="AdTracker wykorzystuje sztuczną inteligencję do analizy kampanii Facebook Ads i Google Ads. Oszczędź do 30% budżetu i zwiększ ROI o 45%.">
 
-<style>
-/* Reset i podstawowe */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');</script>
 
-body {
-    background: #0a0a0a !important;
-    color: #ffffff !important;
-    font-family: 'Inter', -apple-system, sans-serif !important;
-    line-height: 1.6 !important;
-}
+    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-/* Nawigacja */
-nav, .navbar, header {
-    background: rgba(10, 10, 10, 0.95) !important;
-    backdrop-filter: blur(20px) !important;
-}
-
-/* Menu dropdown */
-.dropdown-menu {
-    background: rgba(17, 17, 17, 0.98) !important;
-}
-
-.dropdown-menu a, .menu-section a {
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
-
-.dropdown-menu a:hover {
-    color: #FFFFFF !important;
-    opacity: 1;
-}
-
-.dropdown-close {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-}
-
-/* Przyciski */
-.menu-trigger, button, .btn, .cta-button {
-    background: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
-
-.menu-trigger:hover, button:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
-    color: #FFFFFF !important;
-    opacity: 1;
-}
-
-/* Nagłówki */
-h1 {
-    color: #FFFFFF !important;
-    font-size: 2.5rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 20px !important;
-}
-
-h2 {
-    color: #FFFFFF !important;
-    font-size: 1.75rem !important;
-    margin: 30px 0 15px !important;
-}
-
-h3 {
-    color: #FFFFFF !important;
-    font-size: 1.35rem !important;
-    margin: 25px 0 12px !important;
-}
-
-/* Tekst */
-p, li, td, span {
-    color: #a1a1aa !important;
-    font-size: 1rem !important;
-    line-height: 1.7 !important;
-}
-
-/* Tagi/kategorie */
-.tag, .category, .badge, .category-badge {
-    background: rgba(99, 102, 241, 0.1) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    color: #FFFFFF !important;
-    padding: 6px 16px !important;
-    border-radius: 50px !important;
-    font-size: 0.875rem !important;
-}
-
-/* Linki */
-a {
-    color: #FFFFFF !important;
-    text-decoration: none !important;
-}
-
-a:hover {
-    color: #818cf8 !important;
-}
-
-/* POPRAWKA HERO SECTION */
-.article-hero {
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 60px 20px !important;
-    background: transparent !important;
-}
-
-.article-container {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-}
-
-.article-meta {
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
-    margin-bottom: 20px !important;
-    color: #a1a1aa !important;
-}
-
-.lead {
-    color: #a1a1aa !important;
-    font-size: 1.1rem !important;
-    line-height: 1.6 !important;
-}
-
-/* POPRAWKA OBRAZÓW */
-.featured-image {
-    width: 100% !important;
-    max-width: 800px !important;
-    height: 400px !important;
-    overflow: hidden !important;
-    margin: 40px auto !important;
-    display: block !important;
-}
-
-.featured-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-}
-
-/* Content area */
-.article-content {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    padding: 60px 20px !important;
-}
-
-.article-content .featured-image {
-    margin: 40px 0 !important;
-}
-
-/* Feature Cards */
-.feature-card {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 25px !important;
-    margin: 25px 0 !important;
-    border-radius: 12px !important;
-}
-
-.feature-card h3 {
-    margin-top: 0 !important;
-    margin-bottom: 15px !important;
-}
-
-/* Highlight Box */
-.highlight-box {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    padding: 30px !important;
-    margin: 40px 0 !important;
-    border-radius: 12px !important;
-}
-
-.highlight-box h3 {
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
-}
-
-.highlight-box p {
-    margin: 10px 0 !important;
-}
-
-/* BREADCRUMBS */
-.breadcrumbs {
-    background: #1a1a1a !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 25px 0 !important;
-    margin-top: 80px !important;
-    margin-bottom: 40px !important;
-}
-
-.breadcrumbs-container {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 20px !important;
-}
-
-.breadcrumbs-list {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-    font-size: 0.95rem !important;
-}
-
-.breadcrumbs-list a {
-    color: #FFFFFF !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-    border-bottom: 1px solid transparent !important;
-}
-
-.breadcrumbs-list a:hover {
-    color: #818cf8 !important;
-    border-bottom: 1px solid #818cf8 !important;
-}
-
-.breadcrumbs-separator {
-    color: #6b7280 !important;
-    font-size: 1.1rem !important;
-}
-
-.breadcrumbs-current {
-    color: #FFFFFF !important;
-    font-weight: 500 !important;
-}
-
-/* Article CTA */
-.article-cta {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    padding: 40px !important;
-    border-radius: 16px !important;
-    margin: 50px 0 !important;
-    text-align: center !important;
-}
-
-.article-cta h3 {
-    margin-bottom: 15px !important;
-}
-
-.btn-white {
-    background: #FFFFFF !important;
-    color: #0a0a0a !important;
-    padding: 14px 32px !important;
-    border-radius: 30px !important;
-    font-weight: 600 !important;
-    display: inline-block !important;
-    margin-top: 20px !important;
-    transition: all 0.3s ease !important;
-}
-
-.btn-white:hover {
-    background: #f0f0f0 !important;
-    transform: translateY(-2px) !important;
-}
-
-/* Footer */
-footer {
-    background: #111111 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    padding: 60px 5% 40px !important;
-}
-
-footer h2 {
-    color: #FFFFFF !important;
-    font-size: 2rem !important;
-    margin-bottom: 20px !important;
-}
-
-footer p {
-    color: #a1a1aa !important;
-}
-
-/* FOOTER KONTAKT BUTTON - BIAŁY */
-footer a[href="../kontakt.html"],
-footer a[href*="kontakt"] {
-    background: #FFFFFF !important;
-    color: #0a0a0a !important;
-    padding: 16px 40px !important;
-    border-radius: 30px !important;
-    font-weight: 600 !important;
-    display: inline-block !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-}
-
-footer a[href="../kontakt.html"]:hover,
-footer a[href*="kontakt"]:hover {
-    background: #f0f0f0 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    h1 { font-size: 1.8rem !important; }
-    h2 { font-size: 1.4rem !important; }
-    h3 { font-size: 1.2rem !important; }
-    p, li { font-size: 0.95rem !important; }
-
-    .article-hero {
-        padding: 40px 20px !important;
-    }
-
-    .featured-image {
-        height: 250px !important;
-    }
-}
-</style>
-
-<meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification"/>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <nav class="navbar">
+
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo">
-                <img src="/assets/images/logo main transparent.png" alt="Collytics">
-            </a>
+            <a class="logo" href="/index.html"><img alt="Collytics" src="../assets/images/logo main transparent.png"/></a>
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
     </nav>
-
     <div class="dropdown-menu" id="dropdownMenu">
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
             <div class="menu-section">
-                <a href="../index.html">Home</a>
-                <a href="../services.html">Serwis</a>
-                <a href="../blog/index.html">Blog</a>
-                <a href="../about.html">O nas</a>
-                <a href="../kontakt.html">Kontakt</a>
+                <a href="/index.html">Home</a>
+                <a href="/services.html">Serwis</a>
+                <a href="/blog/index.html">Blog</a>
+                <a href="/about.html">O nas</a>
+                <a href="/kontakt.html">Kontakt</a>
             </div>
-            <div class="menu-divider"></div>
             <div class="social-links">
-                <a href="https://facebook.com/collytics" title="Facebook">
-                    <img src="../assets/images/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://linkedin.com/company/collytics" title="LinkedIn">
-                    <img src="../assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
-                </a>
-                <a href="https://twitter.com/collytics" title="Twitter">
-                    <img src="../assets/images/cons8-twitter-500.svg" alt="Twitter">
-                </a>
+                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook"><img alt="Facebook" src="../assets/images/facebook.png"/></a>
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"/></a>
+                <a href="https://x.com/collytics" target="_blank" title="Twitter"><img alt="X" src="../assets/images/cons8-twitter-500.svg"/></a>
             </div>
         </div>
     </div>
-
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Breadcrumbs -->
     <div class="breadcrumbs">
         <div class="breadcrumbs-container">
-            <div class="breadcrumbs-list">
-                <a href="../index.html">Strona główna</a>
-                <span class="breadcrumbs-separator">→</span>
-                <a href="index.html">Blog</a>
-                <span class="breadcrumbs-separator">→</span>
-                <span class="breadcrumbs-current">Artykuł</span>
-            </div>
+            <a href="../index.html">Strona główna</a>
+            <span class="breadcrumbs-separator">›</span>
+            <a href="index.html">Blog</a>
+            <span class="breadcrumbs-separator">›</span>
+            <span class="breadcrumbs-current">Odkryj Collytics AdTracker...</span>
         </div>
     </div>
 
-    <div class="article-hero">
+    <header class="article-hero">
         <div class="article-container">
             <div class="article-meta">
                 <span class="category-badge">Product</span>
@@ -402,101 +65,94 @@ footer a[href*="kontakt"]:hover {
             <h1>Odkryj Collytics AdTracker – Twoją przewagę marketingową opartą na AI</h1>
             <p class="lead">Masz dość patrzenia, jak Twój ciężko zarobiony budżet reklamowy znika na kampaniach, które po prostu nie przynoszą rezultatów? Przedstawiamy Collytics AdTracker – rewolucyjne narzędzie oparte na AI.</p>
         </div>
-    </div>
-
-    <div class="featured-image">
-        <img src="../assets/images/67e5496bc7cb74bcef108d87_collytics_ad_tracker.png" alt="Collytics AdTracker Dashboard">
-    </div>
-
-    <div class="article-content">
-        <p>W Collytics rozumiemy frustrację związaną z przesiewaniem niezliczonych danych w próbie ustalenia, które kampanie zawodzą, a które mają potencjał. Dlatego stworzyliśmy <strong>Collytics AdTracker</strong>!</p>
-
         <div class="featured-image">
+            <img src="../assets/images/67e5496bc7cb74bcef108d87_collytics_ad_tracker.png" alt="Collytics AdTracker Dashboard">
+        </div>
+    </header>
+
+    <main class="article-content">
+        <div class="article-container">
+            <p>W Collytics rozumiemy frustrację związaną z przesiewaniem niezliczonych danych w próbie ustalenia, które kampanie zawodzą, a które mają potencjał. Dlatego stworzyliśmy <strong>Collytics AdTracker</strong>!</p>
             <img src="../assets/images/67e5498da99f35eca7574434_login_adtracker.png" alt="AdTracker Login Screen">
-        </div>
+            <p>Collytics AdTracker to unikalne rozwiązanie opracowane przez nas, aby zrewolucjonizować sposób oceny skuteczności Twoich kampanii reklamowych na Facebook Ads i Google Ads. Wyobraź sobie, że masz dostępnego <strong>24/7 osobistego doradcę ds. marketingu cyfrowego</strong>, który automatycznie analizuje Twoje kampanie i dostarcza jasne, natychmiastowe oceny wraz z praktycznymi rekomendacjami.</p>
 
-        <p>Collytics AdTracker to unikalne rozwiązanie opracowane przez nas, aby zrewolucjonizować sposób oceny skuteczności Twoich kampanii reklamowych na Facebook Ads i Google Ads. Wyobraź sobie, że masz dostępnego <strong>24/7 osobistego doradcę ds. marketingu cyfrowego</strong>, który automatycznie analizuje Twoje kampanie i dostarcza jasne, natychmiastowe oceny wraz z praktycznymi rekomendacjami.</p>
-
-        <h2>Co wyróżnia Collytics AdTracker?</h2>
-
-        <div class="feature-card">
-            <h3>💰 Wczesne Zatrzymywanie Kampanii i Oszczędność Budżetu</h3>
-            <p>Nasz inteligentny system automatycznie analizuje dane Twoich kampanii i wskazuje, które z nich warto kontynuować, a które wymagają korekty lub wczesnego zatrzymania. Oznacza to, że przestajesz wyrzucać pieniądze na nieskuteczne reklamy i koncentrujesz swój budżet na kampaniach o największym potencjale. Często już w ciągu kilku godzin od prawidłowego uruchomienia kampanii można z dużym prawdopodobieństwem określić jej szanse na sukces.</p>
-        </div>
-
-        <div class="feature-card">
-            <h3>🤖 Wnioski i Prognozy Oparte na Sztucznej Inteligencji</h3>
-            <p>Sercem Collytics AdTracker jest zaawansowany system rekomendacji oparty na najnowocześniejszych modelach uczenia maszynowego Azure AI. Nasza sztuczna inteligencja wykracza poza standardowe metryki, aby przewidzieć prawdopodobieństwo sukcesu kampanii i dostarczyć spersonalizowane rekomendacje dotyczące optymalizacji. To jak posiadanie kryształowej kuli dla Twoich kampanii reklamowych!</p>
-        </div>
-
-        <div class="feature-card">
-            <h3>📊 Inteligentna Ocena Metryk</h3>
-            <p>Zapomnij o mylących surowych danych. Collytics AdTracker ocenia każdą metrykę kampanii w skali procentowej w odniesieniu do benchmarków branżowych. Zapewnia to intuicyjne zrozumienie wyników Twojej kampanii, natychmiastowo wskazując obszary do poprawy.</p>
-        </div>
-
-        <div class="feature-card">
-            <h3>🎯 Gotowe do Wdrożenia Automatyczne Rekomendacje</h3>
-            <p>Nasz system nie tylko identyfikuje problemy; dostarcza rozwiązania. Collytics AdTracker automatycznie generuje rekomendacje, takie jak „Optymalizuj CPC" lub „Zwiększ CTR", dając Ci konkretne kroki do poprawy wyników. Potrafi nawet rozpoznawać wzorce, takie jak wysoki koszt kliknięcia (CPC) przy doskonałym współczynniku konwersji, i doradzić „Kontynuuj pomimo wysokiego CPC – dobra konwersja".</p>
-        </div>
-
-        <div class="feature-card">
-            <h3>⏱️ Oszczędność Czasu i Skupienie na Strategii</h3>
-            <p>Przestań tracić cenny czas na ręczną analizę kampanii! Collytics AdTracker automatyzuje ten proces, uwalniając Twoich specjalistów PPC, aby mogli skoncentrować się na strategii i kreatywności.</p>
-        </div>
-
-        <div class="featured-image">
-            <img src="../assets/images/67e549d8f89312f2f76bcad3_adtracker_przyklady.png" alt="AdTracker Examples">
-        </div>
-
-        <h2>Zmiana paradygmatu w płatnej reklamie</h2>
-
-        <p>Collytics AdTracker to nie tylko narzędzie; to <strong>zmiana paradygmatu w podejściu do płatnej reklamy</strong>. Nasze rozwiązanie, w całości opracowane przez Collytics, wykorzystuje moc sztucznej inteligencji, w szczególności Microsoft Azure AI, aby pomóc Ci:</p>
-
-        <ul>
-            <li>Podejmować mądrzejsze decyzje oparte na danych</li>
-            <li>Optymalizować budżety reklamowe w czasie rzeczywistym</li>
-            <li>Osiągać lepsze wyniki z każdej złotówki wydanej na reklamę</li>
-            <li>Odciąć kampanie, które nie mają szans na sukces</li>
-            <li>Skupić się na tym, co naprawdę działa</li>
-        </ul>
-
-        <div class="highlight-box">
-            <h3>🚀 Kluczowe korzyści</h3>
-            <p><strong>Oszczędność do 30% budżetu reklamowego</strong> dzięki wczesnemu wykrywaniu nieefektywnych kampanii</p>
-            <p><strong>Wzrost ROI o średnio 45%</strong> dzięki inteligentnej optymalizacji</p>
-            <p><strong>Redukcja czasu analizy o 80%</strong> dzięki automatyzacji</p>
-        </div>
-
-        <h2>Jak to działa?</h2>
-
-        <ol>
-            <li><strong>Połącz swoje konta reklamowe</strong> - Zintegruj Facebook Ads i Google Ads w kilka kliknięć</li>
-            <li><strong>AI analizuje Twoje kampanie</strong> - System automatycznie przetwarza wszystkie dane</li>
-            <li><strong>Otrzymujesz rekomendacje</strong> - Jasne wskazówki co zatrzymać, co optymalizować, a co skalować</li>
-            <li><strong>Wdrażasz zmiany</strong> - Podejmujesz decyzje oparte na solidnych danych i prognozach AI</li>
-            <li><strong>Obserwujesz wzrost wyników</strong> - Twoje kampanie stają się coraz bardziej efektywne</li>
-        </ol>
-
-        <div class="article-cta">
-            <h3>Gotowy, aby przestać marnować budżet reklamowy?</h3>
-            <p>Zacznij podejmować mądrzejsze decyzje oparte na danych z Collytics AdTracker. Dołącz do grona firm, które już zoptymalizowały swoje kampanie z pomocą AI.</p>
-            <a href="../index.html#contact" class="btn-white">Skontaktuj się z nami już dziś!</a>
-        </div>
-    </div>
-
-    <script src="../js/navigation.js"></script>
-    <script src="../js/menu.js"></script>
-
-    <footer style="padding: 60px 5%; background: #141414; margin-top: 100px;">
-        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <div style="background: rgba(20, 35, 30, 0.5); backdrop-filter: blur(15px); border: 1px solid rgba(60, 255, 170, 0.2); border-radius: 24px; padding: 60px; margin-bottom: 60px;">
-                <h2 style="font-size: 36px; margin-bottom: 16px; color: #fff;">Gotowy, aby rozpocząć projekt?</h2>
-                <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 32px;">Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online.</p>
-                <a href="../kontakt.html">Kontakt</a>
+            <h2>Co wyróżnia Collytics AdTracker?</h2>
+            <div class="feature-card">
+                <h3>💰 Wczesne Zatrzymywanie Kampanii i Oszczędność Budżetu</h3>
+                <p>Nasz inteligentny system automatycznie analizuje dane Twoich kampanii i wskazuje, które z nich warto kontynuować, a które wymagają korekty lub wczesnego zatrzymania. Oznacza to, że przestajesz wyrzucać pieniądze na nieskuteczne reklamy i koncentrujesz swój budżet na kampaniach o największym potencjale. Często już w ciągu kilku godzin od prawidłowego uruchomienia kampanii można z dużym prawdopodobieństwem określić jej szanse na sukces.</p>
             </div>
-            <img src="/assets/images/logo main transparent.png" alt="Collytics" style="height: 40px; margin-bottom: 20px;">
-            <p style="color: #94969c;">© Collytics. All rights reserved.</p>
+            <div class="feature-card">
+                <h3>🤖 Wnioski i Prognozy Oparte na Sztucznej Inteligencji</h3>
+                <p>Sercem Collytics AdTracker jest zaawansowany system rekomendacji oparty na najnowocześniejszych modelach uczenia maszynowego Azure AI. Nasza sztuczna inteligencja wykracza poza standardowe metryki, aby przewidzieć prawdopodobieństwo sukcesu kampanii i dostarczyć spersonalizowane rekomendacje dotyczące optymalizacji. To jak posiadanie kryształowej kuli dla Twoich kampanii reklamowych!</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Inteligentna Ocena Metryk</h3>
+                <p>Zapomnij o mylących surowych danych. Collytics AdTracker ocenia każdą metrykę kampanii w skali procentowej w odniesieniu do benchmarków branżowych. Zapewnia to intuicyjne zrozumienie wyników Twojej kampanii, natychmiastowo wskazując obszary do poprawy.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎯 Gotowe do Wdrożenia Automatyczne Rekomendacje</h3>
+                <p>Nasz system nie tylko identyfikuje problemy; dostarcza rozwiązania. Collytics AdTracker automatycznie generuje rekomendacje, takie jak „Optymalizuj CPC" lub „Zwiększ CTR", dając Ci konkretne kroki do poprawy wyników. Potrafi nawet rozpoznawać wzorce, takie jak wysoki koszt kliknięcia (CPC) przy doskonałym współczynniku konwersji, i doradzić „Kontynuuj pomimo wysokiego CPC – dobra konwersja".</p>
+            </div>
+            <div class="feature-card">
+                <h3>⏱️ Oszczędność Czasu i Skupienie na Strategii</h3>
+                <p>Przestań tracić cenny czas na ręczną analizę kampanii! Collytics AdTracker automatyzuje ten proces, uwalniając Twoich specjalistów PPC, aby mogli skoncentrować się na strategii i kreatywności.</p>
+            </div>
+
+            <img src="../assets/images/67e549d8f89312f2f76bcad3_adtracker_przyklady.png" alt="AdTracker Examples">
+
+            <h2>Zmiana paradygmatu w płatnej reklamie</h2>
+            <p>Collytics AdTracker to nie tylko narzędzie; to <strong>zmiana paradygmatu w podejściu do płatnej reklamy</strong>. Nasze rozwiązanie, w całości opracowane przez Collytics, wykorzystuje moc sztucznej inteligencji, w szczególności Microsoft Azure AI, aby pomóc Ci:</p>
+            <ul>
+                <li>Podejmować mądrzejsze decyzje oparte na danych</li>
+                <li>Optymalizować budżety reklamowe w czasie rzeczywistym</li>
+                <li>Osiągać lepsze wyniki z każdej złotówki wydanej na reklamę</li>
+                <li>Odciąć kampanie, które nie mają szans na sukces</li>
+                <li>Skupić się na tym, co naprawdę działa</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>🚀 Kluczowe korzyści</h3>
+                <p><strong>Oszczędność do 30% budżetu reklamowego</strong> dzięki wczesnemu wykrywaniu nieefektywnych kampanii</p>
+                <p><strong>Wzrost ROI o średnio 45%</strong> dzięki inteligentnej optymalizacji</p>
+                <p><strong>Redukcja czasu analizy o 80%</strong> dzięki automatyzacji</p>
+            </div>
+
+            <h2>Jak to działa?</h2>
+            <ol>
+                <li><strong>Połącz swoje konta reklamowe</strong> - Zintegruj Facebook Ads i Google Ads w kilka kliknięć</li>
+                <li><strong>AI analizuje Twoje kampanie</strong> - System automatycznie przetwarza wszystkie dane</li>
+                <li><strong>Otrzymujesz rekomendacje</strong> - Jasne wskazówki co zatrzymać, co optymalizować, a co skalować</li>
+                <li><strong>Wdrażasz zmiany</strong> - Podejmujesz decyzje oparte na solidnych danych i prognozach AI</li>
+                <li><strong>Obserwujesz wzrost wyników</strong> - Twoje kampanie stają się coraz bardziej efektywne</li>
+            </ol>
+
+            <div class="article-cta">
+                <h3>Gotowy, aby przestać marnować budżet reklamowy?</h3>
+                <p>Zacznij podejmować mądrzejsze decyzje oparte na danych z Collytics AdTracker. Dołącz do grona firm, które już zoptymalizowały swoje kampanie z pomocą AI.</p>
+                <a href="../kontakt.html" class="cta-button">Skontaktuj się z nami już dziś!</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>© Collytics. All rights reserved. <a href="/legal/privacy-policy.html">Polityka Prywatności</a></p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("click", function(e) {
+            if(e.target.id === "menuTrigger") {
+                document.getElementById("dropdownMenu").classList.add("active");
+                document.getElementById("menuOverlay").classList.add("active");
+            }
+            if(e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
+                document.getElementById("dropdownMenu").classList.remove("active");
+                document.getElementById("menuOverlay").classList.remove("active");
+            }
+        });
+    </script>
 </body>
 </html>

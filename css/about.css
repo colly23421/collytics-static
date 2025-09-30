@@ -1,0 +1,198 @@
+/* ==========================================================================
+   ABOUT.CSS - Style specyficzne dla strony "O nas" (about.html)
+   ========================================================================== */
+
+/* --- Tło z gradientem --- */
+.gradient-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 70% 60%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
+    z-index: -1;
+}
+
+/* --- Sekcja Hero --- */
+.about-hero {
+    padding: 100px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+}
+
+.about-hero .subtitle {
+    font-size: 1.5rem;
+    color: #667eea;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* --- Sekcja Misja --- */
+.mission-section {
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mission-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.03) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 30px;
+    padding: 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mission-text {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    line-height: 1.8;
+}
+
+/* --- Sekcja "Dla kogo pracujemy" --- */
+.audience-section {
+    padding: 100px 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.audience-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.audience-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.audience-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 35px;
+    transition: all 0.3s;
+}
+
+.audience-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.audience-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.audience-name {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.audience-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* --- Sekcja Wartości --- */
+.values-section {
+    padding: 100px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.values-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.value-card {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.value-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.value-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.value-description {
+    color: var(--text-secondary);
+}
+
+/* --- Sekcja CTA --- */
+.cta-section {
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* --- Responsywność --- */
+@media (max-width: 768px) {
+    .about-hero h1 { font-size: 2.5rem; }
+    .values-grid, .audience-grid { grid-template-columns: 1fr; }
+}

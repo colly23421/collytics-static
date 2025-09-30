@@ -33,3 +33,10 @@
     font-size: 0.9rem;
     transition: all 0.3s;
 }
+
+/* Poprawka layoutu menu: przyklejenie ikon do dołu */
+.social-links {
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+}

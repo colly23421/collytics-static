@@ -1,0 +1,430 @@
+/* ==========================================================================
+   BLOG.CSS - Style dla listy wpisów i pojedynczych artykułów
+   ========================================================================== */
+
+/* --- Nagłówek sekcji bloga --- */
+.blog-header {
+    padding: 80px 40px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.blog-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.blog-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Główny kontener bloga --- */
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+/* --- Siatka z wpisami --- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background-color: #1A1A1A;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: #2D2D2D; /* Tło dla obrazków, które się nie załadują */
+}
+
+.blog-content {
+    padding: 24px;
+}
+
+.blog-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.blog-title {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* --- Style dla pojedynczego artykułu --- */
+.article-header {
+    margin-bottom: 40px;
+}
+
+.article-content {
+    max-width: 800px; /* Ograniczenie szerokości dla czytelności */
+    margin: 0 auto;
+}
+
+.article-content h1, .article-content h2, .article-content h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.article-content p {
+    margin-bottom: 1.2em;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+/* --- Responsywność --- */
+@media (max-width: 768px) {
+    .blog-header h1 { font-size: 2.5rem; }
+    .blog-grid { grid-template-columns: 1fr; }
+}
+
+
+
+/* Hero sekcja bloga - taki sam background jak index */
+.blog-hero {
+    padding: 120px 20px 80px;
+    background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(10, 10, 10, 0.9) 0%, #0a0a0a 100%);
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(99, 102, 241, 0.03) 100px, rgba(99, 102, 241, 0.03) 101px),
+        repeating-linear-gradient(0deg, transparent, transparent 100px, rgba(139, 92, 246, 0.03) 100px, rgba(139, 92, 246, 0.03) 101px);
+    pointer-events: none;
+}
+
+.blog-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.blog-hero .menu-label {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.blog-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.blog-hero p {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Grid artykułów */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Karta artykułu */
+.article-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    border-color: #667eea;
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+}
+
+.article-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background: #1a1a1a;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.05);
+}
+
+.article-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-category {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(99, 102, 241, 0.2);
+    color: #818cf8;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    width: fit-content;
+}
+
+.article-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    color: #ffffff;
+    flex-grow: 1;
+}
+
+.article-excerpt {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.article-date {
+    color: #9ca3af;
+}
+
+.read-more {
+    color: #818cf8;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.2s;
+}
+
+.article-card:hover .read-more {
+    gap: 10px;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 20px;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .blog-hero h1 {
+        font-size: 2rem;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   BREADCRUMBS (OKRUSZKI)
+   ========================================================================== */
+
+.breadcrumbs {
+    padding: 20px 0;
+    background-color: rgba(26, 26, 26, 0.7); /* Dopasowane tło */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    color: var(--text-primary);
+}
+
+.breadcrumbs-separator {
+    margin: 0 10px;
+    color: var(--text-secondary);
+}
+
+.breadcrumbs-current {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+
+/* ==========================================================================
+   DODATKOWE STYLE DLA POJEDYNCZEGO ARTYKUŁU
+   ========================================================================== */
+
+/* --- Hero Artykułu --- */
+.article-hero {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.article-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.article-meta .category-badge {
+    background-color: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: var(--text-primary);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.875rem;
+}
+
+.article-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.article-hero .lead {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* --- Główny obrazek (Featured Image) --- */
+.featured-image {
+    max-width: 800px;
+    height: 400px;
+    margin: 40px auto;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Dodatkowe style dla treści --- */
+.match-type-box {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid var(--primary-color);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 8px;
+}
+.match-type-box h3 { margin-top: 0; }
+
+.highlight-box {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 12px;
+}
+
+.article-cta {
+    text-align: center;
+    margin: 50px 0;
+}

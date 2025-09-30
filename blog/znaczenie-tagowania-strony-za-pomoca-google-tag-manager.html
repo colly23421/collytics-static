@@ -1,405 +1,60 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GT-5R3VKTJG");</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");</script>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="/assets/images/logo main transparent.png">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Znaczenie tagowania strony Google Tag Manager - Przewodnik 2024 | Collytics</title>
-    <link rel="stylesheet" href="/css/navbar-universal.css">    <meta name="description" content="Kompleksowy przewodnik po tagowaniu strony z GTM. Dowiedz się jak śledzić dane analityczne, implementować tagi i optymalizować kampanie marketingowe.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/hero-gradient.css">
-    <link rel="stylesheet" href="../css/mode.css">
-    <link rel="stylesheet" href="../css/navigation-updated-fix.css">
-    <link rel="stylesheet" href="../css/navigation-updated.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Kompleksowy przewodnik po tagowaniu strony z GTM. Dowiedz się jak śledzić dane analityczne, implementować tagi i optymalizować kampanie marketingowe.">
 
-<style>
-/* Reset i podstawowe */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');</script>
 
-body {
-    background: #0a0a0a !important;
-    color: #ffffff !important;
-    font-family: 'Inter', -apple-system, sans-serif !important;
-    line-height: 1.6 !important;
-}
+    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-/* Nawigacja */
-nav, .navbar, header {
-    background: rgba(10, 10, 10, 0.95) !important;
-    backdrop-filter: blur(20px) !important;
-}
-
-/* Menu dropdown */
-.dropdown-menu {
-    background: rgba(17, 17, 17, 0.98) !important;
-}
-
-.dropdown-menu a, .menu-section a {
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
-
-.dropdown-menu a:hover {
-    color: #FFFFFF !important;
-    opacity: 1;
-}
-
-.dropdown-close {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-}
-
-/* Przyciski */
-.menu-trigger, button, .btn, .cta-button {
-    background: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
-
-.menu-trigger:hover, button:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
-    color: #FFFFFF !important;
-    opacity: 1;
-}
-
-/* Nagłówki */
-h1 {
-    color: #FFFFFF !important;
-    font-size: 2.5rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 20px !important;
-}
-
-h2 {
-    color: #FFFFFF !important;
-    font-size: 1.75rem !important;
-    margin: 30px 0 15px !important;
-}
-
-h3 {
-    color: #FFFFFF !important;
-    font-size: 1.35rem !important;
-    margin: 25px 0 12px !important;
-}
-
-h4 {
-    color: #FFFFFF !important;
-    font-size: 1.15rem !important;
-    margin: 20px 0 10px !important;
-}
-
-/* Tekst */
-p, li, td, span {
-    color: #a1a1aa !important;
-    font-size: 1rem !important;
-    line-height: 1.7 !important;
-}
-
-/* Tagi/kategorie */
-.tag, .category, .badge, .category-badge {
-    background: rgba(99, 102, 241, 0.1) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    color: #FFFFFF !important;
-    padding: 6px 16px !important;
-    border-radius: 50px !important;
-    font-size: 0.875rem !important;
-}
-
-/* Linki */
-a {
-    color: #FFFFFF !important;
-    text-decoration: none !important;
-}
-
-a:hover {
-    color: #818cf8 !important;
-}
-
-/* POPRAWKA HERO SECTION */
-.article-hero {
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 60px 20px !important;
-    background: transparent !important;
-}
-
-.article-container {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-}
-
-.article-meta {
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
-    margin-bottom: 20px !important;
-    color: #a1a1aa !important;
-}
-
-.lead {
-    color: #a1a1aa !important;
-    font-size: 1.1rem !important;
-    line-height: 1.6 !important;
-}
-
-/* POPRAWKA OBRAZÓW */
-.featured-image {
-    width: 100% !important;
-    max-width: 800px !important;
-    height: 400px !important;
-    overflow: hidden !important;
-    margin: 40px auto !important;
-    display: block !important;
-}
-
-.featured-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-}
-
-/* Content area */
-.article-content {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    padding: 60px 20px !important;
-}
-
-/* Benefits Grid */
-.benefits-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-    gap: 20px !important;
-    margin: 30px 0 !important;
-}
-
-.benefit-card {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 20px !important;
-    border-radius: 12px !important;
-}
-
-.benefit-card h4 {
-    margin-top: 0 !important;
-    margin-bottom: 10px !important;
-}
-
-/* Highlight Box */
-.highlight-box {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    padding: 30px !important;
-    margin: 40px 0 !important;
-    border-radius: 12px !important;
-}
-
-.highlight-box h3 {
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
-}
-
-/* BREADCRUMBS */
-.breadcrumbs {
-    background: #1a1a1a !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 25px 0 !important;
-    margin-top: 80px !important;
-    margin-bottom: 40px !important;
-}
-
-.breadcrumbs-container {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 20px !important;
-}
-
-.breadcrumbs-list {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-    font-size: 0.95rem !important;
-}
-
-.breadcrumbs-list a {
-    color: #FFFFFF !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-    border-bottom: 1px solid transparent !important;
-}
-
-.breadcrumbs-list a:hover {
-    color: #818cf8 !important;
-    border-bottom: 1px solid #818cf8 !important;
-}
-
-.breadcrumbs-separator {
-    color: #6b7280 !important;
-    font-size: 1.1rem !important;
-}
-
-.breadcrumbs-current {
-    color: #FFFFFF !important;
-    font-weight: 500 !important;
-}
-
-/* Article CTA */
-.article-cta {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    padding: 40px !important;
-    border-radius: 16px !important;
-    margin: 50px 0 !important;
-    text-align: center !important;
-}
-
-.article-cta h3 {
-    margin-bottom: 15px !important;
-}
-
-.btn-white {
-    background: #FFFFFF !important;
-    color: #0a0a0a !important;
-    padding: 14px 32px !important;
-    border-radius: 30px !important;
-    font-weight: 600 !important;
-    display: inline-block !important;
-    margin-top: 20px !important;
-    transition: all 0.3s ease !important;
-}
-
-.btn-white:hover {
-    background: #f0f0f0 !important;
-    transform: translateY(-2px) !important;
-}
-
-/* Footer */
-footer {
-    background: #111111 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    padding: 60px 5% 40px !important;
-}
-
-footer h2 {
-    color: #FFFFFF !important;
-    font-size: 2rem !important;
-    margin-bottom: 20px !important;
-}
-
-footer p {
-    color: #a1a1aa !important;
-}
-
-/* FOOTER KONTAKT BUTTON - BIAŁY */
-footer a[href="../kontakt.html"],
-footer a[href*="kontakt"] {
-    background: #FFFFFF !important;
-    color: #0a0a0a !important;
-    padding: 16px 40px !important;
-    border-radius: 30px !important;
-    font-weight: 600 !important;
-    display: inline-block !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-}
-
-footer a[href="../kontakt.html"]:hover,
-footer a[href*="kontakt"]:hover {
-    background: #f0f0f0 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    h1 { font-size: 1.8rem !important; }
-    h2 { font-size: 1.4rem !important; }
-    h3 { font-size: 1.2rem !important; }
-    p, li { font-size: 0.95rem !important; }
-
-    .article-hero {
-        padding: 40px 20px !important;
-    }
-
-    .featured-image {
-        height: 250px !important;
-    }
-
-    .benefits-grid {
-        grid-template-columns: 1fr !important;
-    }
-}
-</style>
-
-<meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification"/>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <nav class="navbar">
+
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo">
-                <img src="/assets/images/logo main transparent.png" alt="Collytics">
-            </a>
+            <a class="logo" href="/index.html"><img alt="Collytics" src="../assets/images/logo main transparent.png"/></a>
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
     </nav>
-
     <div class="dropdown-menu" id="dropdownMenu">
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
             <div class="menu-section">
-                <a href="../index.html">Home</a>
-                <a href="../services.html">Serwis</a>
-                <a href="../blog/index.html">Blog</a>
-                <a href="../about.html">O nas</a>
-                <a href="../kontakt.html">Kontakt</a>
+                <a href="/index.html">Home</a>
+                <a href="/services.html">Serwis</a>
+                <a href="/blog/index.html">Blog</a>
+                <a href="/about.html">O nas</a>
+                <a href="/kontakt.html">Kontakt</a>
             </div>
-            <div class="menu-divider"></div>
             <div class="social-links">
-                <a href="https://facebook.com/collytics" title="Facebook">
-                    <img src="../assets/images/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://linkedin.com/company/collytics" title="LinkedIn">
-                    <img src="../assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
-                </a>
-                <a href="https://twitter.com/collytics" title="Twitter">
-                    <img src="../assets/images/cons8-twitter-500.svg" alt="Twitter">
-                </a>
+                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook"><img alt="Facebook" src="../assets/images/facebook.png"/></a>
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"/></a>
+                <a href="https://x.com/collytics" target="_blank" title="Twitter"><img alt="X" src="../assets/images/cons8-twitter-500.svg"/></a>
             </div>
         </div>
     </div>
-
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Breadcrumbs -->
     <div class="breadcrumbs">
         <div class="breadcrumbs-container">
-            <div class="breadcrumbs-list">
-                <a href="../index.html">Strona główna</a>
-                <span class="breadcrumbs-separator">→</span>
-                <a href="index.html">Blog</a>
-                <span class="breadcrumbs-separator">→</span>
-                <span class="breadcrumbs-current">Artykuł</span>
-            </div>
+            <a href="../index.html">Strona główna</a>
+            <span class="breadcrumbs-separator">›</span>
+            <a href="index.html">Blog</a>
+            <span class="breadcrumbs-separator">›</span>
+            <span class="breadcrumbs-current">Znaczenie tagowania strony...</span>
         </div>
     </div>
 
-    <div class="article-hero">
+    <header class="article-hero">
         <div class="article-container">
             <div class="article-meta">
                 <span class="category-badge">Marketing</span>
@@ -410,94 +65,101 @@ footer a[href*="kontakt"]:hover {
             <h1>Znaczenie Tagowania Strony za Pomocą Google Tag Manager</h1>
             <p class="lead">Google Tag Manager i narzędzia do śledzenia danych analitycznych są nieocenionymi zasobami, które pomagają w lepszym zrozumieniu ruchu na stronie oraz optymalizacji działań marketingowych.</p>
         </div>
-    </div>
-
-    <div class="featured-image">
-        <img src="../assets/images/677310d5b3e1d58c2c732f10_Znaczenie-Tagowania-Strony-za-Pomoca-Google-Tag-Manager-2048x1222.jpeg" alt="Google Tag Manager Dashboard">
-    </div>
-
-    <div class="article-content">
-        <h2>Co to jest Google Tag Manager?</h2>
-        <p>Google Tag Manager to <strong>darmowe narzędzie od Google</strong>, które umożliwia łatwe dodawanie i zarządzanie tagami (fragmentami kodu) na stronie internetowej bez potrzeby ingerencji w kod źródłowy. GTM pozwala na implementację różnych tagów, takich jak tagi śledzenia Google Analytics, tagi remarketingowe, czy piksele śledzące, w sposób bardziej efektywny i uporządkowany.</p>
-        <p>Za pomocą GTM można również tagować stronę kodami platform takich jak Facebook czy LinkedIn.</p>
-
-        <h2>Zalety Korzystania z Google Tag Manager</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <h4>🎯 Łatwość Zarządzania</h4>
-                <p>Zarządzanie wieloma tagami staje się prostsze i bardziej przejrzyste. Można dodawać, edytować lub usuwać tagi bezpośrednio z interfejsu GTM.</p>
-            </div>
-            <div class="benefit-card">
-                <h4>⚡ Szybka Implementacja</h4>
-                <p>GTM pozwala na szybkie wdrażanie nowych tagów bez konieczności angażowania zespołu deweloperskiego.</p>
-            </div>
-            <div class="benefit-card">
-                <h4>✅ Redukcja Błędów</h4>
-                <p>Centralne zarządzanie tagami minimalizuje ryzyko błędów podczas ręcznego wstawiania kodów.</p>
-            </div>
-            <div class="benefit-card">
-                <h4>🔧 Uniwersalność</h4>
-                <p>GTM wspiera różnorodne tagi, w tym te od zewnętrznych dostawców.</p>
-            </div>
+        <div class="featured-image">
+            <img src="../assets/images/677310d5b3e1d58c2c732f10_Znaczenie-Tagowania-Strony-za-Pomoca-Google-Tag-Manager-2048x1222.jpeg" alt="Google Tag Manager Dashboard">
         </div>
+    </header>
 
-        <h2>Śledzenie Danych Analitycznych</h2>
-        <p>Śledzenie danych analitycznych polega na zbieraniu i analizie danych dotyczących zachowań użytkowników na stronie internetowej. Narzędzia takie jak Google Analytics umożliwiają monitorowanie różnorodnych metryk:</p>
-        <ul>
-            <li>Liczba odwiedzin i unikalnych użytkowników</li>
-            <li>Czas spędzony na stronie</li>
-            <li>Źródła ruchu (organic, paid, social, direct)</li>
-            <li>Współczynnik odrzuceń (bounce rate)</li>
-            <li>Ścieżki konwersji i osiąganie celów</li>
-        </ul>
+    <main class="article-content">
+        <div class="article-container">
+            <h2>Co to jest Google Tag Manager?</h2>
+            <p>Google Tag Manager to <strong>darmowe narzędzie od Google</strong>, które umożliwia łatwe dodawanie i zarządzanie tagami (fragmentami kodu) na stronie internetowej bez potrzeby ingerencji w kod źródłowy. GTM pozwala na implementację różnych tagów, takich jak tagi śledzenia Google Analytics, tagi remarketingowe, czy piksele śledzące, w sposób bardziej efektywny i uporządkowany.</p>
+            <p>Za pomocą GTM można również tagować stronę kodami platform takich jak Facebook czy LinkedIn.</p>
 
-        <div class="highlight-box">
-            <h3>Dlaczego Śledzenie Danych jest Kluczowe?</h3>
+            <h2>Zalety Korzystania z Google Tag Manager</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>🎯 Łatwość Zarządzania</h4>
+                    <p>Zarządzanie wieloma tagami staje się prostsze i bardziej przejrzyste. Można dodawać, edytować lub usuwać tagi bezpośrednio z interfejsu GTM.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>⚡ Szybka Implementacja</h4>
+                    <p>GTM pozwala na szybkie wdrażanie nowych tagów bez konieczności angażowania zespołu deweloperskiego.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>✅ Redukcja Błędów</h4>
+                    <p>Centralne zarządzanie tagami minimalizuje ryzyko błędów podczas ręcznego wstawiania kodów.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>🔧 Uniwersalność</h4>
+                    <p>GTM wspiera różnorodne tagi, w tym te od zewnętrznych dostawców.</p>
+                </div>
+            </div>
+
+            <h2>Śledzenie Danych Analitycznych</h2>
+            <p>Śledzenie danych analitycznych polega na zbieraniu i analizie danych dotyczących zachowań użytkowników na stronie internetowej. Narzędzia takie jak Google Analytics umożliwiają monitorowanie różnorodnych metryk:</p>
             <ul>
-                <li><strong>Zrozumienie Użytkowników:</strong> Analiza pozwala lepiej zrozumieć, jak użytkownicy wchodzą w interakcje z witryną</li>
-                <li><strong>Optymalizacja UX:</strong> Identyfikacja elementów wymagających poprawy</li>
-                <li><strong>ROI Kampanii:</strong> Ocena skuteczności działań marketingowych</li>
-                <li><strong>Decyzje Biznesowe:</strong> Podejmowanie decyzji opartych na danych</li>
+                <li>Liczba odwiedzin i unikalnych użytkowników</li>
+                <li>Czas spędzony na stronie</li>
+                <li>Źródła ruchu (organic, paid, social, direct)</li>
+                <li>Współczynnik odrzuceń (bounce rate)</li>
+                <li>Ścieżki konwersji i osiąganie celów</li>
             </ul>
-        </div>
 
-        <h2>Integracja GTM z Google Analytics</h2>
-        <p>Integracja GTM z Google Analytics pozwala na efektywne śledzenie danych bez konieczności bezpośredniej edycji kodu strony. GTM umożliwia szybkie i precyzyjne wdrażanie kodów śledzących, co pozwala na zbieranie dokładnych i szczegółowych danych analitycznych.</p>
-
-        <h3>Krok po kroku: Jak zacząć?</h3>
-        <ol>
-            <li>Załóż konto Google Tag Manager</li>
-            <li>Zainstaluj kontener GTM na swojej stronie</li>
-            <li>Skonfiguruj tag Google Analytics 4</li>
-            <li>Ustaw triggery dla ważnych wydarzeń</li>
-            <li>Przetestuj implementację w trybie Preview</li>
-            <li>Opublikuj kontener i monitoruj dane</li>
-        </ol>
-
-        <div class="article-cta">
-            <h3>Gotowy na profesjonalne tagowanie?</h3>
-            <p>Skontaktuj się z nami, aby rozpocząć swoją przygodę z zaawansowanym śledzeniem i analizą danych.</p>
-            <a href="../index.html#contact" class="btn-white">Rozpocznij współpracę</a>
-        </div>
-
-        <h2>Podsumowanie</h2>
-        <p>Tagowanie strony za pomocą Google Tag Manager oraz śledzenie danych analitycznych jest <strong>niezbędnym elementem skutecznego zarządzania stroną internetową</strong>. Pozwala na zrozumienie zachowań użytkowników, optymalizację działań marketingowych oraz podejmowanie decyzji opartych na danych.</p>
-        <p>Inwestycja w te narzędzia przynosi długofalowe korzyści, przyczyniając się do wzrostu efektywności i sukcesu w cyfrowym świecie. Jeśli jeszcze nie korzystasz z GTM i narzędzi analitycznych, teraz jest najlepszy moment, aby zacząć.</p>
-    </div>
-
-    <script src="../js/navigation.js"></script>
-    <script src="../js/menu.js"></script>
-
-    <footer style="padding: 60px 5%; background: #141414; margin-top: 100px;">
-        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <div style="background: rgba(20, 35, 30, 0.5); backdrop-filter: blur(15px); border: 1px solid rgba(60, 255, 170, 0.2); border-radius: 24px; padding: 60px; margin-bottom: 60px;">
-                <h2 style="font-size: 36px; margin-bottom: 16px; color: #fff;">Gotowy, aby rozpocząć projekt?</h2>
-                <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 32px;">Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online.</p>
-                <a href="../kontakt.html">Kontakt</a>
+            <div class="highlight-box">
+                <h3>Dlaczego Śledzenie Danych jest Kluczowe?</h3>
+                <ul>
+                    <li><strong>Zrozumienie Użytkowników:</strong> Analiza pozwala lepiej zrozumieć, jak użytkownicy wchodzą w interakcje z witryną</li>
+                    <li><strong>Optymalizacja UX:</strong> Identyfikacja elementów wymagających poprawy</li>
+                    <li><strong>ROI Kampanii:</strong> Ocena skuteczności działań marketingowych</li>
+                    <li><strong>Decyzje Biznesowe:</strong> Podejmowanie decyzji opartych na danych</li>
+                </ul>
             </div>
-            <img src="/assets/images/logo main transparent.png" alt="Collytics" style="height: 40px; margin-bottom: 20px;">
-            <p style="color: #94969c;">© Collytics. All rights reserved.</p>
+
+            <h2>Integracja GTM z Google Analytics</h2>
+            <p>Integracja GTM z Google Analytics pozwala na efektywne śledzenie danych bez konieczności bezpośredniej edycji kodu strony. GTM umożliwia szybkie i precyzyjne wdrażanie kodów śledzących, co pozwala na zbieranie dokładnych i szczegółowych danych analitycznych.</p>
+
+            <h3>Krok po kroku: Jak zacząć?</h3>
+            <ol>
+                <li>Załóż konto Google Tag Manager</li>
+                <li>Zainstaluj kontener GTM na swojej stronie</li>
+                <li>Skonfiguruj tag Google Analytics 4</li>
+                <li>Ustaw triggery dla ważnych wydarzeń</li>
+                <li>Przetestuj implementację w trybie Preview</li>
+                <li>Opublikuj kontener i monitoruj dane</li>
+            </ol>
+
+            <div class="article-cta">
+                <h3>Gotowy na profesjonalne tagowanie?</h3>
+                <p>Skontaktuj się z nami, aby rozpocząć swoją przygodę z zaawansowanym śledzeniem i analizą danych.</p>
+                <a href="../kontakt.html" class="cta-button">Rozpocznij współpracę</a>
+            </div>
+
+            <h2>Podsumowanie</h2>
+            <p>Tagowanie strony za pomocą Google Tag Manager oraz śledzenie danych analitycznych jest <strong>niezbędnym elementem skutecznego zarządzania stroną internetową</strong>. Pozwala na zrozumienie zachowań użytkowników, optymalizację działań marketingowych oraz podejmowanie decyzji opartych na danych.</p>
+            <p>Inwestycja w te narzędzia przynosi długofalowe korzyści, przyczyniając się do wzrostu efektywności i sukcesu w cyfrowym świecie. Jeśli jeszcze nie korzystasz z GTM i narzędzi analitycznych, teraz jest najlepszy moment, aby zacząć.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>© Collytics. All rights reserved. <a href="/legal/privacy-policy.html">Polityka Prywatności</a></p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("click", function(e) {
+            if(e.target.id === "menuTrigger") {
+                document.getElementById("dropdownMenu").classList.add("active");
+                document.getElementById("menuOverlay").classList.add("active");
+            }
+            if(e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
+                document.getElementById("dropdownMenu").classList.remove("active");
+                document.getElementById("menuOverlay").classList.remove("active");
+            }
+        });
+    </script>
 </body>
 </html>

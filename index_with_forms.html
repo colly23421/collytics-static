@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GT-5R3VKTJG");</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collytics - Innowacyjny marketing i technologie AI</title>
-    <meta name="description" content="Specjalizujemy się w skutecznych kampaniach SEM. Tworzymy nowoczesne rozwiązania webowe.">
-
-    <link rel="shortcut icon" type="image/png" href="assets/images/Wordpress Transparent.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- CRITICAL CSS - Inline dla szybkiego ładowania -->
-    <style>
-        /* Reset i zmienne */
+ <head>
+  <!-- Google Tag Manager -->
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GT-5R3VKTJG");
+  </script>
+  <!-- End Google Tag Manager -->
+  <!-- Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");
+  </script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Collytics - Innowacyjny marketing i technologie AI
+  </title>
+  <link href="/css/navbar-universal.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="/css/style.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="/css/unified_nav.css" rel="stylesheet"/>
+  <link href="assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <style>
+   /* Reset i zmienne */
         * {
             margin: 0;
             padding: 0;
@@ -47,17 +52,18 @@
 
         /* Nawigacja - poprawka białego paska */
         .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 15, 15, 0.95) !important;
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 16px 0;
-            transition: transform 0.3s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(15, 15, 15, 0.85) !important; /* Zmniejsz z 0.95 na 0.85 */
+        backdrop-filter: blur(15px); /* Zwiększ blur z 10px na 15px */
+        -webkit-backdrop-filter: blur(15px);
+        z-index: 1000;
+        padding: 20px 0;
+        transition: transform 0.3s ease, background 0.3s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtelniejsza linia */
+    }
 
         .nav-container {
             max-width: 1200px;
@@ -69,13 +75,13 @@
         }
 
         .logo img {
-            height: 40px;
-            max-height: 40px;
+            height: 60px;
+            max-height: 60px;
         }
 
         .menu-trigger {
             background: transparent;
-            border: 1px solid #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             color: #FFFFFF;
             padding: 8px 20px;
             border-radius: 50px;
@@ -85,7 +91,7 @@
         }
 
         .menu-trigger:hover {
-            background: rgba(139, 92, 246, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             border-color: #FFFFFF;
         }
 
@@ -372,37 +378,73 @@
         }
 
         /* Dropdown Menu */
-        .dropdown-menu {
-            position: fixed;
-            top: 0;
-            transform: translate(-50%, -50%) translateX(100vw);
-            width: 400px;
-            height: 100vh;
-            background: rgba(30, 30, 30, 0.98);
-            transition: right 0.3s ease;
-            z-index: 1002;
-            padding: 30px;
-            overflow-y: auto;
-        }
+  .dropdown-menu {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 400px;
+      height: 100vh;
+      background: var(--dark-secondary);
+      transition: right 0.3s ease;
+      z-index: 1002;
+      padding: 30px;
+      overflow-y: auto;
+  }
 
-        .dropdown-menu.active {
-            right: 0;
-        }
+  .dropdown-menu.active {
+      right: 0;
+  }
 
-        .dropdown-close {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            background: transparent;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
+  .dropdown-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      cursor: pointer;
+  }
 
-        .dropdown-menu-inner {
-            margin-top: 80px;
-        }
+  .dropdown-menu-inner {
+      margin-top: 80px;
+  }
+
+  .menu-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .menu-section a {
+      color: var(--text-primary);
+      font-size: 1.25rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      padding: 10px 0;
+  }
+
+  .menu-section a:hover {
+      color: var(--primary-color);
+  }
+
+  .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+  }
+
+  .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+  }
 
         .menu-section {
             display: flex;
@@ -474,6 +516,23 @@
 
         @media (max-width: 768px) {
             .dropdown-menu {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 600px;
+            max-height: 85vh;
+            background: rgba(30, 30, 30, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1002;
+            padding: 30px;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
                 width: 100%;
                 right: -100%;
             }
@@ -485,23 +544,19 @@
 
         /* Większe logo w nawigacji */
 .navbar .logo img {
-    height: 50px !important;
-    max-height: 50px !important;
+    height: 60px !important;
+    max-height: 60px !important;
     width: auto;
 }
 
 /* Większe logo w footerze */
 footer .logo img,
 footer img {
-    height: 50px !important;
-    max-height: 50px !important;
+    height: 60px !important;
+    max-height: 60px !important;
     width: auto;
 }
 
-/* Dostosowanie paddingu nawigacji dla większego logo */
-.navbar {
-    padding: 20px 0;
-}
 
 /* Opcjonalnie - jeszcze większe logo w footerze */
 .footer-container img {
@@ -509,242 +564,320 @@ footer img {
     max-height: 60px !important;
 }
 
-
-
-    </style>
-<meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification"/>
-</head>
-<body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="/assets/images/logo main transparent.png" alt="Collytics">
-            </a>
-            <button class="menu-trigger" id="menuTrigger">Menu</button>
-        </div>
-    </nav>
-
-    <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-close" id="closeMenu">Close</button>
-        <div class="dropdown-menu-inner">
-            <div class="menu-section">
-                <a href="index.html">Home</a>
-                <a href="services.html">Serwis</a>
-                <a href="blog/index.html">Blog</a>
-                <a href="about.html">O nas</a>
-                <a href="kontakt.html">Kontakt</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
-                    <img src="assets/images/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
-                    <img src="assets/images/cons8-linkedin-500.svg" alt="LinkedIn">
-                </a>
-                <a href="https://x.com/collytics" target="_blank" title="Twitter">
-                    <img src="assets/images/cons8-twitter-500.svg" alt="X">
-                </a>
-            </div>
-        </div>
+.dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+  </style>
+  <meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification">
+  </meta>
+ </head>
+ <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <nav class="navbar" id="navbar">
+   <div class="nav-container">
+    <a class="logo" href="index.html">
+     <img alt="Collytics" src="/assets/images/logo main transparent.png"/>
+    </a>
+    <button class="menu-trigger" id="menuTrigger">
+     Menu
+    </button>
+   </div>
+  </nav>
+  <div class="dropdown-menu" id="dropdownMenu">
+   <button class="dropdown-close" id="closeMenu">
+    Close
+   </button>
+   <div class="dropdown-menu-inner">
+    <div class="menu-section">
+     <a href="index.html">
+      Home
+     </a>
+     <a href="services.html">
+      Serwis
+     </a>
+     <a href="blog/index.html">
+      Blog
+     </a>
+     <a href="about.html">
+      O nas
+     </a>
+     <a href="kontakt.html">
+      Kontakt
+     </a>
     </div>
-
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Marketing Intelligence.<br>Powered by AI.</h1>
-            <p class="hero-description">
-                Wykorzystujemy AI do analizy milionów danych rynkowych, dając Ci wgląd, który wyprzedza konkurencję. Od precyzyjnych kampanii SEM po inteligentne rozwiązania webowe – przekształcamy dane w strategie, które generują realny wzrost.
-            </p>
-            <a href="#kontakt" class="cta-button">Zbuduj swoją przewagę</a>
-
-            <div class="services-pills">
-                <div class="pill">Analityka</div>
-                <div class="pill">Kampanie SEM</div>
-                <div class="pill">Marketing</div>
-                <div class="pill">Branding</div>
-            </div>
+    <div class="social-links">
+     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+      <img alt="Facebook" src="assets/images/facebook.png"/>
+     </a>
+     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+      <img alt="LinkedIn" src="assets/images/cons8-linkedin-500.svg"/>
+     </a>
+     <a href="https://x.com/collytics" target="_blank" title="Twitter">
+      <img alt="X" src="assets/images/cons8-twitter-500.svg"/>
+     </a>
+    </div>
+   </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+  </div>
+  <section class="hero">
+   <div class="hero-bg">
+   </div>
+   <div class="hero-content">
+    <h1>
+     Marketing Intelligence.
+     <br/>
+     Powered by AI.
+    </h1>
+    <p class="hero-description">
+     Wykorzystujemy AI do analizy milionów danych rynkowych, dając Ci wgląd, który wyprzedza konkurencję. Od precyzyjnych kampanii SEM po inteligentne rozwiązania webowe – przekształcamy dane w strategie, które generują realny wzrost.
+    </p>
+    <a class="cta-button" href="#kontakt">
+     Zbuduj swoją przewagę
+    </a>
+    <div class="services-pills">
+     <div class="pill">
+      Analityka
+     </div>
+     <div class="pill">
+      Kampanie SEM
+     </div>
+     <div class="pill">
+      Marketing
+     </div>
+     <div class="pill">
+      Branding
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="case-study">
+   <div class="case-study-container">
+    <img alt="Lab-Wet" src="assets/images/partners/labwet.png" style="width: 200px; height: auto;"/>
+    <div class="case-content">
+     <p style="color: var(--text-secondary); margin-bottom: 16px;">
+      KLIENT:
+     </p>
+     <h2>
+      Lab-Wet
+     </h2>
+     <h3>
+      Wzrost widoczności w Google o 47% w 45 dni.
+     </h3>
+     <p class="case-description">
+      Zobacz, jak nowa, zorientowana na konwersję platforma B2B dla lidera branży weterynaryjnej, przyniosła 44% wzrostu ruchu na stronie w nieco ponad sześć tygodni.
+     </p>
+     <a class="btn-case" href="use-case-lab-wet.html">
+      Szczegóły
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="blog-section">
+   <div class="blog-container">
+    <div class="blog-header">
+     <h2>
+      Najnowsze
+      <br/>
+      wpisy
+     </h2>
+    </div>
+    <div class="blog-grid">
+     <a href="blog/jak-json-ld-dominuje-rynek-stomatologiczny-gliwice-case-study.html" style="text-decoration: none; color: inherit;">
+      <article class="blog-card">
+       <div class="blog-image" style="background-image: url('assets/images/Gemini_Generated_Image_3irbye3irbye3irb.jpeg');">
+       </div>
+       <div class="blog-content">
+        <div class="blog-meta">
+         <span>
+          Case Study
+         </span>
+         <span>
+          20 Sie, 25
+         </span>
         </div>
-    </section>
-
-    <section class="case-study">
-        <div class="case-study-container">
-            <img src="assets/images/partners/labwet.png" alt="Lab-Wet" style="width: 200px; height: auto;">
-            <div class="case-content">
-                <p style="color: var(--text-secondary); margin-bottom: 16px;">KLIENT:</p>
-                <h2>Lab-Wet</h2>
-                <h3>Wzrost widoczności w Google o 47% w 45 dni.</h3>
-                <p class="case-description">
-                    Zobacz, jak nowa, zorientowana na konwersję platforma B2B dla lidera branży weterynaryjnej, przyniosła 44% wzrostu ruchu na stronie w nieco ponad sześć tygodni.
-                </p>
-                <a href="use-case-lab-wet.html" class="btn-case">Szczegóły</a>
-            </div>
+        <h3 class="blog-title">
+         Jak JSON-LD Decyduje o Widoczności w AI - Case Study Stomatologiczne
+        </h3>
+       </div>
+      </article>
+     </a>
+     <a href="blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" style="text-decoration: none; color: inherit;">
+      <article class="blog-card">
+       <div class="blog-image" style="background-image: url('assets/images/Code_Generated_Image.png');">
+       </div>
+       <div class="blog-content">
+        <div class="blog-meta">
+         <span>
+          Tips &amp; Tricks
+         </span>
+         <span>
+          8 Wrz, 25
+         </span>
         </div>
-    </section>
-
-    <section class="blog-section">
-        <div class="blog-container">
-            <div class="blog-header">
-                <h2>Najnowsze<br>wpisy</h2>
-            </div>
-            <div class="blog-grid">
-                <a href="blog/jak-json-ld-dominuje-rynek-stomatologiczny-gliwice-case-study.html" style="text-decoration: none; color: inherit;">
-                    <article class="blog-card">
-                        <div class="blog-image" style="background-image: url('assets/images/Gemini_Generated_Image_3irbye3irbye3irb.jpeg');"></div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Case Study</span>
-                                <span>20 Sie, 25</span>
-                            </div>
-                            <h3 class="blog-title">Jak JSON-LD Decyduje o Widoczności w AI - Case Study Stomatologiczne</h3>
-                        </div>
-                    </article>
-                </a>
-
-                <a href="blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" style="text-decoration: none; color: inherit;">
-                    <article class="blog-card">
-                        <div class="blog-image" style="background-image: url('assets/images/Code_Generated_Image.png');"></div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>Tips & Tricks</span>
-                                <span>8 Wrz, 25</span>
-                            </div>
-                            <h3 class="blog-title">Sekretne dane Facebook Ads: Odkryj wzorce aktywności klientów</h3>
-                        </div>
-                    </article>
-                </a>
-
-                <a href="blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" style="text-decoration: none; color: inherit;">
-                    <article class="blog-card">
-                        <div class="blog-image" style="background-image: url('assets/images/llms-txt-p-3200.jpeg');"></div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>SEO</span>
-                                <span>25 Wrz, 25</span>
-                            </div>
-                            <h3 class="blog-title">Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?</h3>
-                        </div>
-                    </article>
-                </a>
-            </div>
+        <h3 class="blog-title">
+         Sekretne dane Facebook Ads: Odkryj wzorce aktywności klientów
+        </h3>
+       </div>
+      </article>
+     </a>
+     <a href="blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" style="text-decoration: none; color: inherit;">
+      <article class="blog-card">
+       <div class="blog-image" style="background-image: url('assets/images/llms-txt-p-3200.jpeg');">
+       </div>
+       <div class="blog-content">
+        <div class="blog-meta">
+         <span>
+          SEO
+         </span>
+         <span>
+          25 Wrz, 25
+         </span>
         </div>
-    </section>
-
-    <section style="padding: 80px 5%; background: var(--dark-bg);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px; font-weight: 500; color: var(--text-primary);">
-                Marki, które napędzamy danymi
-            </h2>
-            <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
-                <img src="assets/images/partners/bdental.png" alt="Bdental" style="height: 50px; opacity: 0.85;">
-                <img src="assets/images/partners/labwet.png" alt="Lab-Wet" style="height: 50px; opacity: 0.85;">
-                <img src="assets/images/partners/esteclinic.png" alt="EstClinic" style="height: 50px; opacity: 0.85;">
-                <img src="assets/images/partners/chemiczna.png" alt="Chemiczna" style="height: 50px; opacity: 0.85;">
-            </div>
-        </div>
-    </section>
-
-    <section id="kontakt" style="padding: 100px 5%; background: rgba(30, 30, 30, 0.98);">
-        <div class="contact-container" style="display: flex; gap: 50px; align-items: flex-start; max-width: 1200px; margin: 0 auto;">
-            <div class="contact-column" style="flex: 1;">
-                <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-primary);">Porozmawiajmy o Twoim Projekcie</h2>
-                <p style="color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6;">
-                    Wypełnij formularz, a my odezwiemy się, aby omówić, jak możemy pomóc Ci rosnąć. Jesteśmy dostępni również w języku angielskim.
-                </p>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Imię" required>
-                        <input type="email" class="form-input" placeholder="Email" required>
-                        <textarea class="form-input" placeholder="Powiedz nam o swoim projekcie" rows="4"></textarea>
-                        <div class="form-checkbox">
-                            <input type="checkbox" id="consent-new" required>
-                            <label for="consent-new">
-                                Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w niniejszym formularzu przez Collytics OÜ w celu odpowiedzi na zapytanie.
-                            </label>
-                        </div>
-                        <button type="submit" class="cta-button" style="width: 100%;">Wyślij</button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="contact-column" style="flex: 1;">
-                <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-primary);">Nasze Biuro</h2>
-                <div class="contact-info">
-                    <p style="margin-bottom: 16px; font-size: 16px; color: var(--text-secondary);">
-                        <strong>Collytics OÜ</strong><br>
-                        Marszałkowska Centre<br>
-                        ul. Marszałkowska 126/134<br>
-                        00-008 Warszawa
-                    </p>
-                    <p style="margin-bottom: 16px; font-size: 16px; color: var(--text-secondary);">
-                        <strong>Email:</strong> <a href="mailto:hello@collytics.io" style="color: #FFFFFF;">hello@collytics.io</a>
-                    </p>
-                </div>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.483163332442!2d21.00732367711467!3d52.2359487579178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc65a4305377%3A0x2a2842c554867b9!2sMarsza%C5%82kowska%20126%2C%2000-008%20Warszawa!5e0!3m2!1spl!2spl!4v1694208000000!5m2!1spl!2spl"
-                    style="width: 100%; height: 350px; border-radius: 8px; border: 0; margin-top: 20px;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <section id="podcast" style="padding: 100px 5%; background: rgba(30, 30, 30, 0.98);">
-        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; font-weight: 600; color: #FFFFFF;">Posłuchaj naszego podcastu</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 60px; font-size: 1.1rem;">
-                Rozmawiamy o marketingu, analityce i technologiach.
-            </p>
-
-            <div class="podcast-grid">
-                <div class="podcast-card">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6xqQCMvuJPKUQPiTu69jj1?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-
-                <div class="podcast-card">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6tAcHgHFh3omhmxG3wFKE3?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-
-                <div class="podcast-card">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1xOWdlZ4pDe2YK2LG5pjN1?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div style="margin-top: 40px;">
-                <a href="https://open.spotify.com/show/5XI8Rescgn7ss1Li5nj8No" rel="nofollow" target="_blank" class="cta-button">Zobacz wszystkie odcinki</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-cta">
-                <h2>Gotowy, aby rozpocząć projekt?</h2>
-                <p>
-                    Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
-                </p>
-                <a href="#kontakt" class="cta-button">Kontakt</a>
-            </div>
-
-            <div style="margin-bottom: 24px;">
-                <img src="/assets/images/logo main transparent.png" style="height: 40px;" alt="Collytics">
-            </div>
-            <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
-
-            <div class="footer-bottom">
-                <p>© Collytics. All rights reserved. Polityka Prywatności</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-    // Kompletny kod JavaScript do wklejenia w index.html i kontakt.html
+        <h3 class="blog-title">
+         Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?
+        </h3>
+       </div>
+      </article>
+     </a>
+    </div>
+   </div>
+  </section>
+  <section style="padding: 80px 5%; background: var(--dark-bg);">
+   <div style="max-width: 1200px; margin: 0 auto;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px; font-weight: 500; color: var(--text-primary);">
+     Marki, które napędzamy danymi
+    </h2>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
+     <img alt="Bdental" src="assets/images/partners/bdental.png" style="height: 50px; opacity: 0.85;"/>
+     <img alt="Lab-Wet" src="assets/images/partners/labwet.png" style="height: 50px; opacity: 0.85;"/>
+     <img alt="EstClinic" src="assets/images/partners/esteclinic.png" style="height: 50px; opacity: 0.85;"/>
+     <img alt="Chemiczna" src="assets/images/partners/chemiczna.png" style="height: 50px; opacity: 0.85;"/>
+    </div>
+   </div>
+  </section>
+  <section id="kontakt" style="padding: 100px 5%; background: rgba(30, 30, 30, 0.98);">
+   <div class="contact-container" style="display: flex; gap: 50px; align-items: flex-start; max-width: 1200px; margin: 0 auto;">
+    <div class="contact-column" style="flex: 1;">
+     <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-primary);">
+      Porozmawiajmy o Twoim Projekcie
+     </h2>
+     <p style="color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6;">
+      Wypełnij formularz, a my odezwiemy się, aby omówić, jak możemy pomóc Ci rosnąć. Jesteśmy dostępni również w języku angielskim.
+     </p>
+     <form class="contact-form">
+      <div class="form-group">
+       <input class="form-input" placeholder="Imię" required="" type="text"/>
+       <input class="form-input" placeholder="Email" required="" type="email"/>
+       <textarea class="form-input" placeholder="Powiedz nam o swoim projekcie" rows="4"></textarea>
+       <div class="form-checkbox">
+        <input id="consent-new" required="" type="checkbox"/>
+        <label for="consent-new">
+         Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w niniejszym formularzu przez Collytics OÜ w celu odpowiedzi na zapytanie.
+        </label>
+       </div>
+       <button class="cta-button" style="width: 100%;" type="submit">
+        Wyślij
+       </button>
+      </div>
+     </form>
+    </div>
+    <div class="contact-column" style="flex: 1;">
+     <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-primary);">
+      Nasze Biuro
+     </h2>
+     <div class="contact-info">
+      <p style="margin-bottom: 16px; font-size: 16px; color: var(--text-secondary);">
+       <strong>
+        Collytics OÜ
+       </strong>
+       <br/>
+       Marszałkowska Centre
+       <br/>
+       ul. Marszałkowska 126/134
+       <br/>
+       00-008 Warszawa
+      </p>
+      <p style="margin-bottom: 16px; font-size: 16px; color: var(--text-secondary);">
+       <strong>
+        Email:
+       </strong>
+       <a href="mailto:hello@collytics.io" style="color: #FFFFFF;">
+        hello@collytics.io
+       </a>
+      </p>
+     </div>
+     <iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.483163332442!2d21.00732367711467!3d52.2359487579178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc65a4305377%3A0x2a2842c554867b9!2sMarsza%C5%82kowska%20126%2C%2000-008%20Warszawa!5e0!3m2!1spl!2spl!4v1694208000000!5m2!1spl!2spl" style="width: 100%; height: 350px; border-radius: 8px; border: 0; margin-top: 20px;">
+     </iframe>
+    </div>
+   </div>
+  </section>
+  <section id="podcast" style="padding: 100px 5%; background: rgba(30, 30, 30, 0.98);">
+   <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; font-weight: 600; color: #FFFFFF;">
+     Posłuchaj naszego podcastu
+    </h2>
+    <p style="color: var(--text-secondary); margin-bottom: 60px; font-size: 1.1rem;">
+     Rozmawiamy o marketingu, analityce i technologiach.
+    </p>
+    <div class="podcast-grid">
+     <div class="podcast-card">
+      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="152" loading="lazy" src="https://open.spotify.com/embed/episode/6xqQCMvuJPKUQPiTu69jj1?utm_source=generator" style="border-radius:12px" width="100%">
+      </iframe>
+     </div>
+     <div class="podcast-card">
+      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="152" loading="lazy" src="https://open.spotify.com/embed/episode/6tAcHgHFh3omhmxG3wFKE3?utm_source=generator" style="border-radius:12px" width="100%">
+      </iframe>
+     </div>
+     <div class="podcast-card">
+      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="152" loading="lazy" src="https://open.spotify.com/embed/episode/1xOWdlZ4pDe2YK2LG5pjN1?utm_source=generator" style="border-radius:12px" width="100%">
+      </iframe>
+     </div>
+    </div>
+    <div style="margin-top: 40px;">
+     <a class="cta-button" href="https://open.spotify.com/show/5XI8Rescgn7ss1Li5nj8No" rel="nofollow" target="_blank">
+      Zobacz wszystkie odcinki
+     </a>
+    </div>
+   </div>
+  </section>
+  <footer>
+   <div class="footer-container">
+    <div class="footer-cta">
+     <h2>
+      Gotowy, aby rozpocząć projekt?
+     </h2>
+     <p>
+      Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
+     </p>
+     <a class="cta-button" href="#kontakt">
+      Kontakt
+     </a>
+    </div>
+    <div style="margin-bottom: 24px;">
+     <img alt="Collytics" src="/assets/images/logo main transparent.png" style="height: 40px;"/>
+    </div>
+    <p style="color: var(--text-secondary); margin-bottom: 40px;">
+     Twój partner w analizie danych i marketingu
+    </p>
+    <div class="footer-bottom">
+     <p>
+      © Collytics. All rights reserved. Polityka Prywatności
+     </p>
+    </div>
+   </div>
+  </footer>
+  <script>
+   // Kompletny kod JavaScript do wklejenia w index.html i kontakt.html
 // Zastąp CAŁY blok <script> tym kodem:
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -923,7 +1056,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-    </script>
-<script src="/js/menu.js"></script>
-</body>
+  </script>
+  <script src="/js/menu.js">
+  </script>
+ </body>
 </html>

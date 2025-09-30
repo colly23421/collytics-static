@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GT-5R3VKTJG");</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collytics - Innowacyjny marketing i technologie AI</title>
-    <meta name="description" content="Specjalizujemy się w skutecznych kampaniach SEM. Tworzymy nowoczesne rozwiązania webowe.">
-
-<link rel="shortcut icon" type="image/png" href="assets/images/Wordpress Transparent.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
+ <head>
+  <!-- Google Tag Manager -->
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GT-5R3VKTJG");
+  </script>
+  <!-- End Google Tag Manager -->
+  <!-- Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");
+  </script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Collytics - Innowacyjny marketing i technologie AI
+  </title>
+  <link href="/css/navbar-universal.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="/css/style.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="/css/unified_nav.css" rel="stylesheet"/>
+  <link href="assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <style>
+   /* Reset i zmienne */
         * {
             margin: 0;
             padding: 0;
@@ -26,246 +33,195 @@
         }
 
         :root {
-            --primary-color: #FFFFFF;
-            --dark-bg: #0a0a0a;
-            --dark-secondary: #141414;
-            --dark-card: #1a1a1a;
-            --text-primary: #ffffff;
-            --text-secondary: #94969c;
-            --accent-gradient: linear-gradient(135deg, #FFFFFF 0%, #8b5cf6 100%);
-            --orange-accent: #ff6b6b;
-            --yellow-accent: #ffe66d;
+            --primary-color: #8B5CF6;
+            --primary-hover: #7C3AED;
+            --dark-bg: #0F0F0F;
+            --dark-secondary: #1A1A1A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #9CA3AF;
+            --border-color: #2D2D2D;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
             color: var(--text-primary);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 20px 5%;
-            background: rgba(15, 15, 15, 0.8);
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
-        }
+        /* Nawigacja - poprawka białego paska */
+        .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(15, 15, 15, 0.85) !important; /* Zmniejsz z 0.95 na 0.85 */
+        backdrop-filter: blur(15px); /* Zwiększ blur z 10px na 15px */
+        -webkit-backdrop-filter: blur(15px);
+        z-index: 1000;
+        padding: 20px 0;
+        transition: transform 0.3s ease, background 0.3s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtelniejsza linia */
+    }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 20px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
+        .logo img {
+            height: 60px;
+            max-height: 60px;
         }
 
-        .logo-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
-            display: block;
-            transform: rotate(45deg);
-            flex-shrink: 0;
-        }
-
-        .nav-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn {
-            padding: 10px 24px;
-            border-radius: 24px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
+        .menu-trigger {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #FFFFFF;
+            padding: 8px 20px;
+            border-radius: 50px;
             cursor: pointer;
-            border: none;
-            font-size: 14px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
 
-        .btn-outline {
-            color: var(--text-primary);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-menu {
-            background: transparent;
-            color: var(--text-primary);
+        .menu-trigger:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #FFFFFF;
         }
 
         /* Hero Section */
         .hero {
+            position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            padding: 0 5%;
-            margin-top: 80px;
-            background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                        radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image:
-                repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(99, 102, 241, 0.03) 100px, rgba(99, 102, 241, 0.03) 101px),
-                repeating-linear-gradient(0deg, transparent, transparent 100px, rgba(139, 92, 246, 0.03) 100px, rgba(139, 92, 246, 0.03) 101px);
-            pointer-events: none;
+            padding: 120px 5% 80px;
+            overflow: hidden;
         }
 
         .hero-bg {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.3) 0%, transparent 50%);
+            inset: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
             z-index: -1;
         }
 
         .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 900px;
             text-align: center;
+            z-index: 1;
         }
 
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.2;
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             margin-bottom: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
         }
 
         .hero-description {
-            font-size: 18px;
+            font-size: 1.25rem;
             color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        /* Buttons */
         .cta-button {
             display: inline-block;
-            padding: 16px 40px;
-            background: var(--accent-gradient);
+            background: var(--primary-color);
             color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .cta-button:hover {
+            background: var(--primary-hover);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
         }
 
         /* Services Pills */
         .services-pills {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             justify-content: center;
-            margin: 60px 0;
             flex-wrap: wrap;
+            margin-top: 40px;
         }
 
         .pill {
-            padding: 12px 24px;
+            padding: 8px 20px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            font-size: 14px;
-            transition: all 0.3s ease;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
         }
 
-        .pill:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* Case Study Section */
+        /* Case Study */
         .case-study {
+            background: rgba(30, 30, 30, 0.98);
             padding: 100px 5%;
-            background: var(--dark-secondary);
         }
 
         .case-study-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 200px 1fr;
+            grid-template-columns: 300px 1fr;
             gap: 60px;
             align-items: center;
         }
 
-        .client-logo {
-            width: 100%;
-            height: 100px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
         .case-content h2 {
-            font-size: 48px;
+            font-size: clamp(2rem, 4vw, 2.5rem);
             margin-bottom: 16px;
+            color: var(--text-primary);
         }
 
         .case-content h3 {
-            font-size: 32px;
-            font-weight: 400;
-            color: var(--text-secondary);
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            color: #FFFFFF;
             margin-bottom: 24px;
         }
 
         .case-description {
             color: var(--text-secondary);
-            line-height: 1.6;
             margin-bottom: 32px;
+            line-height: 1.7;
         }
 
         .btn-case {
-            background: var(--primary-color);
-            color: white;
-            padding: 12px 32px;
             display: inline-block;
+            padding: 12px 28px;
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: #FFFFFF;
+            border-radius: 50px;
             text-decoration: none;
-            border-radius: 24px;
             transition: all 0.3s ease;
         }
 
         .btn-case:hover {
-            background: #5558e3;
-            transform: translateY(-2px);
+            background: var(--primary-color);
+            color: white;
         }
 
         /* Blog Section */
@@ -279,14 +235,10 @@
             margin: 0 auto;
         }
 
-        .blog-header {
-            margin-bottom: 60px;
-        }
-
         .blog-header h2 {
             font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 8px;
-            font-weight: 600;
+            margin-bottom: 60px;
+            color: var(--text-primary);
         }
 
         .blog-grid {
@@ -296,45 +248,21 @@
         }
 
         .blog-card {
-            background: var(--dark-card);
-            border-radius: 20px;
+            background: rgba(30, 30, 30, 0.98);
+            border-radius: 16px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
         }
 
         .blog-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-5px);
         }
 
         .blog-image {
             width: 100%;
-            height: 220px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 72px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .blog-image::after {
-            content: "";
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-            animation: moveGrid 20s linear infinite;
-        }
-
-        @keyframes moveGrid {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(20px, 20px); }
+            height: 200px;
+            background-size: cover;
+            background-position: center;
         }
 
         .blog-content {
@@ -345,82 +273,19 @@
             display: flex;
             gap: 16px;
             margin-bottom: 16px;
-            font-size: 12px;
+            font-size: 0.875rem;
             color: var(--text-secondary);
         }
 
         .blog-title {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 1.25rem;
             line-height: 1.4;
             color: var(--text-primary);
         }
 
-        /* Footer */
-        footer {
-            padding: 60px 5%;
-            background: var(--dark-secondary);
-            margin-top: 100px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .footer-cta {
-          /* Ustawienia tła - klucz do efektu "szkła" */
-          background: rgba(20, 35, 30, 0.5); /* Ciemne, lekko zielonkawe i półprzezroczyste tło */
-          backdrop-filter: blur(15px);      /* Efekt "oszronionego szkła" */
-
-          /* "Świecąca" ramka zrobiona za pomocą cienia i obramowania */
-          border: 1px solid rgba(60, 255, 170, 0.2);
-          box-shadow: inset 0 0 0 1px rgba(60, 255, 170, 0.25); /* Wewnętrzna, ostra linia światła */
-
-          /* Pozostałe style, które już mieliśmy */
-          border-radius: 24px;
-          padding: 60px;
-          margin-bottom: 60px;
-          position: relative;
-          overflow: hidden;
-      }
-
-    /* Poświata pozostaje bez zmian */
-    .footer-cta::before {
-        content: '';
-        position: absolute;
-        top: -80px;
-        left: -150px;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(0, 242, 234, 0.15) 0%, transparent 60%);
-        filter: blur(80px);
-        z-index: -1;
-    }
-
-
-        .footer-cta h2 {
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
-
-        .footer-cta p {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 32px;
-        }
-
-        .footer-bottom {
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        /* Contact Form */
+        /* Forms */
         .contact-form {
-            max-width: 500px;
-            margin: 40px auto;
+            max-width: 100%;
         }
 
         .form-group {
@@ -430,196 +295,446 @@
         }
 
         .form-input {
-            padding: 14px 20px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            padding: 14px 20px;
+            border-radius: 8px;
             color: white;
-            font-size: 16px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .form-input::placeholder {
             color: var(--text-secondary);
         }
 
+        textarea.form-input {
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+
         .form-checkbox {
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            font-size: 12px;
+            margin: 16px 0;
+        }
+
+        .form-checkbox input[type="checkbox"] {
+            margin-top: 4px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .form-checkbox label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(30, 30, 30, 0.98);
+            padding: 60px 5% 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-cta {
+            margin-bottom: 60px;
+        }
+
+        .footer-cta h2 {
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-cta p {
+            max-width: 600px;
+            margin: 0 auto 32px;
             color: var(--text-secondary);
         }
 
-        .form-checkbox input {
-            margin-top: 2px;
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Dropdown Menu */
+  .dropdown-menu {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 400px;
+      height: 100vh;
+      background: var(--dark-secondary);
+      transition: right 0.3s ease;
+      z-index: 1002;
+      padding: 30px;
+      overflow-y: auto;
+  }
+
+  .dropdown-menu.active {
+      right: 0;
+  }
+
+  .dropdown-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      cursor: pointer;
+  }
+
+  .dropdown-menu-inner {
+      margin-top: 80px;
+  }
+
+  .menu-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .menu-section a {
+      color: var(--text-primary);
+      font-size: 1.25rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      padding: 10px 0;
+  }
+
+  .menu-section a:hover {
+      color: var(--primary-color);
+  }
+
+  .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+  }
+
+  .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+  }
+
+        .menu-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .menu-section a {
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 10px 0;
+        }
+
+        .menu-section a:hover {
+            color: #FFFFFF;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .social-links img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Podcast */
+        .podcast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .case-study-container {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                text-align: center;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-menu {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 600px;
+            max-height: 85vh;
+            background: rgba(30, 30, 30, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1002;
+            padding: 30px;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+                width: 100%;
+                right: -100%;
             }
 
             .blog-grid {
                 grid-template-columns: 1fr;
             }
-
-            .services-pills {
-                padding: 0 20px;
-            }
-
-
-
-
-
         }
 
+        /* Większe logo w nawigacji */
+.navbar .logo img {
+    height: 60px !important;
+    max-height: 60px !important;
+    width: auto;
+}
+
+/* Większe logo w footerze */
+footer .logo img,
+footer img {
+    height: 60px !important;
+    max-height: 60px !important;
+    width: auto;
+}
 
 
+/* Opcjonalnie - jeszcze większe logo w footerze */
+.footer-container img {
+    height: 60px !important;
+    max-height: 60px !important;
+}
 
-
-    </style>
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/hero-gradient.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/mode.css">
-<link rel="stylesheet" href="css/navigation-updated-fix.css">
-<link rel="stylesheet" href="css/navigation-updated.css">
-<link rel="stylesheet" href="css/navigation.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/hero-gradient.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/mode.css">
-<link rel="stylesheet" href="css/navigation-updated-fix.css">
-<link rel="stylesheet" href="css/navigation-updated.css">
-<link rel="stylesheet" href="css/navigation.css">
-<link rel="stylesheet" href="css/style.css">
-<meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification"/>
-</head>
-<body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <img src="/assets/images/logo main transparent.png" alt="Collytics" style="height: 40px;" onerror="this.src='assets/images/logo.png'">
-            </div>
-            <div class="nav-buttons">
-                <a href="#kontakt" class="btn btn-outline">Kontakt</a>
-                <button class="btn btn-menu">Menu</button>
-            </div>
-        </div>
-    </nav>
-    
-
-    <section class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-          <h1>Marketing Intelligence.<br>Powered by AI.</h1>
-          <p class="hero-description">
-              Wykorzystujemy AI do analizy milionów danych rynkowych, dając Ci wgląd, który wyprzedza konkurencję. Od precyzyjnych kampanii SEM po inteligentne rozwiązania webowe – przekształcamy dane w strategie, które generują realny wzrost.
-          </p>
-          <a href="#kontakt" class="cta-button">Zbuduj swoją przewagę</a>
-
-          <div class="services-pills">
-              <div class="pill">Analityka</div>
-              <div class="pill">Kampanie SEM</div>
-              <div class="pill">Marketing</div>
-              <div class="pill">Branding</div>
-          </div>
-      </div>
+.dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+  </style>
+  <meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification">
+  </meta>
+ </head>
+ <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <nav>
+   <div class="nav-container">
+    <div class="logo">
+     <img alt="Collytics" onerror="this.src='assets/images/logo.png'" src="/assets/images/logo main transparent.png" style="height: 40px;"/>
+    </div>
+    <div class="nav-buttons">
+     <a class="btn btn-outline" href="#kontakt">
+      Kontakt
+     </a>
+     <button class="btn btn-menu">
+      Menu
+     </button>
+    </div>
+   </div>
+  </nav>
+  <section class="hero">
+   <div class="hero-bg">
+   </div>
+   <div class="hero-content">
+    <h1>
+     Marketing Intelligence.
+     <br/>
+     Powered by AI.
+    </h1>
+    <p class="hero-description">
+     Wykorzystujemy AI do analizy milionów danych rynkowych, dając Ci wgląd, który wyprzedza konkurencję. Od precyzyjnych kampanii SEM po inteligentne rozwiązania webowe – przekształcamy dane w strategie, które generują realny wzrost.
+    </p>
+    <a class="cta-button" href="#kontakt">
+     Zbuduj swoją przewagę
+    </a>
+    <div class="services-pills">
+     <div class="pill">
+      Analityka
+     </div>
+     <div class="pill">
+      Kampanie SEM
+     </div>
+     <div class="pill">
+      Marketing
+     </div>
+     <div class="pill">
+      Branding
+     </div>
+    </div>
+   </div>
   </section>
-
-    <section class="case-study">
-        <div class="case-study-container">
-            <img src="assets/images/partners/labwet.png" alt="Lab-Wet" style="width: 200px; height: auto;">
-            <div class="case-content">
-                <p style="color: var(--text-secondary); margin-bottom: 16px;">KLIENT:</p>
-                <h2>Lab-Wet</h2>
-                <h3>Wzrost widoczności w Google o 47% w 45 dni.</h3>
-                <p class="case-description">
-                    Zobacz, jak nowa, zorientowana na konwersję platforma B2B dla lidera branży weterynaryjnej, przyniosła 44% wzrostu ruchu na stronie w nieco ponad sześć tygodni.
-                </p>
-               <a href="use-case-lab-wet.html" class="btn-case">Szczegóły</a>
-            </div>
+  <section class="case-study">
+   <div class="case-study-container">
+    <img alt="Lab-Wet" src="assets/images/partners/labwet.png" style="width: 200px; height: auto;"/>
+    <div class="case-content">
+     <p style="color: var(--text-secondary); margin-bottom: 16px;">
+      KLIENT:
+     </p>
+     <h2>
+      Lab-Wet
+     </h2>
+     <h3>
+      Wzrost widoczności w Google o 47% w 45 dni.
+     </h3>
+     <p class="case-description">
+      Zobacz, jak nowa, zorientowana na konwersję platforma B2B dla lidera branży weterynaryjnej, przyniosła 44% wzrostu ruchu na stronie w nieco ponad sześć tygodni.
+     </p>
+     <a class="btn-case" href="use-case-lab-wet.html">
+      Szczegóły
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="blog-section">
+   <div class="blog-container">
+    <div class="blog-header">
+     <h2>
+      Najnowsze
+      <br/>
+      wpisy
+     </h2>
+    </div>
+    <div class="blog-grid">
+     <a href="blog/jak-json-ld-dominuje-rynek-stomatologiczny-gliwice-case-study.html" style="text-decoration: none; color: inherit;">
+      <article class="blog-card">
+       <div class="blog-image" style="background-image: url('assets/images/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg'); background-size: cover; background-position: center;">
+       </div>
+       <div class="blog-content">
+        <div class="blog-meta">
+         <span>
+          Case Study
+         </span>
+         <span>
+          20 Sie, 25
+         </span>
         </div>
-    </section>
-
-
-
-
-
-
-    <section class="blog-section">
-          <div class="blog-container">
-              <div class="blog-header">
-                  <h2>Najnowsze<br>wpisy</h2>
-              </div>
-              <div class="blog-grid">
-
-                  <a href="blog/jak-json-ld-dominuje-rynek-stomatologiczny-gliwice-case-study.html" style="text-decoration: none; color: inherit;">
-                      <article class="blog-card">
-                          <div class="blog-image" style="background-image: url('assets/images/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg'); background-size: cover; background-position: center;">
-                          </div>
-                          <div class="blog-content">
-                              <div class="blog-meta">
-                                  <span>Case Study</span>
-                                  <span>20 Sie, 25</span>
-                              </div>
-                              <h3 class="blog-title">Jak JSON-LD Decyduje o Widoczności w AI - Case Study Stomatologiczne</h3>
-                          </div>
-                      </article>
-                  </a>
-
-                  <a href="blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" style="text-decoration: none; color: inherit;">
-                      <article class="blog-card">
-                          <div class="blog-image" style="background-image: url('assets/images/688e0ded690333d20e7aa5be_Code_Generated_Image.png'); background-size: cover; background-position: center;">
-                          </div>
-                          <div class="blog-content">
-                              <div class="blog-meta">
-                                  <span>Tips & Tricks</span>
-                                  <span>8 Wrz, 25</span>
-                              </div>
-                              <h3 class="blog-title">Sekretne dane Facebook Ads: Odkryj wzorce aktywności klientów</h3>
-                          </div>
-                      </article>
-                  </a>
-
-                  <a href="blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" style="text-decoration: none; color: inherit;">
-                      <article class="blog-card">
-                          <div class="blog-image" style="background-image: url('assets/images/6876194656c6edf5453ea3b7_llms-txt-p-3200.jpeg'); background-size: cover; background-position: center;">
-                          </div>
-                          <div class="blog-content">
-                              <div class="blog-meta">
-                                  <span>SEO</span>
-                                  <span>25 Wrz, 25</span>
-                              </div>
-                              <h3 class="blog-title">Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?</h3>
-                          </div>
-                      </article>
-                  </a>
-
-              </div>
-          </div>
-      </section>
-    <section style="padding: 80px 5%; background: var(--dark-bg);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px; font-weight: 500;">
-                Marki, które napędzamy danymi
-            </h2>
-            <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
-                <img src="assets/images/partners/bdental.png" alt="Bdental" style="height: 50px; opacity: 0.85;">
-                <img src="assets/images/partners/labwet.png" alt="Lab-Wet" style="height: 50px; opacity: 0.85;">
-                <img src="assets/images/partners/esteclinic.png" alt="EstClinic" style="height: 50px; opacity: 0.85;">
-                <img src="assets/images/partners/chemiczna.png" alt="Chemiczna" style="height: 50px; opacity: 0.85;">
-            </div>
+        <h3 class="blog-title">
+         Jak JSON-LD Decyduje o Widoczności w AI - Case Study Stomatologiczne
+        </h3>
+       </div>
+      </article>
+     </a>
+     <a href="blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" style="text-decoration: none; color: inherit;">
+      <article class="blog-card">
+       <div class="blog-image" style="background-image: url('assets/images/688e0ded690333d20e7aa5be_Code_Generated_Image.png'); background-size: cover; background-position: center;">
+       </div>
+       <div class="blog-content">
+        <div class="blog-meta">
+         <span>
+          Tips &amp; Tricks
+         </span>
+         <span>
+          8 Wrz, 25
+         </span>
         </div>
-    </section>
-
-    <style>
-        /* Style dla nowej sekcji kontaktowej */
+        <h3 class="blog-title">
+         Sekretne dane Facebook Ads: Odkryj wzorce aktywności klientów
+        </h3>
+       </div>
+      </article>
+     </a>
+     <a href="blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" style="text-decoration: none; color: inherit;">
+      <article class="blog-card">
+       <div class="blog-image" style="background-image: url('assets/images/6876194656c6edf5453ea3b7_llms-txt-p-3200.jpeg'); background-size: cover; background-position: center;">
+       </div>
+       <div class="blog-content">
+        <div class="blog-meta">
+         <span>
+          SEO
+         </span>
+         <span>
+          25 Wrz, 25
+         </span>
+        </div>
+        <h3 class="blog-title">
+         Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?
+        </h3>
+       </div>
+      </article>
+     </a>
+    </div>
+   </div>
+  </section>
+  <section style="padding: 80px 5%; background: var(--dark-bg);">
+   <div style="max-width: 1200px; margin: 0 auto;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px; font-weight: 500;">
+     Marki, które napędzamy danymi
+    </h2>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
+     <img alt="Bdental" src="assets/images/partners/bdental.png" style="height: 50px; opacity: 0.85;"/>
+     <img alt="Lab-Wet" src="assets/images/partners/labwet.png" style="height: 50px; opacity: 0.85;"/>
+     <img alt="EstClinic" src="assets/images/partners/esteclinic.png" style="height: 50px; opacity: 0.85;"/>
+     <img alt="Chemiczna" src="assets/images/partners/chemiczna.png" style="height: 50px; opacity: 0.85;"/>
+    </div>
+   </div>
+  </section>
+  <style>
+   /* Style dla nowej sekcji kontaktowej */
         .contact-container {
             display: flex;
             gap: 50px; /* Odstęp między kolumnami */
@@ -674,107 +789,120 @@
                 text-align: center;
             }
         }
-    </style>
-
-    <section id="kontakt" style="padding: 100px 5%; background: var(--dark-secondary);">
-        <div class="contact-container">
-            <div class="contact-column">
-                <h2>Porozmawiajmy o Twoim Projekcie</h2>
-                <p>
-                    Wypełnij formularz, a my odezwiemy się, aby omówić, jak możemy pomóc Ci rosnąć. Jesteśmy dostępni również w języku angielskim.
-                </p>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Imię" required>
-                        <input type="email" class="form-input" placeholder="Email" required>
-                        <textarea class="form-input" placeholder="Powiedz nam o swoim projekcie" rows="4" style="resize: vertical;"></textarea>
-                        <div class="form-checkbox">
-                            <input type="checkbox" id="consent-new" required>
-                            <label for="consent-new">
-                                Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w niniejszym formularzu przez Collytics OÜ w celu odpowiedzi na zapytanie.
-                            </label>
-                        </div>
-                        <button type="submit" class="cta-button" style="width: 100%;">Wyślij</button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="contact-column">
-                <h2>Nasze Biuro</h2>
-                <div class="contact-info">
-                    <p>
-                        <strong>Collytics OÜ</strong><br>
-                        Marszałkowska Centre<br>
-                        ul. Marszałkowska 126/134<br>
-                        00-008 Warszawa
-                    </p>
-                    <p>
-                        <strong>Email:</strong> <a href="mailto:hello@collytics.io" style="color: var(--primary-color);">hello@collytics.io</a>
-                    </p>
-                </div>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.483163332442!2d21.00732367711467!3d52.2359487579178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc65a4305377%3A0x2a2842c554867b9!2sMarsza%C5%82kowska%20126%2C%2000-008%20Warszawa!5e0!3m2!1spl!2spl!4v1694208000000!5m2!1spl!2spl"
-                    class="map-embed"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <section id="podcast" style="padding: 100px 5%; background: var(--dark-secondary);">
-      <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; font-weight: 600;">Posłuchaj naszego podcastu</h2>
-          <p style="color: var(--text-secondary); margin-bottom: 60px; font-size: 1.1rem;">
-              Rozmawiamy o marketingu, analityce i technologiach.
-          </p>
-
-          <div class="podcast-grid">
-
-              <div class="podcast-card">
-                  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6xqQCMvuJPKUQPiTu69jj1?utm_source=generator" width="50%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              </div>
-
-              <div class="podcast-card">
-                  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6tAcHgHFh3omhmxG3wFKE3?utm_source=generator" width="50%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              </div>
-
-              <div class="podcast-card">
-                  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/1xOWdlZ4pDe2YK2LG5pjN1?utm_source=generator" width="50%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              </div>
-
-          </div>
-
-          <div class="podcast-cta">
-              <a href="https://open.spotify.com/show/5XI8Rescgn7ss1Li5nj8No" rel="nofollow" target="_blank" class="cta-button">Zobacz wszystkie odcinki</a>
-          </div>
+  </style>
+  <section id="kontakt" style="padding: 100px 5%; background: var(--dark-secondary);">
+   <div class="contact-container">
+    <div class="contact-column">
+     <h2>
+      Porozmawiajmy o Twoim Projekcie
+     </h2>
+     <p>
+      Wypełnij formularz, a my odezwiemy się, aby omówić, jak możemy pomóc Ci rosnąć. Jesteśmy dostępni również w języku angielskim.
+     </p>
+     <form class="contact-form">
+      <div class="form-group">
+       <input class="form-input" placeholder="Imię" required="" type="text"/>
+       <input class="form-input" placeholder="Email" required="" type="email"/>
+       <textarea class="form-input" placeholder="Powiedz nam o swoim projekcie" rows="4" style="resize: vertical;"></textarea>
+       <div class="form-checkbox">
+        <input id="consent-new" required="" type="checkbox"/>
+        <label for="consent-new">
+         Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w niniejszym formularzu przez Collytics OÜ w celu odpowiedzi na zapytanie.
+        </label>
+       </div>
+       <button class="cta-button" style="width: 100%;" type="submit">
+        Wyślij
+       </button>
       </div>
+     </form>
+    </div>
+    <div class="contact-column">
+     <h2>
+      Nasze Biuro
+     </h2>
+     <div class="contact-info">
+      <p>
+       <strong>
+        Collytics OÜ
+       </strong>
+       <br/>
+       Marszałkowska Centre
+       <br/>
+       ul. Marszałkowska 126/134
+       <br/>
+       00-008 Warszawa
+      </p>
+      <p>
+       <strong>
+        Email:
+       </strong>
+       <a href="mailto:hello@collytics.io" style="color: var(--primary-color);">
+        hello@collytics.io
+       </a>
+      </p>
+     </div>
+     <iframe allowfullscreen="" class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.483163332442!2d21.00732367711467!3d52.2359487579178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc65a4305377%3A0x2a2842c554867b9!2sMarsza%C5%82kowska%20126%2C%2000-008%20Warszawa!5e0!3m2!1spl!2spl!4v1694208000000!5m2!1spl!2spl">
+     </iframe>
+    </div>
+   </div>
   </section>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-cta">
-                <h2>Gotowy, aby rozpocząć projekt?</h2>
-                <p>
-                    Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
-                </p>
-                <a href="#kontakt" class="cta-button">Kontakt</a>
-            </div>
-
-            <div class="logo" style="justify-content: center; margin-bottom: 24px;">
-                <img src="/assets/images/logo main transparent.png" alt="Collytics" style="height: 40px;" onerror="this.src='assets/images/logo.png'">
-            </div>
-            <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
-
-            <div class="footer-bottom">
-                <p>© Collytics. All rights reserved. Polityka Prywatności</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-     // Smooth scrolling for anchor links
+  <section id="podcast" style="padding: 100px 5%; background: var(--dark-secondary);">
+   <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; font-weight: 600;">
+     Posłuchaj naszego podcastu
+    </h2>
+    <p style="color: var(--text-secondary); margin-bottom: 60px; font-size: 1.1rem;">
+     Rozmawiamy o marketingu, analityce i technologiach.
+    </p>
+    <div class="podcast-grid">
+     <div class="podcast-card">
+      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" data-testid="embed-iframe" frameborder="0" height="100" loading="lazy" src="https://open.spotify.com/embed/episode/6xqQCMvuJPKUQPiTu69jj1?utm_source=generator" style="border-radius:12px" width="50%">
+      </iframe>
+     </div>
+     <div class="podcast-card">
+      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" data-testid="embed-iframe" frameborder="0" height="100" loading="lazy" src="https://open.spotify.com/embed/episode/6tAcHgHFh3omhmxG3wFKE3?utm_source=generator" style="border-radius:12px" width="50%">
+      </iframe>
+     </div>
+     <div class="podcast-card">
+      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" data-testid="embed-iframe" frameborder="0" height="100" loading="lazy" src="https://open.spotify.com/embed/episode/1xOWdlZ4pDe2YK2LG5pjN1?utm_source=generator" style="border-radius:12px" width="50%">
+      </iframe>
+     </div>
+    </div>
+    <div class="podcast-cta">
+     <a class="cta-button" href="https://open.spotify.com/show/5XI8Rescgn7ss1Li5nj8No" rel="nofollow" target="_blank">
+      Zobacz wszystkie odcinki
+     </a>
+    </div>
+   </div>
+  </section>
+  <footer>
+   <div class="footer-container">
+    <div class="footer-cta">
+     <h2>
+      Gotowy, aby rozpocząć projekt?
+     </h2>
+     <p>
+      Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
+     </p>
+     <a class="cta-button" href="#kontakt">
+      Kontakt
+     </a>
+    </div>
+    <div class="logo" style="justify-content: center; margin-bottom: 24px;">
+     <img alt="Collytics" onerror="this.src='assets/images/logo.png'" src="/assets/images/logo main transparent.png" style="height: 40px;"/>
+    </div>
+    <p style="color: var(--text-secondary); margin-bottom: 40px;">
+     Twój partner w analizie danych i marketingu
+    </p>
+    <div class="footer-bottom">
+     <p>
+      © Collytics. All rights reserved. Polityka Prywatności
+     </p>
+    </div>
+   </div>
+  </footer>
+  <script>
+   // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -836,7 +964,8 @@
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
-    </script>
-<script src="/js/menu.js"></script>
-</body>
+  </script>
+  <script src="/js/menu.js">
+  </script>
+ </body>
 </html>

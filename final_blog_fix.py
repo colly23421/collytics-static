@@ -1,178 +1,131 @@
 import os
-import glob
+from bs4 import BeautifulSoup
 
-# Kompletny styl naprawczy
-style_fix = """<style>
-/* Reset i podstawowe */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+print("--- Rozpoczynam OSTATECZNĄ naprawę wszystkich artykułów bloga ---")
 
-body {
-    background: #0a0a0a !important;
-    color: #ffffff !important;
-    font-family: 'Inter', -apple-system, sans-serif !important;
-    line-height: 1.6 !important;
-}
+BLOG_DIR = 'blog'
+if not os.path.isdir(BLOG_DIR):
+    print(f"BŁĄD KRYTYCZNY: Nie znaleziono folderu '{BLOG_DIR}'. Upewnij się, że skrypt jest w głównym folderze projektu.")
+    exit()
 
-/* Nawigacja */
-nav, .navbar, header {
-    background: rgba(10, 10, 10, 0.95) !important;
-    backdrop-filter: blur(20px) !important;
-}
+# --- Idealny szablon HTML dla każdego artykułu ---
+# Zawiera poprawne ścieżki (../), kompletną nawigację i działający skrypt.
+HTML_TEMPLATE = """
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{TITLE}</title>
+    <meta name="description" content="{DESCRIPTION}">
 
-/* Menu dropdown - poprawka kolorów */
-.dropdown-menu {
-    background: rgba(17, 17, 17, 0.98) !important;
-}
+    <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
 
-.dropdown-menu a, .menu-section a {
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
+    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-.dropdown-menu a:hover {
-    color: #FFFFFF !important;
-    opacity: 1;
-}
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a class="logo" href="/index.html"><img alt="Collytics" src="../assets/images/logo main transparent.png"/></a>
+            <button class="menu-trigger" id="menuTrigger">Menu</button>
+        </div>
+    </nav>
+    <div class="dropdown-menu" id="dropdownMenu">
+        <button class="dropdown-close" id="closeMenu">Close</button>
+        <div class="dropdown-menu-inner">
+            <div class="menu-section">
+                <a href="/index.html">Home</a>
+                <a href="/services.html">Serwis</a>
+                <a href="/blog/index.html">Blog</a>
+                <a href="/about.html">O nas</a>
+                <a href="/kontakt.html">Kontakt</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook"><img alt="Facebook" src="../assets/images/facebook.png"/></a>
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"/></a>
+                <a href="https://x.com/collytics" target="_blank" title="Twitter"><img alt="X" src="../assets/images/cons8-twitter-500.svg"/></a>
+            </div>
+        </div>
+    </div>
+    <div class="menu-overlay" id="menuOverlay"></div>
 
-.dropdown-close {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-}
+    <main class="blog-container article-content">
+        {ARTICLE_CONTENT}
+    </main>
 
-/* Przyciski - lepsza widoczność tekstu */
-.menu-trigger, button, .btn, .cta-button {
-    background: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
-    opacity: 0.9;
-}
+    <footer>
+        <div class="footer-container">
+             <div class="footer-bottom">
+                <p>© Collytics. All rights reserved. <a href="/legal/privacy-policy.html">Polityka Prywatności</a></p>
+            </div>
+        </div>
+    </footer>
 
-.menu-trigger:hover, button:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
-    color: #FFFFFF !important;
-    opacity: 1;
-}
-
-/* Nagłówki - zmniejszone rozmiary */
-h1 {
-    color: #FFFFFF !important;
-    font-size: 2.5rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 20px !important;
-}
-
-h2 {
-    color: #FFFFFF !important;
-    font-size: 1.75rem !important;
-    margin: 30px 0 15px !important;
-}
-
-h3 {
-    color: #FFFFFF !important;
-    font-size: 1.35rem !important;
-    margin: 25px 0 12px !important;
-}
-
-/* Tekst */
-p, li, td, span {
-    color: #a1a1aa !important;
-    font-size: 1rem !important;
-    line-height: 1.7 !important;
-}
-
-/* Tagi/kategorie */
-.tag, .category, .badge {
-    background: rgba(99, 102, 241, 0.1) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    color: #FFFFFF !important;
-    padding: 6px 16px !important;
-    border-radius: 50px !important;
-    font-size: 0.875rem !important;
-}
-
-/* Linki */
-a {
-    color: #6366f1 !important;
-    text-decoration: none !important;
-}
-
-a:hover {
-    color: #818cf8 !important;
-}
-
-/* Footer - spójny z resztą */
-footer {
-    background: #111111 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    padding: 60px 5% 40px !important;
-}
-
-.footer-container {
-    text-align: center !important;
-}
-
-footer h2 {
-    color: #FFFFFF !important;
-    font-size: 2rem !important;
-    margin-bottom: 20px !important;
-}
-
-footer p {
-    color: #a1a1aa !important;
-}
-
-footer .logo img {
-    height: 60px !important;
-    max-height: 60px !important;
-}
-
-.footer-bottom {
-    padding-top: 40px !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    color: #a1a1aa !important;
-    font-size: 0.875rem !important;
-}
-
-/* Content area */
-.article-content, article, main, .content {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    padding: 60px 20px !important;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    h1 { font-size: 1.8rem !important; }
-    h2 { font-size: 1.4rem !important; }
-    h3 { font-size: 1.2rem !important; }
-    p, li { font-size: 0.95rem !important; }
-}
-</style>
+    <script>
+        document.addEventListener("click", function(e) {{
+            if(e.target.id === "menuTrigger") {{
+                document.getElementById("dropdownMenu").classList.add("active");
+                document.getElementById("menuOverlay").classList.add("active");
+            }}
+            if(e.target.id === "closeMenu" || e.target.id === "menuOverlay") {{
+                document.getElementById("dropdownMenu").classList.remove("active");
+                document.getElementById("menuOverlay").classList.remove("active");
+            }}
+        }});
+    </script>
+</body>
+</html>
 """
 
-# Napraw wszystkie pliki HTML w blogu
-for filepath in glob.glob('blog/*.html'):
-    if 'backup' not in filepath:
-        with open(filepath, 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        # Usuń stare style jeśli są
-        if '<style>' in content and 'background: #0a0a0a' in content:
-            # Znajdź i usuń stary styl
-            start = content.find('<style>')
-            end = content.find('</style>') + 8
-            if start != -1 and end > start:
-                content = content[:start] + content[end:]
-        
-        # Dodaj nowe style po <head>
-        if '<head>' in content:
-            content = content.replace('<head>', '<head>\n' + style_fix)
-        
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(content)
-        
-        print(f"✓ Naprawiono: {os.path.basename(filepath)}")
+# --- Przetwarzanie plików ---
+for filename in os.listdir(BLOG_DIR):
+    if filename.endswith('.html') and filename != 'index.html':
+        filepath = os.path.join(BLOG_DIR, filename)
+        print(f"-> Przebudowuję: {filepath}")
 
-print("\n✅ Wszystkie pliki naprawione!")
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                soup = BeautifulSoup(f.read(), 'html.parser')
+
+            # 1. Wyciągnij kluczowe dane ze starego pliku
+            title = soup.title.string if soup.title else "Bez tytułu"
+            meta_desc = soup.find('meta', attrs={'name': 'description'})
+            description = meta_desc['content'] if meta_desc else "Brak opisu."
+
+            # 2. Wyciągnij treść artykułu (szukamy po kilku możliwych kontenerach)
+            article_body = soup.find('div', class_='post-body') or \
+                           soup.find('div', class_='rich-text-block') or \
+                           soup.find('main') or \
+                           soup.find('article')
+
+            # Jeśli nie znajdziemy specyficznego kontenera, bierzemy wszystko co sensowne z body
+            if not article_body:
+                article_body = soup.body
+                # Usuwamy ze środka starą nawigację i stopkę, żeby się nie powieliły
+                if article_body.nav: article_body.nav.decompose()
+                if article_body.footer: article_body.footer.decompose()
+
+            article_html = str(article_body) if article_body else "<p>Nie udało się odnaleźć treści artykułu.</p>"
+
+            # 3. Wypełnij szablon wyciągniętymi danymi
+            new_html_content = HTML_TEMPLATE.format(
+                TITLE=title,
+                DESCRIPTION=description.replace('"',"'"), # Prosta ochrona przed błędami
+                ARTICLE_CONTENT=article_html
+            )
+
+            # 4. Zapisz całkowicie nowy, naprawiony plik
+            with open(filepath, 'w', encoding='utf-8') as f:
+                f.write(new_html_content)
+
+            print(f"  OK: Plik został w pełni przebudowany.")
+
+        except Exception as e:
+            print(f"  BŁĄD: Nie udało się przetworzyć pliku. Powód: {e}")
+
+print("\n--- Zakończono! Wszystkie artykuły zostały naprawione. ---")

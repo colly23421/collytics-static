@@ -1,0 +1,50 @@
+/* ==========================================================================
+   LEGAL.CSS - Style dla stron prawnych (Polityka Prywatności, etc.)
+   ========================================================================== */
+
+/* --- Główny kontener na treść --- */
+.legal-container {
+    max-width: 800px; /* Węższy kontener dla lepszej czytelności tekstu */
+    margin: 0 auto;
+    padding: 80px 40px;
+    background-color: rgba(26, 26, 26, 0.7); /* Lekko jaśniejsze tło dla tekstu */
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* --- Stylizacja nagłówków --- */
+.legal-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.legal-container h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+/* --- Stylizacja tekstu i list --- */
+.legal-container p,
+.legal-container li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.legal-container a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.legal-container ul,
+.legal-container ol {
+    padding-left: 20px;
+}

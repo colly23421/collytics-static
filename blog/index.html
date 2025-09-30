@@ -12,235 +12,25 @@
     <title>Blog - Collytics | Marketing, AI i Analityka</title>
     <meta name="description" content="Odkryj najnowsze artykuły o marketingu cyfrowym, sztucznej inteligencji, Google Ads, Facebook Ads i analityce webowej.">
 
-    <!-- WAŻNE: Poprawne linki do CSS -->
-    <link rel="stylesheet" href="../css/navigation-updated.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Dodatkowe style dla działającego menu -->
-    <style>
-        .dropdown-menu {
-            z-index: 10000 !important;
-        }
-        .menu-overlay {
-            z-index: 9999 !important;
-        }
-        .navbar {
-            z-index: 1000 !important;
-        }
-    </style>
+      <link rel="stylesheet" href="/css/global.css">
+      <link rel="stylesheet" href="/css/blog.css">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        /* Hero sekcja bloga - taki sam background jak index */
-        .blog-hero {
-            padding: 120px 20px 80px;
-            background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
-                        radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
-                        linear-gradient(180deg, rgba(10, 10, 10, 0.9) 0%, #0a0a0a 100%);
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .blog-hero::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image:
-                repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(99, 102, 241, 0.03) 100px, rgba(99, 102, 241, 0.03) 101px),
-                repeating-linear-gradient(0deg, transparent, transparent 100px, rgba(139, 92, 246, 0.03) 100px, rgba(139, 92, 246, 0.03) 101px);
-            pointer-events: none;
-        }
-
-        .blog-hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .blog-hero .menu-label {
-            font-size: 0.9rem;
-            color: #9ca3af;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .blog-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-        }
-
-        .blog-hero p {
-            font-size: 1.1rem;
-            color: #d1d5db;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        /* Grid artykułów */
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        /* Karta artykułu */
-        .article-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .article-card:hover {
-            transform: translateY(-5px);
-            border-color: #667eea;
-            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
-        }
-
-        .article-image {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-            background: #1a1a1a;
-        }
-
-        .article-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .article-card:hover .article-image img {
-            transform: scale(1.05);
-        }
-
-        .article-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .article-category {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(99, 102, 241, 0.2);
-            color: #818cf8;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-            width: fit-content;
-        }
-
-        .article-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 12px;
-            color: #ffffff;
-            flex-grow: 1;
-        }
-
-        .article-excerpt {
-            color: #9ca3af;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .article-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.85rem;
-            color: #6b7280;
-        }
-
-        .article-date {
-            color: #9ca3af;
-        }
-
-        .read-more {
-            color: #818cf8;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: gap 0.2s;
-        }
-
-        .article-card:hover .read-more {
-            gap: 10px;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px 20px;
-            text-align: center;
-            color: #6b7280;
-        }
-
-        /* Responsywność */
-        @media (max-width: 768px) {
-            .blog-hero h1 {
-                font-size: 2rem;
-            }
-
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- Menu (skopiowane z use-case-lab-wet.html) -->
-    <nav class="navbar">
+
+
+
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo">
-                <img src="../assets/images/logo main transparent.png" alt="Collytics">
+            <a class="logo" href="/index.html">
+                <img alt="Collytics" src="/assets/images/logo main transparent.png"/>
             </a>
             <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
@@ -250,23 +40,34 @@
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
             <div class="menu-section">
-                <a href="../index.html">Home</a>
-                <a href="../services.html">Serwis</a>
-                <a href="index.html">Blog</a>
-                <a href="../about.html">O nas</a>
-                <a href="../kontakt.html">Kontakt</a>
+                <a href="/index.html">Home</a>
+                <a href="/services.html">Serwis</a>
+                <a href="/blog/index.html">Blog</a>
+                <a href="/about.html">O nas</a>
+                <a href="/kontakt.html">Kontakt</a>
             </div>
-            <div class="menu-divider"></div>
-        
+            <div class="social-links">
+                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+                    <img alt="Facebook" src="/assets/images/facebook.png"/>
+                </a>
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+                    <img alt="LinkedIn" src="/assets/images/cons8-linkedin-500.svg"/>
+                </a>
+                <a href="https://x.com/collytics" target="_blank" title="Twitter">
+                    <img alt="X" src="/assets/images/cons8-twitter-500.svg"/>
+                </a>
+            </div>
         </div>
     </div>
 
     <div class="menu-overlay" id="menuOverlay"></div>
 
+
+
     <!-- Hero sekcja -->
     <section class="blog-hero">
         <div class="blog-hero-content">
-            <div class="menu-label">Menu</div>
+
             <h1>Strefa eksperta</h1>
             <p>Witaj na naszym blogu o analityce internetowej! Znajdziesz tutaj najnowsze informacje, praktyczne porady i dogłębne analizy dotyczące mierzenia, analizowania i optymalizacji danych internetowych.</p>
         </div>
@@ -510,7 +311,18 @@
         <p>&copy; 2025 Collytics. Wszystkie prawa zastrzeżone.</p>
     </footer>
 
-    <!-- Skrypty -->
-    <script src="../js/menu.js"></script>
-</body>
-</html>
+    <script>
+            document.addEventListener("click", function(e) {
+                if(e.target.id === "menuTrigger") {
+                    document.getElementById("dropdownMenu").classList.add("active");
+                    document.getElementById("menuOverlay").classList.add("active");
+                }
+                if(e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
+                    document.getElementById("dropdownMenu").classList.remove("active");
+                    document.getElementById("menuOverlay").classList.remove("active");
+                }
+            });
+        </script>
+
+    </body>
+    </html>
