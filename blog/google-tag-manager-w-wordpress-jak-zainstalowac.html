@@ -1,163 +1,353 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Tag Manager w WordPress - Instalacja krok po kroku 2024 | Collytics</title>
-    <meta name="description" content="Praktyczny poradnik jak zainstalować Google Tag Manager w WordPress. Instrukcja krok po kroku z obrazkami. GTM dla Google Analytics, Facebook Pixel i więcej.">
-
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');</script>
-
-    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/blog.css">
-
-    <!-- Cookie Banner Styles -->
-    <link rel="stylesheet" href="../css/cookie-banner.css">
-</head>
-<body>
-
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a class="logo" href="/index.html"><img alt="Collytics" src="../assets/images/logo main transparent.png"/></a>
-            <button class="menu-trigger" id="menuTrigger">Menu</button>
-        </div>
-    </nav>
-    <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-close" id="closeMenu">Close</button>
-        <div class="dropdown-menu-inner">
-            <div class="menu-section">
-                <a href="/index.html">Home</a>
-                <a href="/services.html">Serwis</a>
-                <a href="/blog/index.html">Blog</a>
-                <a href="/about.html">O nas</a>
-                <a href="/kontakt.html">Kontakt</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook"><img alt="Facebook" src="../assets/images/facebook.png"/></a>
-                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"/></a>
-                <a href="https://x.com/collytics" target="_blank" title="Twitter"><img alt="X" src="../assets/images/cons8-twitter-500.svg"/></a>
-            </div>
-        </div>
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   Google Tag Manager w WordPress - Instalacja krok po kroku 2024 | Collytics
+  </title>
+  <meta content="Praktyczny poradnik jak zainstalowa&cacute; Google Tag Manager w WordPress. Instrukcja krok po kroku z obrazkami. GTM dla Google Analytics, Facebook Pixel i wi&eogon;cej." name="description">
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');
+  </script>
+  <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../css/global.css" rel="stylesheet">
+  <link href="../css/blog.css" rel="stylesheet">
+  <!-- Cookie Banner Styles -->
+  <link href="../css/cookie-banner.css" rel="stylesheet">
+ </head>
+ <body>
+  <nav class="navbar" id="navbar">
+   <div class="nav-container">
+    <a class="logo" href="/index.html">
+     <img alt="Collytics" src="../assets/images/logo main transparent.png">
+    </a>
+    <button class="menu-trigger" id="menuTrigger">
+     Menu
+    </button>
+   </div>
+  </nav>
+  <div class="dropdown-menu" id="dropdownMenu">
+   <button class="dropdown-close" id="closeMenu">
+    Close
+   </button>
+   <div class="dropdown-menu-inner">
+    <div class="menu-section">
+     <a href="/index.html">
+      Home
+     </a>
+     <a href="/services.html">
+      Serwis
+     </a>
+     <a href="/blog/index.html">
+      Blog
+     </a>
+     <a href="/about.html">
+      O nas
+     </a>
+     <a href="/kontakt.html">
+      Kontakt
+     </a>
     </div>
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-container">
-            <a href="../index.html">Strona główna</a>
-            <span class="breadcrumbs-separator">›</span>
-            <a href="index.html">Blog</a>
-            <span class="breadcrumbs-separator">›</span>
-            <span class="breadcrumbs-current">Google Tag Manager w WordPress...</span>
-        </div>
+    <div class="social-links">
+     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+      <img alt="Facebook" src="../assets/images/facebook.png">
+     </a>
+     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+      <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg">
+     </a>
+     <a href="https://x.com/collytics" target="_blank" title="Twitter">
+      <img alt="X" src="../assets/images/cons8-twitter-500.svg">
+     </a>
     </div>
-
-    <header class="article-hero">
-        <div class="article-container">
-            <div class="article-meta">
-                <span class="category-badge">WordPress</span>
-                <span>8 min czytania</span>
-                <span>•</span>
-                <span>14 listopada 2024</span>
-            </div>
-            <h1>Google Tag Manager w WordPress – jak zainstalować</h1>
-            <p class="lead">Google Tag Manager (GTM) to bezpłatna platforma od Google, która służy do zarządzania tagami na stronach internetowych. Po jednorazowej instalacji umożliwia nieograniczoną instalację kodów śledzących.</p>
-        </div>
-        <div class="featured-image">
-            <img src="../assets/images/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg" alt="Google Tag Manager WordPress">
-        </div>
-    </header>
-
-    <main class="article-content">
-        <div class="article-container">
-            <p>GTM ma całą masę wbudowanych skryptów które ułatwiają pracę na tym narzędziu. Bez dwóch zdań jest to narzędzie które warto wykorzystywać w pracy przy digital marketingu.</p>
-            <h2>Najpopularniejsze integracje w GTM</h2>
-            <div class="feature-list">
-                <ul>
-                    <li><strong>Google Analytics 4</strong> - kompletna analityka strony</li>
-                    <li><strong>Google Ads Conversion Tracking</strong> - śledzenie konwersji z reklam</li>
-                    <li><strong>Google Ads Remarketing</strong> - retargeting użytkowników</li>
-                    <li><strong>AdWords Conversion Listener</strong> - nasłuchiwanie konwersji</li>
-                    <li><strong>Floodlight Counter</strong> - zaawansowane śledzenie kampanii</li>
-                    <li><strong>Google Analytics Event Tracking</strong> - śledzenie zdarzeń</li>
-                    <li><strong>Hotjar</strong> - mapy ciepła i nagrania sesji</li>
-                    <li><strong>Facebook Pixel</strong> - śledzenie dla Facebook Ads</li>
-                    <li><strong>LinkedIn Insight Tag</strong> - analityka LinkedIn</li>
-                    <li><strong>Custom HTML</strong> - własne skrypty</li>
-                </ul>
-            </div>
-
-            <h2>Instalacja Google Tag Manager w WordPress - krok po kroku</h2>
-            <h3>Krok 1: Utworzenie konta GTM</h3>
-            <p>Przejdź na stronę <a href="https://tagmanager.google.com" target="_blank">Google Tag Manager</a> logując się adresem email w domenie gmail.com.</p>
-            <p>Kliknij „Utwórz konto", nadaj mu nazwę i wybierz przestrzeń roboczą, a następnie kliknij „Kontynuuj". Wpisz nazwę swojej strony internetowej, wybierz typ jako „Web" i kliknij „Utwórz".</p>
-
-            <h3>Krok 2: Pobranie kodów instalacyjnych</h3>
-            <p>Po utworzeniu konta Google Tag Manager, otrzymasz dwa fragmenty kodu:</p>
-            <ul>
-                <li>Kod instalacyjny dla sekcji <code>&lt;head&gt;</code></li>
-                <li>Kod instalacyjny dla tuż po otwarciu tagu <code>&lt;body&gt;</code></li>
-            </ul>
-            <p>Skopiuj oba fragmenty kodu.</p>
-
-            <h3>Krok 3: Instalacja w WordPress</h3>
-            <p>Zaloguj się do panelu administracyjnego WordPress.</p>
-            <p>Przejdź do „Wygląd" > „Edytor motywów".</p>
-
-            <img src="../assets/images/6792e7de02034a92325f6fa6_6792e7b5f651b8679a436990_edytor.png" alt="Edytor motywów WordPress">
-
-            <p>Otwórz plik „header.php".</p>
-
-            <h3>Krok 4: Wklejenie kodów</h3>
-            <p>Wklej pierwszy kod jak najwyżej w elemencie <code>&lt;head&gt;</code>.</p>
-            <p>Wklej drugi fragment kodu zaraz po otwarciu znacznika <code>&lt;body&gt;</code>.</p>
-
-            <img src="../assets/images/6792e7de02034a92325f6fb9_6792e7d7b95297293dfdc932_kod.png" alt="Kod GTM w WordPress">
-
-            <p>Po wklejeniu kodów, kliknij „Zaktualizuj plik", aby zapisać zmiany.</p>
-
-            <h3>Krok 5: Weryfikacja instalacji</h3>
-            <p>Sprawdź instalację - przejdź do swojej strony i użyj narzędzia do sprawdzania poprawności instalacji Tag Managera (np. Google Tag Assistant), aby upewnić się, że kody zostały poprawnie wdrożone.</p>
-
-            <h2>Instalacja przez wtyczkę vs ręczna</h2>
-            <p>Opisaliśmy tutaj ręczną instalację, jest też możliwa instalacja za pomocą wtyczki w WordPress. Instalacja poprzez wtyczkę jest prostsza, ale ręczna metoda daje większą kontrolę nad kodem i jego umiejscowieniem.</p>
-
-            <h2>Dlaczego warto używać GTM?</h2>
-            <ul>
-                <li><strong>Centralne zarządzanie tagami</strong> - wszystkie kody w jednym miejscu</li>
-                <li><strong>Bez edycji kodu strony</strong> - po instalacji GTM nie musisz już edytować plików WordPress</li>
-                <li><strong>Wersjonowanie</strong> - możliwość cofnięcia zmian</li>
-                <li><strong>Testowanie</strong> - tryb debugowania przed publikacją</li>
-                <li><strong>Szybkość</strong> - asynchroniczne ładowanie tagów</li>
-                <li><strong>Bezpieczeństwo</strong> - kontrola nad tym, jakie skrypty są uruchamiane</li>
-            </ul>
-
-            <h2>Podsumowanie</h2>
-            <p>Google Tag Manager to potężne narzędzie, które znacznie ułatwia zarządzanie kodami śledzącymi na stronie WordPress. Jednorazowa instalacja GTM pozwala na dodawanie nieograniczonej liczby tagów bez konieczności edycji kodu strony.</p>
-
-            <div class="article-cta">
-                <h3>Potrzebujesz pomocy z Google Tag Manager?</h3>
-                <p>Nasz zespół ekspertów pomoże Ci w profesjonalnej instalacji i konfiguracji GTM na Twojej stronie WordPress. Skonfigurujemy wszystkie potrzebne tagi i nauczymy Cię jak z nich korzystać.</p>
-                <a href="../kontakt.html" class="cta-button">Skontaktuj się z nami</a>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-bottom">
-                <p>© Collytics. All rights reserved. <a href="/legal/privacy-policy.html">Polityka Prywatności</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("click", function(e) {
+   </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+  </div>
+  <div class="breadcrumbs">
+   <div class="breadcrumbs-container">
+    <a href="../index.html">
+     Strona g&lstrok;&oacute;wna
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <a href="index.html">
+     Blog
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <span class="breadcrumbs-current">
+     Google Tag Manager w WordPress...
+    </span>
+   </div>
+  </div>
+  <header class="article-hero">
+   <div class="article-container">
+    <div class="article-meta">
+     <span class="category-badge">
+      WordPress
+     </span>
+     <span>
+      8 min czytania
+     </span>
+     <span>
+      &bull;
+     </span>
+     <span>
+      14 listopada 2024
+     </span>
+    </div>
+    <h1>
+     Google tag manager w wordpress &ndash; jak zainstalowa&cacute;
+    </h1>
+    <p class="lead">
+     Google Tag Manager (GTM) to bezp&lstrok;atna platforma od Google, kt&oacute;ra s&lstrok;u&zdot;y do zarz&aogon;dzania tagami na stronach internetowych. Po jednorazowej instalacji umo&zdot;liwia nieograniczon&aogon; instalacj&eogon; kod&oacute;w &sacute;ledz&aogon;cych.
+    </p>
+   </div>
+   <div class="featured-image">
+    <img alt="Google Tag Manager WordPress" src="../assets/images/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg">
+   </div>
+  </header>
+  <main class="article-content">
+   <div class="article-container">
+    <p>
+     GTM ma ca&lstrok;&aogon; mas&eogon; wbudowanych skrypt&oacute;w kt&oacute;re u&lstrok;atwiaj&aogon; prac&eogon; na tym narz&eogon;dziu. Bez dw&oacute;ch zda&nacute; jest to narz&eogon;dzie kt&oacute;re warto wykorzystywa&cacute; w pracy przy digital marketingu.
+    </p>
+    <h2>
+     Najpopularniejsze integracje w gtm
+    </h2>
+    <div class="feature-list">
+     <ul>
+      <li>
+       <strong>
+        Google Analytics 4
+       </strong>
+       - kompletna analityka strony
+      </li>
+      <li>
+       <strong>
+        Google Ads Conversion Tracking
+       </strong>
+       - &sacute;ledzenie konwersji z reklam
+      </li>
+      <li>
+       <strong>
+        Google Ads Remarketing
+       </strong>
+       - retargeting u&zdot;ytkownik&oacute;w
+      </li>
+      <li>
+       <strong>
+        AdWords Conversion Listener
+       </strong>
+       - nas&lstrok;uchiwanie konwersji
+      </li>
+      <li>
+       <strong>
+        Floodlight Counter
+       </strong>
+       - zaawansowane &sacute;ledzenie kampanii
+      </li>
+      <li>
+       <strong>
+        Google Analytics Event Tracking
+       </strong>
+       - &sacute;ledzenie zdarze&nacute;
+      </li>
+      <li>
+       <strong>
+        Hotjar
+       </strong>
+       - mapy ciep&lstrok;a i nagrania sesji
+      </li>
+      <li>
+       <strong>
+        Facebook Pixel
+       </strong>
+       - &sacute;ledzenie dla Facebook Ads
+      </li>
+      <li>
+       <strong>
+        LinkedIn Insight Tag
+       </strong>
+       - analityka LinkedIn
+      </li>
+      <li>
+       <strong>
+        Custom HTML
+       </strong>
+       - w&lstrok;asne skrypty
+      </li>
+     </ul>
+    </div>
+    <h2>
+     Instalacja google tag manager w wordpress - krok po kroku
+    </h2>
+    <h3>
+     Krok 1: utworzenie konta gtm
+    </h3>
+    <p>
+     Przejd&zacute; na stron&eogon;
+     <a href="https://tagmanager.google.com" target="_blank">
+      Google Tag Manager
+     </a>
+     loguj&aogon;c si&eogon; adresem email w domenie gmail.com.
+    </p>
+    <p>
+     Kliknij &bdquo;Utw&oacute;rz konto", nadaj mu nazw&eogon; i wybierz przestrze&nacute; robocz&aogon;, a nast&eogon;pnie kliknij &bdquo;Kontynuuj". Wpisz nazw&eogon; swojej strony internetowej, wybierz typ jako &bdquo;Web" i kliknij &bdquo;Utw&oacute;rz".
+    </p>
+    <h3>
+     Krok 2: pobranie kod&oacute;w instalacyjnych
+    </h3>
+    <p>
+     Po utworzeniu konta Google Tag Manager, otrzymasz dwa fragmenty kodu:
+    </p>
+    <ul>
+     <li>
+      Kod instalacyjny dla sekcji
+      <code>
+       &lt;head&gt;
+      </code>
+     </li>
+     <li>
+      Kod instalacyjny dla tu&zdot; po otwarciu tagu
+      <code>
+       &lt;body&gt;
+      </code>
+     </li>
+    </ul>
+    <p>
+     Skopiuj oba fragmenty kodu.
+    </p>
+    <h3>
+     Krok 3: instalacja w wordpress
+    </h3>
+    <p>
+     Zaloguj si&eogon; do panelu administracyjnego WordPress.
+    </p>
+    <p>
+     Przejd&zacute; do &bdquo;Wygl&aogon;d" &gt; &bdquo;Edytor motyw&oacute;w".
+    </p>
+    <img alt="Edytor motyw&oacute;w WordPress" src="../assets/images/6792e7de02034a92325f6fa6_6792e7b5f651b8679a436990_edytor.png">
+    <p>
+     Otw&oacute;rz plik &bdquo;header.php".
+    </p>
+    <h3>
+     Krok 4: wklejenie kod&oacute;w
+    </h3>
+    <p>
+     Wklej pierwszy kod jak najwy&zdot;ej w elemencie
+     <code>
+      &lt;head&gt;
+     </code>
+     .
+    </p>
+    <p>
+     Wklej drugi fragment kodu zaraz po otwarciu znacznika
+     <code>
+      &lt;body&gt;
+     </code>
+     .
+    </p>
+    <img alt="Kod GTM w WordPress" src="../assets/images/6792e7de02034a92325f6fb9_6792e7d7b95297293dfdc932_kod.png">
+    <p>
+     Po wklejeniu kod&oacute;w, kliknij &bdquo;Zaktualizuj plik", aby zapisa&cacute; zmiany.
+    </p>
+    <h3>
+     Krok 5: weryfikacja instalacji
+    </h3>
+    <p>
+     Sprawd&zacute; instalacj&eogon; - przejd&zacute; do swojej strony i u&zdot;yj narz&eogon;dzia do sprawdzania poprawno&sacute;ci instalacji Tag Managera (np. Google Tag Assistant), aby upewni&cacute; si&eogon;, &zdot;e kody zosta&lstrok;y poprawnie wdro&zdot;one.
+    </p>
+    <h2>
+     Instalacja przez wtyczk&eogon; vs r&eogon;czna
+    </h2>
+    <p>
+     Opisali&sacute;my tutaj r&eogon;czn&aogon; instalacj&eogon;, jest te&zdot; mo&zdot;liwa instalacja za pomoc&aogon; wtyczki w WordPress. Instalacja poprzez wtyczk&eogon; jest prostsza, ale r&eogon;czna metoda daje wi&eogon;ksz&aogon; kontrol&eogon; nad kodem i jego umiejscowieniem.
+    </p>
+    <h2>
+     Dlaczego warto u&zdot;ywa&cacute; gtm?
+    </h2>
+    <ul>
+     <li>
+      <strong>
+       Centralne zarz&aogon;dzanie tagami
+      </strong>
+      - wszystkie kody w jednym miejscu
+     </li>
+     <li>
+      <strong>
+       Bez edycji kodu strony
+      </strong>
+      - po instalacji GTM nie musisz ju&zdot; edytowa&cacute; plik&oacute;w WordPress
+     </li>
+     <li>
+      <strong>
+       Wersjonowanie
+      </strong>
+      - mo&zdot;liwo&sacute;&cacute; cofni&eogon;cia zmian
+     </li>
+     <li>
+      <strong>
+       Testowanie
+      </strong>
+      - tryb debugowania przed publikacj&aogon;
+     </li>
+     <li>
+      <strong>
+       Szybko&sacute;&cacute;
+      </strong>
+      - asynchroniczne &lstrok;adowanie tag&oacute;w
+     </li>
+     <li>
+      <strong>
+       Bezpiecze&nacute;stwo
+      </strong>
+      - kontrola nad tym, jakie skrypty s&aogon; uruchamiane
+     </li>
+    </ul>
+    <h2>
+     Podsumowanie
+    </h2>
+    <p>
+     Google Tag Manager to pot&eogon;&zdot;ne narz&eogon;dzie, kt&oacute;re znacznie u&lstrok;atwia zarz&aogon;dzanie kodami &sacute;ledz&aogon;cymi na stronie WordPress. Jednorazowa instalacja GTM pozwala na dodawanie nieograniczonej liczby tag&oacute;w bez konieczno&sacute;ci edycji kodu strony.
+    </p>
+    <div class="article-cta">
+     <h3>
+      Potrzebujesz pomocy z google tag manager?
+     </h3>
+     <p>
+      Nasz zesp&oacute;&lstrok; ekspert&oacute;w pomo&zdot;e Ci w profesjonalnej instalacji i konfiguracji GTM na Twojej stronie WordPress. Skonfigurujemy wszystkie potrzebne tagi i nauczymy Ci&eogon; jak z nich korzysta&cacute;.
+     </p>
+     <a class="cta-button" href="../kontakt.html">
+      Skontaktuj si&eogon; z nami
+     </a>
+    </div>
+   </div>
+  </main>
+  <footer>
+   <div class="footer-container">
+    <div class="footer-bottom">
+     <p>
+      &copy; Collytics. All rights reserved.
+      <a href="/legal/privacy-policy.html">
+       Polityka Prywatno&sacute;ci
+      </a>
+     </p>
+    </div>
+   </div>
+  </footer>
+  <script>
+   document.addEventListener("click", function(e) {
             if(e.target.id === "menuTrigger") {
                 document.getElementById("dropdownMenu").classList.add("active");
                 document.getElementById("menuOverlay").classList.add("active");
@@ -167,9 +357,9 @@
                 document.getElementById("menuOverlay").classList.remove("active");
             }
         });
-    </script>
-
-    <!-- Cookie Banner Script -->
-    <script src="../js/cookie-banner.js"></script>
-</body>
+  </script>
+  <!-- Cookie Banner Script -->
+  <script src="../js/cookie-banner.js">
+  </script>
+ </body>
 </html>

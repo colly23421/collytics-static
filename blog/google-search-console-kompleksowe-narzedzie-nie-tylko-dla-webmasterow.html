@@ -1,145 +1,273 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Search Console - Kompletny przewodnik SEO 2024 | Collytics</title>
-    <meta name="description" content="Jak skutecznie używać Google Search Console do monitorowania SEO, analizy ruchu i optymalizacji pozycjonowania. Praktyczny poradnik z przykładami.">
-
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');</script>
-
-    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/blog.css">
-
-    <!-- Cookie Banner Styles -->
-    <link rel="stylesheet" href="../css/cookie-banner.css">
-</head>
-<body>
-
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a class="logo" href="/index.html"><img alt="Collytics" src="../assets/images/logo main transparent.png"/></a>
-            <button class="menu-trigger" id="menuTrigger">Menu</button>
-        </div>
-    </nav>
-    <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-close" id="closeMenu">Close</button>
-        <div class="dropdown-menu-inner">
-            <div class="menu-section">
-                <a href="/index.html">Home</a>
-                <a href="/services.html">Serwis</a>
-                <a href="/blog/index.html">Blog</a>
-                <a href="/about.html">O nas</a>
-                <a href="/kontakt.html">Kontakt</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook"><img alt="Facebook" src="../assets/images/facebook.png"/></a>
-                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"/></a>
-                <a href="https://x.com/collytics" target="_blank" title="Twitter"><img alt="X" src="../assets/images/cons8-twitter-500.svg"/></a>
-            </div>
-        </div>
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   Google Search Console - Kompletny przewodnik SEO 2024 | Collytics
+  </title>
+  <meta content="Jak skutecznie u&zdot;ywa&cacute; Google Search Console do monitorowania SEO, analizy ruchu i optymalizacji pozycjonowania. Praktyczny poradnik z przyk&lstrok;adami." name="description">
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');
+  </script>
+  <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../css/global.css" rel="stylesheet">
+  <link href="../css/blog.css" rel="stylesheet">
+  <!-- Cookie Banner Styles -->
+  <link href="../css/cookie-banner.css" rel="stylesheet">
+ </head>
+ <body>
+  <nav class="navbar" id="navbar">
+   <div class="nav-container">
+    <a class="logo" href="/index.html">
+     <img alt="Collytics" src="../assets/images/logo main transparent.png">
+    </a>
+    <button class="menu-trigger" id="menuTrigger">
+     Menu
+    </button>
+   </div>
+  </nav>
+  <div class="dropdown-menu" id="dropdownMenu">
+   <button class="dropdown-close" id="closeMenu">
+    Close
+   </button>
+   <div class="dropdown-menu-inner">
+    <div class="menu-section">
+     <a href="/index.html">
+      Home
+     </a>
+     <a href="/services.html">
+      Serwis
+     </a>
+     <a href="/blog/index.html">
+      Blog
+     </a>
+     <a href="/about.html">
+      O nas
+     </a>
+     <a href="/kontakt.html">
+      Kontakt
+     </a>
     </div>
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-container">
-            <a href="../index.html">Strona główna</a>
-            <span class="breadcrumbs-separator">›</span>
-            <a href="index.html">Blog</a>
-            <span class="breadcrumbs-separator">›</span>
-            <span class="breadcrumbs-current">Google Search Console...</span>
-        </div>
+    <div class="social-links">
+     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+      <img alt="Facebook" src="../assets/images/facebook.png">
+     </a>
+     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+      <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg">
+     </a>
+     <a href="https://x.com/collytics" target="_blank" title="Twitter">
+      <img alt="X" src="../assets/images/cons8-twitter-500.svg">
+     </a>
     </div>
-
-    <header class="article-hero">
-        <div class="article-container">
-            <div class="article-meta">
-                <span class="category-badge">SEO</span>
-                <span>10 min czytania</span>
-                <span>•</span>
-                <span>23 sierpnia 2024</span>
-            </div>
-            <h1>Google Search Console: Kompleksowe narzędzie nie tylko dla webmasterów</h1>
-            <p class="lead">Google Search Console to bezpłatne narzędzie oferowane przez Google, które umożliwia monitorowanie i optymalizację widoczności stron internetowych w bezpłatnych wynikach wyszukiwania Google.</p>
-        </div>
-        <div class="featured-image">
-            <img src="../assets/images/677314625a8000f04b5e7582_google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow.jpeg" alt="Google Search Console Dashboard">
-        </div>
-    </header>
-
-    <main class="article-content">
-        <div class="article-container">
-            <p>Google Search Console (GSC) to nieoceniona platforma dla właścicieli stron internetowych, SEO specjalistów oraz marketerów, którzy chcą zrozumieć, jak ich witryny radzą sobie w wyszukiwarce Google oraz jak można poprawić ich pozycjonowanie.</p>
-            <h2>Główne funkcje Google Search Console</h2>
-            <div class="feature-box">
-                <h3>📊 Monitorowanie ruchu i wyników w wyszukiwarce</h3>
-                <p>GSC dostarcza szczegółowych danych na temat tego, jak użytkownicy trafiają na naszą stronę za pośrednictwem Google. Można zobaczyć, jakie zapytania (słowa kluczowe) przyciągają ruch, które strony są najczęściej wyświetlane i klikane oraz jak wyglądają dane na temat wskaźnika CTR (Click-Through Rate).</p>
-            </div>
-            <div class="feature-box">
-                <h3>🔍 Indeksowanie strony</h3>
-                <p>Za pomocą GSC możemy sprawdzić, które strony naszej witryny zostały zaindeksowane przez Google, a które napotkały problemy techniczne uniemożliwiające indeksowanie. Możemy również przesłać do Google mapy witryny XML, które ułatwiają algorytmom Google szybkie i poprawne indeksowanie wszystkich podstron.</p>
-            </div>
-            <div class="feature-box">
-                <h3>🔧 Wykrywanie i naprawa problemów</h3>
-                <p>Google Search Console informuje o potencjalnych problemach technicznych na stronie, takich jak błędy w indeksowaniu, niedziałające linki (404), problemy z mobilnością czy nieodpowiednia optymalizacja stron pod kątem wyświetlania na urządzeniach mobilnych.</p>
-            </div>
-            <div class="feature-box">
-                <h3>🔗 Analiza linków przychodzących (backlinków)</h3>
-                <p>Narzędzie pokazuje, które strony zewnętrzne linkują do naszej witryny. Backlinki są jednym z kluczowych czynników wpływających na pozycjonowanie strony, dlatego ich monitorowanie oraz analiza mogą pomóc w budowie silnego profilu linków.</p>
-            </div>
-            <div class="feature-box">
-                <h3>📱 Optymalizacja mobilna</h3>
-                <p>Google kładzie duży nacisk na responsywność stron. GSC oferuje raporty dotyczące problemów z wyświetlaniem strony na smartfonach i tabletach, co pozwala na wprowadzenie niezbędnych optymalizacji.</p>
-            </div>
-            <div class="feature-box">
-                <h3>🔒 Sprawdzanie stanu bezpieczeństwa</h3>
-                <p>Google Search Console informuje właścicieli stron o potencjalnych zagrożeniach, takich jak złośliwe oprogramowanie czy ataki hakerskie, które mogą wpływać na bezpieczeństwo użytkowników odwiedzających witrynę.</p>
-            </div>
-
-            <h2>Dlaczego warto korzystać z Google Search Console?</h2>
-            <p>Google Search Console to nie tylko narzędzie analityczne, ale również potężna platforma do zarządzania i poprawy widoczności strony w wynikach wyszukiwania. Korzystanie z GSC umożliwia:</p>
-            <ul>
-                <li><strong>Zwiększenie widoczności witryny:</strong> Dzięki analizie wyników wyszukiwania oraz optymalizacji technicznej można skutecznie poprawić pozycję strony na liście wyników Google.</li>
-                <li><strong>Rozwiązywanie problemów technicznych:</strong> GSC pozwala na szybkie zidentyfikowanie problemów związanych z indeksowaniem, bezpieczeństwem czy kompatybilnością mobilną.</li>
-                <li><strong>Śledzenie skuteczności działań SEO:</strong> Dzięki szczegółowym raportom można monitorować, jak wprowadzane zmiany wpływają na ruch i widoczność strony.</li>
-                <li><strong>Integracja z Google Analytics:</strong> Przy integracji GSC z GA4 część danych z GSC możemy wyświetlać w raportach w Google Analytics.</li>
-            </ul>
-
-            <h2>Jak zacząć korzystać z Google Search Console?</h2>
-            <ol>
-                <li><strong>Dodaj swoją stronę do GSC:</strong> Wymaga to posiadania konta Google oraz potwierdzenia, że jesteśmy właścicielami witryny poprzez jedną z metod (np. umieszczenie pliku HTML na serwerze, dodanie kodu do domeny, weryfikację za pomocą Google Analytics).</li>
-                <li><strong>Zgłoś mapę witryny:</strong> Po potwierdzeniu własności warto przesłać mapę witryny (sitemap.xml), co ułatwi Google zrozumienie struktury strony i przyspieszy proces indeksowania.</li>
-                <li><strong>Monitoruj wyniki:</strong> Regularne sprawdzanie raportów i wprowadzanie poprawek pozwala na utrzymanie strony w jak najlepszej kondycji pod kątem SEO.</li>
-            </ol>
-
-            <h2>Podsumowanie</h2>
-            <p>Google Search Console to jedno z <strong>kluczowych narzędzi w arsenale każdego webmastera i specjalisty SEO</strong>. Umożliwia kompleksowe monitorowanie wyników witryny w wyszukiwarce Google, analizę ruchu, identyfikację problemów technicznych i optymalizację strony pod kątem wyszukiwarek.</p>
-            <p>Dzięki regularnemu korzystaniu z GSC można znacząco poprawić widoczność strony w wynikach wyszukiwania, co przekłada się na większy ruch i lepsze wyniki biznesowe.</p>
-
-            <div class="article-cta">
-                <h3>Potrzebujesz pomocy z Google Search Console?</h3>
-                <p>Pomożemy Ci w konfiguracji i optymalizacji GSC, aby maksymalnie wykorzystać potencjał Twojej strony w wynikach wyszukiwania.</p>
-                <a href="../kontakt.html" class="cta-button">Skontaktuj się z nami</a>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-bottom">
-                <p>© Collytics. All rights reserved. <a href="/legal/privacy-policy.html">Polityka Prywatności</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("click", function(e) {
+   </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+  </div>
+  <div class="breadcrumbs">
+   <div class="breadcrumbs-container">
+    <a href="../index.html">
+     Strona g&lstrok;&oacute;wna
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <a href="index.html">
+     Blog
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <span class="breadcrumbs-current">
+     Google Search Console...
+    </span>
+   </div>
+  </div>
+  <header class="article-hero">
+   <div class="article-container">
+    <div class="article-meta">
+     <span class="category-badge">
+      SEO
+     </span>
+     <span>
+      10 min czytania
+     </span>
+     <span>
+      &bull;
+     </span>
+     <span>
+      23 sierpnia 2024
+     </span>
+    </div>
+    <h1>
+     Google search console: kompleksowe narz&eogon;dzie nie tylko dla webmaster&oacute;w
+    </h1>
+    <p class="lead">
+     Google Search Console to bezp&lstrok;atne narz&eogon;dzie oferowane przez Google, kt&oacute;re umo&zdot;liwia monitorowanie i optymalizacj&eogon; widoczno&sacute;ci stron internetowych w bezp&lstrok;atnych wynikach wyszukiwania Google.
+    </p>
+   </div>
+   <div class="featured-image">
+    <img alt="Google Search Console Dashboard" src="../assets/images/677314625a8000f04b5e7582_google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow.jpeg">
+   </div>
+  </header>
+  <main class="article-content">
+   <div class="article-container">
+    <p>
+     Google Search Console (GSC) to nieoceniona platforma dla w&lstrok;a&sacute;cicieli stron internetowych, SEO specjalist&oacute;w oraz marketer&oacute;w, kt&oacute;rzy chc&aogon; zrozumie&cacute;, jak ich witryny radz&aogon; sobie w wyszukiwarce Google oraz jak mo&zdot;na poprawi&cacute; ich pozycjonowanie.
+    </p>
+    <h2>
+     G&lstrok;&oacute;wne funkcje google search console
+    </h2>
+    <div class="feature-box">
+     <h3>
+      📊 monitorowanie ruchu i wynik&oacute;w w wyszukiwarce
+     </h3>
+     <p>
+      GSC dostarcza szczeg&oacute;&lstrok;owych danych na temat tego, jak u&zdot;ytkownicy trafiaj&aogon; na nasz&aogon; stron&eogon; za po&sacute;rednictwem Google. Mo&zdot;na zobaczy&cacute;, jakie zapytania (s&lstrok;owa kluczowe) przyci&aogon;gaj&aogon; ruch, kt&oacute;re strony s&aogon; najcz&eogon;&sacute;ciej wy&sacute;wietlane i klikane oraz jak wygl&aogon;daj&aogon; dane na temat wska&zacute;nika CTR (Click-Through Rate).
+     </p>
+    </div>
+    <div class="feature-box">
+     <h3>
+      🔍 indeksowanie strony
+     </h3>
+     <p>
+      Za pomoc&aogon; GSC mo&zdot;emy sprawdzi&cacute;, kt&oacute;re strony naszej witryny zosta&lstrok;y zaindeksowane przez Google, a kt&oacute;re napotka&lstrok;y problemy techniczne uniemo&zdot;liwiaj&aogon;ce indeksowanie. Mo&zdot;emy r&oacute;wnie&zdot; przes&lstrok;a&cacute; do Google mapy witryny XML, kt&oacute;re u&lstrok;atwiaj&aogon; algorytmom Google szybkie i poprawne indeksowanie wszystkich podstron.
+     </p>
+    </div>
+    <div class="feature-box">
+     <h3>
+      🔧 wykrywanie i naprawa problem&oacute;w
+     </h3>
+     <p>
+      Google Search Console informuje o potencjalnych problemach technicznych na stronie, takich jak b&lstrok;&eogon;dy w indeksowaniu, niedzia&lstrok;aj&aogon;ce linki (404), problemy z mobilno&sacute;ci&aogon; czy nieodpowiednia optymalizacja stron pod k&aogon;tem wy&sacute;wietlania na urz&aogon;dzeniach mobilnych.
+     </p>
+    </div>
+    <div class="feature-box">
+     <h3>
+      🔗 analiza link&oacute;w przychodz&aogon;cych (backlink&oacute;w)
+     </h3>
+     <p>
+      Narz&eogon;dzie pokazuje, kt&oacute;re strony zewn&eogon;trzne linkuj&aogon; do naszej witryny. Backlinki s&aogon; jednym z kluczowych czynnik&oacute;w wp&lstrok;ywaj&aogon;cych na pozycjonowanie strony, dlatego ich monitorowanie oraz analiza mog&aogon; pom&oacute;c w budowie silnego profilu link&oacute;w.
+     </p>
+    </div>
+    <div class="feature-box">
+     <h3>
+      📱 optymalizacja mobilna
+     </h3>
+     <p>
+      Google k&lstrok;adzie du&zdot;y nacisk na responsywno&sacute;&cacute; stron. GSC oferuje raporty dotycz&aogon;ce problem&oacute;w z wy&sacute;wietlaniem strony na smartfonach i tabletach, co pozwala na wprowadzenie niezb&eogon;dnych optymalizacji.
+     </p>
+    </div>
+    <div class="feature-box">
+     <h3>
+      🔒 sprawdzanie stanu bezpiecze&nacute;stwa
+     </h3>
+     <p>
+      Google Search Console informuje w&lstrok;a&sacute;cicieli stron o potencjalnych zagro&zdot;eniach, takich jak z&lstrok;o&sacute;liwe oprogramowanie czy ataki hakerskie, kt&oacute;re mog&aogon; wp&lstrok;ywa&cacute; na bezpiecze&nacute;stwo u&zdot;ytkownik&oacute;w odwiedzaj&aogon;cych witryn&eogon;.
+     </p>
+    </div>
+    <h2>
+     Dlaczego warto korzysta&cacute; z google search console?
+    </h2>
+    <p>
+     Google Search Console to nie tylko narz&eogon;dzie analityczne, ale r&oacute;wnie&zdot; pot&eogon;&zdot;na platforma do zarz&aogon;dzania i poprawy widoczno&sacute;ci strony w wynikach wyszukiwania. Korzystanie z GSC umo&zdot;liwia:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Zwi&eogon;kszenie widoczno&sacute;ci witryny:
+      </strong>
+      Dzi&eogon;ki analizie wynik&oacute;w wyszukiwania oraz optymalizacji technicznej mo&zdot;na skutecznie poprawi&cacute; pozycj&eogon; strony na li&sacute;cie wynik&oacute;w Google.
+     </li>
+     <li>
+      <strong>
+       Rozwi&aogon;zywanie problem&oacute;w technicznych:
+      </strong>
+      GSC pozwala na szybkie zidentyfikowanie problem&oacute;w zwi&aogon;zanych z indeksowaniem, bezpiecze&nacute;stwem czy kompatybilno&sacute;ci&aogon; mobiln&aogon;.
+     </li>
+     <li>
+      <strong>
+       &Sacute;ledzenie skuteczno&sacute;ci dzia&lstrok;a&nacute; SEO:
+      </strong>
+      Dzi&eogon;ki szczeg&oacute;&lstrok;owym raportom mo&zdot;na monitorowa&cacute;, jak wprowadzane zmiany wp&lstrok;ywaj&aogon; na ruch i widoczno&sacute;&cacute; strony.
+     </li>
+     <li>
+      <strong>
+       Integracja z Google Analytics:
+      </strong>
+      Przy integracji GSC z GA4 cz&eogon;&sacute;&cacute; danych z GSC mo&zdot;emy wy&sacute;wietla&cacute; w raportach w Google Analytics.
+     </li>
+    </ul>
+    <h2>
+     Jak zacz&aogon;&cacute; korzysta&cacute; z google search console?
+    </h2>
+    <ol>
+     <li>
+      <strong>
+       Dodaj swoj&aogon; stron&eogon; do GSC:
+      </strong>
+      Wymaga to posiadania konta Google oraz potwierdzenia, &zdot;e jeste&sacute;my w&lstrok;a&sacute;cicielami witryny poprzez jedn&aogon; z metod (np. umieszczenie pliku HTML na serwerze, dodanie kodu do domeny, weryfikacj&eogon; za pomoc&aogon; Google Analytics).
+     </li>
+     <li>
+      <strong>
+       Zg&lstrok;o&sacute; map&eogon; witryny:
+      </strong>
+      Po potwierdzeniu w&lstrok;asno&sacute;ci warto przes&lstrok;a&cacute; map&eogon; witryny (sitemap.xml), co u&lstrok;atwi Google zrozumienie struktury strony i przyspieszy proces indeksowania.
+     </li>
+     <li>
+      <strong>
+       Monitoruj wyniki:
+      </strong>
+      Regularne sprawdzanie raport&oacute;w i wprowadzanie poprawek pozwala na utrzymanie strony w jak najlepszej kondycji pod k&aogon;tem SEO.
+     </li>
+    </ol>
+    <h2>
+     Podsumowanie
+    </h2>
+    <p>
+     Google Search Console to jedno z
+     <strong>
+      kluczowych narz&eogon;dzi w arsenale ka&zdot;dego webmastera i specjalisty SEO
+     </strong>
+     . Umo&zdot;liwia kompleksowe monitorowanie wynik&oacute;w witryny w wyszukiwarce Google, analiz&eogon; ruchu, identyfikacj&eogon; problem&oacute;w technicznych i optymalizacj&eogon; strony pod k&aogon;tem wyszukiwarek.
+    </p>
+    <p>
+     Dzi&eogon;ki regularnemu korzystaniu z GSC mo&zdot;na znacz&aogon;co poprawi&cacute; widoczno&sacute;&cacute; strony w wynikach wyszukiwania, co przek&lstrok;ada si&eogon; na wi&eogon;kszy ruch i lepsze wyniki biznesowe.
+    </p>
+    <div class="article-cta">
+     <h3>
+      Potrzebujesz pomocy z google search console?
+     </h3>
+     <p>
+      Pomo&zdot;emy Ci w konfiguracji i optymalizacji GSC, aby maksymalnie wykorzysta&cacute; potencja&lstrok; Twojej strony w wynikach wyszukiwania.
+     </p>
+     <a class="cta-button" href="../kontakt.html">
+      Skontaktuj si&eogon; z nami
+     </a>
+    </div>
+   </div>
+  </main>
+  <footer>
+   <div class="footer-container">
+    <div class="footer-bottom">
+     <p>
+      &copy; Collytics. All rights reserved.
+      <a href="/legal/privacy-policy.html">
+       Polityka Prywatno&sacute;ci
+      </a>
+     </p>
+    </div>
+   </div>
+  </footer>
+  <script>
+   document.addEventListener("click", function(e) {
             if(e.target.id === "menuTrigger") {
                 document.getElementById("dropdownMenu").classList.add("active");
                 document.getElementById("menuOverlay").classList.add("active");
@@ -149,9 +277,9 @@
                 document.getElementById("menuOverlay").classList.remove("active");
             }
         });
-    </script>
-
-    <!-- Cookie Banner Script -->
-    <script src="../js/cookie-banner.js"></script>
-</body>
+  </script>
+  <!-- Cookie Banner Script -->
+  <script src="../js/cookie-banner.js">
+  </script>
+ </body>
 </html>
