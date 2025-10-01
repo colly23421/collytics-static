@@ -46,10 +46,7 @@
             flex-shrink: 0; /* Zapobiega kurczeniu się "ptaszka" */
         }
     </style>
-    
-    <!-- Cookie Banner Styles -->
-    <link rel="stylesheet" href="../css/cookie-banner.css">
-</head>
+    </head>
 <body>
     <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" style="display:none;visibility:hidden" width="0"></iframe></noscript>
     <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" style="display:none;visibility:hidden" width="0"></iframe></noscript>
@@ -194,8 +191,5 @@
             }
         });
     </script>
-
-    <!-- Cookie Banner Script -->
-    <script src="../js/cookie-banner.js"></script>
 </body>
 </html>

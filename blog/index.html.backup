@@ -20,9 +20,6 @@
       <link rel="stylesheet" href="/css/blog.css">
 
 
-
-    <!-- Cookie Banner Styles -->
-    <link rel="stylesheet" href="../css/cookie-banner.css">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -327,8 +324,5 @@
             });
         </script>
 
-    
-    <!-- Cookie Banner Script -->
-    <script src="../js/cookie-banner.js"></script>
-</body>
+    </body>
     </html>

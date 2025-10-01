@@ -571,10 +571,7 @@ footer img {
   </style>
   <meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification">
   </meta>
- 
-    <!-- Cookie Banner Styles -->
-    <link rel="stylesheet" href="../css/cookie-banner.css">
-</head>
+ </head>
  <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript>
@@ -585,21 +582,53 @@ footer img {
    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" style="display:none;visibility:hidden" width="0">
    </iframe>
   </noscript>
-  <nav>
+  <nav class="navbar" id="navbar">
    <div class="nav-container">
-    <div class="logo">
-     <img alt="Collytics" onerror="this.src='assets/images/logo.png'" src="/assets/images/logo main transparent.png" style="height: 40px;"/>
-    </div>
-    <div class="nav-buttons">
-     <a class="btn btn-outline" href="#kontakt">
-      Kontakt
-     </a>
-     <button class="btn btn-menu">
-      Menu
-     </button>
-    </div>
+    <a class="logo" href="index.html">
+     <img alt="Collytics" src="/assets/images/logo main transparent.png"/>
+    </a>
+    <button class="menu-trigger" id="menuTrigger">
+     Menu
+    </button>
    </div>
   </nav>
+  <div class="dropdown-menu" id="dropdownMenu">
+   <button class="dropdown-close" id="closeMenu">
+    Close
+   </button>
+   <div class="dropdown-menu-inner">
+    <div class="menu-section">
+     <a href="index.html">
+      Home
+     </a>
+     <a href="services.html">
+      Serwis
+     </a>
+     <a href="blog/index.html">
+      Blog
+     </a>
+     <a href="about.html">
+      O nas
+     </a>
+     <a href="kontakt.html">
+      Kontakt
+     </a>
+    </div>
+    <div class="social-links">
+     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+      <img alt="Facebook" src="assets/images/facebook.png"/>
+     </a>
+     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+      <img alt="LinkedIn" src="assets/images/cons8-linkedin-500.svg"/>
+     </a>
+     <a href="https://x.com/collytics" target="_blank" title="Twitter">
+      <img alt="X" src="assets/images/cons8-twitter-500.svg"/>
+     </a>
+    </div>
+   </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+  </div>
   <section class="hero">
    <div class="hero-bg">
    </div>
@@ -665,7 +694,7 @@ footer img {
     <div class="blog-grid">
      <a href="blog/jak-json-ld-dominuje-rynek-stomatologiczny-gliwice-case-study.html" style="text-decoration: none; color: inherit;">
       <article class="blog-card">
-       <div class="blog-image" style="background-image: url('assets/images/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg'); background-size: cover; background-position: center;">
+       <div class="blog-image" style="background-image: url('assets/images/Gemini_Generated_Image_3irbye3irbye3irb.jpeg');">
        </div>
        <div class="blog-content">
         <div class="blog-meta">
@@ -684,7 +713,7 @@ footer img {
      </a>
      <a href="blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" style="text-decoration: none; color: inherit;">
       <article class="blog-card">
-       <div class="blog-image" style="background-image: url('assets/images/688e0ded690333d20e7aa5be_Code_Generated_Image.png'); background-size: cover; background-position: center;">
+       <div class="blog-image" style="background-image: url('assets/images/Code_Generated_Image.png');">
        </div>
        <div class="blog-content">
         <div class="blog-meta">
@@ -703,7 +732,7 @@ footer img {
      </a>
      <a href="blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" style="text-decoration: none; color: inherit;">
       <article class="blog-card">
-       <div class="blog-image" style="background-image: url('assets/images/6876194656c6edf5453ea3b7_llms-txt-p-3200.jpeg'); background-size: cover; background-position: center;">
+       <div class="blog-image" style="background-image: url('assets/images/llms-txt-p-3200.jpeg');">
        </div>
        <div class="blog-content">
         <div class="blog-meta">
@@ -725,7 +754,7 @@ footer img {
   </section>
   <section style="padding: 80px 5%; background: var(--dark-bg);">
    <div style="max-width: 1200px; margin: 0 auto;">
-    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px; font-weight: 500;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px; font-weight: 500; color: var(--text-primary);">
      Marki, które napędzamy danymi
     </h2>
     <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
@@ -736,77 +765,20 @@ footer img {
     </div>
    </div>
   </section>
-  <style>
-   /* Style dla nowej sekcji kontaktowej */
-        .contact-container {
-            display: flex;
-            gap: 50px; /* Odstęp między kolumnami */
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .contact-column {
-            flex: 1; /* Każda kolumna zajmuje tyle samo miejsca */
-        }
-
-        .contact-column h2 {
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
-
-        .contact-column p {
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-
-        .contact-info p {
-            margin-bottom: 16px; /* Mniejszy margines dla danych adresowych */
-            font-size: 16px;
-        }
-
-        .map-embed {
-            width: 100%;
-            height: 350px;
-            border-radius: 8px;
-            border: 0;
-            margin-top: 20px;
-        }
-
-        /* Dostosowanie do urządzeń mobilnych */
-        @media (max-width: 992px) {
-            .contact-container {
-                flex-direction: column; /* Kolumny jedna pod drugą */
-                text-align: center;
-            }
-            .contact-column {
-                width: 100%;
-            }
-            .contact-column h2,
-            .contact-column p {
-                text-align: center;
-            }
-            .contact-info {
-                text-align: center;
-            }
-        }
-  </style>
-  <section id="kontakt" style="padding: 100px 5%; background: var(--dark-secondary);">
-   <div class="contact-container">
-    <div class="contact-column">
-     <h2>
+  <section id="kontakt" style="padding: 100px 5%; background: rgba(30, 30, 30, 0.98);">
+   <div class="contact-container" style="display: flex; gap: 50px; align-items: flex-start; max-width: 1200px; margin: 0 auto;">
+    <div class="contact-column" style="flex: 1;">
+     <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-primary);">
       Porozmawiajmy o Twoim Projekcie
      </h2>
-     <p>
+     <p style="color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6;">
       Wypełnij formularz, a my odezwiemy się, aby omówić, jak możemy pomóc Ci rosnąć. Jesteśmy dostępni również w języku angielskim.
      </p>
      <form class="contact-form">
       <div class="form-group">
        <input class="form-input" placeholder="Imię" required="" type="text"/>
        <input class="form-input" placeholder="Email" required="" type="email"/>
-       <textarea class="form-input" placeholder="Powiedz nam o swoim projekcie" rows="4" style="resize: vertical;"></textarea>
+       <textarea class="form-input" placeholder="Powiedz nam o swoim projekcie" rows="4"></textarea>
        <div class="form-checkbox">
         <input id="consent-new" required="" type="checkbox"/>
         <label for="consent-new">
@@ -819,12 +791,12 @@ footer img {
       </div>
      </form>
     </div>
-    <div class="contact-column">
-     <h2>
+    <div class="contact-column" style="flex: 1;">
+     <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-primary);">
       Nasze Biuro
      </h2>
      <div class="contact-info">
-      <p>
+      <p style="margin-bottom: 16px; font-size: 16px; color: var(--text-secondary);">
        <strong>
         Collytics OÜ
        </strong>
@@ -835,23 +807,23 @@ footer img {
        <br/>
        00-008 Warszawa
       </p>
-      <p>
+      <p style="margin-bottom: 16px; font-size: 16px; color: var(--text-secondary);">
        <strong>
         Email:
        </strong>
-       <a href="mailto:hello@collytics.io" style="color: var(--primary-color);">
+       <a href="mailto:hello@collytics.io" style="color: #FFFFFF;">
         hello@collytics.io
        </a>
       </p>
      </div>
-     <iframe allowfullscreen="" class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.483163332442!2d21.00732367711467!3d52.2359487579178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc65a4305377%3A0x2a2842c554867b9!2sMarsza%C5%82kowska%20126%2C%2000-008%20Warszawa!5e0!3m2!1spl!2spl!4v1694208000000!5m2!1spl!2spl">
+     <iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.483163332442!2d21.00732367711467!3d52.2359487579178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc65a4305377%3A0x2a2842c554867b9!2sMarsza%C5%82kowska%20126%2C%2000-008%20Warszawa!5e0!3m2!1spl!2spl!4v1694208000000!5m2!1spl!2spl" style="width: 100%; height: 350px; border-radius: 8px; border: 0; margin-top: 20px;">
      </iframe>
     </div>
    </div>
   </section>
-  <section id="podcast" style="padding: 100px 5%; background: var(--dark-secondary);">
+  <section id="podcast" style="padding: 100px 5%; background: rgba(30, 30, 30, 0.98);">
    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-    <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; font-weight: 600;">
+    <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; font-weight: 600; color: #FFFFFF;">
      Posłuchaj naszego podcastu
     </h2>
     <p style="color: var(--text-secondary); margin-bottom: 60px; font-size: 1.1rem;">
@@ -859,19 +831,19 @@ footer img {
     </p>
     <div class="podcast-grid">
      <div class="podcast-card">
-      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" data-testid="embed-iframe" frameborder="0" height="100" loading="lazy" src="https://open.spotify.com/embed/episode/6xqQCMvuJPKUQPiTu69jj1?utm_source=generator" style="border-radius:12px" width="50%">
+      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="152" loading="lazy" src="https://open.spotify.com/embed/episode/6xqQCMvuJPKUQPiTu69jj1?utm_source=generator" style="border-radius:12px" width="100%">
       </iframe>
      </div>
      <div class="podcast-card">
-      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" data-testid="embed-iframe" frameborder="0" height="100" loading="lazy" src="https://open.spotify.com/embed/episode/6tAcHgHFh3omhmxG3wFKE3?utm_source=generator" style="border-radius:12px" width="50%">
+      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="152" loading="lazy" src="https://open.spotify.com/embed/episode/6tAcHgHFh3omhmxG3wFKE3?utm_source=generator" style="border-radius:12px" width="100%">
       </iframe>
      </div>
      <div class="podcast-card">
-      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" data-testid="embed-iframe" frameborder="0" height="100" loading="lazy" src="https://open.spotify.com/embed/episode/1xOWdlZ4pDe2YK2LG5pjN1?utm_source=generator" style="border-radius:12px" width="50%">
+      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="152" loading="lazy" src="https://open.spotify.com/embed/episode/1xOWdlZ4pDe2YK2LG5pjN1?utm_source=generator" style="border-radius:12px" width="100%">
       </iframe>
      </div>
     </div>
-    <div class="podcast-cta">
+    <div style="margin-top: 40px;">
      <a class="cta-button" href="https://open.spotify.com/show/5XI8Rescgn7ss1Li5nj8No" rel="nofollow" target="_blank">
       Zobacz wszystkie odcinki
      </a>
@@ -891,8 +863,8 @@ footer img {
       Kontakt
      </a>
     </div>
-    <div class="logo" style="justify-content: center; margin-bottom: 24px;">
-     <img alt="Collytics" onerror="this.src='assets/images/logo.png'" src="/assets/images/logo main transparent.png" style="height: 40px;"/>
+    <div style="margin-bottom: 24px;">
+     <img alt="Collytics" src="/assets/images/logo main transparent.png" style="height: 40px;"/>
     </div>
     <p style="color: var(--text-secondary); margin-bottom: 40px;">
      Twój partner w analizie danych i marketingu
@@ -905,7 +877,172 @@ footer img {
    </div>
   </footer>
   <script>
-   // Smooth scrolling for anchor links
+   // Kompletny kod JavaScript do wklejenia w index.html i kontakt.html
+// Zastąp CAŁY blok <script> tym kodem:
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Obsługa formularzy
+    const contactForms = document.querySelectorAll('.contact-form');
+
+    contactForms.forEach(form => {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Pobierz elementy formularza
+            const submitButton = form.querySelector('button[type="submit"], .cta-button, .submit-button');
+            const originalButtonText = submitButton.textContent;
+
+            // Zbierz dane z formularza
+            const formData = {
+                name: form.querySelector('input[type="text"]').value,
+                email: form.querySelector('input[type="email"]').value,
+                message: form.querySelector('textarea').value,
+                consent: form.querySelector('input[type="checkbox"]').checked
+            };
+
+            // Walidacja po stronie klienta
+            if (!formData.name || !formData.email || !formData.message) {
+                showFormMessage(form, 'Wypełnij wszystkie pola formularza', 'error');
+                return;
+            }
+
+            if (!formData.consent) {
+                showFormMessage(form, 'Musisz wyrazić zgodę na przetwarzanie danych', 'error');
+                return;
+            }
+
+            // Zmień tekst przycisku na czas wysyłania
+            submitButton.textContent = 'Wysyłanie...';
+            submitButton.disabled = true;
+
+            try {
+                // Wysłanie danych do API
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Sukces - wyczyść formularz
+                    form.reset();
+
+                    // Pokaż komunikat sukcesu pod formularzem
+                    showFormMessage(form, result.message || 'Dziękujemy za wiadomość!', 'success');
+
+                    // Zmień przycisk na zielony z haczykiem na 3 sekundy
+                    submitButton.textContent = '✓ Wysłano!';
+                    submitButton.style.background = '#10b981';
+
+                    setTimeout(() => {
+                        submitButton.textContent = originalButtonText;
+                        submitButton.style.background = '';
+                    }, 3000);
+
+                } else {
+                    // Błąd
+                    showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
+                }
+            } catch (error) {
+                console.error('Błąd wysyłania:', error);
+
+                // Fallback - użyj mailto
+                const mailtoLink = `mailto:hello@collytics.io?subject=Kontakt ze strony&body=Imię: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AWiadomość:%0D%0A${formData.message}`;
+
+                showFormMessage(form, 'Problem z formularzem. Otwieramy program pocztowy...', 'error');
+                setTimeout(() => {
+                    window.location.href = mailtoLink;
+                }, 2000);
+            } finally {
+                // Przywróć przycisk (jeśli nie był zmieniony na sukces)
+                setTimeout(() => {
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
+                }, 3000);
+            }
+        });
+    });
+
+    // Funkcja do wyświetlania komunikatów pod formularzem
+    function showFormMessage(form, message, type) {
+        // Usuń istniejące komunikaty
+        const existing = form.parentElement.querySelector('.form-message');
+        if (existing) existing.remove();
+
+        // Utwórz nowy komunikat
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'form-message';
+        messageDiv.textContent = message;
+
+        // Style bazowe
+        messageDiv.style.cssText = `
+            margin-top: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            animation: fadeIn 0.3s ease;
+            font-size: 14px;
+        `;
+
+        // Kolory w zależności od typu
+        if (type === 'success') {
+            messageDiv.style.cssText += `
+                background: rgba(16, 185, 129, 0.1);
+                color: #10b981;
+                border: 1px solid rgba(16, 185, 129, 0.2);
+            `;
+        } else if (type === 'error') {
+            messageDiv.style.cssText += `
+                background: rgba(239, 68, 68, 0.1);
+                color: #ef4444;
+                border: 1px solid rgba(239, 68, 68, 0.2);
+            `;
+        }
+
+        // Dodaj po formularzu
+        form.parentElement.appendChild(messageDiv);
+
+        // Usuń po 7 sekundach
+        setTimeout(() => {
+            messageDiv.style.animation = 'fadeOut 0.3s ease';
+            setTimeout(() => {
+                if (messageDiv.parentNode) {
+                    messageDiv.remove();
+                }
+            }, 300);
+        }, 7000);
+    }
+
+    // Dodaj animacje CSS
+    if (!document.getElementById('form-animations')) {
+        const style = document.createElement('style');
+        style.id = 'form-animations';
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(-10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // Obsługa menu (pozostaje bez zmian)
+            });
+        }
+
+        menuOverlay.addEventListener('click', function() {
+            dropdownMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        });
+    }
+
+    // Smooth scrolling (pozostaje bez zmian)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -918,60 +1055,9 @@ footer img {
             }
         });
     });
-
-    // Hide/show ENTIRE navigation on scroll
-    let lastScrollTop = 0;
-    const nav = document.querySelector('nav');
-
-    window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down - hide entire nav
-            nav.style.transform = 'translateY(-100%)';
-            nav.style.transition = 'transform 0.3s ease';
-        } else {
-            // Scrolling up - show entire nav
-            nav.style.transform = 'translateY(0)';
-            nav.style.transition = 'transform 0.3s ease';
-        }
-
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-
-    // Form submission
-    document.querySelector('.contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Dziękujemy za zgłoszenie! Skontaktujemy się wkrótce.');
-    });
-
-    // Add animation on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements
-    document.querySelectorAll('.blog-card, .case-study-container').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
+});
   </script>
   <script src="/js/menu.js">
   </script>
- 
-    <!-- Cookie Banner Script -->
-    <script src="../js/cookie-banner.js"></script>
-</body>
+ </body>
 </html>

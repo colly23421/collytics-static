@@ -13,9 +13,6 @@
 
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/legal.css">
-
-    <!-- Cookie Banner Styles -->
-    <link rel="stylesheet" href="../css/cookie-banner.css">
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -88,8 +85,5 @@
             }
         });
     </script>
-
-    <!-- Cookie Banner Script -->
-    <script src="../js/cookie-banner.js"></script>
 </body>
 </html>

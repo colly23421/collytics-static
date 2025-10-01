@@ -15,7 +15,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-   Collytics - Innowacyjny marketing i technologie AI
+   Lab-Wet Case Study - Wzrost widoczności o 47% - Collytics
   </title>
   <link href="/css/navbar-universal.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -571,10 +571,7 @@ footer img {
   </style>
   <meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification">
   </meta>
- 
-    <!-- Cookie Banner Styles -->
-    <link rel="stylesheet" href="../css/cookie-banner.css">
-</head>
+ </head>
  <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript>
@@ -585,393 +582,288 @@ footer img {
    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" style="display:none;visibility:hidden" width="0">
    </iframe>
   </noscript>
-  <nav>
+  <!-- Nawigacja -->
+  <nav class="navbar" id="navbar">
    <div class="nav-container">
-    <div class="logo">
-     <img alt="Collytics" onerror="this.src='assets/images/logo.png'" src="/assets/images/logo main transparent.png" style="height: 40px;"/>
-    </div>
-    <div class="nav-buttons">
-     <a class="btn btn-outline" href="#kontakt">
-      Kontakt
-     </a>
-     <button class="btn btn-menu">
-      Menu
-     </button>
-    </div>
+    <a class="logo" href="index.html">
+     <img alt="Collytics" src="/assets/images/logo main transparent.png"/>
+    </a>
+    <button class="menu-trigger" id="menuTrigger">
+     Menu
+    </button>
    </div>
   </nav>
-  <section class="hero">
-   <div class="hero-bg">
-   </div>
-   <div class="hero-content">
-    <h1>
-     Marketing Intelligence.
-     <br/>
-     Powered by AI.
-    </h1>
-    <p class="hero-description">
-     Wykorzystujemy AI do analizy milionów danych rynkowych, dając Ci wgląd, który wyprzedza konkurencję. Od precyzyjnych kampanii SEM po inteligentne rozwiązania webowe – przekształcamy dane w strategie, które generują realny wzrost.
-    </p>
-    <a class="cta-button" href="#kontakt">
-     Zbuduj swoją przewagę
-    </a>
-    <div class="services-pills">
-     <div class="pill">
-      Analityka
-     </div>
-     <div class="pill">
-      Kampanie SEM
-     </div>
-     <div class="pill">
-      Marketing
-     </div>
-     <div class="pill">
-      Branding
-     </div>
-    </div>
-   </div>
-  </section>
-  <section class="case-study">
-   <div class="case-study-container">
-    <img alt="Lab-Wet" src="assets/images/partners/labwet.png" style="width: 200px; height: auto;"/>
-    <div class="case-content">
-     <p style="color: var(--text-secondary); margin-bottom: 16px;">
-      KLIENT:
-     </p>
-     <h2>
-      Lab-Wet
-     </h2>
-     <h3>
-      Wzrost widoczności w Google o 47% w 45 dni.
-     </h3>
-     <p class="case-description">
-      Zobacz, jak nowa, zorientowana na konwersję platforma B2B dla lidera branży weterynaryjnej, przyniosła 44% wzrostu ruchu na stronie w nieco ponad sześć tygodni.
-     </p>
-     <a class="btn-case" href="use-case-lab-wet.html">
-      Szczegóły
+  <!-- Dropdown menu -->
+  <div class="dropdown-menu" id="dropdownMenu">
+   <button class="dropdown-close" id="closeMenu">
+    Close
+   </button>
+   <div class="dropdown-menu-inner">
+    <div class="menu-section">
+     <a href="index.html">
+      Home
      </a>
-    </div>
-   </div>
-  </section>
-  <section class="blog-section">
-   <div class="blog-container">
-    <div class="blog-header">
-     <h2>
-      Najnowsze
-      <br/>
-      wpisy
-     </h2>
-    </div>
-    <div class="blog-grid">
-     <a href="blog/jak-json-ld-dominuje-rynek-stomatologiczny-gliwice-case-study.html" style="text-decoration: none; color: inherit;">
-      <article class="blog-card">
-       <div class="blog-image" style="background-image: url('assets/images/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg'); background-size: cover; background-position: center;">
-       </div>
-       <div class="blog-content">
-        <div class="blog-meta">
-         <span>
-          Case Study
-         </span>
-         <span>
-          20 Sie, 25
-         </span>
-        </div>
-        <h3 class="blog-title">
-         Jak JSON-LD Decyduje o Widoczności w AI - Case Study Stomatologiczne
-        </h3>
-       </div>
-      </article>
+     <a href="services.html">
+      Serwis
      </a>
-     <a href="blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" style="text-decoration: none; color: inherit;">
-      <article class="blog-card">
-       <div class="blog-image" style="background-image: url('assets/images/688e0ded690333d20e7aa5be_Code_Generated_Image.png'); background-size: cover; background-position: center;">
-       </div>
-       <div class="blog-content">
-        <div class="blog-meta">
-         <span>
-          Tips &amp; Tricks
-         </span>
-         <span>
-          8 Wrz, 25
-         </span>
-        </div>
-        <h3 class="blog-title">
-         Sekretne dane Facebook Ads: Odkryj wzorce aktywności klientów
-        </h3>
-       </div>
-      </article>
+     <a href="blog/index.html">
+      Blog
      </a>
-     <a href="blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" style="text-decoration: none; color: inherit;">
-      <article class="blog-card">
-       <div class="blog-image" style="background-image: url('assets/images/6876194656c6edf5453ea3b7_llms-txt-p-3200.jpeg'); background-size: cover; background-position: center;">
-       </div>
-       <div class="blog-content">
-        <div class="blog-meta">
-         <span>
-          SEO
-         </span>
-         <span>
-          25 Wrz, 25
-         </span>
-        </div>
-        <h3 class="blog-title">
-         Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?
-        </h3>
-       </div>
-      </article>
+     <a href="about.html">
+      O nas
      </a>
-    </div>
-   </div>
-  </section>
-  <section style="padding: 80px 5%; background: var(--dark-bg);">
-   <div style="max-width: 1200px; margin: 0 auto;">
-    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px; font-weight: 500;">
-     Marki, które napędzamy danymi
-    </h2>
-    <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
-     <img alt="Bdental" src="assets/images/partners/bdental.png" style="height: 50px; opacity: 0.85;"/>
-     <img alt="Lab-Wet" src="assets/images/partners/labwet.png" style="height: 50px; opacity: 0.85;"/>
-     <img alt="EstClinic" src="assets/images/partners/esteclinic.png" style="height: 50px; opacity: 0.85;"/>
-     <img alt="Chemiczna" src="assets/images/partners/chemiczna.png" style="height: 50px; opacity: 0.85;"/>
-    </div>
-   </div>
-  </section>
-  <style>
-   /* Style dla nowej sekcji kontaktowej */
-        .contact-container {
-            display: flex;
-            gap: 50px; /* Odstęp między kolumnami */
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .contact-column {
-            flex: 1; /* Każda kolumna zajmuje tyle samo miejsca */
-        }
-
-        .contact-column h2 {
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
-
-        .contact-column p {
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-
-        .contact-info p {
-            margin-bottom: 16px; /* Mniejszy margines dla danych adresowych */
-            font-size: 16px;
-        }
-
-        .map-embed {
-            width: 100%;
-            height: 350px;
-            border-radius: 8px;
-            border: 0;
-            margin-top: 20px;
-        }
-
-        /* Dostosowanie do urządzeń mobilnych */
-        @media (max-width: 992px) {
-            .contact-container {
-                flex-direction: column; /* Kolumny jedna pod drugą */
-                text-align: center;
-            }
-            .contact-column {
-                width: 100%;
-            }
-            .contact-column h2,
-            .contact-column p {
-                text-align: center;
-            }
-            .contact-info {
-                text-align: center;
-            }
-        }
-  </style>
-  <section id="kontakt" style="padding: 100px 5%; background: var(--dark-secondary);">
-   <div class="contact-container">
-    <div class="contact-column">
-     <h2>
-      Porozmawiajmy o Twoim Projekcie
-     </h2>
-     <p>
-      Wypełnij formularz, a my odezwiemy się, aby omówić, jak możemy pomóc Ci rosnąć. Jesteśmy dostępni również w języku angielskim.
-     </p>
-     <form class="contact-form">
-      <div class="form-group">
-       <input class="form-input" placeholder="Imię" required="" type="text"/>
-       <input class="form-input" placeholder="Email" required="" type="email"/>
-       <textarea class="form-input" placeholder="Powiedz nam o swoim projekcie" rows="4" style="resize: vertical;"></textarea>
-       <div class="form-checkbox">
-        <input id="consent-new" required="" type="checkbox"/>
-        <label for="consent-new">
-         Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w niniejszym formularzu przez Collytics OÜ w celu odpowiedzi na zapytanie.
-        </label>
-       </div>
-       <button class="cta-button" style="width: 100%;" type="submit">
-        Wyślij
-       </button>
-      </div>
-     </form>
-    </div>
-    <div class="contact-column">
-     <h2>
-      Nasze Biuro
-     </h2>
-     <div class="contact-info">
-      <p>
-       <strong>
-        Collytics OÜ
-       </strong>
-       <br/>
-       Marszałkowska Centre
-       <br/>
-       ul. Marszałkowska 126/134
-       <br/>
-       00-008 Warszawa
-      </p>
-      <p>
-       <strong>
-        Email:
-       </strong>
-       <a href="mailto:hello@collytics.io" style="color: var(--primary-color);">
-        hello@collytics.io
-       </a>
-      </p>
-     </div>
-     <iframe allowfullscreen="" class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.483163332442!2d21.00732367711467!3d52.2359487579178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc65a4305377%3A0x2a2842c554867b9!2sMarsza%C5%82kowska%20126%2C%2000-008%20Warszawa!5e0!3m2!1spl!2spl!4v1694208000000!5m2!1spl!2spl">
-     </iframe>
-    </div>
-   </div>
-  </section>
-  <section id="podcast" style="padding: 100px 5%; background: var(--dark-secondary);">
-   <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-    <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; font-weight: 600;">
-     Posłuchaj naszego podcastu
-    </h2>
-    <p style="color: var(--text-secondary); margin-bottom: 60px; font-size: 1.1rem;">
-     Rozmawiamy o marketingu, analityce i technologiach.
-    </p>
-    <div class="podcast-grid">
-     <div class="podcast-card">
-      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" data-testid="embed-iframe" frameborder="0" height="100" loading="lazy" src="https://open.spotify.com/embed/episode/6xqQCMvuJPKUQPiTu69jj1?utm_source=generator" style="border-radius:12px" width="50%">
-      </iframe>
-     </div>
-     <div class="podcast-card">
-      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" data-testid="embed-iframe" frameborder="0" height="100" loading="lazy" src="https://open.spotify.com/embed/episode/6tAcHgHFh3omhmxG3wFKE3?utm_source=generator" style="border-radius:12px" width="50%">
-      </iframe>
-     </div>
-     <div class="podcast-card">
-      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" data-testid="embed-iframe" frameborder="0" height="100" loading="lazy" src="https://open.spotify.com/embed/episode/1xOWdlZ4pDe2YK2LG5pjN1?utm_source=generator" style="border-radius:12px" width="50%">
-      </iframe>
-     </div>
-    </div>
-    <div class="podcast-cta">
-     <a class="cta-button" href="https://open.spotify.com/show/5XI8Rescgn7ss1Li5nj8No" rel="nofollow" target="_blank">
-      Zobacz wszystkie odcinki
-     </a>
-    </div>
-   </div>
-  </section>
-  <footer>
-   <div class="footer-container">
-    <div class="footer-cta">
-     <h2>
-      Gotowy, aby rozpocząć projekt?
-     </h2>
-     <p>
-      Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych klientów i zapewnią Ci przewagę nad konkurencją.
-     </p>
-     <a class="cta-button" href="#kontakt">
+     <a href="kontakt.html">
       Kontakt
      </a>
     </div>
-    <div class="logo" style="justify-content: center; margin-bottom: 24px;">
-     <img alt="Collytics" onerror="this.src='assets/images/logo.png'" src="/assets/images/logo main transparent.png" style="height: 40px;"/>
+    <div class="social-links">
+     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+      <img alt="Facebook" src="assets/images/facebook.png"/>
+     </a>
+     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+      <img alt="LinkedIn" src="assets/images/cons8-linkedin-500.svg"/>
+     </a>
+     <a href="https://x.com/collytics" target="_blank" title="Twitter">
+      <img alt="X" src="assets/images/cons8-twitter-500.svg"/>
+     </a>
     </div>
-    <p style="color: var(--text-secondary); margin-bottom: 40px;">
-     Twój partner w analizie danych i marketingu
+   </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+  </div>
+  <!-- Hero section -->
+  <section class="hero-case">
+   <div style="text-align: center;">
+    <span class="case-badge">
+     CASE STUDY
+    </span>
+    <h1>
+     Lab-Wet: Jak nowa strona zwiększyła
+     <br/>
+     widoczność w Google o 47% w 45 dni
+    </h1>
+    <p class="hero-subtitle">
+     Kompleksowa transformacja cyfrowa lidera diagnostyki weterynaryjnej
     </p>
-    <div class="footer-bottom">
+   </div>
+   <div class="hero-image">
+    <img alt="Lab-Wet Case Study" src="assets/images/blog/labwet-case.jpg" style="width: 100%;
+                height: 100%; object-fit: cover; border-radius: 20px;"/>
+   </div>
+   <div class="client-meta">
+    <div class="meta-item">
+     <div class="meta-label">
+      Klient:
+     </div>
+     <div>
+      Lab-Wet (Lider w diagnostyce weterynaryjnej)
+     </div>
+    </div>
+    <div class="meta-item">
+     <div class="meta-label">
+      Cel:
+     </div>
+     <div>
+      Stworzenie nowoczesnej strony WWW, która efektywnie konwertuje i wspiera biznes
+     </div>
+    </div>
+    <div class="meta-item">
+     <div class="meta-label">
+      Wynik:
+     </div>
+     <div>
+      +47% wzrostu widoczności w Google w 45 dni
+     </div>
+    </div>
+   </div>
+   <div class="case-stats">
+    <div class="stat-item">
+     <div class="stat-number">
+      +47%
+     </div>
+     <div class="stat-label">
+      Wzrost widoczności
+     </div>
+    </div>
+    <div class="stat-item">
+     <div class="stat-number">
+      +44%
+     </div>
+     <div class="stat-label">
+      Wzrost ruchu
+     </div>
+    </div>
+    <div class="stat-item">
+     <div class="stat-number">
+      45 dni
+     </div>
+     <div class="stat-label">
+      Do rezultatów
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Content section -->
+  <div class="content">
+   <h2 class="section-title">
+    <span class="section-icon">
+     🎯
+    </span>
+    Wyzwanie: Strona na miarę lidera branży
+   </h2>
+   <p>
+    Lab-Wet, jako czołowe laboratorium weterynaryjne w Polsce, potrzebowało strony internetowej, która odzwierciedlałaby ich wysoką pozycję na rynku. Celem był jasny: zastąpić dotychczasową witrynę nowoczesnym, wydajnym rozwiązaniem. Nowa strona miała być nie tylko estetyczna, ale przede wszystkim stać się skutecznym narzędziem do pozyskiwania klientów i budowania zaufania w tej wysoce specjalistycznej branży.
+   </p>
+   <h2 class="section-title">
+    <span class="section-icon">
+     💡
+    </span>
+    Rozwiązanie: Strategia data-driven
+   </h2>
+   <p>
+    Zastosowane podejście opierało się na strategii data-driven. Wdrożono kompleksowe rozwiązanie obejmujące analizę SEO i identyfikację potencjału, projektowanie UX zorientowane na konwersję oraz pełną optymalizację techniczną. Zidentyfikowano kluczowe usługi i frazy o największym potencjale biznesowym, zaprojektowano intuicyjne ścieżki dla użytkowników i opublikowano w pełni responsywną stronę.
+   </p>
+   <h3 style="margin: 40px 0 30px; font-size: 1.5rem;">
+    Nasze rozwiązanie krok po kroku
+   </h3>
+   <div class="solution-steps">
+    <div class="step-card">
+     <h3>
+      <span>
+       🔍
+      </span>
+      <strong>
+       Analiza SEO i identyfikacja potencjału
+      </strong>
+     </h3>
      <p>
-      © Collytics. All rights reserved. Polityka Prywatności
+      Zidentyfikowano kluczowe usługi i frazy o największym potencjale biznesowym, aby wokół nich zbudować architekturę nowej witryny
+     </p>
+    </div>
+    <div class="step-card">
+     <h3>
+      <span>
+       🎨
+      </span>
+      <strong>
+       Projektowanie UX zorientowane na konwersję
+      </strong>
+     </h3>
+     <p>
+      Zaprojektowano intuicyjne ścieżki dla użytkowników (lekarzy weterynarii i hodowców), aby maksymalnie ułatwić im dostęp do informacji o badaniach
+     </p>
+    </div>
+    <div class="step-card">
+     <h3>
+      <span>
+       ⚡
+      </span>
+      <strong>
+       Wdrożenie i optymalizacja techniczna
+      </strong>
+     </h3>
+     <p>
+      Opublikowano w pełni responsywną i zoptymalizowaną pod kątem wyszukiwarek stronę, gwarantując jej szybkość i nienaganne działanie
      </p>
     </div>
    </div>
+   <h2 class="section-title" style="margin-top: 80px;">
+    <span class="section-icon">
+     📊
+    </span>
+    Rezultaty: Mierzalny wzrost w 6 tygodni
+   </h2>
+   <p style="margin-bottom: 40px;">
+    Wystarczyło zaledwie 45 dni, aby dane z Google Search Console potwierdziły skuteczność nowej strategii
+   </p>
+   <div class="results-grid">
+    <div class="result-card">
+     <div class="result-icon">
+      📈
+     </div>
+     <h3>
+      +47%
+     </h3>
+     <h4>
+      Wzrost widoczności
+     </h4>
+     <p>
+      Osiągając
+      <strong>
+       63,6 tys.
+      </strong>
+      wyświetleń, strona Lab-Wet dociera do niemal o połowę większej liczby potencjalnych klientów
+     </p>
+    </div>
+    <div class="result-card">
+     <div class="result-icon">
+      🖱️
+     </div>
+     <h3>
+      +44%
+     </h3>
+     <h4>
+      Wzrost ruchu
+     </h4>
+     <p>
+      Wzrost widoczności przełożył się na
+      <strong>
+       2,19 tys.
+      </strong>
+      wartościowych odwiedzin
+     </p>
+    </div>
+    <div class="result-card">
+     <div class="result-icon">
+      🚀
+     </div>
+     <h3>
+      +128%
+     </h3>
+     <h4>
+      Wzrost kluczowych usług
+     </h4>
+     <p>
+      Strona dotycząca współczynnika tarczycy u psów i kotów zanotowała rekordowy wzrost
+     </p>
+    </div>
+   </div>
+   <h2 class="section-title" style="margin-top: 80px;">
+    <span class="section-icon">
+     💼
+    </span>
+    Wpływ na biznes: Od kliknięć do wyższych obrotów
+   </h2>
+   <p>
+    W branży opartej na zaufaniu i specjalistycznej wiedzy, każdy punkt procentowy wzrostu widoczności ma bezpośrednie przełożenie na wyniki. Dla Lab-Wet więcej wartościowych wizyt na stronie oznacza więcej zapytań o badania, więcej dostarczonych próbek i w konsekwencji –
+    <strong>
+     wyższe obroty
+    </strong>
+    . Podjęte działania sprawiły, że strona internetowa stała się aktywnym i w pełni mierzalnym kanałem pozyskiwania nowych klientów.
+   </p>
+  </div>
+  <!-- Footer -->
+  <footer>
+   <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <div class="footer-cta">
+     <h2 style="font-size: 36px; margin-bottom: 16px; color: #fff;">
+      Gotowy, aby rozpocząć projekt?
+     </h2>
+     <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 32px;">
+      Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online.
+     </p>
+     <a class="cta-button" href="kontakt.html">
+      Kontakt
+     </a>
+    </div>
+    <img alt="Collytics" src="/assets/images/logo main transparent.png" style="height: 40px; margin-bottom: 20px;"/>
+    <p style="color: #94969c;">
+     © Collytics. All rights reserved.
+    </p>
+   </div>
   </footer>
-  <script>
-   // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Hide/show ENTIRE navigation on scroll
-    let lastScrollTop = 0;
-    const nav = document.querySelector('nav');
-
-    window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down - hide entire nav
-            nav.style.transform = 'translateY(-100%)';
-            nav.style.transition = 'transform 0.3s ease';
-        } else {
-            // Scrolling up - show entire nav
-            nav.style.transform = 'translateY(0)';
-            nav.style.transition = 'transform 0.3s ease';
-        }
-
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-
-    // Form submission
-    document.querySelector('.contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Dziękujemy za zgłoszenie! Skontaktujemy się wkrótce.');
-    });
-
-    // Add animation on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements
-    document.querySelectorAll('.blog-card, .case-study-container').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-  </script>
+  <!-- Skrypt menu.js -->
   <script src="/js/menu.js">
   </script>
- 
-    <!-- Cookie Banner Script -->
-    <script src="../js/cookie-banner.js"></script>
-</body>
+ </body>
 </html>

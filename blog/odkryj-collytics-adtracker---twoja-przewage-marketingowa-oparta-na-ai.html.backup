@@ -16,9 +16,6 @@
 
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/blog.css">
-
-    <!-- Cookie Banner Styles -->
-    <link rel="stylesheet" href="../css/cookie-banner.css">
 </head>
 <body>
 
@@ -157,8 +154,5 @@
             }
         });
     </script>
-
-    <!-- Cookie Banner Script -->
-    <script src="../js/cookie-banner.js"></script>
 </body>
 </html>

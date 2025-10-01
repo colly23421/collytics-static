@@ -1,0 +1,230 @@
+/* Cookie Banner Styles - Collytics.io */
+/* Wersja: 1.0 - Ciemny motyw */
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1a1a2e;
+    box-shadow: 0 -2px 20px rgba(0,0,0,0.5);
+    padding: 25px;
+    z-index: 9999;
+    display: none;
+    animation: slideUp 0.3s ease-out;
+    border-top: 2px solid rgba(124, 93, 250, 0.3);
+}
+
+.cookie-banner.show {
+    display: block;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.banner-header h2 {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 600;
+}
+
+.banner-text {
+    color: #b0b0c0;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.banner-text a {
+    color: #7c5dfa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.banner-text a:hover {
+    color: #9b7ffc;
+    text-decoration: underline;
+}
+
+.consent-options {
+    display: none;
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(124, 93, 250, 0.2);
+}
+
+.consent-options.show {
+    display: block;
+}
+
+.consent-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.consent-category:last-child {
+    border-bottom: none;
+}
+
+.category-info h3 {
+    font-size: 15px;
+    color: #ffffff;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.category-info p {
+    font-size: 13px;
+    color: #b0b0c0;
+    margin: 0;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: .4s;
+    border-radius: 26px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #7c5dfa;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+input:disabled + .slider {
+    background-color: #7c5dfa;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.banner-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #7c5dfa 0%, #9b7ffc 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(124, 93, 250, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #6a4de8 0%, #8969ea 100%);
+    box-shadow: 0 6px 20px rgba(124, 93, 250, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-text {
+    background: transparent;
+    color: #b0b0c0;
+    text-decoration: underline;
+}
+
+.btn-text:hover {
+    color: #ffffff;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .cookie-banner {
+        padding: 15px;
+    }
+
+    .banner-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .consent-category {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .toggle-switch {
+        align-self: flex-end;
+    }
+}
