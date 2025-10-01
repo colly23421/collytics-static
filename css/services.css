@@ -88,8 +88,13 @@
     text-align: center;
 }
 
+hero services-hero h1 {
+    font-size: 3.2 rem;
+
+}
+
 .services-hero h1 {
-    font-size: 4rem;
+
     font-weight: 700;
     margin-bottom: 30px;
     background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%);

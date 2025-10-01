@@ -3,8 +3,7 @@ import re
 from bs4 import BeautifulSoup
 
 # --- GŁÓWNA KONFIGURACJA ---
-# Zmień te wartości, jeśli potrzebujesz
-BASE_FONT_SIZE_NEW = 15  # NOWY bazowy rozmiar czcionki w pikselach (jako liczba)
+BASE_FONT_SIZE_NEW = 15
 HERO_H1_FONT_SIZE = "4.5rem"
 HERO_P_FONT_SIZE = "1.25rem"
 # -----------------------------
@@ -16,8 +15,8 @@ def update_css_file(filepath):
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        # --- ZADANIE 1: Zmniejszenie bazowej czcionki w 'body' ---
-        body_pattern = re.compile(r"(body\s*\{[^}]*?font-size\s*:\s*)(\d+px)([^}]*?\})", re.DOTALL)
+        # POPRAWKA 1: Szukaj font-size w 'html' LUB 'body'
+        body_pattern = re.compile(r"((?:html|body)\s*\{[^}]*?font-size\s*:\s*)(\d+px)([^}]*?\})", re.DOTALL)
 
         def replace_body_font_size(match):
             original_size = match.group(2)
@@ -27,9 +26,8 @@ def update_css_file(filepath):
 
         content, replacements = body_pattern.subn(replace_body_font_size, content)
         if replacements == 0:
-            print("    - UWAGA: Nie znaleziono 'font-size' w 'body' do zmiany.")
+            print("    - UWAGA: Nie znaleziono bazowego 'font-size' w 'html' ani 'body' do zmiany.")
 
-        # --- ZADANIE 2: Konwersja font-size nagłówków (h1-h6) z px na rem ---
         heading_pattern = re.compile(r"(h[1-6]\s*\{[^}]*?font-size\s*:\s*)(\d+)(px)([^}]*?\})", re.DOTALL)
 
         def convert_px_to_rem(match):
@@ -38,12 +36,10 @@ def update_css_file(filepath):
             new_rem_size = f"{rem_value}rem"
             comment = f"/* {original_px}px / {BASE_FONT_SIZE_NEW}px */"
             print(f"    - Konwertuję nagłówek: z {original_px}px na {new_rem_size}.")
-            # Zwracamy całą regułę z podmienioną wartością i komentarzem
             return f"{match.group(1)}{new_rem_size} {comment}{match.group(4)}"
 
         content = heading_pattern.sub(convert_px_to_rem, content)
 
-        # --- ZADANIE 3: Dodanie wyjątku dla sekcji .hero ---
         hero_exception_css = f"""
 /* === Wyjątek dla sekcji Hero na stronie głównej === */
 .hero h1 {{
@@ -79,13 +75,18 @@ def convert_headings_to_sentence_case(html_file):
         changes_made = 0
 
         for tag in headings:
-            if tag.string:
-                original_text = tag.string.strip()
-                sentence_case_text = original_text.lower().capitalize()
+            # POPRAWKA 2: Użyj .get_text() aby pobrać tekst z zagnieżdżonych tagów
+            original_text = tag.get_text(strip=True)
+            if not original_text:
+                continue
 
-                if original_text != sentence_case_text:
-                    tag.string.replace_with(sentence_case_text)
-                    changes_made += 1
+            sentence_case_text = original_text.lower().capitalize()
+
+            if original_text != sentence_case_text:
+                # Wyczyść zawartość taga (usuwa np. <strong>) i wstaw nowy tekst
+                tag.clear()
+                tag.append(sentence_case_text)
+                changes_made += 1
 
         if changes_made > 0:
             with open(html_file, 'w', encoding='utf-8') as f:
@@ -100,14 +101,11 @@ def convert_headings_to_sentence_case(html_file):
 
 def main():
     """Główna funkcja skryptu."""
-    print("🚀 Rozpoczynam automatyczną modyfikację całej strony...")
+    print("🚀 Rozpoczynam automatyczną modyfikację całej strony (wersja 2.0)...")
 
-    # Krok 1: Modyfikacja pliku CSS
     update_css_file('css/global.css')
-
     print("\n" + "="*50 + "\n")
 
-    # Krok 2: Modyfikacja wszystkich plików HTML
     for root, _, files in os.walk('.'):
         if 'node_modules' in root:
             continue

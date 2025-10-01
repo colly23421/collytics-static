@@ -18,14 +18,27 @@
     box-sizing: border-box;
 }
 
+/* === NOWA PODSTAWA TYPOGRAFII === */
+html {
+    /* 1. Ustawiamy nowy, mniejszy bazowy rozmiar czcionki dla całej strony. */
+    font-size: 15px;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--dark-bg);
     color: var(--text-primary);
     line-height: 1.6;
-    /* Dodajemy padding, aby treść nie chowała się pod stałą nawigacją */
-    padding-top: 80px;
+    padding-top: 80px; /* Dodajemy padding, aby treść nie chowała się pod stałą nawigacją */
 }
+
+/* === NOWE, SKALOWALNE NAGŁÓWKI === */
+h1 { font-size: 3.2rem; /* ok. 48px */ }
+h2 { font-size: 2.4rem; /* ok. 36px */ }
+h3 { font-size: 1.6rem; /* ok. 24px */ }
+h4 { font-size: 1.2rem; /* ok. 18px */ }
+h5, h6 { font-size: 1rem; /* ok. 15px */ }
+
 
 /* --- Nawigacja --- */
 .navbar {
@@ -183,8 +196,8 @@ footer {
     margin-bottom: 60px;
 }
 
+/* Uwaga: rozmiar h2 w stopce będzie teraz dziedziczony z globalnych stylów nagłówków */
 .footer-cta h2 {
-    font-size: 2rem;
     margin-bottom: 20px;
 }
 
@@ -222,4 +235,15 @@ footer {
     background: var(--primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+}
+
+/* === WYJĄTEK DLA SEKCJI HERO NA STRONIE GŁÓWNEJ === */
+/* Ta reguła nadpisuje globalny styl h1, ale tylko wewnątrz sekcji .hero */
+.hero h1 {
+    font-size: 4.5rem;
+}
+
+/* Ta reguła zapewnia, że tekst opisu w hero pozostaje większy */
+.hero p {
+    font-size: 1.25rem;
 }
