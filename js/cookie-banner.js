@@ -14,7 +14,7 @@
             <div class="cookie-banner" id="cookieBanner">
                 <div class="banner-content">
                     <div class="banner-header">
-                        <h2>🍪 Używamy plików cookie</h2>
+                        <h2>Używamy plików cookie</h2>
                     </div>
 
                     <div class="banner-text">
@@ -162,18 +162,44 @@
         saveConsent: function(consent) {
             const consentData = {
                 version: '1.0',
-                data: consent
+                data: consent,
+                expiryDate: new Date(Date.now() + CONSENT_EXPIRY_DAYS * 24 * 60 * 60 * 1000).toISOString()
             };
 
-            // Zapisz w zmiennej JavaScript (zamiast localStorage)
-            window.cookieConsent = consentData;
-
-            console.log('Zgody zapisane:', consent);
+            // Zapisz w localStorage zamiast zmiennej window
+            try {
+                localStorage.setItem(COOKIE_NAME, JSON.stringify(consentData));
+                console.log('Zgody zapisane:', consent);
+            } catch (e) {
+                // Fallback jeśli localStorage nie działa
+                window.cookieConsent = consentData;
+                console.log('Zgody zapisane w pamięci (localStorage niedostępny)');
+            }
         },
 
         getConsent: function() {
-            // Odczytaj ze zmiennej JavaScript
-            return window.cookieConsent ? window.cookieConsent.data : null;
+            try {
+                // Odczytaj z localStorage
+                const saved = localStorage.getItem(COOKIE_NAME);
+                if (!saved) return null;
+
+                const consentData = JSON.parse(saved);
+
+                // Sprawdź czy nie wygasło (365 dni)
+                if (consentData.expiryDate) {
+                    const expiry = new Date(consentData.expiryDate);
+                    if (expiry < new Date()) {
+                        // Wygasło - usuń
+                        localStorage.removeItem(COOKIE_NAME);
+                        return null;
+                    }
+                }
+
+                return consentData.data;
+            } catch (e) {
+                // Fallback - odczytaj ze zmiennej window
+                return window.cookieConsent ? window.cookieConsent.data : null;
+            }
         },
 
         loadScripts: function(consent) {
@@ -224,7 +250,11 @@
 
     // Funkcja resetowania dla testów
     window.resetCookieConsent = function() {
-        window.cookieConsent = null;
+        try {
+            localStorage.removeItem(COOKIE_NAME);
+        } catch (e) {
+            window.cookieConsent = null;
+        }
         location.reload();
     };
 
