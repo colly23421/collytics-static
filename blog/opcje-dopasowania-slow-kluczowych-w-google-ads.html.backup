@@ -1,139 +1,276 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opcje dopasowania słów kluczowych w Google Ads - Kompletny przewodnik | Collytics</title>
-    <meta name="description" content="Poznaj typy dopasowania słów kluczowych w Google Ads: przybliżone, do wyrażenia i ścisłe. Dowiedz się kiedy stosować każde z nich dla maksymalnego ROI.">
-
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');</script>
-
-    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/blog.css">
-</head>
-<body>
-
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a class="logo" href="/index.html"><img alt="Collytics" src="../assets/images/logo main transparent.png"/></a>
-            <button class="menu-trigger" id="menuTrigger">Menu</button>
-        </div>
-    </nav>
-    <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-close" id="closeMenu">Close</button>
-        <div class="dropdown-menu-inner">
-            <div class="menu-section">
-                <a href="/index.html">Home</a>
-                <a href="/services.html">Serwis</a>
-                <a href="/blog/index.html">Blog</a>
-                <a href="/about.html">O nas</a>
-                <a href="/kontakt.html">Kontakt</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook"><img alt="Facebook" src="../assets/images/facebook.png"/></a>
-                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"/></a>
-                <a href="https://x.com/collytics" target="_blank" title="Twitter"><img alt="X" src="../assets/images/cons8-twitter-500.svg"/></a>
-            </div>
-        </div>
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   Opcje dopasowania s&lstrok;&oacute;w kluczowych w Google Ads - Kompletny przewodnik | Collytics
+  </title>
+  <meta content="Poznaj typy dopasowania s&lstrok;&oacute;w kluczowych w Google Ads: przybli&zdot;one, do wyra&zdot;enia i &sacute;cis&lstrok;e. Dowiedz si&eogon; kiedy stosowa&cacute; ka&zdot;de z nich dla maksymalnego ROI." name="description">
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');
+  </script>
+  <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../css/global.css" rel="stylesheet">
+  <link href="../css/blog.css" rel="stylesheet">
+  <!-- Cookie Banner Styles -->
+  <link href="../css/cookie-banner.css" rel="stylesheet">
+ </head>
+ <body>
+  <nav class="navbar" id="navbar">
+   <div class="nav-container">
+    <a class="logo" href="/index.html">
+     <img alt="Collytics" src="../assets/images/logo main transparent.png">
+    </a>
+    <button class="menu-trigger" id="menuTrigger">
+     Menu
+    </button>
+   </div>
+  </nav>
+  <div class="dropdown-menu" id="dropdownMenu">
+   <button class="dropdown-close" id="closeMenu">
+    Close
+   </button>
+   <div class="dropdown-menu-inner">
+    <div class="menu-section">
+     <a href="/index.html">
+      Home
+     </a>
+     <a href="/services.html">
+      Serwis
+     </a>
+     <a href="/blog/index.html">
+      Blog
+     </a>
+     <a href="/about.html">
+      O nas
+     </a>
+     <a href="/kontakt.html">
+      Kontakt
+     </a>
     </div>
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-container">
-            <a href="../index.html">Strona główna</a>
-            <span class="breadcrumbs-separator">›</span>
-            <a href="index.html">Blog</a>
-            <span class="breadcrumbs-separator">›</span>
-            <span class="breadcrumbs-current">Opcje dopasowania słów...</span>
-        </div>
+    <div class="social-links">
+     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+      <img alt="Facebook" src="../assets/images/facebook.png">
+     </a>
+     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+      <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg">
+     </a>
+     <a href="https://x.com/collytics" target="_blank" title="Twitter">
+      <img alt="X" src="../assets/images/cons8-twitter-500.svg">
+     </a>
     </div>
-
-    <header class="article-hero">
-        <div class="article-container">
-            <div class="article-meta">
-                <span class="category-badge">Google Ads</span>
-                <span>10 min czytania</span>
-                <span>•</span>
-                <span>23 października 2024</span>
-            </div>
-            <h1>Opcje dopasowania słów kluczowych w Google Ads</h1>
-            <p class="lead">W kampaniach tekstowych Google Ads kluczowym ustawieniem jest wybór słów kluczowych, które wyzwalają udział kampanii w aukcji. Poznaj różnice między dopasowaniem przybliżonym, do wyrażenia i ścisłym.</p>
-        </div>
-        <div class="featured-image">
-            <img src="../assets/images/6773179d80bd75f7af28392e_Opcje dopasowania słów kluczowych w Google Ads.jpeg" alt="Opcje dopasowania słów kluczowych Google Ads">
-        </div>
-    </header>
-
-    <main class="article-content">
-        <div class="article-container">
-            <p>W kampaniach tekstowych Google Ads kluczowym ustawieniem jest wybór „słów kluczowych", które wyzwalają udział naszej kampanii w aukcji, decydującej o „zwycięzcy" w wynikach wyszukiwania (SERP). Czyli, na której stronie wyników wyszukiwania w Google pojawi się nasza reklama tekstowa.</p>
-            <p>W Google Ads wyróżniamy trzy typy dopasowania słów kluczowych: <strong>dopasowanie przybliżone, dopasowanie do wyrażenia, dopasowanie ścisłe</strong>.</p>
-            <p>Warto od razu zaznaczyć, że w trakcie tworzenia planu mediów przydatnym jest określenie form targetowania dla konkretnych kampanii czy nawet reklam. Niestety, często w media planach nie określa się w ogóle słów kluczowych, a co dopiero form dopasowania. Choć w media planach które są często prezentowane osobom nie będącym specjalistami SEM, może to być usprawiedliwione, to przy analizie rynku dla nowego klienta lub kampanii jest to już poważnym błędem.</p>
-
-            <h2>Nasza metodologia w Collytics</h2>
-            <p>W Collytics zawsze przed stworzeniem samego planu mediów, korzystając z narzędzi takich jak <strong>Planer Słów Kluczowych, Google Search Console</strong> czy <strong>SEMRUSH</strong>, biorąc pod uwagę budżet, badamy możliwości zasięgu marki. Dobieramy słowa kluczowe oraz monitorujemy działania potencjalnej konkurencji.</p>
-            <p>W tym kontekście różnicowanie między typami dopasowania jest niezwykle istotne. Należy również dodać iż sprawdzenie konkurencji jest istotne nie tyle by się sugerować ich działaniami ale z uwagi na fakt, że właśnie z nimi będziemy konkurować o miejsce w przestrzeni digitalowej.</p>
-
-            <img src="../assets/images/677317cde9b5b36fd613afd0_Planer-slow-kluczowych-1024x434.png" alt="Planer słów kluczowych Google">
-
-            <h2>Czym są dopasowania i kiedy je wybierać</h2>
-            <div class="match-type-box">
-                <h3>Dopasowanie przybliżone</h3>
-                <p>Reklamy mogą być wyświetlane w wynikach wyszukiwań, które są luźno związane z Twoim słowem kluczowym...</p>
-            </div>
-            <div class="match-type-box">
-                <h3>Dopasowanie do wyrażenia</h3>
-                <p>Reklamy mogą pojawić się w wynikach wyszukiwań zawierających wyrażenia bliskie Twojemu słowu kluczowemu...</p>
-            </div>
-            <div class="match-type-box">
-                <h3>Dopasowanie ścisłe</h3>
-                <p>Reklamy mogą pojawiać się w wynikach wyszukiwań o podobnym znaczeniu lub zamiarze co Twoje słowo kluczowe...</p>
-            </div>
-
-            <h2>Wykluczające słowa kluczowe</h2>
-            <p>Przy tej okazji należy również wspomnieć o <strong>wykluczających słowach kluczowych</strong>...</p>
-
-            <div class="highlight-box">
-                <h3>💡 Wskazówka dla małych budżetów</h3>
-                <p>Obecnie Google Ads mocno skręca w stronę AI... zalecane jest korzystanie z <strong>dopasowania przybliżonego</strong> razem z <strong>inteligentnym ustalaniem stawek</strong>.</p>
-            </div>
-
-            <h2>Najlepsze praktyki w doborze dopasowań</h2>
-            <ul>
-                <li><strong>Start z szerokim targetowaniem:</strong> Rozpocznij od dopasowania przybliżonego, aby zebrać dane</li>
-                <li><strong>Analiza raportów wyszukiwań:</strong> Regularnie sprawdzaj, jakie zapytania wyzwalają Twoje reklamy</li>
-                <li><strong>Stopniowe zawężanie:</strong> Przenoś najlepsze frazy do bardziej restrykcyjnych dopasowań</li>
-                <li><strong>Budowanie listy wykluczeń:</strong> Systematycznie dodawaj słowa wykluczające</li>
-                <li><strong>Testowanie różnych kombinacji:</strong> Używaj różnych typów dopasowań w różnych grupach reklam</li>
-            </ul>
-
-            <h2>Podsumowanie</h2>
-            <p>Wybór odpowiedniego typu dopasowania słów kluczowych to kluczowa decyzja wpływająca na skuteczność kampanii Google Ads...</p>
-
-            <div class="article-cta">
-                <h3>Potrzebujesz pomocy z kampaniami Google Ads?</h3>
-                <p>Nasz zespół ekspertów pomoże Ci dobrać optymalne słowa kluczowe i typy dopasowań dla Twojego biznesu.</p>
-                <a href="/kontakt.html" class="cta-button">Skontaktuj się z nami</a>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-bottom">
-                <p>© Collytics. All rights reserved. <a href="/legal/privacy-policy.html">Polityka Prywatności</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("click", function(e) {
+   </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+  </div>
+  <div class="breadcrumbs">
+   <div class="breadcrumbs-container">
+    <a href="../index.html">
+     Strona g&lstrok;&oacute;wna
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <a href="index.html">
+     Blog
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <span class="breadcrumbs-current">
+     Opcje dopasowania s&lstrok;&oacute;w...
+    </span>
+   </div>
+  </div>
+  <header class="article-hero">
+   <div class="article-container">
+    <div class="article-meta">
+     <span class="category-badge">
+      Google Ads
+     </span>
+     <span>
+      10 min czytania
+     </span>
+     <span>
+      &bull;
+     </span>
+     <span>
+      23 pa&zacute;dziernika 2024
+     </span>
+    </div>
+    <h1>
+     Opcje dopasowania s&lstrok;&oacute;w kluczowych w google ads
+    </h1>
+    <p class="lead">
+     W kampaniach tekstowych Google Ads kluczowym ustawieniem jest wyb&oacute;r s&lstrok;&oacute;w kluczowych, kt&oacute;re wyzwalaj&aogon; udzia&lstrok; kampanii w aukcji. Poznaj r&oacute;&zdot;nice mi&eogon;dzy dopasowaniem przybli&zdot;onym, do wyra&zdot;enia i &sacute;cis&lstrok;ym.
+    </p>
+   </div>
+   <div class="featured-image">
+    <img alt="Opcje dopasowania s&lstrok;&oacute;w kluczowych Google Ads" src="../assets/images/6773179d80bd75f7af28392e_Opcje dopasowania s&lstrok;&oacute;w kluczowych w Google Ads.jpeg">
+   </div>
+  </header>
+  <main class="article-content">
+   <div class="article-container">
+    <p>
+     W kampaniach tekstowych Google Ads kluczowym ustawieniem jest wyb&oacute;r &bdquo;s&lstrok;&oacute;w kluczowych", kt&oacute;re wyzwalaj&aogon; udzia&lstrok; naszej kampanii w aukcji, decyduj&aogon;cej o &bdquo;zwyci&eogon;zcy" w wynikach wyszukiwania (SERP). Czyli, na kt&oacute;rej stronie wynik&oacute;w wyszukiwania w Google pojawi si&eogon; nasza reklama tekstowa.
+    </p>
+    <p>
+     W Google Ads wyr&oacute;&zdot;niamy trzy typy dopasowania s&lstrok;&oacute;w kluczowych:
+     <strong>
+      dopasowanie przybli&zdot;one, dopasowanie do wyra&zdot;enia, dopasowanie &sacute;cis&lstrok;e
+     </strong>
+     .
+    </p>
+    <p>
+     Warto od razu zaznaczy&cacute;, &zdot;e w trakcie tworzenia planu medi&oacute;w przydatnym jest okre&sacute;lenie form targetowania dla konkretnych kampanii czy nawet reklam. Niestety, cz&eogon;sto w media planach nie okre&sacute;la si&eogon; w og&oacute;le s&lstrok;&oacute;w kluczowych, a co dopiero form dopasowania. Cho&cacute; w media planach kt&oacute;re s&aogon; cz&eogon;sto prezentowane osobom nie b&eogon;d&aogon;cym specjalistami SEM, mo&zdot;e to by&cacute; usprawiedliwione, to przy analizie rynku dla nowego klienta lub kampanii jest to ju&zdot; powa&zdot;nym b&lstrok;&eogon;dem.
+    </p>
+    <h2>
+     Nasza metodologia w collytics
+    </h2>
+    <p>
+     W Collytics zawsze przed stworzeniem samego planu medi&oacute;w, korzystaj&aogon;c z narz&eogon;dzi takich jak
+     <strong>
+      Planer S&lstrok;&oacute;w Kluczowych, Google Search Console
+     </strong>
+     czy
+     <strong>
+      SEMRUSH
+     </strong>
+     , bior&aogon;c pod uwag&eogon; bud&zdot;et, badamy mo&zdot;liwo&sacute;ci zasi&eogon;gu marki. Dobieramy s&lstrok;owa kluczowe oraz monitorujemy dzia&lstrok;ania potencjalnej konkurencji.
+    </p>
+    <p>
+     W tym kontek&sacute;cie r&oacute;&zdot;nicowanie mi&eogon;dzy typami dopasowania jest niezwykle istotne. Nale&zdot;y r&oacute;wnie&zdot; doda&cacute; i&zdot; sprawdzenie konkurencji jest istotne nie tyle by si&eogon; sugerowa&cacute; ich dzia&lstrok;aniami ale z uwagi na fakt, &zdot;e w&lstrok;a&sacute;nie z nimi b&eogon;dziemy konkurowa&cacute; o miejsce w przestrzeni digitalowej.
+    </p>
+    <img alt="Planer s&lstrok;&oacute;w kluczowych Google" src="../assets/images/677317cde9b5b36fd613afd0_Planer-slow-kluczowych-1024x434.png">
+    <h2>
+     Czym s&aogon; dopasowania i kiedy je wybiera&cacute;
+    </h2>
+    <div class="match-type-box">
+     <h3>
+      Dopasowanie przybli&zdot;one
+     </h3>
+     <p>
+      Reklamy mog&aogon; by&cacute; wy&sacute;wietlane w wynikach wyszukiwa&nacute;, kt&oacute;re s&aogon; lu&zacute;no zwi&aogon;zane z Twoim s&lstrok;owem kluczowym...
+     </p>
+    </div>
+    <div class="match-type-box">
+     <h3>
+      Dopasowanie do wyra&zdot;enia
+     </h3>
+     <p>
+      Reklamy mog&aogon; pojawi&cacute; si&eogon; w wynikach wyszukiwa&nacute; zawieraj&aogon;cych wyra&zdot;enia bliskie Twojemu s&lstrok;owu kluczowemu...
+     </p>
+    </div>
+    <div class="match-type-box">
+     <h3>
+      Dopasowanie &sacute;cis&lstrok;e
+     </h3>
+     <p>
+      Reklamy mog&aogon; pojawia&cacute; si&eogon; w wynikach wyszukiwa&nacute; o podobnym znaczeniu lub zamiarze co Twoje s&lstrok;owo kluczowe...
+     </p>
+    </div>
+    <h2>
+     Wykluczaj&aogon;ce s&lstrok;owa kluczowe
+    </h2>
+    <p>
+     Przy tej okazji nale&zdot;y r&oacute;wnie&zdot; wspomnie&cacute; o
+     <strong>
+      wykluczaj&aogon;cych s&lstrok;owach kluczowych
+     </strong>
+     ...
+    </p>
+    <div class="highlight-box">
+     <h3>
+      💡 wskaz&oacute;wka dla ma&lstrok;ych bud&zdot;et&oacute;w
+     </h3>
+     <p>
+      Obecnie Google Ads mocno skr&eogon;ca w stron&eogon; AI... zalecane jest korzystanie z
+      <strong>
+       dopasowania przybli&zdot;onego
+      </strong>
+      razem z
+      <strong>
+       inteligentnym ustalaniem stawek
+      </strong>
+      .
+     </p>
+    </div>
+    <h2>
+     Najlepsze praktyki w doborze dopasowa&nacute;
+    </h2>
+    <ul>
+     <li>
+      <strong>
+       Start z szerokim targetowaniem:
+      </strong>
+      Rozpocznij od dopasowania przybli&zdot;onego, aby zebra&cacute; dane
+     </li>
+     <li>
+      <strong>
+       Analiza raport&oacute;w wyszukiwa&nacute;:
+      </strong>
+      Regularnie sprawdzaj, jakie zapytania wyzwalaj&aogon; Twoje reklamy
+     </li>
+     <li>
+      <strong>
+       Stopniowe zaw&eogon;&zdot;anie:
+      </strong>
+      Przeno&sacute; najlepsze frazy do bardziej restrykcyjnych dopasowa&nacute;
+     </li>
+     <li>
+      <strong>
+       Budowanie listy wyklucze&nacute;:
+      </strong>
+      Systematycznie dodawaj s&lstrok;owa wykluczaj&aogon;ce
+     </li>
+     <li>
+      <strong>
+       Testowanie r&oacute;&zdot;nych kombinacji:
+      </strong>
+      U&zdot;ywaj r&oacute;&zdot;nych typ&oacute;w dopasowa&nacute; w r&oacute;&zdot;nych grupach reklam
+     </li>
+    </ul>
+    <h2>
+     Podsumowanie
+    </h2>
+    <p>
+     Wyb&oacute;r odpowiedniego typu dopasowania s&lstrok;&oacute;w kluczowych to kluczowa decyzja wp&lstrok;ywaj&aogon;ca na skuteczno&sacute;&cacute; kampanii Google Ads...
+    </p>
+    <div class="article-cta">
+     <h3>
+      Potrzebujesz pomocy z kampaniami google ads?
+     </h3>
+     <p>
+      Nasz zesp&oacute;&lstrok; ekspert&oacute;w pomo&zdot;e Ci dobra&cacute; optymalne s&lstrok;owa kluczowe i typy dopasowa&nacute; dla Twojego biznesu.
+     </p>
+     <a class="cta-button" href="/kontakt.html">
+      Skontaktuj si&eogon; z nami
+     </a>
+    </div>
+   </div>
+  </main>
+  <footer>
+   <div class="footer-container">
+    <div class="footer-bottom">
+     <p>
+      &copy; Collytics. All rights reserved.
+      <a href="/legal/privacy-policy.html">
+       Polityka Prywatno&sacute;ci
+      </a>
+     </p>
+    </div>
+   </div>
+  </footer>
+  <script>
+   document.addEventListener("click", function(e) {
             if(e.target.id === "menuTrigger") {
                 document.getElementById("dropdownMenu").classList.add("active");
                 document.getElementById("menuOverlay").classList.add("active");
@@ -143,6 +280,9 @@
                 document.getElementById("menuOverlay").classList.remove("active");
             }
         });
-    </script>
-</body>
+  </script>
+  <!-- Cookie Banner Script -->
+  <script src="../js/cookie-banner.js">
+  </script>
+ </body>
 </html>

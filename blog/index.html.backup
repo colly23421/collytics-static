@@ -1,318 +1,459 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GT-5R3VKTJG");</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Collytics | Marketing, AI i Analityka</title>
-    <meta name="description" content="Odkryj najnowsze artykuły o marketingu cyfrowym, sztucznej inteligencji, Google Ads, Facebook Ads i analityce webowej.">
-
-    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-      <link rel="stylesheet" href="/css/global.css">
-      <link rel="stylesheet" href="/css/blog.css">
-
-
-</head>
-<body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-
-
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a class="logo" href="/index.html">
-                <img alt="Collytics" src="/assets/images/logo main transparent.png"/>
-            </a>
-            <button class="menu-trigger" id="menuTrigger">Menu</button>
-        </div>
-    </nav>
-
-    <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-close" id="closeMenu">Close</button>
-        <div class="dropdown-menu-inner">
-            <div class="menu-section">
-                <a href="/index.html">Home</a>
-                <a href="/services.html">Serwis</a>
-                <a href="/blog/index.html">Blog</a>
-                <a href="/about.html">O nas</a>
-                <a href="/kontakt.html">Kontakt</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
-                    <img alt="Facebook" src="/assets/images/facebook.png"/>
-                </a>
-                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
-                    <img alt="LinkedIn" src="/assets/images/cons8-linkedin-500.svg"/>
-                </a>
-                <a href="https://x.com/collytics" target="_blank" title="Twitter">
-                    <img alt="X" src="/assets/images/cons8-twitter-500.svg"/>
-                </a>
-            </div>
-        </div>
+ <head>
+  <!-- Google Tag Manager -->
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GT-5R3VKTJG");
+  </script>
+  <!-- End Google Tag Manager -->
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");
+  </script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   Blog - Collytics | Marketing, AI i Analityka
+  </title>
+  <meta content="Odkryj najnowsze artyku&lstrok;y o marketingu cyfrowym, sztucznej inteligencji, Google Ads, Facebook Ads i analityce webowej." name="description">
+  <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="/css/global.css" rel="stylesheet">
+  <link href="/css/blog.css" rel="stylesheet">
+  <!-- Cookie Banner Styles -->
+  <link href="../css/cookie-banner.css" rel="stylesheet">
+ </head>
+ <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <nav class="navbar" id="navbar">
+   <div class="nav-container">
+    <a class="logo" href="/index.html">
+     <img alt="Collytics" src="/assets/images/logo main transparent.png">
+    </a>
+    <button class="menu-trigger" id="menuTrigger">
+     Menu
+    </button>
+   </div>
+  </nav>
+  <div class="dropdown-menu" id="dropdownMenu">
+   <button class="dropdown-close" id="closeMenu">
+    Close
+   </button>
+   <div class="dropdown-menu-inner">
+    <div class="menu-section">
+     <a href="/index.html">
+      Home
+     </a>
+     <a href="/services.html">
+      Serwis
+     </a>
+     <a href="/blog/index.html">
+      Blog
+     </a>
+     <a href="/about.html">
+      O nas
+     </a>
+     <a href="/kontakt.html">
+      Kontakt
+     </a>
     </div>
-
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-
-
-    <!-- Hero sekcja -->
-    <section class="blog-hero">
-        <div class="blog-hero-content">
-
-            <h1>Strefa eksperta</h1>
-            <p>Witaj na naszym blogu o analityce internetowej! Znajdziesz tutaj najnowsze informacje, praktyczne porady i dogłębne analizy dotyczące mierzenia, analizowania i optymalizacji danych internetowych.</p>
-        </div>
-    </section>
-
-    <!-- Lista artykułów -->
-    <div class="container">
-        <div class="articles-grid">
-
-            <!-- Artykuły posortowane od najnowszych -->
-
-            <!-- 1. JSON-LD zwiększa widoczność - 18 sierpnia 2025 -->
-            <a href="jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg" alt="JSON-LD SEO">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">SEO</span>
-                    <h2 class="article-title">Zrobiliśmy test: Jak JSON-LD zwiększa widoczność w wyszukiwarkach AI</h2>
-                    <p class="article-excerpt">Dane strukturyzowane jako klucz do sukcesu w erze wyszukiwarek opartych na AI.</p>
-                    <div class="article-meta">
-                        <span class="article-date">18 sierpnia 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 2. Sekretne dane Facebook Ads - 2 sierpnia 2025 -->
-            <a href="sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/688e0a31363cc1c2a7fe38b3_analizy%20danych%20Facebook%20Ads.jpg" alt="Facebook Ads dane">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Facebook Ads</span>
-                    <h2 class="article-title">Sekretne dane Facebook Ads, które zmienią twoje kampanie: prosty sposób na odkrycie wzorców aktywności klientów</h2>
-                    <p class="article-excerpt">Odkryj ukryte wzorce aktywności klientów i wykorzystaj je do optymalizacji kampanii Facebook Ads.</p>
-                    <div class="article-meta">
-                        <span class="article-date">2 sierpnia 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 3. Czy LLMs.txt pomoże AI - 15 lipca 2025 -->
-            <a href="czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6876194656c6edf5453ea3b7_llms-txt-p-3200.jpeg" alt="LLMs.txt">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">AI & SEO</span>
-                    <h2 class="article-title">Czy LLMs.txt pomoże AI zrozumieć Twoją stronę lepiej?</h2>
-                    <p class="article-excerpt">Nowy standard komunikacji z modelami językowymi. Jak przygotować swoją stronę na erę AI?</p>
-                    <div class="article-meta">
-                        <span class="article-date">15 lipca 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 4. Niski koszt CPC Facebook Ads - 6 maja 2025 -->
-            <a href="niski-koszt-cpc-w-kampanii-facebook-ads-dla-wymagajacego-klienta-case-study-collytics.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/68195f31233e844c8b2e76e3_facebook%20ads.jpg" alt="Case Study Facebook Ads">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Case Study</span>
-                    <h2 class="article-title">Niski koszt CPC w kampanii Facebook Ads dla wymagającego klienta? Case Study Collytics</h2>
-                    <p class="article-excerpt">Jak obniżyliśmy koszt CPC o 73% przy zachowaniu wysokiej jakości leadów. Rzeczywisty przypadek klienta.</p>
-                    <div class="article-meta">
-                        <span class="article-date">6 maja 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 5. Najnowsze wytyczne Google Ads - 15 kwietnia 2025 -->
-            <a href="najnowsze-wytyczne-google-ads---kwiecien-2025.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/67fdad442c62cf22981fb93e_Optymalne%20ustawienia%20Google%20Ads.png" alt="Najnowsze wytyczne Google Ads">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Google Ads</span>
-                    <h2 class="article-title">Najnowsze wytyczne Google Ads - kwiecień 2025</h2>
-                    <p class="article-excerpt">Poznaj kluczowe zmiany w Google Ads na kwiecień 2025 i dowiedz się, jak dostosować swoje kampanie do nowych wymagań.</p>
-                    <div class="article-meta">
-                        <span class="article-date">15 kwietnia 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 6. Reklamy PPC leków - 4 kwietnia 2025 -->
-            <a href="reklamy-ppc-lekow-ograniczenia-duze-ale-sprzedaz-i-tak-szybuje-w-gore.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/67efc8aa38d57737fa9e8add_Bez%20nazwy.png" alt="Reklamy PPC leków">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">PPC</span>
-                    <h2 class="article-title">Reklamy PPC leków: Ograniczenia duże, ale sprzedaż i tak szybuje w górę</h2>
-                    <p class="article-excerpt">Jak skutecznie reklamować produkty farmaceutyczne pomimo restrykcyjnych przepisów? Sprawdzone strategie i case studies.</p>
-                    <div class="article-meta">
-                        <span class="article-date">4 kwietnia 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 7. Odkryj Collytics AdTracker - 27 marca 2025 -->
-            <a href="odkryj-collytics-adtracker---twoja-przewage-marketingowa-oparta-na-ai.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/67e5496bc7cb74bcef108d87_collytics%20ad%20tracker.png" alt="Collytics AdTracker">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">AI & Marketing</span>
-                    <h2 class="article-title">Odkryj Collytics AdTracker – Twoją przewagę marketingową opartą na AI</h2>
-                    <p class="article-excerpt">Rewolucyjne narzędzie AI do śledzenia i optymalizacji kampanii reklamowych. Zwiększ ROI dzięki inteligentnej analityce.</p>
-                    <div class="article-meta">
-                        <span class="article-date">27 marca 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 8. Facebook Conversion API - 3 lutego 2025 -->
-            <a href="facebook-conversion-api-api-konwersji-bezpieczniejsze-i-bardziej-niezawodne-zrodlo-danych.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/67a1281ce07fe10325214982_AdobeStock_816930321-p-3200.jpeg" alt="Facebook Conversion API">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Facebook Ads</span>
-                    <h2 class="article-title">Facebook Conversion API (API konwersji): bezpieczniejsze i bardziej niezawodne źródło danych</h2>
-                    <p class="article-excerpt">Jak wdrożyć Facebook Conversion API i dlaczego jest to kluczowe dla skuteczności kampanii w erze prywatności.</p>
-                    <div class="article-meta">
-                        <span class="article-date">3 lutego 2025</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 9. Google Tag Manager w WordPress - 14 listopada 2024 -->
-            <a href="google-tag-manager-w-wordpress-jak-zainstalowac.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg" alt="GTM WordPress">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">WordPress</span>
-                    <h2 class="article-title">Google Tag Manager w WordPress – jak zainstalować</h2>
-                    <p class="article-excerpt">Kompletny przewodnik instalacji GTM w WordPress. Od podstawowej konfiguracji po zaawansowane śledzenie.</p>
-                    <div class="article-meta">
-                        <span class="article-date">14 listopada 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 10. Opcje dopasowania słów kluczowych - 23 października 2024 -->
-            <a href="opcje-dopasowania-slow-kluczowych-w-google-ads.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6773179d80bd75f7af28392e_Opcje%20dopasowania%20s%C5%82o%CC%81w%20kluczowych%20w%20Google%20Ads.jpeg" alt="Słowa kluczowe Google Ads">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Google Ads</span>
-                    <h2 class="article-title">Opcje dopasowania słów kluczowych w Google Ads</h2>
-                    <p class="article-excerpt">Poznaj wszystkie typy dopasowań słów kluczowych i dowiedz się, kiedy stosować każde z nich dla maksymalnego ROI.</p>
-                    <div class="article-meta">
-                        <span class="article-date">23 października 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 11. AI w raportach Google Analytics 4 - 15 października 2024 -->
-            <a href="ai-w-raportach-google-analytics-4-jak-wykorzystac-zaawansowane-funkcje-napedzane-przez-sztuczna-inteligencje.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6773394308235e8c6cb24fc1_ai-w-raportach-google-analytics-4-jak-wykorzystac.png" alt="AI w Google Analytics 4">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Google Analytics</span>
-                    <h2 class="article-title">AI w raportach Google Analytics 4. Jak wykorzystać zaawansowane funkcje napędzane przez sztuczną inteligencję</h2>
-                    <p class="article-excerpt">Wykorzystaj pełen potencjał sztucznej inteligencji w GA4 do głębszej analizy danych.</p>
-                    <div class="article-meta">
-                        <span class="article-date">15 października 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 12. Google Search Console - 17 września 2024 -->
-            <a href="google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677314625a8000f04b5e7582_google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow.jpeg" alt="Google Search Console">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">SEO Tools</span>
-                    <h2 class="article-title">Google Search Console: Kompleksowe narzędzie nie tylko dla webmasterów</h2>
-                    <p class="article-excerpt">Odkryj wszystkie możliwości GSC. Od podstawowej diagnostyki po zaawansowaną optymalizację.</p>
-                    <div class="article-meta">
-                        <span class="article-date">17 września 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 13. Alternatywa dla Google Analytics - 17 sierpnia 2024 -->
-            <a href="alternatywa-dla-google-analytics-czy-to-ma-sens.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6773150c83e90917f5806357_analityka-internetowa-c-2048x1544.png" alt="Alternatywy dla GA">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Analytics</span>
-                    <h2 class="article-title">Alternatywa dla Google Analytics – czy to ma sens?</h2>
-                    <p class="article-excerpt">Przegląd najlepszych alternatyw dla GA4. Kiedy warto rozważyć zmianę narzędzia analitycznego?</p>
-                    <div class="article-meta">
-                        <span class="article-date">17 sierpnia 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 14. Znaczenie Tagowania Strony - 1 sierpnia 2024 -->
-            <a href="znaczenie-tagowania-strony-za-pomoca-google-tag-manager.html" class="article-card">
-                <div class="article-image">
-                    <img src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677310d5b3e1d58c2c732f10_Znaczenie-Tagowania-Strony-za-Pomoca-Google-Tag-Manager-2048x1222.jpeg" alt="Google Tag Manager">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Analytics</span>
-                    <h2 class="article-title">Znaczenie Tagowania Strony za Pomocą Google Tag Manager</h2>
-                    <p class="article-excerpt">Kompletny przewodnik po implementacji GTM. Od podstaw do zaawansowanych strategii śledzenia.</p>
-                    <div class="article-meta">
-                        <span class="article-date">1 sierpnia 2024</span>
-                        <span class="read-more">Czytaj więcej →</span>
-                    </div>
-                </div>
-            </a>
-
-        </div>
+    <div class="social-links">
+     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+      <img alt="Facebook" src="/assets/images/facebook.png">
+     </a>
+     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+      <img alt="LinkedIn" src="/assets/images/cons8-linkedin-500.svg">
+     </a>
+     <a href="https://x.com/collytics" target="_blank" title="Twitter">
+      <img alt="X" src="/assets/images/cons8-twitter-500.svg">
+     </a>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Collytics. Wszystkie prawa zastrzeżone.</p>
-    </footer>
-
-    <script>
-            document.addEventListener("click", function(e) {
+   </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+  </div>
+  <!-- Hero sekcja -->
+  <section class="blog-hero">
+   <div class="blog-hero-content">
+    <h1>
+     Strefa eksperta
+    </h1>
+    <p>
+     Witaj na naszym blogu o analityce internetowej! Znajdziesz tutaj najnowsze informacje, praktyczne porady i dog&lstrok;&eogon;bne analizy dotycz&aogon;ce mierzenia, analizowania i optymalizacji danych internetowych.
+    </p>
+   </div>
+  </section>
+  <!-- Lista artykułów -->
+  <div class="container">
+   <div class="articles-grid">
+    <!-- Artykuły posortowane od najnowszych -->
+    <!-- 1. JSON-LD zwiększa widoczność - 18 sierpnia 2025 -->
+    <a class="article-card" href="jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai.html">
+     <div class="article-image">
+      <img alt="JSON-LD SEO" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       SEO
+      </span>
+      <h2 class="article-title">
+       Zrobili&sacute;my test: jak json-ld zwi&eogon;ksza widoczno&sacute;&cacute; w wyszukiwarkach ai
+      </h2>
+      <p class="article-excerpt">
+       Dane strukturyzowane jako klucz do sukcesu w erze wyszukiwarek opartych na AI.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        18 sierpnia 2025
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 2. Sekretne dane Facebook Ads - 2 sierpnia 2025 -->
+    <a class="article-card" href="sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html">
+     <div class="article-image">
+      <img alt="Facebook Ads dane" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/688e0a31363cc1c2a7fe38b3_analizy%20danych%20Facebook%20Ads.jpg">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       Facebook Ads
+      </span>
+      <h2 class="article-title">
+       Sekretne dane facebook ads, kt&oacute;re zmieni&aogon; twoje kampanie: prosty spos&oacute;b na odkrycie wzorc&oacute;w aktywno&sacute;ci klient&oacute;w
+      </h2>
+      <p class="article-excerpt">
+       Odkryj ukryte wzorce aktywno&sacute;ci klient&oacute;w i wykorzystaj je do optymalizacji kampanii Facebook Ads.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        2 sierpnia 2025
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 3. Czy LLMs.txt pomoże AI - 15 lipca 2025 -->
+    <a class="article-card" href="czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html">
+     <div class="article-image">
+      <img alt="LLMs.txt" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6876194656c6edf5453ea3b7_llms-txt-p-3200.jpeg">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       AI & SEO
+      </span>
+      <h2 class="article-title">
+       Czy llms.txt pomo&zdot;e ai zrozumie&cacute; twoj&aogon; stron&eogon; lepiej?
+      </h2>
+      <p class="article-excerpt">
+       Nowy standard komunikacji z modelami j&eogon;zykowymi. Jak przygotowa&cacute; swoj&aogon; stron&eogon; na er&eogon; AI?
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        15 lipca 2025
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 4. Niski koszt CPC Facebook Ads - 6 maja 2025 -->
+    <a class="article-card" href="niski-koszt-cpc-w-kampanii-facebook-ads-dla-wymagajacego-klienta-case-study-collytics.html">
+     <div class="article-image">
+      <img alt="Case Study Facebook Ads" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/68195f31233e844c8b2e76e3_facebook%20ads.jpg">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       Case Study
+      </span>
+      <h2 class="article-title">
+       Niski koszt cpc w kampanii facebook ads dla wymagaj&aogon;cego klienta? case study collytics
+      </h2>
+      <p class="article-excerpt">
+       Jak obni&zdot;yli&sacute;my koszt CPC o 73% przy zachowaniu wysokiej jako&sacute;ci lead&oacute;w. Rzeczywisty przypadek klienta.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        6 maja 2025
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 5. Najnowsze wytyczne Google Ads - 15 kwietnia 2025 -->
+    <a class="article-card" href="najnowsze-wytyczne-google-ads---kwiecien-2025.html">
+     <div class="article-image">
+      <img alt="Najnowsze wytyczne Google Ads" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/67fdad442c62cf22981fb93e_Optymalne%20ustawienia%20Google%20Ads.png">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       Google Ads
+      </span>
+      <h2 class="article-title">
+       Najnowsze wytyczne google ads - kwiecie&nacute; 2025
+      </h2>
+      <p class="article-excerpt">
+       Poznaj kluczowe zmiany w Google Ads na kwiecie&nacute; 2025 i dowiedz si&eogon;, jak dostosowa&cacute; swoje kampanie do nowych wymaga&nacute;.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        15 kwietnia 2025
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 6. Reklamy PPC leków - 4 kwietnia 2025 -->
+    <a class="article-card" href="reklamy-ppc-lekow-ograniczenia-duze-ale-sprzedaz-i-tak-szybuje-w-gore.html">
+     <div class="article-image">
+      <img alt="Reklamy PPC lek&oacute;w" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/67efc8aa38d57737fa9e8add_Bez%20nazwy.png">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       PPC
+      </span>
+      <h2 class="article-title">
+       Reklamy ppc lek&oacute;w: ograniczenia du&zdot;e, ale sprzeda&zdot; i tak szybuje w g&oacute;r&eogon;
+      </h2>
+      <p class="article-excerpt">
+       Jak skutecznie reklamowa&cacute; produkty farmaceutyczne pomimo restrykcyjnych przepis&oacute;w? Sprawdzone strategie i case studies.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        4 kwietnia 2025
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 7. Odkryj Collytics AdTracker - 27 marca 2025 -->
+    <a class="article-card" href="odkryj-collytics-adtracker---twoja-przewage-marketingowa-oparta-na-ai.html">
+     <div class="article-image">
+      <img alt="Collytics AdTracker" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/67e5496bc7cb74bcef108d87_collytics%20ad%20tracker.png">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       AI & Marketing
+      </span>
+      <h2 class="article-title">
+       Odkryj collytics adtracker &ndash; twoj&aogon; przewag&eogon; marketingow&aogon; opart&aogon; na ai
+      </h2>
+      <p class="article-excerpt">
+       Rewolucyjne narz&eogon;dzie AI do &sacute;ledzenia i optymalizacji kampanii reklamowych. Zwi&eogon;ksz ROI dzi&eogon;ki inteligentnej analityce.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        27 marca 2025
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 8. Facebook Conversion API - 3 lutego 2025 -->
+    <a class="article-card" href="facebook-conversion-api-api-konwersji-bezpieczniejsze-i-bardziej-niezawodne-zrodlo-danych.html">
+     <div class="article-image">
+      <img alt="Facebook Conversion API" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/67a1281ce07fe10325214982_AdobeStock_816930321-p-3200.jpeg">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       Facebook Ads
+      </span>
+      <h2 class="article-title">
+       Facebook conversion api (api konwersji): bezpieczniejsze i bardziej niezawodne &zacute;r&oacute;d&lstrok;o danych
+      </h2>
+      <p class="article-excerpt">
+       Jak wdro&zdot;y&cacute; Facebook Conversion API i dlaczego jest to kluczowe dla skuteczno&sacute;ci kampanii w erze prywatno&sacute;ci.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        3 lutego 2025
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 9. Google Tag Manager w WordPress - 14 listopada 2024 -->
+    <a class="article-card" href="google-tag-manager-w-wordpress-jak-zainstalowac.html">
+     <div class="article-image">
+      <img alt="GTM WordPress" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       WordPress
+      </span>
+      <h2 class="article-title">
+       Google tag manager w wordpress &ndash; jak zainstalowa&cacute;
+      </h2>
+      <p class="article-excerpt">
+       Kompletny przewodnik instalacji GTM w WordPress. Od podstawowej konfiguracji po zaawansowane &sacute;ledzenie.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        14 listopada 2024
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 10. Opcje dopasowania słów kluczowych - 23 października 2024 -->
+    <a class="article-card" href="opcje-dopasowania-slow-kluczowych-w-google-ads.html">
+     <div class="article-image">
+      <img alt="S&lstrok;owa kluczowe Google Ads" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6773179d80bd75f7af28392e_Opcje%20dopasowania%20s%C5%82o%CC%81w%20kluczowych%20w%20Google%20Ads.jpeg">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       Google Ads
+      </span>
+      <h2 class="article-title">
+       Opcje dopasowania s&lstrok;&oacute;w kluczowych w google ads
+      </h2>
+      <p class="article-excerpt">
+       Poznaj wszystkie typy dopasowa&nacute; s&lstrok;&oacute;w kluczowych i dowiedz si&eogon;, kiedy stosowa&cacute; ka&zdot;de z nich dla maksymalnego ROI.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        23 pa&zacute;dziernika 2024
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 11. AI w raportach Google Analytics 4 - 15 października 2024 -->
+    <a class="article-card" href="ai-w-raportach-google-analytics-4-jak-wykorzystac-zaawansowane-funkcje-napedzane-przez-sztuczna-inteligencje.html">
+     <div class="article-image">
+      <img alt="AI w Google Analytics 4" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6773394308235e8c6cb24fc1_ai-w-raportach-google-analytics-4-jak-wykorzystac.png">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       Google Analytics
+      </span>
+      <h2 class="article-title">
+       Ai w raportach google analytics 4. jak wykorzysta&cacute; zaawansowane funkcje nap&eogon;dzane przez sztuczn&aogon; inteligencj&eogon;
+      </h2>
+      <p class="article-excerpt">
+       Wykorzystaj pe&lstrok;en potencja&lstrok; sztucznej inteligencji w GA4 do g&lstrok;&eogon;bszej analizy danych.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        15 pa&zacute;dziernika 2024
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 12. Google Search Console - 17 września 2024 -->
+    <a class="article-card" href="google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow.html">
+     <div class="article-image">
+      <img alt="Google Search Console" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677314625a8000f04b5e7582_google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow.jpeg">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       SEO Tools
+      </span>
+      <h2 class="article-title">
+       Google search console: kompleksowe narz&eogon;dzie nie tylko dla webmaster&oacute;w
+      </h2>
+      <p class="article-excerpt">
+       Odkryj wszystkie mo&zdot;liwo&sacute;ci GSC. Od podstawowej diagnostyki po zaawansowan&aogon; optymalizacj&eogon;.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        17 wrze&sacute;nia 2024
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 13. Alternatywa dla Google Analytics - 17 sierpnia 2024 -->
+    <a class="article-card" href="alternatywa-dla-google-analytics-czy-to-ma-sens.html">
+     <div class="article-image">
+      <img alt="Alternatywy dla GA" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/6773150c83e90917f5806357_analityka-internetowa-c-2048x1544.png">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       Analytics
+      </span>
+      <h2 class="article-title">
+       Alternatywa dla google analytics &ndash; czy to ma sens?
+      </h2>
+      <p class="article-excerpt">
+       Przegl&aogon;d najlepszych alternatyw dla GA4. Kiedy warto rozwa&zdot;y&cacute; zmian&eogon; narz&eogon;dzia analitycznego?
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        17 sierpnia 2024
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+    <!-- 14. Znaczenie Tagowania Strony - 1 sierpnia 2024 -->
+    <a class="article-card" href="znaczenie-tagowania-strony-za-pomoca-google-tag-manager.html">
+     <div class="article-image">
+      <img alt="Google Tag Manager" src="https://cdn.prod.website-files.com/6772eeea6f4e9f2ed643ee4f/677310d5b3e1d58c2c732f10_Znaczenie-Tagowania-Strony-za-Pomoca-Google-Tag-Manager-2048x1222.jpeg">
+     </div>
+     <div class="article-content">
+      <span class="article-category">
+       Analytics
+      </span>
+      <h2 class="article-title">
+       Znaczenie tagowania strony za pomoc&aogon; google tag manager
+      </h2>
+      <p class="article-excerpt">
+       Kompletny przewodnik po implementacji GTM. Od podstaw do zaawansowanych strategii &sacute;ledzenia.
+      </p>
+      <div class="article-meta">
+       <span class="article-date">
+        1 sierpnia 2024
+       </span>
+       <span class="read-more">
+        Czytaj wi&eogon;cej &rarr;
+       </span>
+      </div>
+     </div>
+    </a>
+   </div>
+  </div>
+  <!-- Footer -->
+  <footer>
+   <p>
+    &copy; 2025 Collytics. Wszystkie prawa zastrze&zdot;one.
+   </p>
+  </footer>
+  <script>
+   document.addEventListener("click", function(e) {
                 if(e.target.id === "menuTrigger") {
                     document.getElementById("dropdownMenu").classList.add("active");
                     document.getElementById("menuOverlay").classList.add("active");
@@ -322,7 +463,9 @@
                     document.getElementById("menuOverlay").classList.remove("active");
                 }
             });
-        </script>
-
-    </body>
-    </html>
+  </script>
+  <!-- Cookie Banner Script -->
+  <script src="../js/cookie-banner.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,40 @@
+<!-- Navigation for all subpages -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="" class="logo">
+            <img src="/assets/images/logo main transparent.png" alt="Collytics">
+        </a>
+        <button class="menu-trigger" id="menuTrigger">
+            Menu
+        </button>
+    </div>
+</nav>
+
+<!-- Dropdown Menu -->
+<div class="dropdown-menu" id="dropdownMenu">
+    <button class="dropdown-close" id="closeMenu">Close</button>
+    <div class="dropdown-menu-inner">
+        <div class="menu-section">
+            <a href="">Home</a>
+            <a href="services.html">Serwis</a>
+            <a href="blog/index.html">Blog</a>
+            <a href="about.html">O nas</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+        
+        <div class="menu-divider"></div>
+        
+        <div class="social-links">
+            <a href="#" title="Facebook">FB</a>
+            <a href="#" title="LinkedIn">LI</a>
+            <a href="#" title="Twitter">TW</a>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- JavaScript for menu -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {

@@ -1,130 +1,321 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jak JSON-LD Zapewnia Dominację w Wyszukiwarkach AI - Case Study | Collytics Blog</title>
-
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');</script>
-
-    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/blog.css">
-</head>
-<body>
-
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a class="logo" href="/index.html"><img alt="Collytics" src="../assets/images/logo main transparent.png"/></a>
-            <button class="menu-trigger" id="menuTrigger">Menu</button>
-        </div>
-    </nav>
-    <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-close" id="closeMenu">Close</button>
-        <div class="dropdown-menu-inner">
-            <div class="menu-section">
-                <a href="/index.html">Home</a>
-                <a href="/services.html">Serwis</a>
-                <a href="/blog/index.html">Blog</a>
-                <a href="/about.html">O nas</a>
-                <a href="/kontakt.html">Kontakt</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook"><img alt="Facebook" src="../assets/images/facebook.png"/></a>
-                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"/></a>
-                <a href="https://x.com/collytics" target="_blank" title="Twitter"><img alt="X" src="../assets/images/cons8-twitter-500.svg"/></a>
-            </div>
-        </div>
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   Jak JSON-LD Zapewnia Dominacj&eogon; w Wyszukiwarkach AI - Case Study | Collytics Blog
+  </title>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');
+  </script>
+  <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../css/global.css" rel="stylesheet">
+  <link href="../css/blog.css" rel="stylesheet">
+  <!-- Cookie Banner Styles -->
+  <link href="../css/cookie-banner.css" rel="stylesheet">
+ </head>
+ <body>
+  <nav class="navbar" id="navbar">
+   <div class="nav-container">
+    <a class="logo" href="/index.html">
+     <img alt="Collytics" src="../assets/images/logo main transparent.png">
+    </a>
+    <button class="menu-trigger" id="menuTrigger">
+     Menu
+    </button>
+   </div>
+  </nav>
+  <div class="dropdown-menu" id="dropdownMenu">
+   <button class="dropdown-close" id="closeMenu">
+    Close
+   </button>
+   <div class="dropdown-menu-inner">
+    <div class="menu-section">
+     <a href="/index.html">
+      Home
+     </a>
+     <a href="/services.html">
+      Serwis
+     </a>
+     <a href="/blog/index.html">
+      Blog
+     </a>
+     <a href="/about.html">
+      O nas
+     </a>
+     <a href="/kontakt.html">
+      Kontakt
+     </a>
     </div>
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-container">
-            <a href="../index.html">Strona główna</a>
-            <span class="breadcrumbs-separator">›</span>
-            <a href="index.html">Blog</a>
-            <span class="breadcrumbs-separator">›</span>
-            <span class="breadcrumbs-current">Jak JSON-LD Zapewnia Dominację...</span>
-        </div>
+    <div class="social-links">
+     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+      <img alt="Facebook" src="../assets/images/facebook.png">
+     </a>
+     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+      <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg">
+     </a>
+     <a href="https://x.com/collytics" target="_blank" title="Twitter">
+      <img alt="X" src="../assets/images/cons8-twitter-500.svg">
+     </a>
     </div>
-
-    <header class="article-hero">
-        <div class="article-container">
-            <div class="article-meta">
-                <span class="category-badge">CASE STUDY</span>
-                <span>8 min czytania</span>
-                <span>•</span>
-                <span>20 sierpnia 2025</span>
-            </div>
-            <h1>Przetestowaliśmy Rynek Stomatologiczny w Gliwicach: Jak JSON-LD Zapewnia Dominację w Wyszukiwarkach AI</h1>
-        </div>
-        <div class="featured-image">
-            <img src="../assets/images/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg" alt="Klinika stomatologiczna a wyniki w AI">
-        </div>
-    </header>
-
-    <main class="article-content">
-        <div class="article-container">
-            <p>Przetestowaliśmy rynek usług stomatologicznych w Gliwicach. Klinika, która wdrożyła JSON-LD z Collytics, osiąga doskonałe rezultaty w wyszukiwarkach AI.</p>
-            <h2>Test: kto przetrwał selekcję AI?</h2>
-            <p>17 sierpnia 2025 przeprowadziliśmy bezlitosny test. Zadaliśmy systemom AI dokładnie te same pytania o dentystów w Gliwicach. Jeden gabinet - <strong>BDental</strong> - konsekwentnie pojawiał się na pierwszych miejscach. Dlaczego? Sekret: <strong>JSON-LD</strong> - dane strukturalne, które sprawiają, że AI "rozumie" Twoją stronę.</p>
-
-            <h2>Czym jest JSON-LD?</h2>
-            <p>To kod, który działa jak "wizytówka" dla robotów. Zamiast zgadywać co oznacza tekst na Twojej stronie, AI dostaje precycyjne informacje w formacie, który perfekcyjnie rozumie. JSON-LD (JavaScript Object Notation for Linked Data) to format danych strukturalnych oparty na standardzie Schema.org. Gdy wpiszesz w JSON-LD <code>"openingHours": "Mo-Fr 09:00-19:00"</code>, każdy system AI wie, że to dokładnie godziny otwarcia. To jak różnica między chaotyczną notatką a uporządkowaną bazą danych.</p>
-
-            <h3>Przykład - tak AI widzi Twoją stronę:</h3>
-            <div class="example-box bad">
-                <strong>❌ Bez JSON-LD:</strong>
-                <p>"Jesteśmy otwarci od poniedziałku do piątku 9-19, ul. Chemiczna 3, Gliwice"</p>
-                <p><i>AI myśli: "Hmm, czy to godziny otwarcia czy rejestracji?"</i></p>
-            </div>
-            <div class="example-box good">
-                <strong>✅ Z JSON-LD:</strong>
-                <pre><code>{ "@type": "DentalClinic", "name": "BDental", "address": "ul. Chemiczna 3, Gliwice", "openingHours": "Mo-Fr 09:00-19:00" }</code></pre>
-                <p><i>AI wie dokładnie: "To klinika dentystyczna, otwarta 9-19!"</i></p>
-            </div>
-            <p>Dlaczego Google preferuje JSON-LD? Od 2019 roku oficjalnie rekomenduje ten format jako najlepszy - jest oddzielony od HTML i łatwy w zarządzaniu. Kod po prostu wrzucasz w sekcję <code>&lt;head&gt;</code> strony i gotowe.</p>
-
-            <h2>Wyniki testów: Liczby nie kłamią</h2>
-            <h3>Test 1: "Gdzie mogę leczyć bruksizm w Gliwicach?"</h3>
-            <img src="../assets/images/68a288ea56916b83fc420733_bruksizm_.png" alt="Wynik testu na leczenie bruksizmu">
-            <p><strong>Wynik:</strong> BDental - 1. miejsce. Konkurencja bez JSON-LD nie pojawia się w wynikach. Dlaczego? W JSON-LD dodano: <code>"medicalSpecialty": "Leczenie bruksizmu..."</code>. AI natychmiast rozpoznało specjalizację.</p>
-
-            <h3>Test 2: "Który stomatolog ma tomograf 3D?"</h3>
-            <img src="../assets/images/68a288eafe0aceb5da2b15fa_Tomograf_3D.png" alt="Wynik testu na tomograf 3D">
-            <p><strong>Wynik:</strong> BDental - 1. miejsce. Konkurencja ma rozproszone wyniki. Sekret: <code>"amenityFeature": {"name": "Tomograf 3D CBCT", "value": true}</code>. Konkurenci też mają tomografy, ale AI nie potrafi ich znaleźć w chaosie tekstu.</p>
-
-            <h3>Test 3: "Leczenie pod narkozą w Gliwicach"</h3>
-            <img src="../assets/images/68a288ea0123c0be15f8d24e_narkoza.png" alt="Wynik testu na leczenie pod narkozą">
-            <p><strong>Wynik:</strong> BDental - Top 2. Konkurencja często pomijana. Kod który wygrał: <code>"availableService": { "@type": "MedicalProcedure", "name": "Leczenie w narkozie" }</code>.</p>
-
-            <h3>Test 4: Kompleksowe pytanie</h3>
-            <img src="../assets/images/68a288ea8e3ac8e899e890e5_zloz%CC%87one_pytania.png" alt="Wynik testu na złożone pytanie">
-            <p><strong>Zapytanie:</strong> "Znajdź dentystę który przyjmuje dzieci, ma parking, jest otwarty po 17:00 i ma dobre opinie". BDental spełnił wszystkie kryteria dzięki precyzyjnym danym w JSON-LD. Konkurencja zajęła 3-5 miejsce lub została pominięta.</p>
-
-            <h2>Twarde dane z testu</h2>
-            <table>
-                <thead><tr><th>Metryka</th><th>Z JSON-LD</th><th>Bez JSON-LD</th></tr></thead>
-                <tbody>
-                    <tr><td>Pełne dane kontaktowe w AI</td><td>100%</td><td>45%</td></tr>
-                    <tr><td>Poprawne godziny otwarcia</td><td>100%</td><td>30%</td></tr>
-                    <tr><td>Obecność w odpowiedziach AI</td><td>85%</td><td>15%</td></tr>
-                    <tr><td>Widoczne oceny</td><td>90%</td><td>10%</td></tr>
-                    <tr><td>Lista usług</td><td>80%</td><td>20%</td></tr>
-                </tbody>
-            </table>
-
-            <h2>Jak to wdrożyć? (Minimum vs Premium)</h2>
-            <h3>Podstawowy JSON-LD (30 minut pracy):</h3>
-            <pre><code>{
+   </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+  </div>
+  <div class="breadcrumbs">
+   <div class="breadcrumbs-container">
+    <a href="../index.html">
+     Strona g&lstrok;&oacute;wna
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <a href="index.html">
+     Blog
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <span class="breadcrumbs-current">
+     Jak JSON-LD Zapewnia Dominacj&eogon;...
+    </span>
+   </div>
+  </div>
+  <header class="article-hero">
+   <div class="article-container">
+    <div class="article-meta">
+     <span class="category-badge">
+      CASE STUDY
+     </span>
+     <span>
+      8 min czytania
+     </span>
+     <span>
+      &bull;
+     </span>
+     <span>
+      20 sierpnia 2025
+     </span>
+    </div>
+    <h1>
+     Przetestowali&sacute;my rynek stomatologiczny w gliwicach: jak json-ld zapewnia dominacj&eogon; w wyszukiwarkach ai
+    </h1>
+   </div>
+   <div class="featured-image">
+    <img alt="Klinika stomatologiczna a wyniki w AI" src="../assets/images/68a28c0102058ae68893121f_Gemini_Generated_Image_3irbye3irbye3irb.jpeg">
+   </div>
+  </header>
+  <main class="article-content">
+   <div class="article-container">
+    <p>
+     Przetestowali&sacute;my rynek us&lstrok;ug stomatologicznych w Gliwicach. Klinika, kt&oacute;ra wdro&zdot;y&lstrok;a JSON-LD z Collytics, osi&aogon;ga doskona&lstrok;e rezultaty w wyszukiwarkach AI.
+    </p>
+    <h2>
+     Test: kto przetrwa&lstrok; selekcj&eogon; ai?
+    </h2>
+    <p>
+     17 sierpnia 2025 przeprowadzili&sacute;my bezlitosny test. Zadali&sacute;my systemom AI dok&lstrok;adnie te same pytania o dentyst&oacute;w w Gliwicach. Jeden gabinet -
+     <strong>
+      BDental
+     </strong>
+     - konsekwentnie pojawia&lstrok; si&eogon; na pierwszych miejscach. Dlaczego? Sekret:
+     <strong>
+      JSON-LD
+     </strong>
+     - dane strukturalne, kt&oacute;re sprawiaj&aogon;, &zdot;e AI "rozumie" Twoj&aogon; stron&eogon;.
+    </p>
+    <h2>
+     Czym jest json-ld?
+    </h2>
+    <p>
+     To kod, kt&oacute;ry dzia&lstrok;a jak "wizyt&oacute;wka" dla robot&oacute;w. Zamiast zgadywa&cacute; co oznacza tekst na Twojej stronie, AI dostaje precycyjne informacje w formacie, kt&oacute;ry perfekcyjnie rozumie. JSON-LD (JavaScript Object Notation for Linked Data) to format danych strukturalnych oparty na standardzie Schema.org. Gdy wpiszesz w JSON-LD
+     <code>
+      "openingHours": "Mo-Fr 09:00-19:00"
+     </code>
+     , ka&zdot;dy system AI wie, &zdot;e to dok&lstrok;adnie godziny otwarcia. To jak r&oacute;&zdot;nica mi&eogon;dzy chaotyczn&aogon; notatk&aogon; a uporz&aogon;dkowan&aogon; baz&aogon; danych.
+    </p>
+    <h3>
+     Przyk&lstrok;ad - tak ai widzi twoj&aogon; stron&eogon;:
+    </h3>
+    <div class="example-box bad">
+     <strong>
+      ❌ Bez JSON-LD:
+     </strong>
+     <p>
+      "Jeste&sacute;my otwarci od poniedzia&lstrok;ku do pi&aogon;tku 9-19, ul. Chemiczna 3, Gliwice"
+     </p>
+     <p>
+      <i>
+       AI my&sacute;li: "Hmm, czy to godziny otwarcia czy rejestracji?"
+      </i>
+     </p>
+    </div>
+    <div class="example-box good">
+     <strong>
+      ✅ Z JSON-LD:
+     </strong>
+     <pre><code>{ "@type": "DentalClinic", "name": "BDental", "address": "ul. Chemiczna 3, Gliwice", "openingHours": "Mo-Fr 09:00-19:00" }</code></pre>
+     <p>
+      <i>
+       AI wie dok&lstrok;adnie: "To klinika dentystyczna, otwarta 9-19!"
+      </i>
+     </p>
+    </div>
+    <p>
+     Dlaczego Google preferuje JSON-LD? Od 2019 roku oficjalnie rekomenduje ten format jako najlepszy - jest oddzielony od HTML i &lstrok;atwy w zarz&aogon;dzaniu. Kod po prostu wrzucasz w sekcj&eogon;
+     <code>
+      &lt;head&gt;
+     </code>
+     strony i gotowe.
+    </p>
+    <h2>
+     Wyniki test&oacute;w: liczby nie k&lstrok;ami&aogon;
+    </h2>
+    <h3>
+     Test 1: "gdzie mog&eogon; leczy&cacute; bruksizm w gliwicach?"
+    </h3>
+    <img alt="Wynik testu na leczenie bruksizmu" src="../assets/images/68a288ea56916b83fc420733_bruksizm_.png">
+    <p>
+     <strong>
+      Wynik:
+     </strong>
+     BDental - 1. miejsce. Konkurencja bez JSON-LD nie pojawia si&eogon; w wynikach. Dlaczego? W JSON-LD dodano:
+     <code>
+      "medicalSpecialty": "Leczenie bruksizmu..."
+     </code>
+     . AI natychmiast rozpozna&lstrok;o specjalizacj&eogon;.
+    </p>
+    <h3>
+     Test 2: "kt&oacute;ry stomatolog ma tomograf 3d?"
+    </h3>
+    <img alt="Wynik testu na tomograf 3D" src="../assets/images/68a288eafe0aceb5da2b15fa_Tomograf_3D.png">
+    <p>
+     <strong>
+      Wynik:
+     </strong>
+     BDental - 1. miejsce. Konkurencja ma rozproszone wyniki. Sekret:
+     <code>
+      "amenityFeature": {"name": "Tomograf 3D CBCT", "value": true}
+     </code>
+     . Konkurenci te&zdot; maj&aogon; tomografy, ale AI nie potrafi ich znale&zacute;&cacute; w chaosie tekstu.
+    </p>
+    <h3>
+     Test 3: "leczenie pod narkoz&aogon; w gliwicach"
+    </h3>
+    <img alt="Wynik testu na leczenie pod narkoz&aogon;" src="../assets/images/68a288ea0123c0be15f8d24e_narkoza.png">
+    <p>
+     <strong>
+      Wynik:
+     </strong>
+     BDental - Top 2. Konkurencja cz&eogon;sto pomijana. Kod kt&oacute;ry wygra&lstrok;:
+     <code>
+      "availableService": { "@type": "MedicalProcedure", "name": "Leczenie w narkozie" }
+     </code>
+     .
+    </p>
+    <h3>
+     Test 4: kompleksowe pytanie
+    </h3>
+    <img alt="Wynik testu na z&lstrok;o&zdot;one pytanie" src="../assets/images/68a288ea8e3ac8e899e890e5_zloz%CC%87one_pytania.png">
+    <p>
+     <strong>
+      Zapytanie:
+     </strong>
+     "Znajd&zacute; dentyst&eogon; kt&oacute;ry przyjmuje dzieci, ma parking, jest otwarty po 17:00 i ma dobre opinie". BDental spe&lstrok;ni&lstrok; wszystkie kryteria dzi&eogon;ki precyzyjnym danym w JSON-LD. Konkurencja zaj&eogon;&lstrok;a 3-5 miejsce lub zosta&lstrok;a pomini&eogon;ta.
+    </p>
+    <h2>
+     Twarde dane z testu
+    </h2>
+    <table>
+     <thead>
+      <tr>
+       <th>
+        Metryka
+       </th>
+       <th>
+        Z JSON-LD
+       </th>
+       <th>
+        Bez JSON-LD
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        Pe&lstrok;ne dane kontaktowe w AI
+       </td>
+       <td>
+        100%
+       </td>
+       <td>
+        45%
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Poprawne godziny otwarcia
+       </td>
+       <td>
+        100%
+       </td>
+       <td>
+        30%
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Obecno&sacute;&cacute; w odpowiedziach AI
+       </td>
+       <td>
+        85%
+       </td>
+       <td>
+        15%
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Widoczne oceny
+       </td>
+       <td>
+        90%
+       </td>
+       <td>
+        10%
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Lista us&lstrok;ug
+       </td>
+       <td>
+        80%
+       </td>
+       <td>
+        20%
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <h2>
+     Jak to wdro&zdot;y&cacute;? (minimum vs premium)
+    </h2>
+    <h3>
+     Podstawowy json-ld (30 minut pracy):
+    </h3>
+    <pre><code>{
   "@type": "DentalClinic",
   "name": "Twoja Klinika",
-  "address": "Twój adres",
+  "address": "Tw&oacute;j adres",
   "telephone": "+48-123-456-789",
   "openingHours": "Mo-Fr 09:00-18:00",
   "aggregateRating": {
@@ -132,41 +323,109 @@
     "reviewCount": "50"
   }
 }</code></pre>
-            <h3>Premium (przewaga konkurencyjna):</h3>
-            <ul>
-                <li><strong>FAQ w JSON-LD</strong> - najcenniejszy element</li>
-                <li><strong>amenityFeature</strong> - parking, WiFi, dostęp dla niepełnosprawnych</li>
-                <li><strong>availableService</strong> - szczegółowa lista zabiegów</li>
-                <li><strong>medicalSpecialty</strong> - wszystkie specjalizacje</li>
-                <li><strong>priceRange</strong> - przedział cenowy</li>
-            </ul>
-
-            <h2>Plan działania (zacznij dziś)</h2>
-            <ol>
-                <li><strong>Dodaj podstawowy JSON-LD</strong> - 30 minut, ogromny wpływ</li>
-                <li><strong>Przeanalizuj pytania pacjentów</strong> - co najczęściej pytają?</li>
-                <li><strong>Stwórz FAQ w JSON-LD</strong> - odpowiedz na te pytania</li>
-                <li><strong>Opisz wyposażenie</strong> - tomograf, CEREC, mikroskop</li>
-                <li><strong>Monitoruj wyniki</strong> - sprawdzaj pozycje w AI</li>
-            </ol>
-            <p><strong>Kluczowa rada:</strong> Nie kopiuj ślepo schematów z internetu. AI preferuje unikalne, szczegółowe informacje. JSON-LD to Twoja cyfrowa recepcjonistka, która pracuje 24/7 i nigdy nie ma złego dnia.</p>
-
-            <h2>Podsumowanie testu</h2>
-            <p>Konkurencja która nie wdroży JSON-LD, zniknie z wyników AI. To nie opcja - to konieczność. Test udowodnił, że w erze AI dane strukturalne to różnica między pierwszym miejscem a byciem pominiętym. Następny ruch należy do Ciebie.</p>
-            <p><i>Artykuł oparty na rzeczywistym teście z 17.08.2025 - 10 klinik stomatologicznych w Gliwicach vs systemy AI.</i></p>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-bottom">
-                <p>© Collytics. All rights reserved. <a href="/legal/privacy-policy.html">Polityka Prywatności</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("click", function(e) {
+    <h3>
+     Premium (przewaga konkurencyjna):
+    </h3>
+    <ul>
+     <li>
+      <strong>
+       FAQ w JSON-LD
+      </strong>
+      - najcenniejszy element
+     </li>
+     <li>
+      <strong>
+       amenityFeature
+      </strong>
+      - parking, WiFi, dost&eogon;p dla niepe&lstrok;nosprawnych
+     </li>
+     <li>
+      <strong>
+       availableService
+      </strong>
+      - szczeg&oacute;&lstrok;owa lista zabieg&oacute;w
+     </li>
+     <li>
+      <strong>
+       medicalSpecialty
+      </strong>
+      - wszystkie specjalizacje
+     </li>
+     <li>
+      <strong>
+       priceRange
+      </strong>
+      - przedzia&lstrok; cenowy
+     </li>
+    </ul>
+    <h2>
+     Plan dzia&lstrok;ania (zacznij dzi&sacute;)
+    </h2>
+    <ol>
+     <li>
+      <strong>
+       Dodaj podstawowy JSON-LD
+      </strong>
+      - 30 minut, ogromny wp&lstrok;yw
+     </li>
+     <li>
+      <strong>
+       Przeanalizuj pytania pacjent&oacute;w
+      </strong>
+      - co najcz&eogon;&sacute;ciej pytaj&aogon;?
+     </li>
+     <li>
+      <strong>
+       Stw&oacute;rz FAQ w JSON-LD
+      </strong>
+      - odpowiedz na te pytania
+     </li>
+     <li>
+      <strong>
+       Opisz wyposa&zdot;enie
+      </strong>
+      - tomograf, CEREC, mikroskop
+     </li>
+     <li>
+      <strong>
+       Monitoruj wyniki
+      </strong>
+      - sprawdzaj pozycje w AI
+     </li>
+    </ol>
+    <p>
+     <strong>
+      Kluczowa rada:
+     </strong>
+     Nie kopiuj &sacute;lepo schemat&oacute;w z internetu. AI preferuje unikalne, szczeg&oacute;&lstrok;owe informacje. JSON-LD to Twoja cyfrowa recepcjonistka, kt&oacute;ra pracuje 24/7 i nigdy nie ma z&lstrok;ego dnia.
+    </p>
+    <h2>
+     Podsumowanie testu
+    </h2>
+    <p>
+     Konkurencja kt&oacute;ra nie wdro&zdot;y JSON-LD, zniknie z wynik&oacute;w AI. To nie opcja - to konieczno&sacute;&cacute;. Test udowodni&lstrok;, &zdot;e w erze AI dane strukturalne to r&oacute;&zdot;nica mi&eogon;dzy pierwszym miejscem a byciem pomini&eogon;tym. Nast&eogon;pny ruch nale&zdot;y do Ciebie.
+    </p>
+    <p>
+     <i>
+      Artyku&lstrok; oparty na rzeczywistym te&sacute;cie z 17.08.2025 - 10 klinik stomatologicznych w Gliwicach vs systemy AI.
+     </i>
+    </p>
+   </div>
+  </main>
+  <footer>
+   <div class="footer-container">
+    <div class="footer-bottom">
+     <p>
+      &copy; Collytics. All rights reserved.
+      <a href="/legal/privacy-policy.html">
+       Polityka Prywatno&sacute;ci
+      </a>
+     </p>
+    </div>
+   </div>
+  </footer>
+  <script>
+   document.addEventListener("click", function(e) {
             if(e.target.id === "menuTrigger") {
                 document.getElementById("dropdownMenu").classList.add("active");
                 document.getElementById("menuOverlay").classList.add("active");
@@ -176,6 +435,9 @@
                 document.getElementById("menuOverlay").classList.remove("active");
             }
         });
-    </script>
-</body>
+  </script>
+  <!-- Cookie Banner Script -->
+  <script src="../js/cookie-banner.js">
+  </script>
+ </body>
 </html>

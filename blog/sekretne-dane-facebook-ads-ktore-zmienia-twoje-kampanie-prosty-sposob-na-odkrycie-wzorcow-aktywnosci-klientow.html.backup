@@ -1,136 +1,319 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sekretne dane Facebook Ads: Jak odkryć wzorce aktywności klientów | Collytics Blog</title>
-
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');</script>
-
-    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/blog.css">
-</head>
-<body>
-
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a class="logo" href="/index.html"><img alt="Collytics" src="../assets/images/logo main transparent.png"/></a>
-            <button class="menu-trigger" id="menuTrigger">Menu</button>
-        </div>
-    </nav>
-    <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-close" id="closeMenu">Close</button>
-        <div class="dropdown-menu-inner">
-            <div class="menu-section">
-                <a href="/index.html">Home</a>
-                <a href="/services.html">Serwis</a>
-                <a href="/blog/index.html">Blog</a>
-                <a href="/about.html">O nas</a>
-                <a href="/kontakt.html">Kontakt</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook"><img alt="Facebook" src="../assets/images/facebook.png"/></a>
-                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"/></a>
-                <a href="https://x.com/collytics" target="_blank" title="Twitter"><img alt="X" src="../assets/images/cons8-twitter-500.svg"/></a>
-            </div>
-        </div>
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   Sekretne dane Facebook Ads: Jak odkry&cacute; wzorce aktywno&sacute;ci klient&oacute;w | Collytics Blog
+  </title>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');
+  </script>
+  <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../css/global.css" rel="stylesheet">
+  <link href="../css/blog.css" rel="stylesheet">
+  <!-- Cookie Banner Styles -->
+  <link href="../css/cookie-banner.css" rel="stylesheet">
+ </head>
+ <body>
+  <nav class="navbar" id="navbar">
+   <div class="nav-container">
+    <a class="logo" href="/index.html">
+     <img alt="Collytics" src="../assets/images/logo main transparent.png">
+    </a>
+    <button class="menu-trigger" id="menuTrigger">
+     Menu
+    </button>
+   </div>
+  </nav>
+  <div class="dropdown-menu" id="dropdownMenu">
+   <button class="dropdown-close" id="closeMenu">
+    Close
+   </button>
+   <div class="dropdown-menu-inner">
+    <div class="menu-section">
+     <a href="/index.html">
+      Home
+     </a>
+     <a href="/services.html">
+      Serwis
+     </a>
+     <a href="/blog/index.html">
+      Blog
+     </a>
+     <a href="/about.html">
+      O nas
+     </a>
+     <a href="/kontakt.html">
+      Kontakt
+     </a>
     </div>
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-container">
-            <a href="../index.html">Strona główna</a>
-            <span class="breadcrumbs-separator">›</span>
-            <a href="index.html">Blog</a>
-            <span class="breadcrumbs-separator">›</span>
-            <span class="breadcrumbs-current">Sekretne dane Facebook Ads...</span>
-        </div>
+    <div class="social-links">
+     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+      <img alt="Facebook" src="../assets/images/facebook.png">
+     </a>
+     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+      <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg">
+     </a>
+     <a href="https://x.com/collytics" target="_blank" title="Twitter">
+      <img alt="X" src="../assets/images/cons8-twitter-500.svg">
+     </a>
     </div>
-
-    <header class="article-hero">
-        <div class="article-container">
-            <div class="article-meta">
-                <span class="category-badge">TIPS & TRICKS</span>
-                <span>7 min czytania</span>
-                <span>•</span>
-                <span>8 września 2025</span>
-            </div>
-            <h1>Sekretne dane Facebook Ads: Prosty sposób na odkrycie wzorców aktywności klientów</h1>
-        </div>
-        <div class="featured-image">
-            <img src="../assets/images/688e0ded690333d20e7aa5be_Code_Generated_Image.png" alt="Heatmapa aktywności klientów">
-        </div>
-    </header>
-
-    <main class="article-content">
-        <div class="article-container">
-            <p>W marketingu cyfrowym zrozumienie zachowań klientów ma kluczowe znaczenie dla sukcesu. Podczas gdy platformy takie jak Facebook automatycznie wykorzystują bogactwo danych do optymalizacji kampanii, uzyskanie bezpośredniego wglądu w te informacje może zapewnić dodatkową przewagę. Ten artykuł pokaże ci, jak łatwo uzyskać dostęp i analizować dane o klientach, aby stworzyć wizualną mapę aktywności, wskazującą optymalne czasy dla twoich działań marketingowych.</p>
-            <h2>Cel tych danych: kopalnia złota dla mądrzejszych kampanii</h2>
-            <p>Dane, które możesz pobrać z Facebook Ads Manager, to "kopalnia wiedzy o twoich klientach". Podczas gdy algorytmy Facebooka nieustannie pracują w tle, aby zoptymalizować dostarczanie reklam, bezpośredni dostęp i analiza konkretnych danych aktywności pozwala marketerom uzyskać głębsze, bardziej szczegółowe zrozumienie zachowań użytkowników. Ten bezpośredni wgląd uzupełnia automatyczne procesy Facebooka, umożliwiając:</p>
-            <ul>
-                <li><strong>Identyfikację szczytowych czasów aktywności:</strong> odkryj dokładnie, kiedy twoja publiczność jest najbardziej zaangażowana w określone działania, takie jak przeglądanie stron.</li>
-                <li><strong>Udoskonalenie targetowania i planowania:</strong> wykorzystaj te insights do bardziej precyzyjnego planowania kampanii, zapewniając, że twoje reklamy są widziane wtedy, gdy najprawdopodobniej będą rezonować.</li>
-                <li><strong>Zwiększenie ogólnej skuteczności kampanii:</strong> dopasowując swoje działania marketingowe do sprawdzonych wzorców aktywności klientów, możesz znacząco zwiększyć trafność i wpływ swoich reklam.</li>
-            </ul>
-            <h2>Krok po kroku: pobieranie i analizowanie danych</h2>
-            <h3>Pobierz plik danych z Facebook Ads Manager:</h3>
-            <ol>
-                <li>Przejdź do Menedżera Reklam (Meta) i kliknij w Menedżer zdarzeń.<br><img src="../assets/images/688e0c61ed5de26a2b2414ae_krok_1.png" alt="Krok 1 - Menedżer zdarzeń"></li>
-                <li>W Menedżerze zdarzeń wybierz piksel, który chcesz przeanalizować i kliknij Źródła danych.<br><img src="../assets/images/688e0c9f549ed9021630b6aa_krok_2.png" alt="Krok 2 - Źródła danych"></li>
-                <li>W zakładce Przegląd wybierz konkretną aktywność, którą chcesz analizować, na przykład "Pageview".<br><img src="../assets/images/688e0cbae11564cdcfdc0d37_krok_3.png" alt="Krok 3 - Wybierz aktywność"></li>
-                <li>Kliknij na wybraną aktywność. W oknie, które się pojawi, wybierz opcję pliku CSV i kliknij eksport.<br><img src="../assets/images/688e0ccbd501f1bb8e3526c5_krok_4.png" alt="Krok 4 - Eksport do CSV"></li>
-            </ol>
-            <h3>Stwórz heatmapę w sekundach:</h3>
-            <p>Otwórz narzędzie AI takie jak Google Gemini. Prześlij pobrany plik CSV i wprowadź proste polecenie:</p>
-            <div class="code-prompt">Stwórz heatmapę. Macierz dzień-godzina z intensywnością aktywności.</div>
-            <h2>Rezultat i korzyści: optymalizacja harmonogramu kampanii</h2>
-            <p>W ciągu zaledwie kilku sekund, bez potrzeby używania skomplikowanych narzędzi, otrzymasz wizualną mapę. Ta heatmapa będzie wyraźnie pokazywać "najlepszy czas na twoje kampanie". Ta prosta metoda pozwala ci wskazać optymalne godziny i dni tygodnia, kiedy twoi klienci są najbardziej aktywni, umożliwiając bardziej precyzyjne targetowanie i ostatecznie zwiększając skuteczność twoich inicjatyw marketingowych.</p>
-            <h2>Dodatkowe możliwości techniczne:</h2>
-            <p>Analiza tych danych otwiera również drzwi do zaawansowanych optymalizacji technicznych:</p>
-            <ul>
-                <li><strong>Testowanie Facebook Pixel</strong> - Zidentyfikuj anomalie w danych, które mogą wskazywać na problemy z implementacją pixela.</li>
-                <li><strong>Walidacja Conversions API</strong> - Porównaj wzorce aktywności z danymi server-side, aby wykryć rozbieżności.</li>
-                <li><strong>Diagnostyka trackingu</strong> - Użyj heatmapy jako baseline'u do sprawdzania, czy wszystkie zdarzenia są poprawnie rejestrowane.</li>
-                <li><strong>A/B testing harmonogramów</strong> - Na podstawie odkrytych wzorców przetestuj różne strategie bid adjustments.</li>
-                <li><strong>Cross-validation danych</strong> - Zestawiaj dane z Event Manager z danymi z Google Analytics, aby zidentyfikować luki w trackingu.</li>
-            </ul>
-            <p>Dzięki temu podejściu nie tylko optymalizujesz kampanie, ale również zapewniasz niezawodność całego systemu pomiarowego.</p>
-            <h2>Ważne zastrzeżenie: kiedy optymalizacja czasowa ma sens</h2>
-            <p>Warto pamiętać, że targetowanie godzinowe nie zawsze jest optymalne - zależy to od specyfiki twojego biznesu:</p>
-            <h3>Kiedy ma sens:</h3>
-            <ul>
-                <li><strong>E-commerce</strong> - klienci robią zakupy w określonych porach</li>
-                <li><strong>Lokalne usługi</strong> - restauracje, salony, sklepy z godzinami otwarcia</li>
-                <li><strong>B2B</strong> - decydenci są aktywni w godzinach pracy</li>
-                <li><strong>Entertainment/Gaming</strong> - wyraźne wzorce aktywności wieczornej</li>
-            </ul>
-            <h3>Kiedy może nie mieć znaczenia:</h3>
-            <ul>
-                <li><strong>Usługi emergency</strong> - potrzeba może wystąpić o każdej porze</li>
-                <li><strong>Globalne kampanie</strong> - różne strefy czasowe niwelują wzorce lokalne</li>
-                <li><strong>Produkty impulsowe</strong> - decyzja zakupowa niezależna od pory dnia</li>
-                <li><strong>Long sales cycle</strong> - proces decyzyjny trwa tygodniami/miesiącami</li>
-            </ul>
-            <p><strong>Rekomendacja:</strong> Zawsze przetestuj optymalizację czasową przez co najmniej 2-4 tygodnie przed pełnym wdrożeniem. Jeśli nie widzisz znaczącej poprawy wyników, lepiej pozwolić algorytmowi Facebooka automatycznie optymalizować dostarczanie reklam przez całą dobę. Kluczem jest analiza własnych danych - jeśli heatmapa pokazuje równomierny rozkład aktywności, skupienie na innych elementach optymalizacji może przynieść lepsze rezultaty.</p>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-bottom">
-                <p>© Collytics. All rights reserved. <a href="/legal/privacy-policy.html">Polityka Prywatności</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("click", function(e) {
+   </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+  </div>
+  <div class="breadcrumbs">
+   <div class="breadcrumbs-container">
+    <a href="../index.html">
+     Strona g&lstrok;&oacute;wna
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <a href="index.html">
+     Blog
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <span class="breadcrumbs-current">
+     Sekretne dane Facebook Ads...
+    </span>
+   </div>
+  </div>
+  <header class="article-hero">
+   <div class="article-container">
+    <div class="article-meta">
+     <span class="category-badge">
+      TIPS & TRICKS
+     </span>
+     <span>
+      7 min czytania
+     </span>
+     <span>
+      &bull;
+     </span>
+     <span>
+      8 wrze&sacute;nia 2025
+     </span>
+    </div>
+    <h1>
+     Sekretne dane facebook ads: prosty spos&oacute;b na odkrycie wzorc&oacute;w aktywno&sacute;ci klient&oacute;w
+    </h1>
+   </div>
+   <div class="featured-image">
+    <img alt="Heatmapa aktywno&sacute;ci klient&oacute;w" src="../assets/images/688e0ded690333d20e7aa5be_Code_Generated_Image.png">
+   </div>
+  </header>
+  <main class="article-content">
+   <div class="article-container">
+    <p>
+     W marketingu cyfrowym zrozumienie zachowa&nacute; klient&oacute;w ma kluczowe znaczenie dla sukcesu. Podczas gdy platformy takie jak Facebook automatycznie wykorzystuj&aogon; bogactwo danych do optymalizacji kampanii, uzyskanie bezpo&sacute;redniego wgl&aogon;du w te informacje mo&zdot;e zapewni&cacute; dodatkow&aogon; przewag&eogon;. Ten artyku&lstrok; poka&zdot;e ci, jak &lstrok;atwo uzyska&cacute; dost&eogon;p i analizowa&cacute; dane o klientach, aby stworzy&cacute; wizualn&aogon; map&eogon; aktywno&sacute;ci, wskazuj&aogon;c&aogon; optymalne czasy dla twoich dzia&lstrok;a&nacute; marketingowych.
+    </p>
+    <h2>
+     Cel tych danych: kopalnia z&lstrok;ota dla m&aogon;drzejszych kampanii
+    </h2>
+    <p>
+     Dane, kt&oacute;re mo&zdot;esz pobra&cacute; z Facebook Ads Manager, to "kopalnia wiedzy o twoich klientach". Podczas gdy algorytmy Facebooka nieustannie pracuj&aogon; w tle, aby zoptymalizowa&cacute; dostarczanie reklam, bezpo&sacute;redni dost&eogon;p i analiza konkretnych danych aktywno&sacute;ci pozwala marketerom uzyska&cacute; g&lstrok;&eogon;bsze, bardziej szczeg&oacute;&lstrok;owe zrozumienie zachowa&nacute; u&zdot;ytkownik&oacute;w. Ten bezpo&sacute;redni wgl&aogon;d uzupe&lstrok;nia automatyczne procesy Facebooka, umo&zdot;liwiaj&aogon;c:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Identyfikacj&eogon; szczytowych czas&oacute;w aktywno&sacute;ci:
+      </strong>
+      odkryj dok&lstrok;adnie, kiedy twoja publiczno&sacute;&cacute; jest najbardziej zaanga&zdot;owana w okre&sacute;lone dzia&lstrok;ania, takie jak przegl&aogon;danie stron.
+     </li>
+     <li>
+      <strong>
+       Udoskonalenie targetowania i planowania:
+      </strong>
+      wykorzystaj te insights do bardziej precyzyjnego planowania kampanii, zapewniaj&aogon;c, &zdot;e twoje reklamy s&aogon; widziane wtedy, gdy najprawdopodobniej b&eogon;d&aogon; rezonowa&cacute;.
+     </li>
+     <li>
+      <strong>
+       Zwi&eogon;kszenie og&oacute;lnej skuteczno&sacute;ci kampanii:
+      </strong>
+      dopasowuj&aogon;c swoje dzia&lstrok;ania marketingowe do sprawdzonych wzorc&oacute;w aktywno&sacute;ci klient&oacute;w, mo&zdot;esz znacz&aogon;co zwi&eogon;kszy&cacute; trafno&sacute;&cacute; i wp&lstrok;yw swoich reklam.
+     </li>
+    </ul>
+    <h2>
+     Krok po kroku: pobieranie i analizowanie danych
+    </h2>
+    <h3>
+     Pobierz plik danych z facebook ads manager:
+    </h3>
+    <ol>
+     <li>
+      Przejd&zacute; do Mened&zdot;era Reklam (Meta) i kliknij w Mened&zdot;er zdarze&nacute;.
+      <br>
+      <img alt="Krok 1 - Mened&zdot;er zdarze&nacute;" src="../assets/images/688e0c61ed5de26a2b2414ae_krok_1.png">
+     </li>
+     <li>
+      W Mened&zdot;erze zdarze&nacute; wybierz piksel, kt&oacute;ry chcesz przeanalizowa&cacute; i kliknij &Zacute;r&oacute;d&lstrok;a danych.
+      <br>
+      <img alt="Krok 2 - &Zacute;r&oacute;d&lstrok;a danych" src="../assets/images/688e0c9f549ed9021630b6aa_krok_2.png">
+     </li>
+     <li>
+      W zak&lstrok;adce Przegl&aogon;d wybierz konkretn&aogon; aktywno&sacute;&cacute;, kt&oacute;r&aogon; chcesz analizowa&cacute;, na przyk&lstrok;ad "Pageview".
+      <br>
+      <img alt="Krok 3 - Wybierz aktywno&sacute;&cacute;" src="../assets/images/688e0cbae11564cdcfdc0d37_krok_3.png">
+     </li>
+     <li>
+      Kliknij na wybran&aogon; aktywno&sacute;&cacute;. W oknie, kt&oacute;re si&eogon; pojawi, wybierz opcj&eogon; pliku CSV i kliknij eksport.
+      <br>
+      <img alt="Krok 4 - Eksport do CSV" src="../assets/images/688e0ccbd501f1bb8e3526c5_krok_4.png">
+     </li>
+    </ol>
+    <h3>
+     Stw&oacute;rz heatmap&eogon; w sekundach:
+    </h3>
+    <p>
+     Otw&oacute;rz narz&eogon;dzie AI takie jak Google Gemini. Prze&sacute;lij pobrany plik CSV i wprowad&zacute; proste polecenie:
+    </p>
+    <div class="code-prompt">
+     Stw&oacute;rz heatmap&eogon;. Macierz dzie&nacute;-godzina z intensywno&sacute;ci&aogon; aktywno&sacute;ci.
+    </div>
+    <h2>
+     Rezultat i korzy&sacute;ci: optymalizacja harmonogramu kampanii
+    </h2>
+    <p>
+     W ci&aogon;gu zaledwie kilku sekund, bez potrzeby u&zdot;ywania skomplikowanych narz&eogon;dzi, otrzymasz wizualn&aogon; map&eogon;. Ta heatmapa b&eogon;dzie wyra&zacute;nie pokazywa&cacute; "najlepszy czas na twoje kampanie". Ta prosta metoda pozwala ci wskaza&cacute; optymalne godziny i dni tygodnia, kiedy twoi klienci s&aogon; najbardziej aktywni, umo&zdot;liwiaj&aogon;c bardziej precyzyjne targetowanie i ostatecznie zwi&eogon;kszaj&aogon;c skuteczno&sacute;&cacute; twoich inicjatyw marketingowych.
+    </p>
+    <h2>
+     Dodatkowe mo&zdot;liwo&sacute;ci techniczne:
+    </h2>
+    <p>
+     Analiza tych danych otwiera r&oacute;wnie&zdot; drzwi do zaawansowanych optymalizacji technicznych:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Testowanie Facebook Pixel
+      </strong>
+      - Zidentyfikuj anomalie w danych, kt&oacute;re mog&aogon; wskazywa&cacute; na problemy z implementacj&aogon; pixela.
+     </li>
+     <li>
+      <strong>
+       Walidacja Conversions API
+      </strong>
+      - Por&oacute;wnaj wzorce aktywno&sacute;ci z danymi server-side, aby wykry&cacute; rozbie&zdot;no&sacute;ci.
+     </li>
+     <li>
+      <strong>
+       Diagnostyka trackingu
+      </strong>
+      - U&zdot;yj heatmapy jako baseline'u do sprawdzania, czy wszystkie zdarzenia s&aogon; poprawnie rejestrowane.
+     </li>
+     <li>
+      <strong>
+       A/B testing harmonogram&oacute;w
+      </strong>
+      - Na podstawie odkrytych wzorc&oacute;w przetestuj r&oacute;&zdot;ne strategie bid adjustments.
+     </li>
+     <li>
+      <strong>
+       Cross-validation danych
+      </strong>
+      - Zestawiaj dane z Event Manager z danymi z Google Analytics, aby zidentyfikowa&cacute; luki w trackingu.
+     </li>
+    </ul>
+    <p>
+     Dzi&eogon;ki temu podej&sacute;ciu nie tylko optymalizujesz kampanie, ale r&oacute;wnie&zdot; zapewniasz niezawodno&sacute;&cacute; ca&lstrok;ego systemu pomiarowego.
+    </p>
+    <h2>
+     Wa&zdot;ne zastrze&zdot;enie: kiedy optymalizacja czasowa ma sens
+    </h2>
+    <p>
+     Warto pami&eogon;ta&cacute;, &zdot;e targetowanie godzinowe nie zawsze jest optymalne - zale&zdot;y to od specyfiki twojego biznesu:
+    </p>
+    <h3>
+     Kiedy ma sens:
+    </h3>
+    <ul>
+     <li>
+      <strong>
+       E-commerce
+      </strong>
+      - klienci robi&aogon; zakupy w okre&sacute;lonych porach
+     </li>
+     <li>
+      <strong>
+       Lokalne us&lstrok;ugi
+      </strong>
+      - restauracje, salony, sklepy z godzinami otwarcia
+     </li>
+     <li>
+      <strong>
+       B2B
+      </strong>
+      - decydenci s&aogon; aktywni w godzinach pracy
+     </li>
+     <li>
+      <strong>
+       Entertainment/Gaming
+      </strong>
+      - wyra&zacute;ne wzorce aktywno&sacute;ci wieczornej
+     </li>
+    </ul>
+    <h3>
+     Kiedy mo&zdot;e nie mie&cacute; znaczenia:
+    </h3>
+    <ul>
+     <li>
+      <strong>
+       Us&lstrok;ugi emergency
+      </strong>
+      - potrzeba mo&zdot;e wyst&aogon;pi&cacute; o ka&zdot;dej porze
+     </li>
+     <li>
+      <strong>
+       Globalne kampanie
+      </strong>
+      - r&oacute;&zdot;ne strefy czasowe niweluj&aogon; wzorce lokalne
+     </li>
+     <li>
+      <strong>
+       Produkty impulsowe
+      </strong>
+      - decyzja zakupowa niezale&zdot;na od pory dnia
+     </li>
+     <li>
+      <strong>
+       Long sales cycle
+      </strong>
+      - proces decyzyjny trwa tygodniami/miesi&aogon;cami
+     </li>
+    </ul>
+    <p>
+     <strong>
+      Rekomendacja:
+     </strong>
+     Zawsze przetestuj optymalizacj&eogon; czasow&aogon; przez co najmniej 2-4 tygodnie przed pe&lstrok;nym wdro&zdot;eniem. Je&sacute;li nie widzisz znacz&aogon;cej poprawy wynik&oacute;w, lepiej pozwoli&cacute; algorytmowi Facebooka automatycznie optymalizowa&cacute; dostarczanie reklam przez ca&lstrok;&aogon; dob&eogon;. Kluczem jest analiza w&lstrok;asnych danych - je&sacute;li heatmapa pokazuje r&oacute;wnomierny rozk&lstrok;ad aktywno&sacute;ci, skupienie na innych elementach optymalizacji mo&zdot;e przynie&sacute;&cacute; lepsze rezultaty.
+    </p>
+   </div>
+  </main>
+  <footer>
+   <div class="footer-container">
+    <div class="footer-bottom">
+     <p>
+      &copy; Collytics. All rights reserved.
+      <a href="/legal/privacy-policy.html">
+       Polityka Prywatno&sacute;ci
+      </a>
+     </p>
+    </div>
+   </div>
+  </footer>
+  <script>
+   document.addEventListener("click", function(e) {
             if(e.target.id === "menuTrigger") {
                 document.getElementById("dropdownMenu").classList.add("active");
                 document.getElementById("menuOverlay").classList.add("active");
@@ -140,6 +323,9 @@
                 document.getElementById("menuOverlay").classList.remove("active");
             }
         });
-    </script>
-</body>
+  </script>
+  <!-- Cookie Banner Script -->
+  <script src="../js/cookie-banner.js">
+  </script>
+ </body>
 </html>

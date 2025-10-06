@@ -1,106 +1,186 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reklamy PPC leków: ograniczenia duże, ale sprzedaż i tak szybuje w górę | Collytics Blog</title>
-
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');</script>
-
-    <link rel="shortcut icon" type="image/png" href="../assets/images/Wordpress Transparent.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/blog.css">
-</head>
-<body>
-
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a class="logo" href="/index.html"><img alt="Collytics" src="../assets/images/logo main transparent.png"/></a>
-            <button class="menu-trigger" id="menuTrigger">Menu</button>
-        </div>
-    </nav>
-    <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-close" id="closeMenu">Close</button>
-        <div class="dropdown-menu-inner">
-            <div class="menu-section">
-                <a href="/index.html">Home</a>
-                <a href="/services.html">Serwis</a>
-                <a href="/blog/index.html">Blog</a>
-                <a href="/about.html">O nas</a>
-                <a href="/kontakt.html">Kontakt</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook"><img alt="Facebook" src="../assets/images/facebook.png"/></a>
-                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"/></a>
-                <a href="https://x.com/collytics" target="_blank" title="Twitter"><img alt="X" src="../assets/images/cons8-twitter-500.svg"/></a>
-            </div>
-        </div>
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   Reklamy PPC lek&oacute;w: ograniczenia du&zdot;e, ale sprzeda&zdot; i tak szybuje w g&oacute;r&eogon; | Collytics Blog
+  </title>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');
+  </script>
+  <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../css/global.css" rel="stylesheet">
+  <link href="../css/blog.css" rel="stylesheet">
+  <!-- Cookie Banner Styles -->
+  <link href="../css/cookie-banner.css" rel="stylesheet">
+ </head>
+ <body>
+  <nav class="navbar" id="navbar">
+   <div class="nav-container">
+    <a class="logo" href="/index.html">
+     <img alt="Collytics" src="../assets/images/logo main transparent.png">
+    </a>
+    <button class="menu-trigger" id="menuTrigger">
+     Menu
+    </button>
+   </div>
+  </nav>
+  <div class="dropdown-menu" id="dropdownMenu">
+   <button class="dropdown-close" id="closeMenu">
+    Close
+   </button>
+   <div class="dropdown-menu-inner">
+    <div class="menu-section">
+     <a href="/index.html">
+      Home
+     </a>
+     <a href="/services.html">
+      Serwis
+     </a>
+     <a href="/blog/index.html">
+      Blog
+     </a>
+     <a href="/about.html">
+      O nas
+     </a>
+     <a href="/kontakt.html">
+      Kontakt
+     </a>
     </div>
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-container">
-            <a href="../index.html">Strona główna</a>
-            <span class="breadcrumbs-separator">›</span>
-            <a href="index.html">Blog</a>
-            <span class="breadcrumbs-separator">›</span>
-            <span class="breadcrumbs-current">Reklamy PPC leków...</span>
-        </div>
+    <div class="social-links">
+     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+      <img alt="Facebook" src="../assets/images/facebook.png">
+     </a>
+     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+      <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg">
+     </a>
+     <a href="https://x.com/collytics" target="_blank" title="Twitter">
+      <img alt="X" src="../assets/images/cons8-twitter-500.svg">
+     </a>
     </div>
-
-    <header class="article-hero">
-        <div class="article-container">
-            <div class="article-meta">
-                <span class="category-badge">MARKETING</span>
-                <span>10 min czytania</span>
-                <span>•</span>
-                <span>4 kwietnia 2025</span>
-            </div>
-            <h1 class="article-title">Reklamy PPC leków: ograniczenia duże, ale sprzedaż i tak szybuje w górę</h1>
-        </div>
-        <div class="featured-image">
-             <img src="../assets/images/67f7119bfa1095148aa92ee9_Bez_nazwy_(3).png" alt="Reklamy PPC leków">
-        </div>
-    </header>
-
-    <main class="article-content">
-        <div class="article-container">
-            <p>Sprzedaż leków przez internet oferuje wygodę dla pacjentów i potencjalnie szerokie możliwości dotarcia do nowych klientów. Jednak branża farmaceutyczna podlega ścisłym regulacjom prawnym i specyficznym politykom reklamowym platform PPC (Pay-Per-Click), takich jak Google Ads i Facebook Ads (Meta Ads), szczególnie w kontekście sprzedaży leków online.</p>
-            <p>W Polsce obserwuje się znaczący i rosnący trend w kierunku aktywności online związanej z lekami i produktami zdrowotnymi. Aż 13% wszystkich zakupów internetowych w Polsce stanowią "Leki i suplementy diety". Co więcej, kategoria ta znajduje się wśród najczęściej kupowanych online produktów, z odnotowanym wzrostem o 21%. Dane demograficzne wskazują, że kobiety częściej niż mężczyźni dokonują online zakupów leków.</p>
-
-            <h2>Regulacje Prawne Sprzedaży Leków Online w Polsce</h2>
-            <p>Sprzedaż leków w Polsce jest ściśle regulowana przez prawo farmaceutyczne. Zgodnie z obowiązującymi przepisami, sytuacja wygląda następująco:</p>
-            <ul>
-                <li><strong>Leki OTC (bez recepty):</strong> Teoretycznie mogą być sprzedawane online i dostarczane do domu klienta, podobnie jak inne produkty e-commerce. Jednakże, sprzedaż ta musi być prowadzona przez apteki posiadające odpowiednie zezwolenia.</li>
-                <li><strong>Leki na receptę (Rx):</strong> W Polsce, zgodnie z dostępnymi informacjami, nie jest możliwe zrealizowanie e-recepty z dostawą do domu poprzez aptekę internetową. Pacjent może jedynie zarezerwować lek online za pośrednictwem portali rezerwacyjnych aptek (takich jak drmax.pl) i następnie odebrać go osobiście w wybranej placówce aptecznej, okazując receptę oraz podając czterocyfrowy PIN i numer PESEL.</li>
-                <li><strong>Wymagania dla aptek internetowych:</strong> Apteki prowadzące sprzedaż (nawet leków OTC) online muszą posiadać odpowiednie zezwolenia wydane przez właściwe organy państwowe. W Unii Europejskiej, w tym w Polsce, zarejestrowani sprzedawcy leków online powinni wyświetlać wspólne logo UE.</li>
-            </ul>
-
-            <h2>Polityka Reklamowa Google Ads i Facebook Ads dla Leków i Aptek w Polsce</h2>
-            <h3>Google Ads:</h3>
-            <p>Zgodnie z Centrum Zasad Google Ads w sekcji dotyczącej opieki zdrowotnej i leków, w odniesieniu do Polski, sytuacja jest jednoznaczna: "Google nie zezwala na promowanie żadnych aptek internetowych, niezależnie od tego, czy oferują one usługi odbioru recept i dostawy produktów".</p>
-            <p>Oznacza to, że bezpośrednie reklamowanie aptek internetowych w Polsce, nawet tych oferujących jedynie leki OTC lub możliwość rezerwacji leków na receptę, jest zabronione. To ograniczenie dotyczy zarówno reklam tekstowych w wynikach wyszukiwania, jak i reklam graficznych w sieci displayowej.</p>
-            <h3>Facebook Ads (Meta Ads):</h3>
-            <p>Polityka Meta dotycząca reklamowania leków na receptę wymaga uzyskania specjalnego zezwolenia. Uprawnienia do reklamowania leków na receptę są ograniczone do aptek internetowych, dostawców usług telemedycznych i producentów farmaceutycznych, którzy posiadają aktywne certyfikaty LegitScript Healthcare Certification i dostarczą odpowiednie informacje do Meta.</p>
-
-            </div>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-bottom">
-                <p>© Collytics. All rights reserved. <a href="/legal/privacy-policy.html">Polityka Prywatności</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("click", function(e) {
+   </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+  </div>
+  <div class="breadcrumbs">
+   <div class="breadcrumbs-container">
+    <a href="../index.html">
+     Strona g&lstrok;&oacute;wna
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <a href="index.html">
+     Blog
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <span class="breadcrumbs-current">
+     Reklamy PPC lek&oacute;w...
+    </span>
+   </div>
+  </div>
+  <header class="article-hero">
+   <div class="article-container">
+    <div class="article-meta">
+     <span class="category-badge">
+      MARKETING
+     </span>
+     <span>
+      10 min czytania
+     </span>
+     <span>
+      &bull;
+     </span>
+     <span>
+      4 kwietnia 2025
+     </span>
+    </div>
+    <h1 class="article-title">
+     Reklamy ppc lek&oacute;w: ograniczenia du&zdot;e, ale sprzeda&zdot; i tak szybuje w g&oacute;r&eogon;
+    </h1>
+   </div>
+   <div class="featured-image">
+    <img alt="Reklamy PPC lek&oacute;w" src="../assets/images/67f7119bfa1095148aa92ee9_Bez_nazwy_(3).png">
+   </div>
+  </header>
+  <main class="article-content">
+   <div class="article-container">
+    <p>
+     Sprzeda&zdot; lek&oacute;w przez internet oferuje wygod&eogon; dla pacjent&oacute;w i potencjalnie szerokie mo&zdot;liwo&sacute;ci dotarcia do nowych klient&oacute;w. Jednak bran&zdot;a farmaceutyczna podlega &sacute;cis&lstrok;ym regulacjom prawnym i specyficznym politykom reklamowym platform PPC (Pay-Per-Click), takich jak Google Ads i Facebook Ads (Meta Ads), szczeg&oacute;lnie w kontek&sacute;cie sprzeda&zdot;y lek&oacute;w online.
+    </p>
+    <p>
+     W Polsce obserwuje si&eogon; znacz&aogon;cy i rosn&aogon;cy trend w kierunku aktywno&sacute;ci online zwi&aogon;zanej z lekami i produktami zdrowotnymi. A&zdot; 13% wszystkich zakup&oacute;w internetowych w Polsce stanowi&aogon; "Leki i suplementy diety". Co wi&eogon;cej, kategoria ta znajduje si&eogon; w&sacute;r&oacute;d najcz&eogon;&sacute;ciej kupowanych online produkt&oacute;w, z odnotowanym wzrostem o 21%. Dane demograficzne wskazuj&aogon;, &zdot;e kobiety cz&eogon;&sacute;ciej ni&zdot; m&eogon;&zdot;czy&zacute;ni dokonuj&aogon; online zakup&oacute;w lek&oacute;w.
+    </p>
+    <h2>
+     Regulacje prawne sprzeda&zdot;y lek&oacute;w online w polsce
+    </h2>
+    <p>
+     Sprzeda&zdot; lek&oacute;w w Polsce jest &sacute;ci&sacute;le regulowana przez prawo farmaceutyczne. Zgodnie z obowi&aogon;zuj&aogon;cymi przepisami, sytuacja wygl&aogon;da nast&eogon;puj&aogon;co:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Leki OTC (bez recepty):
+      </strong>
+      Teoretycznie mog&aogon; by&cacute; sprzedawane online i dostarczane do domu klienta, podobnie jak inne produkty e-commerce. Jednak&zdot;e, sprzeda&zdot; ta musi by&cacute; prowadzona przez apteki posiadaj&aogon;ce odpowiednie zezwolenia.
+     </li>
+     <li>
+      <strong>
+       Leki na recept&eogon; (Rx):
+      </strong>
+      W Polsce, zgodnie z dost&eogon;pnymi informacjami, nie jest mo&zdot;liwe zrealizowanie e-recepty z dostaw&aogon; do domu poprzez aptek&eogon; internetow&aogon;. Pacjent mo&zdot;e jedynie zarezerwowa&cacute; lek online za po&sacute;rednictwem portali rezerwacyjnych aptek (takich jak drmax.pl) i nast&eogon;pnie odebra&cacute; go osobi&sacute;cie w wybranej plac&oacute;wce aptecznej, okazuj&aogon;c recept&eogon; oraz podaj&aogon;c czterocyfrowy PIN i numer PESEL.
+     </li>
+     <li>
+      <strong>
+       Wymagania dla aptek internetowych:
+      </strong>
+      Apteki prowadz&aogon;ce sprzeda&zdot; (nawet lek&oacute;w OTC) online musz&aogon; posiada&cacute; odpowiednie zezwolenia wydane przez w&lstrok;a&sacute;ciwe organy pa&nacute;stwowe. W Unii Europejskiej, w tym w Polsce, zarejestrowani sprzedawcy lek&oacute;w online powinni wy&sacute;wietla&cacute; wsp&oacute;lne logo UE.
+     </li>
+    </ul>
+    <h2>
+     Polityka reklamowa google ads i facebook ads dla lek&oacute;w i aptek w polsce
+    </h2>
+    <h3>
+     Google ads:
+    </h3>
+    <p>
+     Zgodnie z Centrum Zasad Google Ads w sekcji dotycz&aogon;cej opieki zdrowotnej i lek&oacute;w, w odniesieniu do Polski, sytuacja jest jednoznaczna: "Google nie zezwala na promowanie &zdot;adnych aptek internetowych, niezale&zdot;nie od tego, czy oferuj&aogon; one us&lstrok;ugi odbioru recept i dostawy produkt&oacute;w".
+    </p>
+    <p>
+     Oznacza to, &zdot;e bezpo&sacute;rednie reklamowanie aptek internetowych w Polsce, nawet tych oferuj&aogon;cych jedynie leki OTC lub mo&zdot;liwo&sacute;&cacute; rezerwacji lek&oacute;w na recept&eogon;, jest zabronione. To ograniczenie dotyczy zar&oacute;wno reklam tekstowych w wynikach wyszukiwania, jak i reklam graficznych w sieci displayowej.
+    </p>
+    <h3>
+     Facebook ads (meta ads):
+    </h3>
+    <p>
+     Polityka Meta dotycz&aogon;ca reklamowania lek&oacute;w na recept&eogon; wymaga uzyskania specjalnego zezwolenia. Uprawnienia do reklamowania lek&oacute;w na recept&eogon; s&aogon; ograniczone do aptek internetowych, dostawc&oacute;w us&lstrok;ug telemedycznych i producent&oacute;w farmaceutycznych, kt&oacute;rzy posiadaj&aogon; aktywne certyfikaty LegitScript Healthcare Certification i dostarcz&aogon; odpowiednie informacje do Meta.
+    </p>
+   </div>
+  </main>
+  <footer>
+   <div class="footer-container">
+    <div class="footer-bottom">
+     <p>
+      &copy; Collytics. All rights reserved.
+      <a href="/legal/privacy-policy.html">
+       Polityka Prywatno&sacute;ci
+      </a>
+     </p>
+    </div>
+   </div>
+  </footer>
+  <script>
+   document.addEventListener("click", function(e) {
             if(e.target.id === "menuTrigger") {
                 document.getElementById("dropdownMenu").classList.add("active");
                 document.getElementById("menuOverlay").classList.add("active");
@@ -110,6 +190,9 @@
                 document.getElementById("menuOverlay").classList.remove("active");
             }
         });
-    </script>
-</body>
+  </script>
+  <!-- Cookie Banner Script -->
+  <script src="../js/cookie-banner.js">
+  </script>
+ </body>
 </html>
