@@ -1,30 +1,13 @@
 // Cookie Consent Banner - Collytics.io
-// Wersja: 2.0 (ulepszona)
+// Wersja: 3.0 (GTM Consent Mode)
 // Data: 2025-10-06
-// Poprawki: Prawdziwe blokowanie skryptów przed zgodą
+// Poprawki: Integracja z Google Tag Manager Consent Mode
 
 (function() {
     'use strict';
 
     const COOKIE_NAME = 'cookie_consent';
     const CONSENT_EXPIRY_DAYS = 365;
-
-    // ===== KROK 1: ZABLOKUJ WSZYSTKIE SKRYPTY PRZED INICJALIZACJĄ =====
-    // To musi być PRZED wszystkim innym!
-    function blockScripts() {
-        // Znajdź wszystkie skrypty z data-category
-        const scripts = document.querySelectorAll('script[data-category]');
-        scripts.forEach(script => {
-            if (script.type !== 'text/plain') {
-                // Zablokuj skrypt zmieniając jego typ
-                script.type = 'text/plain';
-                script.setAttribute('data-original-type', 'text/javascript');
-            }
-        });
-    }
-
-    // Wywołaj natychmiast
-    blockScripts();
 
     // Wstrzyknij HTML bannera do strony
     function injectBannerHTML() {
@@ -107,54 +90,31 @@
     const CookieBanner = {
         init: function() {
             console.log('[Cookie Banner] Inicjalizacja...');
-            injectBannerHTML();
 
             const consent = this.getConsent();
 
             if (!consent) {
                 console.log('[Cookie Banner] Brak zgody - wyświetlam banner');
+                injectBannerHTML();
                 this.showBanner();
             } else {
                 console.log('[Cookie Banner] Znaleziono zgody:', consent);
-                this.loadScripts(consent);
+                this.updateGTMConsent(consent);
             }
-
-            // Dodaj obserwator dla nowych skryptów (dynamicznie dodawanych)
-            this.observeNewScripts();
-        },
-
-        // Obserwuj nowe skrypty dodawane do strony
-        observeNewScripts: function() {
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    mutation.addedNodes.forEach((node) => {
-                        if (node.tagName === 'SCRIPT' && node.hasAttribute('data-category')) {
-                            const consent = this.getConsent();
-                            const category = node.getAttribute('data-category');
-
-                            if (!consent || !consent[category]) {
-                                // Brak zgody - zablokuj
-                                node.type = 'text/plain';
-                                node.setAttribute('data-original-type', 'text/javascript');
-                                console.log(`[Cookie Banner] ❌ Zablokowano dynamiczny skrypt: ${category}`);
-                            }
-                        }
-                    });
-                });
-            });
-
-            observer.observe(document.documentElement, {
-                childList: true,
-                subtree: true
-            });
         },
 
         showBanner: function() {
-            document.getElementById('cookieBanner').classList.add('show');
+            const banner = document.getElementById('cookieBanner');
+            if (banner) {
+                banner.classList.add('show');
+            }
         },
 
         hideBanner: function() {
-            document.getElementById('cookieBanner').classList.remove('show');
+            const banner = document.getElementById('cookieBanner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
         },
 
         toggleOptions: function() {
@@ -182,7 +142,7 @@
                 timestamp: new Date().toISOString()
             };
             this.saveConsent(consent);
-            this.loadScripts(consent);
+            this.updateGTMConsent(consent);
             this.hideBanner();
         },
 
@@ -195,6 +155,7 @@
                 timestamp: new Date().toISOString()
             };
             this.saveConsent(consent);
+            this.updateGTMConsent(consent);
             this.hideBanner();
         },
 
@@ -207,13 +168,13 @@
                 timestamp: new Date().toISOString()
             };
             this.saveConsent(consent);
-            this.loadScripts(consent);
+            this.updateGTMConsent(consent);
             this.hideBanner();
         },
 
         saveConsent: function(consent) {
             const consentData = {
-                version: '2.0',
+                version: '3.0',
                 data: consent,
                 expiryDate: new Date(Date.now() + CONSENT_EXPIRY_DAYS * 24 * 60 * 60 * 1000).toISOString()
             };
@@ -221,13 +182,6 @@
             try {
                 localStorage.setItem(COOKIE_NAME, JSON.stringify(consentData));
                 console.log('[Cookie Banner] ✅ Zgody zapisane:', consent);
-
-                // Wyślij event dla Google Tag Manager (jeśli używasz)
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({
-                    'event': 'cookie_consent_update',
-                    'cookie_consent': consent
-                });
             } catch (e) {
                 console.error('[Cookie Banner] Błąd zapisu:', e);
                 window.cookieConsent = consentData;
@@ -256,121 +210,35 @@
             }
         },
 
-        // ===== KLUCZOWA FUNKCJA: ŁADOWANIE SKRYPTÓW =====
-        loadScripts: function(consent) {
-            console.log('[Cookie Banner] Ładowanie skryptów zgodnie ze zgodami...');
+        // KLUCZOWA FUNKCJA: Aktualizacja GTM Consent Mode
+        updateGTMConsent: function(consent) {
+            console.log('[Cookie Banner] Aktualizacja GTM Consent Mode...');
 
-            // Aktywuj zablokowane skrypty według kategorii
-            const scriptsByCategory = {
-                analytics: document.querySelectorAll('script[data-category="analytics"]'),
-                marketing: document.querySelectorAll('script[data-category="marketing"]'),
-                personalization: document.querySelectorAll('script[data-category="personalization"]')
-            };
-
-            // Aktywuj skrypty analytics
-            if (consent.analytics) {
-                console.log('[Cookie Banner] ✅ Aktywuję skrypty analityczne');
-                this.activateScripts(scriptsByCategory.analytics);
-                this.loadGoogleAnalytics();
-            } else {
-                console.log('[Cookie Banner] ❌ Skrypty analityczne zablokowane');
+            if (typeof gtag === 'undefined') {
+                console.warn('[Cookie Banner] ⚠️ gtag nie znaleziony - GTM może nie być załadowany');
+                return;
             }
 
-            // Aktywuj skrypty marketing
-            if (consent.marketing) {
-                console.log('[Cookie Banner] ✅ Aktywuję skrypty marketingowe');
-                this.activateScripts(scriptsByCategory.marketing);
-                this.loadFacebookPixel();
-            } else {
-                console.log('[Cookie Banner] ❌ Skrypty marketingowe zablokowane');
-            }
-
-            // Aktywuj skrypty personalizacji
-            if (consent.personalization) {
-                console.log('[Cookie Banner] ✅ Aktywuję skrypty personalizacji');
-                this.activateScripts(scriptsByCategory.personalization);
-            } else {
-                console.log('[Cookie Banner] ❌ Skrypty personalizacji zablokowane');
-            }
-        },
-
-        // Aktywuj zablokowane skrypty
-        activateScripts: function(scripts) {
-            scripts.forEach(script => {
-                if (script.type === 'text/plain') {
-                    // Utwórz nowy element script
-                    const newScript = document.createElement('script');
-
-                    // Skopiuj wszystkie atrybuty
-                    Array.from(script.attributes).forEach(attr => {
-                        if (attr.name !== 'type' && attr.name !== 'data-original-type') {
-                            newScript.setAttribute(attr.name, attr.value);
-                        }
-                    });
-
-                    // Ustaw właściwy typ
-                    newScript.type = 'text/javascript';
-
-                    // Skopiuj zawartość (dla inline scripts)
-                    if (script.innerHTML) {
-                        newScript.innerHTML = script.innerHTML;
-                    }
-
-                    // Zastąp stary skrypt nowym
-                    script.parentNode.replaceChild(newScript, script);
-
-                    console.log('[Cookie Banner] 🚀 Załadowano skrypt:', script.src || 'inline');
-                }
+            // Zaktualizuj zgody w GTM
+            gtag('consent', 'update', {
+                'analytics_storage': consent.analytics ? 'granted' : 'denied',
+                'ad_storage': consent.marketing ? 'granted' : 'denied',
+                'ad_user_data': consent.marketing ? 'granted' : 'denied',
+                'ad_personalization': consent.personalization ? 'granted' : 'denied'
             });
-        },
 
-        // Google Analytics
-        loadGoogleAnalytics: function() {
-            if (typeof gtag !== 'undefined') {
-                console.log('[Cookie Banner] Google Analytics już załadowany');
-                return;
-            }
+            console.log('[Cookie Banner] ✅ GTM Consent Mode zaktualizowany:', {
+                analytics: consent.analytics ? 'granted' : 'denied',
+                marketing: consent.marketing ? 'granted' : 'denied',
+                personalization: consent.personalization ? 'granted' : 'denied'
+            });
 
-            // ZAMIEŃ 'GA_MEASUREMENT_ID' na swoje ID!
-            const GA_ID = 'G-XXXXXXXXXX'; // <--- TUTAJ WPISZ SWOJE ID
-
+            // Wyślij event
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', GA_ID);
-
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-            document.head.appendChild(script);
-
-            console.log('[Cookie Banner] 📊 Google Analytics załadowany');
-        },
-
-        // Facebook Pixel
-        loadFacebookPixel: function() {
-            if (typeof fbq !== 'undefined') {
-                console.log('[Cookie Banner] Facebook Pixel już załadowany');
-                return;
-            }
-
-            // ZAMIEŃ 'YOUR_PIXEL_ID' na swoje ID!
-            const PIXEL_ID = 'YOUR_PIXEL_ID'; // <--- TUTAJ WPISZ SWOJE ID
-
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-
-            fbq('init', PIXEL_ID);
-            fbq('track', 'PageView');
-
-            console.log('[Cookie Banner] 📘 Facebook Pixel załadowany');
+            window.dataLayer.push({
+                'event': 'cookie_consent_update',
+                'cookie_consent': consent
+            });
         }
     };
 
@@ -379,37 +247,39 @@
 
     // ===== FUNKCJE TESTOWE - DOSTĘPNE W KONSOLI =====
     window.cookieTest = {
-        // Sprawdź status
         status: function() {
             console.log('=== STATUS COOKIE BANNER ===');
             const consent = CookieBanner.getConsent();
             console.log('Zgody:', consent || 'Brak');
-            console.log('Google Analytics:', typeof gtag !== 'undefined' ? '✅ Załadowany' : '❌ Zablokowany');
-            console.log('Facebook Pixel:', typeof fbq !== 'undefined' ? '✅ Załadowany' : '❌ Zablokowany');
-            console.log('DataLayer:', typeof dataLayer !== 'undefined' ? '✅ Istnieje' : '❌ Brak');
+            console.log('gtag:', typeof gtag !== 'undefined' ? '✅ Istnieje' : '❌ Brak');
+            console.log('DataLayer:', window.dataLayer ? '✅ Istnieje (' + window.dataLayer.length + ' wpisów)' : '❌ Brak');
 
-            // Sprawdź zablokowane skrypty
-            const blockedScripts = document.querySelectorAll('script[type="text/plain"][data-category]');
-            console.log('Zablokowane skrypty:', blockedScripts.length);
-            blockedScripts.forEach(s => {
-                console.log('  -', s.getAttribute('data-category'), s.src || 'inline');
-            });
+            // Sprawdź Consent Mode w dataLayer
+            if (window.dataLayer) {
+                const consentEvents = window.dataLayer.filter(item =>
+                    item[0] === 'consent' || item.event === 'cookie_consent_update'
+                );
+                console.log('Consent events w dataLayer:', consentEvents.length);
+                if (consentEvents.length > 0) {
+                    console.log('Ostatni consent:', consentEvents[consentEvents.length - 1]);
+                }
+            }
             console.log('==========================');
         },
 
-        // Reset
         reset: function() {
             localStorage.removeItem(COOKIE_NAME);
             console.log('✅ Zgody wyczyszczone. Przeładuj stronę.');
             setTimeout(() => location.reload(), 1000);
         },
 
-        // Pokaż banner ponownie
         show: function() {
+            if (!document.getElementById('cookieBanner')) {
+                injectBannerHTML();
+            }
             CookieBanner.showBanner();
         },
 
-        // Sprawdź localStorage
         check: function() {
             const data = localStorage.getItem(COOKIE_NAME);
             console.log('LocalStorage:', data ? JSON.parse(data) : 'Brak danych');
