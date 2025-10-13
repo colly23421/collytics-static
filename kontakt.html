@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
  <head>
-  
+
   <!-- GTM Consent Mode - MUSI BYĆ PRZED GTM -->
   <script>
   window.dataLayer = window.dataLayer || [];
@@ -201,45 +201,136 @@
         });
   </script>
   <script>
-   document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Zatrzymaj domyślną wysyłkę formularza
+  document.addEventListener('DOMContentLoaded', function() {
+      // Obsługa formularzy
+      const contactForms = document.querySelectorAll('.contact-form');
 
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.textContent;
+      contactForms.forEach(form => {
+          form.addEventListener('submit', async function(e) {
+              e.preventDefault();
 
-            // Prosta walidacja
-            const name = contactForm.querySelector('input[type="text"]').value;
-            const email = contactForm.querySelector('input[type="email"]').value;
-            const message = contactForm.querySelector('textarea').value;
-            const consent = contactForm.querySelector('input[type="checkbox"]').checked;
+              const submitButton = form.querySelector('button[type="submit"], .cta-button, .submit-button');
+              const originalButtonText = submitButton.textContent;
 
-            if (!name || !email || !message) {
-                alert('Proszę wypełnić wszystkie pola formularza.');
-                return;
-            }
-            if (!consent) {
-                alert('Musisz wyrazić zgodę na przetwarzanie danych.');
-                return;
-            }
+              const formData = {
+                  name: form.querySelector('input[type="text"]').value,
+                  email: form.querySelector('input[type="email"]').value,
+                  message: form.querySelector('textarea').value,
+                  consent: form.querySelector('input[type="checkbox"]').checked
+              };
 
-            // Zmień tekst przycisku
-            submitButton.textContent = 'Wysyłanie...';
-            submitButton.disabled = true;
+              if (!formData.name || !formData.email || !formData.message) {
+                  showFormMessage(form, 'Wypełnij wszystkie pola formularza', 'error');
+                  return;
+              }
 
-            // Tutaj w przyszłości będzie kod wysyłający dane, np. przez fetch()
-            // Na razie symulujemy sukces po 2 sekundach
-            setTimeout(() => {
-                alert('Wiadomość została wysłana! (Symulacja)');
-                contactForm.reset(); // Wyczyść formularz
-                submitButton.textContent = originalButtonText;
-                submitButton.disabled = false;
-            }, 2000);
-        });
-    }
-});
+              if (!formData.consent) {
+                  showFormMessage(form, 'Musisz wyrazić zgodę na przetwarzanie danych', 'error');
+                  return;
+              }
+
+              submitButton.textContent = 'Wysyłanie...';
+              submitButton.disabled = true;
+
+              try {
+                  const response = await fetch('/api/contact', {
+                      method: 'POST',
+                      headers: {'Content-Type': 'application/json'},
+                      body: JSON.stringify(formData)
+                  });
+
+                  const result = await response.json();
+
+                  if (result.success) {
+                      form.reset();
+                      showFormMessage(form, result.message || 'Dziękujemy za wiadomość!', 'success');
+                      submitButton.textContent = '✓ Wysłano!';
+                      submitButton.style.background = '#10b981';
+
+                      setTimeout(() => {
+                          submitButton.textContent = originalButtonText;
+                          submitButton.style.background = '';
+                      }, 3000);
+                  } else {
+                      showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
+                  }
+              } catch (error) {
+                  console.error('Błąd wysyłania:', error);
+                  const mailtoLink = `mailto:hello@collytics.io?subject=Kontakt ze strony&body=Imię: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AWiadomość:%0D%0A${formData.message}`;
+                  showFormMessage(form, 'Problem z formularzem. Otwieramy program pocztowy...', 'error');
+                  setTimeout(() => {
+                      window.location.href = mailtoLink;
+                  }, 2000);
+              } finally {
+                  setTimeout(() => {
+                      submitButton.textContent = originalButtonText;
+                      submitButton.disabled = false;
+                  }, 3000);
+              }
+          });
+      });
+
+      // Funkcja do wyświetlania komunikatów
+      function showFormMessage(form, message, type) {
+          const existing = form.parentElement.querySelector('.form-message');
+          if (existing) existing.remove();
+
+          const messageDiv = document.createElement('div');
+          messageDiv.className = 'form-message';
+          messageDiv.textContent = message;
+
+          messageDiv.style.cssText = `
+              margin-top: 20px;
+              padding: 15px 20px;
+              border-radius: 8px;
+              text-align: center;
+              animation: fadeIn 0.3s ease;
+              font-size: 14px;
+          `;
+
+          if (type === 'success') {
+              messageDiv.style.cssText += `
+                  background: rgba(16, 185, 129, 0.1);
+                  color: #10b981;
+                  border: 1px solid rgba(16, 185, 129, 0.2);
+              `;
+          } else if (type === 'error') {
+              messageDiv.style.cssText += `
+                  background: rgba(239, 68, 68, 0.1);
+                  color: #ef4444;
+                  border: 1px solid rgba(239, 68, 68, 0.2);
+              `;
+          }
+
+          form.parentElement.appendChild(messageDiv);
+
+          setTimeout(() => {
+              messageDiv.style.animation = 'fadeOut 0.3s ease';
+              setTimeout(() => {
+                  if (messageDiv.parentNode) {
+                      messageDiv.remove();
+                  }
+              }, 300);
+          }, 7000);
+      }
+
+      // Animacje CSS
+      if (!document.getElementById('form-animations')) {
+          const style = document.createElement('style');
+          style.id = 'form-animations';
+          style.textContent = `
+              @keyframes fadeIn {
+                  from { opacity: 0; transform: translateY(-10px); }
+                  to { opacity: 1; transform: translateY(0); }
+              }
+              @keyframes fadeOut {
+                  from { opacity: 1; transform: translateY(0); }
+                  to { opacity: 0; transform: translateY(-10px); }
+              }
+          `;
+          document.head.appendChild(style);
+      }
+  });
   </script>
   <!-- Cookie Banner Script -->
   <script src="../js/cookie-banner.js">
