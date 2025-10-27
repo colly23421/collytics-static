@@ -693,4 +693,23 @@ visibility: visible;
             color: #fff;
         }
 
+
+        /* Dodaj to do globalnego pliku CSS, jeśli jeszcze tam nie ma */
+            :root {
+                --accent-gradient-new: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+            }
+
+            .gradient-text-new {
+                background: var(--accent-gradient-new);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+                /* Możesz dodać display: inline-block, jeśli są problemy z renderowaniem */
+                /* display: inline-block; */
+            }
+
+
+
+
 </style>
