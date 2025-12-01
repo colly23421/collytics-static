@@ -116,12 +116,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="7eb642f4-bed3-4900-9563-7901d60120c8">
         <input type="hidden" name="to" value="hello@collytics.io">
-               <div class="form-group">
+        <input type="hidden" name="redirect" value="https://www.collytics.io/kontakt.html?success=true"> 
+
+       <div class="form-group">
          <input class="form-input" name="name" placeholder="Imię" required type="text">
          <input class="form-input" name="email" placeholder="Email" required type="email">
          <textarea class="form-input" name="message" placeholder="Powiedz nam o swoim projekcie" rows="5"></textarea>
          <div class="form-checkbox">
-           <input id="consent" required type="checkbox">
+           <input id="consent" name="consent" required type="checkbox">
            <label for="consent">
              Wyrażam zgodę na przetwarzanie moich danych osobowych przez Collytics OÜ w celu odpowiedzi na zapytanie.
            </label>
@@ -129,6 +131,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          <button class="cta-button" type="submit">
            Wyślij wiadomość
          </button>
+            <div id="form-message-container"></div>
        </div>
      </form>
     </div>
@@ -202,7 +205,86 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         });
   </script>
-    <script src="../js/cookie-banner.js">
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Funkcja do pobierania parametru z URL
+      function getUrlParameter(name) {
+          name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+          var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+          var results = regex.exec(location.search);
+          return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      }
+
+      const success = getUrlParameter('success');
+      const container = document.getElementById('form-message-container');
+      const form = document.querySelector('.contact-form');
+      const submitButton = form ? form.querySelector('.cta-button') : null;
+
+      if (success === 'true' && container) {
+          const messageDiv = document.createElement('div');
+          messageDiv.textContent = 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.';
+          messageDiv.className = 'form-message success-message'; // Dodanie klasy dla CSS
+
+          // Wstawienie stylów komunikatu sukcesu
+          messageDiv.style.cssText = `
+              margin-top: 20px;
+              padding: 15px 20px;
+              border-radius: 8px;
+              text-align: center;
+              background: rgba(16, 185, 129, 0.1);
+              color: #10b981;
+              border: 1px solid rgba(16, 185, 129, 0.2);
+              font-size: 14px;
+              animation: fadeIn 0.3s ease;
+          `;
+          
+          container.appendChild(messageDiv);
+          
+          // Opcjonalnie: Ukryj formularz i zmień przycisk po sukcesie
+          if (submitButton) {
+              submitButton.textContent = '✓ Wysłano!';
+              submitButton.style.background = '#10b981';
+          }
+
+          // Usuń parametr sukcesu z URL, aby nie wyświetlał się przy odświeżeniu
+          if (window.history.replaceState) {
+              window.history.replaceState(null, null, window.location.pathname);
+          }
+
+          // Usuń komunikat po 7 sekundach (opcjonalnie)
+          setTimeout(() => {
+              messageDiv.style.opacity = '0';
+              messageDiv.style.transform = 'translateY(-10px)';
+              setTimeout(() => {
+                  messageDiv.remove();
+                  if (submitButton) {
+                    submitButton.textContent = 'Wyślij wiadomość';
+                    submitButton.style.background = '';
+                  }
+              }, 300);
+          }, 7000);
+      }
+
+      // Dodanie animacji CSS do head (jeśli brakuje)
+      if (!document.getElementById('form-animations')) {
+          const style = document.createElement('style');
+          style.id = 'form-animations';
+          style.textContent = `
+              @keyframes fadeIn {
+                  from { opacity: 0; transform: translateY(-10px); }
+                  to { opacity: 1; transform: translateY(0); }
+              }
+              @keyframes fadeOut {
+                  from { opacity: 1; transform: translateY(0); }
+                  to { opacity: 0; transform: translateY(-10px); }
+              }
+          `;
+          document.head.appendChild(style);
+      }
+  });
+  </script>
+    <script src="../js/cookie-banner.js">
   </script>
  </body>
 </html>
