@@ -108,18 +108,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
      Masz pytania? Chcesz omówić swój pomysł? Wypełnij formularz lub skontaktuj się z nami bezpośrednio. Jesteśmy tu, aby pomóc.
     </p>
    </header>
-   <section class="contact-main-section">
-    <div class="contact-column">
-     <h2>
+   <section class="contact-main-section" style="display: flex; gap: 50px; flex-wrap: wrap;">     <div class="contact-column" style="flex: 1 1 450px;">      <h2>
       Wyślij nam wiadomość
      </h2>
-           <form class="contact-form">
+     <form class="contact-form">
       <div class="form-group">
-       <input class="form-input" name="name" placeholder="Imię" required type="text"> 
+       <input class="form-input" name="name" placeholder="Imię" required type="text">
        <input class="form-input" name="email" placeholder="Email" required type="email">
        <textarea class="form-input" name="message" placeholder="Powiedz nam o swoim projekcie" rows="5"></textarea>
        <div class="form-checkbox">
-         <input id="consent" name="consent" required type="checkbox"> 
+         <input id="consent" name="consent" required type="checkbox">
          <label for="consent">
            Wyrażam zgodę na przetwarzanie moich danych osobowych przez Collytics OÜ w celu odpowiedzi na zapytanie.
          </label>
@@ -130,8 +128,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
      </form>
     </div>
-    <div class="contact-column">
-     <h2>
+    <div class="contact-column" style="flex: 1 1 450px;">      <h2>
       Informacje kontaktowe
      </h2>
      <div class="contact-info">
@@ -156,8 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </p>
      </div>
      <div class="map-container">
-      <iframe allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ9_faj8jMHkcRfZiA2PFFSKo&key=API_KEY">
-      </iframe>
+               <iframe allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.515257529486!2d21.006935177242095!3d52.22744927202392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc5807e15823%3A0x8e82a392d4f2913e!2sMarsza%C5%82kowska%20126%2F134%2C%2000-008%20Warszawa!5e0!3m2!1spl!2spl!4v1701389953880!5m2!1spl!2spl" style="border:0; width: 100%; height: 350px;"></iframe>
      </div>
     </div>
    </section>
@@ -200,8 +196,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         });
   </script>
-    
-    <script>
+  <script>
   document.addEventListener('DOMContentLoaded', function() {
       // Obsługa formularzy
       const contactForms = document.querySelectorAll('.contact-form');
@@ -212,17 +207,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
               const submitButton = form.querySelector('button[type="submit"], .cta-button, .submit-button');
               const originalButtonText = submitButton.textContent;
-             
-              // Pobieranie danych z pól formularza
+
               const formData = {
                   name: form.querySelector('input[name="name"]').value,
                   email: form.querySelector('input[name="email"]').value,
                   message: form.querySelector('textarea[name="message"]').value,
                   consent: form.querySelector('input[name="consent"]').checked,
-                 // Dodajemy klucz dostępu i docelowy email bezpośrednio tutaj
-                 access_key: '7eb642f4-bed3-4900-9563-7901d60120c8', 
-                 to: 'hello@collytics.io',
-                 subject: `Nowa wiadomość od ${form.querySelector('input[name="name"]').value}`
+                  // Klucz dostępu i docelowy email dla Web3Forms
+                  access_key: '7eb642f4-bed3-4900-9563-7901d60120c8', 
+                  to: 'hello@collytics.io',
+                  subject: `Nowa wiadomość od ${form.querySelector('input[name="name"]').value}`
               };
 
               if (!formData.name || !formData.email || !formData.message) {
@@ -239,8 +233,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               submitButton.disabled = true;
 
               try {
-                  // ZMIANA ADRESU FETCH NA BEZPOŚREDNIE API WEB3FORMS
-                  const response = await fetch('https://api.web3forms.com/submit', { 
+                  // WYSYŁKA DO DZIAŁAJĄCEGO API WEB3FORMS
+                  const response = await fetch('https://api.web3forms.com/submit', {
                       method: 'POST',
                       headers: {'Content-Type': 'application/json'},
                       body: JSON.stringify(formData)
@@ -250,7 +244,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
                   if (result.success) {
                       form.reset();
-                      showFormMessage(form, result.message || 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success');
+                       // ZMIENIONY KOMUNIKAT NA POLSKI
+                      showFormMessage(form, 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success'); 
                       submitButton.textContent = '✓ Wysłano!';
                       submitButton.style.background = '#10b981';
 
@@ -259,12 +254,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                           submitButton.style.background = '';
                       }, 3000);
                   } else {
-                      // Wyświetlenie błędu z Web3Forms lub domyślnego
-                      showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error'); 
+                       // Używamy błędu z Web3Forms, jeśli istnieje, w przeciwnym razie domyślnego
+                      showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
                   }
               } catch (error) {
                   console.error('Błąd wysyłania:', error);
-                  // Powrót do oryginalnej obsługi błędu (otwarcie mailto)
                   const mailtoLink = `mailto:hello@collytics.io?subject=Kontakt ze strony&body=Imię: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AWiadomość:%0D%0A${formData.message}`;
                   showFormMessage(form, 'Problem z formularzem. Otwieramy program pocztowy...', 'error');
                   setTimeout(() => {
@@ -279,7 +273,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           });
       });
 
-      // Funkcja do wyświetlania komunikatów (oryginalna)
+      // Funkcja do wyświetlania komunikatów
       function showFormMessage(form, message, type) {
           const existing = form.parentElement.querySelector('.form-message');
           if (existing) existing.remove();
