@@ -22,8 +22,7 @@
     "ad_personalization": "denied"
   });
   </script>
-  <script src="/js/cookie-banner.js"></script>  
-  <meta charset="utf-8">
+  <script src="/js/cookie-banner.js"></script>  <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>
    Kontakt - Collytics | Porozmawiajmy o Twoim projekcie
@@ -40,11 +39,8 @@
   <link href="assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-    <link href="/css/navbar-universal.css" rel="stylesheet"> 
-  <link href="/css/style.css" rel="stylesheet">
   <link href="/css/global.css" rel="stylesheet">
-    <link href="/css/kontakt.css" rel="stylesheet"> 
+  <link href="/css/kontakt.css" rel="stylesheet">
     <link href="../css/cookie-banner.css" rel="stylesheet">
  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -54,7 +50,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
  <body>
   
-    <nav class="navbar" id="navbar">
+  <div class="gradient-bg">
+  </div>
+  <nav class="navbar" id="navbar">
    <div class="nav-container">
     <a class="logo" href="/index.html">
      <img alt="Collytics" src="/assets/images/logo main transparent.png">
@@ -110,29 +108,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
      Masz pytania? Chcesz omówić swój pomysł? Wypełnij formularz lub skontaktuj się z nami bezpośrednio. Jesteśmy tu, aby pomóc.
     </p>
    </header>
-   <section class="contact-main-section" style="display: flex; gap: 50px; flex-wrap: wrap;"> 
-    <div class="contact-column" style="flex: 1 1 450px;"> 
+       <section class="contact-main-section" style="display: flex; gap: 50px; flex-wrap: wrap;">
+    <div class="contact-column" style="flex: 1 1 450px;">
      <h2>
       Wyślij nam wiadomość
      </h2>
-     <form class="contact-form">
+           <form class="contact-form">
       <div class="form-group">
        <input class="form-input" name="name" placeholder="Imię" required type="text">
        <input class="form-input" name="email" placeholder="Email" required type="email">
        <textarea class="form-input" name="message" placeholder="Powiedz nam o swoim projekcie" rows="5"></textarea>
        <div class="form-checkbox">
-         <input id="consent" name="consent" required type="checkbox">
-         <label for="consent">
-           Wyrażam zgodę na przetwarzanie moich danych osobowych przez Collytics OÜ w celu odpowiedzi na zapytanie.
-         </label>
+        <input id="consent" name="consent" required type="checkbox">
+        <label for="consent">
+         Wyrażam zgodę na przetwarzanie moich danych osobowych przez Collytics OÜ w celu odpowiedzi na zapytanie.
+        </label>
        </div>
        <button class="cta-button" type="submit">
-         Wyślij wiadomość
+        Wyślij wiadomość
        </button>
       </div>
      </form>
     </div>
-    <div class="contact-column" style="flex: 1 1 450px;"> 
+        <div class="contact-column" style="flex: 1 1 450px;">
      <h2>
       Informacje kontaktowe
      </h2>
@@ -158,7 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </p>
      </div>
      <div class="map-container">
-       <iframe allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.515257529486!2d21.006935177242095!3d52.22744927202392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc5807e15823%3A0x8e82a392d4f2913e!2sMarsza%C5%82kowska%20126%2F134%2C%2000-008%20Warszawa!5e0!3m2!1spl!2spl!4v1701389953880!5m2!1spl!2spl" style="border:0; width: 100%; height: 350px;"></iframe>
+               <iframe allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.515257529486!2d21.006935177242095!3d52.22744927202392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc5807e15823%3A0x8e82a392d4f2913e!2sMarsza%C5%82kowska%20126%2F134%2C%2000-008%20Warszawa!5e0!3m2!1spl!2spl!4v1701389953880!5m2!1spl!2spl" style="border:0; width: 100%; height: 350px;"></iframe>
      </div>
     </div>
    </section>
@@ -201,7 +199,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         });
   </script>
-  <script>
+    
+    <script>
   document.addEventListener('DOMContentLoaded', function() {
       // Obsługa formularzy
       const contactForms = document.querySelectorAll('.contact-form');
@@ -214,6 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               const originalButtonText = submitButton.textContent;
 
               const formData = {
+                  // Używamy name="..." do poprawnego pobrania danych
                   name: form.querySelector('input[name="name"]').value,
                   email: form.querySelector('input[name="email"]').value,
                   message: form.querySelector('textarea[name="message"]').value,
@@ -238,7 +238,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               submitButton.disabled = true;
 
               try {
-                  // WYSYŁKA DO DZIAŁAJĄCEGO API WEB3FORMS
+                  // ZMIANA ADRESU FETCH NA BEZPOŚREDNIE API WEB3FORMS
                   const response = await fetch('https://api.web3forms.com/submit', {
                       method: 'POST',
                       headers: {'Content-Type': 'application/json'},
@@ -249,6 +249,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
                   if (result.success) {
                       form.reset();
+                       // POLSKI KOMUNIKAT SUKCESU
                       showFormMessage(form, 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success'); 
                       submitButton.textContent = '✓ Wysłano!';
                       submitButton.style.background = '#10b981';
