@@ -113,26 +113,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
      <h2>
       Wyślij nam wiadomość
      </h2>
-           <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="7eb642f4-bed3-4900-9563-7901d60120c8">
-        <input type="hidden" name="to" value="hello@collytics.io">
-        <input type="hidden" name="redirect" value="https://www.collytics.io/kontakt.html?success=true"> 
-
-       <div class="form-group">
-         <input class="form-input" name="name" placeholder="Imię" required type="text">
-         <input class="form-input" name="email" placeholder="Email" required type="email">
-         <textarea class="form-input" name="message" placeholder="Powiedz nam o swoim projekcie" rows="5"></textarea>
-         <div class="form-checkbox">
-           <input id="consent" name="consent" required type="checkbox">
-           <label for="consent">
-             Wyrażam zgodę na przetwarzanie moich danych osobowych przez Collytics OÜ w celu odpowiedzi na zapytanie.
-           </label>
-         </div>
-         <button class="cta-button" type="submit">
-           Wyślij wiadomość
-         </button>
-            <div id="form-message-container"></div>
+           <form class="contact-form">
+      <div class="form-group">
+       <input class="form-input" name="name" placeholder="Imię" required type="text"> 
+       <input class="form-input" name="email" placeholder="Email" required type="email">
+       <textarea class="form-input" name="message" placeholder="Powiedz nam o swoim projekcie" rows="5"></textarea>
+       <div class="form-checkbox">
+         <input id="consent" name="consent" required type="checkbox"> 
+         <label for="consent">
+           Wyrażam zgodę na przetwarzanie moich danych osobowych przez Collytics OÜ w celu odpowiedzi na zapytanie.
+         </label>
        </div>
+       <button class="cta-button" type="submit">
+         Wyślij wiadomość
+       </button>
+      </div>
      </form>
     </div>
     <div class="contact-column">
@@ -205,86 +200,148 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         });
   </script>
+    
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Obsługa formularzy
+      const contactForms = document.querySelectorAll('.contact-form');
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-      // Funkcja do pobierania parametru z URL
-      function getUrlParameter(name) {
-          name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-          var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-          var results = regex.exec(location.search);
-          return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-      }
+      contactForms.forEach(form => {
+          form.addEventListener('submit', async function(e) {
+              e.preventDefault();
 
-      const success = getUrlParameter('success');
-      const container = document.getElementById('form-message-container');
-      const form = document.querySelector('.contact-form');
-      const submitButton = form ? form.querySelector('.cta-button') : null;
+              const submitButton = form.querySelector('button[type="submit"], .cta-button, .submit-button');
+              const originalButtonText = submitButton.textContent;
+             
+              // Pobieranie danych z pól formularza
+              const formData = {
+                  name: form.querySelector('input[name="name"]').value,
+                  email: form.querySelector('input[name="email"]').value,
+                  message: form.querySelector('textarea[name="message"]').value,
+                  consent: form.querySelector('input[name="consent"]').checked,
+                 // Dodajemy klucz dostępu i docelowy email bezpośrednio tutaj
+                 access_key: '7eb642f4-bed3-4900-9563-7901d60120c8', 
+                 to: 'hello@collytics.io',
+                 subject: `Nowa wiadomość od ${form.querySelector('input[name="name"]').value}`
+              };
 
-      if (success === 'true' && container) {
-          const messageDiv = document.createElement('div');
-          messageDiv.textContent = 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.';
-          messageDiv.className = 'form-message success-message'; // Dodanie klasy dla CSS
+              if (!formData.name || !formData.email || !formData.message) {
+                  showFormMessage(form, 'Wypełnij wszystkie pola formularza', 'error');
+                  return;
+              }
 
-          // Wstawienie stylów komunikatu sukcesu
-          messageDiv.style.cssText = `
-              margin-top: 20px;
-              padding: 15px 20px;
-              border-radius: 8px;
-              text-align: center;
-              background: rgba(16, 185, 129, 0.1);
-              color: #10b981;
-              border: 1px solid rgba(16, 185, 129, 0.2);
-              font-size: 14px;
-              animation: fadeIn 0.3s ease;
-          `;
-          
-          container.appendChild(messageDiv);
-          
-          // Opcjonalnie: Ukryj formularz i zmień przycisk po sukcesie
-          if (submitButton) {
-              submitButton.textContent = '✓ Wysłano!';
-              submitButton.style.background = '#10b981';
-          }
+              if (!formData.consent) {
+                  showFormMessage(form, 'Musisz wyrazić zgodę na przetwarzanie danych', 'error');
+                  return;
+              }
 
-          // Usuń parametr sukcesu z URL, aby nie wyświetlał się przy odświeżeniu
-          if (window.history.replaceState) {
-              window.history.replaceState(null, null, window.location.pathname);
-          }
+              submitButton.textContent = 'Wysyłanie...';
+              submitButton.disabled = true;
 
-          // Usuń komunikat po 7 sekundach (opcjonalnie)
-          setTimeout(() => {
-              messageDiv.style.opacity = '0';
-              messageDiv.style.transform = 'translateY(-10px)';
-              setTimeout(() => {
-                  messageDiv.remove();
-                  if (submitButton) {
-                    submitButton.textContent = 'Wyślij wiadomość';
-                    submitButton.style.background = '';
-                  }
-              }, 300);
-          }, 7000);
-      }
+              try {
+                  // ZMIANA ADRESU FETCH NA BEZPOŚREDNIE API WEB3FORMS
+                  const response = await fetch('https://api.web3forms.com/submit', { 
+                      method: 'POST',
+                      headers: {'Content-Type': 'application/json'},
+                      body: JSON.stringify(formData)
+                  });
 
-      // Dodanie animacji CSS do head (jeśli brakuje)
-      if (!document.getElementById('form-animations')) {
-          const style = document.createElement('style');
-          style.id = 'form-animations';
-          style.textContent = `
-              @keyframes fadeIn {
-                  from { opacity: 0; transform: translateY(-10px); }
-                  to { opacity: 1; transform: translateY(0); }
-              }
-              @keyframes fadeOut {
-                  from { opacity: 1; transform: translateY(0); }
-                  to { opacity: 0; transform: translateY(-10px); }
-              }
-          `;
-          document.head.appendChild(style);
-      }
-  });
-  </script>
-    <script src="../js/cookie-banner.js">
+                  const result = await response.json();
+
+                  if (result.success) {
+                      form.reset();
+                      showFormMessage(form, result.message || 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success');
+                      submitButton.textContent = '✓ Wysłano!';
+                      submitButton.style.background = '#10b981';
+
+                      setTimeout(() => {
+                          submitButton.textContent = originalButtonText;
+                          submitButton.style.background = '';
+                      }, 3000);
+                  } else {
+                      // Wyświetlenie błędu z Web3Forms lub domyślnego
+                      showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error'); 
+                  }
+              } catch (error) {
+                  console.error('Błąd wysyłania:', error);
+                  // Powrót do oryginalnej obsługi błędu (otwarcie mailto)
+                  const mailtoLink = `mailto:hello@collytics.io?subject=Kontakt ze strony&body=Imię: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AWiadomość:%0D%0A${formData.message}`;
+                  showFormMessage(form, 'Problem z formularzem. Otwieramy program pocztowy...', 'error');
+                  setTimeout(() => {
+                      window.location.href = mailtoLink;
+                  }, 2000);
+              } finally {
+                  setTimeout(() => {
+                      submitButton.textContent = originalButtonText;
+                      submitButton.disabled = false;
+                  }, 3000);
+              }
+          });
+      });
+
+      // Funkcja do wyświetlania komunikatów (oryginalna)
+      function showFormMessage(form, message, type) {
+          const existing = form.parentElement.querySelector('.form-message');
+          if (existing) existing.remove();
+
+          const messageDiv = document.createElement('div');
+          messageDiv.className = 'form-message';
+          messageDiv.textContent = message;
+
+          messageDiv.style.cssText = `
+              margin-top: 20px;
+              padding: 15px 20px;
+              border-radius: 8px;
+              text-align: center;
+              animation: fadeIn 0.3s ease;
+              font-size: 14px;
+          `;
+
+          if (type === 'success') {
+              messageDiv.style.cssText += `
+                  background: rgba(16, 185, 129, 0.1);
+                  color: #10b981;
+                  border: 1px solid rgba(16, 185, 129, 0.2);
+              `;
+          } else if (type === 'error') {
+              messageDiv.style.cssText += `
+                  background: rgba(239, 68, 68, 0.1);
+                  color: #ef4444;
+                  border: 1px solid rgba(239, 68, 68, 0.2);
+              `;
+          }
+
+          form.parentElement.appendChild(messageDiv);
+
+          setTimeout(() => {
+              messageDiv.style.animation = 'fadeOut 0.3s ease';
+              setTimeout(() => {
+                  if (messageDiv.parentNode) {
+                      messageDiv.remove();
+                  }
+              }, 300);
+          }, 7000);
+      }
+
+      // Animacje CSS
+      if (!document.getElementById('form-animations')) {
+          const style = document.createElement('style');
+          style.id = 'form-animations';
+          style.textContent = `
+              @keyframes fadeIn {
+                  from { opacity: 0; transform: translateY(-10px); }
+                  to { opacity: 1; transform: translateY(0); }
+              }
+              @keyframes fadeOut {
+                  from { opacity: 1; transform: translateY(0); }
+                  to { opacity: 0; transform: translateY(-10px); }
+              }
+          `;
+          document.head.appendChild(style);
+      }
+  });
+  </script>
+    <script src="../js/cookie-banner.js">
   </script>
  </body>
 </html>
