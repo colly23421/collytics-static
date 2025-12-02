@@ -23,7 +23,7 @@
     "ad_personalization": "denied"
   });
   </script>
-  <script src="/js/cookie-banner.js"></script>  
+  <script src="/js/cookie-banner.js"></script>
   <!-- Google Analytics - ZABLOKOWANY DO ZGODY -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
   </script>
@@ -46,7 +46,7 @@
   <meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification">
   <!-- Cookie Banner Styles -->
   <link href="../css/cookie-banner.css" rel="stylesheet">
- 
+
 <!-- Google Tag Manager -->
 <script>
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -58,8 +58,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
  <body>
   <!-- Google Tag Manager (noscript) -->
-  
-  
+
+
   <nav class="navbar" id="navbar">
    <div class="nav-container">
     <a class="logo" href="index.html">
@@ -272,7 +272,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </section>
 
 
-  
+
  <section id="kontakt" style="padding: 100px 5%; background: rgba(30, 30, 30, 0.98);">
    <div class="contact-container" style="display: flex; gap: 50px; align-items: flex-start; max-width: 1200px; margin: 0 auto;">
     <div class="contact-column" style="flex: 1;">
@@ -334,7 +334,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-  
+
   <section id="podcast" style="padding: 100px 5%; background: rgba(30, 30, 30, 0.98);">
    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
     <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; font-weight: 600; color: #FFFFFF;">
@@ -390,191 +390,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
    </div>
   </footer>
-  <script>
-   document.addEventListener('DOMContentLoaded', function() {
-      // Obsługa formularzy
-      const contactForms = document.querySelectorAll('.contact-form');
-
-      contactForms.forEach(form => {
-          form.addEventListener('submit', async function(e) {
-              e.preventDefault();
-
-              const submitButton = form.querySelector('button[type="submit"], .cta-button, .submit-button');
-              const originalButtonText = submitButton.textContent;
-
-              const formData = {
-                  name: form.querySelector('input[type="text"]').value,
-                  email: form.querySelector('input[type="email"]').value,
-                  message: form.querySelector('textarea').value,
-                  consent: form.querySelector('input[type="checkbox"]').checked
-              };
-
-              if (!formData.name || !formData.email || !formData.message) {
-                  showFormMessage(form, 'Wypełnij wszystkie pola formularza', 'error');
-                  return;
-              }
-
-              if (!formData.consent) {
-                  showFormMessage(form, 'Musisz wyrazić zgodę na przetwarzanie danych', 'error');
-                  return;
-              }
-
-              submitButton.textContent = 'Wysyłanie...';
-              submitButton.disabled = true;
-
-              try {
-                  const response = await fetch('/api/contact', {
-                      method: 'POST',
-                      headers: {'Content-Type': 'application/json'},
-                      body: JSON.stringify(formData)
-                  });
-
-                  const result = await response.json();
-
-                  if (result.success) {
-                      form.reset();
-                      showFormMessage(form, result.message || 'Dziękujemy za wiadomość!', 'success');
-                      submitButton.textContent = '✓ Wysłano!';
-                      submitButton.style.background = '#10b981';
-
-                      setTimeout(() => {
-                          submitButton.textContent = originalButtonText;
-                          submitButton.style.background = '';
-                      }, 3000);
-                  } else {
-                      showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
-                  }
-              } catch (error) {
-                  console.error('Błąd wysyłania:', error);
-                  const mailtoLink = `mailto:hello@collytics.io?subject=Kontakt ze strony&body=Imię: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AWiadomość:%0D%0A${formData.message}`;
-                  showFormMessage(form, 'Problem z formularzem. Otwieramy program pocztowy...', 'error');
-                  setTimeout(() => {
-                      window.location.href = mailtoLink;
-                  }, 2000);
-              } finally {
-                  setTimeout(() => {
-                      submitButton.textContent = originalButtonText;
-                      submitButton.disabled = false;
-                  }, 3000);
-              }
-          });
-      });
-
-      // Funkcja do wyświetlania komunikatów
-      function showFormMessage(form, message, type) {
-          const existing = form.parentElement.querySelector('.form-message');
-          if (existing) existing.remove();
-
-          const messageDiv = document.createElement('div');
-          messageDiv.className = 'form-message';
-          messageDiv.textContent = message;
-
-          messageDiv.style.cssText = `
-    <link rel="stylesheet" href="/css/unified_nav.css">              margin-top: 20px;
-              padding: 15px 20px;
-              border-radius: 8px;
-              text-align: center;
-              animation: fadeIn 0.3s ease;
-              font-size: 14px;
-          `;
-
-          if (type === 'success') {
-              messageDiv.style.cssText += `
-    <link rel="stylesheet" href="/css/unified_nav.css">                  background: rgba(16, 185, 129, 0.1);
-                  color: #10b981;
-                  border: 1px solid rgba(16, 185, 129, 0.2);
-              `;
-          } else if (type === 'error') {
-              messageDiv.style.cssText += `
-    <link rel="stylesheet" href="/css/unified_nav.css">                  background: rgba(239, 68, 68, 0.1);
-                  color: #ef4444;
-                  border: 1px solid rgba(239, 68, 68, 0.2);
-              `;
-          }
-
-          form.parentElement.appendChild(messageDiv);
-
-          setTimeout(() => {
-              messageDiv.style.animation = 'fadeOut 0.3s ease';
-              setTimeout(() => {
-                  if (messageDiv.parentNode) {
-                      messageDiv.remove();
-                  }
-              }, 300);
-          }, 7000);
-      }
-
-      // Animacje CSS
-      if (!document.getElementById('form-animations')) {
-          const style = document.createElement('style');
-          style.id = 'form-animations';
-          style.textContent = `
-              @keyframes fadeIn {
-                  from { opacity: 0; transform: translateY(-10px); }
-                  to { opacity: 1; transform: translateY(0); }
-              }
-              @keyframes fadeOut {
-                  from { opacity: 1; transform: translateY(0); }
-                  to { opacity: 0; transform: translateY(-10px); }
-              }
-          `;
-          document.head.appendChild(style);
-      }
 
 
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-              e.preventDefault();
-              const target = document.querySelector(this.getAttribute('href'));
-              if (target) {
-                  target.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start'
-                  });
-              }
-          });
-      });
 
-      // Animation on scroll
-      const observerOptions = {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-      };
 
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  entry.target.style.opacity = '1';
-                  entry.target.style.transform = 'translateY(0)';
-              }
-          });
-      }, observerOptions);
 
-      document.querySelectorAll('.blog-card, .case-study-container').forEach(el => {
-          el.style.opacity = '0';
-          el.style.transform = 'translateY(20px)';
-          el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-          observer.observe(el);
-      });
-  });
 
-  // Navigation hide/show on scroll - MUSI BYĆ POZA DOMContentLoaded
-  let lastScrollTop = 0;
-  const nav = document.querySelector('.navbar');
 
-  window.addEventListener('scroll', function() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
-          nav.style.transform = 'translateY(-100%)';
-      } else {
-          nav.style.transform = 'translateY(0)';
-      }
-
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  });
-  </script>
   <script src="/js/menu.js">
   </script>
   <script>
@@ -589,9 +411,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 });
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- Cookie Banner Script -->
   <script src="../js/cookie-banner.js">
   </script>
+
+
+
+
   <script>
    document.addEventListener('DOMContentLoaded', function() {
       // Obsługa formularzy
@@ -611,7 +453,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   message: form.querySelector('textarea[name="message"]').value,
                   consent: form.querySelector('input[name="consent"]').checked,
                   // Klucz dostępu i docelowy email dla Web3Forms
-                  access_key: '7eb642f4-bed3-4900-9563-7901d60120c8', 
+                  access_key: '7eb642f4-bed3-4900-9563-7901d60120c8',
                   to: 'hello@collytics.io',
                   subject: `Nowa wiadomość ze strony głównej od: ${form.querySelector('input[name="name"]').value}`
               };
