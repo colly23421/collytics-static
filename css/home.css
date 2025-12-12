@@ -714,12 +714,11 @@ visibility: visible;
 
 </style>
 
-
 /* --- Services Slider Section --- */
 .services-slider-section {
     padding: 80px 5%;
     background: var(--dark-bg);
-    overflow: hidden; /* Ukrywa pasek przewijania poza kontenerem */
+    overflow: hidden;
 }
 
 .services-container {
@@ -727,17 +726,20 @@ visibility: visible;
     margin: 0 auto;
 }
 
-.services-header {
+/* ZMIANA: Wyśrodkowany nagłówek */
+.services-header.centered {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 40px;
+    flex-direction: column; /* Układ pionowy: tekst nad przyciskami */
+    align-items: center;    /* Centrowanie w poziomie */
+    text-align: center;     /* Centrowanie tekstu */
+    gap: 24px;              /* Odstęp między tekstem a przyciskami */
+    margin-bottom: 50px;
 }
 
 .services-header h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     color: var(--text-primary);
-    max-width: 600px;
+    max-width: 800px; /* Nieco szerzej dla ładnego łamania tekstu */
 }
 
 .slider-nav-buttons {
@@ -770,22 +772,27 @@ visibility: visible;
     gap: 24px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding-bottom: 20px; /* Miejsce na ew. scrollbar systemowy */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+    padding-bottom: 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     scroll-behavior: smooth;
+    /* ZMIANA: Wyśrodkowanie kart, jeśli jest ich mało i się mieszczą */
+    justify-content: flex-start; 
 }
 
+/* Opcjonalnie: Jeśli chcesz, aby przy szerokim ekranie karty były na środku, 
+   gdy nie trzeba przewijać, zmień powyżej justify-content na 'center' */
+
 .services-track::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
 }
 
 /* Karta Usługi */
 .service-card {
-    min-width: 300px; /* Minimalna szerokość na mobile */
+    min-width: 300px;
     max-width: 380px;
-    flex: 0 0 auto; /* Nie ściskaj kart */
-    background: #141414; /* Ciemne tło karty */
+    flex: 0 0 auto;
+    background: #141414;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
     padding: 32px;
@@ -828,8 +835,7 @@ visibility: visible;
 .service-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 32px 0;
-    flex-grow: 1; /* Wypycha przycisk na dół */
+    margin: 0; /* Usunięto margines dolny, bo nie ma przycisku */
 }
 
 .service-list li {
@@ -848,38 +854,15 @@ visibility: visible;
     font-weight: bold;
 }
 
-.service-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    padding: 12px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    transition: color 0.3s ease;
-}
-
-.service-link:hover {
-    color: var(--primary-color);
-}
-
 /* Responsywność */
 @media (min-width: 1024px) {
     .service-card {
-        min-width: 360px; /* Szersze karty na desktopie */
+        min-width: 360px;
     }
 }
 
 @media (max-width: 768px) {
-    .services-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-    
     .services-track {
-        padding-right: 5%; /* Padding po prawej stronie na mobile */
+        padding-right: 5%;
     }
 }
