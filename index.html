@@ -371,6 +371,17 @@ animate();
 
       </div>
     </div>
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const track = document.getElementById('servicesTrack');
+        const btnLeft = document.getElementById('slideLeft');
+        const btnRight = document.getElementById('slideRight');
+        if(track && btnLeft && btnRight) {
+            btnLeft.addEventListener('click', () => track.scrollBy({ left: -360, behavior: 'smooth' }));
+            btnRight.addEventListener('click', () => track.scrollBy({ left: 360, behavior: 'smooth' }));
+        }
+    });
+  </script>
   </section>
 
   <section class="case-study">
