@@ -1,9 +1,8 @@
 /* ==========================================================================
-   HOME.CSS - Wersja MONTSERRAT (Cinematic Look: Bold & Light)
+   HOME.CSS - Wersja MONTSERRAT (Mniejszy Nagłówek)
    ========================================================================== */
 
 /* --- 0. IMPORT CZCIONKI MONTSERRAT --- */
-/* Pobieramy wagi: 300 (Light), 400 (Regular), 500 (Medium), 700 (Bold), 800 (ExtraBold) */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap');
 
 /* --- 1. ZMIENNE I BAZA --- */
@@ -19,13 +18,12 @@
 }
 
 body {
-    /* ZMIANA: Montserrat jako główny font */
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--dark-bg);
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
-    font-weight: 400; /* Domyślna waga */
+    font-weight: 400;
 }
 
 /* --- 2. LOGO (FIXED 60PX) --- */
@@ -43,7 +41,7 @@ footer .logo img,
     width: auto !important;
 }
 
-/* --- 3. SEKCJA HERO (MONTSERRAT STYLE) --- */
+/* --- 3. SEKCJA HERO (CYBER DEPTH) --- */
 
 .hero {
     position: relative;
@@ -108,23 +106,24 @@ footer .logo img,
     text-align: center;
 }
 
-/* STYL NAGŁÓWKA: Montserrat ExtraBold (800) */
+/* POPRAWIONY NAGŁÓWEK - MNIEJSZY */
 .hero h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem); /* Nieco większy dla efektu */
+    /* Zmniejszono zakres rozmiaru: min 1.8rem, max 2.8rem */
+    font-size: clamp(1.8rem, 4vw, 2.8rem); 
     margin-bottom: 24px;
-    font-weight: 800; /* Gruby wariant */
+    font-weight: 800;
     color: #ffffff;
-    text-transform: uppercase; /* Częsty zabieg przy Montserrat Bold */
+    text-transform: uppercase;
     letter-spacing: -0.02em;
     text-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+    line-height: 1.3;
 }
 
-/* STYL OPISU: Montserrat Light (300) */
 .hero-description {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 300; /* Cienki wariant dla kontrastu */
+    font-size: 1.1rem; /* Nieco mniejszy opis dla balansu */
+    font-weight: 300;
     color: #e2e8f0;
     margin: 0 auto 40px auto;
     max-width: 700px;
