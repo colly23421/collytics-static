@@ -1,9 +1,10 @@
 /* ==========================================================================
-   HOME.CSS - Wersja TESTOWA (Czcionka DM Sans + Hero 3D + Slider)
+   HOME.CSS - Wersja MONTSERRAT (Cinematic Look: Bold & Light)
    ========================================================================== */
 
-/* --- 0. IMPORT CZCIONKI DM SANS --- */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap');
+/* --- 0. IMPORT CZCIONKI MONTSERRAT --- */
+/* Pobieramy wagi: 300 (Light), 400 (Regular), 500 (Medium), 700 (Bold), 800 (ExtraBold) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap');
 
 /* --- 1. ZMIENNE I BAZA --- */
 :root {
@@ -18,15 +19,16 @@
 }
 
 body {
-    /* ZMIANA: Używamy DM Sans jako głównej czcionki */
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
+    /* ZMIANA: Montserrat jako główny font */
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--dark-bg);
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    font-weight: 400; /* Domyślna waga */
 }
 
-/* --- 2. LOGO (SPÓJNE Z INNYMI STRONAMI) --- */
+/* --- 2. LOGO (FIXED 60PX) --- */
 .navbar .logo img {
     height: 60px !important;
     max-height: 60px !important;
@@ -34,7 +36,6 @@ body {
     object-fit: contain;
 }
 
-/* Logo w stopce */
 footer .logo img, 
 .footer-container img {
     height: 60px !important;
@@ -42,7 +43,7 @@ footer .logo img,
     width: auto !important;
 }
 
-/* --- 3. SEKCJA HERO (CYBER DEPTH) --- */
+/* --- 3. SEKCJA HERO (MONTSERRAT STYLE) --- */
 
 .hero {
     position: relative;
@@ -107,24 +108,30 @@ footer .logo img,
     text-align: center;
 }
 
+/* STYL NAGŁÓWKA: Montserrat ExtraBold (800) */
 .hero h1 {
-    /* Upewniamy się, że nagłówek też używa nowej czcionki */
-    font-family: 'DM Sans', sans-serif; 
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Nieco większy dla efektu */
     margin-bottom: 24px;
-    font-weight: 700;
+    font-weight: 800; /* Gruby wariant */
     color: #ffffff;
+    text-transform: uppercase; /* Częsty zabieg przy Montserrat Bold */
+    letter-spacing: -0.02em;
     text-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
-    letter-spacing: -0.03em; /* DM Sans lubi ciaśniejszy kerning w nagłówkach */
 }
 
+/* STYL OPISU: Montserrat Light (300) */
 .hero-description {
-    font-size: 1.15rem;
-    color: #cbd5e1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300; /* Cienki wariant dla kontrastu */
+    color: #e2e8f0;
     margin: 0 auto 40px auto;
     max-width: 700px;
+    line-height: 1.8;
 }
 
+/* Pigułki */
 .services-pills {
     display: flex;
     gap: 12px;
@@ -134,28 +141,35 @@ footer .logo img,
 }
 
 .pill {
-    padding: 8px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding: 8px 24px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     backdrop-filter: blur(5px);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .cta-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     display: inline-block;
     background: var(--primary-color);
     color: white;
-    padding: 14px 32px;
+    padding: 16px 36px;
     border-radius: 50px;
-    font-weight: 500;
     font-size: 1rem;
     transition: all 0.3s ease;
     text-decoration: none;
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
 .cta-button:hover {
@@ -190,7 +204,8 @@ footer .logo img,
 }
 
 .services-header h2 {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: clamp(2rem, 4vw, 3rem);
     color: var(--text-primary);
     letter-spacing: -0.02em;
@@ -277,25 +292,29 @@ footer .logo img,
 }
 
 .service-card h3 {
-    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
     color: var(--text-primary);
     margin-bottom: 12px;
     display: flex;
     align-items: center;
     gap: 10px;
-    font-weight: 700; /* Mocniejsza waga dla nagłówków */
 }
 
 .new-badge {
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.6em;
     background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
-    padding: 2px 8px;
+    padding: 3px 8px;
     border-radius: 12px;
     color: white;
-    font-weight: 700;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .service-card p {
+    font-weight: 400;
     color: var(--text-secondary);
     font-size: 0.95rem;
     margin-bottom: 24px;
@@ -309,6 +328,7 @@ footer .logo img,
 }
 
 .service-list li {
+    font-weight: 400;
     position: relative;
     padding-left: 24px;
     margin-bottom: 10px;
@@ -324,7 +344,7 @@ footer .logo img,
     font-weight: bold;
 }
 
-/* --- 5. ORYGINALNE STYLE (Blog, Case Study, Formy) --- */
+/* --- 5. ORYGINALNE STYLE --- */
 
 .case-study {
     padding: 100px 5%;
@@ -346,24 +366,30 @@ footer .logo img,
 }
 
 .case-content h2 {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: clamp(2rem, 4vw, 2.5rem);
     margin-bottom: 16px;
 }
 
 .case-content h3 {
-    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     color: var(--text-primary);
     margin-bottom: 24px;
 }
 
 .case-description {
+    font-weight: 300;
     color: var(--text-secondary);
     margin-bottom: 32px;
     line-height: 1.7;
 }
 
 .btn-case {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     display: inline-block;
     padding: 12px 28px;
     background: transparent;
@@ -372,6 +398,8 @@ footer .logo img,
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
 .btn-case:hover {
@@ -389,7 +417,8 @@ footer .logo img,
 }
 
 .blog-header h2 {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 60px;
     color: var(--text-primary);
@@ -425,15 +454,21 @@ footer .logo img,
 }
 
 .blog-meta {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     display: flex;
     gap: 16px;
     margin-bottom: 16px;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .blog-title {
-    font-size: 1.25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
     line-height: 1.4;
     color: var(--text-primary);
 }
@@ -449,6 +484,7 @@ footer .logo img,
 }
 
 .form-input {
+    font-family: 'Montserrat', sans-serif;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 14px 20px;
@@ -490,6 +526,8 @@ textarea.form-input {
 }
 
 .form-checkbox label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     color: var(--text-secondary);
     font-size: 0.875rem;
     line-height: 1.5;
@@ -513,12 +551,15 @@ footer {
 }
 
 .footer-cta h2 {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     margin-bottom: 20px;
     color: var(--text-primary);
 }
 
 .footer-cta p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     max-width: 600px;
     margin: 0 auto 32px;
     color: var(--text-secondary);
