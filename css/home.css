@@ -1,6 +1,4 @@
-/* ==========================================================================
-   HOME.CSS - Wersja MONTSERRAT (Mniejszy Nagłówek)
-   ========================================================================== */
+
 
 /* --- 0. IMPORT CZCIONKI MONTSERRAT --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap');
@@ -597,4 +595,27 @@ footer {
     .blog-grid {
         grid-template-columns: 1fr;
     }
+}
+
+
+
+
+
+
+
+
+/* --- TEST: Opcja 1 - Szklane Karty --- */
+.service-card {
+    background: rgba(255, 255, 255, 0.03) !important; /* Bardzo przejrzyste tło */
+    backdrop-filter: blur(12px) !important;           /* Rozmycie tego co pod spodem */
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Delikatna ramka */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Po najechaniu karta staje się wyraźniejsza */
+.service-card:hover {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border-color: rgba(139, 92, 246, 0.5) !important; /* Fioletowa ramka */
+    box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15) !important; /* Fioletowa poświata */
 }
