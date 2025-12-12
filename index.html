@@ -683,5 +683,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       });
   });
   </script>
+
+  <script>
+  // Obsługa Slidera Usług
+  document.addEventListener('DOMContentLoaded', function() {
+      const track = document.getElementById('servicesTrack');
+      const btnLeft = document.getElementById('slideLeft');
+      const btnRight = document.getElementById('slideRight');
+
+      if(track && btnLeft && btnRight) {
+          btnLeft.addEventListener('click', () => {
+              track.scrollBy({ left: -380, behavior: 'smooth' });
+          });
+
+          btnRight.addEventListener('click', () => {
+              track.scrollBy({ left: 380, behavior: 'smooth' });
+          });
+      }
+  });
+</script>
  </body>
 </html>
