@@ -1,9 +1,9 @@
 /* ==========================================================================
-   HOME.CSS - Wersja V4 (Hero + Slider + Fixes ONLY)
-   Ten plik nie psuje reszty strony (Navbar/Footer są ładowane z innych plików)
+   HOME.CSS - Wersja FINALNA (Hero V4 + Slider + Oryginalne Sekcje)
+   Ten plik styluje TYLKO stronę główną, nie psuje nawigacji ani stopki.
    ========================================================================== */
 
-/* --- ZMIENNE DLA HERO I SLIDERA --- */
+/* --- ZMIENNE LOKALNE DLA HERO I SLIDERA --- */
 :root {
     --primary-color: #8B5CF6;
     --primary-hover: #7C3AED;
@@ -13,23 +13,8 @@
     --accent-gradient-new: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
 }
 
-/* --- NAPRAWA LOGO (NADPICIE) --- */
-/* Wymuszamy rozmiar logo, niezależnie od innych stylów */
-.navbar .logo img {
-    height: 60px !important;
-    max-height: 60px !important;
-    min-height: 60px !important;
-    width: auto !important;
-}
-/* Logo w stopce też naprawiamy, na wszelki wypadek */
-footer .logo img, 
-.footer-container img {
-    height: 60px !important;
-    width: auto !important;
-}
-
 /* ==========================================================================
-   SEKCJA HERO - CYBER DEPTH (SIATKA 3D + POŚWIATA)
+   1. NOWA SEKCJA HERO (CYBER DEPTH - SIATKA 3D + POŚWIATA)
    ========================================================================== */
 
 .hero {
@@ -75,14 +60,13 @@ footer .logo img,
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
-    transform: perspective(500px) rotateX(60deg); /* Efekt 3D */
+    transform: perspective(500px) rotateX(60deg);
     z-index: 0;
-    /* Zanikanie siatki w oddali */
     mask-image: linear-gradient(to bottom, transparent 0%, black 40%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%, transparent 100%);
 }
 
-/* EFEKT 3: Canvas (Miejsce na skrypt JS) */
+/* EFEKT 3: Canvas (Miejsce na skrypt JS - sieć neuronowa) */
 #ai-network-canvas {
     position: absolute;
     top: 0;
@@ -104,13 +88,13 @@ footer .logo img,
 /* NAGŁÓWEK HERO */
 .hero h1 {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(2.2rem, 4vw, 3.5rem); /* Mniejsza, zgrabna czcionka */
+    font-size: clamp(2.2rem, 4vw, 3.5rem); /* Zbalansowana wielkość */
     line-height: 1.2;
     font-weight: 700;
     margin-bottom: 24px;
     letter-spacing: -0.02em;
     color: #ffffff;
-    text-shadow: 0 0 40px rgba(139, 92, 246, 0.4); /* Poświata tekstu */
+    text-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
 }
 
 .hero-description {
@@ -134,6 +118,7 @@ footer .logo img,
     text-decoration: none;
     border: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    cursor: pointer;
 }
 
 .cta-button:hover {
@@ -167,8 +152,33 @@ footer .logo img,
     border-color: rgba(139, 92, 246, 0.3);
 }
 
+/* Logo partnerów w Hero (jeśli używane) */
+.hero-tech-logos {
+    max-width: 800px;
+    margin: 48px auto 0 auto;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.tech-logo-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tech-logo-item {
+    display: inline-flex;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
 /* ==========================================================================
-   SEKCJA USŁUG (SLIDER)
+   2. NOWA SEKCJA USŁUG (SLIDER Z KAFELKAMI)
    ========================================================================== */
 
 .services-slider-section {
@@ -315,8 +325,9 @@ footer .logo img,
 }
 
 /* ==========================================================================
-   SEKCJA CASE STUDY (PRZYWRÓCONE ORYGINALNE STYLE)
+   3. SEKCJA CASE STUDY (PRZYWRÓCONA Z BACKUPU)
    ========================================================================== */
+
 .case-study {
     padding: 100px 5%;
     background: #141414;
@@ -339,11 +350,12 @@ footer .logo img,
 .case-content h2 {
     font-size: clamp(2rem, 4vw, 2.5rem);
     margin-bottom: 16px;
+    color: var(--text-primary);
 }
 
 .case-content h3 {
     font-size: clamp(1.25rem, 3vw, 1.5rem);
-    color: var(--text-primary);
+    color: #FFFFFF;
     margin-bottom: 24px;
 }
 
@@ -369,7 +381,75 @@ footer .logo img,
     color: white;
 }
 
-/* Responsywność */
+/* ==========================================================================
+   4. SEKCJA BLOG (PRZYWRÓCONA I NAPRAWIONA)
+   ========================================================================== */
+
+.blog-section {
+    padding: 100px 5%;
+    background: var(--dark-bg);
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 60px;
+    color: var(--text-primary);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background: rgba(30, 30, 30, 0.98);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Dodano ramkę dla lepszej widoczności */
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-content {
+    padding: 24px;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: space-between; /* Lepsze rozłożenie daty i tagu */
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.blog-title {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSYWNOŚĆ
+   ========================================================================== */
+
 @media (min-width: 1024px) {
     .service-card {
         min-width: 360px;
@@ -384,10 +464,15 @@ footer .logo img,
 }
 
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 120px;
+    }
+    
     .services-track {
         padding-right: 5%;
     }
-    .hero {
-        padding-top: 120px;
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
     }
 }
