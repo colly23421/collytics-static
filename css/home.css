@@ -1,43 +1,27 @@
 /* ==========================================================================
-   HOME.CSS - Wersja V3 (Logo Fixed + Cyber Depth Hero)
+   HOME.CSS - Wersja V4 (Hero + Slider + Fixes ONLY)
+   Ten plik nie psuje reszty strony (Navbar/Footer są ładowane z innych plików)
    ========================================================================== */
 
-/* --- RESET I BAZA --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* --- ZMIENNE DLA HERO I SLIDERA --- */
 :root {
     --primary-color: #8B5CF6;
     --primary-hover: #7C3AED;
     --dark-bg: #0F0F0F;
-    --dark-secondary: #1A1A1A;
     --text-primary: #FFFFFF;
     --text-secondary: #9CA3AF;
-    --border-color: #2D2D2D;
     --accent-gradient-new: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
 }
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--dark-bg);
-    color: var(--text-primary);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* --- NAPRAWA LOGO (PRIORYTET) --- */
+/* --- NAPRAWA LOGO (NADPICIE) --- */
+/* Wymuszamy rozmiar logo, niezależnie od innych stylów */
 .navbar .logo img {
-    height: 60px !important;     /* Wymuszamy 60px */
-    max-height: 60px !important; 
-    min-height: 60px !important; /* Zapobiega zmniejszaniu */
-    width: auto !important;      /* Zachowuje proporcje */
-    object-fit: contain;
+    height: 60px !important;
+    max-height: 60px !important;
+    min-height: 60px !important;
+    width: auto !important;
 }
-
-/* Logo w stopce */
+/* Logo w stopce też naprawiamy, na wszelki wypadek */
 footer .logo img, 
 .footer-container img {
     height: 60px !important;
@@ -45,7 +29,7 @@ footer .logo img,
 }
 
 /* ==========================================================================
-   SEKCJA HERO - NOWY WYGLĄD (GŁĘBIA + KOLOR)
+   SEKCJA HERO - CYBER DEPTH (SIATKA 3D + POŚWIATA)
    ========================================================================== */
 
 .hero {
@@ -54,11 +38,11 @@ footer .logo img,
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 140px 5% 60px; 
+    padding: 140px 5% 60px;
     overflow: hidden;
     text-align: center;
-    /* TŁO BAZOWE - Głęboki granat/fiolet zamiast czerni */
-    background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f0f0f 70%); 
+    /* TŁO: Głęboki fiolet/granat zamiast czerni */
+    background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f0f0f 70%);
 }
 
 /* EFEKT 1: Pulsująca poświata (Aurora) */
@@ -79,7 +63,7 @@ footer .logo img,
     100% { transform: scale(1.1); opacity: 0.8; }
 }
 
-/* EFEKT 2: Siatka Perspektywy (Grid Floor) - Daje efekt 3D */
+/* EFEKT 2: Siatka Perspektywy (Grid Floor 3D) */
 .hero::before {
     content: '';
     position: absolute;
@@ -91,24 +75,25 @@ footer .logo img,
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
-    transform: perspective(500px) rotateX(60deg); /* Pochylenie siatki */
+    transform: perspective(500px) rotateX(60deg); /* Efekt 3D */
     z-index: 0;
+    /* Zanikanie siatki w oddali */
     mask-image: linear-gradient(to bottom, transparent 0%, black 40%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%, transparent 100%);
 }
 
-/* EFEKT 3: Canvas (Twoja sieć neuronowa) */
+/* EFEKT 3: Canvas (Miejsce na skrypt JS) */
 #ai-network-canvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Nad tłem, pod tekstem */
-    opacity: 0.7; /* Wyraźniejsza sieć */
+    z-index: 1;
+    opacity: 0.7;
 }
 
-/* KONTENER TREŚCI - Czysty tekst */
+/* KONTENER TREŚCI HERO */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -116,37 +101,30 @@ footer .logo img,
     margin: 0 auto;
 }
 
-/* NAGŁÓWEK - Nowoczesna typografia */
+/* NAGŁÓWEK HERO */
 .hero h1 {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-size: clamp(2.2rem, 4vw, 3.5rem); /* Mniejsza, zgrabna czcionka */
     line-height: 1.2;
     font-weight: 700;
     margin-bottom: 24px;
     letter-spacing: -0.02em;
     color: #ffffff;
-    text-shadow: 0 0 40px rgba(139, 92, 246, 0.4); /* Mocniejsza poświata tekstu */
-}
-
-/* Gradient na fragmencie tekstu (jeśli użyjesz span) */
-.hero h1 span {
-    background: linear-gradient(to right, #a78bfa, #f472b6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(139, 92, 246, 0.4); /* Poświata tekstu */
 }
 
 .hero-description {
     font-size: 1.15rem;
-    color: #cbd5e1; /* Jaśniejszy szary dla lepszego kontrastu */
+    color: #cbd5e1;
     max-width: 650px;
     margin: 0 auto 40px auto;
     line-height: 1.6;
 }
 
-/* Buttons */
+/* Przyciski w Hero */
 .cta-button {
     display: inline-block;
-    background: linear-gradient(90deg, #8B5CF6 0%, #7C3AED 100%); /* Gradient na przycisku */
+    background: linear-gradient(90deg, #8B5CF6 0%, #7C3AED 100%);
     color: white;
     padding: 14px 36px;
     border-radius: 50px;
@@ -164,7 +142,7 @@ footer .logo img,
     background: linear-gradient(90deg, #7C3AED 0%, #6D28D9 100%);
 }
 
-/* Pigułki w Hero */
+/* Pigułki usług w Hero */
 .services-pills {
     display: flex;
     gap: 12px;
@@ -180,7 +158,7 @@ footer .logo img,
     border-radius: 50px;
     font-size: 0.9rem;
     color: #e2e8f0;
-    backdrop-filter: blur(5px); /* Rozmycie tła pod pigułką */
+    backdrop-filter: blur(5px);
     transition: background 0.3s;
 }
 
@@ -195,10 +173,10 @@ footer .logo img,
 
 .services-slider-section {
     padding: 80px 5% 80px;
-    background: var(--dark-bg); /* Czyste tło pod sliderem */
+    background: var(--dark-bg);
     position: relative;
     z-index: 2;
-    border-top: 1px solid rgba(255,255,255,0.05); /* Subtelne odcięcie */
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .services-container {
@@ -337,4 +315,79 @@ footer .logo img,
 }
 
 /* ==========================================================================
-   POZOSTAŁE
+   SEKCJA CASE STUDY (PRZYWRÓCONE ORYGINALNE STYLE)
+   ========================================================================== */
+.case-study {
+    padding: 100px 5%;
+    background: #141414;
+}
+
+.case-study-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.case-study img {
+     width: 200px;
+     height: auto;
+}
+
+.case-content h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 16px;
+}
+
+.case-content h3 {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+
+.case-description {
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.7;
+}
+
+.btn-case {
+    display: inline-block;
+    padding: 12px 28px;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--text-primary);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-case:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Responsywność */
+@media (min-width: 1024px) {
+    .service-card {
+        min-width: 360px;
+    }
+}
+
+@media (max-width: 992px) {
+    .case-study-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-track {
+        padding-right: 5%;
+    }
+    .hero {
+        padding-top: 120px;
+    }
+}
