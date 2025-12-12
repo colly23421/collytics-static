@@ -713,3 +713,35 @@ visibility: visible;
 
 
 </style>
+
+
+/* ==========================================================================
+   SEKCJA USŁUG (SLIDER) - KOD IZOLOWANY
+   ========================================================================== */
+
+/* Definicja zmiennych lokalnie, jeśli brakuje w globalnym */
+.services-slider-section {
+    --srv-primary: #8B5CF6;
+    --srv-bg-card: #141414;
+    --srv-border: rgba(255, 255, 255, 0.08);
+    --srv-text: #FFFFFF;
+    --srv-text-muted: #9CA3AF;
+}
+
+.services-slider-section {
+    padding: 80px 5%;
+    background: transparent; /* Dopasuje się do tła body */
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Nagłówek sekcji */
+.services-header.centered {
+    display: flex;
+    flex-direction: column;
