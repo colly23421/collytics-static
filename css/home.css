@@ -597,25 +597,48 @@ footer {
     }
 }
 
-
-
-
-
-
-
-
-/* --- TEST: Opcja 1 - Szklane Karty --- */
-.service-card {
-    background: rgba(255, 255, 255, 0.03) !important; /* Bardzo przejrzyste tło */
-    backdrop-filter: blur(12px) !important;           /* Rozmycie tego co pod spodem */
-    -webkit-backdrop-filter: blur(12px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Delikatna ramka */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+/* --- TEST: Opcja 3 - Pływające Orby w Tle --- */
+.hero {
+    overflow: hidden; /* Ważne, żeby orby nie wychodziły poza ekran */
 }
 
-/* Po najechaniu karta staje się wyraźniejsza */
-.service-card:hover {
-    background: rgba(255, 255, 255, 0.07) !important;
-    border-color: rgba(139, 92, 246, 0.5) !important; /* Fioletowa ramka */
-    box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15) !important; /* Fioletowa poświata */
+/* Orb 1 - Fioletowy */
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+    top: 20%;
+    left: 10%;
+    filter: blur(80px);
+    z-index: 0;
+    animation: floatOrb1 15s infinite ease-in-out alternate;
 }
+
+/* Orb 2 - Różowy */
+.hero-content::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, transparent 70%);
+    bottom: 10%;
+    right: 10%;
+    filter: blur(80px);
+    z-index: -1;
+    animation: floatOrb2 20s infinite ease-in-out alternate;
+}
+
+@keyframes floatOrb1 {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 100px); }
+}
+
+@keyframes floatOrb2 {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-60px, -80px); }
+}
+
+
+
