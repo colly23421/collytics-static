@@ -713,3 +713,173 @@ visibility: visible;
 
 
 </style>
+
+
+/* --- Services Slider Section --- */
+.services-slider-section {
+    padding: 80px 5%;
+    background: var(--dark-bg);
+    overflow: hidden; /* Ukrywa pasek przewijania poza kontenerem */
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.services-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text-primary);
+    max-width: 600px;
+}
+
+.slider-nav-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Slider Track */
+.services-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px; /* Miejsce na ew. scrollbar systemowy */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    scroll-behavior: smooth;
+}
+
+.services-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* Karta Usługi */
+.service-card {
+    min-width: 300px; /* Minimalna szerokość na mobile */
+    max-width: 380px;
+    flex: 0 0 auto; /* Nie ściskaj kart */
+    background: #141414; /* Ciemne tło karty */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 32px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    width: 56px;
+    height: 56px;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    margin-bottom: 24px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    flex-grow: 1; /* Wypycha przycisk na dół */
+}
+
+.service-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    color: #d1d5db;
+    font-size: 0.9rem;
+}
+
+.service-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.3s ease;
+}
+
+.service-link:hover {
+    color: var(--primary-color);
+}
+
+/* Responsywność */
+@media (min-width: 1024px) {
+    .service-card {
+        min-width: 360px; /* Szersze karty na desktopie */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .services-track {
+        padding-right: 5%; /* Padding po prawej stronie na mobile */
+    }
+}
