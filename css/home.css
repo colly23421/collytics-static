@@ -1,6 +1,9 @@
 /* ==========================================================================
-   HOME.CSS - Wersja FINALNA (Spójne Logo + Hero Cyber + Slider)
+   HOME.CSS - Wersja TESTOWA (Czcionka DM Sans + Hero 3D + Slider)
    ========================================================================== */
+
+/* --- 0. IMPORT CZCIONKI DM SANS --- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap');
 
 /* --- 1. ZMIENNE I BAZA --- */
 :root {
@@ -15,7 +18,8 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* ZMIANA: Używamy DM Sans jako głównej czcionki */
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
     background: var(--dark-bg);
     color: var(--text-primary);
     line-height: 1.6;
@@ -23,7 +27,6 @@ body {
 }
 
 /* --- 2. LOGO (SPÓJNE Z INNYMI STRONAMI) --- */
-/* Przywrócono standardowy rozmiar 60px */
 .navbar .logo img {
     height: 60px !important;
     max-height: 60px !important;
@@ -39,7 +42,7 @@ footer .logo img,
     width: auto !important;
 }
 
-/* --- 3. NOWA SEKCJA HERO (CYBER DEPTH) --- */
+/* --- 3. SEKCJA HERO (CYBER DEPTH) --- */
 
 .hero {
     position: relative;
@@ -50,11 +53,9 @@ footer .logo img,
     padding: 140px 5% 60px;
     overflow: hidden;
     text-align: center;
-    /* TŁO: Głęboki fiolet/granat */
     background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f0f0f 70%);
 }
 
-/* EFEKT 1: Pulsująca poświata (Aurora) */
 .hero-bg {
     position: absolute;
     top: -50%;
@@ -72,7 +73,6 @@ footer .logo img,
     100% { transform: scale(1.1); opacity: 0.8; }
 }
 
-/* EFEKT 2: Siatka Perspektywy (Grid Floor 3D) */
 .hero::before {
     content: '';
     position: absolute;
@@ -90,7 +90,6 @@ footer .logo img,
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%, transparent 100%);
 }
 
-/* EFEKT 3: Canvas (Miejsce na skrypt JS) */
 #ai-network-canvas {
     position: absolute;
     top: 0;
@@ -101,7 +100,6 @@ footer .logo img,
     opacity: 0.7;
 }
 
-/* Treść Hero */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -110,12 +108,14 @@ footer .logo img,
 }
 
 .hero h1 {
-    font-family: 'Inter', sans-serif;
+    /* Upewniamy się, że nagłówek też używa nowej czcionki */
+    font-family: 'DM Sans', sans-serif; 
     font-size: clamp(2.2rem, 4vw, 3.5rem);
     margin-bottom: 24px;
     font-weight: 700;
     color: #ffffff;
     text-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+    letter-spacing: -0.03em; /* DM Sans lubi ciaśniejszy kerning w nagłówkach */
 }
 
 .hero-description {
@@ -125,7 +125,6 @@ footer .logo img,
     max-width: 700px;
 }
 
-/* Pigułki (Pills) */
 .services-pills {
     display: flex;
     gap: 12px;
@@ -191,8 +190,10 @@ footer .logo img,
 }
 
 .services-header h2 {
+    font-family: 'DM Sans', sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
     color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .gradient-text-new {
@@ -255,7 +256,7 @@ footer .logo img,
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, border-color 0.3s ease;
-    cursor: pointer; /* Dla klikalnych kart */
+    cursor: pointer;
 }
 
 .service-card:hover {
@@ -282,6 +283,7 @@ footer .logo img,
     display: flex;
     align-items: center;
     gap: 10px;
+    font-weight: 700; /* Mocniejsza waga dla nagłówków */
 }
 
 .new-badge {
@@ -324,7 +326,6 @@ footer .logo img,
 
 /* --- 5. ORYGINALNE STYLE (Blog, Case Study, Formy) --- */
 
-/* Case Study */
 .case-study {
     padding: 100px 5%;
     background: #141414;
@@ -345,6 +346,7 @@ footer .logo img,
 }
 
 .case-content h2 {
+    font-family: 'DM Sans', sans-serif;
     font-size: clamp(2rem, 4vw, 2.5rem);
     margin-bottom: 16px;
 }
@@ -376,7 +378,6 @@ footer .logo img,
     background: var(--primary-color);
 }
 
-/* Blog Section */
 .blog-section {
     padding: 100px 5%;
     background: var(--dark-bg);
@@ -388,6 +389,7 @@ footer .logo img,
 }
 
 .blog-header h2 {
+    font-family: 'DM Sans', sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 60px;
     color: var(--text-primary);
@@ -404,7 +406,7 @@ footer .logo img,
     border-radius: 16px;
     overflow: hidden;
     transition: transform 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Ramka dla czytelności */
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .blog-card:hover {
@@ -436,7 +438,6 @@ footer .logo img,
     color: var(--text-primary);
 }
 
-/* Forms */
 .contact-form {
     max-width: 100%;
 }
@@ -495,7 +496,6 @@ textarea.form-input {
     cursor: pointer;
 }
 
-/* Footer */
 footer {
     background: rgba(30, 30, 30, 0.98);
     padding: 60px 5% 40px;
@@ -513,6 +513,7 @@ footer {
 }
 
 .footer-cta h2 {
+    font-family: 'DM Sans', sans-serif;
     margin-bottom: 20px;
     color: var(--text-primary);
 }
@@ -530,7 +531,6 @@ footer {
     font-size: 0.875rem;
 }
 
-/* Responsywność */
 @media (min-width: 1024px) {
     .service-card {
         min-width: 360px;
@@ -548,7 +548,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Hero fix */
     .hero {
         padding-top: 120px;
     }
