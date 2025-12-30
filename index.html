@@ -114,7 +114,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="menu-overlay" id="menuOverlay">
   </div>
 
-<style>
+
+
+
+
+  <style>
 /* --- 1. UKŁAD GŁÓWNY --- */
 .hero-content-new {
     position: relative;
@@ -125,7 +129,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 50px; /* Większy odstęp między tekstem a grafikami */
     text-align: center;
     padding-top: 80px; 
 }
@@ -147,7 +151,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     letter-spacing: -0.03em;
 }
 
-/* Gradient na tekście */
 .highlight-word {
     background: linear-gradient(90deg, #F4D347 0%, #F47851 50%, #F22283 100%);
     -webkit-background-clip: text;
@@ -212,11 +215,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background: rgba(242, 34, 131, 0.1);
 }
 
-/* --- 4. PRAWA STRONA (TALL BENTO GRID) --- */
+/* --- 4. PRAWA STRONA (BROKEN MASONRY) --- */
 .hero-visual-side {
     width: 100%;
-    /* Poszerzamy kontener, żeby smukłe kafelki miały oddech */
-    max-width: 600px; 
+    /* Dajemy więcej miejsca, żeby elementy mogły oddychać */
+    max-width: 650px; 
     position: relative; 
 }
 
@@ -227,26 +230,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 120%;
-    height: 120%;
+    width: 100%;
+    height: 100%;
     background: radial-gradient(circle, rgba(140, 53, 126, 0.4) 0%, rgba(242, 34, 131, 0.1) 40%, rgba(0, 0, 0, 0) 70%);
     filter: blur(60px);
     z-index: -1;
 }
 
-/* Siatka 3-kolumnowa z WYSOKIMI rzędami */
-.bento-grid {
-    display: grid;
-    /* Kolumny: Wideo trochę szersze, reszta równa */
-    grid-template-columns: 1.1fr 1fr 1fr; 
-    /* Rzędy: Zmienione z 170px na 240px -> PIONOWE PROPORCJE */
-    grid-template-rows: 240px 240px;
-    gap: 12px;
+/* UKŁAD KOLUMNOWY (FLEX zamiast Grid) - Pozwala na nieregularność */
+.masonry-container {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start; /* Kluczowe: elementy startują od góry, ale możemy je przesuwać */
+    justify-content: center;
 }
 
-/* Styl Kafelków */
-.bento-item {
-    border-radius: 24px; /* Większe zaokrąglenie */
+/* WSPÓLNE STYLE DLA KAFELKÓW */
+.bento-card {
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
     background: rgba(20, 19, 22, 0.7); 
@@ -257,26 +258,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.bento-item:hover {
-    transform: scale(1.02);
+.bento-card:hover {
+    transform: translateY(-5px) scale(1.02);
     border-color: #F22283; 
-    box-shadow: 0 20px 50px -10px rgba(242, 34, 131, 0.2);
 }
 
-.bento-item img, 
-.bento-item video {
+.bento-card img, 
+.bento-card video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Wypełnia cały pionowy kafel */
+    object-fit: cover;
     display: block;
 }
 
-/* Pozycjonowanie w siatce */
-.bento-video { grid-column: 1; grid-row: 1 / span 2; } /* Wideo na całą wysokość */
-.bento-item-2 { grid-column: 2; grid-row: 1; }
-.bento-item-3 { grid-column: 2; grid-row: 2; }
-.bento-item-4 { grid-column: 3; grid-row: 1; }
-.bento-item-5 { grid-column: 3; grid-row: 2; }
+/* KOLUMNA 1: WIDEO (Główny element) */
+.col-video {
+    width: 38%; /* Najszersza kolumna */
+    flex-shrink: 0;
+    /* Przesuwamy wideo lekko w górę lub w dół jeśli trzeba */
+    margin-top: 0; 
+}
+
+.video-card-inner {
+    /* SZTYWNE PROPORCJE 9:16 (Reels) - To naprawia "rozciągnięcie" */
+    aspect-ratio: 9/16; 
+    width: 100%;
+}
+
+/* KOLUMNA 2: ŚRODKOWA (Przesunięta w dół) */
+.col-middle {
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* TO JEST EFEKT "NIEREGULARNOŚCI" - kolumna zaczyna się niżej */
+    margin-top: 50px; 
+}
+
+/* KOLUMNA 3: PRAWA (Standardowa lub lekko przesunięta) */
+.col-right {
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+/* Kafelki ze zdjęciami - Kwadraty lub lekkie piony */
+.image-card-inner {
+    aspect-ratio: 4/5; /* Lekki pion, ale nie tak wysoki jak wideo */
+    width: 100%;
+}
 
 /* --- 5. RESPANSYWNOŚĆ --- */
 @media (min-width: 992px) {
@@ -291,37 +323,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         width: 45%;
     }
     .hero-visual-side {
-        width: 52%; /* Więcej miejsca na grafikę */
-        display: flex;
-        justify-content: center; 
+        width: 50%;
+        display: block; /* Reset */
     }
     .hero-buttons-new, .services-pills-new {
         justify-content: flex-start !important;
     }
 }
 
-/* Mobile - Scrollowanie na boki (Reels experience) */
+/* Mobile */
 @media (max-width: 600px) {
-    .bento-grid {
+    .masonry-container {
+        /* Na telefonie zmieniamy to w przewijany pasek */
         display: flex;
         overflow-x: auto;
-        gap: 12px;
-        scroll-snap-type: x mandatory;
         padding-bottom: 20px;
-        /* Wyłączenie gridu na rzecz slidera */
-        grid-template-columns: none; 
-        grid-template-rows: none;
+        scroll-snap-type: x mandatory;
+        align-items: center; /* Wyśrodkowanie w pionie */
+        justify-content: flex-start;
     }
-    .bento-item {
-        /* Każdy element to pionowy kafel jak w telefonie */
+    
+    .col-video, .col-middle, .col-right {
+        /* Na mobile resetujemy układ kolumn na pojedyncze kafelki */
+        width: auto;
+        margin-top: 0 !important; /* Kasujemy przesunięcia */
+        flex-shrink: 0;
+        display: block; /* Rozbijamy kolumny */
+    }
+
+    /* Hack, żeby wyświetlić wszystkie 5 elementów w jednym rzędzie na mobile */
+    .col-middle, .col-right {
+        display: contents; /* Sprawia, że dzieci (karty) stają się bezpośrednimi dziećmi kontenera */
+    }
+
+    .bento-card {
         min-width: 160px;
-        height: 280px; 
+        height: 260px; /* Stała wysokość na mobile */
         scroll-snap-align: center;
+        aspect-ratio: auto !important; /* Reset proporcji na mobile */
     }
-    .bento-video {
-        min-width: 180px; /* Wideo szersze */
+    
+    .video-card-inner {
+        width: 180px; /* Wideo szersze */
     }
-    .bento-grid::-webkit-scrollbar { display: none; }
 }
 </style>
 
@@ -356,37 +400,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 
     <div class="hero-visual-side">
-        <div class="bento-grid">
+        <div class="masonry-container">
             
-            <div class="bento-item bento-video">
-                <video autoplay loop muted playsinline poster="assets/images/logo.png">
-                    <source src="assets/images/przod katamaran fale relacje rolki.mp4" type="video/mp4">
-                </video>
+            <div class="col-video">
+                <div class="bento-card video-card-inner">
+                    <video autoplay loop muted playsinline poster="assets/images/logo.png">
+                        <source src="assets/images/przod katamaran fale relacje rolki.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
 
-            <div class="bento-item bento-item-2">
-                <img src="assets/images/facebook.png" alt="Facebook Ads">
+            <div class="col-middle">
+                <div class="bento-card image-card-inner">
+                    <img src="assets/images/facebook.png" alt="Facebook Ads">
+                </div>
+                <div class="bento-card image-card-inner">
+                    <img src="assets/images/dentysta.png" alt="Case Study">
+                </div>
             </div>
 
-            <div class="bento-item bento-item-3">
-                <img src="assets/images/dentysta.png" alt="Case Study">
-            </div>
-
-            <div class="bento-item bento-item-4">
-                <img src="assets/images/confident.jpeg" alt="Confident Strategy">
-            </div>
-
-            <div class="bento-item bento-item-5">
-                <img src="assets/images/stylish.jpeg" alt="Stylish Tech">
+            <div class="col-right">
+                <div class="bento-card image-card-inner">
+                    <img src="assets/images/confident.jpeg" alt="Confident Strategy">
+                </div>
+                <div class="bento-card image-card-inner">
+                    <img src="assets/images/stylish.jpeg" alt="Stylish Tech">
+                </div>
             </div>
 
         </div>
     </div>
 
 </div>
-
-
-
 
 
   
