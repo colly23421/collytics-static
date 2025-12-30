@@ -1,3 +1,11 @@
+
+/* Global Font Setting (Enforced) */
+body, h1, h2, h3, h4, h5, h6, p, span, a, li, button, input, textarea, select {
+  font-family: 'Inter', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* ==========================================================================
    GLOBAL.CSS - Fundament całej strony
    ========================================================================== */
