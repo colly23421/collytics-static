@@ -168,7 +168,7 @@ input:disabled + .slider {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
-    font-family: inherit;
+    /* AUTO-REMOVED font-family: inherit; */
 }
 
 .btn-primary {
