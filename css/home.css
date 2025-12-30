@@ -640,5 +640,119 @@ footer {
     100% { transform: translate(-60px, -80px); }
 }
 
+/* --- BENTO GRID & SPLIT LAYOUT (CLEAN VERSION) --- */
 
+/* 1. Układ Dwukolumnowy (Tekst + Obraz) */
+.hero-split-layout {
+    display: flex;
+    flex-direction: column; /* Mobile: jeden pod drugim */
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px !important; /* Poszerzamy kontener dla lepszego wyglądu */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero-text-side {
+    width: 100%;
+    text-align: center;
+}
+
+/* Styl dla linku "Poznaj ofertę" */
+.secondary-link {
+    display: flex; 
+    align-items: center; 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 0.95rem; 
+    font-weight: 500; 
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+.secondary-link:hover { opacity: 1; }
+
+
+/* 2. Siatka Bento (Prawa strona) */
+.hero-visual-side {
+    width: 100%;
+    max-width: 500px; /* Ograniczenie szerokości na mobile */
+}
+
+.bento-grid {
+    display: grid;
+    /* Układ: Lewa kolumna szersza (dla wideo), Prawa węższa */
+    grid-template-columns: 1.2fr 1fr; 
+    grid-template-rows: 1fr 1fr; /* Dwa równe rzędy */
+    gap: 16px;
+    height: 400px; /* Stała wysokość kompozycji */
+}
+
+.bento-item {
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    /* Subtelna ramka pasująca do ciemnego tła */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #1a1a1a;
+    /* Cień budujący głębię 3D */
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efekt najechania myszką (opcjonalny - dodaje życia) */
+.bento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 50px -12px rgba(139, 92, 246, 0.15); /* Delikatna fioletowa poświata */
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Pozycjonowanie elementów siatki */
+.bento-video {
+    grid-column: 1;
+    grid-row: 1 / span 2; /* Zajmuje całą lewą stronę */
+}
+
+.bento-graphic {
+    grid-column: 2;
+    grid-row: 1; /* Prawa góra */
+}
+
+.bento-stat {
+    grid-column: 2;
+    grid-row: 2; /* Prawy dół */
+}
+
+/* Dopasowanie obrazków/wideo do kafelków */
+.bento-item img, 
+.bento-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Wypełnia kafel, przycina nadmiar, nie deformuje */
+    display: block;
+}
+
+/* --- RESPANSYWNOŚĆ (Desktop - Ekrany powyżej 992px) --- */
+@media (min-width: 992px) {
+    .hero-split-layout {
+        flex-direction: row; /* Ustawia elementy obok siebie */
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .hero-text-side {
+        text-align: left;
+        width: 50%;
+        padding-right: 40px;
+    }
+
+    .hero-buttons, .services-pills {
+        justify-content: flex-start !important; /* Wyrównuje przyciski do lewej */
+    }
+    
+    .hero-visual-side {
+        width: 45%;
+        max-width: none; /* Zdejmuje ograniczenie szerokości na dużym ekranie */
+    }
+}
 
