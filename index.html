@@ -116,10 +116,89 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
- <section class="hero">
-    <canvas id="ai-network-canvas"></canvas>
+<style>
+/* Style lokalne tylko dla tej sekcji - nie zepsują reszty strony */
+.hero-content-new {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px; /* Szerokość kontenera */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Mobilnie: jeden pod drugim */
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+}
 
-    <div class="hero-content hero-split-layout">
+/* Lewa strona (Tekst) */
+.hero-text-side {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Prawa strona (Bento Grid) */
+.hero-visual-side {
+    width: 100%;
+    max-width: 500px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Lewa szersza, prawa węższa */
+    grid-template-rows: 200px 200px; /* Sztywne wysokości rzędów */
+    gap: 16px;
+}
+
+/* Kafelki */
+.bento-item {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.bento-item img, 
+.bento-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Pozycjonowanie kafelków */
+.bento-video { grid-column: 1; grid-row: 1 / span 2; } /* Duży pionowy */
+.bento-graphic { grid-column: 2; grid-row: 1; } /* Prawy górny */
+.bento-stat { grid-column: 2; grid-row: 2; } /* Prawy dolny */
+
+/* WERSJA DESKTOP (Ekrany powyżej 992px) */
+@media (min-width: 992px) {
+    .hero-content-new {
+        flex-direction: row; /* Obok siebie */
+        justify-content: space-between;
+        text-align: left;
+    }
+    .hero-text-side { 
+        text-align: left; 
+        width: 50%;
+        padding-right: 20px;
+    }
+    .hero-visual-side {
+        width: 45%;
+    }
+    /* Wyrównanie przycisków do lewej na desktopie */
+    .hero-buttons-new {
+        justify-content: flex-start !important;
+    }
+    .services-pills-new {
+        justify-content: flex-start !important;
+    }
+}
+</style>
+
+<div class="hero-content-new">
     
     <div class="hero-text-side">
         <h1>
@@ -130,23 +209,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             Przestań przepalać budżet na zgadywanie. Wdrażamy systemy reklamowe, które są przewidywalne jak matematyka i skuteczne jak najlepszy handlowiec. Czysty ROI.
         </p>
 
-        <div class="hero-buttons">
+        <div class="hero-buttons hero-buttons-new" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 40px;">
             <a class="cta-button" href="#kontakt">
                 Zbuduj przewagę
             </a>
-            <a href="#services" class="secondary-link">
+            <a href="#services" style="display: flex; align-items: center; color: #fff; text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.9;">
                 <span style="margin-right: 8px; font-size: 1.2rem;">↓</span> Poznaj ofertę
             </a>
         </div>
 
-        <div class="services-pills">
+        <div class="services-pills services-pills-new" style="display: flex; gap: 10px; justify-content: center; opacity: 0.7;">
             <div class="pill">Analityka</div>
             <div class="pill">AI Strategy</div>
             <div class="pill">Performance</div>
         </div>
     </div>
+
+    <div class="hero-visual-side">
+        <div class="bento-grid">
+            
+            <div class="bento-item bento-video">
+                <video autoplay loop muted playsinline poster="assets/images/video-poster.jpg">
+                    <source src="assets/videos/twoj-reels.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="bento-item bento-graphic">
+                <img src="assets/images/twoja-grafika.jpg" alt="Grafika">
+            </div>
+
+            <div class="bento-item bento-stat">
+                <img src="assets/images/twoj-wykres-lab-wet.png" alt="Wykres">
+            </div>
+
+        </div>
     </div>
- </section>
+
+</div>
 
   
 
