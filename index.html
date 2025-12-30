@@ -116,7 +116,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-<style>
+
+
+
+
+  <style>
 /* Style lokalne */
 .hero-content-new {
     position: relative;
@@ -129,14 +133,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     align-items: center;
     gap: 40px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 80px; 
 }
 
-/* LEWA STRONA (Tekst) */
+/* LEWA STRONA */
 .hero-text-side {
     width: 100%;
     max-width: 550px;
-    z-index: 5; /* Tekst nad tłem */
+    z-index: 5;
 }
 
 .hero-text-side h1 {
@@ -150,7 +154,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
 .highlight-word {
-    color: #8B5CF6; /* Fiolet Collytics */
+    color: #8B5CF6; 
 }
 
 .hero-description {
@@ -161,15 +165,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-weight: 400;
 }
 
-/* PRAWA STRONA (Bento Grid) */
-.hero-visual-side {
-    width: 100%;
-    /* ZMNIEJSZONE: Węższy kontener, żeby kafelki były smuklejsze (jak telefon) */
-    max-width: 420px; 
-    position: relative; /* Potrzebne do pozycjonowania tła */
+/* PILLS (Zaktualizowane) */
+.services-pills-new {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    opacity: 0.7; /* Lekko zwiększona widoczność */
+    font-size: 0.8rem;
+    flex-wrap: wrap; /* Ważne przy 5 elementach! */
 }
 
-/* TŁO / BACKGROUND GLOW - To robi robotę! */
+/* PRAWA STRONA */
+.hero-visual-side {
+    width: 100%;
+    max-width: 420px; 
+    position: relative; 
+}
+
 .hero-visual-side::before {
     content: '';
     position: absolute;
@@ -178,36 +190,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transform: translate(-50%, -50%);
     width: 120%;
     height: 120%;
-    /* Fioletowy gradient, rozmyty, wygląda jak neon z tyłu */
     background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
     filter: blur(40px);
-    z-index: -1; /* Pod spodem */
+    z-index: -1;
     border-radius: 50%;
 }
 
 .bento-grid {
     display: grid;
-    /* Proporcje: Lewa kolumna szersza, ale całość węższa */
     grid-template-columns: 1.3fr 1fr; 
-    /* Wysokość rzędów dopasowana do węższego układu */
     grid-template-rows: 170px 170px;
     gap: 12px;
 }
 
-/* Kafelki */
 .bento-item {
-    border-radius: 20px; /* Większe zaokrąglenie rogów (Apple style) */
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
     background: #1a1a1a;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* Mocniejszy cień dla efektu 3D */
     box-shadow: 0 20px 50px -10px rgba(0,0,0,0.6);
     transition: transform 0.3s ease;
 }
 
 .bento-item:hover {
-    transform: scale(1.02); /* Delikatne powiększenie po najechaniu */
+    transform: scale(1.02);
     border-color: rgba(139, 92, 246, 0.4);
 }
 
@@ -215,11 +222,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .bento-item video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Kluczowe: wypełnia ramkę bez deformacji */
+    object-fit: cover;
     display: block;
 }
 
-/* Pozycje */
 .bento-video { grid-column: 1; grid-row: 1 / span 2; } 
 .bento-graphic { grid-column: 2; grid-row: 1; }
 .bento-stat { grid-column: 2; grid-row: 2; }
@@ -238,7 +244,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .hero-visual-side {
         width: 50%;
-        /* Wyśrodkowanie bento po prawej stronie */
         display: flex;
         justify-content: center; 
     }
@@ -252,8 +257,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     <div class="hero-text-side">
         <h1>
-            Reklama, która <br>
-            <span class="highlight-word">dowozi wyniki.</span>
+            Technologia, która <br>
+            <span class="highlight-word">pracuje na Twój ROI.</span>
         </h1>
         
         <p class="hero-description">
@@ -269,10 +274,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </a>
         </div>
 
-        <div class="services-pills services-pills-new" style="display: flex; gap: 10px; justify-content: center; opacity: 0.6; font-size: 0.8rem;">
-            <div class="pill">Performance</div>
-            <div class="pill">Analytics</div>
-            <div class="pill">Scale</div>
+        <div class="services-pills services-pills-new">
+            <div class="pill">Google Ads</div>
+            <div class="pill">Social media</div>
+            <div class="pill">Analityka</div>
+            <div class="pill">Web development</div>
+            <div class="pill">Rozwój narzędzi AI</div>
         </div>
     </div>
 
