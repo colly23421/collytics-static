@@ -116,11 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-
-
-
-
-  <style>
+<style>
 /* Style lokalne */
 .hero-content-new {
     position: relative;
@@ -134,6 +130,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     gap: 40px;
     text-align: center;
     padding-top: 80px; 
+    /* Opcjonalnie: jeśli cała strona nie ma tego tła, możesz je tu wymusić dla testu */
+    /* background-color: #141316; */ 
 }
 
 /* LEWA STRONA */
@@ -148,31 +146,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-weight: 800;
     font-size: clamp(2rem, 3vw, 3rem); 
     line-height: 1.1;
-    color: #ffffff;
+    color: #FFFFFF; /* Czysta biel z palety */
     margin-bottom: 24px;
     letter-spacing: -0.03em;
 }
 
+/* ZMIANA 1: GRADIENT "ENERGY GROWTH" */
 .highlight-word {
-    color: #8B5CF6; 
+    /* Gradient: Żółty -> Pomarańcz -> Róż */
+    background: linear-gradient(90deg, #F4D347 0%, #F47851 50%, #F22283 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    /* Dodatkowy efekt, żeby tekst był czytelniejszy na ciemnym tle */
+    filter: drop-shadow(0 0 20px rgba(242, 34, 131, 0.3));
 }
 
 .hero-description {
     font-size: 1.05rem;
-    color: #cbd5e1;
+    color: #e0e0e0; /* Lekko przygaszona biel, żeby nie konkurowała z nagłówkiem */
     line-height: 1.6;
     margin-bottom: 32px;
     font-weight: 400;
 }
 
-/* PILLS (Zaktualizowane) */
+/* PILLS */
 .services-pills-new {
     display: flex;
     gap: 10px;
     justify-content: center;
-    opacity: 0.7; /* Lekko zwiększona widoczność */
+    opacity: 0.9;
     font-size: 0.8rem;
-    flex-wrap: wrap; /* Ważne przy 5 elementach! */
+    flex-wrap: wrap; 
+}
+
+.pill {
+    /* Delikatne tło dla pillsów z użyciem fioletu z palety */
+    background: rgba(140, 53, 126, 0.15);
+    border: 1px solid rgba(140, 53, 126, 0.3);
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+.pill:hover {
+    border-color: #F22283; /* Różowy border po najechaniu */
+    background: rgba(242, 34, 131, 0.1);
 }
 
 /* PRAWA STRONA */
@@ -182,6 +202,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     position: relative; 
 }
 
+/* ZMIANA 2: TŁO GLOW (Fiolet + Róż) */
 .hero-visual-side::before {
     content: '';
     position: absolute;
@@ -190,10 +211,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transform: translate(-50%, -50%);
     width: 120%;
     height: 120%;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
-    filter: blur(40px);
+    /* Fiolet #8C357E przechodzący w przezroczystość */
+    background: radial-gradient(circle, rgba(140, 53, 126, 0.4) 0%, rgba(242, 34, 131, 0.1) 40%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(50px);
     z-index: -1;
-    border-radius: 50%;
 }
 
 .bento-grid {
@@ -203,19 +224,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     gap: 12px;
 }
 
+/* ZMIANA 3: KAFELKI (Dopasowane do #141316) */
 .bento-item {
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    background: #1a1a1a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 50px -10px rgba(0,0,0,0.6);
-    transition: transform 0.3s ease;
+    
+    /* Tło bazujące na Twoim #141316, ale lekko jaśniejsze dla kontrastu */
+    background: rgba(20, 19, 22, 0.7); 
+    
+    /* Glassmorphism */
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* Subtelna ramka */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .bento-item:hover {
     transform: scale(1.02);
-    border-color: rgba(139, 92, 246, 0.4);
+    /* Różowa ramka (#F22283) przy najechaniu - wygląda super tech! */
+    border-color: #F22283; 
+    box-shadow: 0 20px 50px -10px rgba(242, 34, 131, 0.2); /* Różowa poświata */
 }
 
 .bento-item img, 
@@ -229,6 +261,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .bento-video { grid-column: 1; grid-row: 1 / span 2; } 
 .bento-graphic { grid-column: 2; grid-row: 1; }
 .bento-stat { grid-column: 2; grid-row: 2; }
+
+/* PRZYCISKI */
+.cta-button {
+    /* Gradient na przycisku: Pomarańcz -> Róż */
+    background: linear-gradient(135deg, #F47851 0%, #F22283 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    /* Żółta poświata #F4D347 */
+    box-shadow: 0 10px 25px rgba(244, 211, 71, 0.3); 
+}
 
 /* DESKTOP */
 @media (min-width: 992px) {
@@ -269,7 +318,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <a class="cta-button" href="#kontakt" style="padding: 12px 32px; font-size: 0.95rem;">
                 Sprawdź nas
             </a>
-            <a href="#services" style="display: flex; align-items: center; color: #fff; text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.8;">
+            <a href="#services" style="display: flex; align-items: center; color: #FFFFFF; text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.8;">
                 <span style="margin-right: 6px;">↓</span> Oferta
             </a>
         </div>
@@ -304,6 +353,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 
 </div>
+
+
+
 
 
 <section class="services-slider-section" id="services">
