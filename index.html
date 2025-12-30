@@ -116,72 +116,265 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <style>
-/* ... (Previous styles remain the same) ... */
+/* --- 1. UKŁAD GŁÓWNY --- */
+.hero-content-new {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+    padding-top: 80px; 
+}
 
-/* UPDATED BENTO GRID FOR 5 ITEMS */
+/* --- 2. LEWA STRONA (TEKST) --- */
+.hero-text-side {
+    width: 100%;
+    max-width: 550px;
+    z-index: 5;
+}
+
+.hero-text-side h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 3vw, 3rem); 
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+}
+
+/* Gradient na tekście "pracuje na Twój ROI" */
+.highlight-word {
+    background: linear-gradient(90deg, #F4D347 0%, #F47851 50%, #F22283 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 20px rgba(242, 34, 131, 0.3));
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+/* --- 3. ELEMENTY (PRZYCISKI I PILLS) --- */
+.hero-buttons-new {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #F47851 0%, #F22283 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 12px 32px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(244, 211, 71, 0.3); 
+}
+
+.services-pills-new {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    opacity: 0.9;
+    font-size: 0.8rem;
+    flex-wrap: wrap; 
+}
+
+.pill {
+    background: rgba(140, 53, 126, 0.15);
+    border: 1px solid rgba(140, 53, 126, 0.3);
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+
+.pill:hover {
+    border-color: #F22283;
+    background: rgba(242, 34, 131, 0.1);
+}
+
+/* --- 4. PRAWA STRONA (BENTO GRID 5-ITEM) --- */
 .hero-visual-side {
     width: 100%;
-    /* Increased max-width to fit 3 columns or more complex layout */
-    max-width: 550px; 
+    max-width: 550px; /* Poszerzone dla 3 kolumn */
     position: relative; 
 }
 
+/* Tło Glow (Fiolet + Róż) */
+.hero-visual-side::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(140, 53, 126, 0.4) 0%, rgba(242, 34, 131, 0.1) 40%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(50px);
+    z-index: -1;
+}
+
+/* Siatka 3-kolumnowa */
 .bento-grid {
     display: grid;
-    /* 3 Columns: Left (Video), Middle, Right */
     grid-template-columns: 1.2fr 1fr 1fr; 
     grid-template-rows: 170px 170px;
     gap: 10px;
 }
 
-/* Item Positioning */
-/* 1. Video (Tall, Left) */
+/* Styl Kafelków (Glassmorphism) */
+.bento-item {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(20, 19, 22, 0.7); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.bento-item:hover {
+    transform: scale(1.02);
+    border-color: #F22283; 
+    box-shadow: 0 20px 50px -10px rgba(242, 34, 131, 0.2);
+}
+
+.bento-item img, 
+.bento-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Pozycjonowanie w siatce */
+/* 1. Wideo (Lewa, wysoka) */
 .bento-video { 
     grid-column: 1; 
     grid-row: 1 / span 2; 
 } 
 
-/* 2. Top Middle */
+/* 2. Środek Góra */
 .bento-item-2 { 
     grid-column: 2; 
     grid-row: 1; 
 }
 
-/* 3. Bottom Middle */
+/* 3. Środek Dół */
 .bento-item-3 { 
     grid-column: 2; 
     grid-row: 2; 
 }
 
-/* 4. Top Right (New) */
+/* 4. Prawa Góra (Nowe zdjęcie) */
 .bento-item-4 { 
     grid-column: 3; 
     grid-row: 1; 
 }
 
-/* 5. Bottom Right (New) */
+/* 5. Prawa Dół (Nowe zdjęcie) */
 .bento-item-5 { 
     grid-column: 3; 
     grid-row: 2; 
 }
 
-/* Responsive: On mobile, maybe switch to scroll or 2-col? */
+/* --- 5. RESPANSYWNOŚĆ --- */
+/* Desktop */
+@media (min-width: 992px) {
+    .hero-content-new {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        align-items: center;
+    }
+    .hero-text-side { 
+        text-align: left; 
+        width: 45%;
+    }
+    .hero-visual-side {
+        width: 50%;
+        display: flex;
+        justify-content: center; 
+    }
+    .hero-buttons-new, .services-pills-new {
+        justify-content: flex-start !important;
+    }
+}
+
+/* Mobile - Przewijanie na boki przy 5 elementach */
 @media (max-width: 500px) {
     .bento-grid {
         display: flex;
         overflow-x: auto;
         gap: 10px;
         scroll-snap-type: x mandatory;
+        padding-bottom: 20px; /* Miejsce na pasek przewijania */
     }
     .bento-item {
-        min-width: 200px;
-        height: 300px;
+        min-width: 160px;
+        height: 250px;
         scroll-snap-align: center;
+    }
+    /* Ukrycie paska przewijania (opcjonalne) */
+    .bento-grid::-webkit-scrollbar {
+        display: none;
     }
 }
 </style>
 
-<div class="hero-visual-side">
+<div class="hero-content-new">
+    
+    <div class="hero-text-side">
+        <h1>
+            Reklama, która <br>
+            <span class="highlight-word">pracuje na Twój ROI.</span>
+        </h1>
+        
+        <p class="hero-description">
+            Koniec z przepalaniem budżetu na "zasięgi". Wdrażamy kampanie oparte na twardych danych i AI, które realnie skalują Twoją sprzedaż.
+        </p>
+
+        <div class="hero-buttons hero-buttons-new">
+            <a class="cta-button" href="#kontakt">
+                Sprawdź nas
+            </a>
+            <a href="#services" style="display: flex; align-items: center; color: #FFFFFF; text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.8;">
+                <span style="margin-right: 6px;">↓</span> Oferta
+            </a>
+        </div>
+
+        <div class="services-pills services-pills-new">
+            <div class="pill">Google Ads</div>
+            <div class="pill">Social media</div>
+            <div class="pill">Analityka</div>
+            <div class="pill">Web development</div>
+            <div class="pill">Rozwój narzędzi AI</div>
+        </div>
+    </div>
+
+    <div class="hero-visual-side">
         <div class="bento-grid">
             
             <div class="bento-item bento-video">
@@ -191,26 +384,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
 
             <div class="bento-item bento-item-2">
-                <img src="assets/images/facebook.png" alt="Digital Marketing">
+                <img src="assets/images/facebook.png" alt="Facebook Ads">
             </div>
 
             <div class="bento-item bento-item-3">
-                <img src="assets/images/dentysta.png" alt="Digital Marketing">
+                <img src="assets/images/dentysta.png" alt="Case Study">
             </div>
 
             <div class="bento-item bento-item-4">
-                <img src="assets/images/confident.jpeg" alt="Digital Marketing">
+                <img src="assets/images/confident.jpeg" alt="Confident Strategy">
             </div>
 
             <div class="bento-item bento-item-5">
-                <img src="assets/images/stylish.jpeg" alt="Digital Marketing">
+                <img src="assets/images/stylish.jpeg" alt="Stylish Tech">
             </div>
 
         </div>
     </div>
+
 </div>
 
 
+
+
+
+  
 
 <section class="services-slider-section" id="services">
     <div class="services-container">
