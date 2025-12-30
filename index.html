@@ -198,30 +198,129 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </style>
 
+<style>
+/* Style lokalne */
+.hero-content-new {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Lewa strona (Tekst) */
+.hero-text-side {
+    width: 100%;
+    max-width: 550px;
+}
+
+/* NOWE H1 - Mniejsze i nowocześniejsze */
+.hero-text-side h1 {
+    font-family: 'Inter', sans-serif; /* Upewniamy się, że to nowoczesny font */
+    font-weight: 700;
+    /* Zmniejszona czcionka: min 1.8rem (mobile), max 2.5rem (desktop) */
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem); 
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.hero-description {
+    font-size: 1rem;
+    color: #9ca3af;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Prawa strona (Bento Grid) */
+.hero-visual-side {
+    width: 100%;
+    max-width: 500px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; 
+    grid-template-rows: 180px 180px; /* Nieco mniejsze kafelki */
+    gap: 12px;
+}
+
+/* Kafelki */
+.bento-item {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.bento-item img, 
+.bento-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Pozycje */
+.bento-video { grid-column: 1; grid-row: 1 / span 2; } 
+.bento-graphic { grid-column: 2; grid-row: 1; }
+.bento-stat { grid-column: 2; grid-row: 2; }
+
+/* DESKTOP */
+@media (min-width: 992px) {
+    .hero-content-new {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        align-items: center; /* Wycentrowanie w pionie */
+    }
+    .hero-text-side { 
+        text-align: left; 
+        width: 45%;
+    }
+    .hero-visual-side {
+        width: 50%;
+    }
+    .hero-buttons-new, .services-pills-new {
+        justify-content: flex-start !important;
+    }
+}
+</style>
+
 <div class="hero-content-new">
     
     <div class="hero-text-side">
         <h1>
-            Marketing, który mierzy się<br>liczbami, nie obietnicami
+            Reklama, która dowozi
+            
         </h1>
         
         <p class="hero-description">
-            Przestań przepalać budżet na zgadywanie. Wdrażamy systemy reklamowe, które są przewidywalne jak matematyka i skuteczne jak najlepszy handlowiec. Czysty ROI.
+        Technologia, która pracuje na Twój ROI.
         </p>
 
-        <div class="hero-buttons hero-buttons-new" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 40px;">
-            <a class="cta-button" href="#kontakt">
-                Zbuduj przewagę
+        <div class="hero-buttons hero-buttons-new" style="display: flex; gap: 15px; justify-content: center; margin-bottom: 30px;">
+            <a class="cta-button" href="#kontakt" style="padding: 12px 28px; font-size: 0.9rem;">
+                Zacznij tutaj
             </a>
-            <a href="#services" style="display: flex; align-items: center; color: #fff; text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.9;">
-                <span style="margin-right: 8px; font-size: 1.2rem;">↓</span> Poznaj ofertę
+            <a href="#services" style="display: flex; align-items: center; color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 500; opacity: 0.8;">
+                <span style="margin-right: 6px;">↓</span> Oferta
             </a>
         </div>
 
-        <div class="services-pills services-pills-new" style="display: flex; gap: 10px; justify-content: center; opacity: 0.7;">
-            <div class="pill">Analityka</div>
-            <div class="pill">AI Strategy</div>
-            <div class="pill">Performance</div>
+        <div class="services-pills services-pills-new" style="display: flex; gap: 8px; justify-content: center; opacity: 0.6; font-size: 0.8rem;">
+            <div class="pill">Analytics</div>
+            <div class="pill">AI Ads</div>
+            <div class="pill">Scaling</div>
         </div>
     </div>
 
@@ -229,24 +328,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="bento-grid">
             
             <div class="bento-item bento-video">
-                <video autoplay loop muted playsinline poster="assets/images/video-poster.jpg">
-                    <source src="assets/videos/twoj-reels.mp4" type="video/mp4">
-                </video>
+                <video autoplay loop muted playsinline poster="assets/images/logo.png">
+                    <source src="assets/images/przod katamaran fale relacje rolki.mp4" type="video/mp4">
+                    </video>
             </div>
 
             <div class="bento-item bento-graphic">
-                <img src="assets/images/twoja-grafika.jpg" alt="Grafika">
+                <img src="assets/images/dentysta.png" alt="Grafika 1">
             </div>
 
             <div class="bento-item bento-stat">
-                <img src="assets/images/twoj-wykres-lab-wet.png" alt="Wykres">
+                <img src="assets/images/facebook.png" alt="Grafika 2">
             </div>
 
         </div>
     </div>
 
 </div>
-
   
 
 
