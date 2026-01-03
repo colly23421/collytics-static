@@ -2,7 +2,6 @@
 <html lang="pl">
  <head>
   
-  <!-- GTM Consent Mode - MUSI BYĆ PRZED GTM -->
   <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -37,54 +36,281 @@
    Kompleksowe rozwi&aogon;zania marketingu cyfrowego i analityki AI
   </title>
   <meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="/css/global.css" rel="stylesheet">
   <link href="/css/services.css" rel="stylesheet">
-  <style>
-   .service-features {
-            list-style: none !important;
-            padding-left: 0 !important;
-            margin-top: 30px !important;
-        }
-
-        .service-features li {
-            padding: 12px 0 !important;
-            color: #d1d5db !important;
-            display: flex !important;
-            align-items: flex-start !important;
-            gap: 15px !important;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-        }
-
-        .service-features li:last-child {
-            border-bottom: none !important;
-        }
-
-        .service-features li::before {
-            content: '✓' !important;
-            color: var(--primary-color) !important;
-            font-weight: 600 !important;
-            font-size: 1.2rem !important;
-            line-height: 1.6 !important;
-            flex-shrink: 0; /* Zapobiega kurczeniu się "ptaszka" */
-        }
-  </style>
-  <!-- Cookie Banner Styles -->
+  
   <link href="../css/cookie-banner.css" rel="stylesheet">
  
-<!-- Google Tag Manager -->
 <script>
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TZCR8FPZ');</script>
-<!-- End Google Tag Manager -->
+<style>
+    /* GLOBALNE TŁO */
+    body {
+        background-color: #141316 !important;
+        color: #ffffff;
+    }
+
+    /* KONTENER STRONY */
+    .services-page-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 140px 20px 100px;
+        overflow: hidden;
+    }
+
+    /* --- HERO SEKCYJNE --- */
+    .services-hero-new {
+        text-align: center;
+        margin-bottom: 120px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .services-hero-new h1 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 1.1;
+        margin-bottom: 24px;
+        color: #fff;
+    }
+
+    /* GRADIENT (Żółty -> Pomarańcz -> Róż) */
+    .highlight-gradient {
+        background: linear-gradient(90deg, #F4D347 0%, #F47851 50%, #F22283 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0 0 30px rgba(242, 34, 131, 0.4));
+    }
+
+    .services-hero-new p {
+        font-size: 1.15rem;
+        color: #e0e0e0;
+        max-width: 650px;
+        margin: 0 auto;
+        line-height: 1.6;
+        font-weight: 300;
+    }
+
+    /* --- UKŁAD ZIG-ZAG --- */
+    .service-row {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        margin-bottom: 140px;
+        position: relative;
+    }
+
+    .service-row:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    /* ZDJĘCIE */
+    .service-image-wrapper {
+        flex: 1;
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        aspect-ratio: 4/5; 
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 30px 60px -10px rgba(0,0,0,0.8);
+    }
+
+    .service-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .service-row:hover .service-image-wrapper img {
+        transform: scale(1.06);
+    }
+
+    /* GLOW ZA ZDJĘCIEM */
+    .service-image-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(circle, rgba(140, 53, 126, 0.5) 0%, rgba(0,0,0,0) 60%);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    /* TREŚĆ */
+    .service-content {
+        flex: 1;
+        position: relative;
+        padding: 20px;
+    }
+
+    /* NUMER */
+    .service-number {
+        position: absolute;
+        top: -60px;
+        left: 0;
+        font-size: 10rem;
+        font-weight: 900;
+        color: transparent;
+        -webkit-text-stroke: 2px rgba(255, 255, 255, 0.05);
+        font-family: 'Inter', sans-serif;
+        z-index: -1;
+        line-height: 1;
+    }
+
+    .service-content h2 {
+        font-family: 'Inter', sans-serif;
+        font-size: 2.5rem;
+        margin-bottom: 24px;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .service-content p {
+        color: #cbd5e1;
+        line-height: 1.7;
+        margin-bottom: 32px;
+        font-size: 1.05rem;
+    }
+
+    /* LISTA */
+    .service-list-new {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .service-list-new li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        color: #e0e0e0;
+        font-size: 1rem;
+    }
+
+    .service-list-new li::before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: linear-gradient(135deg, #F4D347 0%, #F22283 100%);
+        border-radius: 50%;
+        margin-right: 16px;
+        margin-top: 8px;
+        box-shadow: 0 0 10px rgba(242, 34, 131, 0.4);
+    }
+
+    /* LINK */
+    .text-link {
+        display: inline-flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 1.05rem;
+        text-decoration: none;
+        background: linear-gradient(90deg, #F4D347 0%, #F47851 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: opacity 0.3s;
+    }
+
+    .text-link:hover {
+        opacity: 0.8;
+    }
+
+    .text-link span {
+        margin-left: 10px;
+        font-size: 1.2rem;
+        background: linear-gradient(90deg, #F4D347 0%, #F47851 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: transform 0.3s;
+    }
+
+    .text-link:hover span {
+        transform: translateX(6px);
+    }
+
+    /* CTA NA DOLE */
+    .bottom-cta {
+        text-align: center;
+        margin-top: 60px;
+        padding: 80px 40px;
+        border-radius: 40px;
+        position: relative;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .bottom-cta::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        height: 60%;
+        background: radial-gradient(circle, rgba(140, 53, 126, 0.3) 0%, rgba(0,0,0,0) 70%);
+        filter: blur(60px);
+        z-index: -1;
+    }
+
+    .cta-button-large {
+        background: linear-gradient(135deg, #F47851 0%, #F22283 100%);
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 18px 48px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: inline-block;
+        margin-top: 30px;
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: none;
+    }
+
+    .cta-button-large:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(242, 34, 131, 0.4);
+    }
+
+    /* RESPANSYWNOŚĆ */
+    @media (max-width: 992px) {
+        .service-row, .service-row:nth-child(even) {
+            flex-direction: column; 
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+        .service-image-wrapper {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+        .service-number {
+            font-size: 6rem;
+            top: -40px;
+            left: 20px;
+        }
+        .services-hero-new h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>
 </head>
  <body>
-  
   
   <div class="gradient-bg">
   </div>
@@ -135,152 +361,93 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
   <div class="menu-overlay" id="menuOverlay">
   </div>
-  <section class="hero services-hero">
-   <h1>
-    Nasze us&lstrok;ugi
-   </h1>
-   <p>
-    Przesta&nacute; zgadywa&cacute;, zacznij rosn&aogon;&cacute;. Marketing cyfrowy oparty na danych, kt&oacute;ry przynosi efekty.
-   </p>
-  </section>
-  <div class="services-container">
-   <div class="services-grid">
-    <div class="service-card">
-     <div class="service-icon">
-      📈
-     </div>
-     <h3 class="service-title">
-      Skuteczne kampanie sem i ppc
-     </h3>
-     <p class="service-description">
-      Masz do&sacute;&cacute; wydawania pieni&eogon;dzy na kampanie, kt&oacute;re nie przynosz&aogon; rezultat&oacute;w? Wdra&zdot;amy strategie oparte na danych, kt&oacute;re kieruj&aogon; reklamy do w&lstrok;a&sacute;ciwej grupy odbiorc&oacute;w we w&lstrok;a&sacute;ciwym czasie.
-     </p>
-     <ul class="service-features">
-      <li>
-       Zmniejszysz zmarnowane wydatki na reklam&eogon;
-      </li>
-      <li>
-       Poprawisz kierowanie swoich reklam
-      </li>
-      <li>
-       Zwi&eogon;kszysz liczb&eogon; warto&sacute;ciowych konwersji
-      </li>
-      <li>
-       Zmaksymalizujesz zwrot z inwestycji (ROAS)
-      </li>
-     </ul>
+
+  <div class="services-page-container">
+
+    <div class="services-hero-new">
+        <h1>Skalowanie, które <br><span class="highlight-gradient">widać na koncie.</span></h1>
+        <p>Wybierz specjalizację. Łączymy kreatywność "High-Fashion" z analityką "Hard-Data". Żadnego zgadywania.</p>
     </div>
-    <div class="service-card">
-     <div class="service-icon">
-      💡
-     </div>
-     <h3 class="service-title">
-      Analizy rynkowe oparte na ai
-     </h3>
-     <p class="service-description">
-      B&aogon;d&zacute; o krok przed konkurencj&aogon;. Wykorzystujemy AI do analizy milion&oacute;w reklam, odkrywaj&aogon;c najskuteczniejsze strategie i niewykorzystane luki w Twojej bran&zdot;y.
-     </p>
-     <ul class="service-features">
-      <li>
-       Dowiesz si&eogon;, co naprawd&eogon; dzia&lstrok;a w Twojej bran&zdot;y
-      </li>
-      <li>
-       Zidentyfikujesz luki w strategiach konkurencji
-      </li>
-      <li>
-       Odkryjesz nowe, niewykorzystane mo&zdot;liwo&sacute;ci rozwoju
-      </li>
-     </ul>
+
+    <div class="service-row">
+        <div class="service-image-wrapper">
+            <img src="assets/images/google-ads-neon.jpg" alt="Google Ads PPC">
+        </div>
+        <div class="service-content">
+            <div class="service-number">01</div>
+            <h2>Google Ads & PPC</h2>
+            <p>Docieramy do klientów dokładnie w momencie, gdy szukają Twojego produktu. Nie przepalamy budżetu na przypadkowe kliki. Naszym celem jest maksymalny zwrot z inwestycji (ROAS).</p>
+            <ul class="service-list-new">
+                <li>Kampanie w sieci wyszukiwania (Search)</li>
+                <li>Google Shopping & Performance Max</li>
+                <li>Remarketing dynamiczny</li>
+                <li>Precyzyjny audyt kont reklamowych</li>
+            </ul>
+            <a href="kontakt.html" class="text-link">Wyceń kampanię <span>→</span></a>
+        </div>
     </div>
-    <div class="service-card">
-     <div class="service-icon">
-      🌐
-     </div>
-     <h3 class="service-title">
-      Nowoczesne rozwi&aogon;zania webowe
-     </h3>
-     <p class="service-description">
-      Twoja strona internetowa to centrum Twojego cyfrowego ekosystemu. Projektujemy i wdra&zdot;amy rozwi&aogon;zania, kt&oacute;re &sacute;wietnie wygl&aogon;daj&aogon; i efektywnie generuj&aogon; konwersje.
-     </p>
-     <ul class="service-features">
-      <li>
-       Projekty oparte o Google Cloud
-      </li>
-      <li>
-       Gwarancja skalowalno&sacute;ci i bezpiecze&nacute;stwa
-      </li>
-      <li>
-       Design zorientowany na konwersj&eogon; (CRO)
-      </li>
-      <li>
-       Pe&lstrok;na responsywno&sacute;&cacute; (RWD)
-      </li>
-     </ul>
+
+    <div class="service-row">
+        <div class="service-image-wrapper">
+            <img src="assets/images/stylish.jpeg" alt="Social Media Strategy">
+        </div>
+        <div class="service-content">
+            <div class="service-number">02</div>
+            <h2>Social Media & Meta Ads</h2>
+            <p>Tworzymy content, który buduje pożądanie marki (Brand Desire) i konfigurujemy reklamy, które konwertują. Działamy w ekosystemie Meta, TikTok i LinkedIn.</p>
+            <ul class="service-list-new">
+                <li>Strategia komunikacji wizualnej</li>
+                <li>Kampanie Meta Ads (Facebook & Instagram)</li>
+                <li>TikTok Ads & Viral Content</li>
+                <li>Współpraca z Influencerami</li>
+            </ul>
+            <a href="kontakt.html" class="text-link">Zobacz nasze case study <span>→</span></a>
+        </div>
     </div>
-    <div class="service-card">
-     <div class="service-icon">
-      🎨
-     </div>
-     <h3 class="service-title">
-      Kompleksowy marketing cyfrowy
-     </h3>
-     <p class="service-description">
-      Jeste&sacute;my Twoim partnerem w cyfrowym sukcesie. Oferujemy pe&lstrok;en zakres us&lstrok;ug, od brandingu po kompleksowe strategie marketingowe, podchodz&aogon;c do ka&zdot;dego klienta w spos&oacute;b spersonalizowany.
-     </p>
-     <ul class="service-features">
-      <li>
-       Branding i to&zdot;samo&sacute;&cacute; wizualna
-      </li>
-      <li>
-       Tworzenie anga&zdot;uj&aogon;cych tre&sacute;ci
-      </li>
-      <li>
-       Zarz&aogon;dzanie mediami spo&lstrok;eczno&sacute;ciowymi
-      </li>
-      <li>
-       Strategia marketingowa dopasowana do cel&oacute;w
-      </li>
-     </ul>
+
+    <div class="service-row">
+        <div class="service-image-wrapper">
+            <img src="assets/images/confident.jpeg" alt="Data Analytics">
+        </div>
+        <div class="service-content">
+            <div class="service-number">03</div>
+            <h2>Analityka & Data Science</h2>
+            <p>Bez danych błądzisz we mgle. Wdrażamy zaawansowaną analitykę, która pokazuje czarno na białym, skąd przychodzą pieniądze. Konfigurujemy śledzenie tak precyzyjnie, jak to możliwe.</p>
+            <ul class="service-list-new">
+                <li>Wdrożenia Google Analytics 4 (GA4)</li>
+                <li>Google Tag Manager (GTM) Server-Side</li>
+                <li>Raportowanie w Looker Studio</li>
+                <li>Analiza ścieżek zakupowych (Attribution)</li>
+            </ul>
+            <a href="kontakt.html" class="text-link">Zamów audyt analityczny <span>→</span></a>
+        </div>
     </div>
-   </div>
+
+    <div class="service-row">
+        <div class="service-image-wrapper">
+            <img src="assets/images/web-dev-neon.jpg" alt="Web Development & AI">
+        </div>
+        <div class="service-content">
+            <div class="service-number">04</div>
+            <h2>Web Dev & AI Solutions</h2>
+            <p>Tworzymy strony, które nie tylko wyglądają, ale przede wszystkim sprzedają. Wykorzystujemy AI do automatyzacji procesów i personalizacji doświadczeń użytkownika.</p>
+            <ul class="service-list-new">
+                <li>High-Converting Landing Pages</li>
+                <li>Sklepy internetowe (Shopify / Woocommerce)</li>
+                <li>Wdrażanie chatbotów i automatyzacji AI</li>
+                <li>Optymalizacja UX/UI pod konwersję</li>
+            </ul>
+            <a href="kontakt.html" class="text-link">Rozpocznij projekt <span>→</span></a>
+        </div>
+    </div>
+
+    <div class="bottom-cta">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #fff;">Gotowy na <span class="highlight-gradient">wyniki?</span></h2>
+        <p style="color: #ccc; font-size: 1.1rem;">Przestań zgadywać. Zacznij zarabiać na marketingu opartym na danych.</p>
+        <a href="kontakt.html" class="cta-button-large">Umów darmową konsultację</a>
+    </div>
+
   </div>
-  <section class="stats-section">
-   <div class="stats-container">
-    <div class="stat-card">
-     <div class="stat-number">
-      88%
-     </div>
-     <div class="stat-label">
-      oszcz&eogon;dno&sacute;ci
-     </div>
-     <p class="stat-description">
-      Nasze kompleksowe rozwi&aogon;zania zast&eogon;puj&aogon; potrzeb&eogon; korzystania z dziesi&aogon;tek innych narz&eogon;dzi.
-     </p>
-    </div>
-    <div class="stat-card">
-     <div class="stat-number">
-      1.1 dnia
-     </div>
-     <div class="stat-label">
-      zaoszcz&eogon;dzonego tygodniowo
-     </div>
-     <p class="stat-description">
-      Oszcz&eogon;dzamy czas, automatyzuj&aogon;c &zdot;mudn&aogon; prac&eogon; i upraszczaj&aogon;c wykonanie zada&nacute;.
-     </p>
-    </div>
-    <div class="stat-card">
-     <div class="stat-number">
-      3x
-     </div>
-     <div class="stat-label">
-      szybsza realizacja zada&nacute;
-     </div>
-     <p class="stat-description">
-      Zast&aogon;p wiele narz&eogon;dzi i subskrypcji jedn&aogon; zintegrowan&aogon; platform&aogon;.
-     </p>
-    </div>
-   </div>
-  </section>
   <footer>
    <div class="footer-container">
     <div class="footer-cta">
@@ -322,7 +489,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         });
   </script>
-  <!-- Cookie Banner Script -->
   <script src="../js/cookie-banner.js">
   </script>
  </body>
