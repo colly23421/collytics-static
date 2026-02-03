@@ -16,8 +16,7 @@
     <script>
         (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "GT-5R3VKTJG");
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
-    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
     <script>
         window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", "G-S90XQQ06FW");
     </script>
@@ -41,12 +40,11 @@
 
     <style>
         :root {
-            --primary-color-new: #6366F1; /* Bardziej fioletowy akcent dla AI */
+            --primary-color-new: #6366F1;
             --accent-gradient-new: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
             --dark-card: #1a1a1a;
         }
 
-        /* Używamy stylu .gradient-text z global.css, ale nadpisujemy gradient */
         .gradient-text-new {
             background: var(--accent-gradient-new);
             -webkit-background-clip: text;
@@ -55,501 +53,119 @@
             text-fill-color: transparent;
         }
 
-        /* STYLE DLA HERO (CZYSZCZONE) - USUNIĘTO NIEPOTRZEBNE style dla logo bar */
-        .hero.services-hero {
-            padding-bottom: 80px; /* Zmniejszony padding dolny po usunięciu elementów */
-        }
+        .hero.services-hero { padding-bottom: 80px; }
 
-        /* Sekcja Problemu */
-        .problem-section {
-            padding: 80px 5%;
-            background: var(--dark-bg);
-            text-align: center;
-        }
-        .problem-section h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 60px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .problem-card {
-            background: var(--dark-card);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: left;
-        }
-        .problem-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-        .problem-card p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
+        .problem-section { padding: 80px 5%; background: var(--dark-bg); text-align: center; }
+        .problem-section h2 { font-size: 2.5rem; font-weight: 600; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .problem-card { background: var(--dark-card); padding: 30px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); text-align: left; }
+        .problem-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 15px; color: var(--primary-color); }
+        .problem-card p { color: var(--text-secondary); font-size: 1rem; }
 
-        /* Sekcja Rozwiązania (Korzyści) */
-        .solution-section {
-            padding: 80px 5%;
-            background: var(--dark-secondary);
-        }
-        .solution-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .solution-container h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        .solution-container .service-features {
-            /* Ponowne użycie stylów z services.css */
-            list-style: none !important;
-            padding-left: 0 !important;
-            margin-top: 0 !important;
-        }
-        .solution-container .service-features li {
-            font-size: 1.1rem;
-        }
+        .solution-section { padding: 80px 5%; background: var(--dark-secondary); }
+        .solution-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .solution-container h2 { font-size: 2.5rem; font-weight: 600; margin-bottom: 20px; line-height: 1.3; }
+        .solution-container .service-features { list-style: none !important; padding-left: 0 !important; margin-top: 0 !important; }
+        .solution-container .service-features li { font-size: 1.1rem; }
 
-        /* Sekcja Procesu */
-        .process-section {
-            padding: 100px 5%;
-            background: var(--dark-bg);
-            text-align: center;
-        }
-        .process-section h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 60px;
-        }
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .process-step {
-            background: var(--dark-card);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            z-index: 1;
-        }
-        .process-step .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: var(--accent-gradient-new);
-            border-radius: 50%;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 20px;
-        }
-        .process-step h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        .process-step p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
+        .process-section { padding: 100px 5%; background: var(--dark-bg); text-align: center; }
+        .process-section h2 { font-size: 2.5rem; font-weight: 600; margin-bottom: 60px; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; position: relative; }
+        .process-step { background: var(--dark-card); padding: 30px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); position: relative; z-index: 1; }
+        .process-step .step-number { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: var(--accent-gradient-new); border-radius: 50%; font-size: 1.5rem; font-weight: 600; color: white; margin-bottom: 20px; }
+        .process-step h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 15px; }
+        .process-step p { color: var(--text-secondary); font-size: 0.95rem; }
 
-        /* Sekcja Cennika */
-        .pricing-section {
-            padding: 100px 5%;
-            background: var(--dark-secondary);
-            text-align: center;
-        }
-        .pricing-section h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 60px;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: stretch; /* Wyrównuje karty */
-        }
-        .pricing-card {
-            background: var(--dark-card);
-            padding: 40px;
-            border-radius: 16px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-        .pricing-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        .pricing-card .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .pricing-card .price-note {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-            min-height: 40px; /* Utrzymuje równą wysokość */
-            line-height: 1.5;
-        }
-        .pricing-card .service-features {
-            margin-top: 0;
-            margin-bottom: 30px;
-            flex-grow: 1; /* Rozpycha listę, by przycisk był na dole */
-        }
-        .pricing-card .cta-button, .pricing-card .btn-outline {
-            width: 100%;
-            text-align: center;
-            margin-top: auto;
-        }
-        .btn-outline {
-            display: inline-block;
-            padding: 16px 40px;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        .pricing-card.recommended {
-            border-color: var(--primary-color-new);
-            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
-        }
-        .recommend-badge {
-            position: absolute;
-            top: 20px;
-            right: -30px;
-            background: var(--primary-color-new);
-            color: white;
-            padding: 5px 30px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transform: rotate(45deg);
-        }
+        .pricing-section { padding: 100px 5%; background: var(--dark-secondary); text-align: center; }
+        .pricing-section h2 { font-size: 2.5rem; font-weight: 600; margin-bottom: 60px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto; align-items: stretch; }
+        .pricing-card { background: var(--dark-card); padding: 40px; border-radius: 16px; border: 2px solid rgba(255, 255, 255, 0.1); text-align: left; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+        .pricing-card h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 15px; }
+        .pricing-card .price { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
+        .pricing-card .price-note { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 30px; min-height: 40px; line-height: 1.5; }
+        .pricing-card .service-features { margin-top: 0; margin-bottom: 30px; flex-grow: 1; }
+        .pricing-card .cta-button, .pricing-card .btn-outline { width: 100%; text-align: center; margin-top: auto; }
+        .btn-outline { display: inline-block; padding: 16px 40px; border: 1px solid var(--primary-color); color: var(--primary-color); text-decoration: none; border-radius: 30px; font-weight: 600; transition: all 0.3s ease; }
+        .btn-outline:hover { background: rgba(255, 255, 255, 0.1); }
+        .pricing-card.recommended { border-color: var(--primary-color-new); box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2); }
+        .recommend-badge { position: absolute; top: 20px; right: -30px; background: var(--primary-color-new); color: white; padding: 5px 30px; font-size: 0.8rem; font-weight: 600; transform: rotate(45deg); }
 
-        /* Sekcja FAQ */
-        .faq-section {
-            padding: 100px 5%;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .faq-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 60px;
-        }
-        .faq-item {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .faq-item summary {
-            font-size: 1.25rem;
-            font-weight: 500;
-            padding: 25px 0;
-            cursor: pointer;
-            list-style: none; /* Usuwa strzałkę */
-            position: relative;
-            padding-right: 30px;
-        }
-        .faq-item summary::-webkit-details-marker {
-            display: none; /* Chrome */
-        }
-        .faq-item summary::after { /* Niestandardowy wskaźnik */
-            content: '+';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            transition: transform 0.2s;
-        }
-        .faq-item[open] summary::after {
-            transform: translateY(-50%) rotate(45deg);
-        }
-        .faq-content {
-            padding-bottom: 25px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
+        .faq-section { padding: 100px 5%; max-width: 900px; margin: 0 auto; }
+        .faq-section h2 { text-align: center; font-size: 2.5rem; font-weight: 600; margin-bottom: 60px; }
+        .faq-item { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .faq-item summary { font-size: 1.25rem; font-weight: 500; padding: 25px 0; cursor: pointer; list-style: none; position: relative; padding-right: 30px; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--text-secondary); transition: transform 0.2s; }
+        .faq-item[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+        .faq-content { padding-bottom: 25px; color: var(--text-secondary); line-height: 1.7; }
 
-        /* Sekcja CTA */
-        .final-cta-section .footer-cta {
-             margin-bottom: 0;
-             margin-top: -50px; /* Zazębia się ze stopką */
-             position: relative;
-             z-index: 2;
-        }
+        .final-cta-section .footer-cta { margin-bottom: 0; margin-top: -50px; position: relative; z-index: 2; }
 
-        /* Modyfikacja formularza kontaktowego */
-        #kontakt-form h2 {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-        .form-group-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .form-group .form-input.full-width {
-            grid-column: 1 / -1; /* Rozciąga na całą szerokość */
-        }
+        #kontakt-form h2 { font-size: 2.5rem; margin-bottom: 16px; }
+        .form-group-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group .form-input.full-width { grid-column: 1 / -1; }
 
-        /* Poprawki responsywności */
         @media (max-width: 992px) {
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            .pricing-card {
-                max-width: 500px;
-                margin: 0 auto;
-            }
-            .solution-container {
-                grid-template-columns: 1fr;
-            }
-            .hero.services-hero h1 {
-                font-size: 2.8rem !important; /* Dostosowanie H1 na mniejszych ekranach */
-            }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card { max-width: 500px; margin: 0 auto; }
+            .solution-container { grid-template-columns: 1fr; }
+            .hero.services-hero h1 { font-size: 2.8rem !important; }
         }
         @media (max-width: 768px) {
-            .problem-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-group-grid {
-                grid-template-columns: 1fr;
-            }
-             .hero.services-hero h1 {
-                font-size: 2.2rem !important; /* Dalsze dostosowanie H1 na mobilnych */
-            }
-            .hero.services-hero p {
-                font-size: 1rem !important;
-            }
-            .case-buttons {
-                flex-direction: column; /* Przyciski jeden pod drugim na mobile */
-                align-items: center;
-            }
-            .case-buttons a {
-                width: 100%;
-                text-align: center;
-                max-width: 300px; /* Opcjonalnie */
-            }
-            /* Usunięto style dla .tech-logo-list i .tech-logo-item z mobile, bo nie są już potrzebne */
+            .problem-grid { grid-template-columns: 1fr; }
+            .form-group-grid { grid-template-columns: 1fr; }
+             .hero.services-hero h1 { font-size: 2.2rem !important; }
+            .hero.services-hero p { font-size: 1rem !important; }
+            .case-buttons { flex-direction: column; align-items: center; }
+            .case-buttons a { width: 100%; text-align: center; max-width: 300px; }
         }
 
+        .hero-with-grid-bg { position: relative; overflow: hidden; padding-top: 120px; padding-bottom: 120px; }
+        .hero-with-grid-bg::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle at 10% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 30%),
+                              linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            background-position: center center, center center, center center;
+            opacity: 0.7; z-index: 0; pointer-events: none;
+        }
 
+        .hero-with-grid-bg h1, .hero-with-grid-bg p, .hero-with-grid-bg .cta-button, .hero-with-grid-bg .hero-tech-logos { position: relative; z-index: 1; }
 
-        /* ########## POPRAWIONE STYLE DLA TŁA SIATKI W HERO (Z AKCENTEM I BEZ CIĘĆ) ########## */
-            .hero-with-grid-bg {
-                position: relative;
-                overflow: hidden;
-                padding-top: 120px;
-                padding-bottom: 120px;
-            }
+        .hero-tech-logos { margin-top: 48px; max-width: 800px; margin-left: auto; margin-right: auto; position: relative; z-index: 1; }
+        .hero-tech-logos p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px; text-align: center; }
+        .tech-logo-list { display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; }
+        .tech-logo-item { display: inline-flex; padding: 8px 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; text-align: center; transition: all 0.3s ease; }
+        .tech-logo-item:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); color: #fff; }
 
-            .hero-with-grid-bg::before {
-              content: '';
-              position: absolute;
-              top: 0; /* Przywrócono 0 */
-              left: 0; /* Przywrócono 0 */
-              right: 0; /* Przywrócono 0 */
-              bottom: 0; /* Przywrócono 0 */
-              background-image:
-                  /* Kolorowy akcent */
-                  radial-gradient(circle at 10% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 30%),
-                  /* Linie siatki */
-                  linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-              background-size:
-                  100% 100%,
-                  40px 40px,
-                  40px 40px;
-              background-position: center center, center center, center center;
-              opacity: 0.7;
-              z-index: 0;
-              pointer-events: none;
-          }
-
-            /* Upewnienie się, że tekst, przycisk i lista są NAD tłem */
-            .hero-with-grid-bg h1,
-            .hero-with-grid-bg p,
-            .hero-with-grid-bg .cta-button,
-            .hero-with-grid-bg .hero-tech-logos {
-                position: relative;
-                z-index: 1;
-            }
-
-            /* ########## POPRAWIONE STYLE DLA LISTY PIONOWEJ W HERO ########## */
-            .hero-tech-logos {
-                margin-top: 48px;
-                max-width: 450px; /* Zmniejszona szerokość dla pionowej listy */
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-tech-logos p {
-                font-size: 0.9rem;
-                color: var(--text-secondary);
-                margin-bottom: 24px;
-            }
-            .tech-logo-list {
-                /* Usunięty flex i inne style układu poziomego */
-            }
-            .tech-logo-item {
-                display: block; /* KLUCZOWA ZMIANA: układ pionowy */
-                margin-bottom: 12px; /* Odstęp między elementami pionowymi */
-                padding: 12px 20px;
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 8px;
-                color: var(--text-secondary);
-                font-size: 1rem; /* Zwiększona czytelność */
-                font-weight: 500;
-                text-align: center;
-                transition: all 0.3s ease;
-            }
-             .tech-logo-item:last-child {
-                 margin-bottom: 0; /* Usunięcie marginesu pod ostatnim elementem */
-             }
-            .tech-logo-item:hover {
-                background: rgba(255, 255, 255, 0.1);
-                border-color: rgba(255, 255, 255, 0.2);
-                color: #fff;
-            }
-            /* Koniec styli listy pionowej */
-
-            /* ########## STYLE DLA LISTY POZIOMEJ W HERO ########## */
-                    .hero-tech-logos {
-                        /* Usunięto margin-top, bo margines jest pod przyciskiem CTA */
-                        max-width: 800px; /* Szerszy kontener dla układu poziomego */
-                        margin-left: auto;
-                        margin-right: auto;
-                        position: relative;
-                        z-index: 1;
-                    }
-                    .hero-tech-logos p {
-                        font-size: 0.9rem;
-                        color: var(--text-secondary);
-                        margin-bottom: 24px;
-                        text-align: center;
-                    }
-                    .tech-logo-list {
-                        display: flex; /* KLUCZOWA ZMIANA: Układ poziomy */
-                        justify-content: center; /* Wyśrodkowanie elementów w linii */
-                        align-items: center; /* Wyśrodkowanie pionowe */
-                        gap: 15px; /* Odstęp między elementami */
-                        flex-wrap: wrap; /* Zawijanie do nowej linii */
-                    }
-                    .tech-logo-item {
-                        display: inline-flex; /* Elementy w linii */
-                        /* Usunięty margin-bottom */
-                        padding: 8px 16px; /* Mniejszy padding dla układu poziomego */
-                        background: rgba(255, 255, 255, 0.05);
-                        border: 1px solid rgba(255, 255, 255, 0.1);
-                        border-radius: 8px;
-                        color: var(--text-secondary);
-                        font-size: 0.9rem; /* Mniejsza czcionka dla układu poziomego */
-                        font-weight: 500;
-                        text-align: center;
-                        transition: all 0.3s ease;
-                    }
-                    /* Usunięty :last-child selector */
-                    .tech-logo-item:hover {
-                        background: rgba(255, 255, 255, 0.1);
-                        border-color: rgba(255, 255, 255, 0.2);
-                        color: #fff;
-                    }
-                    /* Koniec styli listy poziomej */
-
-                    /* Upewnienie się, że wszystkie elementy Hero są nad tłem siatki */
-                    .hero-with-grid-bg h1,
-                    .hero-with-grid-bg p,
-                    .hero-with-grid-bg .cta-button, /* Przywrócono .cta-button */
-                    .hero-with-grid-bg .hero-tech-logos { /* Przywrócono .hero-tech-logos */
-                        position: relative;
-                        z-index: 1;
-                    }
-
-                   /* Poprawki responsywności dla listy poziomej */
-                    @media (max-width: 768px) {
-                         .hero-tech-logos {
-                            max-width: 90%;
-                         }
-                        .tech-logo-list {
-                             gap: 10px; /* Mniejszy odstęp na mobile */
-                        }
-                        .tech-logo-item {
-                            font-size: 0.8rem; /* Mniejsza czcionka na mobile */
-                            padding: 6px 12px;
-                        }
-                    }
-
-
+        @media (max-width: 768px) {
+            .hero-tech-logos { max-width: 90%; }
+            .tech-logo-list { gap: 10px; }
+            .tech-logo-item { font-size: 0.8rem; padding: 6px 12px; }
+        }
     </style>
 
-<!-- Google Tag Manager -->
-<script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TZCR8FPZ');</script>
-<!-- End Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZCR8FPZ');</script>
 </head>
 
 <body>
-    
-    
-
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a class="logo" href="index.html">
                 <img alt="Collytics" src="assets/images/logo main transparent.png">
             </a>
-            <button class="menu-trigger" id="menuTrigger">
-                Menu
-            </button>
+            <button class="menu-trigger" id="menuTrigger">Menu</button>
         </div>
     </nav>
+
     <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-close" id="closeMenu">
-            Close
-        </button>
+        <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
             <div class="menu-section">
                 <a href="index.html">Home</a>
@@ -559,64 +175,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <a href="kontakt.html">Kontakt</a>
             </div>
             <div class="social-links">
-                <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
-                    <img alt="Facebook" src="assets/images/facebook.png">
-                </a>
-                <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
-                    <img alt="LinkedIn" src="assets/images/cons8-linkedin-500.svg">
-                </a>
-                <a href="https://x.com/collytics" target="_blank" title="Twitter">
-                    <img alt="X" src="assets/images/cons8-twitter-500.svg">
-                </a>
+                <a href="https://www.facebook.com/collytics" target="_blank"><img alt="Facebook" src="assets/images/facebook.png"></a>
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank"><img alt="LinkedIn" src="assets/images/cons8-linkedin-500.svg"></a>
+                <a href="https://x.com/collytics" target="_blank"><img alt="X" src="assets/images/cons8-twitter-500.svg"></a>
             </div>
         </div>
     </div>
-    <div class="menu-overlay" id="menuOverlay">
-    </div>
-    <section class="hero services-hero hero-with-grid-bg" style="display: block;">
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <section class="hero services-hero hero-with-grid-bg">
       <h1 style="font-size: 3.5rem; line-height: 1.2; margin-bottom: 24px; width: 100%; text-align: center;">
           Czy AI poleca Twoją firmę,<br>czy <span class="gradient-text-new">Twoją konkurencję?</span>
       </h1>
       <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto; color: var(--text-secondary); text-align: center;">
           Użytkownicy pytają ChatGPT i Gemini o rekomendacje. Zapewnij, że to Twoja marka pojawi się w odpowiedziach. To nowe SEO, a Ty możesz być pierwszy.
       </p>
-<br>
-      <a class="cta-button" href="#kontakt-form" style="background: var(--accent-gradient-new); margin-bottom: 48px;"> Odbierz Darmowy Mini-Raport Widoczności
-              </a>
+      <br>
+      <a class="cta-button" href="#kontakt-form" style="background: var(--accent-gradient-new); margin-bottom: 48px;">Odbierz Darmowy Mini-Raport Widoczności</a>
 
-              <div class="hero-tech-logos">
-                <p>Audytujemy kluczowe systemy AI, na których zależy Twoim klientom</p>
-                <div class="tech-logo-list">
-                    <span class="tech-logo-item">Google AI Search</span>
-                    <span class="tech-logo-item">ChatGPT (OpenAI)</span>
-                    <span class="tech-logo-item">Gemini (Google)</span>
-                    <span class="tech-logo-item">Claude (Anthropic)</span>
-                    <span class="tech-logo-item">Perplexity AI</span>
-                </div>
-
-
-
-
-
-  </section>
+      <div class="hero-tech-logos">
+        <p>Audytujemy kluczowe systemy AI, na których zależy Twoim klientom</p>
+        <div class="tech-logo-list">
+            <span class="tech-logo-item">Google AI Search</span>
+            <span class="tech-logo-item">ChatGPT (OpenAI)</span>
+            <span class="tech-logo-item">Gemini (Google)</span>
+            <span class="tech-logo-item">Claude (Anthropic)</span>
+            <span class="tech-logo-item">Perplexity AI</span>
+        </div>
+      </div>
+    </section>
 
     <section class="problem-section">
         <h2>Tradycyjne SEO to za mało.<br>Nowe pole bitwy o klienta jest w chatach AI.</h2>
         <div class="problem-grid">
             <div class="problem-card">
                 <h3>Problem 1: Niewidzialność</h3>
-                <p>Twoja firma ma świetne SEO, ale AI jej nie "widzi". W odpowiedziach cytuje konkurencję, a Twoja marka
-                    nie istnieje w rekomendacjach.</p>
+                <p>Twoja firma ma świetne SEO, ale AI jej nie "widzi". W odpowiedziach cytuje konkurencję, a Twoja marka nie istnieje w rekomendacjach.</p>
             </div>
             <div class="problem-card">
                 <h3>Problem 2: Dezinformacja</h3>
-                <p>Co gorsza, AI może podawać <strong>błędne</strong> informacje o Twoich usługach, godzinach otwarcia
-                    czy cenach, a Ty nawet o tym nie wiesz i tracisz klientów.</p>
+                <p>Co gorsza, AI może podawać <strong>błędne</strong> informacje o Twoich usługach, godzinach otwarcia czy cenach.</p>
             </div>
             <div class="problem-card">
                 <h3>Problem 3: Utracona Przewaga</h3>
-                <p>Każde zapytanie do AI, na które odpowiada Twoja konkurencja, to utracony lead. Rynek rekomendacji AI
-                    kształtuje się <strong>teraz</strong>. Kto pierwszy, ten zdominuje rynek na lata.</p>
+                <p>Każde zapytanie do AI, na które odpowiada Twoja konkurencja, to utracony lead. Rynek kształtuje się <strong>teraz</strong>.</p>
             </div>
         </div>
     </section>
@@ -626,17 +228,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div>
                 <h2>Rozwiązanie: Audyt Widoczności AI od Collytics</h2>
                 <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7;">
-                    To nie jest kolejne narzędzie analityczne. To kompleksowa strategia i wdrożenie techniczne, które
-                    sprawia, że modele AI (ChatGPT, Gemini, Claude, Perplexity) postrzegają Twoją stronę jako
-                    <strong>autorytatywne i priorytetowe źródło informacji</strong> w Twojej branży.
+                    Kompleksowa strategia, która sprawia, że modele AI (ChatGPT, Gemini, Claude) postrzegają Twoją stronę jako <strong>autorytatywne źródło informacji</strong>.
                 </p>
             </div>
             <div>
                 <ul class="service-features">
                     <li>Zdominuj Rekomendacje AI</li>
                     <li>Kontroluj Swój Przekaz w 100%</li>
-                    <li>Zbuduj Autorytet Eksperta dla Modeli Językowych</li>
-                    <li>Wyprzedź Rynek (First-Mover Advantage)</li>
+                    <li>Zbuduj Autorytet Eksperta</li>
+                    <li>Wyprzedź Rynek</li>
                 </ul>
             </div>
         </div>
@@ -644,25 +244,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <section class="case-study" style="background: var(--dark-bg);">
         <div class="case-study-container">
-            <img alt="BDental" src="assets/images/partners/bdental.png" style="width: 200px; height: auto;">
+            <img alt="BDental" src="assets/images/partners/bdental.png" style="width: 200px;">
             <div class="case-content">
-                <p style="color: var(--text-secondary); margin-bottom: 16px;">
-                    CASE STUDY:
-                </p>
-                <h2>
-                    Klinika BDental
-                </h2>
-                <h3>
-                    Jak zdobyliśmy pacjentów z rekomendacji ChatGPT.
-                </h3>
-                <p class="case-description">
-                    Pacjenci pytający AI o "najlepsze implanty w [miasto]" otrzymywali rekomendacje konkurencji.
-                    Wdrożyliśmy zaawansowane dane strukturalne (Schema) dla usług, lekarzy i opinii. W ciągu 4 tygodni,
-                    7 na 10 zapytań w ChatGPT i Google AI wskazywało BDental jako topową rekomendację.
-                </p>
+                <p style="color: var(--text-secondary); margin-bottom: 16px;">CASE STUDY:</p>
+                <h2>Klinika BDental</h2>
+                <h3>Jak zdobyliśmy pacjentów z rekomendacji ChatGPT.</h3>
+                <p class="case-description">Wdrożyliśmy zaawansowane dane strukturalne. W ciągu 4 tygodni, 7 na 10 zapytań wskazywało BDental jako topową rekomendację.</p>
                 <div class="case-buttons" style="display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
                     <a class="cta-button" href="#kontakt-form" style="margin: 0; background: var(--primary-color);">Chcę podobnych wyników</a>
-                    <a class="btn-outline" href="https://www.collytics.io/blog/jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai.html" target="_blank" style="margin: 0;">Przeczytaj Case Study (Blog)</a>
+                    <a class="btn-outline" href="https://www.collytics.io/blog/jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai.html" target="_blank" style="margin: 0;">Przeczytaj Case Study</a>
                 </div>
             </div>
         </div>
@@ -673,21 +263,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="process-grid">
             <div class="process-step">
                 <div class="step-number">1</div>
-                <h3>Audyt i Analiza KonkurencJI</h3>
-                <p>Testujemy setki zapytań na 5 platformach AI. Mapujemy Twoją widoczność i porównujemy ją "head-to-head"
-                    z Twoimi kluczowymi konkurentami.</p>
+                <h3>Audyt i Analiza</h3>
+                <p>Testujemy setki zapytań na 5 platformach AI. Mapujemy Twoją widoczność względem konkurencji.</p>
             </div>
             <div class="process-step">
                 <div class="step-number">2</div>
                 <h3>Wdrożenie Techniczne</h3>
-                <p>"Tłumaczymy" Twoją stronę na język AI. Implementujemy zaawansowane dane JSON-LD,
-                    które precyzyjnie opisują Twoje usługi i autorytet.</p>
+                <p>Implementujemy zaawansowane dane JSON-LD, które precyzyjnie opisują Twoje usługi.</p>
             </div>
             <div class="process-step">
                 <div class="step-number">3</div>
-                <h3>Monitoring i Optymalizacja</h3>
-                <p>Algorytmy AI zmieniają się codziennie. Nieustannie monitorujemy Twoje rankingi i aktualizujemy
-                    wdrożenia, aby zapewnić Ci stałą przewagę.</p>
+                <h3>Monitoring</h3>
+                <p>Algorytmy AI zmieniają się codziennie. Nieustannie monitorujemy Twoje rankingi.</p>
             </div>
         </div>
     </section>
@@ -698,12 +285,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="pricing-card">
                 <h3>POZIOM 1: Podstawowy Audyt AI</h3>
                 <div class="price">1990 zł</div>
-                <div class="price-note">Jednorazowo + VAT<br>(cena netto)</div>
+                <div class="price-note">Jednorazowo + VAT</div>
                 <ul class="service-features">
-                    <li>Test widoczności w 5 systemach AI (10 zapytań)</li>
-                    <li>Analiza obecnych danych strukturalnych (Schema)</li>
-                    <li>Raport Rankingowy vs. 5 konkurentów</li>
-                    <li>Lista Quick Wins (szybkie wdrożenia)</li>
+                    <li>Test w 5 systemach AI</li>
+                    <li>Analiza danych strukturalnych</li>
+                    <li>Raport Rankingowy</li>
+                    <li>Lista Quick Wins</li>
                 </ul>
                 <a href="#kontakt-form" class="btn-outline">Zamów Audyt</a>
             </div>
@@ -711,26 +298,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="recommend-badge">POLECANY</div>
                 <h3>POZIOM 2: Audyt + Implementacja</h3>
                 <div class="price">5990 zł</div>
-                <div class="price-note">Jednorazowo + VAT<br>(cena netto)</div>
+                <div class="price-note">Jednorazowo + VAT</div>
                 <ul class="service-features">
                     <li>Wszystko z Poziomu 1</li>
-                    <li>Test 20+ zapytań branżowych</li>
-                    <li><strong>Pełne wdrożenie JSON-LD Premium</strong></li>
-                    
-                    <li><strong>Monitoring przez 3 miesiące</strong> (raporty)</li>
+                    <li>Test 20+ zapytań</li>
+                    <li><strong>Wdrożenie JSON-LD Premium</strong></li>
+                    <li><strong>Monitoring przez 3 miesiące</strong></li>
                 </ul>
                 <a href="#kontakt-form" class="cta-button" style="background: var(--accent-gradient-new);">Wybieram Pakiet 2</a>
             </div>
             <div class="pricing-card">
-                <h3>POZIOM 3: Full-Service AI Visibility</h3>
+                <h3>POZIOM 3: Full-Service</h3>
                 <div class="price">3990 zł</div>
-                <div class="price-note">Miesięcznie + VAT<br>(cena netto, min. 6 msc)</div>
+                <div class="price-note">Miesięcznie + VAT</div>
                 <ul class="service-features">
                     <li>Wszystko z Poziomu 2</li>
-                    <li><strong>Strategia i tworzenie treści pod AI</strong></li>
-                    <li>Ciągła aktualizacja danych i reagowanie</li>
-                    <li>Raportowanie zaawansowane (tygodniowe alerty)</li>
-                    <li>Konsultacje strategiczne (2h/miesiąc)</li>
+                    <li><strong>Strategia treści pod AI</strong></li>
+                    <li>Ciągła aktualizacja danych</li>
+                    <li>Konsultacje strategiczne</li>
                 </ul>
                 <a href="#kontakt-form" class="btn-outline">Porozmawiaj o Full-Service</a>
             </div>
@@ -739,11 +324,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <section id="kontakt-form" style="padding: 100px 5%; background: var(--dark-bg);">
         <div class="contact-container" style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <div class="contact-column" style="flex: 1; max-width: 100%;">
+            <div class="contact-column">
                 <h2 style="color: var(--text-primary);">Odbierz darmowy mini-raport AI Visibility</h2>
-                <p style="color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6;">
-                    Wypełnij formularz. Otrzymasz bezpłatną analizę 3 kluczowych fraz, porównanie z 2 konkurentami i ocenę Twojego potencjału w AI.
-                </p>
+                <p style="color: var(--text-secondary); margin-bottom: 32px;">Wypełnij formularz, aby otrzymać bezpłatną analizę Twojego potencjału w AI.</p>
                 <form class="contact-form">
                     <div class="form-group">
                         <div class="form-group-grid">
@@ -751,16 +334,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <input class="form-input" name="email" placeholder="Email" required type="email">
                         </div>
                         <input class="form-input full-width" name="website" placeholder="Adres Twojej strony WWW" required type="text" style="margin-top: 20px;">
-                        <textarea class="form-input full-width" name="message" placeholder="Powiedz nam o swoim biznesie i kim są Twoi główni konkurenci (opcjonalnie)" rows="4" style="margin-top: 20px;"></textarea>
+                        <textarea class="form-input full-width" name="message" placeholder="Główni konkurenci (opcjonalnie)" rows="4" style="margin-top: 20px;"></textarea>
                         <div class="form-checkbox">
                             <input id="consent-new" required type="checkbox">
-                            <label for="consent-new">
-                                Wyrażam zgodę na przetwarzanie moich danych osobowych przez Collytics OÜ w celu odpowiedzi na zapytanie i przesłania raportu.
-                            </label>
+                            <label for="consent-new">Wyrażam zgodę na przetwarzanie danych przez Collytics OÜ.</label>
                         </div>
-                        <button class="cta-button" style="width: 100%; background: var(--accent-gradient-new);" type="submit">
-                            Odbieram darmowy raport
-                        </button>
+                        <button class="cta-button" style="width: 100%; background: var(--accent-gradient-new);" type="submit">Odbieram darmowy raport</button>
                     </div>
                 </form>
             </div>
@@ -771,27 +350,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h2>Często Zadawane Pytania (FAQ)</h2>
         <details class="faq-item">
             <summary>Czy to jest to samo co SEO?</summary>
-            <div class="faq-content">
-                <p>Nie. SEO skupia się na rankingu <strong>linków</strong> w wyszukiwarce. AI Visibility (AIO) skupia się na byciu <strong>treścią odpowiedzi</strong> i <strong>bezpośrednią rekomendacją</strong> w chacie AI. To logiczna ewolucja SEO - AIO to Twoje nowe SEO.</p>
-            </div>
-        </details>
-        <details class="faq-item">
-            <summary>Czy to naprawdę działa? Modele AI ciągle się zmieniają.</summary>
-            <div class="faq-content">
-                <p>Tak. Modele AI <strong>zawsze</strong> będą polegać na najbardziej wiarygodnych, aktualnych i najlepiej ustrukturyzowanych danych w internecie. Nasza usługa zapewnia, że to Twoje dane będą tym źródłem. Ciągły monitoring (w Poziomu 2 i 3) gwarantuje adaptację do zmian algorytmów.</p>
-            </div>
-        </details>
-        <details class="faq-item">
-            <summary>Mam małą, lokalną firmę. Czy to dla mnie?</summary>
-            <div class="faq-content">
-                <p>Absolutnie. Ta usługa jest kluczowa dla lokalnych biznesów (klinik, restauracji, hoteli, salonów). Użytkownicy coraz częściej używają zapytań głosowych i AI typu "poleć mi [usługa] blisko mnie". Chcesz być tą polecaną firmą, a nie Twoją konkurencją.</p>
-            </div>
+            <div class="faq-content"><p>Nie. SEO skupia się na linkach. AI Visibility skupia się na byciu bezpośrednią rekomendacją w chacie AI.</p></div>
         </details>
         <details class="faq-item">
             <summary>Czym są dane strukturalne (JSON-LD)?</summary>
-            <div class="faq-content">
-                <p>JSON-LD to nowoczesny format "tłumaczenia" treści Twojej strony na język zrozumiały dla maszyn, w tym AI. Poprzez wdrożenie JSON-LD "mówimy" modelom AI precyzyjnie: "to jest nasza usługa", "to są opinie klientów", "to są nasze godziny otwarcia". To kluczowy element, który pozwala AI ufać Twoim danym i wykorzystywać je w rekomendacjach.</p>
-            </div>
+            <div class="faq-content"><p>To format "tłumaczenia" treści strony na język zrozumiały dla AI, pozwalający modelom ufać Twoim danym.</p></div>
         </details>
     </section>
 
@@ -800,190 +363,112 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <section class="final-cta-section">
                 <div class="footer-cta">
                     <h2>Gotowy, aby rozpocząć projekt?</h2>
-                    <p>Oferujemy innowacyjne rozwiązania, które zwiększą Twoją widoczność online, przyciągną nowych
-                        klientów i zapewnią Ci przewagę nad konkurencją.</p>
+                    <p>Zapewnij sobie przewagę nad konkurencją.</p>
                     <a class="cta-button" href="kontakt.html">Kontakt</a>
                 </div>
             </section>
-
-            <div style="margin-bottom: 24px; margin-top: 60px;">
-                <img alt="Collytics" src="assets/images/logo main transparent.png" style="height: 60px;">
-            </div>
-            <p style="color: var(--text-secondary); margin-bottom: 40px;">
-                Twój partner w analizie danych i marketingu
-            </p>
-            <div class="footer-bottom">
-                <p>
-                    © Collytics. All rights reserved.
-                    <a href="legal/privacy-policy.html" style="color: var(--text-secondary); text-decoration: underline;">Polityka Prywatności</a>
-                </p>
-            </div>
+            <div style="margin-top: 60px;"><img alt="Collytics" src="assets/images/logo main transparent.png" style="height: 60px;"></div>
+            <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
+            <div class="footer-bottom"><p>© Collytics. All rights reserved.</p></div>
         </div>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Obsługa formularzy
-            const contactForms = document.querySelectorAll('.contact-form');
-
-            contactForms.forEach(form => {
+            const form = document.querySelector('.contact-form');
+            if (form) {
                 form.addEventListener('submit', async function (e) {
                     e.preventDefault();
-
                     const submitButton = form.querySelector('button[type="submit"]');
-                    const originalButtonText = submitButton.textContent;
+                    const originalText = submitButton.textContent;
 
-                    // Pobieranie danych z formularza
                     const formData = {
                         name: form.querySelector('input[name="name"]').value,
                         email: form.querySelector('input[name="email"]').value,
-                        // Dodajemy nowe pola specyficzne dla tego LP
-                        website: form.querySelector('input[name="website"]') ? form.querySelector('input[name="website"]').value : '(nie podano)',
-                        message: form.querySelector('textarea[name="message"]') ? form.querySelector('textarea[name="message"]').value : '(nie podano)',
-                        consent: form.querySelector('input[type="checkbox"]').checked,
-                        // Identyfikator formularza, żeby wiedzieć, że to z LP
+                        website: form.querySelector('input[name="website"]').value,
+                        message: form.querySelector('textarea[name="message"]').value,
                         formId: 'AI Visibility Audit LP'
                     };
-
-                    if (!formData.name || !formData.email || !formData.website || formData.website === '(nie podano)') {
-                        showFormMessage(form, 'Wypełnij wszystkie wymagane pola (Imię, Email, Strona WWW)', 'error');
-                        return;
-                    }
-
-                    if (!formData.consent) {
-                        showFormMessage(form, 'Musisz wyrazić zgodę na przetwarzanie danych', 'error');
-                        return;
-                    }
 
                     submitButton.textContent = 'Wysyłanie...';
                     submitButton.disabled = true;
 
                     try {
-                        // WAŻNA UWAGA: Poniższe zapytanie fetch('/api/contact'...)
-                        // NIE ZADZIAŁA LOKALNIE (z file:///).
-                        // To jest normalne. Formularz zadziała poprawnie dopiero po
-                        // wdrożeniu strony na serwer (np. Vercel), który może obsłużyć zapytania API.
-                        // Ścieżka /api/contact jest poprawna dla serwera.
-                        const response = await fetch('/api/contact', {
+                        const response = await fetch('https://api.web3forms.com/submit', {
                             method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(formData)
+                            headers: { 
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                access_key: "TWÓJ_KLUCZ_WEB3FORMS_TUTAJ", // WKLEJ TUTAJ KLUCZ API
+                                name: formData.name,
+                                email: formData.email,
+                                subject: `[AUDYT AI] Zgłoszenie od ${formData.name}`,
+                                from_name: "Collytics WWW",
+                                message: `Strona WWW: ${formData.website}\nKonkurencja/Wiadomość: ${formData.message || 'Brak'}`,
+                                form_id: formData.formId
+                            })
                         });
 
                         const result = await response.json();
-
                         if (result.success) {
                             form.reset();
-                            showFormMessage(form, result.message || 'Dziękujemy! Odezwiemy się wkrótce z Twoim raportem.', 'success');
+                            showFormMessage(form, 'Dziękujemy! Raport zostanie przygotowany wkrótce.', 'success');
                             submitButton.textContent = '✓ Wysłano!';
                             submitButton.style.background = '#10b981';
                         } else {
-                            showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
+                            showFormMessage(form, 'Błąd: ' + result.message, 'error');
                         }
                     } catch (error) {
-                        console.error('Błąd wysyłania:', error);
-                        // Ten błąd pojawi się na 100% lokalnie, to normalne.
-                        showFormMessage(form, 'Wystąpił błąd wysyłania (test lokalny?). Formularz zadziała na serwerze.', 'error');
+                        showFormMessage(form, 'Wystąpił błąd połączenia. Spróbuj ponownie.', 'error');
                     } finally {
                         setTimeout(() => {
-                            submitButton.textContent = originalButtonText;
+                            submitButton.textContent = originalText;
                             submitButton.disabled = false;
-                            if (submitButton.style.background != '') submitButton.style.background = ''; // Resetuj tło
+                            submitButton.style.background = '';
                         }, 5000);
                     }
                 });
-            });
+            }
 
-            // Funkcja do wyświetlania komunikatów (z index.html)
             function showFormMessage(form, message, type) {
                 const existing = form.parentElement.querySelector('.form-message');
                 if (existing) existing.remove();
-
                 const messageDiv = document.createElement('div');
                 messageDiv.className = 'form-message';
                 messageDiv.textContent = message;
-
-                messageDiv.style.cssText = `
-                    margin-top: 20px;
-                    padding: 15px 20px;
-                    border-radius: 8px;
-                    text-align: center;
-                    animation: fadeIn 0.3s ease;
-                    font-size: 14px;
-                `;
-
+                messageDiv.style.cssText = `margin-top: 20px; padding: 15px; border-radius: 8px; text-align: center; animation: fadeIn 0.3s ease;`;
                 if (type === 'success') {
-                    messageDiv.style.cssText += `
-                        background: rgba(16, 185, 129, 0.1);
-                        color: #10b981;
-                        border: 1px solid rgba(16, 185, 129, 0.2);
-                    `;
-                } else if (type === 'error') {
-                    messageDiv.style.cssText += `
-                        background: rgba(239, 68, 68, 0.1);
-                        color: #ef4444;
-                        border: 1px solid rgba(239, 68, 68, 0.2);
-                    `;
+                    messageDiv.style.cssText += `background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid #10b981;`;
+                } else {
+                    messageDiv.style.cssText += `background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444;`;
                 }
-
                 form.parentElement.appendChild(messageDiv);
-
-                setTimeout(() => {
-                    if (messageDiv.parentNode) {
-                        messageDiv.style.animation = 'fadeOut 0.3s ease';
-                        setTimeout(() => messageDiv.remove(), 7000);
-                    }
-                }, 7000);
+                setTimeout(() => { if (messageDiv.parentNode) messageDiv.remove(); }, 7000);
             }
 
-            // Animacje CSS dla komunikatów (z index.html)
-            if (!document.getElementById('form-animations')) {
-                const style = document.createElement('style');
-                style.id = 'form-animations';
-                style.textContent = `
-                    @keyframes fadeIn {
-                        from { opacity: 0; transform: translateY(-10px); }
-                        to { opacity: 1; transform: translateY(0); }
-                    }
-                    @keyframes fadeOut {
-                        from { opacity: 1; transform: translateY(0); }
-                        to { opacity: 0; transform: translateY(-10px); }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-
-            // Smooth scrolling (z index.html)
+            // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
         });
 
-        // Navigation hide/show on scroll (z index.html)
+        // Navbar scroll
         let lastScrollTop = 0;
-        const nav = document.querySelector('.navbar');
         window.addEventListener('scroll', function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                nav.style.transform = 'translateY(-100%)';
-            } else {
-                nav.style.transform = 'translateY(0)';
-            }
+            const nav = document.querySelector('.navbar');
+            if (scrollTop > lastScrollTop && scrollTop > 100) nav.style.transform = 'translateY(-100%)';
+            else nav.style.transform = 'translateY(0)';
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
-    </script>
 
-    <script src="js/menu.js"></script>
-    <script>
-        // Menu script (z index.html)
+        // Menu triggers
         document.addEventListener("click", function (e) {
             if (e.target.id === "menuTrigger") {
                 document.getElementById("dropdownMenu").classList.add("active");
@@ -995,8 +480,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         });
     </script>
-    <script src="js/cookie-banner.js">
-    </script>
+    <script src="js/menu.js"></script>
+    <script src="js/cookie-banner.js"></script>
 </body>
-
 </html>
