@@ -1,74 +1,65 @@
 // api/contact.js
-const https = require('https');
-const querystring = require('querystring');
+export default async function handler(req, res) {
+  const access_key = process.env.WEB3FORMS_ACCESS_KEY;
 
-export default function handler(req, res) {
-    const access_key = process.env.WEB3FORMS_ACCESS_KEY;
+  // Obsługa nagłówków CORS dla Vercel
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
 
-    // Nagłówki CORS
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
 
-    if (req.method === 'OPTIONS') {
-        return res.status(200).end();
-    }
+  if (req.method !== 'POST') {
+    return res.status(405).json({ success: false, message: 'Method not allowed' });
+  }
 
-    if (req.method !== 'POST') {
-        return res.status(405).json({ success: false, message: 'Method not allowed' });
-    }
+  const { name, email, message, website, consent, formId } = req.body;
 
-    const { name, email, message, website, consent, formId } = req.body;
+  // Walidacja danych
+  if (!name || !email || !consent) {
+    return res.status(400).json({ success: false, message: 'Wymagane pola nie zostały wypełnione' });
+  }
 
-    // Walidacja podstawowa
-    if (!name || !email || !consent) {
-        return res.status(400).json({ success: false, message: 'Wypełnij wymagane pola.' });
-    }
+  if (!access_key) {
+    console.error('Błąd: Brak WEB3FORMS_ACCESS_KEY w środowisku Vercel');
+    return res.status(500).json({ success: false, message: 'Błąd konfiguracji serwera' });
+  }
 
-    // Przygotowanie danych w formacie formularza (urlencoded) - to klucz do obejścia blokady
-    const postData = querystring.stringify({
+  try {
+    // Wysyłka do Web3Forms (teraz dozwolona w planie Pro)
+    const web3formsResponse = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
         access_key: access_key,
-        from_name: "Collytics WWW",
-        subject: website ? `[AUDYT AI] Zgłoszenie od ${name}` : `[KONTAKT] Wiadomość od ${name}`,
-        name: name,
+        subject: website ? `[AUDYT AI] Nowe zgłoszenie od ${name}` : `[KONTAKT] Nowa wiadomość od ${name}`,
+        from_name: name,
         email: email,
-        message: `Typ: ${formId || 'Kontakt'}\nWWW: ${website || 'Brak'}\n\nWiadomość: ${message || 'Brak dodatkowej treści'}`,
+        message: website ? `Strona WWW: ${website}\n\nWiadomość: ${message || '(brak treści)'}` : message,
         to: 'hello@collytics.io'
+      })
     });
 
-    const options = {
-        hostname: 'api.web3forms.com',
-        path: '/submit',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Content-Length': Buffer.byteLength(postData)
-        }
-    };
+    const result = await web3formsResponse.json();
 
-    const request = https.request(options, (response) => {
-        let body = '';
-        response.on('data', (chunk) => body += chunk);
-        response.on('end', () => {
-            try {
-                const result = JSON.parse(body);
-                if (result.success) {
-                    return res.status(200).json({ success: true, message: 'Wiadomość wysłana!' });
-                } else {
-                    return res.status(502).json({ success: false, message: result.message });
-                }
-            } catch (e) {
-                return res.status(500).json({ success: false, message: 'Błąd odpowiedzi serwera.' });
-            }
-        });
+    if (result.success) {
+      return res.status(200).json({
+        success: true,
+        message: 'Dziękujemy! Twoja wiadomość została wysłana.'
+      });
+    } else {
+      throw new Error(result.message || 'Błąd API Web3Forms');
+    }
+
+  } catch (error) {
+    console.error('Błąd wysyłania formularza:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.'
     });
-
-    request.on('error', (err) => {
-        console.error('Błąd połączenia:', err);
-        return res.status(500).json({ success: false, message: 'Błąd połączenia z API.' });
-    });
-
-    request.write(postData);
-    request.end();
+  }
 }
