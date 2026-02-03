@@ -386,8 +386,7 @@
                         name: form.querySelector('input[name="name"]').value,
                         email: form.querySelector('input[name="email"]').value,
                         website: form.querySelector('input[name="website"]').value,
-                        message: form.querySelector('textarea[name="message"]').value,
-                        formId: 'AI Visibility Audit LP'
+                        message: form.querySelector('textarea[name="message"]').value
                     };
 
                     submitButton.textContent = 'Wysyłanie...';
@@ -401,13 +400,12 @@
                                 'Accept': 'application/json'
                             },
                             body: JSON.stringify({
-                                access_key: "TWÓJ_KLUCZ_WEB3FORMS_TUTAJ", // WKLEJ TUTAJ KLUCZ API
+                                access_key: "7eb642f4-bed3-4900-9563-7901d60120c8", 
                                 name: formData.name,
                                 email: formData.email,
-                                subject: `[AUDYT AI] Zgłoszenie od ${formData.name}`,
-                                from_name: "Collytics WWW",
-                                message: `Strona WWW: ${formData.website}\nKonkurencja/Wiadomość: ${formData.message || 'Brak'}`,
-                                form_id: formData.formId
+                                from_name: "Collytics WWW (Audyt AI)",
+                                subject: `Nowe zgłoszenie Audyt AI - ${formData.name}`,
+                                message: `Imię: ${formData.name}\nEmail: ${formData.email}\nStrona WWW: ${formData.website}\nKonkurencja/Opis: ${formData.message || 'Brak'}`
                             })
                         });
 
@@ -448,7 +446,6 @@
                 setTimeout(() => { if (messageDiv.parentNode) messageDiv.remove(); }, 7000);
             }
 
-            // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -458,7 +455,6 @@
             });
         });
 
-        // Navbar scroll
         let lastScrollTop = 0;
         window.addEventListener('scroll', function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -468,7 +464,6 @@
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
 
-        // Menu triggers
         document.addEventListener("click", function (e) {
             if (e.target.id === "menuTrigger") {
                 document.getElementById("dropdownMenu").classList.add("active");
