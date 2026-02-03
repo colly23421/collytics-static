@@ -2,76 +2,87 @@
 export default async function handler(req, res) {
   const access_key = process.env.WEB3FORMS_ACCESS_KEY;
 
-  // Obsługa CORS
+  // Nagłówki CORS
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
+    return res.status(200).end();
   }
 
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, message: 'Method not allowed' });
   }
 
-  const { name, email, message, website, consent, formId } = req.body;
-
-  // Podstawowa walidacja (Imię i Email są zawsze wymagane)
-  if (!name || !email) {
-    return res.status(400).json({ success: false, message: 'Imię i email są wymagane.' });
-  }
-
-  // Walidacja zgody
-  if (!consent) {
-    return res.status(400).json({ success: false, message: 'Zgoda na przetwarzanie danych jest wymagana.' });
-  }
-
-  // Walidacja specyficzna dla formularza Audytu AI
-  if (formId === 'AI Visibility Audit LP') {
-    if (!website) {
-      return res.status(400).json({ success: false, message: 'Adres strony WWW jest wymagany dla raportu.' });
-    }
-  } else {
-    // Dla innych formularzy (np. kontakt) wiadomość jest wymagana
-    if (!message) {
-      return res.status(400).json({ success: false, message: 'Treść wiadomości jest wymagana.' });
-    }
-  }
-
-  if (!access_key) {
-      console.error('Błąd: Brak WEB3FORMS_ACCESS_KEY w ustawieniach Vercel.');
-      return res.status(500).json({ success: false, message: 'Błąd konfiguracji serwera.' });
-  }
-
   try {
-    // Łączymy dane w jedną wiadomość dla Web3Forms
-    const finalMessage = website 
-      ? `DOMENA: ${website}\nWIADOMOŚĆ: ${message || '(brak dodatkowej treści)'}`
-      : message;
+    const { name, email, message, website, consent, formId } = req.body;
 
+    // 1. Walidacja podstawowa
+    if (!name || !email || !consent) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Imię, email oraz zgoda są wymagane.' 
+      });
+    }
+
+    // 2. Sprawdzenie klucza API
+    if (!access_key) {
+      console.error('BŁĄD: Brak WEB3FORMS_ACCESS_KEY w Environment Variables na Vercel.');
+      return res.status(500).json({ 
+        success: false, 
+        message: 'Serwer nie jest skonfigurowany do wysyłki (brak klucza).' 
+      });
+    }
+
+    // 3. Przygotowanie czytelnej treści dla Web3Forms
+    // Tworzymy tekst, który Web3Forms przyjmie bez błędów strukturalnych
+    let content = `Nowe zgłoszenie: ${formId || 'Kontakt ogólny'}\n`;
+    content += `---------------------------\n`;
+    content += `Imię: ${name}\n`;
+    content += `Email: ${email}\n`;
+    if (website) content += `Strona WWW: ${website}\n`;
+    content += `\nWiadomość:\n${message || '(Brak treści)'}`;
+
+    // 4. Wysyłka do Web3Forms
     const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
       body: JSON.stringify({
         access_key: access_key,
-        subject: formId || `Kontakt od ${name}`,
-        from_name: name,
+        from_name: "Collytics WWW",
+        subject: website ? `[AUDYT AI] Zgłoszenie od ${name}` : `[KONTAKT] Wiadomość od ${name}`,
+        name: name,
         email: email,
-        message: finalMessage,
+        message: content, // Przekazujemy sformatowany tekst
         to: 'hello@collytics.io'
       })
     });
 
     const result = await response.json();
+
     if (result.success) {
-      return res.status(200).json({ success: true, message: 'Wiadomość wysłana!' });
+      return res.status(200).json({ 
+        success: true, 
+        message: 'Dziękujemy! Wiadomość została wysłana.' 
+      });
     } else {
-      throw new Error(result.message);
+      console.error('Błąd Web3Forms:', result);
+      return res.status(502).json({ 
+        success: false, 
+        message: 'Błąd dostawcy usług wysyłkowych. Spróbuj później.' 
+      });
     }
+
   } catch (error) {
-    return res.status(500).json({ success: false, message: 'Błąd wysyłania przez API.' });
+    console.error('Błąd krytyczny API:', error);
+    return res.status(500).json({ 
+      success: false, 
+      message: 'Wystąpił błąd krytyczny serwera.' 
+    });
   }
 }
