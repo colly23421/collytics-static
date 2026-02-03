@@ -1,9 +1,10 @@
+// api/contact.js
 const https = require('https');
 
 export default function handler(req, res) {
     const access_key = process.env.WEB3FORMS_ACCESS_KEY;
 
-    // Nagłówki CORS
+    // Nagłówki CORS dla Vercel
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -19,25 +20,23 @@ export default function handler(req, res) {
 
     const { name, email, message, website, consent, formId } = req.body;
 
-    // Walidacja
+    // Prosta walidacja
     if (!name || !email || !consent) {
-        return res.status(400).json({ success: false, message: 'Brak wymaganych pól.' });
+        return res.status(400).json({ success: false, message: 'Wypełnij wymagane pola.' });
     }
 
-    if (!access_key) {
-        return res.status(500).json({ success: false, message: 'Błąd konfiguracji: brak klucza API.' });
-    }
-
-    // Formatowanie treści
-    const content = `Formularz: ${formId || 'Kontakt'}\nImię: ${name}\nEmail: ${email}\nWWW: ${website || 'nie podano'}\n\nWiadomość:\n${message || '(brak)'}`;
-
-    const data = JSON.stringify({
+    // Przygotowanie danych do wysyłki
+    const formData = {
         access_key: access_key,
+        from_name: "Collytics",
+        subject: website ? `Nowy Audyt AI: ${name}` : `Kontakt: ${name}`,
         name: name,
         email: email,
-        subject: `[Collytics] Zgłoszenie od ${name}`,
-        message: content,
-    });
+        // Łączymy wszystkie informacje w jedno pole 'message'
+        message: `Typ: ${formId || 'Kontakt'}\nWWW: ${website || 'Brak'}\n\nWiadomość: ${message || 'Brak treści'}`
+    };
+
+    const data = JSON.stringify(formData);
 
     const options = {
         hostname: 'api.web3forms.com',
@@ -50,21 +49,30 @@ export default function handler(req, res) {
     };
 
     const request = https.request(options, (response) => {
-        let responseData = '';
-        response.on('data', (chunk) => { responseData += chunk; });
+        let responseBody = '';
+        response.on('data', (chunk) => { responseBody += chunk; });
         response.on('end', () => {
-            const result = JSON.parse(responseData);
-            if (result.success) {
-                return res.status(200).json({ success: true, message: 'Wysłano pomyślnie!' });
-            } else {
-                return res.status(502).json({ success: false, message: 'Web3Forms zwrócił błąd.' });
+            try {
+                const result = JSON.parse(responseBody);
+                if (result.success) {
+                    return res.status(200).json({ success: true, message: 'Wiadomość wysłana!' });
+                } else {
+                    // Wyświetli dokładny błąd od Web3Forms w logach Vercel
+                    console.error('Błąd Web3Forms:', result);
+                    return res.status(502).json({ 
+                        success: false, 
+                        message: `Błąd Web3Forms: ${result.message || 'Nieznany błąd'}` 
+                    });
+                }
+            } catch (e) {
+                return res.status(500).json({ success: false, message: 'Błąd przetwarzania odpowiedzi.' });
             }
         });
     });
 
-    request.on('error', (error) => {
-        console.error('Błąd https.request:', error);
-        return res.status(500).json({ success: false, message: 'Błąd krytyczny połączenia.' });
+    request.on('error', (err) => {
+        console.error('Błąd połączenia:', err);
+        return res.status(500).json({ success: false, message: 'Błąd połączenia z serwerem poczty.' });
     });
 
     request.write(data);
