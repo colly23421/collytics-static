@@ -1,12 +1,8 @@
 // api/contact.js
-// Poprawiona wersja z Web3Forms i kluczem ze zmiennej środowiskowej
-
 export default async function handler(req, res) {
-  // === NOWOŚĆ: POBIERANIE KLUCZA Z ENV ===
   const access_key = process.env.WEB3FORMS_ACCESS_KEY;
-  // ======================================
 
-  // Obsługa CORS (pozostałe rzeczy pominięte dla zwięzłości)
+  // Obsługa CORS
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
@@ -21,43 +17,57 @@ export default async function handler(req, res) {
     return res.status(405).json({ success: false, message: 'Method not allowed' });
   }
 
-  const { name, email, message, consent } = req.body;
+  // Pobieramy wszystkie możliwe pola z różnych formularzy
+  const { name, email, message, website, consent, formId } = req.body;
 
-  // Walidacja (pozostaje bez zmian)
-  if (!name || !email || !message) {
-    return res.status(400).json({ success: false, message: 'Wszystkie pola są wymagane' });
+  // Podstawowa walidacja (wspólna dla wszystkich formularzy)
+  if (!name || !email) {
+    return res.status(400).json({ success: false, message: 'Imię i adres email są wymagane.' });
+  }
+
+  // Specyficzna walidacja dla formularza Audytu AI (musi mieć website)
+  if (formId === 'AI Visibility Audit LP' && !website) {
+    return res.status(400).json({ success: false, message: 'Adres strony WWW jest wymagany dla raportu.' });
+  }
+
+  // Specyficzna walidacja dla standardowego kontaktu (musi mieć message, jeśli nie jest to audyt)
+  if (formId !== 'AI Visibility Audit LP' && !message) {
+    return res.status(400).json({ success: false, message: 'Wpisz treść wiadomości.' });
   }
 
   if (!consent) {
-    return res.status(400).json({ success: false, message: 'Zgoda na przetwarzanie danych jest wymagana' });
+    return res.status(400).json({ success: false, message: 'Zgoda na przetwarzanie danych jest wymagana.' });
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    return res.status(400).json({ success: false, message: 'Nieprawidłowy adres email' });
+    return res.status(400).json({ success: false, message: 'Nieprawidłowy adres email.' });
   }
   
-  // === NOWOŚĆ: Sprawdzenie, czy klucz jest dostępny ===
   if (!access_key) {
       console.error('Błąd konfiguracji: brak WEB3FORMS_ACCESS_KEY.');
       return res.status(500).json({
           success: false,
-          message: 'Wystąpił błąd konfiguracji serwera. Spróbuj ponownie później.'
+          message: 'Wystąpił błąd konfiguracji serwera.'
       });
   }
-  // =================================================
 
   try {
-    // Wysyłka przez Web3Forms
+    // Przygotowanie treści wiadomości dla Web3Forms
+    // Jeśli jest website, dodajemy go do treści
+    const fullMessage = website 
+      ? `Strona WWW: ${website}\n\nWiadomość: ${message || '(brak dodatkowej treści)'}`
+      : message;
+
     const web3formsResponse = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        access_key: access_key, // UŻYWAMY ZMIENNEJ ENV
-        subject: `Nowa wiadomość od ${name}`,
+        access_key: access_key,
+        subject: formId || `Nowa wiadomość od ${name}`,
         from_name: name,
         email: email,
-        message: message,
+        message: fullMessage,
         to: 'hello@collytics.io'
       })
     });
@@ -67,11 +77,10 @@ export default async function handler(req, res) {
     if (result.success) {
       return res.status(200).json({
         success: true,
-        message: 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.'
+        message: 'Dziękujemy! Twoja wiadomość została wysłana pomyślnie.'
       });
     } else {
-      // Jeśli Web3Forms zwraca błąd, zgłaszamy go
-      throw new Error(result.message || 'Błąd API Web3Forms: Nie udało się wysłać wiadomości.');
+      throw new Error(result.message || 'Błąd API Web3Forms');
     }
 
   } catch (error) {
