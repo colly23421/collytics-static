@@ -41,12 +41,11 @@
 
     <style>
         :root {
-            --primary-color-new: #6366F1; /* Bardziej fioletowy akcent dla AI */
+            --primary-color-new: #6366F1;
             --accent-gradient-new: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
             --dark-card: #1a1a1a;
         }
 
-        /* Używamy stylu .gradient-text z global.css, ale nadpisujemy gradient */
         .gradient-text-new {
             background: var(--accent-gradient-new);
             -webkit-background-clip: text;
@@ -55,12 +54,10 @@
             text-fill-color: transparent;
         }
 
-        /* STYLE DLA HERO */
         .hero.services-hero {
             padding-bottom: 80px;
         }
 
-        /* Sekcja Problemu */
         .problem-section {
             padding: 80px 5%;
             background: var(--dark-bg);
@@ -99,7 +96,6 @@
             font-size: 1rem;
         }
 
-        /* Sekcja Rozwiązania (Korzyści) */
         .solution-section {
             padding: 80px 5%;
             background: var(--dark-secondary);
@@ -125,9 +121,9 @@
         }
         .solution-container .service-features li {
             font-size: 1.1rem;
+            margin-bottom: 10px;
         }
 
-        /* Sekcja Procesu */
         .process-section {
             padding: 100px 5%;
             background: var(--dark-bg);
@@ -177,7 +173,6 @@
             font-size: 0.95rem;
         }
 
-        /* Sekcja Cennika */
         .pricing-section {
             padding: 100px 5%;
             background: var(--dark-secondary);
@@ -208,44 +203,68 @@
             overflow: hidden;
         }
         .pricing-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        .pricing-card .price {
-            font-size: 2.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 10px;
         }
+        .pricing-card .price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #fff;
+        }
         .pricing-card .price-note {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-bottom: 30px;
-            min-height: 40px;
-            line-height: 1.5;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .pricing-card .package-goal {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--primary-color-new);
+            margin-bottom: 20px;
+            font-style: italic;
         }
         .pricing-card .service-features {
             margin-top: 0;
             margin-bottom: 30px;
             flex-grow: 1;
+            list-style: none;
+            padding: 0;
+        }
+        .pricing-card .service-features li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .pricing-card .service-features li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color-new);
+            font-weight: bold;
         }
         .pricing-card .cta-button, .pricing-card .btn-outline {
             width: 100%;
             text-align: center;
             margin-top: auto;
         }
+        
         .btn-outline {
             display: inline-block;
-            padding: 16px 40px;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
+            padding: 14px 20px;
+            border: 1px solid var(--primary-color-new);
+            color: #fff;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
             transition: all 0.3s ease;
         }
         .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--primary-color-new);
         }
         .pricing-card.recommended {
             border-color: var(--primary-color-new);
@@ -258,12 +277,11 @@
             background: var(--primary-color-new);
             color: white;
             padding: 5px 30px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 700;
             transform: rotate(45deg);
         }
 
-        /* Sekcja FAQ */
         .faq-section {
             padding: 100px 5%;
             max-width: 900px;
@@ -309,7 +327,6 @@
             line-height: 1.7;
         }
 
-        /* Sekcja CTA */
         .final-cta-section .footer-cta {
              margin-bottom: 0;
              margin-top: -50px;
@@ -317,7 +334,6 @@
              z-index: 2;
         }
 
-        /* Formularz */
         #kontakt-form h2 {
             font-size: 2.5rem;
             margin-bottom: 16px;
@@ -331,7 +347,6 @@
             grid-column: 1 / -1;
         }
 
-        /* Tło siatki w Hero */
         .hero-with-grid-bg {
             position: relative;
             overflow: hidden;
@@ -365,7 +380,6 @@
             z-index: 1;
         }
 
-        /* Lista technologii w Hero */
         .hero-tech-logos {
             margin-top: 48px;
             max-width: 800px;
@@ -405,7 +419,6 @@
             color: #fff;
         }
 
-        /* Responsywność */
         @media (max-width: 992px) {
             .pricing-grid { grid-template-columns: 1fr; }
             .pricing-card { max-width: 500px; margin: 0 auto; }
@@ -452,11 +465,6 @@
                 <a href="blog/index.html">Blog</a>
                 <a href="about.html">O nas</a>
                 <a href="kontakt.html">Kontakt</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/collytics" target="_blank"><img alt="Facebook" src="assets/images/facebook.png"></a>
-                <a href="https://www.linkedin.com/company/collytics/" target="_blank"><img alt="LinkedIn" src="assets/images/cons8-linkedin-500.svg"></a>
-                <a href="https://x.com/collytics" target="_blank"><img alt="X" src="assets/images/cons8-twitter-500.svg"></a>
             </div>
         </div>
     </div>
@@ -562,41 +570,44 @@
         <h2>Wybierz pakiet dopasowany do Twoich celów</h2>
         <div class="pricing-grid">
             <div class="pricing-card">
-                <h3>POZIOM 1: Podstawowy Audyt AI</h3>
-                <div class="price">1990 zł</div>
-                <div class="price-note">Jednorazowo + VAT</div>
+                <h3>Pakiet 🥉 AI IDENTITY</h3>
+                <div class="price">490 PLN netto</div>
+                <div class="price-note">(jednorazowo)</div>
+                <div class="package-goal">Cel: Retrievability – sprawiamy, że Twoja marka jest widoczna i zrozumiała dla algorytmów AI.</div>
                 <ul class="service-features">
-                    <li>Test w 5 systemach AI</li>
-                    <li>Analiza danych strukturalnych</li>
-                    <li>Raport Rankingowy</li>
-                    <li>Lista Quick Wins</li>
+                    <li><strong>Fundament JSON-LD:</strong> Twój cyfrowy dowód osobisty (Schema), dzięki któremu AI wie, kim jesteś i co sprzedajesz.</li>
+                    <li><strong>Skan Widoczności:</strong> Raport startowy – sprawdzamy, co ChatGPT i Gemini mówią o Tobie dzisiaj.</li>
                 </ul>
-                <a href="#kontakt-form" class="btn-outline">Zamów Audyt</a>
+                <a href="#kontakt-form" class="btn-outline">Nie bądź duchem dla AI</a>
             </div>
+
             <div class="pricing-card recommended">
-                <div class="recommend-badge">POLECANY</div>
-                <h3>POZIOM 2: Audyt + Implementacja</h3>
-                <div class="price">5990 zł</div>
-                <div class="price-note">Jednorazowo + VAT</div>
+                <div class="recommend-badge">NAJCZĘŚCIEJ WYBIERANY</div>
+                <h3>Pakiet 🥈 AI AUTHORITY</h3>
+                <div class="price">1 490 PLN netto</div>
+                <div class="price-note">(jednorazowo)</div>
+                <div class="package-goal">Cel: Wdrożenie strategii GEO (Generative Engine Optimization). Sprawiamy, by AI wybierało Twoje treści jako odpowiedź dla klienta.</div>
                 <ul class="service-features">
-                    <li>Wszystko z Poziomu 1</li>
-                    <li>Test 20+ zapytań</li>
-                    <li><strong>Wdrożenie JSON-LD Premium</strong></li>
-                    <li><strong>Monitoring przez 3 miesiące</strong></li>
+                    <li>Wszystko z pakietu Identity.</li>
+                    <li><strong>AI Chunking:</strong> Dzielimy Twoje treści na fragmenty idealne do cytowania przez AI.</li>
+                    <li><strong>Optymalizacja Zero-Click:</strong> Docieramy do klientów, którzy nie klikają w linki, bo ufają rekomendacjom czatów AI.</li>
+                    <li><strong>Techniczny Autorytet:</strong> Rozszerzone dane strukturalne, które potwierdzają Twoją wiarygodność.</li>
                 </ul>
                 <a href="#kontakt-form" class="cta-button" style="background: var(--accent-gradient-new);">Wybieram Pakiet 2</a>
             </div>
+
             <div class="pricing-card">
-                <h3>POZIOM 3: Full-Service</h3>
-                <div class="price">3990 zł</div>
-                <div class="price-note">Miesięcznie + VAT</div>
+                <h3>Pakiet 🥇 AI DOMINATOR</h3>
+                <div class="price">3 490 PLN netto</div>
+                <div class="price-note">(jednorazowo)</div>
+                <div class="package-goal">Cel: Budowa pełnego autorytetu. AI uznaje Cię za eksperta i jedyne sprawdzone źródło w Twojej branży.</div>
                 <ul class="service-features">
-                    <li>Wszystko z Poziomu 2</li>
-                    <li><strong>Strategia treści pod AI</strong></li>
-                    <li>Ciągła aktualizacja danych</li>
-                    <li>Konsultacje strategiczne</li>
+                    <li>Wszystko z pakietu Authority.</li>
+                    <li><strong>Framework E-E-A-T:</strong> Techniczne uwiarygodnienie Twojej ekspertyzy i zaufania (kluczowe dla danych treningowych AI).</li>
+                    <li><strong>Analityka Przewagi:</strong> Wykrywamy luki u konkurencji i przejmujemy ich miejsce w rekomendacjach.</li>
+                    <li><strong>Google CSS:</strong> Obniżamy koszty Twoich reklam produktowych o 20% dzięki technologii Google.</li>
                 </ul>
-                <a href="#kontakt-form" class="btn-outline">Porozmawiaj o Full-Service</a>
+                <a href="#kontakt-form" class="btn-outline">Zdominuj rynek AI</a>
             </div>
         </div>
     </section>
@@ -613,10 +624,10 @@
                             <input class="form-input" name="email" placeholder="Email" required type="email">
                         </div>
                         <input class="form-input full-width" name="website" placeholder="Adres Twojej strony WWW" required type="text" style="margin-top: 20px;">
-                        <textarea class="form-input full-width" name="message" placeholder="Główni konkurenci (opcjonalnie)" rows="4" style="margin-top: 20px;"></textarea>
+                        <textarea class="form-input full-width" name="message" placeholder="Który pakiet Cię interesuje? (opcjonalnie)" rows="4" style="margin-top: 20px;"></textarea>
                         <div class="form-checkbox">
                             <input id="consent-new" required type="checkbox">
-                            <label for="consent-new">Wyrażam zgodę na przetwarzanie danych przez Collytics OÜ.</label>
+                            <label for="consent-new">Wyrażam zgodę na przetwarzanie moich danych osobowych przez Collytics OÜ.</label>
                         </div>
                         <button class="cta-button" style="width: 100%; background: var(--accent-gradient-new);" type="submit">Odbieram darmowy raport</button>
                     </div>
@@ -627,15 +638,8 @@
 
     <footer>
         <div class="footer-container">
-            <section class="final-cta-section">
-                <div class="footer-cta">
-                    <h2>Gotowy, aby rozpocząć projekt?</h2>
-                    <p>Zapewnij sobie przewagę nad konkurencją.</p>
-                    <a class="cta-button" href="kontakt.html">Kontakt</a>
-                </div>
-            </section>
             <div style="margin-top: 60px;"><img alt="Collytics" src="assets/images/logo main transparent.png" style="height: 60px;"></div>
-            <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w analizie danych i marketingu</p>
+            <p style="color: var(--text-secondary); margin-bottom: 40px;">Twój partner w marketingu ery AI</p>
             <div class="footer-bottom"><p>© Collytics. All rights reserved.</p></div>
         </div>
     </footer>
@@ -667,12 +671,12 @@
                                 'Accept': 'application/json'
                             },
                             body: JSON.stringify({
-                                access_key: "7eb642f4-bed3-4900-9563-7901d60120c8", 
+                                access_key: "7eb642f4-bed3-4900-9563-7901d60120c8",
                                 name: formData.name,
                                 email: formData.email,
                                 from_name: "Collytics WWW (Audyt AI)",
                                 subject: `Nowe zgłoszenie Audyt AI - ${formData.name}`,
-                                message: `Imię: ${formData.name}\nEmail: ${formData.email}\nStrona WWW: ${formData.website}\nKonkurencja/Opis: ${formData.message || 'Brak'}`
+                                message: `Imię: ${formData.name}\nEmail: ${formData.email}\nStrona WWW: ${formData.website}\nPakiet/Opis: ${formData.message || 'Brak'}`
                             })
                         });
 
@@ -722,7 +726,6 @@
             });
         });
 
-        // Navbar scroll
         let lastScrollTop = 0;
         window.addEventListener('scroll', function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -732,7 +735,6 @@
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
 
-        // Menu triggers
         document.addEventListener("click", function (e) {
             if (e.target.id === "menuTrigger") {
                 document.getElementById("dropdownMenu").classList.add("active");
@@ -747,4 +749,4 @@
     <script src="js/menu.js"></script>
     <script src="js/cookie-banner.js"></script>
 </body>
-</html>
+</html>zz
