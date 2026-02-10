@@ -351,6 +351,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   const result = await response.json();
 
                   if (result.success) {
+                   trackContactForm();
                       form.reset();
                        // POLSKI KOMUNIKAT SUKCESU
                       showFormMessage(form, 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success'); 
