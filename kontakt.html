@@ -12,6 +12,44 @@
     "ad_personalization": "denied"
   });
   </script>
+<script>
+  // Główna funkcja wysyłająca dane do Twojego Workera
+  async function sendToFBCAPI(eventName, customData = {}) {
+    // Adres Twojego aktywnego Workera
+    const workerUrl = 'https://fb-capi-collytics.business-8be.workers.dev/'; 
+
+    try {
+      const response = await fetch(workerUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        // Cloudflare przekazuje to do Meta CAPI
+        body: JSON.stringify({
+          eventName: eventName,
+          customData: customData
+        }),
+      });
+      
+      console.log(`CAPI Event [${eventName}]:`, response.ok ? 'Sent ✅' : 'Error ❌');
+    } catch (err) {
+      console.error('CAPI Connection Error:', err);
+    }
+  }
+
+  // 1. Automatyczne śledzenie PageView zaraz po wejściu na stronę
+  sendToFBCAPI('PageView');
+
+  // 2. Funkcja do podpięcia pod formularz kontaktowy
+  function trackContactForm() {
+    sendToFBCAPI('Lead', {
+      content_name: 'Formularz Kontaktowy',
+      status: 'Sent'
+    });
+  }
+</script>
+
+  
   <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
