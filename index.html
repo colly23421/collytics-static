@@ -906,6 +906,7 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
                   const result = await response.json();
 
                   if (result.success) {
+                   trackContactForm();
                       form.reset();
                       // POLSKI KOMUNIKAT SUKCESU
                       showFormMessage(form, 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success');
