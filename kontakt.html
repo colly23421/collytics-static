@@ -12,8 +12,9 @@
     "ad_personalization": "denied"
   });
   </script>
+  
 <script>
-  // Główna funkcja wysyłająca dane do Twojego Workera
+  // Główna funkcja wysyłająca dane do Workera
   async function sendToFBCAPI(eventName, customData = {}) {
     // Adres Twojego aktywnego Workera
     const workerUrl = 'https://fb-capi-collytics.business-8be.workers.dev/'; 
@@ -49,7 +50,25 @@
   }
 </script>
 
-  
+  <script>
+  async function sendToFBCAPI(eventName, customData = {}) {
+    const workerUrl = 'https://fb-capi-collytics.business-8be.workers.dev/'; 
+
+    try {
+      await fetch(workerUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ eventName: eventName, customData: customData }),
+      });
+      console.log('CAPI Sent:', eventName);
+    } catch (err) {
+      console.error('CAPI Error:', err);
+    }
+  }
+
+  // Automatyczne PageView
+  sendToFBCAPI('PageView');
+</script>
   <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
