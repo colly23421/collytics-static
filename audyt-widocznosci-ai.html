@@ -716,6 +716,7 @@
 
                         const result = await response.json();
                         if (result.success) {
+                            trackContactForm();
                             form.reset();
                             showFormMessage(form, 'Dziękujemy! Raport zostanie przygotowany wkrótce.', 'success');
                             submitButton.textContent = '✓ Wysłano!';
