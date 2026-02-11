@@ -732,14 +732,19 @@ sendToFBCAPI('PageView');
                         });
 
                         const result = await response.json();
-                        if (result.success) {
-                              // Przekaż email do CAPI przy konwersji Lead
-  sendToFBCAPI('Lead', {
-    content_name: 'Formularz Kontaktowy',
-    status: 'Sent'
-  }, {
-    email: formData.email  // hashowane automatycznie przez Worker
-  });
+if (result.success) {
+    // Piksel przeglądarkowy (browser-side)
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead');
+    }
+    
+    // CAPI (server-side)
+    sendToFBCAPI('Lead', {
+        content_name: 'Formularz Kontaktowy',
+        status: 'Sent'
+    }, {
+        email: formData.email
+    });
                             form.reset();
                             showFormMessage(form, 'Dziękujemy! Raport zostanie przygotowany wkrótce.', 'success');
                             submitButton.textContent = '✓ Wysłano!';
