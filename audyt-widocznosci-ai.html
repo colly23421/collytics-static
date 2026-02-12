@@ -12,55 +12,73 @@
             "ad_personalization": "denied"
         });
     </script>
-    <!-- Meta Pixel (browser-side) -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-</script>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    // USUNIĘTO: fbq init i track - teraz zarządza tym cookie-banner.js
+    </script>
      <script>
-// Helper do odczytu cookies
-function getCookie(name) {
-  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-  return match ? match[2] : null;
-}
-
-async function sendToFBCAPI(eventName, customData = {}, extraData = {}) {
-  const workerUrl = 'https://fb-capi-collytics.business-8be.workers.dev/';
-
-  try {
-    const response = await fetch(workerUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        eventName: eventName,
-        eventId: crypto.randomUUID(),
-        fbp: getCookie('_fbp'),        // cookie Facebook Pixel
-        fbc: getCookie('_fbc'),        // cookie Facebook Click ID
-        sourceUrl: window.location.href,
-        customData: customData,
-        ...extraData                   // np. email
-      }),
-    });
-
-    if (response.ok) {
-      console.log(`CAPI [${eventName}]: Sent ✅`);
-    } else {
-      console.log(`CAPI [${eventName}]: Server Error ❌`);
+    // Helper do odczytu cookies
+    function getCookie(name) {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? match[2] : null;
     }
-  } catch (err) {
-    console.error('CAPI Connection Error:', err);
-  }
-}
 
-// Automatyczne śledzenie PageView
-sendToFBCAPI('PageView');
+    // Helper do sprawdzania zgody
+    function hasMarketingConsent() {
+        try {
+            const consentData = localStorage.getItem('cookie_consent');
+            if (!consentData) return false;
+            const parsed = JSON.parse(consentData);
+            return parsed.data && parsed.data.marketing === true;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    async function sendToFBCAPI(eventName, customData = {}, extraData = {}, manualEventID = null) {
+      // 1. Sprawdź zgodę przed wysyłką (RODO)
+      if (!hasMarketingConsent()) {
+          console.warn(`CAPI [${eventName}]: Blocked due to no marketing consent 🛑`);
+          return;
+      }
+
+      const workerUrl = 'https://fb-capi-collytics.business-8be.workers.dev/';
+      // Użyj przekazanego ID lub wygeneruj nowe
+      const eventId = manualEventID || crypto.randomUUID();
+
+      try {
+        const response = await fetch(workerUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            eventName: eventName,
+            eventId: eventId,              // Przekazujemy ID
+            fbp: getCookie('_fbp'),        // cookie Facebook Pixel
+            fbc: getCookie('_fbc'),        // cookie Facebook Click ID
+            sourceUrl: window.location.href,
+            customData: customData,
+            ...extraData                   // np. email
+          }),
+        });
+
+        if (response.ok) {
+          console.log(`CAPI [${eventName}]: Sent ✅ (ID: ${eventId})`);
+        } else {
+          console.log(`CAPI [${eventName}]: Server Error ❌`);
+        }
+      } catch (err) {
+        console.error('CAPI Connection Error:', err);
+      }
+    }
+
+    // USUNIĘTO automatyczne wywołanie PageView - teraz zarządza tym cookie-banner.js
      </script>
     <script src="js/cookie-banner.js"></script>
     <script>
@@ -731,19 +749,23 @@ sendToFBCAPI('PageView');
                         });
 
                         const result = await response.json();
-if (result.success) {
-    // Piksel przeglądarkowy (browser-side)
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead');
-    }
-    
-    // CAPI (server-side)
-    sendToFBCAPI('Lead', {
-        content_name: 'Formularz Kontaktowy',
-        status: 'Sent'
-    }, {
-        email: formData.email
-    });
+                        if (result.success) {
+                            // 1. Wygeneruj WSPÓLNE ID zdarzenia dla deduplikacji
+                            const leadEventID = crypto.randomUUID();
+
+                            // 2. Piksel przeglądarkowy (browser-side) z ID
+                            if (typeof fbq !== 'undefined') {
+                                fbq('track', 'Lead', {}, { eventID: leadEventID });
+                            }
+                            
+                            // 3. CAPI (server-side) z TYM SAMYM ID
+                            sendToFBCAPI('Lead', {
+                                content_name: 'Formularz Kontaktowy',
+                                status: 'Sent'
+                            }, {
+                                email: formData.email
+                            }, leadEventID);
+                            
                             form.reset();
                             showFormMessage(form, 'Dziękujemy! Raport zostanie przygotowany wkrótce.', 'success');
                             submitButton.textContent = '✓ Wysłano!';
