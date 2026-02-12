@@ -1,5 +1,5 @@
 // Cookie Consent Banner - Collytics.io
-// Wersja: 3.1 (Fix: Meta Pixel Integration)
+// Wersja: 3.2 (Fix: Meta Pixel + CAPI Deduplication)
 // Data: 2025-10-06 (Updated)
 
 (function() {
@@ -209,7 +209,7 @@
             }
         },
 
-        // KLUCZOWA FUNKCJA: Aktualizacja GTM Consent Mode + Meta Pixel
+        // KLUCZOWA FUNKCJA: Aktualizacja GTM Consent Mode + Meta Pixel + CAPI
         updateGTMConsent: function(consent) {
             console.log('[Cookie Banner] Aktualizacja GTM Consent Mode...');
 
@@ -225,17 +225,27 @@
                 });
             }
 
-            // 2. Obsługa Meta Pixel (Facebook) - Uruchamiamy TYLKO przy zgodzie marketingowej
+            // 2. Obsługa Meta Pixel (Facebook) + CAPI - Uruchamiamy TYLKO przy zgodzie marketingowej
             if (consent.marketing) {
+                // Generujemy wspólne ID dla PageView (deduplikacja)
+                const pageViewID = crypto.randomUUID();
+
                 if (typeof fbq === 'function') {
                     console.log('[Cookie Banner] ✅ Zgoda marketingowa: Uruchamiam Meta Pixel');
                     fbq('init', '815513483687028');
-                    fbq('track', 'PageView');
+                    // Przekazujemy EventID do Pixela przeglądarkowego
+                    fbq('track', 'PageView', {}, { eventID: pageViewID });
                 } else {
                     console.warn('[Cookie Banner] Zgoda jest, ale fbq nie załadowane (sprawdź <head>)');
                 }
+
+                // Uruchamiamy CAPI (funkcja zdefiniowana w HTML)
+                if (typeof sendToFBCAPI === 'function') {
+                    sendToFBCAPI('PageView', {}, {}, pageViewID);
+                }
+
             } else {
-                console.log('[Cookie Banner] ℹ️ Brak zgody marketingowej - Meta Pixel nie jest inicjowany');
+                console.log('[Cookie Banner] ℹ️ Brak zgody marketingowej - Meta Pixel/CAPI wstrzymane');
             }
 
             console.log('[Cookie Banner] ✅ Statusy zaktualizowane:', {
@@ -244,7 +254,7 @@
                 personalization: consent.personalization ? 'granted' : 'denied'
             });
 
-            // Wyślij event
+            // Wyślij event do DataLayer
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 'event': 'cookie_consent_update',
@@ -265,7 +275,6 @@
             console.log('gtag:', typeof gtag !== 'undefined' ? '✅ Istnieje' : '❌ Brak');
             console.log('DataLayer:', window.dataLayer ? '✅ Istnieje (' + window.dataLayer.length + ' wpisów)' : '❌ Brak');
 
-            // Sprawdź Consent Mode w dataLayer
             if (window.dataLayer) {
                 const consentEvents = window.dataLayer.filter(item =>
                     item[0] === 'consent' || item.event === 'cookie_consent_update'
