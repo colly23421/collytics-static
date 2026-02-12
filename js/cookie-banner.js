@@ -225,6 +225,8 @@
                 'ad_storage': consent.marketing ? 'granted' : 'denied',
                 'ad_user_data': consent.marketing ? 'granted' : 'denied',
                 'ad_personalization': consent.personalization ? 'granted' : 'denied'
+                fbq('init', '815513483687028');
+fbq('track', 'PageView');
             });
 
             console.log('[Cookie Banner] ✅ GTM Consent Mode zaktualizowany:', {
