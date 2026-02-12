@@ -1,7 +1,6 @@
 // Cookie Consent Banner - Collytics.io
-// Wersja: 3.0 (GTM Consent Mode)
-// Data: 2025-10-06
-// Poprawki: Integracja z Google Tag Manager Consent Mode
+// Wersja: 3.1 (Fix: Meta Pixel Integration)
+// Data: 2025-10-06 (Updated)
 
 (function() {
     'use strict';
@@ -210,26 +209,36 @@
             }
         },
 
-        // KLUCZOWA FUNKCJA: Aktualizacja GTM Consent Mode
+        // KLUCZOWA FUNKCJA: Aktualizacja GTM Consent Mode + Meta Pixel
         updateGTMConsent: function(consent) {
             console.log('[Cookie Banner] Aktualizacja GTM Consent Mode...');
 
+            // 1. Aktualizacja zgód w Google (gtag)
             if (typeof gtag === 'undefined') {
                 console.warn('[Cookie Banner] ⚠️ gtag nie znaleziony - GTM może nie być załadowany');
-                return;
+            } else {
+                gtag('consent', 'update', {
+                    'analytics_storage': consent.analytics ? 'granted' : 'denied',
+                    'ad_storage': consent.marketing ? 'granted' : 'denied',
+                    'ad_user_data': consent.marketing ? 'granted' : 'denied',
+                    'ad_personalization': consent.personalization ? 'granted' : 'denied'
+                });
             }
 
-            // Zaktualizuj zgody w GTM
-            gtag('consent', 'update', {
-                'analytics_storage': consent.analytics ? 'granted' : 'denied',
-                'ad_storage': consent.marketing ? 'granted' : 'denied',
-                'ad_user_data': consent.marketing ? 'granted' : 'denied',
-                'ad_personalization': consent.personalization ? 'granted' : 'denied'
-                fbq('init', '815513483687028');
-fbq('track', 'PageView');
-            });
+            // 2. Obsługa Meta Pixel (Facebook) - Uruchamiamy TYLKO przy zgodzie marketingowej
+            if (consent.marketing) {
+                if (typeof fbq === 'function') {
+                    console.log('[Cookie Banner] ✅ Zgoda marketingowa: Uruchamiam Meta Pixel');
+                    fbq('init', '815513483687028');
+                    fbq('track', 'PageView');
+                } else {
+                    console.warn('[Cookie Banner] Zgoda jest, ale fbq nie załadowane (sprawdź <head>)');
+                }
+            } else {
+                console.log('[Cookie Banner] ℹ️ Brak zgody marketingowej - Meta Pixel nie jest inicjowany');
+            }
 
-            console.log('[Cookie Banner] ✅ GTM Consent Mode zaktualizowany:', {
+            console.log('[Cookie Banner] ✅ Statusy zaktualizowane:', {
                 analytics: consent.analytics ? 'granted' : 'denied',
                 marketing: consent.marketing ? 'granted' : 'denied',
                 personalization: consent.personalization ? 'granted' : 'denied'
