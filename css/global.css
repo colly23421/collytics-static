@@ -336,11 +336,7 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     color: #a0a0a0;
 }
 
-.footer-logo-small { 
-    height: 28px; 
-    margin-bottom: 15px; 
-    filter: brightness(0) invert(1);
-}
+
 
 .footer-socials { 
     display: flex; 
@@ -418,11 +414,7 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 }
 
 /* Fix dla logo SVG w stopce */
-.footer-logo-small {
-    height: 28px;
-    margin-bottom: 15px;
-    /* Usuń filter dla SVG - zachowaj oryginalne kolory */
-}
+
 
 /* Jeśli chcesz białe logo SVG */
 .main-footer .footer-logo-small[src*=".svg"] {
@@ -433,4 +425,11 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 .footer-socials img[src*="facebook"] {
     filter: none !important;
     opacity: 1;
+}
+
+/* Logo stopki - oryginalne kolory */
+.footer-logo-small {
+    height: 32px;
+    width: auto;
+    margin-bottom: 15px;
 }
