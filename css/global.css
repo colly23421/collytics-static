@@ -440,17 +440,7 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 }
 
 /* Ikony social media - mniejsze */
-.footer-socials a {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    background-color: #ffffff;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease;
-}
+
 
 .footer-socials a:hover {
     background-color: #0066ff;
@@ -460,4 +450,23 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     height: 18px;
     width: 18px;
     object-fit: contain;
+}
+
+/* Ikony social media - czarne tło dla białych ikon */
+.footer-socials a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-color: #000000;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.footer-socials a:hover {
+    background-color: #0066ff;
+    border-color: #0066ff;
 }
