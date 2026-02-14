@@ -341,10 +341,7 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     margin-bottom: 10px;
 }
 
-.footer-socials a {
-    display: block;
-    transition: opacity 0.2s ease;
-}
+
 
 .footer-socials a:hover {
     opacity: 1 !important;
@@ -436,14 +433,31 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 }
 
 /* Ikony social media - białe, bez filtrów */
-.footer-socials img {
-    height: 24px;
-    width: 24px;
-    object-fit: contain;
-    opacity: 0.9;
-    transition: opacity 0.2s ease;
-}
+
 
 .footer-socials a:hover img {
     opacity: 1;
+}
+
+/* Ikony social media - mniejsze */
+.footer-socials a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.footer-socials a:hover {
+    background-color: #0066ff;
+}
+
+.footer-socials img {
+    height: 18px;
+    width: 18px;
+    object-fit: contain;
 }
