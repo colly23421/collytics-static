@@ -233,8 +233,6 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 
 .footer-col p, .footer-col li { font-size: 0.8rem; line-height: 1.2; color: #a0a0a0; }
 
-
-
 /* Dopasuj do fontu strony */
 }
 
@@ -244,8 +242,6 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     color: #a0a0a0; 
     margin-bottom: 4px; 
 }
-
-
 
 .footer-links a { 
     text-decoration: none; 
@@ -332,22 +328,12 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     color: #a0a0a0;
 }
 
-
-
 .footer-socials { 
     display: flex; 
     gap: 15px; 
     margin-top: 15px;
     margin-bottom: 10px;
 }
-
-
-
-.footer-socials a:hover {
-    opacity: 1 !important;
-}
-
-
 
 .footer-tax-info {
     display: flex;
@@ -403,7 +389,6 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 
 /* Fix dla logo SVG w stopce */
 
-
 /* Jeśli chcesz białe logo SVG */
 .main-footer .footer-logo-small[src*=".svg"] {
     filter: brightness(0) invert(1);
@@ -417,9 +402,7 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 
 /* Logo stopki - oryginalne kolory */
 
-
 /* Logo stopki - bez spłaszczenia */
-
 
 /* Logo stopki - większe, bez spłaszczenia */
 .footer-logo-small {
@@ -434,33 +417,26 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 
 /* Ikony social media - białe, bez filtrów */
 
-
 .footer-socials a:hover img {
     opacity: 1;
 }
 
 /* Ikony social media - mniejsze */
 
-
-.footer-socials a:hover {
-    background-color: #0066ff;
-}
-
-.footer-socials img {
-    height: 18px;
-    width: 18px;
-    object-fit: contain;
-}
-
 /* Ikony social media - czarne tło dla białych ikon */
+
+
+/* ========================================
+   FOOTER SOCIAL MEDIA ICONS - FINAL
+   ======================================== */
+
 .footer-socials a {
-    display: inline-block;
+    display: inline-flex;
     width: 32px;
     height: 32px;
-    background-color: #000000;
-    border: 1px solid rgba(255,255,255,0.2);
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 4px;
-    display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
@@ -469,4 +445,10 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 .footer-socials a:hover {
     background-color: #0066ff;
     border-color: #0066ff;
+}
+
+.footer-socials img {
+    height: 18px;
+    width: 18px;
+    object-fit: contain;
 }
