@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="/assets/images/Grayscale Transparent.svg" alt="Collytics" class="footer-logo-small">
+                <img src="/assets/images/Grayscale Transparent.png" alt="Collytics" class="footer-logo-small">
                 <p class="footer-bio">Zaawansowana analityka i marketing oparty na danych. Skalujemy biznes poprzez precyzyjne tagowanie i strategie AI.</p>
             </div>
             <div class="footer-col">
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <li><a href="/services.html">Serwis</a></li>
                     <li><a href="/blog/index.html">Blog</a></li>
                     <li><a href="https://www.collytics.io/index.html">AI w firmie</a></li>
+                    <li><a href="/legal/privacy-policy.html">Polityka Prywatności</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -37,9 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
         <div class="footer-bottom-bar">
             <div class="footer-copyright">&copy; 2026 COLLYTICS OÜ.</div>
-            <div class="footer-bottom-links">
-                <a href="/legal/privacy-policy.html">Polityka Prywatności</a>
-            </div>
         </div>
     </div>
 </footer>`;
