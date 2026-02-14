@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="footer-grid">
             <div class="footer-col">
                 <img src="/assets/images/Grayscale Transparent.png" alt="Collytics" class="footer-logo-small">
-                <p class="footer-bio">Zaawansowana analityka i marketing oparty na danych. Skalujemy biznes poprzez precyzyjne tagowanie i strategie AI.</p>
+                <p class="footer-bio">Marketing oparty na danych, zaawansowana analityka.Skalujemy biznes poprzez precyzyjne tagowanie i strategie AI.</p>
             </div>
             <div class="footer-col">
                 <p class="footer-label">Nawigacja</p>
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="/services.html">Serwis</a></li>
                     <li><a href="/blog/index.html">Blog</a></li>
-                    <li><a href="https://www.collytics.io/index.html">AI w firmie</a></li>
+                    <li><a href="https://www.collytics.io/audyt-widocznosci-ai.html">AI w firmie</a></li>
                     <li><a href="/legal/privacy-policy.html">Polityka Prywatności</a></li>
                 </ul>
             </div>
