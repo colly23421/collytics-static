@@ -148,26 +148,6 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     color: var(--primary-color);
 }
 
-.social-links {
-    position: absolute;
-    bottom: 40px;
-    left: 30px;
-    display: flex;
-    gap: 20px;
-}
-
-.social-links img {
-    width: 22px;
-    height: 22px;
-    filter: brightness(0) invert(1);
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-.social-links a:hover img {
-    opacity: 1;
-}
-
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -328,13 +308,6 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     color: #a0a0a0;
 }
 
-.footer-socials { 
-    display: flex; 
-    gap: 15px; 
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
-
 .footer-tax-info {
     display: flex;
     flex-direction: column;
@@ -395,10 +368,6 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 }
 
 /* Fix dla Facebook icon PNG */
-.footer-socials img[src*="facebook"] {
-    filter: none !important;
-    opacity: 1;
-}
 
 /* Logo stopki - oryginalne kolory */
 
@@ -417,38 +386,74 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 
 /* Ikony social media - białe, bez filtrów */
 
-.footer-socials a:hover img {
-    opacity: 1;
-}
-
 /* Ikony social media - mniejsze */
 
 /* Ikony social media - czarne tło dla białych ikon */
-
 
 /* ========================================
    FOOTER SOCIAL MEDIA ICONS - FINAL
    ======================================== */
 
+/* Social icons w menu */
+
+
+/* ========================================
+   SOCIAL MEDIA ICONS - FOOTER & MENU
+   ======================================== */
+
+/* Footer social icons */
+.footer-socials {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
 .footer-socials a {
     display: inline-flex;
-    width: 32px;
-    height: 32px;
-    background-color: #1a1a1a;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border-radius: 3px;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
 }
 
 .footer-socials a:hover {
-    background-color: #0066ff;
-    border-color: #0066ff;
+    background-color: rgba(0,102,255,0.2);
 }
 
 .footer-socials img {
-    height: 18px;
-    width: 18px;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Menu social icons */
+.social-links {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.social-links a {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+    background-color: rgba(0,102,255,0.2);
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
     object-fit: contain;
 }

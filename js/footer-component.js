@@ -26,9 +26,15 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="footer-col">
                 <p class="footer-label">Social Media</p>
                 <div class="footer-socials">
-                    <a href="https://www.facebook.com/collytics" target="_blank"><img src="/assets/images/facebook-white.png" alt="Facebook"></a>
-                    <a href="https://x.com/collytics" target="_blank"><img src="/assets/images/x-white.png" alt="X"></a>
-                    <a href="https://www.linkedin.com/company/collytics/" target="_blank"><img src="/assets/images/linkedin-white.png" alt="LinkedIn"></a>
+                    <a href="https://www.facebook.com/collytics" target="_blank">
+                        <img src="/assets/images/facebook-white.png" alt="Facebook">
+                    </a>
+                    <a href="https://x.com/collytics" target="_blank">
+                        <img src="/assets/images/x-white.png" alt="X">
+                    </a>
+                    <a href="https://www.linkedin.com/company/collytics/" target="_blank">
+                        <img src="/assets/images/linkedin-white.png" alt="LinkedIn">
+                    </a>
                 </div>
                 <div class="footer-tax-info">
                     <span>VAT: EE102761425</span>
