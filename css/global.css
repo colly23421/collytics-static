@@ -233,7 +233,7 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 
 .footer-col p, .footer-col li { font-size: 0.8rem; line-height: 1.2; color: #a0a0a0; }
 
-.footer-socials img { height: 18px; filter: grayscale(1) invert(1); opacity: 0.6; }
+
 
 /* Dopasuj do fontu strony */
 }
@@ -245,11 +245,7 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     margin-bottom: 4px; 
 }
 
-.footer-socials img { 
-    height: 18px; 
-    filter: grayscale(1) invert(1); 
-    opacity: 0.6; 
-}
+
 
 .footer-links a { 
     text-decoration: none; 
@@ -354,12 +350,7 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     opacity: 1 !important;
 }
 
-.footer-socials img { 
-    height: 20px; 
-    width: 20px;
-    filter: grayscale(1) brightness(0) invert(1); 
-    opacity: 0.6;
-}
+
 
 .footer-tax-info {
     display: flex;
@@ -431,12 +422,28 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 
 
 /* Logo stopki - bez spłaszczenia */
+
+
+/* Logo stopki - większe, bez spłaszczenia */
 .footer-logo-small {
     height: auto;
-    max-height: 40px;
+    max-height: 50px;
     width: auto;
-    max-width: 200px;
+    max-width: 250px;
     margin-bottom: 15px;
     object-fit: contain;
     display: block;
+}
+
+/* Ikony social media - białe, bez filtrów */
+.footer-socials img {
+    height: 24px;
+    width: 24px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.footer-socials a:hover img {
+    opacity: 1;
 }
