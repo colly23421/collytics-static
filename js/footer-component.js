@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="/assets/images/Transparent Logo.png" alt="Collytics" class="footer-logo-small">
+                <img src="/assets/images/logo-collytics-white.png" alt="Collytics" class="footer-logo-small">
                 <p class="footer-bio">Zaawansowana analityka i marketing oparty na danych. Skalujemy biznes poprzez precyzyjne tagowanie i strategie AI.</p>
             </div>
             <div class="footer-col">

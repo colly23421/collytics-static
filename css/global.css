@@ -428,8 +428,15 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 }
 
 /* Logo stopki - oryginalne kolory */
+
+
+/* Logo stopki - bez spłaszczenia */
 .footer-logo-small {
-    height: 32px;
+    height: auto;
+    max-height: 40px;
     width: auto;
+    max-width: 200px;
     margin-bottom: 15px;
+    object-fit: contain;
+    display: block;
 }
