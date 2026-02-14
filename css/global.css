@@ -464,3 +464,52 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     height: 22px !important;
     object-fit: contain !important;
 }
+
+/* ========================================
+   SOCIAL ICONS & LOGO - FINAL REFINEMENT
+   ======================================== */
+
+/* LOGO W STOPCE - Powiększenie */
+.footer-logo-small {
+    height: 40px !important; /* Zwiększone z domyślnych małych wartości */
+    width: auto !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+}
+
+/* MENU DROPDOWN - Naprawa ogromnych ikon */
+.social-links {
+    display: flex !important;
+    gap: 15px !important;
+    padding: 20px 0 !important;
+    justify-content: flex-start !important;
+}
+
+.social-links a img {
+    width: 26px !important; 
+    height: 26px !important;
+    min-width: 26px !important;
+    object-fit: contain !important;
+}
+
+/* FOOTER SOCIALS - Większe i przesunięte */
+.footer-socials {
+    display: flex !important;
+    gap: 14px !important;
+    margin-top: 15px !important;
+    margin-left: 2px !important; /* Delikatne wyrównanie pod nagłówkiem */
+    align-items: center !important;
+}
+
+.footer-socials a img {
+    width: 28px !important; /* Wyraźnie większe */
+    height: 28px !important;
+    min-width: 28px !important;
+    object-fit: contain !important;
+    opacity: 0.9 !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.footer-socials a:hover img {
+    opacity: 1 !important;
+}
