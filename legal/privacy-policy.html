@@ -5,24 +5,45 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Polityka Prywatności - Collytics</title>
   
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("consent", "default", {
-      "analytics_storage": "denied",
-      "ad_storage": "denied",
-      "ad_user_data": "denied",
-      "ad_personalization": "denied"
-    });
-  </script>
-
   <link href="../assets/images/favicon.png" rel="shortcut icon" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="../css/global.css" rel="stylesheet">
   <link href="../css/legal.css" rel="stylesheet">
   <link href="../css/cookie-banner.css" rel="stylesheet">
 
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');</script>
+  <style>
+    /* Stylowanie "ściśniętego" tekstu */
+    .legal-container {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    .legal-container p, 
+    .legal-container li {
+        line-height: 1.4 !important; /* Mniejszy interlinia */
+        margin-bottom: 8px !important; /* Mniejsze odstępy między akapitami */
+        font-size: 0.95rem;
+    }
+    .legal-container h2 {
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+    }
+    .legal-container h3 {
+        margin-top: 15px !important;
+        margin-bottom: 5px !important;
+        font-size: 1.1rem;
+    }
+    .contact-box-compact {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        padding: 12px;
+        border-radius: 8px;
+        margin: 10px 0;
+    }
+    table.compact-table td, table.compact-table th {
+        padding: 6px 10px !important;
+        font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar" id="navbar">
@@ -44,49 +65,60 @@
         <a href="/about.html">O nas</a>
         <a href="/kontakt.html">Kontakt</a>
       </div>
-      <div class="social-links">
-        <a href="https://www.facebook.com/collytics" target="_blank"><img alt="Facebook" src="../assets/images/facebook.png"></a>
-        <a href="https://www.linkedin.com/company/collytics/" target="_blank"><img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg"></a>
-      </div>
     </div>
   </div>
   <div class="menu-overlay" id="menuOverlay"></div>
 
   <main class="legal-container">
-    <h1>Polityka prywatności</h1>
-    <p><em>Ostatnia aktualizacja: 14.02.2026</em></p>
+    <h1>Polityka Prywatności</h1>
+    <p><em>Aktualizacja: 14.02.2026</em></p>
 
-    <div style="background: rgba(var(--primary-rgb), 0.1); border-left: 3px solid var(--primary-color); padding: 15px; margin: 20px 0; font-size: 0.95rem;">
-      Dokument określa zasady ochrony danych osobowych użytkowników serwisu <strong>collytics.io</strong>.
+    <p><strong>Ważne:</strong> Niniejszy dokument określa zasady przetwarzania danych użytkowników www.collytics.io oraz klientów Collytics.</p>
+
+    <h2>1. Administrator Danych Osobowych</h2>
+    <div class="contact-box-compact">
+        <p><strong>COLLYTICS OÜ</strong> | Kod: 17036315 | VAT: EE102761425</p>
+        <p>Siedziba: Harju maakond, Tallinn, Karamelli tn 2, 11317, Estonia</p>
+        <p>Biuro Warszawa: ul. Marszałkowska 126/134, 00-008 Warszawa</p>
+        <p>E-mail: <strong>hello@collytics.io</strong></p>
     </div>
 
-    <h2>1. Administrator Danych</h2>
-    <p>Administratorem jest <strong>COLLYTICS OÜ</strong> (Estonia, Tallinn, Karamelli tn 2, 11317). Biuro: ul. Marszałkowska 126/134, Warszawa. Kontakt: <strong>hello@collytics.io</strong>.</p>
+    <h2>2. Zakres i Źródła Danych</h2>
+    <h3>2.1. Dane dobrowolne</h3>
+    <p>Zbieramy: Imię, nazwisko, e-mail, telefon, nazwa firmy, NIP oraz treść zapytań z formularzy i e-maili.</p>
+    <h3>2.2. Dane automatyczne</h3>
+    <p>Cookies zbierają: IP, typ przeglądarki, system operacyjny, czas wizyty i przeglądane podstrony.</p>
 
-    <h2>2. Dane i Cele Przetwarzania</h2>
-    <p>Zbieramy dane podawane dobrowolnie (formularze, newsletter, umowy) oraz automatycznie (IP, cookies, dane techniczne).</p>
-    
-    <div style="overflow-x: auto;">
-      <table style="width: 100%; font-size: 0.9rem; margin: 15px 0; border-collapse: collapse;">
-        <tr style="border-bottom: 1px solid var(--border-color); text-align: left;">
-          <th style="padding: 8px;">Cel</th>
-          <th style="padding: 8px;">Podstawa (RODO)</th>
+    <h2>3. Cele i Podstawy Prawne</h2>
+    <table class="compact-table" style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid var(--border-color);">
+        <tr style="background: rgba(255,255,255,0.1); text-align: left;">
+            <th style="border: 1px solid var(--border-color);">Cel</th>
+            <th style="border: 1px solid var(--border-color);">Podstawa (RODO)</th>
         </tr>
-        <tr><td style="padding: 8px;">Realizacja umów</td><td style="padding: 8px;">Art. 6 ust. 1 lit. b</td></tr>
-        <tr><td style="padding: 8px;">Obsługa zapytań</td><td style="padding: 8px;">Art. 6 ust. 1 lit. f</td></tr>
-        <tr><td style="padding: 8px;">Newsletter i Marketing</td><td style="padding: 8px;">Art. 6 ust. 1 lit. a/f</td></tr>
-        <tr><td style="padding: 8px;">Księgowość i Prawo</td><td style="padding: 8px;">Art. 6 ust. 1 lit. c</td></tr>
-      </table>
-    </div>
+        <tr><td style="border: 1px solid var(--border-color);">Realizacja umów</td><td style="border: 1px solid var(--border-color);">Art. 6 ust. 1 lit. b</td></tr>
+        <tr><td style="border: 1px solid var(--border-color);">Obsługa zapytań</td><td style="border: 1px solid var(--border-color);">Art. 6 ust. 1 lit. f</td></tr>
+        <tr><td style="border: 1px solid var(--border-color);">Newsletter/Marketing</td><td style="border: 1px solid var(--border-color);">Art. 6 ust. 1 lit. a</td></tr>
+        <tr><td style="border: 1px solid var(--border-color);">Księgowość/Prawo</td><td style="border: 1px solid var(--border-color);">Art. 6 ust. 1 lit. c</td></tr>
+    </table>
 
-    <h2>3. Przechowywanie i Odbiorcy</h2>
-    <p>Dane przechowujemy przez okres niezbędny (umowy – do 6 lat, podatki – 5 lat, marketing – do wycofania zgody). Odbiorcami mogą być zaufani partnerzy IT, księgowi oraz organy uprawnione.</p>
+    <h2>4. Okres Przechowywania</h2>
+    <ul>
+        <li>Umowy: do 6 lat od zakończenia.</li>
+        <li>Księgowość: 5 lat od końca roku podatkowego.</li>
+        <li>Marketing: do wycofania zgody.</li>
+    </ul>
 
-    <h2>4. Twoje Prawa</h2>
-    <p>Masz prawo do dostępu, sprostowania, usunięcia, ograniczenia oraz przenoszenia danych. Możesz wnieść sprzeciw lub skargę do PUODO (Polska) lub AKI (Estonia).</p>
+    <h2>5. Odbiorcy i Transfer Danych</h2>
+    <p>Dane przekazujemy dostawcom IT, hostingu i biurom rachunkowym. Przy transferze poza EOG stosujemy Standardowe Klauzule Umowne (np. Google, Meta).</p>
 
-    <h2>5. Cookies i Bezpieczeństwo</h2>
-    <p>Strona używa cookies technicznych, analitycznych i reklamowych. Stosujemy szyfrowanie SSL oraz procedury zabezpieczające.</p>
+    <h2>6. Twoje Prawa</h2>
+    <p>Masz prawo do: dostępu, sprostowania, usunięcia, ograniczenia, przenoszenia danych oraz sprzeciwu. Skargi: PUODO (Polska) lub AKI (Estonia).</p>
+
+    <h2>7. Cookies i Bezpieczeństwo</h2>
+    <p>Używamy cookies technicznych, analitycznych i marketingowych. Stosujemy szyfrowanie SSL/TLS oraz regularne kopie zapasowe.</p>
+
+    <h2>8. Kontakt</h2>
+    <p>Pytania prosimy kierować na: <strong>hello@collytics.io</strong> lub adres biura w Warszawie.</p>
   </main>
 
   <footer>
@@ -98,6 +130,7 @@
   </footer>
 
   <script>
+    // Skrypt obsługi menu - sprawdzony
     document.addEventListener("click", function(e) {
       const menu = document.getElementById("dropdownMenu");
       const overlay = document.getElementById("menuOverlay");
@@ -110,6 +143,5 @@
       }
     });
   </script>
-  <script src="../js/cookie-banner.js"></script>
 </body>
 </html>
