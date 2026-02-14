@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="/assets/images/Grayscale Transparent.png" alt="Collytics" class="footer-logo-small">
-                <p class="footer-bio">Marketing oparty na danych, zaawansowana analityka.Skalujemy biznes poprzez precyzyjne tagowanie i strategie AI.</p>
+                <img src="/assets/images/Transparent Logo.png" alt="Collytics" class="footer-logo-small">
+                <p class="footer-bio">Zaawansowana analityka i marketing oparty na danych. Skalujemy biznes poprzez precyzyjne tagowanie i strategie AI.</p>
             </div>
             <div class="footer-col">
                 <p class="footer-label">Nawigacja</p>
