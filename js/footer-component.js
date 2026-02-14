@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
 </footer>`;
 
-    // Znajdź istniejący tag footer lub wstaw na końcu body
     const oldFooter = document.querySelector('footer');
     if (oldFooter) {
         oldFooter.outerHTML = footerHTML;
