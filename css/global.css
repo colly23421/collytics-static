@@ -416,3 +416,21 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
         margin-right: 20px;
     }
 }
+
+/* Fix dla logo SVG w stopce */
+.footer-logo-small {
+    height: 28px;
+    margin-bottom: 15px;
+    /* Usuń filter dla SVG - zachowaj oryginalne kolory */
+}
+
+/* Jeśli chcesz białe logo SVG */
+.main-footer .footer-logo-small[src*=".svg"] {
+    filter: brightness(0) invert(1);
+}
+
+/* Fix dla Facebook icon PNG */
+.footer-socials img[src*="facebook"] {
+    filter: none !important;
+    opacity: 1;
+}
