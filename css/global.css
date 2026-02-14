@@ -396,38 +396,11 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
 
 /* Social icons w menu */
 
-
 /* ========================================
    SOCIAL MEDIA ICONS - FOOTER & MENU
    ======================================== */
 
 /* Footer social icons */
-.footer-socials {
-    display: flex;
-    gap: 8px;
-    margin-top: 12px;
-}
-
-.footer-socials a {
-    display: inline-flex;
-    width: 24px;
-    height: 24px;
-    background-color: transparent;
-    border-radius: 3px;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
-
-.footer-socials a:hover {
-    background-color: rgba(0,102,255,0.2);
-}
-
-.footer-socials img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
 
 /* Menu social icons */
 .social-links {
@@ -456,4 +429,33 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     width: 24px;
     height: 24px;
     object-fit: contain;
+}
+
+/* Footer social icons - małe i z odstępami */
+.footer-socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.footer-socials a {
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+}
+
+.footer-socials a:hover {
+    opacity: 0.7;
+}
+
+.footer-socials img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    display: block;
 }
