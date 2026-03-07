@@ -682,6 +682,52 @@
         </div>
     </section>
 
+    <section class="faq-section">
+        <h2>Najczesciej zadawane pytania</h2>
+        <details class="faq-item">
+            <summary>Mam juz SEO. Po co mi to?</summary>
+            <div class="faq-content">
+                <p>SEO to walka o miejsce na liscie linkow w Google. Ale kiedy ktos pyta Gemini albo Perplexity o polecenie firmy, zadna lista linkow sie nie pojawia. Dostaje jedna odpowiedz. Albo Twoja firma jest w tej odpowiedzi, albo jej nie ma. SEO tam nie siega.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Ktore platformy AI sprawdzacie?</summary>
+            <div class="faq-content">
+                <p>Te z ktorych korzystaja Twoi klienci: ChatGPT, Gemini, Perplexity, Claude i Google AI Overviews. Kazda dziala troche inaczej i kazda sprawdzamy osobno, bo wyniki potrafia sie roznic.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Kiedy zobacze pierwsze efekty?</summary>
+            <div class="faq-content">
+                <p>Zwykle po 2 do 4 tygodni. Nie jest to magia tylko techniczne wdrozenie, ktore AI musi zobaczyc i zaindeksowac. U BDental zajelo to 4 tygodnie.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Prowadze maly biznes lokalny. Czy to w ogole dla mnie?</summary>
+            <div class="faq-content">
+                <p>Szczegolnie dla Ciebie. Ludzie pytaja asystentow AI o rzeczy w stylu "dobry dentysta niedaleko" albo "polecana ksiegowosc w Warszawie". Lokalne firmy ktore teraz zadbaja o widocznosc beda wygrywac te pytania przez lata. Twoja konkurencja pewnie jeszcze o tym nie wie.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>AI juz cos o mnie mowi i to sa bzdury. Da sie to naprawic?</summary>
+            <div class="faq-content">
+                <p>Tak i to jeden z powodow dla ktorych warto zaczac od razu. Mielismy klientow ktorzy dowiedzieli sie od nas ze asystent AI podawal ich stara lokalizacje i nieaktualne godziny otwarcia. Klient dostawal zle informacje zanim w ogole zdazyl zadzwonic.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Czy bede musial przerabiac cala strone?</summary>
+            <div class="faq-content">
+                <p>Nie. Pracujemy na tym co juz masz. Dodajemy dane strukturalne w tle i dostosowujemy istniejace tresci. Nie dotykamy wygladu strony.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Co zostaje po wspolpracy?</summary>
+            <div class="faq-content">
+                <p>Wszystko co wdrozylismy zostaje na Twojej stronie na zawsze. Asystenci AI beda to czytac niezaleznie od tego czy bedziemy dalej wspolpracowac. Monitoring to juz osobna sprawa dla firm ktore chca wiedziec co sie zmienia na biezaco.</p>
+            </div>
+        </details>
+    </section>
+
     <section id="kontakt-form" style="padding: 100px 5%; background: var(--dark-bg);">
         <div class="contact-container" style="max-width: 900px; margin: 0 auto; text-align: center;">
             <div class="contact-column">
@@ -693,6 +739,7 @@
                             <input class="form-input" name="name" placeholder="Imię" required type="text">
                             <input class="form-input" name="email" placeholder="Email" required type="email">
                         </div>
+                        <input class="form-input full-width" name="phone" placeholder="Numer telefonu (opcjonalnie)" type="tel" style="margin-top: 20px;">
                         <input class="form-input full-width" name="website" placeholder="Adres Twojej strony WWW" required type="text" style="margin-top: 20px;">
                         <textarea class="form-input full-width" name="message" placeholder="Który pakiet Cię interesuje? (opcjonalnie)" rows="4" style="margin-top: 20px;"></textarea>
                         <div class="form-checkbox">
@@ -720,6 +767,7 @@
                     const formData = {
                         name: form.querySelector('input[name="name"]').value,
                         email: form.querySelector('input[name="email"]').value,
+                        phone: form.querySelector('input[name="phone"]').value,
                         website: form.querySelector('input[name="website"]').value,
                         message: form.querySelector('textarea[name="message"]').value
                     };
@@ -740,7 +788,7 @@
                                 email: formData.email,
                                 from_name: "Collytics WWW (Audyt AI)",
                                 subject: `Nowe zgłoszenie Audyt AI - ${formData.name}`,
-                                message: `Imię: ${formData.name}\nEmail: ${formData.email}\nStrona WWW: ${formData.website}\nPakiet/Opis: ${formData.message || 'Brak'}`
+                                message: `Imię: ${formData.name}\nEmail: ${formData.email}\nTelefon: ${formData.phone || 'Brak'}\nStrona WWW: ${formData.website}\nPakiet/Opis: ${formData.message || 'Brak'}`
                             })
                         });
 
