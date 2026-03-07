@@ -352,6 +352,7 @@
 
         .faq-section {
             padding: 100px 5%;
+            background: var(--dark-bg);
             max-width: 900px;
             margin: 0 auto;
         }
@@ -360,18 +361,23 @@
             font-size: 2.5rem;
             font-weight: 600;
             margin-bottom: 60px;
+            background: var(--accent-gradient-new);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .faq-item {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         .faq-item summary {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 500;
-            padding: 25px 0;
+            padding: 24px 0;
             cursor: pointer;
             list-style: none;
             position: relative;
-            padding-right: 30px;
+            padding-right: 36px;
+            color: var(--text-primary);
         }
         .faq-item summary::-webkit-details-marker {
             display: none;
@@ -382,17 +388,21 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.5rem;
-            color: var(--text-secondary);
+            font-size: 1.4rem;
+            background: var(--accent-gradient-new);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             transition: transform 0.2s;
         }
         .faq-item[open] summary::after {
             transform: translateY(-50%) rotate(45deg);
         }
         .faq-content {
-            padding-bottom: 25px;
+            padding-bottom: 24px;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.75;
+            font-size: 0.97rem;
         }
 
         .final-cta-section .footer-cta {
