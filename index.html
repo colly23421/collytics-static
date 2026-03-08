@@ -13,39 +13,6 @@
     "ad_personalization": "denied"
   });
   </script>
-
-<script>
-  async function sendToFBCAPI(eventName, customData = {}) {
-    const workerUrl = 'https://fb-capi-collytics.business-8be.workers.dev/'; 
-
-    try {
-      const response = await fetch(workerUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ eventName: eventName, customData: customData }),
-      });
-      
-      if (response.ok) {
-        console.log(`CAPI [${eventName}]: Sent ✅`);
-      } else {
-        console.log(`CAPI [${eventName}]: Server Error ❌`);
-      }
-    } catch (err) {
-      console.error('CAPI Connection Error:', err);
-    }
-  }
-
-  // Funkcja pomocnicza dla formularza
-  function trackContactForm() {
-    sendToFBCAPI('Lead', {
-      content_name: 'Formularz Kontaktowy',
-      status: 'Sent'
-    });
-  }
-
-  // Automatyczne śledzenie PageView
-  sendToFBCAPI('PageView');
-</script>
   <script src="/js/cookie-banner.js"></script>
   <!-- Google Analytics - ZABLOKOWANY DO ZGODY -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
