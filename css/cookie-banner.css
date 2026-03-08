@@ -264,40 +264,11 @@ input:disabled + .slider {
     letter-spacing: 0.04em;
 }
 
-.powered-by-logo {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.powered-by-mark {
-    width: 16px;
-    height: 12px;
-    position: relative;
-    display: flex;
-}
-
-.powered-by-mark .pm1 {
-    width: 9px; height: 12px;
-    background: linear-gradient(180deg, #F4D347, #F47851);
-    border-radius: 1px;
-    transform: skewX(-8deg);
-}
-
-.powered-by-mark .pm2 {
-    width: 7px; height: 12px;
-    background: linear-gradient(180deg, #F47851, #B81E72);
-    border-radius: 1px;
-    transform: skewX(-8deg);
-    margin-left: 1px;
-}
-
-.powered-by-name {
-    font-size: 10.5px;
-    font-weight: 700;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+.powered-by-logo-img {
+    height: 14px;
+    width: auto;
+    opacity: 0.6;
+    filter: brightness(0) invert(1);
 }
 
 /* Responsywność */

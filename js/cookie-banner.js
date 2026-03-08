@@ -80,13 +80,7 @@
                 <div class="banner-footer">
                     <span class="powered-by">
                         <span class="powered-by-text">Powered by</span>
-                        <div class="powered-by-logo">
-                            <div class="powered-by-mark">
-                                <span class="pm1"></span>
-                                <span class="pm2"></span>
-                            </div>
-                            <span class="powered-by-name">Collytics</span>
-                        </div>
+                        <img src="/assets/images/logo main transparent.png" alt="Collytics" class="powered-by-logo-img">
                     </span>
                 </div>
                 </div>
