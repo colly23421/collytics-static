@@ -230,28 +230,6 @@
                 });
             }
 
-            // 2. Obsługa Meta Pixel (Facebook) + CAPI - Uruchamiamy TYLKO przy zgodzie marketingowej
-            if (consent.marketing) {
-                // Generujemy wspólne ID dla PageView (deduplikacja)
-                const pageViewID = crypto.randomUUID();
-
-                if (typeof fbq === 'function') {
-                    console.log('[Cookie Banner] ✅ Zgoda marketingowa: Uruchamiam Meta Pixel');
-                    fbq('init', '815513483687028');
-                    // Przekazujemy EventID do Pixela przeglądarkowego
-                    fbq('track', 'PageView', {}, { eventID: pageViewID });
-                } else {
-                    console.warn('[Cookie Banner] Zgoda jest, ale fbq nie załadowane (sprawdź <head>)');
-                }
-
-                // Uruchamiamy CAPI (funkcja zdefiniowana w HTML)
-                if (typeof sendToFBCAPI === 'function') {
-                    sendToFBCAPI('PageView', {}, {}, pageViewID);
-                }
-
-            } else {
-                console.log('[Cookie Banner] ℹ️ Brak zgody marketingowej - Meta Pixel/CAPI wstrzymane');
-            }
 
             console.log('[Cookie Banner] ✅ Statusy zaktualizowane:', {
                 analytics: consent.analytics ? 'granted' : 'denied',
