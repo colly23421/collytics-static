@@ -2,16 +2,17 @@
 /* Wersja: 2.0 - Premium redesign */
 
 @keyframes cookieSlideUp {
-    from { transform: translateY(110%); opacity: 0; }
+    from { transform: translateY(120%); opacity: 0; }
     to   { transform: translateY(0);    opacity: 1; }
 }
 
 .cookie-banner {
     position: fixed;
     bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%) translateY(110%);
-    width: calc(100% - 48px);
+    left: 24px;
+    right: 24px;
+    margin: 0 auto;
+    width: auto;
     max-width: 860px;
     background: rgba(13, 13, 22, 0.97);
     backdrop-filter: blur(20px);
@@ -26,6 +27,7 @@
     z-index: 9999;
     display: none;
     overflow: hidden;
+    transform: translateY(120%);
 }
 
 .cookie-banner.show {
@@ -308,31 +310,35 @@ input:disabled + .slider {
 @media (max-width: 680px) {
     .cookie-banner {
         bottom: 12px;
-        width: calc(100% - 24px);
+        left: 12px;
+        right: 12px;
         border-radius: 14px;
     }
 
     .banner-content {
-        padding: 18px 20px 16px;
+        padding: 16px 18px 14px;
     }
 
     .banner-main-row {
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
+        gap: 14px;
     }
 
     .banner-buttons-block {
         width: 100%;
-        flex-wrap: wrap;
     }
 
-    .btn-primary, .btn-secondary {
-        flex: 1;
+    .btn-primary {
+        width: 100%;
         text-align: center;
     }
 
+    .btn-secondary {
+        flex: 1;
+    }
+
     .banner-footer {
-        padding: 8px 20px 12px;
+        padding: 8px 18px 12px;
     }
 }

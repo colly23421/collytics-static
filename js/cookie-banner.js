@@ -16,7 +16,6 @@
                     <div class="banner-main-row">
                         <div class="banner-text-block">
                             <div class="banner-header">
-                                <span class="banner-cookie-icon">🍪</span>
                                 <h2>Ta strona używa plików cookie</h2>
                             </div>
                             <p class="banner-text">
