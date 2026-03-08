@@ -13,13 +13,25 @@
         const bannerHTML = `
             <div class="cookie-banner" id="cookieBanner">
                 <div class="banner-content">
-                    <div class="banner-header">
-                        <h2>Używamy plików cookie</h2>
-                    </div>
-
-                    <div class="banner-text">
-                        Używamy plików cookie i podobnych technologii, aby zapewnić prawidłowe działanie strony, analizować ruch oraz personalizować treści i reklamy. Możesz zaakceptować wszystkie cookie lub dostosować swoje preferencje.
-                        <a href="/legal/privacy-policy.html">Polityka prywatności</a>
+                    <div class="banner-main-row">
+                        <div class="banner-text-block">
+                            <div class="banner-header">
+                                <span class="banner-cookie-icon">🍪</span>
+                                <h2>Ta strona używa plików cookie</h2>
+                            </div>
+                            <p class="banner-text">
+                                Używamy cookie do analizy ruchu i personalizacji reklam. Możesz zaakceptować wszystkie lub <a href="/polityka-prywatnosci.html">dostosować preferencje</a>.
+                            </p>
+                        </div>
+                        <div class="banner-buttons-block" id="mainButtons">
+                            <button class="btn btn-primary" onclick="window.CookieBanner.acceptAll()">Akceptuj wszystkie</button>
+                            <button class="btn btn-secondary" onclick="window.CookieBanner.rejectAll()">Odrzuć</button>
+                            <button class="btn btn-text" onclick="window.CookieBanner.toggleOptions()">Dostosuj</button>
+                        </div>
+                        <div class="banner-buttons-block" id="customButtons" style="display: none;">
+                            <button class="btn btn-primary" onclick="window.CookieBanner.savePreferences()">Zapisz preferencje</button>
+                            <button class="btn btn-text" onclick="window.CookieBanner.toggleOptions()">Anuluj</button>
+                        </div>
                     </div>
 
                     <div class="consent-options" id="consentOptions">
@@ -33,7 +45,6 @@
                                 <span class="slider"></span>
                             </label>
                         </div>
-
                         <div class="consent-category">
                             <div class="category-info">
                                 <h3>Analityczne</h3>
@@ -44,7 +55,6 @@
                                 <span class="slider"></span>
                             </label>
                         </div>
-
                         <div class="consent-category">
                             <div class="category-info">
                                 <h3>Marketingowe</h3>
@@ -55,7 +65,6 @@
                                 <span class="slider"></span>
                             </label>
                         </div>
-
                         <div class="consent-category">
                             <div class="category-info">
                                 <h3>Personalizacja</h3>
@@ -67,17 +76,20 @@
                             </label>
                         </div>
                     </div>
+                </div>
 
-                    <div class="banner-buttons" id="mainButtons">
-                        <button class="btn btn-primary" onclick="window.CookieBanner.acceptAll()">Akceptuj wszystkie</button>
-                        <button class="btn btn-secondary" onclick="window.CookieBanner.rejectAll()">Odrzuć wszystkie</button>
-                        <button class="btn btn-text" onclick="window.CookieBanner.toggleOptions()">Dostosuj</button>
-                    </div>
-
-                    <div class="banner-buttons" id="customButtons" style="display: none;">
-                        <button class="btn btn-primary" onclick="window.CookieBanner.savePreferences()">Zapisz preferencje</button>
-                        <button class="btn btn-text" onclick="window.CookieBanner.toggleOptions()">Anuluj</button>
-                    </div>
+                <div class="banner-footer">
+                    <a href="https://www.collytics.io" class="powered-by" target="_blank" rel="noopener">
+                        <span class="powered-by-text">Powered by</span>
+                        <div class="powered-by-logo">
+                            <div class="powered-by-mark">
+                                <span class="pm1"></span>
+                                <span class="pm2"></span>
+                            </div>
+                            <span class="powered-by-name">Collytics</span>
+                        </div>
+                    </a>
+                </div>
                 </div>
             </div>
         `;
