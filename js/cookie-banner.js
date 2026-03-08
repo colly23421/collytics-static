@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="banner-footer">
-                    <a href="https://www.collytics.io" class="powered-by" target="_blank" rel="noopener">
+                    <span class="powered-by">
                         <span class="powered-by-text">Powered by</span>
                         <div class="powered-by-logo">
                             <div class="powered-by-mark">
@@ -87,7 +87,7 @@
                             </div>
                             <span class="powered-by-name">Collytics</span>
                         </div>
-                    </a>
+                    </span>
                 </div>
                 </div>
             </div>
