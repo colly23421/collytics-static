@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("consent", "default", {
+            "analytics_storage": "denied",
+            "ad_storage": "denied",
+            "ad_user_data": "denied",
+            "ad_personalization": "denied"
+        });
+    </script>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    </script>
+    <script>
+    function getCookie(name) {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? match[2] : null;
+    }
+    function hasMarketingConsent() {
+        try {
+            const consentData = localStorage.getItem('cookie_consent');
+            if (!consentData) return false;
+            const parsed = JSON.parse(consentData);
+            return parsed.data && parsed.data.marketing === true;
+        } catch (e) { return false; }
+    }
+    async function sendToFBCAPI(eventName, customData = {}, extraData = {}, manualEventID = null) {
+      if (!hasMarketingConsent()) return;
+      const workerUrl = 'https://fb-capi-collytics.business-8be.workers.dev/';
+      const eventId = manualEventID || crypto.randomUUID();
+      try {
+        await fetch(workerUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ eventName, eventId, fbp: getCookie('_fbp'), fbc: getCookie('_fbc'), sourceUrl: window.location.href, customData, ...extraData }),
+        });
+      } catch (err) { console.error('CAPI Error:', err); }
+    }
+    </script>
+    <script src="js/cookie-banner.js"></script>
+    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "GT-5R3VKTJG");</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", "G-S90XQQ06FW");</script>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Kampanie Google Ads, które mierzą każdą złotówkę | Collytics</title>
+    <meta name="description" content="Google Ads prowadzone przez analityków. GA4, GTM server-side i konwersje rozszerzone w standardzie. Bezpłatny audyt konta dla firm z Polski.">
+    <meta property="og:title" content="Kampanie Google Ads, które mierzą każdą złotówkę | Collytics">
+    <meta property="og:description" content="Google Ads prowadzone przez analityków. Każda złotówka mierzona — GA4, konwersje rozszerzone i server-side tracking w standardzie.">
+    <meta property="og:image" content="https://www.collytics.io/assets/images/digital%20marketing%20warszawa%20fb.jpeg">
+    <meta property="og:url" content="https://www.collytics.io/google-ads.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.collytics.io/google-ads.html">
+
+    <link href="css/navbar-universal.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/services.css" rel="stylesheet">
+    <link href="css/cookie-banner.css" rel="stylesheet">
+    <link href="assets/images/Favicon Original.ico" rel="icon" type="image/x-icon">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Kampanie Google Ads",
+      "description": "Prowadzenie kampanii Google Ads z pełną analityką: GA4, GTM server-side, konwersje rozszerzone. Obsługa Google Search, Performance Max i remarketing dla firm B2B i B2C.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Collytics",
+        "url": "https://www.collytics.io",
+        "logo": "https://www.collytics.io/assets/images/logo main transparent.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Marszałkowska 126/134",
+          "addressLocality": "Warszawa",
+          "postalCode": "00-008",
+          "addressCountry": "PL"
+        }
+      },
+      "url": "https://www.collytics.io/google-ads.html",
+      "areaServed": "PL"
+    }
+    </script>
+
+    <style>
+        :root {
+            --dark-bg: #0F0F0F;
+            --text-primary: #FFFFFF;
+            --text-secondary: #9CA3AF;
+            --primary-color: #8B5CF6;
+            --primary-hover: #7C3AED;
+            --border-color: #2D2D2D;
+            --accent-gradient: linear-gradient(135deg, #D96848 0%, #B81E72 100%);
+            --google-blue: #4285F4;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        /* ---- HERO ---- */
+        .hero-gads {
+            padding: 100px 5% 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-gads::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+        }
+        .hero-gads::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(66,133,244,0.12) 0%, transparent 70%);
+            z-index: 0;
+        }
+        .hero-gads > * { position: relative; z-index: 1; }
+        .hero-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #4285F4;
+            border: 1px solid rgba(66,133,244,0.3);
+            border-radius: 50px;
+            padding: 6px 16px;
+            margin-bottom: 24px;
+        }
+        .hero-gads h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .gradient-text-blue {
+            background: linear-gradient(135deg, #4285F4 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-gads p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent-gradient);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-primary);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .btn-secondary:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* ---- PROBLEM ---- */
+        .problem-section {
+            padding: 80px 5%;
+            background: #0a0a0a;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            display: block;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 48px;
+            max-width: 700px;
+        }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .problem-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .problem-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(239,68,68,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+        }
+        .problem-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        .problem-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ---- DIFFERENTIATOR ---- */
+        .diff-section {
+            padding: 80px 5%;
+        }
+        .diff-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 48px;
+        }
+        .diff-col {
+            padding: 40px;
+        }
+        .diff-col.bad { background: rgba(239,68,68,0.04); }
+        .diff-col.good { background: rgba(66,133,244,0.06); }
+        .diff-col-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+        .diff-col.bad .diff-col-label { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .diff-col.good .diff-col-label { background: rgba(66,133,244,0.15); color: #4285F4; }
+        .diff-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .diff-row:last-child { border-bottom: none; }
+        .diff-row .icon { flex-shrink: 0; margin-top: 2px; font-size: 1rem; }
+        @media (max-width: 640px) {
+            .diff-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ---- CASE STUDY ---- */
+        .case-section {
+            padding: 80px 5%;
+            background: #0a0a0a;
+        }
+        .case-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .case-image {
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px;
+            border-right: 1px solid var(--border-color);
+        }
+        .case-image img {
+            max-width: 200px;
+            width: 100%;
+            filter: brightness(1.1);
+        }
+        .case-content { padding: 48px; }
+        .case-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .case-content h3 {
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .case-content p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+        .case-metrics {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+        .case-metric .num {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #4285F4;
+            display: block;
+        }
+        .case-metric .lbl {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        @media (max-width: 700px) {
+            .case-card { grid-template-columns: 1fr; }
+            .case-image { border-right: none; border-bottom: 1px solid var(--border-color); padding: 32px; }
+        }
+
+        /* ---- HOW IT WORKS ---- */
+        .how-section {
+            padding: 80px 5%;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+        .step-card {
+            padding: 32px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            position: relative;
+        }
+        .step-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(66,133,244,0.15);
+            color: #4285F4;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .step-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .step-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* ---- TECH STACK ---- */
+        .tech-section {
+            padding: 60px 5%;
+            background: #0a0a0a;
+        }
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+        }
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .tech-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4285F4;
+            flex-shrink: 0;
+        }
+
+        /* ---- CLIENTS ---- */
+        .clients-section {
+            padding: 60px 5%;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .clients-label {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+        .clients-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .clients-logos img {
+            height: 36px;
+            opacity: 0.5;
+            filter: grayscale(1) brightness(2);
+            transition: opacity 0.2s;
+        }
+        .clients-logos img:hover { opacity: 0.8; }
+
+        /* ---- FAQ ---- */
+        .faq-section {
+            padding: 80px 5%;
+            background: #0a0a0a;
+        }
+        .faq-list {
+            max-width: 760px;
+            margin: 48px auto 0;
+        }
+        details.faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+        details.faq-item summary {
+            padding: 20px 0;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-primary);
+        }
+        details.faq-item summary::-webkit-details-marker { display: none; }
+        details.faq-item summary::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            transition: transform 0.2s;
+        }
+        details.faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-content {
+            padding-bottom: 20px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ---- CONTACT FORM ---- */
+        .contact-section {
+            padding: 80px 5%;
+        }
+        .contact-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contact-inner h2 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .contact-inner p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        .contact-form { text-align: left; }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .form-input {
+            width: 100%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 14px 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+        .form-input:focus { border-color: rgba(66,133,244,0.5); }
+        .form-input::placeholder { color: var(--text-secondary); }
+        textarea.form-input { resize: vertical; min-height: 120px; }
+        .form-consent {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+        .form-consent input[type="checkbox"] { margin-top: 3px; flex-shrink: 0; }
+        .form-consent label {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .form-submit {
+            width: 100%;
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: opacity 0.2s;
+        }
+        .form-submit:hover { opacity: 0.88; }
+        @media (max-width: 560px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        /* ---- FOOTER ---- */
+        .lp-footer {
+            padding: 48px 5% 32px;
+            background: #080808;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .lp-footer img { height: 28px; margin-bottom: 16px; }
+        .lp-footer p { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 12px; }
+        .lp-footer nav { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+        .lp-footer nav a { font-size: 0.78rem; color: var(--text-secondary); text-decoration: none; }
+        .lp-footer nav a:hover { color: var(--text-primary); }
+    </style>
+</head>
+
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<script src="/js/navbar-component.js"></script>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a class="logo" href="index.html">
+            <img alt="Collytics" src="assets/images/logo main transparent.png">
+        </a>
+        <button class="menu-trigger" id="menuTrigger">Menu</button>
+    </div>
+</nav>
+
+<div class="dropdown-menu" id="dropdownMenu">
+    <button class="dropdown-close" id="closeMenu">Close</button>
+    <div class="dropdown-menu-inner">
+        <div class="menu-section">
+            <a href="index.html">Home</a>
+            <a href="services.html">Serwis</a>
+            <a href="blog/index.html">Blog</a>
+            <a href="about.html">O nas</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+    </div>
+</div>
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- HERO -->
+<section class="hero-gads">
+    <span class="hero-label">Google Ads · Warszawa i cała Polska</span>
+    <h1>Google Ads, które wiedzą<br><span class="gradient-text-blue">co sprzedaje, nie tylko co klika</span></h1>
+    <p>Większość agencji optymalizuje pod kliknięcia. My optymalizujemy pod przychód. GA4, konwersje rozszerzone i server-side tracking to u nas standard, nie dodatek za dopłatą.</p>
+    <div class="hero-cta-group">
+        <a class="btn-primary" href="#kontakt-form">Bezpłatny audyt konta</a>
+        <a class="btn-secondary" href="#jak-dzialamy">Zobacz jak działamy</a>
+    </div>
+    <div class="hero-stats">
+        <div class="stat-item">
+            <span class="stat-number">4x</span>
+            <span class="stat-label">więcej konwersji średnio<br>po wdrożeniu trackingu</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">-40%</span>
+            <span class="stat-label">niższy koszt leada<br>po optymalizacji kampanii</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">kampanii z pełnym<br>śledzeniem konwersji</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- PROBLEM -->
+<section class="problem-section">
+    <span class="section-label">Problem</span>
+    <h2 class="section-title">Twoje kampanie generują kliknięcia.<br>Ale czy generują klientów?</h2>
+    <div class="problem-grid">
+        <div class="problem-card">
+            <div class="problem-icon">📊</div>
+            <h3>Raporty pełne metryk, które nic nie mówią</h3>
+            <p>CTR, wyświetlenia, kliknięcia. Brzmi dobrze w raporcie, ale bez połączenia z rzeczywistą sprzedażą to tylko cyfry. Nie wiesz czy kampania zarabia, czy przepala budżet.</p>
+        </div>
+        <div class="problem-card">
+            <div class="problem-icon">🔍</div>
+            <h3>Algorytm uczy się na złych danych</h3>
+            <p>Google Smart Bidding jest tak dobry, jak dane które dostaje. Brak konwersji rozszerzonych i server-side trackingu = algorytm optymalizuje pod zgadywanie, nie pod wyniki.</p>
+        </div>
+        <div class="problem-card">
+            <div class="problem-icon">💸</div>
+            <h3>Przepalony budżet na błędne frazy</h3>
+            <p>Bez precyzyjnej listy wykluczeń i regularnej analizy zapytań płacisz za ruch, który nigdy nie kupi. To może być nawet 30–40% budżetu w typowej kampanii bez nadzoru.</p>
+        </div>
+    </div>
+</section>
+
+<!-- RÓŻNICA -->
+<section class="diff-section">
+    <span class="section-label">Nasza różnica</span>
+    <h2 class="section-title">Większość agencji Google Ads.<br>My: agencja Google Ads i analityka.</h2>
+    <div class="diff-grid">
+        <div class="diff-col bad">
+            <span class="diff-col-label">Typowa agencja</span>
+            <div class="diff-row"><span class="icon">✗</span><span>Raportuje CTR i CPC jako sukces kampanii</span></div>
+            <div class="diff-row"><span class="icon">✗</span><span>Tracking przez standardowy piksel, gubi dane po iOS i adblockerach</span></div>
+            <div class="diff-row"><span class="icon">✗</span><span>Brak konwersji rozszerzonych. Algorytm się nie uczy.</span></div>
+            <div class="diff-row"><span class="icon">✗</span><span>Jeden specjalista od reklam bez wiedzy o analityce</span></div>
+            <div class="diff-row"><span class="icon">✗</span><span>Miesięczny raport z PDF, bez wglądu w dane na żywo</span></div>
+        </div>
+        <div class="diff-col good">
+            <span class="diff-col-label">Collytics</span>
+            <div class="diff-row"><span class="icon" style="color:#4285F4">✓</span><span>Optymalizacja pod koszt pozyskania klienta (CPA) i przychód</span></div>
+            <div class="diff-row"><span class="icon" style="color:#4285F4">✓</span><span>GTM server-side + Meta CAPI — tracking odporny na blokady</span></div>
+            <div class="diff-row"><span class="icon" style="color:#4285F4">✓</span><span>Konwersje rozszerzone w standardzie. Smart Bidding działa na prawdziwych danych</span></div>
+            <div class="diff-row"><span class="icon" style="color:#4285F4">✓</span><span>Analitycy i specjaliści SEM w jednym zespole</span></div>
+            <div class="diff-row"><span class="icon" style="color:#4285F4">✓</span><span>GA4 dashboard na żywo. Widzisz dane tak samo jak my.</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="case-section">
+    <span class="section-label" style="text-align:center; display:block; margin-bottom: 12px;">Case Study</span>
+    <h2 class="section-title" style="text-align:center; margin: 0 auto 48px; max-width: 600px;">Jak zbudowaliśmy platformę B2B dla Lab-Wet i zwiększyliśmy ruch o 47%</h2>
+    <div class="case-card">
+        <div class="case-image">
+            <img src="assets/images/partners/labwet.png" alt="Lab-Wet">
+        </div>
+        <div class="case-content">
+            <span class="case-tag">Case study</span>
+            <h3>+47% wzrostu w 45 dni dzięki nowej platformie i analityce</h3>
+            <p>Lider branży weterynaryjnej potrzebował nowej platformy B2B. Zaprojektowaliśmy stronę i wdrożyliśmy pełne środowisko analityczne: GA4, GTM i precyzyjne śledzenie celów. W ciągu 45 dni widoczność wzrosła o 47%, a zaangażowanie użytkowników o 44%.</p>
+            <div class="case-metrics">
+                <div class="case-metric">
+                    <span class="num">+47%</span>
+                    <span class="lbl">wzrostu widoczności</span>
+                </div>
+                <div class="case-metric">
+                    <span class="num">45</span>
+                    <span class="lbl">dni do wyników</span>
+                </div>
+                <div class="case-metric">
+                    <span class="num">+44%</span>
+                    <span class="lbl">zaangażowania</span>
+                </div>
+            </div>
+            <a class="btn-primary" href="use-case-lab-wet.html" style="font-size: 0.9rem; padding: 12px 28px;">Przeczytaj case study</a>
+        </div>
+    </div>
+</section>
+
+<!-- JAK DZIAŁAMY -->
+<section class="how-section" id="jak-dzialamy">
+    <span class="section-label">Proces</span>
+    <h2 class="section-title">4 kroki do kampanii,<br>która wie co sprzedaje</h2>
+    <div class="steps-grid">
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Audyt konta i strategia</h3>
+            <p>Analizujemy aktualne konto Google Ads (lub budujemy je od zera). Identyfikujemy straty budżetowe, brakujące wykluczenia i luki w strukturze kampanii.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Wdrożenie śledzenia</h3>
+            <p>Konfigurujemy GA4, konwersje rozszerzone i GTM server-side. Bez tego etapu każda kampania to strzelanie na oślep — robimy to zanim uruchomimy pierwszą reklamę.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Uruchomienie kampanii</h3>
+            <p>Search, Performance Max lub remarketing. Dobieramy format do celu. Każda kampania ma dedykowany landing page dopasowany do intencji zapytania.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Optymalizacja i raport</h3>
+            <p>Co tydzień analizujemy zapytania, stawki i konwersje. Co miesiąc dostajesz raport w GA4. Z prawdziwymi danymi, nie pięknie wyglądającymi tabelkami.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="tech-section">
+    <span class="section-label">Technologie, z których korzystamy</span>
+    <div class="tech-list">
+        <span class="tech-badge"><span class="dot"></span>Google Ads Search</span>
+        <span class="tech-badge"><span class="dot"></span>Performance Max</span>
+        <span class="tech-badge"><span class="dot"></span>Google Analytics 4</span>
+        <span class="tech-badge"><span class="dot"></span>GTM server-side</span>
+        <span class="tech-badge"><span class="dot"></span>Konwersje rozszerzone</span>
+        <span class="tech-badge"><span class="dot"></span>Customer Match</span>
+        <span class="tech-badge"><span class="dot"></span>Remarketing RLSA</span>
+        <span class="tech-badge"><span class="dot"></span>Consent Mode v2</span>
+        <span class="tech-badge"><span class="dot"></span>Google Merchant Center</span>
+        <span class="tech-badge"><span class="dot"></span>Looker Studio</span>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+    <span class="section-label" style="text-align:center; display:block;">FAQ</span>
+    <h2 class="section-title" style="text-align:center; margin: 12px auto 0; max-width: 600px;">Najczęstsze pytania</h2>
+    <div class="faq-list">
+        <details class="faq-item">
+            <summary>Ile kosztuje prowadzenie Google Ads z Collytics?</summary>
+            <div class="faq-content">Wycena zależy od zakresu kampanii i budżetu mediowego. Pracujemy na budżety od 3 000 PLN miesięcznie. Opłata za obsługę to procent od budżetu lub stała kwota. Ustalamy indywidualnie. Napisz do nas, a w ciągu 24 godzin przygotujemy konkretną ofertę.</div>
+        </details>
+        <details class="faq-item">
+            <summary>Czy przejmiecie moje istniejące konto Google Ads?</summary>
+            <div class="faq-content">Tak. Zaczynamy od audytu konta: analizujemy historię, strukturę kampanii, śledzenie konwersji i wydatki. Na tej podstawie przygotowujemy plan optymalizacji. Nic nie zmieniamy bez Twojej akceptacji.</div>
+        </details>
+        <details class="faq-item">
+            <summary>Co to są konwersje rozszerzone i dlaczego są ważne?</summary>
+            <div class="faq-content">Konwersje rozszerzone to mechanizm Google, który pozwala dopasowywać rzeczywistych kupujących do kliknięć w reklamy nawet gdy standardowe cookie jest zablokowane (iOS, AdBlock, przełączanie urządzeń). W 2026 roku bez konwersji rozszerzonych Smart Bidding działa na niepełnych danych, co bezpośrednio przekłada się na wyższy koszt pozyskania klienta. Wdrażamy to u każdego klienta w ramach standardowej konfiguracji.</div>
+        </details>
+        <details class="faq-item">
+            <summary>Jak szybko zobaczę wyniki?</summary>
+            <div class="faq-content">Pierwsze dane masz od razu po uruchomieniu. Stabilne wyniki optymalizacji widoczne są zwykle po 4-8 tygodniach. Tyle czasu potrzebuje algorytm Google na zebranie wystarczającej liczby konwersji. Dlatego zaczynamy od precyzyjnego śledzenia, a nie od razu od skalowania budżetu.</div>
+        </details>
+        <details class="faq-item">
+            <summary>Czy robicie też landing page pod kampanie?</summary>
+            <div class="faq-content">Tak. Wiemy z własnego doświadczenia, że najlepiej skonfigurowana kampania nie zarobi na złym landing page. Tworzymy dedykowane strony docelowe zoptymalizowane pod konwersję i dopasowane do intencji zapytań w kampanii.</div>
+        </details>
+    </div>
+</section>
+
+<!-- FORMULARZ -->
+<section class="contact-section" id="kontakt-form">
+    <div class="contact-inner">
+        <span class="section-label" style="display:block; margin-bottom: 12px;">Bezpłatny audyt konta</span>
+        <h2>Sprawdzimy Twoje konto Google Ads<br>za darmo, w 48 godzin</h2>
+        <p>Zostaw kontakt, a nasz specjalista przeanalizuje Twoje konto i wskaże konkretne miejsca, gdzie tracisz budżet. Bez zobowiązań, bez ogólników.</p>
+        <form class="contact-form" id="gads-form">
+            <div class="form-row">
+                <input class="form-input" name="name" placeholder="Imię i nazwisko" required type="text">
+                <input class="form-input" name="email" placeholder="E-mail służbowy" required type="email">
+            </div>
+            <input class="form-input" name="phone" placeholder="Numer telefonu" type="tel" style="width:100%; margin-bottom: 16px;">
+            <input class="form-input" name="website" placeholder="Adres strony lub konta Google Ads" style="width:100%; margin-bottom: 16px;" type="text">
+            <textarea class="form-input" name="message" placeholder="Miesięczny budżet Google Ads i branża (opcjonalnie)" rows="4" style="width:100%;"></textarea>
+            <div class="form-consent">
+                <input id="consent-gads" required type="checkbox">
+                <label for="consent-gads">Wyrażam zgodę na przetwarzanie moich danych osobowych przez Collytics OÜ w celu odpowiedzi na zapytanie. <a href="legal/privacy-policy.html" style="color: #D96848;">Polityka prywatności</a></label>
+            </div>
+            <button class="form-submit" type="submit">Wyślij zgłoszenie</button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="lp-footer">
+    <img src="assets/images/logo main transparent.png" alt="Collytics">
+    <p>Twój partner w analityce danych i marketingu</p>
+    <nav>
+        <a href="blog/index.html">Blog</a>
+        <a href="about.html">O nas</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="legal/privacy-policy.html">Polityka prywatności</a>
+    </nav>
+    <p style="margin-top: 24px;">© Collytics. All rights reserved.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('gads-form');
+    if (form) {
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            const formData = {
+                name: form.querySelector('[name="name"]').value,
+                email: form.querySelector('[name="email"]').value,
+                phone: form.querySelector('[name="phone"]').value,
+                website: form.querySelector('[name="website"]').value,
+                message: form.querySelector('[name="message"]').value
+            };
+            submitBtn.textContent = 'Wysyłanie...';
+            submitBtn.disabled = true;
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        access_key: "7eb642f4-bed3-4900-9563-7901d60120c8",
+                        name: formData.name,
+                        email: formData.email,
+                        from_name: "Collytics WWW (Google Ads LP)",
+                        subject: `Nowe zgłoszenie Google Ads - ${formData.name}`,
+                        message: `Imię: ${formData.name}\nEmail: ${formData.email}\nTelefon: ${formData.phone || 'Brak'}\nStrona/Konto: ${formData.website || 'Brak'}\nBudżet/branża: ${formData.message || 'Brak'}`
+                    })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    const leadEventID = crypto.randomUUID();
+                    if (typeof fbq !== 'undefined') { fbq('track', 'Lead', {}, { eventID: leadEventID }); }
+                    sendToFBCAPI('Lead', { content_name: 'Google Ads LP' }, { email: formData.email }, leadEventID);
+                    submitBtn.textContent = '✓ Wysłano! Odezwiemy się wkrótce.';
+                    submitBtn.style.background = '#10b981';
+                    form.reset();
+                } else {
+                    submitBtn.textContent = 'Błąd. Spróbuj ponownie';
+                    submitBtn.style.background = '#ef4444';
+                }
+            } catch (err) {
+                submitBtn.textContent = 'Błąd połączenia. Spróbuj ponownie';
+            } finally {
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                }, 6000);
+            }
+        });
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // Navbar hide on scroll
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const nav = document.querySelector('.navbar');
+        if (nav) {
+            if (scrollTop > lastScrollTop && scrollTop > 100) nav.style.transform = 'translateY(-100%)';
+            else nav.style.transform = 'translateY(0)';
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // Menu
+    document.addEventListener("click", function (e) {
+        if (e.target.id === "menuTrigger") {
+            document.getElementById("dropdownMenu").classList.add("active");
+            document.getElementById("menuOverlay").classList.add("active");
+        }
+        if (e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
+            document.getElementById("dropdownMenu").classList.remove("active");
+            document.getElementById("menuOverlay").classList.remove("active");
+        }
+    });
+});
+</script>
+<script src="js/cookie-banner.js"></script>
+</body>
+</html>
