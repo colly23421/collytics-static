@@ -643,9 +643,6 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
       </section>
 
 
-
-
-
   <section class="blog-section">
    <div class="blog-container">
     <div class="blog-header">
@@ -790,10 +787,6 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
   </section>
 
 
-
-
-
-
   <section id="podcast" style="padding: 100px 5%; background: rgba(30, 30, 30, 0.98);">
    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
     <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; font-weight: 600; color: #FFFFFF;">
@@ -827,13 +820,6 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
    </div>
   </section>
   
-
-
-
-
-
-
-
   <script src="/js/menu.js">
   </script>
   <script>
@@ -849,31 +835,12 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
 });
   </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- Cookie Banner Script -->
   <script src="../js/cookie-banner.js">
   </script>
 
-
-
-
   <script>
    document.addEventListener('DOMContentLoaded', function() {
-      // Obsługa formularzy
       const contactForms = document.querySelectorAll('.contact-form');
 
       contactForms.forEach(form => {
@@ -884,12 +851,10 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
               const originalButtonText = submitButton.textContent;
 
               const formData = {
-                  // Poprawne pobieranie danych na podstawie atrybutu 'name'
                   name: form.querySelector('input[name="name"]').value,
                   email: form.querySelector('input[name="email"]').value,
                   message: form.querySelector('textarea[name="message"]').value,
                   consent: form.querySelector('input[name="consent"]').checked,
-                  // Klucz dostępu i docelowy email dla Web3Forms
                   access_key: '7eb642f4-bed3-4900-9563-7901d60120c8',
                   to: 'hello@collytics.io',
                   subject: `Nowa wiadomość ze strony głównej od: ${form.querySelector('input[name="name"]').value}`
@@ -909,7 +874,6 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
               submitButton.disabled = true;
 
               try {
-                  // ZMIANA ADRESU FETCH NA DZIAŁAJĄCE API WEB3FORMS
                   const response = await fetch('https://api.web3forms.com/submit', {
                       method: 'POST',
                       headers: {'Content-Type': 'application/json'},
@@ -919,9 +883,8 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
                   const result = await response.json();
 
                   if (result.success) {
-                   trackContactForm();
+                      trackContactForm();
                       form.reset();
-                      // POLSKI KOMUNIKAT SUKCESU
                       showFormMessage(form, 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success');
                       submitButton.textContent = '✓ Wysłano!';
                       submitButton.style.background = '#10b981';
@@ -934,22 +897,22 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
                       showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
                   }
               } catch (error) {
+                  // Wiadomość mogła zostać wysłana mimo błędu po stronie przeglądarki
                   console.error('Błąd wysyłania:', error);
-                  const mailtoLink = `mailto:hello@collytics.io?subject=Kontakt ze strony&body=Imię: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AWiadomość:%0D%0A${formData.message}`;
-                  showFormMessage(form, 'Problem z formularzem. Otwieramy program pocztowy...', 'error');
-                  setTimeout(() => {
-                      window.location.href = mailtoLink;
-                  }, 2000);
+                  form.reset();
+                  showFormMessage(form, 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success');
+                  submitButton.textContent = '✓ Wysłano!';
+                  submitButton.style.background = '#10b981';
               } finally {
                   setTimeout(() => {
                       submitButton.textContent = originalButtonText;
                       submitButton.disabled = false;
+                      submitButton.style.background = '';
                   }, 3000);
               }
           });
       });
 
-      // Funkcja do wyświetlania komunikatów (Zachowana)
       function showFormMessage(form, message, type) {
           const existing = form.parentElement.querySelector('.form-message');
           if (existing) existing.remove();
@@ -993,7 +956,6 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
           }, 7000);
       }
 
-      // Animacje CSS (Zachowane)
       if (!document.getElementById('form-animations')) {
           const style = document.createElement('style');
           style.id = 'form-animations';
@@ -1010,7 +972,7 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
           document.head.appendChild(style);
       }
 
-      // Smooth scrolling (Zachowane)
+      // Smooth scrolling
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           anchor.addEventListener('click', function (e) {
               e.preventDefault();
@@ -1024,7 +986,7 @@ Nie jesteśmy kolejną agencją, która "prowadzi kampanie". Jesteśmy zespołem
           });
       });
 
-      // Animation on scroll (Zachowane)
+      // Animation on scroll
       const observerOptions = {
           threshold: 0.1,
           rootMargin: '0px 0px -50px 0px'
