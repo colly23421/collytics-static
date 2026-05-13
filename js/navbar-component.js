@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const navbarHTML = `
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/index.html" class="logo">
+            <a href="/" class="logo">
                 <img src="/assets/images/logo main transparent.png" alt="Collytics">
             </a>
             <button class="menu-trigger" id="menuTrigger">Menu</button>
@@ -13,21 +13,21 @@ document.addEventListener("DOMContentLoaded", function() {
         <button class="dropdown-close" id="closeMenu">Close</button>
         <div class="dropdown-menu-inner">
             <div class="menu-section">
-                <a href="/index.html">Home</a>
-                <a href="/services.html">Serwis</a>
-                <a href="/blog/index.html">Blog</a>
-                <a href="https://www.collytics.io/audyt-widocznosci-ai.html">AI w firmie</a>
-                <a href="/kontakt.html">Kontakt</a>
+                <a href="/">Home</a>
+                <a href="/services">Serwis</a>
+                <a href="/blog">Blog</a>
+                <a href="https://www.collytics.io/audyt-widocznosci-ai">AI w firmie</a>
+                <a href="/kontakt">Kontakt</a>
             </div>
             <div class="menu-divider"></div>
             <div class="social-links">
-                <a href="https://www.facebook.com/collytics" title="Facebook">
+                <a href="https://www.facebook.com/collytics" target="_blank" rel="noopener noreferrer" title="Facebook">
                     <img src="/assets/images/facebook-white.png" alt="Facebook">
                 </a>
-                <a href="https://www.linkedin.com/company/collytics/" title="LinkedIn">
+                <a href="https://www.linkedin.com/company/collytics/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                     <img src="/assets/images/linkedin-white.png" alt="LinkedIn">
                 </a>
-                <a href="https://x.com/collytics" title="X">
+                <a href="https://x.com/collytics" target="_blank" rel="noopener noreferrer" title="X">
                     <img src="/assets/images/x-white.png" alt="X">
                 </a>
             </div>
@@ -36,10 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     <div class="menu-overlay" id="menuOverlay"></div>`;
 
-    // Wstaw navbar na początku <body>
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
     
-    // Inicjalizuj funkcjonalność menu
     const menuTrigger = document.getElementById('menuTrigger');
     const closeMenu = document.getElementById('closeMenu');
     const dropdownMenu = document.getElementById('dropdownMenu');
