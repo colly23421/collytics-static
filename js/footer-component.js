@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="footer-col">
                 <p class="footer-label">Nawigacja</p>
                 <ul class="footer-links">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/services.html">Serwis</a></li>
-                    <li><a href="/blog/index.html">Blog</a></li>
-                    <li><a href="https://www.collytics.io/audyt-widocznosci-ai.html">AI w firmie</a></li>
-                    <li><a href="/legal/privacy-policy.html">Polityka Prywatności</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Serwis</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/audyt-widocznosci-ai">AI w firmie</a></li>
+                    <li><a href="/legal/privacy-policy">Polityka Prywatności</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -26,13 +26,13 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="footer-col">
                 <p class="footer-label">Social Media</p>
                 <div class="footer-socials">
-                    <a href="https://www.facebook.com/collytics" target="_blank">
+                    <a href="https://www.facebook.com/collytics" target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/facebook-white.png" alt="Facebook">
                     </a>
-                    <a href="https://x.com/collytics" target="_blank">
+                    <a href="https://x.com/collytics" target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/x-white.png" alt="X">
                     </a>
-                    <a href="https://www.linkedin.com/company/collytics/" target="_blank">
+                    <a href="https://www.linkedin.com/company/collytics/" target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/linkedin-white.png" alt="LinkedIn">
                     </a>
                 </div>
