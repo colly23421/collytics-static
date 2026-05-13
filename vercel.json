@@ -8,15 +8,6 @@
     { "source": "/send-mail.php", "destination": "/api/send-mail" }
   ],
   "redirects": [
-    { "source": "/kontakt", "destination": "/kontakt.html", "permanent": true },
-    { "source": "/services", "destination": "/services.html", "permanent": true },
-    { "source": "/about", "destination": "/about.html", "permanent": true },
-    { "source": "/use-case-lab-wet", "destination": "/use-case-lab-wet.html", "permanent": true },
-    { "source": "/google-ads", "destination": "/google-ads.html", "permanent": true },
-    { "source": "/audyt-widocznosci-ai", "destination": "/audyt-widocznosci-ai.html", "permanent": true },
-    { "source": "/legal/privacy-policy", "destination": "/legal/privacy-policy.html", "permanent": true },
-    { "source": "/blog", "destination": "/blog/index.html", "permanent": true },
-
     { "source": "/blog/jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai", "destination": "/blog/jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai.html", "permanent": true },
     { "source": "/blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow", "destination": "/blog/sekretne-dane-facebook-ads-ktore-zmienia-twoje-kampanie-prosty-sposob-na-odkrycie-wzorcow-aktywnosci-klientow.html", "permanent": true },
     { "source": "/blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej", "destination": "/blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej.html", "permanent": true },
