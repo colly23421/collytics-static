@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+  <!-- GTM Consent Mode - MUSI BYĆ PRZED GTM -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("consent", "default", {
+    "analytics_storage": "denied",
+    "ad_storage": "denied",
+    "ad_user_data": "denied",
+    "ad_personalization": "denied"
+  });
+  </script>
+  <script src="/js/cookie-banner.js"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');
+  </script>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Google oficjalnie obaliło mity o AI Search | Collytics</title>
+
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');
+  </script>
+
+  <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../css/global.css" rel="stylesheet">
+  <link href="../css/blog.css" rel="stylesheet">
+  <link href="../css/cookie-banner.css" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TZCR8FPZ');</script>
+
+  <link rel="canonical" href="https://www.collytics.io/blog/google-oficjalnie-obalilo-mity-o-ai-search">
+  <meta name="description" content="Google opublikowało oficjalne wytyczne dla AI Search. Co naprawdę działa, co jest mitem i dlaczego ruch na stronach nadal spada. Szczery głos praktyka.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.collytics.io/blog/google-oficjalnie-obalilo-mity-o-ai-search">
+  <meta property="og:title" content="Google oficjalnie obaliło mity o AI Search | Collytics">
+  <meta property="og:description" content="Google opublikowało oficjalne wytyczne dla AI Search. Co naprawdę działa, co jest mitem i dlaczego ruch na stronach nadal spada. Szczery głos praktyka.">
+  <meta property="og:image" content="https://www.collytics.io/assets/images/og-ai-search.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google oficjalnie obaliło mity o AI Search | Collytics">
+  <meta name="twitter:description" content="Google opublikowało oficjalne wytyczne dla AI Search. Co naprawdę działa, co jest mitem i dlaczego ruch na stronach nadal spada.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Google oficjalnie obaliło mity o AI Search. I w końcu powiedziało to wprost.",
+    "url": "https://www.collytics.io/blog/google-oficjalnie-obalilo-mity-o-ai-search",
+    "datePublished": "2026-05-16",
+    "dateModified": "2026-05-16",
+    "description": "Google opublikowało oficjalne wytyczne dla AI Search. Co naprawdę działa, co jest mitem i dlaczego ruch na stronach nadal spada. Szczery głos praktyka.",
+    "author": {"@type": "Person", "name": "Piotr", "url": "https://www.collytics.io"},
+    "publisher": {"@type": "Organization", "name": "Collytics", "logo": {"@type": "ImageObject", "url": "https://www.collytics.io/img/logo.png"}},
+    "isPartOf": {"@type": "WebSite", "name": "Collytics", "url": "https://www.collytics.io"}
+  }
+  </script>
+
+  <style>
+    .highlight-box {
+      background: rgba(99, 102, 241, 0.08);
+      border-left: 3px solid #6366f1;
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .highlight-box p {
+      margin: 0;
+      color: #c4c4d4;
+      font-size: 0.97rem;
+      line-height: 1.7;
+    }
+    .myth-box {
+      background: rgba(242, 34, 131, 0.06);
+      border: 1px solid rgba(242, 34, 131, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .myth-box strong {
+      color: #f22283;
+    }
+    .warning-box {
+      background: rgba(244, 120, 81, 0.08);
+      border: 1px solid rgba(244, 120, 81, 0.25);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .warning-box p {
+      margin: 0;
+      color: #c4c4d4;
+      line-height: 1.7;
+    }
+    code {
+      background: rgba(99,102,241,0.15);
+      color: #a5b4fc;
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      font-family: 'Courier New', monospace;
+    }
+    .article-content ul li,
+    .article-content ol li {
+      margin-bottom: 10px;
+      color: #c4c4d4;
+      line-height: 1.7;
+    }
+    .source-link {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .source-link a {
+      color: #6366f1;
+      text-decoration: none;
+    }
+    .source-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+<script src="/js/navbar-component.js"></script>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a class="logo" href="/index.html">
+      <img alt="Collytics" src="../assets/images/logo main transparent.png">
+    </a>
+    <button class="menu-trigger" id="menuTrigger">Menu</button>
+  </div>
+</nav>
+
+<div class="dropdown-menu" id="dropdownMenu">
+  <button class="dropdown-close" id="closeMenu">Close</button>
+  <div class="dropdown-menu-inner">
+    <div class="menu-section">
+      <a href="/index.html">Home</a>
+      <a href="/services.html">Serwis</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="/about.html">O nas</a>
+      <a href="/kontakt.html">Kontakt</a>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+        <img alt="Facebook" src="../assets/images/facebook.png">
+      </a>
+      <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+        <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg">
+      </a>
+      <a href="https://x.com/collytics" target="_blank" title="Twitter">
+        <img alt="X" src="../assets/images/cons8-twitter-500.svg">
+      </a>
+    </div>
+  </div>
+</div>
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<div class="breadcrumbs">
+  <div class="breadcrumbs-container">
+    <a href="../index.html">Strona główna</a>
+    <span class="breadcrumbs-separator">&rsaquo;</span>
+    <a href="index.html">Blog</a>
+    <span class="breadcrumbs-separator">&rsaquo;</span>
+    <span class="breadcrumbs-current">Google oficjalnie obaliło mity o AI Search</span>
+  </div>
+</div>
+
+<header class="article-hero">
+  <div class="article-container">
+    <div class="article-meta">
+      <span class="category-badge">AI & SEO</span>
+      <span>8 min czytania</span>
+      <span>&bull;</span>
+      <span>16 maja 2026</span>
+    </div>
+    <h1>Google oficjalnie obaliło mity o AI&nbsp;Search. I w końcu powiedziało to wprost.</h1>
+    <p class="lead">
+      Internet od miesięcy zalewa fala poradników o AEO, GEO i optymalizacji pod ChatGPT. Google postanowiło zabrać głos oficjalnie. Przeczytałem ten dokument uważnie. Część rzeczy mnie nie zaskoczyła. Wręcz przeciwnie, poczułem: <em>„no w końcu ktoś to napisał czarno na białym"</em>.
+    </p>
+  </div>
+
+  <div class="featured-image">
+    <img alt="Google AI Search wytyczne 2026" src="../assets/images/blog/google ai.png">
+  </div>
+
+</header>
+
+<main class="article-content">
+  <div class="article-container">
+
+    <!-- ===== SEO NIE UMARŁO ===== -->
+    <h2>SEO nie umarło. Zasady są te same.</h2>
+
+    <p>Nowe funkcje AI (AI Overviews, AI Mode) korzystają z dokładnie tych samych systemów rankingowych co klasyczne wyszukiwanie. Nie ma osobnego algorytmu dla AI, który wymagałby osobnej strategii.</p>
+
+    <p>Dwie rzeczy warto rozumieć technicznie:</p>
+
+    <div class="highlight-box">
+      <p><strong style="color:#a5b4fc;">RAG (Retrieval-Augmented Generation)</strong> to technika, w której zanim AI wygeneruje odpowiedź, pobiera aktualne strony z indeksu Google. Jeśli nie ma Cię w indeksie, nie ma Cię w AI Overviews. Koniec, kropka.</p>
+    </div>
+
+    <div class="highlight-box">
+      <p><strong style="color:#a5b4fc;">Query fan-out</strong> to automatyczne rozbijanie jednego zapytania na kilka powiązanych. Pytanie „jak pozbyć się chwastów" generuje też zapytania o herbicydy, metody bez chemii, profilaktykę. Twoja strona może pojawić się przy każdym z nich, jeśli dostarcza konkretnej odpowiedzi.</p>
+    </div>
+
+    <!-- ===== CO DZIAŁA ===== -->
+    <h2>Co naprawdę działa? Fundament, nie eksperymenty.</h2>
+
+    <p><strong>Treść z własnej perspektywy.</strong> Google to nazywa wprost: unikaj "commodity content", czyli artykułów, które mógłby napisać każdy (albo chatbot). Liczy się własne doświadczenie, pierwsza ręka, konkretny case. Recenzja z realnego użytkowania bije streszczenie tego, co już jest w sieci.</p>
+
+    <p><strong>Technicznie sprawna strona.</strong> Mówię o tym z własnego doświadczenia. Nagminnie widzę sytuacje, gdzie ktoś goni za trendami, a jego strona ładuje się 8 sekund i ma połowę treści zablokowaną przez robots.txt. To jak malowanie fasady bez fundamentów. Crawlowanie, szybkość, mobile, brak duplikatów to podstawa, od której zaczyna się wszystko inne.</p>
+
+    <p><strong><a href="https://www.collytics.io/blog/google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Google Search Console</a>, ale aktywnie, nie jako ozdoba.</strong> GSC ma chyba każdy. Ale aktywnie używa niewielu. Znam dziesiątki osób, które mają je podpięte od lat, dostają maile z alertami i nigdy ich nie otwierają. To jak kupić siłownię i nigdy do niej nie pójść. Tymczasem to jedyne miejsce, gdzie widzisz czarno na białym jak Google postrzega Twoją stronę: jakie zapytania generują ruch, gdzie tracisz pozycje, co się nie indeksuje.</p>
+
+    <p>Moje minimum:</p>
+    <ul>
+      <li>Raz w tygodniu raport wydajności (czy nie spada CTR na kluczowych stronach).</li>
+      <li>Raz w miesiącu przegląd raportu indeksowania (czy nie ma błędów crawlowania).</li>
+      <li>Natychmiastowa reakcja na alerty o problemach z bezpieczeństwem lub działaniach manualnych.</li>
+    </ul>
+
+    <p><strong>Dane strukturalne, ale z głową.</strong> Google mówi, że schema.org nie jest wymagana dla AI Overviews i to prawda. Ale z własnego doświadczenia przy <strong>opiniach i recenzjach</strong> to zupełnie inna historia. Poprawnie wdrożone <code>Review</code> i <code>AggregateRating</code> to gwiazdki w wynikach wyszukiwania. Strony z nimi klikają się lepiej nawet gdy stoją niżej w wynikach. Podobnie przy produktach, wydarzeniach, FAQ. Nie rób tego "bo wszyscy robią", rób tam gdzie ma wizualny efekt w SERP.</p>
+
+    <!-- ===== MITY ===== -->
+    <h2>Mity, które możesz zignorować.</h2>
+
+    <p>Google zebrało najpopularniejsze "techniki AEO/GEO" i powiedziało wprost: nie działają.</p>
+
+    <div class="myth-box">
+      <p><strong>Plik LLMS.txt.</strong> Pisałem o tym już wcześniej i byłem sceptyczny. Moje obserwacje były jednoznaczne: chatboty te pliki ignorują. Google to teraz oficjalnie potwierdza. Taki plik nie jest traktowany w żaden specjalny sposób i nie daje żadnej przewagi w AI Search. Cieszę się, że mam to w końcu na piśmie.</p>
+    </div>
+
+    <p>Podobnie chunking treści, przepisywanie pod AI, sztuczne wzmianki o marce w blogach i forach. Strata czasu. Google filtruje spam tak samo jak wcześniej.</p>
+
+    <!-- ===== WĄTPLIWOŚCI ===== -->
+    <h2>Moje wątpliwości: ruch spada i co z tego?</h2>
+
+    <p>Tu chcę być szczery, bo Google w swoim poradniku tego wygodnie unika.</p>
+
+    <p>Ilość wejść na strony spada. Widzę to w danych u klientów i w swojej własnej analityce. I pojawia się pytanie, które rzadko kto zadaje wprost: <strong>czy pojawienie się w AI Overview w ogóle cokolwiek daje?</strong></p>
+
+    <p>Google cytuje Twoją stronę. Użytkownik dostaje wyczerpującą odpowiedź. I nie klika. Twoja treść napędza odpowiedź AI, a Ty nie dostajesz nic, zero sesji, zero konwersji. To się nazywa <strong>zero-click search</strong> i AI Overviews wyniosły to zjawisko na zupełnie nowy poziom.</p>
+
+    <p>Moja uczciwa odpowiedź: to zależy. Jeśli grasz na markę i autorytet, widoczność jako źródło ma wartość długoterminową. Ale jeśli żyjesz z ruchu, AI Overview może być zagrożeniem, nie szansą. Możesz być cytowany i jednocześnie tracić ruch.</p>
+
+    <p>Co jeszcze realnie generuje kliknięcia:</p>
+    <ul>
+      <li>Zapytania <strong>transakcyjne</strong>, gdzie ktoś chce kupić, zarezerwować, pobrać. AI nie zrobi tego za niego (jeszcze).</li>
+      <li>Tematy <strong>złożone</strong>, gdzie jedna odpowiedź nie wystarczy i użytkownik chce drążyć.</li>
+      <li>Treści <strong>unikalne</strong>, czyli własne dane, badania, case studies. Tego AI nie zasyntezuje, bo tego nigdzie nie ma.</li>
+      <li><strong>Lokalność.</strong> "Fryzjer Mokotów" wciąż klika, bo użytkownik musi gdzieś fizycznie pójść.</li>
+    </ul>
+
+    <div class="warning-box">
+      <p>I warto to powiedzieć wprost: Google ma tu <strong style="color:#f47851;">oczywisty konflikt interesów</strong>. Im lepsza AI Overview, tym mniej kliknięć dla wydawców. Jednocześnie bez wydawców nie ma czego wkładać do AI. To napięcie będzie jednym z gorętszych tematów branży przez najbliższe lata.</p>
+    </div>
+
+    <!-- ===== GOOGLE-EXTENDED ===== -->
+    <h2>Jedna techniczna rzecz, o której mało kto mówi.</h2>
+
+    <p>Z dokumentacji Google wynika, że masz pełną kontrolę nad tym, jak Twoje treści są wykorzystywane. Jeśli chcesz być widoczny w wyszukiwarce, ale <strong>nie zgadzasz się na trenowanie modeli AI</strong> Google, możesz to zablokować tokenem <code>Google-Extended</code> w pliku robots.txt. Konkretne narzędzie, które warto znać.</p>
+
+    <!-- ===== PODSUMOWANIE ===== -->
+    <h2>Na koniec: badaj, testuj, miej rękę na pulsie.</h2>
+
+    <p>Z doświadczenia wiem jedno. Google potrafi komunikować oficjalnie jedno, a w praktyce działać inaczej. Widziałem to wielokrotnie. Algorytmy zmieniają się bez zapowiedzi, coś "bez znaczenia" nagle wpływa na rankingi.</p>
+
+    <p>Dlatego te wytyczne traktuję poważnie, ale nie jako wyrocznię. To solidna baza, ale nie powód, żeby przestać testować i obserwować. Oficjalny dokument Google to jeden z sygnałów. Nie jedyny.</p>
+
+    <div class="source-link">
+      Źródło: <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="nofollow noopener">Google Search Central — Optimizing your website for generative AI features on Google Search</a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chcesz wiedzieć, jak Twoja strona radzi sobie w AI Search?</h3>
+      <p>Przeprowadzimy audyt widoczności AI i powiemy Ci, co faktycznie warto zrobić, a co możesz zignorować.</p>
+      <a class="cta-button" href="../kontakt.html">Skontaktuj się z nami</a>
+    </div>
+
+  </div>
+</main>
+
+<script>
+  document.addEventListener("click", function(e) {
+    if(e.target.id === "menuTrigger") {
+      document.getElementById("dropdownMenu").classList.add("active");
+      document.getElementById("menuOverlay").classList.add("active");
+    }
+    if(e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
+      document.getElementById("dropdownMenu").classList.remove("active");
+      document.getElementById("menuOverlay").classList.remove("active");
+    }
+  });
+</script>
+<script src="../js/cookie-banner.js"></script>
+<script src="/js/footer-component.js"></script>
+</body>
+</html>
