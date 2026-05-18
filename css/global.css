@@ -558,3 +558,16 @@ h5, h6 { font-size: 1rem; /* ok. 15px */ }
     min-width: 28px !important;
     object-fit: contain !important;
 }
+
+/* === FIX: Zmniejszone H1 na podstronach === */
+.services-hero-new h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem) !important;
+}
+
+.contact-header h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem) !important;
+}
+
+.hero-with-grid-bg h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem) !important;
+}
