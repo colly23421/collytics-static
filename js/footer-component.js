@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p class="footer-label">Nawigacja</p>
                 <ul class="footer-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/services">Serwis</a></li>
+                    <li><a href="/services">Oferta</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/audyt-widocznosci-ai">AI w firmie</a></li>
                     <li><a href="/legal/privacy-policy">Polityka Prywatności</a></li>

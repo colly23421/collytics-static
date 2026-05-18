@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="dropdown-menu-inner">
             <div class="menu-section">
                 <a href="/">Home</a>
-                <a href="/services">Serwis</a>
+                <a href="/services">Oferta</a>
                 <a href="/blog">Blog</a>
                 <a href="https://www.collytics.io/audyt-widocznosci-ai">AI w firmie</a>
                 <a href="/kontakt">Kontakt</a>
