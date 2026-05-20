@@ -80,7 +80,7 @@
 
     // USUNIĘTO automatyczne wywołanie PageView - teraz zarządza tym cookie-banner.js
      </script>
-    <script src="js/cookie-banner.js"></script>
+    <script src="js/cookie-banner.js" defer></script>
     <script>
         (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "GT-5R3VKTJG");
     </script>
@@ -96,7 +96,7 @@
     <title>Audyt Widoczności AI - ChatGPT i Gemini | Collytics</title>
 
     <link href="css/navbar-universal.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link href="css/style.css" rel="stylesheet">
     <link href="css/global.css" rel="stylesheet">
     <link href="css/home.css" rel="stylesheet">
@@ -643,10 +643,14 @@
     "isPartOf": {"@type": "WebSite", "name": "Collytics", "url": "https://www.collytics.io"}
   }
   </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
 </head>
 
 <body>
-<script src="/js/navbar-component.js"></script>
+<script src="/js/navbar-component.js" defer></script>
 
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -732,7 +736,7 @@
 
     <section class="case-study" style="background: var(--dark-bg);">
         <div class="case-study-container">
-            <img alt="BDental" src="assets/images/partners/bdental.png" style="width: 200px;">
+            <img alt="BDental" src="assets/images/partners/bdental.png" style="width: 200px;" loading="lazy">
             <div class="case-content">
                 <p style="color: var(--text-secondary); margin-bottom: 16px;">CASE STUDY:</p>
                 <h2>Klinika BDental</h2>
@@ -1026,7 +1030,7 @@
         });
     </script>
     <script src="js/menu.js"></script>
-    <script src="js/cookie-banner.js"></script>
-<script src="/js/footer-component.js"></script>
+    <script src="js/cookie-banner.js" defer></script>
+<script src="/js/footer-component.js" defer></script>
 </body>
 </html>

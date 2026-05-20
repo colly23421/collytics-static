@@ -13,7 +13,7 @@
     "ad_personalization": "denied"
   });
   </script>
-  <script src="/js/cookie-banner.js"></script>
+  <script src="/js/cookie-banner.js" defer></script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
@@ -31,7 +31,7 @@
 
   <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
   <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <link href="../css/global.css" rel="stylesheet">
   <link href="../css/blog.css" rel="stylesheet">
   <link href="../css/cookie-banner.css" rel="stylesheet">
@@ -135,10 +135,14 @@
       text-decoration: underline;
     }
   </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
 </head>
 
 <body>
-<script src="/js/navbar-component.js"></script>
+<script src="/js/navbar-component.js" defer></script>
 
 <nav class="navbar" id="navbar">
   <div class="nav-container">
@@ -161,13 +165,13 @@
     </div>
     <div class="social-links">
       <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
-        <img alt="Facebook" src="../assets/images/facebook.png">
+        <img alt="Facebook" src="../assets/images/facebook.png" loading="lazy">
       </a>
       <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
-        <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg">
+        <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg" loading="lazy">
       </a>
       <a href="https://x.com/collytics" target="_blank" title="Twitter">
-        <img alt="X" src="../assets/images/cons8-twitter-500.svg">
+        <img alt="X" src="../assets/images/cons8-twitter-500.svg" loading="lazy">
       </a>
     </div>
   </div>
@@ -199,7 +203,7 @@
   </div>
 
   <div class="featured-image">
-    <img alt="Google AI Search wytyczne 2026" src="../assets/images/blog/google%20ai.png">
+    <img alt="Google AI Search wytyczne 2026" src="../assets/images/blog/google%20ai.png" loading="lazy">
   </div>
 
 </header>
@@ -311,7 +315,7 @@
     }
   });
 </script>
-<script src="../js/cookie-banner.js"></script>
-<script src="/js/footer-component.js"></script>
+<script src="../js/cookie-banner.js" defer></script>
+<script src="/js/footer-component.js" defer></script>
 </body>
 </html>

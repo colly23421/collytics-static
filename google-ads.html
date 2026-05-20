@@ -48,7 +48,7 @@
       } catch (err) { console.error('CAPI Error:', err); }
     }
     </script>
-    <script src="js/cookie-banner.js"></script>
+    <script src="js/cookie-banner.js" defer></script>
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "GT-5R3VKTJG");</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
     <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", "G-S90XQQ06FW");</script>
@@ -65,7 +65,7 @@
     <link rel="canonical" href="https://www.collytics.io/google-ads">
 
     <link href="css/navbar-universal.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link href="css/style.css" rel="stylesheet">
     <link href="css/global.css" rel="stylesheet">
     <link href="css/home.css" rel="stylesheet">
@@ -701,12 +701,16 @@
         .lp-footer nav a { font-size: 0.78rem; color: var(--text-secondary); text-decoration: none; }
         .lp-footer nav a:hover { color: var(--text-primary); }
     </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
 </head>
 
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5R3VKTJG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<script src="/js/navbar-component.js"></script>
+<script src="/js/navbar-component.js" defer></script>
 
 <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -810,7 +814,7 @@
     <h2 class="section-title" style="text-align:center; margin: 0 auto 48px; max-width: 600px;">Jak zbudowaliśmy platformę B2B dla Lab-Wet i zwiększyliśmy ruch o 47%</h2>
     <div class="case-card">
         <div class="case-image">
-            <img src="assets/images/partners/labwet.png" alt="Lab-Wet">
+            <img src="assets/images/partners/labwet.png" alt="Lab-Wet" loading="lazy">
         </div>
         <div class="case-content">
             <span class="case-tag">Case study</span>
@@ -933,7 +937,7 @@
 
 <!-- FOOTER -->
 <footer></footer>
-<script src="/js/footer-component.js"></script>
+<script src="/js/footer-component.js" defer></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -1023,6 +1027,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
-<script src="js/cookie-banner.js"></script>
+<script src="js/cookie-banner.js" defer></script>
 </body>
 </html>

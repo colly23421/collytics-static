@@ -25,25 +25,19 @@ def process_file(filepath):
     original = content
     changes = []
 
-    # KROK 1: defer na skryptach
     for src in SCRIPTS_TO_DEFER:
-        pattern = f'<script src="{re.escape(src)}"></script>'
+        pattern = f'<script src="{src}"></script>'
         replacement = f'<script src="{src}" defer></script>'
-        if re.search(re.escape(pattern), content):
+        if pattern in content:
             content = content.replace(pattern, replacement)
             changes.append(f'  defer: {src}')
 
-    # KROK 2: Google Fonts async
     font_pattern = r'<link[^>]*fonts\.googleapis\.com/css2\?family=Inter[^>]*>'
     if re.search(font_pattern, content):
-        all_matches = re.findall(font_pattern, content)
-        # Usun wszystkie
         content = re.sub(font_pattern, '', content)
-        # Dodaj jeden async w miejsce pierwszego </head>
         content = content.replace('</head>', NEW_FONTS + '\n</head>', 1)
         changes.append('  async Google Fonts')
 
-    # KROK 3: lazy loading na obrazach
     def add_lazy(m):
         tag = m.group(0)
         if 'loading=' in tag or 'logo' in tag.lower() or 'favicon' in tag.lower():
@@ -78,7 +72,3 @@ for fp in sorted(html_files):
         changed_files.append(fp)
 
 print(f"\nZmieniono: {len(changed_files)} plikow")
-print("\nTeraz wklej do terminala:")
-print("  git add -A")
-print("  git commit -m 'perf: defer scripts, async fonts, lazy images'")
-print("  git push")
