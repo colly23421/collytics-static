@@ -4,6 +4,26 @@
   "functions": {
     "api/send-mail.js": { "maxDuration": 10 }
   },
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ],
   "rewrites": [
     { "source": "/send-mail.php", "destination": "/api/send-mail" }
   ],
@@ -22,7 +42,6 @@
     { "source": "/google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow", "destination": "/blog/google-search-console-kompleksowe-narzedzie-nie-tylko-dla-webmasterow", "permanent": true },
     { "source": "/alternatywa-dla-google-analytics-czy-to-ma-sens", "destination": "/blog/alternatywa-dla-google-analytics-czy-to-ma-sens", "permanent": true },
     { "source": "/znaczenie-tagowania-strony-za-pomoca-google-tag-manager", "destination": "/blog/znaczenie-tagowania-strony-za-pomoca-google-tag-manager", "permanent": true },
-
     { "source": "/konfiguracja-google-analytics", "destination": "/", "permanent": true },
     { "source": "/team/collytics-piotrjanczuk", "destination": "/", "permanent": true },
     { "source": "/category/insights", "destination": "/", "permanent": true },
