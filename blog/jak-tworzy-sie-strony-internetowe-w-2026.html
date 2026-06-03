@@ -98,11 +98,18 @@
     .article-content ol li { margin-bottom: 14px; color: #c4c4d4; line-height: 1.7; }
     .article-content strong { color: #ffffff; }
 
-    /* Ilustracja AI - widoczna tylko na desktopie */
-    .ai-illustration-figure {
-      margin: 40px 0;
-      text-align: center;
+    /* Widoczne, kontrastowe linki w tresci artykulu */
+    .article-content a {
+      color: #818cf8;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+      transition: color 0.2s ease;
     }
+    .article-content a:hover { color: #a5b4fc; }
+
+    /* Ilustracja AI - widoczna tylko na desktopie */
+    .ai-illustration-figure { margin: 40px 0; text-align: center; }
     .ai-illustration-figure img {
       display: block;
       width: 100%;
@@ -179,81 +186,81 @@
     </div>
     <h1>Jak tworzy się strony internetowe w 2026? Praktyka: WordPress, AI i lekki kod</h1>
     <p class="lead">
-      Skoro AI potrafi „wyklikać" stronę w kilka minut, to po co komu jeszcze WordPress, programista czy agencja? To pytanie słyszymy coraz częściej. Odpowiedź z naszej praktyki brzmi: tak, to wszystko nadal ma sens — trzeba tylko wiedzieć, kiedy sięgnąć po które rozwiązanie. A praktykę mamy konkretną, bo strony i aplikacje nie tylko prowadzimy marketingowo, ale też kodujemy.
+      Skoro AI potrafi „wyklikać" stronę w kilka minut, to po co komu jeszcze WordPress, programista czy agencja? To pytanie słyszymy coraz częściej. Odpowiedź z naszej praktyki brzmi: tak, to wszystko nadal ma sens. Trzeba tylko wiedzieć, kiedy sięgnąć po które rozwiązanie. A praktykę mamy konkretną, bo strony i aplikacje nie tylko prowadzimy marketingowo, ale też kodujemy.
     </p>
   </div>
 
   <div class="featured-image">
-    <img alt="Jak tworzy się strony internetowe w 2026 — WordPress, AI i lekki kod" src="../assets/images/web developemnt warszawa.png" loading="lazy">
+    <img alt="Jak tworzy się strony internetowe w 2026: WordPress, AI i lekki kod" src="../assets/images/web developemnt warszawa.png" loading="lazy">
   </div>
 </header>
 
 <main class="article-content">
   <div class="article-container">
 
-    <h2 id="tworzenie-stron-z-ai-2026">Krótka odpowiedź: tak, ale mądrze — i z pomocą AI</h2>
+    <h2 id="wordpress-ai-lekki-kod">WordPress, AI, lekki kod: każde narzędzie do czego innego</h2>
 
-    <p>W 2026 roku nie chodzi już o to, czy używać AI przy tworzeniu stron — bo używają go praktycznie wszyscy. Według danych GitHuba blisko połowa nowego kodu na świecie powstaje dziś z udziałem sztucznej inteligencji, a zdecydowana większość deweloperów korzysta z narzędzi AI codziennie. Pytanie brzmi inaczej: <strong>jak używać AI tak, żeby powstała strona, która realnie sprzedaje, a nie tylko ładnie wygląda.</strong></p>
+    <p>W 2026 roku nie chodzi już o to, czy używać AI przy tworzeniu stron, bo używają go praktycznie wszyscy. Według danych GitHuba blisko połowa nowego kodu na świecie powstaje dziś z udziałem sztucznej inteligencji, a zdecydowana większość deweloperów korzysta z narzędzi AI codziennie. Pytanie brzmi inaczej: <strong>jak używać AI tak, żeby powstała strona, która realnie sprzedaje, a nie tylko ładnie wygląda.</strong></p>
 
-    <p>I tu pojawia się sedno. WordPress, WooCommerce, lekki kod, Vercel, AI — to nie są konkurenci, których trzeba przeciw sobie ustawić. To narzędzia, z których każde sprawdza się w innym scenariuszu. My w praktyce korzystamy z obu ścieżek, w zależności od projektu.</p>
+    <p>I tu pojawia się sedno. WordPress, WooCommerce, lekki kod, Vercel, AI to nie są konkurenci, których trzeba przeciw sobie ustawić. To narzędzia, z których każde sprawdza się w innym scenariuszu. My w praktyce korzystamy z obu ścieżek, w zależności od projektu.</p>
 
     <h2 id="wordpress-woocommerce-duze-projekty">Kiedy WordPress i WooCommerce nadal wygrywają</h2>
 
-    <p>Pogłoski o śmierci WordPressa są mocno przesadzone. Wciąż napędza on około 40% wszystkich stron na świecie — i nie bez powodu.</p>
+    <p>Pogłoski o śmierci WordPressa są mocno przesadzone. Wciąż napędza on około 40% wszystkich stron na świecie, i nie bez powodu.</p>
 
     <h3 id="duze-projekty-sklepy-funkcje">Duże projekty, sklepy, rozbudowane funkcje</h3>
 
-    <p>Jeśli budujesz rozbudowany sklep, portal z setkami podstron, stronę z systemem rezerwacji, członkostwami czy wielojęzycznością — gotowy ekosystem WordPressa i WooCommerce oszczędza dziesiątki godzin. Płatności, zarządzanie produktami, faktury, integracje z systemami zewnętrznymi, role użytkowników — to wszystko jest sprawdzone, przetestowane przez miliony wdrożeń i gotowe od ręki. Budowanie tego od zera ma sens tylko w bardzo specyficznych przypadkach.</p>
+    <p>Jeśli budujesz rozbudowany sklep, portal z setkami podstron, stronę z systemem rezerwacji, członkostwami czy wielojęzycznością, gotowy ekosystem WordPressa i WooCommerce oszczędza dziesiątki godzin. Płatności, zarządzanie produktami, faktury, integracje z systemami zewnętrznymi, role użytkowników: to wszystko jest sprawdzone, przetestowane przez miliony wdrożeń i gotowe od ręki. Budowanie tego od zera ma sens tylko w bardzo specyficznych przypadkach.</p>
 
-    <p>Dochodzi do tego jeszcze jedna, często pomijana zaleta: WordPress to rozwiązanie powszechnie znane. Przy dużym projekcie oznacza to łatwiejsze przekazanie strony nowym osobom odpowiedzialnym za projekt. Programista czy specjalista wdraża się w gotowy, znajomy kod i jego zależności znacznie szybciej, niż musiałby rozszyfrowywać autorskie rozwiązanie pisane od zera — a to realnie obniża koszt i ryzyko utrzymania na lata.</p>
+    <p>Dochodzi do tego jeszcze jedna, często pomijana zaleta: WordPress to rozwiązanie powszechnie znane. Przy dużym projekcie oznacza to łatwiejsze przekazanie strony nowym osobom odpowiedzialnym za projekt. Programista czy specjalista wdraża się w gotowy, znajomy kod i jego zależności znacznie szybciej, niż musiałby rozszyfrowywać autorskie rozwiązanie pisane od zera, a to realnie obniża koszt i ryzyko utrzymania na lata.</p>
 
-    <h3 id="wlasny-szablon-wordpress">Jak my to robimy — własny, lekki szablon zamiast ciężkich page-builderów</h3>
+    <h3 id="wlasny-szablon-wordpress">Jak my to robimy: własny, lekki szablon zamiast ciężkich page-builderów</h3>
 
-    <p>Tu zaczyna się nasza przewaga. Typowy problem WordPressa to nie sam WordPress — to sposób, w jaki bywa używany. Najczęściej winny jest ciężki page-builder (wizualny kreator typu „przeciągnij i upuść"), który dokłada do strony mnóstwo zbędnego kodu, oraz długa lista wtyczek doklejanych „bo akurat była potrzebna jedna funkcja". Efekt: strona ładuje się wieczność i jest koszmarem przy każdej aktualizacji.</p>
+    <p>Tu zaczyna się nasza przewaga. Typowy problem WordPressa to nie sam WordPress, to sposób, w jaki bywa używany. Najczęściej winny jest ciężki page-builder (wizualny kreator typu „przeciągnij i upuść"), który dokłada do strony mnóstwo zbędnego kodu, oraz długa lista wtyczek doklejanych „bo akurat była potrzebna jedna funkcja". Efekt: strona ładuje się wieczność i jest koszmarem przy każdej aktualizacji.</p>
 
-    <p>My podchodzimy do tego inaczej. Logikę i ekosystem bierzemy z WordPressa, ale sam szablon — czyli motyw odpowiadający za wygląd i strukturę strony — kodujemy ręcznie, w plikach PHP i CSS, wspierając się Claude (w wersji Pro). Dzięki własnemu szablonowi nie potrzebujemy ciężkiego page-buildera, a liczbę wtyczek ograniczamy do absolutnego minimum — bo większość funkcji po prostu piszemy. AI tu nie „robi strony za nas" — przyspiesza pisanie kodu, podpowiada rozwiązania, pomaga refaktoryzować. Ale to my decydujemy o architekturze. Efekt: WordPress z elastycznością gotowego CMS-a, ale bez jego typowego balastu.</p>
+    <p>My podchodzimy do tego inaczej. Logikę i ekosystem bierzemy z WordPressa, ale sam szablon, czyli motyw odpowiadający za wygląd i strukturę strony, kodujemy ręcznie, w plikach PHP i CSS, wspierając się Claude (w wersji Pro). Dzięki własnemu szablonowi nie potrzebujemy ciężkiego page-buildera, a liczbę wtyczek ograniczamy do absolutnego minimum, bo większość funkcji po prostu piszemy. AI tu nie „robi strony za nas", przyspiesza pisanie kodu, podpowiada rozwiązania, pomaga refaktoryzować. Ale to my decydujemy o architekturze. Efekt: WordPress z elastycznością gotowego CMS-a, ale bez jego typowego balastu.</p>
 
     <h2 id="lekki-stack-domena-vercel-github-ai">Lekka alternatywa dla mniejszych projektów: domena + Vercel + GitHub + AI</h2>
 
-    <p>Przy mniejszych projektach — wizytówce firmy, landing page'u, portfolio, prostej aplikacji — warto rozważyć coś, co jeszcze kilka lat temu było zarezerwowane dla deweloperów, a dziś jest realnie w zasięgu.</p>
+    <p>Przy mniejszych projektach (wizytówce firmy, landing page'u, portfolio, prostej aplikacji) warto rozważyć coś, co jeszcze kilka lat temu było zarezerwowane dla deweloperów, a dziś jest realnie w zasięgu.</p>
 
     <h3 id="stack-krok-po-kroku">Stack krok po kroku</h3>
 
     <p>Wygląda to tak:</p>
 
     <ol>
-      <li>Kupujesz domenę — Twój adres, Twoja własność. W polskich warunkach dobrym miejscem jest np. <a href="https://www.aftermarket.pl/" target="_blank" rel="nofollow noopener">Aftermarket.pl</a> (giełda domen). Uwaga na pozornie tanich dostawców: część z nich kusi domeną za 15 zł na start, ale po roku przedłużenie potrafi kosztować wielokrotność tej kwoty, a przy próbie przeniesienia domeny do tańszego dostawcy zasypią Cię formalnościami, żeby Cię zatrzymać. Lepiej od początku wybrać dostawcę, który nie utrudnia transferu.</li>
-      <li>Repozytorium na <a href="https://github.com" target="_blank" rel="nofollow noopener">GitHub</a> — darmowe rozwiązanie, w którym mieszka kod strony, z pełną historią zmian.</li>
-      <li>Łączysz GitHub z <a href="https://vercel.com" target="_blank" rel="nofollow noopener">Vercelem</a> — jednorazowa konfiguracja, dzięki której każda zmiana w repozytorium trafia na Vercel automatycznie.</li>
-      <li>Deploy na Vercel — intuicyjna i dość prosta platforma, która sama publikuje stronę z repozytorium i dba o jej szybkość oraz globalną dostępność. Co ważne, certyfikat SSL (HTTPS) dostajesz od Vercela automatycznie i za darmo — nie musisz go osobno kupować ani konfigurować.</li>
-      <li>Zmiany robisz przez AI — Claude podpięty do GitHuba koduje na podstawie Twoich poleceń wpisanych zwykłym językiem.</li>
+      <li>Kupujesz domenę. Twój adres, Twoja własność. W polskich warunkach dobrym miejscem jest np. <a href="https://www.aftermarket.pl/" target="_blank" rel="nofollow noopener">Aftermarket.pl</a> (giełda domen). Uwaga na pozornie tanich dostawców: część z nich kusi domeną za 15 zł na start, ale po roku przedłużenie potrafi kosztować wielokrotność tej kwoty, a przy próbie przeniesienia domeny do tańszego dostawcy zasypią Cię formalnościami, żeby Cię zatrzymać. Lepiej od początku wybrać dostawcę, który nie utrudnia transferu.</li>
+      <li>Repozytorium na <a href="https://github.com" target="_blank" rel="nofollow noopener">GitHub</a>. Darmowe rozwiązanie, w którym mieszka kod strony, z pełną historią zmian.</li>
+      <li>Łączysz GitHub z <a href="https://vercel.com" target="_blank" rel="nofollow noopener">Vercelem</a>. Jednorazowa konfiguracja, dzięki której każda zmiana w repozytorium trafia na Vercel automatycznie.</li>
+      <li>Deploy na Vercel. Intuicyjna i dość prosta platforma, która sama publikuje stronę z repozytorium i dba o jej szybkość oraz globalną dostępność. Co ważne, certyfikat SSL (HTTPS) dostajesz od Vercela automatycznie i za darmo, nie musisz go osobno kupować ani konfigurować.</li>
+      <li>Zmiany robisz przez AI. Claude podpięty do GitHuba koduje na podstawie Twoich poleceń wpisanych zwykłym językiem.</li>
     </ol>
 
-    <p>I tu odpowiedź na pytanie, które samo się nasuwa: <strong>tak, Claude potrafi sam wypchnąć zmiany na GitHub.</strong> Przez Claude Code (działa w terminalu) tworzy commit, wypycha zmiany i otwiera pull request — analizuje historię i sam generuje opisy. Jest też aplikacja GitHub, która po oznaczeniu w komentarzu potrafi commitować i pushować zmiany przy odpowiednich uprawnieniach. Czyli realnie: opisujesz, co ma się zmienić, a AI nanosi to w kodzie i publikuje.</p>
+    <p>I tu odpowiedź na pytanie, które samo się nasuwa: <strong>tak, Claude potrafi sam wypchnąć zmiany na GitHub.</strong> Przez Claude Code (działa w terminalu) tworzy commit, wypycha zmiany i otwiera pull request, analizuje historię i sam generuje opisy. Jest też aplikacja GitHub, która po oznaczeniu w komentarzu potrafi commitować i pushować zmiany przy odpowiednich uprawnieniach. Czyli realnie: opisujesz, co ma się zmienić, a AI nanosi to w kodzie i publikuje.</p>
 
-    <p>Co istotne, taką stronę czy aplikację możesz tworzyć w ten sposób nawet bez własnej domeny — Vercel wystawi Ci darmowy adres techniczny (np. <code>twoj-projekt.vercel.app</code>), pod którym projekt od razu działa. Domenę możesz podpiąć później.</p>
+    <p>Co istotne, taką stronę czy aplikację możesz tworzyć w ten sposób nawet bez własnej domeny. Vercel wystawi Ci darmowy adres techniczny (np. <code>twoj-projekt.vercel.app</code>), pod którym projekt od razu działa. Domenę możesz podpiąć później.</p>
 
-    <p>Brzmi jak magia — i po części jest. Ale jest kilka „ale".</p>
+    <p>Brzmi jak magia. I po części jest. Ale jest kilka „ale".</p>
 
     <figure class="ai-illustration-figure">
-      <img src="../assets/images/ai.png" alt="AI wspierające tworzenie stron internetowych — lekki stack z Vercel, GitHub i Claude" loading="lazy">
+      <img src="../assets/images/ai.png" alt="AI wspierające tworzenie stron internetowych: lekki stack z Vercel, GitHub i Claude" loading="lazy">
     </figure>
 
     <h3 id="vercel-darmowy-plan-haczyk">Uczciwie o Vercelu: darmowy plan ma haczyk</h3>
 
-    <p>Vercel kusi darmowym planem Hobby — i faktycznie świetnie nadaje się do prototypu, projektu osobistego czy testu pomysłu. Daje 100 GB transferu miesięcznie i sporo zasobów za zero złotych.</p>
+    <p>Vercel kusi darmowym planem Hobby. I faktycznie świetnie nadaje się do prototypu, projektu osobistego czy testu pomysłu. Daje 100 GB transferu miesięcznie i sporo zasobów za zero złotych.</p>
 
     <div class="warning-box">
-      <p>Problem w tym, że <strong>plan Hobby jest przeznaczony wyłącznie do użytku niekomercyjnego — strona firmowa łamie jego regulamin.</strong> Do tego, gdy przekroczysz limit, strona po prostu schodzi offline do następnego cyklu rozliczeniowego, bez ostrzeżenia. Dla biznesu to oczywiście nie do przyjęcia. W praktyce strona firmowa oznacza plan Pro (ok. 20 USD miesięcznie za miejsce w zespole).</p>
+      <p>Problem w tym, że <strong>plan Hobby jest przeznaczony wyłącznie do użytku niekomercyjnego: strona firmowa łamie jego regulamin.</strong> Do tego, gdy przekroczysz limit, strona po prostu schodzi offline do następnego cyklu rozliczeniowego, bez ostrzeżenia. Dla biznesu to oczywiście nie do przyjęcia. W praktyce strona firmowa oznacza plan Pro (ok. 20 USD miesięcznie za miejsce w zespole).</p>
     </div>
 
-    <p>To dobry przykład tego, dlaczego „darmowa strona z AI" rzadko jest naprawdę darmowa — i dlaczego dobór hostingu pod realny ruch i model biznesowy warto zostawić komuś, kto robił to wielokrotnie.</p>
+    <p>To dobry przykład tego, dlaczego „darmowa strona z AI" rzadko jest naprawdę darmowa, i dlaczego dobór hostingu pod realny ruch i model biznesowy warto zostawić komuś, kto robił to wielokrotnie.</p>
 
     <h2 id="strona-statyczna-szybkosc-core-web-vitals">Strona bez CMS = szybkość i lekkość</h2>
 
     <p>Lekki stack ma jeszcze jedną dużą zaletę: <strong>strona statyczna, bez ciężkiego CMS-a w tle, jest po prostu szybsza.</strong> Mniej zapytań do bazy, mniej kodu do załadowania, błyskawiczne wczytywanie.</p>
 
-    <p>To nie jest tylko kwestia wygody użytkownika. Szybkość to twardy sygnał rankingowy Google — wskaźniki Core Web Vitals (jak LCP czy nowsza metryka INP, która zastąpiła FID) realnie wpływają na pozycje w wyszukiwarce. Strona, która ładuje się w ułamku sekundy, ma przewagę zarówno w oczach odwiedzających, jak i algorytmów. Przy dobrze zaprojektowanym, lekkim rozwiązaniu te wskaźniki są dużo łatwiejsze do osiągnięcia niż przy obładowanym wtyczkami WordPressie.</p>
+    <p>To nie jest tylko kwestia wygody użytkownika. Szybkość to twardy sygnał rankingowy Google. Wskaźniki Core Web Vitals (jak LCP czy nowsza metryka INP, która zastąpiła FID) realnie wpływają na pozycje w wyszukiwarce. Strona, która ładuje się w ułamku sekundy, ma przewagę zarówno w oczach odwiedzających, jak i algorytmów. Przy dobrze zaprojektowanym, lekkim rozwiązaniu te wskaźniki są dużo łatwiejsze do osiągnięcia niż przy obładowanym wtyczkami WordPressie.</p>
 
     <h2 id="analityka-i-strategia">Najważniejsze: w 2026 kod to dopiero początek</h2>
 
@@ -261,9 +268,9 @@
 
     <h3 id="analityka-ga4-gtm-od-kodu">Analitykę planuje się NA POZIOMIE kodowania</h3>
 
-    <p>To jest nasza specjalizacja i nasz sposób myślenia. <strong>GA4, Google Tag Manager i Google Search Console planujemy już na etapie pisania kodu — nie doklejamy ich później jako łatkę.</strong> Różnica jest ogromna. Już w trakcie kodowania nadajemy unikalne identyfikatory (ID) kluczowym elementom strony — przyciskom CTA, polom i przyciskowi wysłania formularza, linkom telefonicznym czy „dodaj do koszyka". Dzięki temu każde kliknięcie i każde wysłanie formularza da się zmierzyć czysto i jednoznacznie w GTM i GA4 — bez zgadywania i bez kruchych „obejść" dopisywanych po fakcie. Gdy struktura śledzenia jest zaplanowana od pierwszej linijki, dokładnie wiesz, co działa: skąd przychodzą klienci, które przyciski klikają, gdzie porzucają formularz. Strona od dnia startu zbiera czyste, użyteczne dane — zamiast być czarną skrzynką, do której analitykę próbuje się dorobić po fakcie.</p>
+    <p>To jest nasza specjalizacja i nasz sposób myślenia. <strong>GA4, Google Tag Manager i Google Search Console planujemy już na etapie pisania kodu, nie doklejamy ich później jako łatkę.</strong> Różnica jest ogromna. Już w trakcie kodowania nadajemy unikalne identyfikatory (ID) kluczowym elementom strony: przyciskom CTA, polom i przyciskowi wysłania formularza, linkom telefonicznym czy „dodaj do koszyka". Dzięki temu każde kliknięcie i każde wysłanie formularza da się zmierzyć czysto i jednoznacznie w GTM i GA4, bez zgadywania i bez kruchych „obejść" dopisywanych po fakcie. Gdy struktura śledzenia jest zaplanowana od pierwszej linijki, dokładnie wiesz, co działa: skąd przychodzą klienci, które przyciski klikają, gdzie porzucają formularz. Strona od dnia startu zbiera czyste, użyteczne dane, zamiast być czarną skrzynką, do której analitykę próbuje się dorobić po fakcie.</p>
 
-    <p>AI wygeneruje Ci kod. Nie zaplanuje za Ciebie sensownej architektury pomiaru konwersji — bo nie wie, co dla Twojego biznesu jest sukcesem.</p>
+    <p>AI wygeneruje Ci kod. Nie zaplanuje za Ciebie sensownej architektury pomiaru konwersji, bo nie wie, co dla Twojego biznesu jest sukcesem.</p>
 
     <h3 id="strona-wizytowka-google">Jak technicznie spiąć stronę z wizytówką Google</h3>
 
@@ -271,23 +278,23 @@
 
     <h2 id="agencja-web-development">Dlaczego mimo wszystko warto z firmą z doświadczeniem</h2>
 
-    <p>Skoro AI koduje, a stack da się złożyć z gotowych klocków — po co komu agencja?</p>
+    <p>Skoro AI koduje, a stack da się złożyć z gotowych klocków, po co komu agencja?</p>
 
-    <p>Bo samo narzędzie — strona WWW — to za mało. Strony budowane w całości przez AI, bez nadzoru, bardzo często wyglądają poprawnie, a mimo to <strong>nie generują zapytań i nie wspierają sprzedaży</strong> — brakuje im strategii, unikalności, przemyślanego UX i SEO wbudowanego od fundamentów. Sama AI nie wie, że dana kampania nie działa, i nie zmieni kursu, żeby chronić Twój budżet.</p>
+    <p>Bo samo narzędzie (strona WWW) to za mało. Strony budowane w całości przez AI, bez nadzoru, bardzo często wyglądają poprawnie, a mimo to <strong>nie generują zapytań i nie wspierają sprzedaży:</strong> brakuje im strategii, unikalności, przemyślanego UX i SEO wbudowanego od fundamentów. Sama AI nie wie, że dana kampania nie działa, i nie zmieni kursu, żeby chronić Twój budżet.</p>
 
-    <p>Dobrze widać to w prostym podziale, który ukształtował się na rynku: AI to szybkie, proste projekty bez strategii; freelancer to poziom zależny od doświadczenia; a agencja to kompleksowe podejście nastawione na wynik biznesowy. Senior od digitalu wie nie tylko <em>jak</em> napisać kod, ale przede wszystkim <strong>co</strong> zakodować, żeby strona realnie zarabiała — od architektury, przez analitykę, po to, jak całość wpisuje się w marketing.</p>
+    <p>Dobrze widać to w prostym podziale, który ukształtował się na rynku: AI to szybkie, proste projekty bez strategii; freelancer to poziom zależny od doświadczenia; a agencja to kompleksowe podejście nastawione na wynik biznesowy. Senior od digitalu wie nie tylko <em>jak</em> napisać kod, ale przede wszystkim <strong>co</strong> zakodować, żeby strona realnie zarabiała: od architektury, przez analitykę, po to, jak całość wpisuje się w marketing.</p>
 
-    <p>To zresztą szersza prawda o tej rewolucji: AI nie zastąpi specjalisty. Ale specjalista, który umie pracować z AI, zastąpi tego, który nie umie. My jesteśmy po tej pierwszej stronie — łączymy szybkość nowoczesnych narzędzi z wieloletnim doświadczeniem w analityce, marketingu i kodowaniu.</p>
+    <p>To zresztą szersza prawda o tej rewolucji: AI nie zastąpi specjalisty. Ale specjalista, który umie pracować z AI, zastąpi tego, który nie umie. My jesteśmy po tej pierwszej stronie: łączymy szybkość nowoczesnych narzędzi z wieloletnim doświadczeniem w analityce, marketingu i kodowaniu.</p>
 
     <h2 id="podsumowanie">Podsumowanie</h2>
 
-    <p>Więc jak tworzy się strony w 2026? Pragmatycznie. <strong>WordPress i WooCommerce mają sens</strong> przy dużych, rozbudowanych projektach — zwłaszcza gdy szablon kodujemy sami z pomocą AI, zamiast topić stronę we wtyczkach. <strong>Lekki stack — domena, Vercel, GitHub i AI — ma sens</strong> przy mniejszych projektach, gdzie liczy się szybkość i prostota. W obu przypadkach kod to dopiero początek: prawdziwa wartość leży w analityce zaplanowanej od pierwszej linijki, w widoczności w Google i w strategii, która sprawia, że strona sprzedaje.</p>
+    <p>Więc jak tworzy się strony w 2026? Pragmatycznie. <strong>WordPress i WooCommerce mają sens</strong> przy dużych, rozbudowanych projektach, zwłaszcza gdy szablon kodujemy sami z pomocą AI, zamiast topić stronę we wtyczkach. <strong>Lekki stack (domena, Vercel, GitHub i AI) ma sens</strong> przy mniejszych projektach, gdzie liczy się szybkość i prostota. W obu przypadkach kod to dopiero początek: prawdziwa wartość leży w analityce zaplanowanej od pierwszej linijki, w widoczności w Google i w strategii, która sprawia, że strona sprzedaje.</p>
 
     <p>AI jest świetnym narzędziem. Najlepsze efekty daje jednak w rękach kogoś, kto wie, dokąd zmierza.</p>
 
     <div class="article-cta">
       <h3>Tworzysz lub planujesz nową stronę albo aplikację?</h3>
-      <p>Porozmawiajmy o Twoim projekcie — pokażemy, jak połączyć nowoczesny kod z analityką, która faktycznie pokazuje wyniki.</p>
+      <p>Porozmawiajmy o Twoim projekcie. Pokażemy, jak połączyć nowoczesny kod z analityką, która faktycznie pokazuje wyniki.</p>
       <a class="cta-button" href="../kontakt.html">Skontaktuj się z nami</a>
     </div>
 
