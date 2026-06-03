@@ -108,6 +108,25 @@
     }
     .article-content a:hover { color: #a5b4fc; }
 
+    /* Przycisk CTA - czytelny, bialy tekst na gradiencie marki */
+    .article-cta { text-align: center; margin: 50px 0; }
+    .article-cta .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #D96848 0%, #B81E72 100%);
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .article-cta .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(184, 30, 114, 0.35);
+      color: #ffffff !important;
+    }
+
     /* Ilustracja AI - widoczna tylko na desktopie */
     .ai-illustration-figure { margin: 40px 0; text-align: center; }
     .ai-illustration-figure img {
