@@ -63,7 +63,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -71,6 +71,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, .display {
@@ -80,10 +81,10 @@ h1, h2, h3, .display {
 }
 
 a { color: inherit; }
-img, video { max-width: 100%; display: block; }
+img, video { max-width: 100%; display: block; height: auto; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-/* ===== NAVBAR — czarny, jak na collytics.io ===== */
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -121,7 +122,7 @@ body { padding-top: 72px; }
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  padding: 72px 24px 0;
+  padding: 60px 0 0;
   background: var(--bg-soft);
   overflow: hidden;
 }
@@ -132,7 +133,7 @@ body { padding-top: 72px; }
   grid-template-columns: 1.15fr 0.85fr;
   gap: 56px;
   align-items: center;
-  padding-bottom: 56px;
+  padding: 0 24px 56px;
 }
 .hero-badge {
   display: inline-flex;
@@ -151,9 +152,9 @@ body { padding-top: 72px; }
 }
 .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .hero h1 {
-  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.1;
   margin-bottom: 12px;
 }
 .hero .subtitle {
@@ -173,6 +174,7 @@ body { padding-top: 72px; }
 .btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: var(--accent-grad);
   color: #fff;
@@ -189,6 +191,7 @@ body { padding-top: 72px; }
 .btn-secondary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   background: transparent;
   color: var(--text);
   padding: 16px 28px;
@@ -203,14 +206,14 @@ body { padding-top: 72px; }
 
 .hero-meta-row {
   display: flex;
-  gap: 28px;
+  gap: 24px;
   flex-wrap: wrap;
   font-size: 0.82rem;
   color: var(--text-dimmer);
 }
 .hero-meta-row strong { color: var(--text); }
 
-.hero-photo-wrap { position: relative; display: flex; justify-content: center; }
+.hero-photo-wrap { position: relative; display: flex; justify-content: center; width: 100%; }
 .hero-photo {
   width: 100%;
   max-width: 340px;
@@ -239,13 +242,18 @@ body { padding-top: 72px; }
 .hero-photo-badge .role { font-size: 0.72rem; color: var(--text-dimmer); }
 
 @media (max-width: 880px) {
+  .hero { padding-top: 30px; }
   .hero-grid { grid-template-columns: 1fr; padding-bottom: 40px; gap: 36px; }
   .hero-photo-wrap { order: -1; }
-  .hero-photo { max-width: 260px; }
+  .hero-photo { max-width: 280px; }
+}
+@media (max-width: 480px) {
+  .hero-cta-group { flex-direction: column; gap: 10px; }
+  .btn-primary, .btn-secondary { width: 100%; }
 }
 
 /* ===== SECTION SCAFFOLDING ===== */
-section { padding: 84px 24px; }
+section { padding: 80px 24px; }
 .section-label {
   display: block;
   font-size: 0.74rem;
@@ -257,7 +265,7 @@ section { padding: 84px 24px; }
   text-align: center;
 }
 .section-title {
-  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+  font-size: clamp(1.5rem, 3.6vw, 2.3rem);
   font-weight: 800;
   text-align: center;
   margin: 0 auto 16px;
@@ -268,33 +276,35 @@ section { padding: 84px 24px; }
   text-align: center;
   color: var(--text-dim);
   max-width: 600px;
-  margin: 0 auto 52px;
+  margin: 0 auto 40px;
   font-size: 0.98rem;
   line-height: 1.7;
 }
 .alt-bg { background: var(--bg-soft); }
 
 /* ===== SOCIAL PROOF STRIP ===== */
-.proof-strip { background: var(--navy); padding: 36px 24px; }
+.proof-strip { background: var(--navy); padding: 40px 24px; }
 .proof-inner {
   max-width: 1100px;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 56px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
 }
 .proof-item { text-align: center; color: #fff; }
-.proof-item .num { font-size: 1.7rem; font-weight: 800; font-family: 'Sora', sans-serif; }
-.proof-item .lbl { font-size: 0.74rem; color: #9a9a9a; margin-top: 2px; }
+.proof-item .num { font-size: clamp(1.4rem, 2.5vw, 1.8rem); font-weight: 800; font-family: 'Sora', sans-serif; }
+.proof-item .lbl { font-size: 0.74rem; color: #9a9a9a; margin-top: 4px; line-height: 1.3; }
+
+@media (max-width: 768px) {
+  .proof-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
 
 /* ===== PROWADZĄCY ===== */
 .instructor-wrap {
   max-width: 1020px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 300px minmax(0, 1fr);
   gap: 52px;
   align-items: start;
 }
@@ -306,14 +316,14 @@ section { padding: 84px 24px; }
   background: var(--bg-soft);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 10px 8px;
+  padding: 10px 4px;
   text-align: center;
   text-decoration: none;
 }
-.social-pill .platform { font-size: 0.68rem; color: var(--text-dimmer); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-.social-pill .count { font-size: 0.92rem; font-weight: 800; color: var(--text); margin-top: 2px; }
+.social-pill .platform { font-size: 0.65rem; color: var(--text-dimmer); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.social-pill .count { font-size: 0.88rem; font-weight: 800; color: var(--text); margin-top: 2px; }
 
-.instructor-text h2 { font-size: clamp(1.4rem, 2.6vw, 1.8rem); margin-bottom: 16px; font-weight: 800; }
+.instructor-text h2 { font-size: clamp(1.3rem, 2.6vw, 1.8rem); margin-bottom: 16px; font-weight: 800; }
 .instructor-text p { color: var(--text-dim); margin-bottom: 15px; line-height: 1.75; font-size: 0.96rem; }
 .instructor-quote {
   border-left: 3px solid var(--accent);
@@ -324,28 +334,30 @@ section { padding: 84px 24px; }
   font-size: 0.96rem;
 }
 
-.social-screens {
+/* PRZEWIJANIE SCREENÓW DO PRAWEJ — NAPRAWIONE */
+.social-screens-container {
+  width: 100%;
+  overflow: hidden;
   margin-top: 32px;
+}
+.social-screens {
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 14px;
+  padding-bottom: 16px;
   scrollbar-width: thin;
 }
 .social-screens::-webkit-scrollbar { height: 6px; }
 .social-screens::-webkit-scrollbar-track { background: var(--border-soft); border-radius: 10px; }
 .social-screens::-webkit-scrollbar-thumb { background: #cfc8bd; border-radius: 10px; }
 .screen-card {
-  flex: 0 0 auto;
-  width: 220px;
+  flex: 0 0 220px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
   position: relative;
-  scroll-snap-align: start;
 }
 .screen-card img { width: 100%; display: block; }
 .screen-card .screen-label {
@@ -364,16 +376,16 @@ section { padding: 84px 24px; }
   gap: 6px;
   font-size: 0.74rem;
   color: var(--text-dimmer);
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 @media (max-width: 880px) {
-  .instructor-wrap { grid-template-columns: 1fr; }
+  .instructor-wrap { display: block; }
   .instructor-photo { max-width: 240px; margin: 0 auto; }
-  .instructor-socials { max-width: 240px; margin: 16px auto 0; }
+  .instructor-socials { max-width: 280px; margin: 16px auto 32px; }
 }
 @media (max-width: 560px) {
-  .screen-card { width: 200px; }
+  .screen-card { flex: 0 0 190px; }
 }
 
 /* ===== DLA KOGO ===== */
@@ -392,6 +404,7 @@ section { padding: 84px 24px; }
 .audience-card p { font-size: 0.83rem; color: var(--text-dimmer); line-height: 1.55; }
 
 @media (max-width: 900px) { .audience-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .audience-grid { grid-template-columns: 1fr; } }
 
 /* ===== PROGRAM ===== */
 .modules-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
@@ -426,8 +439,8 @@ section { padding: 84px 24px; }
   border-radius: 50px;
 }
 @media (max-width: 640px) {
-  .module-row { grid-template-columns: 36px 1fr; }
-  .module-time { grid-column: 2; justify-self: start; margin-top: 6px; }
+  .module-row { grid-template-columns: 36px 1fr; gap: 12px; padding: 16px; }
+  .module-time { grid-column: 2; justify-self: start; margin-top: 4px; }
 }
 
 /* ===== CO WYNIESIESZ ===== */
@@ -452,7 +465,7 @@ section { padding: 84px 24px; }
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 34px 28px;
+  padding: 34px 24px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -516,7 +529,7 @@ section { padding: 84px 24px; }
   gap: 8px;
 }
 @media (max-width: 900px) {
-  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; gap: 32px; }
   .price-card.featured { transform: none; }
 }
 
@@ -552,7 +565,7 @@ details.faq-item[open] summary::after { transform: rotate(45deg); }
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 42px;
+  padding: 40px 24px;
   text-align: center;
   box-shadow: var(--shadow-sm);
 }
@@ -720,23 +733,26 @@ details.faq-item[open] summary::after { transform: rotate(45deg); }
       <div class="instructor-quote">„To wystarczyło, żeby zbudować społeczność setek tysięcy osób na kilku platformach. Dziś pokażę wam dokładnie, jak to działa — krok po kroku, bez korporacyjnego żargonu."</div>
       <p>Na szkoleniu dzieli się dokładnym systemem: jak otwierać filmik, żeby ludzie nie scrollowali dalej, jak generować pomysły na kolejny tydzień w 15 minut, i jak zostać konsekwentnym, nawet gdy pierwsze filmy mają 200 wyświetleń.</p>
 
-      <div class="social-screens">
-        <div class="screen-card">
-          <span class="screen-label">YouTube</span>
-          <img src="assets/images/mariusz-youtube-web.jpg" alt="Profil Mariusza na YouTube">
-        </div>
-        <div class="screen-card">
-          <span class="screen-label">Instagram</span>
-          <img src="assets/images/mariusz-instagram-web.jpg" alt="Profil Mariusza na Instagramie">
-        </div>
-        <div class="screen-card">
-          <span class="screen-label">TikTok</span>
-          <img src="assets/images/mariusz-tiktok-web.jpg" alt="Profil Mariusza na TikToku">
+      <!-- NAPRAWIONA SEKCJA PRZEWIJANIA SCREENÓW DO PRAWEJ -->
+      <div class="social-screens-container">
+        <div class="social-screens">
+          <div class="screen-card">
+            <span class="screen-label">YouTube</span>
+            <img src="assets/images/mariusz-youtube-web.jpg" alt="Profil Mariusza na YouTube">
+          </div>
+          <div class="screen-card">
+            <span class="screen-label">Instagram</span>
+            <img src="assets/images/mariusz-instagram-web.jpg" alt="Profil Mariusza na Instagramie">
+          </div>
+          <div class="screen-card">
+            <span class="screen-label">TikTok</span>
+            <img src="assets/images/mariusz-tiktok-web.jpg" alt="Profil Mariusza na TikToku">
+          </div>
         </div>
       </div>
       <div class="social-screens-hint">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        Przewiń, żeby zobaczyć więcej profili
+        Przesuń palcem w prawo, aby zobaczyć więcej
       </div>
     </div>
   </div>
@@ -876,7 +892,6 @@ details.faq-item[open] summary::after { transform: rotate(45deg); }
         <li>Wszystkie 9 modułów programu</li>
         <li>Faktura automatycznie po zakupie</li>
       </ul>
-      <!-- PLACEHOLDER: podmień na właściwy link Stripe Payment Link -->
       <a class="price-buy outline" href="#" data-stripe-link="dostep">Kup dostęp — 199 zł</a>
     </div>
 
@@ -894,7 +909,6 @@ details.faq-item[open] summary::after { transform: rotate(45deg); }
         <li>Możliwość zadawania pytań na żywo</li>
         <li>Faktura automatycznie po zakupie</li>
       </ul>
-      <!-- PLACEHOLDER: podmień na właściwy link Stripe Payment Link -->
       <a class="price-buy primary" href="#" data-stripe-link="pelny-pakiet">Kup Pełny Pakiet — 599 zł</a>
     </div>
 
@@ -911,7 +925,6 @@ details.faq-item[open] summary::after { transform: rotate(45deg); }
         <li>Plan pierwszego filmu dla Twojego biznesu</li>
         <li>Priorytetowy kontakt mailowy</li>
       </ul>
-      <!-- PLACEHOLDER: podmień na właściwy link Stripe Payment Link -->
       <a class="price-buy outline" href="#" data-stripe-link="vip">Kup VIP — 899 zł</a>
     </div>
 
@@ -937,7 +950,7 @@ details.faq-item[open] summary::after { transform: rotate(45deg); }
     </details>
     <details class="faq-item">
       <summary>Konkurencja mnie skopiuje</summary>
-      <div class="faq-content">Mogą skopiować format i schemat. Nie skopiują Twojego głosu, sposobu mówienia i historii z klientami — a to jest najsilniejsza broń w internecie. Nie cena, nie oferta. Ty.</div>
+      <div class="faq-content">Mogą skopiować format i schemat. Nie skopiują Twojego głosu, sposobu mówienia i historii z klientami — a to jest najsilniejsza broń w internetach. Nie cena, nie oferta. Ty.</div>
     </details>
     <details class="faq-item">
       <summary>Czym różni się Pełny Pakiet od pakietu Dostęp?</summary>
@@ -972,12 +985,10 @@ details.faq-item[open] summary::after { transform: rotate(45deg); }
   </div>
 
   <div class="contact-bar">
-    <!-- PLACEHOLDER: podmień href na właściwy link do grupy/kanału Telegram -->
     <a class="contact-chip telegram" href="https://t.me/TWOJA_GRUPA" target="_blank" rel="noopener">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.27a1.5 1.5 0 0 0-1.6-.2L2.6 11.6a1.4 1.4 0 0 0 .14 2.6l4.6 1.5 1.8 5.6a1.4 1.4 0 0 0 2.4.5l2.5-2.6 4.5 3.3a1.4 1.4 0 0 0 2.2-.8l3-15.7a1.4 1.4 0 0 0-.74-1.66ZM9 14.8l-3.7-1.2L17.6 7l-8.6 7.8Zm1.2 4.8-.9-3.1 1.9-1.7 1.2 4-2.2.8Zm3-1.7-1-3.3 6.7-6-2.5 9.6-3.2-.3Z"/></svg>
       Grupa wsparcia na Telegramie
     </a>
-    <!-- PLACEHOLDER: podmień na właściwy numer telefonu -->
     <a class="contact-chip phone" href="tel:+48000000000">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
       Telefon — wkrótce
@@ -996,7 +1007,7 @@ details.faq-item[open] summary::after { transform: rotate(45deg); }
     <p>„Kamera, akcja, sprzedaż! Jak robić social media" to praktyczne szkolenie online skierowane do właścicieli małych firm, którzy chcą samodzielnie nagrywać wideo na potrzeby social media — bez agencji marketingowej, bez budżetu na profesjonalną produkcję i bez wcześniejszego doświadczenia w content marketingu.</p>
     <p>Prowadzącym jest Mariusz Owczarek, twórca internetowy znany jako Mariushov, który zbudował swoją społeczność nagrywając wyłącznie telefonem — ponad 660 tysięcy subskrybentów na YouTube, ponad 360 tysięcy obserwujących na Instagramie i kilkaset tysięcy na TikToku. Podczas trzygodzinnego webinaru online uczestnicy poznają dziewięć modułów programu: od podstaw budowania zaufania przez kontent, przez technikę pierwszych trzech sekund filmu decydujących o utrzymaniu uwagi widza, aż po praktyczny system generowania pomysłów na wideo i automatyzację obsługi komentarzy klientów.</p>
     <p>Szkolenie jest skierowane przede wszystkim do branż lokalnych: warsztatów samochodowych, salonów fryzjerskich i kosmetycznych, piekarni, sklepów oraz innych małych firm, które chcą budować rozpoznawalność i zaufanie klientów w mediach społecznościowych — TikTok, Instagram (Reels) i YouTube Shorts — przy minimalnym budżecie.</p>
-    <p>Dostępne są trzy warianty udziału: pakiet Dostęp (nagranie szkolenia po webinarze), Pełny Pakiet (udział na żywo, nagranie i materiały dodatkowe) oraz pakiet VIP z Konsultacją, który dodatkowo obejmuje indywidualną, 30-minutową konsultację z Mariuszem dopasowaną do konkretnego biznesu uczestnika. Płatności obsługiwane są bezpiecznie przez Stripe.</p>
+    <p>Dostępne are trzy warianty udziału: pakiet Dostęp (nagranie szkolenia po webinarze), Pełny Pakiet (udział na żywo, nagranie i materiały dodatkowe) oraz pakiet VIP z Konsultacją, który dodatkowo obejmuje indywidualną, 30-minutową konsultację z Mariuszem dopasowaną do konkretnego biznesu uczestnika. Płatności obsługiwane są bezpiecznie przez Stripe.</p>
   </div>
 </section>
 
@@ -1015,7 +1026,6 @@ details.faq-item[open] summary::after { transform: rotate(45deg); }
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-  // PLACEHOLDER: podmień poniższe linki na właściwe Stripe Payment Links
   const stripeLinks = {
     'dostep': 'https://buy.stripe.com/TWOJ_LINK_DOSTEP',
     'pelny-pakiet': 'https://buy.stripe.com/TWOJ_LINK_PELNY_PAKIET',
@@ -1029,7 +1039,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Formularz zapisu na listę powiadomień -> Web3Forms (jak na resztach strony Collytics)
   const notifyForm = document.getElementById('notify-form');
   if (notifyForm) {
     notifyForm.addEventListener('submit', async function (e) {
@@ -1075,7 +1084,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Smooth scroll dla linków kotwicowych
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       const target = document.querySelector(this.getAttribute('href'));
