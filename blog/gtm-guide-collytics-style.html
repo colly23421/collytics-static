@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Tag Manager: Kompleksowy Przewodnik 2026 | Collytics</title>
+    <meta name="description" content="Kompleksowy przewodnik po Google Tag Manager w 2026. Zarządzanie tagami, GA4, konwersje, server-side tracking i Consent Mode. Wszystko co musisz wiedzieć.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.collytics.io/blog/google-tag-manager-kompleksowy-przewodnik">
+    <meta property="og:title" content="Google Tag Manager: Kompleksowy Przewodnik 2026">
+    <meta property="og:description" content="Wszystko o GTM, data layer, integracji GA4, Meta Ads i zaawansowanym śledzeniu w 2026 roku.">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Google Tag Manager: Kompleksowy Przewodnik 2026",
+        "description": "Przewodnik po zarządzaniu tagami, śledzeniu konwersji i optymalizacji analityki",
+        "author": {
+            "@type": "Organization",
+            "name": "Collytics"
+        },
+        "datePublished": "2026-01-15",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Collytics"
+        }
+    }
+    </script>
+
+    <!-- Google Font: Montserrat (Collytics style) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"></noscript>
+
+    <style>
+        /* ===== COLLYTICS DESIGN SYSTEM ===== */
+        :root {
+            --dark-bg: #0F0F0F;
+            --dark-secondary: #1A1A1A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #9CA3AF;
+            --primary-color: #8B5CF6;
+            --primary-hover: #7C3AED;
+            --border-color: #2D2D2D;
+            --accent-gradient: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 15px;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1 { font-size: 3.2rem; font-weight: 700; margin: 0 0 1rem 0; }
+        h2 { font-size: 2.4rem; font-weight: 700; margin: 2rem 0 1.5rem 0; }
+        h3 { font-size: 1.6rem; font-weight: 600; margin: 1.5rem 0 1rem 0; }
+        h4 { font-size: 1.2rem; font-weight: 600; margin: 1.2rem 0 0.8rem 0; }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .menu-trigger {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--text-primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .menu-trigger:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* ===== BREADCRUMBS ===== */
+        .breadcrumbs {
+            margin-bottom: 2rem;
+            padding: 1.5rem 0;
+        }
+
+        .breadcrumbs-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 5%;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumbs a {
+            color: var(--text-secondary);
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--primary-color);
+        }
+
+        .breadcrumbs-separator {
+            margin: 0 0.8rem;
+            color: var(--border-color);
+        }
+
+        .breadcrumbs-current {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* ===== ARTICLE HEADER ===== */
+        .article-hero {
+            padding: 3rem 5% 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .article-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .featured-image {
+            margin: 2rem 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: var(--dark-secondary);
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .article-content {
+            padding: 0 5% 3rem;
+        }
+
+        .article-content ul {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .article-content ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+            padding-left: 0;
+        }
+
+        .article-content ol li {
+            margin-bottom: 1rem;
+        }
+
+        /* ===== FEATURE LIST ===== */
+        .feature-list {
+            background: var(--dark-secondary);
+            border-left: 3px solid var(--primary-color);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .feature-list ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-list strong {
+            color: var(--primary-color);
+        }
+
+        /* ===== CODE BLOCK ===== */
+        .code-block {
+            background: var(--dark-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #98C379;
+        }
+
+        code {
+            background: var(--dark-secondary);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .code-block code {
+            background: transparent;
+            padding: 0;
+        }
+
+        /* ===== HIGHLIGHT BOX ===== */
+        .highlight-box {
+            background: rgba(139, 92, 246, 0.08);
+            border-left: 3px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== TABLE ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--dark-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: rgba(139, 92, 246, 0.15);
+        }
+
+        th {
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-cta {
+            margin-bottom: 2rem;
+        }
+
+        .footer-cta h2 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .footer-social {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-social a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--primary-color);
+        }
+
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc {
+            background: var(--dark-secondary);
+            border-left: 3px solid var(--primary-color);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .toc ul {
+            margin: 1rem 0 0 1.5rem;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.6rem;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+        }
+
+        .toc a:hover {
+            color: var(--primary-color);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+            h3 { font-size: 1.3rem; }
+
+            .article-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .lead {
+                font-size: 1rem;
+            }
+
+            .article-meta {
+                font-size: 0.8rem;
+            }
+
+            .navbar {
+                height: 70px;
+            }
+
+            body {
+                padding-top: 70px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.8rem;
+            }
+
+            .article-content ul {
+                margin-left: 1.5rem;
+            }
+
+            .code-block {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.6rem; }
+            h2 { font-size: 1.3rem; }
+            h3 { font-size: 1.1rem; }
+
+            .article-hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .lead {
+                font-size: 0.95rem;
+            }
+
+            .feature-list,
+            .highlight-box,
+            .code-block,
+            .toc {
+                padding: 1rem;
+            }
+
+            table {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 0.6rem;
+            }
+
+            .cta-button {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+                margin: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="logo" href="/">
+                Collytics
+            </a>
+            <button class="menu-trigger">Menu</button>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMBS -->
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="/">Strona główna</a>
+            <span class="breadcrumbs-separator">&rsaquo;</span>
+            <a href="/blog">Blog</a>
+            <span class="breadcrumbs-separator">&rsaquo;</span>
+            <span class="breadcrumbs-current">Google Tag Manager: Kompleksowy Przewodnik</span>
+        </div>
+    </div>
+
+    <!-- ARTICLE HERO -->
+    <header class="article-hero">
+        <div class="article-container">
+            <div class="article-meta">
+                <span class="category-badge">Google Tag Manager</span>
+                <span>12 min czytania</span>
+                <span>&bull;</span>
+                <span>Styczeń 2026</span>
+            </div>
+            <h1>Google Tag Manager: Kompleksowy Przewodnik 2026</h1>
+            <p class="lead">Zaawansowana analityka i optymalizacja śledzenia. Dowiedz się jak zarządzać tagami, wdrażać GA4, konfigurować konwersje i zoptymalizować swoje śledzenie danych w 2026 roku.</p>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="article-content">
+        <div class="article-container">
+
+            <!-- TABLE OF CONTENTS -->
+            <div class="toc">
+                <h3>Spis Treści</h3>
+                <ul>
+                    <li><a href="#intro">Wprowadzenie do Google Tag Manager</a></li>
+                    <li><a href="#struktura">Struktura i Elementy GTM</a></li>
+                    <li><a href="#funkcje">Funkcje i Możliwości</a></li>
+                    <li><a href="#integracje">Integracje z GTM</a></li>
+                    <li><a href="#zaawansowane">Zaawansowane Funkcje</a></li>
+                    <li><a href="#praktyczne">Praktyczne Zastosowania</a></li>
+                    <li><a href="#przyszlosc">Przyszłość w 2026 roku</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION 1 -->
+            <section id="intro">
+                <h2>Wprowadzenie do Google Tag Manager</h2>
+
+                <h3>Czym jest GTM i dlaczego go potrzebujesz?</h3>
+                <p><strong>Google Tag Manager (GTM)</strong> to bezpłatne narzędzie od Google, które rewolucjonizuje sposób zarządzania kodami śledzącymi. Zamiast angażować programistów do wdrożenia każdego nowego piksela czy tagu, możesz to zrobić samodzielnie w kilka minut.</p>
+
+                <p>Przed GTM każda implementacja wymagała dostępu do kodu źródłowego. Teraz? Marketer może pracować całkowicie niezależnie.</p>
+
+                <div class="feature-list">
+                    <h4>Główne korzyści GTM:</h4>
+                    <ul>
+                        <li><strong>Niezależność marketingu</strong> – wdrażaj Facebook Pixel czy TikTok w minuty, bez IT</li>
+                        <li><strong>Optymalizacja wydajności</strong> – asynchroniczne ładowanie, żaden wpływ na szybkość strony</li>
+                        <li><strong>Pełna audytowalność</strong> – każda zmiana jest zarejestrowana, cofnięcie zajmuje jedno kliknięcie</li>
+                        <li><strong>Ujednolicone dane</strong> – wspólny standard dla GA4, Meta Ads, LinkedIn i wszystkich systemów</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 2 -->
+            <section id="struktura">
+                <h2>Struktura i Elementy Google Tag Manager</h2>
+
+                <h3>Kontener – fundamentalna jednostka GTM</h3>
+                <p><strong>Kontener</strong> to wirtualne pudełko, w którym rezydują wszystkie tagi, reguły i zmienne. Najczęściej: jeden kontener = jedna domena.</p>
+
+                <p>Dostępne typy kontenerów:</p>
+                <ul>
+                    <li><strong>Web</strong> – dla stron internetowych</li>
+                    <li><strong>Server</strong> – dla śledzenia po stronie serwera (rosnący standard)</li>
+                    <li><strong>iOS & Android</strong> – dla aplikacji mobilnych</li>
+                    <li><strong>AMP</strong> – dla Accelerated Mobile Pages</li>
+                </ul>
+
+                <h3>Triada: Tagi, Reguły i Zmienne</h3>
+                <p>Cała architektura GTM opiera się na trzech elementach:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Co to jest</th>
+                            <th>Przykład</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tag</strong></td>
+                            <td>Kod wysyłający dane do systemu zewnętrznego</td>
+                            <td>GA4, Google Ads, Facebook Pixel</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reguła (Trigger)</strong></td>
+                            <td>Warunek uruchamiający tag</td>
+                            <td>Kliknięcie przycisku, wyświetlenie strony, przewinięcie</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Zmienna</strong></td>
+                            <td>Dynamiczne wartości używane w tagach</td>
+                            <td>URL strony, ID transakcji, cena produktu</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Warstwa Danych (Data Layer) – Fundament</h3>
+                <p><strong>Data Layer to pomost między twoją stroną a systemami analitycznymi.</strong> Zamiast zmuszać GTM do "scrapowania" danych, deweloper przesyła je bezpośrednio:</p>
+
+                <div class="code-block">
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'event': 'purchase',
+  'transaction_id': 'TX_12345',
+  'value': 249.99,
+  'currency': 'PLN'
+});
+                </div>
+
+                <div class="highlight-box">
+                    <strong>💡 Ważne:</strong> Data Layer chroni twoją analitykę przed zmianami wizualnymi. Nawet jeśli zmienisz HTML, dane będą przepływać prawidłowo.
+                </div>
+            </section>
+
+            <!-- SECTION 3 -->
+            <section id="funkcje">
+                <h2>Funkcje i Możliwości w 2026 roku</h2>
+
+                <h3>1. Asynchroniczne Ładowanie – Bez Wpływu na Szybkość</h3>
+                <p>Tradycyjne tagi mogą drastycznie zwolnić stronę. GTM ładuje wszystko w tle – <strong>bez blokowania renderowania.</strong> Wynik? Szybsza strona, wyższe pozycje w Google, lepsze doświadczenie użytkownika.</p>
+
+                <h3>2. Preview Mode & Kontrola Wersji</h3>
+                <p>Google Tag Assistant pozwala na:</p>
+                <ul>
+                    <li>Testowanie zmian <strong>bez publikacji</strong></li>
+                    <li>Natychmiastowe widzenie, które tagi się uruchomiły</li>
+                    <li>Cofnięcie do poprzedniej wersji w jedno kliknięcie</li>
+                    <li>Pełna historia zmian (kto zmienił, kiedy, co)</li>
+                </ul>
+
+                <h3>3. Server-Side Tagging – Przyszłość Śledzenia</h3>
+                <p>W erze blokad reklamowych i Apple ITP, <strong>śledzenie po stronie serwera staje się normą.</strong> Zamiast wysyłać dane bezpośrednio z przeglądarki, konfigurujesz własny serwer chmurowy (w Google Cloud Platform).</p>
+
+                <p>Korzyści:</p>
+                <ul>
+                    <li>Omijanie adblocków i ITP Safari</li>
+                    <li>Pełna kontrola nad prywatnością</li>
+                    <li>Bardziej niezawodne dane konwersji</li>
+                    <li>Conformity z RODO bez kompromisów</li>
+                </ul>
+
+                <h3>4. Consent Mode v2 – Legalność + Dane</h3>
+                <p>Najnowsza wersja <strong>Consent Mode</strong> to przełom: możesz zbierać dane bez cookies, wysyłając "sygnały" do Google.</p>
+
+                <div class="highlight-box">
+                    <strong>Praktyka:</strong> Użytkownik odmawia zgody → Google Ads nie zapisuje cookies → ale Google dostaje anonymized signal o konwersji → Twoje kampanie wciąż się optymalizują. RODO pełnomocny, budżet nie zmarnowany.
+                </div>
+            </section>
+
+            <!-- SECTION 4 -->
+            <section id="integracje">
+                <h2>Integracje: Google Analytics, Ads i Poza</h2>
+
+                <h3>GA4 + GTM = Zaawansowana Analityka</h3>
+                <p>Integracja to dwa tagi:</p>
+                <ul>
+                    <li><strong>Tag konfiguracyjny</strong> – inicjuje sesję i Basic views</li>
+                    <li><strong>Event tags</strong> – śledzą konkretne zdarzenia (kliknięcia, scrolle, pobrania)</li>
+                </ul>
+
+                <p>Dzięki GTM możesz śledź zaawansowane metryki bez pisania kodu.</p>
+
+                <h3>Google Ads – Precyzja Konwersji</h3>
+                <p>Trzy kluczowe tagi:</p>
+                <ul>
+                    <li><strong>Conversion Tracking</strong> – każda sprzedaż, lead, rejestracja</li>
+                    <li><strong>Remarketing</strong> – budowanie list dla retargeting</li>
+                    <li><strong>Conversion Linker</strong> – optimalizacja atrybucji, first-party cookies</li>
+                </ul>
+
+                <h3>Meta Pixel + TikTok Pixel – Social Perfection</h3>
+                <p>Gotowe szablony w Community Gallery pozwalają na mapowanie e-commerce zdarzeń:</p>
+                <ul>
+                    <li>PageView → dodanie do koszyka → Purchase</li>
+                    <li>Facebook Algorithm → automatyczna optymalizacja bidów</li>
+                    <li>Precyzyjny lookalike dla skalowania</li>
+                </ul>
+            </section>
+
+            <!-- SECTION 5 -->
+            <section id="zaawansowane">
+                <h2>Zaawansowane Funkcje</h2>
+
+                <h3>Community Template Gallery</h3>
+                <p>Szablony tagów stworzone i zweryfikowane przez globalną społeczność. Zamiast kodować, klikasz "import".</p>
+
+                <h3>REST API – Automatyzacja dla Dużych Operacji</h3>
+                <p>Dla agencji zarządzających 100+ stronami, ręczna konfiguracja to wg mnie. REST API pozwala na:</p>
+                <ul>
+                    <li>Masowe tworzenie kontenerów</li>
+                    <li>Szablony tagów dla nowych klientów</li>
+                    <li>Automatyczne publikacje</li>
+                </ul>
+
+                <div class="code-block">
+// Przykład: Automatyczne tworzenie GA4 tagu
+POST /accounts/{accountId}/containers/{containerId}/tags
+{
+  "name": "GA4 - Event Tracking",
+  "type": "gaawe",
+  "parameter": [...]
+}
+                </div>
+            </section>
+
+            <!-- SECTION 6 -->
+            <section id="praktyczne">
+                <h2>Praktyczne Zastosowania</h2>
+
+                <h3>Case 1: Czyszczenie Brudnych Danych</h3>
+                <p>System e-commerce wysyła ceny z przecinkami zamiast z kropkami? GTM nie zobaczy problemu — ale raporty będą popsute. <strong>Rozwiązanie:</strong> Custom JavaScript variable, która przekonwertuje dane w locie.</p>
+
+                <h3>Case 2: Kampanie Afiliacyjne Bez Frauda</h3>
+                <p>Tag afiliacyjny uruchamia się <strong>tylko jeśli</strong>:</p>
+                <ul>
+                    <li>Użytkownik przyszedł z konkretnego UTM</li>
+                    <li>Dokonał zakupu w oknie czasowym 7 dni</li>
+                    <li>Kwota transakcji jest w rozsądnym zakresie</li>
+                </ul>
+
+                <p>Wynik? Żaden fraud, realne prowizje, partnerzy zadowoleni.</p>
+
+                <h3>Case 3: Consent Mode dla RODO</h3>
+                <p>Banner cookies → użytkownik odmawia → Consent Mode blokuje analytics_storage i ad_personalization → Google dostaje anonymized sygnały konwersji → Twoje kampanie wciąż działają. RODO pełnomocny.</p>
+            </section>
+
+            <!-- SECTION 7 -->
+            <section id="przyszlosc">
+                <h2>Przyszłość Google Tag Manager w 2026</h2>
+
+                <h3>Trend 1: Server-Side Everything</h3>
+                <p><strong>Tradycyjne cookies mają się. </strong> GTM ewoluuje w stronę Server-Side Tagging. Firmy które <strong>teraz</strong> przełączą się na SST, będą mieć przewagę konkurencyjną w 2026–2027.</p>
+
+                <h3>Trend 2: AI-Powered Optimization</h3>
+                <p>GTM integruje się z modelami ML Google'a. Automatyczne modelowanie konwersji, predykcja zachowań użytkownika, optymalizacja bez ręcznego monitoringu.</p>
+
+                <h3>Trend 3: First-Party Data Dominance</h3>
+                <p>GTM staje się <strong>centrum orkiestracji danych proprietary.</strong> Nie tylko zbierasz dane, ale je czyścisz, waliditujesz, przesyłasz do CRM, zasilasz AI. To już nie jest "tag manager" — to data hub.</p>
+
+                <div class="highlight-box">
+                    <strong>🚀 Bez danych – jesteś ślepy. GTM w 2026 to Twoja supermoc.</strong>
+                </div>
+            </section>
+
+
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-cta">
+                <h2>Chcesz wiedzieć więcej?</h2>
+                <p>Google Tag Manager to fundament nowoczesnej analityki. Zacznij od audytu swojego current setup i odkryj możliwości jakie tracisz.</p>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 0.85rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                Ostatnia aktualizacja: Styczeń 2026
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
