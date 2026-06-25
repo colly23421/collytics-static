@@ -14,11 +14,11 @@
   });
   </script>
   <script src="/js/cookie-banner.js" defer></script>
-  <!-- Google Analytics - ZABLOKOWANY DO ZGODY -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
-  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW"></script>
   <script>
-   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");
+  window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');
   </script>
 
   <meta charset="utf-8">
@@ -26,21 +26,18 @@
   <title>Google Tag Manager: Kompleksowy Przewodnik 2026 | Collytics</title>
 
   <!-- Google Tag Manager -->
-  <script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-TZCR8FPZ');</script>
-  <!-- End Google Tag Manager -->
 
-  <link href="/assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
   <link href="https://fonts.googleapis.com" rel="preconnect">
 
-  <link href="/css/global.css" rel="stylesheet">
-  <link href="/css/blog.css" rel="stylesheet">
-  <!-- Cookie Banner Styles -->
-  <link href="/css/cookie-banner.css" rel="stylesheet">
+  <link href="../css/global.css" rel="stylesheet">
+  <link href="../css/blog.css" rel="stylesheet">
+  <link href="../css/cookie-banner.css" rel="stylesheet">
 
   <link rel="canonical" href="https://www.collytics.io/blog/google-tag-manager-kompleksowy-przewodnik">
   <meta name="description" content="Kompleksowy przewodnik po Google Tag Manager w 2026. Zarządzanie tagami, GA4, konwersje, server-side tracking i Consent Mode. Wszystko co musisz wiedzieć o GTM.">
@@ -52,7 +49,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Google Tag Manager: Kompleksowy Przewodnik 2026">
   <meta name="twitter:description" content="Wszstko o GTM, data layer, integracji GA4, Meta Ads i zaawansowanym śledzeniu.">
-  
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -71,8 +68,8 @@
 
   <style>
     .highlight-box {
-      background: rgba(139, 92, 246, 0.08);
-      border-left: 3px solid #8B5CF6;
+      background: rgba(99, 102, 241, 0.08);
+      border-left: 3px solid #6366f1;
       border-radius: 0 12px 12px 0;
       padding: 20px 24px;
       margin: 28px 0;
@@ -87,7 +84,7 @@
     }
     .warning-box p { margin: 0; color: #c4c4d4; line-height: 1.7; }
     code {
-      background: rgba(139, 92, 246, 0.15);
+      background: rgba(99,102,241,0.15);
       color: #a5b4fc;
       padding: 2px 8px;
       border-radius: 5px;
@@ -100,7 +97,7 @@
     .article-content ol li { margin-bottom: 14px; color: #c4c4d4; line-height: 1.7; }
     .article-content strong { color: #ffffff; }
 
-    /* Widoczne, kontrastowe linki w treści artykułu */
+    /* Widoczne, kontrastowe linki w tresci artykulu */
     .article-content a {
       color: #818cf8;
       text-decoration: underline;
@@ -110,11 +107,11 @@
     }
     .article-content a:hover { color: #a5b4fc; }
 
-    /* CTA button */
+    /* Przycisk CTA */
     .article-cta { text-align: center; margin: 50px 0; }
     .article-cta .cta-button {
       display: inline-block;
-      background: #8B5CF6;
+      background: linear-gradient(135deg, #D96848 0%, #B81E72 100%);
       color: #ffffff !important;
       text-decoration: none;
       padding: 16px 40px;
@@ -124,16 +121,15 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .article-cta .cta-button:hover {
-      background: #7C3AED;
       transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.35);
+      box-shadow: 0 10px 25px rgba(184, 30, 114, 0.35);
       color: #ffffff !important;
     }
 
     /* Feature list */
     .feature-list {
       background: #1A1A1A;
-      border-left: 3px solid #8B5CF6;
+      border-left: 3px solid #6366f1;
       padding: 20px 24px;
       margin: 28px 0;
       border-radius: 8px;
@@ -163,12 +159,12 @@
     /* TOC */
     .toc {
       background: #1A1A1A;
-      border-left: 3px solid #8B5CF6;
+      border-left: 3px solid #6366f1;
       padding: 20px 24px;
       margin: 28px 0;
       border-radius: 8px;
     }
-    .toc h3 { margin-top: 0; margin-bottom: 12px; color: #8B5CF6; font-size: 1.1rem; }
+    .toc h3 { margin-top: 0; margin-bottom: 12px; color: #6366f1; font-size: 1.1rem; }
     .toc ul { margin: 0 0 0 20px; padding: 0; }
     .toc li { margin-bottom: 10px; }
     .toc a { color: #818cf8; text-decoration: none; }
@@ -184,13 +180,13 @@
       overflow: hidden;
     }
     .article-content table thead {
-      background: rgba(139, 92, 246, 0.15);
+      background: rgba(99, 102, 241, 0.15);
     }
     .article-content table th {
       padding: 16px 20px;
       text-align: left;
       font-weight: 600;
-      color: #8B5CF6;
+      color: #6366f1;
       border-bottom: 1px solid #2D2D2D;
     }
     .article-content table td {
@@ -210,8 +206,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
-
-  <link rel="icon" href="https://www.collytics.io/assets/images/Favicon%20Original.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -221,102 +215,67 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <nav class="navbar" id="navbar">
-   <div class="nav-container">
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
     <a class="logo" href="/index.html">
-     Collytics
+      <img alt="Collytics" src="../assets/images/logo main transparent.png">
     </a>
-    <button class="menu-trigger" id="menuTrigger">
-     Menu
-    </button>
-   </div>
-  </nav>
+    <button class="menu-trigger" id="menuTrigger">Menu</button>
+  </div>
+</nav>
 
-  <div class="dropdown-menu" id="dropdownMenu">
-   <button class="dropdown-close" id="closeMenu">
-    Close
-   </button>
-   <div class="dropdown-menu-inner">
+<div class="dropdown-menu" id="dropdownMenu">
+  <button class="dropdown-close" id="closeMenu">Close</button>
+  <div class="dropdown-menu-inner">
     <div class="menu-section">
-     <a href="/index.html">
-      Home
-     </a>
-     <a href="/services.html">
-      Oferta
-     </a>
-     <a href="/blog/index.html">
-      Blog
-     </a>
-     <a href="/about.html">
-      O nas
-     </a>
-     <a href="/kontakt.html">
-      Kontakt
-     </a>
+      <a href="/index.html">Home</a>
+      <a href="/services.html">Oferta</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="/about.html">O nas</a>
+      <a href="/kontakt.html">Kontakt</a>
     </div>
     <div class="social-links">
-     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
-      <img alt="Facebook" src="/assets/images/facebook.webp" loading="lazy">
-     </a>
-     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
-      <img alt="LinkedIn" src="/assets/images/cons8-linkedin-500.svg" loading="lazy">
-     </a>
-     <a href="https://x.com/collytics" target="_blank" title="Twitter">
-      <img alt="X" src="/assets/images/cons8-twitter-500.svg" loading="lazy">
-     </a>
+      <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+        <img alt="Facebook" src="../assets/images/facebook.webp" loading="lazy">
+      </a>
+      <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+        <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg" loading="lazy">
+      </a>
+      <a href="https://x.com/collytics" target="_blank" title="Twitter">
+        <img alt="X" src="../assets/images/cons8-twitter-500.svg" loading="lazy">
+      </a>
     </div>
-   </div>
   </div>
-  <div class="menu-overlay" id="menuOverlay">
-  </div>
+</div>
+<div class="menu-overlay" id="menuOverlay"></div>
 
-  <div class="breadcrumbs">
-   <div class="breadcrumbs-container">
-    <a href="/index.html">
-     Strona główna
-    </a>
-    <span class="breadcrumbs-separator">
-     &rsaquo;
-    </span>
-    <a href="/blog/index.html">
-     Blog
-    </a>
-    <span class="breadcrumbs-separator">
-     &rsaquo;
-    </span>
-    <span class="breadcrumbs-current">
-     Google Tag Manager: Kompleksowy Przewodnik
-    </span>
-   </div>
+<div class="breadcrumbs">
+  <div class="breadcrumbs-container">
+    <a href="../index.html">Strona główna</a>
+    <span class="breadcrumbs-separator">&rsaquo;</span>
+    <a href="index.html">Blog</a>
+    <span class="breadcrumbs-separator">&rsaquo;</span>
+    <span class="breadcrumbs-current">Google Tag Manager: Kompleksowy Przewodnik</span>
   </div>
+</div>
 
-  <header class="article-hero">
-   <div class="article-container">
+<header class="article-hero">
+  <div class="article-container">
     <div class="article-meta">
-     <span class="category-badge">
-      Google Tag Manager
-     </span>
-     <span>
-      12 min czytania
-     </span>
-     <span>
-      &bull;
-     </span>
-     <span>
-      15 stycznia 2026
-     </span>
+      <span class="category-badge">Google Tag Manager</span>
+      <span>12 min czytania</span>
+      <span>&bull;</span>
+      <span>15 stycznia 2026</span>
     </div>
-    <h1>
-     Google Tag Manager: Kompleksowy Przewodnik 2026
-    </h1>
+    <h1>Google Tag Manager: Kompleksowy Przewodnik 2026</h1>
     <p class="lead">
-     Zaawansowana analityka i optymalizacja śledzenia. Dowiedz się jak zarządzać tagami, wdrażać GA4, konfigurować konwersje i zoptymalizować swoje śledzenie danych w 2026 roku. Od podstaw do zaawansowanych funkcji.
+      Zaawansowana analityka i optymalizacja śledzenia. Dowiedz się jak zarządzać tagami, wdrażać GA4, konfigurować konwersje i zoptymalizować swoje śledzenie danych w 2026 roku. Od podstaw do zaawansowanych funkcji.
     </p>
-   </div>
-  </header>
+  </div>
+</header>
 
-  <main class="article-content">
-   <div class="article-container">
+<main class="article-content">
+  <div class="article-container">
 
     <!-- TOC -->
     <div class="toc">
@@ -332,43 +291,29 @@
       </ul>
     </div>
 
-    <!-- SECTION 1 -->
     <section id="intro">
      <h2>Wprowadzenie do Google Tag Manager</h2>
 
      <h3>Czym jest GTM i dlaczego go potrzebujesz?</h3>
      <p><strong>Google Tag Manager (GTM)</strong> to bezpłatne narzędzie od Google, które rewolucjonizuje sposób zarządzania kodami śledzącymi. Zamiast angażować programistów do wdrożenia każdego nowego piksela czy tagu, możesz to zrobić samodzielnie w kilka minut.</p>
 
-     <p>Przed GTM każda implementacja wymagała dostępu do kodu źródłowego. Teraz marketer może pracować całkowicie niezależnie.</p>
-
      <div class="feature-list">
-      <h4>Główne korzyści GTM:</h4>
       <ul>
-       <li><strong>Niezależność marketingu</strong> – wdrażaj Facebook Pixel czy TikTok w minuty, bez IT</li>
-       <li><strong>Optymalizacja wydajności</strong> – asynchroniczne ładowanie, żaden wpływ na szybkość strony</li>
-       <li><strong>Pełna audytowalność</strong> – każda zmiana jest zarejestrowana, cofnięcie zajmuje jedno kliknięcie</li>
-       <li><strong>Ujednolicone dane</strong> – wspólny standard dla GA4, Meta Ads, LinkedIn i wszystkich systemów</li>
+       <li><strong>Niezależność marketingu</strong> – wdrażaj bez IT</li>
+       <li><strong>Optymalizacja wydajności</strong> – asynchroniczne ładowanie</li>
+       <li><strong>Pełna audytowalność</strong> – każda zmiana zarejestrowana</li>
+       <li><strong>Ujednolicone dane</strong> – wspólny standard dla GA4, Meta, LinkedIn</li>
       </ul>
      </div>
     </section>
 
-    <!-- SECTION 2 -->
     <section id="struktura">
      <h2>Struktura i Elementy Google Tag Manager</h2>
 
      <h3>Kontener – fundamentalna jednostka GTM</h3>
-     <p><strong>Kontener</strong> to wirtualne pudełko, w którym rezydują wszystkie tagi, reguły i zmienne. Najczęściej: jeden kontener = jedna domena.</p>
-
-     <p>Dostępne typy kontenerów:</p>
-     <ul>
-      <li><strong>Web</strong> – dla stron internetowych</li>
-      <li><strong>Server</strong> – dla śledzenia po stronie serwera (rosnący standard)</li>
-      <li><strong>iOS &amp; Android</strong> – dla aplikacji mobilnych</li>
-      <li><strong>AMP</strong> – dla Accelerated Mobile Pages</li>
-     </ul>
+     <p><strong>Kontener</strong> to wirtualne pudełko z tagami, regułami i zmiennymi. Jeden kontener = jedna domena.</p>
 
      <h3>Triada: Tagi, Reguły i Zmienne</h3>
-     <p>Cała architektura GTM opiera się na trzech elementach:</p>
 
      <table>
       <thead>
@@ -381,24 +326,24 @@
       <tbody>
        <tr>
         <td><strong>Tag</strong></td>
-        <td>Kod wysyłający dane do systemu zewnętrznego</td>
+        <td>Kod wysyłający dane</td>
         <td>GA4, Google Ads, Facebook Pixel</td>
        </tr>
        <tr>
         <td><strong>Reguła (Trigger)</strong></td>
         <td>Warunek uruchamiający tag</td>
-        <td>Kliknięcie przycisku, wyświetlenie strony, przewinięcie</td>
+        <td>Kliknięcie, wyświetlenie, przewinięcie</td>
        </tr>
        <tr>
         <td><strong>Zmienna</strong></td>
-        <td>Dynamiczne wartości używane w tagach</td>
-        <td>URL strony, ID transakcji, cena produktu</td>
+        <td>Dynamiczne wartości</td>
+        <td>URL, ID transakcji, cena</td>
        </tr>
       </tbody>
      </table>
 
-     <h3>Warstwa Danych (Data Layer) – Fundament</h3>
-     <p><strong>Data Layer to pomost między twoją stroną a systemami analitycznymi.</strong> Zamiast zmuszać GTM do "scrapowania" danych, deweloper przesyła je bezpośrednio:</p>
+     <h3>Warstwa Danych (Data Layer)</h3>
+     <p><strong>Data Layer to pomost między stroną a systemami analitycznymi.</strong></p>
 
      <div class="code-block">
 window.dataLayer = window.dataLayer || [];
@@ -411,84 +356,62 @@ window.dataLayer.push({
      </div>
 
      <div class="highlight-box">
-      <p><strong>💡 Ważne:</strong> Data Layer chroni twoją analitykę przed zmianami wizualnymi. Nawet jeśli zmienisz HTML, dane będą przepływać prawidłowo.</p>
+      <p><strong>💡 Data Layer chroni analitykę przed zmianami wizualnymi.</strong> Nawet jeśli zmienisz HTML, dane będą przepływać prawidłowo.</p>
      </div>
     </section>
 
-    <!-- SECTION 3 -->
     <section id="funkcje">
-     <h2>Funkcje i Możliwości w 2026 roku</h2>
+     <h2>Funkcje i Możliwości w 2026</h2>
 
-     <h3>1. Asynchroniczne Ładowanie – Bez Wpływu na Szybkość</h3>
-     <p>Tradycyjne tagi mogą drastycznie zwolnić stronę. GTM ładuje wszystko w tle – <strong>bez blokowania renderowania.</strong> Wynik? Szybsza strona, wyższe pozycje w Google, lepsze doświadczenie użytkownika.</p>
+     <h3>1. Asynchroniczne Ładowanie</h3>
+     <p>GTM ładuje wszystko w tle – bez blokowania renderowania. Wynik: szybsza strona, wyższe pozycje w Google.</p>
 
      <h3>2. Preview Mode &amp; Kontrola Wersji</h3>
-     <p>Google Tag Assistant pozwala na:</p>
      <ul>
-      <li>Testowanie zmian <strong>bez publikacji</strong></li>
+      <li>Testowanie zmian bez publikacji</li>
       <li>Natychmiastowe widzenie, które tagi się uruchomiły</li>
       <li>Cofnięcie do poprzedniej wersji w jedno kliknięcie</li>
-      <li>Pełna historia zmian (kto zmienił, kiedy, co)</li>
      </ul>
 
-     <h3>3. Server-Side Tagging – Przyszłość Śledzenia</h3>
-     <p>W erze blokad reklamowych i Apple ITP, <strong>śledzenie po stronie serwera staje się normą.</strong> Zamiast wysyłać dane bezpośrednio z przeglądarki, konfigurujesz własny serwer chmurowy (w Google Cloud Platform).</p>
-
-     <p>Korzyści:</p>
-     <ul>
-      <li>Omijanie adblocków i ITP Safari</li>
-      <li>Pełna kontrola nad prywatnością</li>
-      <li>Bardziej niezawodne dane konwersji</li>
-      <li>Conformity z RODO bez kompromisów</li>
-     </ul>
-
-     <h3>4. Consent Mode v2 – Legalność + Dane</h3>
-     <p>Najnowsza wersja <strong>Consent Mode</strong> to przełom: możesz zbierać dane bez cookies, wysyłając "sygnały" do Google.</p>
+     <h3>3. Server-Side Tagging</h3>
+     <p>W erze adblocków, <strong>śledzenie po stronie serwera staje się normą.</strong></p>
 
      <div class="highlight-box">
-      <p><strong>Praktyka:</strong> Użytkownik odmawia zgody → Google Ads nie zapisuje cookies → ale Google dostaje anonymized signal o konwersji → Twoje kampanie wciąż się optymalizują. RODO pełnomocny, budżet nie zmarnowany.</p>
+      <p><strong>Korzyści:</strong> Omijanie adblocków • Pełna kontrola nad prywatnością • Bardziej niezawodne dane konwersji • Conformity z RODO</p>
      </div>
+
+     <h3>4. Consent Mode v2</h3>
+     <p>Zbierz dane bez cookies, wysyłając „sygnały" do Google. RODO pełnomocny, budżet nie zmarnowany.</p>
     </section>
 
-    <!-- SECTION 4 -->
     <section id="integracje">
      <h2>Integracje: Google Analytics, Ads i Poza</h2>
 
      <h3>GA4 + GTM = Zaawansowana Analityka</h3>
-     <p>Integracja to dwa tagi:</p>
      <ul>
-      <li><strong>Tag konfiguracyjny</strong> – inicjuje sesję i Basic views</li>
-      <li><strong>Event tags</strong> – śledzą konkretne zdarzenia (kliknięcia, scrolle, pobrania)</li>
+      <li><strong>Tag konfiguracyjny</strong> – inicjuje sesję</li>
+      <li><strong>Event tags</strong> – śledzą konkretne zdarzenia</li>
      </ul>
-
-     <p>Dzięki GTM możesz śledź zaawansowane metryki bez pisania kodu.</p>
 
      <h3>Google Ads – Precyzja Konwersji</h3>
-     <p>Trzy kluczowe tagi:</p>
      <ul>
-      <li><strong>Conversion Tracking</strong> – każda sprzedaż, lead, rejestracja</li>
+      <li><strong>Conversion Tracking</strong> – sprzedaż, leady, rejestracje</li>
       <li><strong>Remarketing</strong> – budowanie list dla retargeting</li>
-      <li><strong>Conversion Linker</strong> – optymalizacja atrybucji, first-party cookies</li>
+      <li><strong>Conversion Linker</strong> – optymalizacja atrybucji</li>
      </ul>
 
-     <h3>Meta Pixel + TikTok Pixel – Social Perfection</h3>
-     <p>Gotowe szablony w Community Gallery pozwalają na mapowanie e-commerce zdarzeń:</p>
-     <ul>
-      <li>PageView → dodanie do koszyka → Purchase</li>
-      <li>Facebook Algorithm → automatyczna optymalizacja bidów</li>
-      <li>Precyzyjny lookalike dla skalowania</li>
-     </ul>
+     <h3>Meta Pixel + TikTok Pixel</h3>
+     <p>Mapowanie e-commerce zdarzeń: PageView → AddToCart → Purchase.</p>
     </section>
 
-    <!-- SECTION 5 -->
     <section id="zaawansowane">
      <h2>Zaawansowane Funkcje</h2>
 
      <h3>Community Template Gallery</h3>
-     <p>Szablony tagów stworzone i zweryfikowane przez globalną społeczność. Zamiast kodować, klikasz "import".</p>
+     <p>Szablony tagów zweryfikowane przez społeczność. Zamiast kodować, klikasz &quot;import&quot;.</p>
 
-     <h3>REST API – Automatyzacja dla Dużych Operacji</h3>
-     <p>Dla agencji zarządzających 100+ stronami, ręczna konfiguracja to zmarnowany czas. REST API pozwala na:</p>
+     <h3>REST API – Automatyzacja</h3>
+     <p>Dla agencji zarządzających 100+ stronami:</p>
      <ul>
       <li>Masowe tworzenie kontenerów</li>
       <li>Szablony tagów dla nowych klientów</li>
@@ -500,45 +423,35 @@ window.dataLayer.push({
 POST /accounts/{accountId}/containers/{containerId}/tags
 {
   "name": "GA4 - Event Tracking",
-  "type": "gaawe",
-  "parameter": [...]
+  "type": "gaawe"
 }
      </div>
     </section>
 
-    <!-- SECTION 6 -->
     <section id="praktyczne">
      <h2>Praktyczne Zastosowania</h2>
 
      <h3>Case 1: Czyszczenie Brudnych Danych</h3>
-     <p>System e-commerce wysyła ceny z przecinkami zamiast z kropkami? GTM nie zobaczy problemu — ale raporty będą popsute. <strong>Rozwiązanie:</strong> Custom JavaScript variable, która przekonwertuje dane w locie.</p>
+     <p>E-commerce wysyła ceny z przecinkami zamiast z kropkami? Użyj custom JavaScript variable w GTM, która przekonwertuje dane w locie.</p>
 
      <h3>Case 2: Kampanie Afiliacyjne Bez Frauda</h3>
-     <p>Tag afiliacyjny uruchamia się <strong>tylko jeśli</strong>:</p>
-     <ul>
-      <li>Użytkownik przyszedł z konkretnego UTM</li>
-      <li>Dokonał zakupu w oknie czasowym 7 dni</li>
-      <li>Kwota transakcji jest w rozsądnym zakresie</li>
-     </ul>
-
-     <p>Wynik? Żaden fraud, realne prowizje, partnerzy zadowoleni.</p>
+     <p>Tag afiliacyjny uruchamia się <strong>tylko jeśli</strong>: użytkownik przyszedł z konkretnego UTM + dokonał zakupu w oknie 7 dni + kwota w rozsądnym zakresie.</p>
 
      <h3>Case 3: Consent Mode dla RODO</h3>
-     <p>Banner cookies → użytkownik odmawia → Consent Mode blokuje analytics_storage i ad_personalization → Google dostaje anonymized sygnały konwersji → Twoje kampanie wciąż działają. RODO pełnomocny.</p>
+     <p>Banner cookies → użytkownik odmawia → Consent Mode blokuje tracking → Google dostaje anonymized sygnały → kampanie wciąż działają.</p>
     </section>
 
-    <!-- SECTION 7 -->
     <section id="przyszlosc">
-     <h2>Przyszłość Google Tag Manager w 2026</h2>
+     <h2>Przyszłość w 2026</h2>
 
      <h3>Trend 1: Server-Side Everything</h3>
-     <p><strong>Tradycyjne cookies mają się. </strong> GTM ewoluuje w stronę Server-Side Tagging. Firmy które <strong>teraz</strong> przełączą się na SST, będą mieć przewagę konkurencyjną w 2026–2027.</p>
+     <p><strong>Tradycyjne cookies mają się.</strong> GTM ewoluuje w stronę Server-Side Tagging. Firmy które teraz przełączą się na SST, będą mieć przewagę konkurencyjną.</p>
 
      <h3>Trend 2: AI-Powered Optimization</h3>
-     <p>GTM integruje się z modelami ML Google'a. Automatyczne modelowanie konwersji, predykcja zachowań użytkownika, optymalizacja bez ręcznego monitoringu.</p>
+     <p>GTM integruje się z modelami ML Google'a. Automatyczne modelowanie konwersji i optymalizacja bez ręcznego monitoringu.</p>
 
      <h3>Trend 3: First-Party Data Dominance</h3>
-     <p>GTM staje się <strong>centrum orkiestracji danych proprietary.</strong> Nie tylko zbierasz dane, ale je czyścisz, waliditujesz, przesyłasz do CRM, zasilasz AI. To już nie jest "tag manager" — to data hub.</p>
+     <p>GTM staje się <strong>centrum orkiestracji danych proprietary.</strong> Nie tylko zbierasz dane, ale je czyścisz, waliditujesz, przesyłasz do CRM, zasilasz AI.</p>
 
      <div class="highlight-box">
       <p><strong>🚀 Bez danych – jesteś ślepy. GTM w 2026 to Twoja supermoc.</strong></p>
@@ -547,26 +460,26 @@ POST /accounts/{accountId}/containers/{containerId}/tags
 
     <div class="article-cta">
      <h3>Chcesz lepszą analitykę?</h3>
-     <p>Audyt Twojej current konfiguracji GTM. Pokazujemy co tracisz i jak to naprawić.</p>
-     <a class="cta-button" href="/kontakt.html">Skontaktuj się</a>
+     <p>Audyt Twojej konfiguracji GTM. Pokazujemy co tracisz i jak to naprawić.</p>
+     <a class="cta-button" href="../kontakt.html">Skontaktuj się z nami</a>
     </div>
 
-   </div>
-  </main>
+  </div>
+</main>
 
-  <script>
-    document.addEventListener("click", function(e) {
-      if(e.target.id === "menuTrigger") {
-        document.getElementById("dropdownMenu").classList.add("active");
-        document.getElementById("menuOverlay").classList.add("active");
-      }
-      if(e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
-        document.getElementById("dropdownMenu").classList.remove("active");
-        document.getElementById("menuOverlay").classList.remove("active");
-      }
-    });
-  </script>
-  <script src="/js/cookie-banner.js" defer></script>
-  <script src="/js/footer-component.js" defer></script>
+<script>
+  document.addEventListener("click", function(e) {
+    if(e.target.id === "menuTrigger") {
+      document.getElementById("dropdownMenu").classList.add("active");
+      document.getElementById("menuOverlay").classList.add("active");
+    }
+    if(e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
+      document.getElementById("dropdownMenu").classList.remove("active");
+      document.getElementById("menuOverlay").classList.remove("active");
+    }
+  });
+</script>
+<script src="../js/cookie-banner.js" defer></script>
+<script src="/js/footer-component.js" defer></script>
 </body>
 </html>
