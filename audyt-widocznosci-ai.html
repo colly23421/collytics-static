@@ -95,8 +95,6 @@
 
     <title>Audyt Widoczności AI - ChatGPT i Gemini | Collytics</title>
 
-    <link href="css/navbar-universal.css" rel="stylesheet">
-    
     <link href="css/style.css" rel="stylesheet">
     <link href="css/global.css" rel="stylesheet">
     <link href="css/home.css" rel="stylesheet">
@@ -197,13 +195,24 @@
             color: var(--text-primary);
         }
 
+        /* !important: global.css ma reguly [class*="hero"][style] i section[style*="background"]
+           (hotfixy do jasnego motywu na innych stronach), ktore wymuszaja kremowe tlo na kazdej
+           sekcji z "hero" w klasie lub "background" w inline style - w tym na tych ponizej */
         .hero.services-hero {
-            background: var(--dark-bg);
+            background: var(--dark-bg) !important;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
+        }
+        section.case-study {
+            background: var(--dark-bg) !important;
+            color: var(--text-primary) !important;
+        }
+        #kontakt-form {
+            background: var(--dark-bg) !important;
+            color: var(--text-primary) !important;
         }
 
         .case-study-container {
