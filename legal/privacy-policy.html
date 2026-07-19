@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Polityka Prywatności - Collytics</title>
+  
+  <link href="../assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link href="../css/global.css" rel="stylesheet">
+  <link href="../css/legal.css" rel="stylesheet">
+  <link href="../css/cookie-banner.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+</head>
+<body>
+<script src="/js/navbar-component.js" defer></script>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a class="logo" href="/index.html">
+        <img alt="Collytics" src="../assets/images/logo main transparent.png">
+      </a>
+      <button class="menu-trigger" id="menuTrigger">Menu</button>
+    </div>
+  </nav>
+
+  <div class="dropdown-menu" id="dropdownMenu">
+    <button class="dropdown-close" id="closeMenu">Close</button>
+    <div class="dropdown-menu-inner">
+      <div class="menu-section">
+        <a href="/index.html">Home</a>
+        <a href="/services.html">Oferta</a>
+        <a href="/blog/index.html">Blog</a>
+        <a href="/about.html">O nas</a>
+        <a href="/kontakt.html">Kontakt</a>
+      </div>
+    </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <main class="legal-container">
+    <h1>Polityka Prywatności</h1>
+    <p><em>Aktualizacja: 14.02.2026</em></p>
+
+    <p><strong>Ważne:</strong> Niniejszy dokument określa zasady przetwarzania danych użytkowników www.collytics.io oraz klientów Collytics.</p>
+
+    <h2>1. Administrator Danych Osobowych</h2>
+    <div class="contact-box-compact">
+        <p><strong>COLLYTICS OÜ</strong> | Kod: 17036315 | VAT: EE102761425</p>
+        <p>Siedziba: Harju maakond, Tallinn, Karamelli tn 2, 11317, Estonia</p>
+        <p>Biuro Warszawa: ul. Marszałkowska 126/134, 00-008 Warszawa</p>
+        <p>E-mail: <strong>hello@collytics.io</strong></p>
+    </div>
+
+    <h2>2. Zakres i Źródła Danych</h2>
+    <h3>2.1. Dane dobrowolne</h3>
+    <p>Zbieramy: Imię, nazwisko, e-mail, telefon, nazwa firmy, NIP oraz treść zapytań z formularzy i e-maili.</p>
+    <h3>2.2. Dane automatyczne</h3>
+    <p>Cookies zbierają: IP, typ przeglądarki, system operacyjny, czas wizyty i przeglądane podstrony.</p>
+
+    <h2>3. Cele i Podstawy Prawne</h2>
+    <table class="compact-table" style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid var(--border-color);">
+        <tr style="background: rgba(255,255,255,0.1); text-align: left;">
+            <th style="border: 1px solid var(--border-color);">Cel</th>
+            <th style="border: 1px solid var(--border-color);">Podstawa (RODO)</th>
+        </tr>
+        <tr><td style="border: 1px solid var(--border-color);">Realizacja umów</td><td style="border: 1px solid var(--border-color);">Art. 6 ust. 1 lit. b</td></tr>
+        <tr><td style="border: 1px solid var(--border-color);">Obsługa zapytań</td><td style="border: 1px solid var(--border-color);">Art. 6 ust. 1 lit. f</td></tr>
+        <tr><td style="border: 1px solid var(--border-color);">Newsletter/Marketing</td><td style="border: 1px solid var(--border-color);">Art. 6 ust. 1 lit. a</td></tr>
+        <tr><td style="border: 1px solid var(--border-color);">Księgowość/Prawo</td><td style="border: 1px solid var(--border-color);">Art. 6 ust. 1 lit. c</td></tr>
+    </table>
+
+    <h2>4. Okres Przechowywania</h2>
+    <ul>
+        <li>Umowy: do 6 lat od zakończenia.</li>
+        <li>Księgowość: 5 lat od końca roku podatkowego.</li>
+        <li>Marketing: do wycofania zgody.</li>
+    </ul>
+
+    <h2>5. Odbiorcy i Transfer Danych</h2>
+    <p>Dane przekazujemy dostawcom IT, hostingu i biurom rachunkowym. Przy transferze poza EOG stosujemy Standardowe Klauzule Umowne (np. Google, Meta).</p>
+
+    <h2>6. Twoje Prawa</h2>
+    <p>Masz prawo do: dostępu, sprostowania, usunięcia, ograniczenia, przenoszenia danych oraz sprzeciwu. Skargi: PUODO (Polska) lub AKI (Estonia).</p>
+
+    <h2>7. Cookies i Bezpieczeństwo</h2>
+    <p>Używamy cookies technicznych, analitycznych i marketingowych. Stosujemy szyfrowanie SSL/TLS oraz regularne kopie zapasowe.</p>
+
+    <h2>8. Kontakt</h2>
+    <p>Pytania prosimy kierować na: <strong>hello@collytics.io</strong>.</p>
+  </main>
+
+  
+
+  <script>
+    // Skrypt obsługi menu - sprawdzony
+    document.addEventListener("click", function(e) {
+      const menu = document.getElementById("dropdownMenu");
+      const overlay = document.getElementById("menuOverlay");
+      if(e.target.id === "menuTrigger") {
+        menu.classList.add("active");
+        overlay.classList.add("active");
+      } else if(e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+      }
+    });
+  </script>
+<script src="/js/footer-component.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+/* KONTAKT — theme v2 */
+.contact-page-container{max-width:1140px;margin:0 auto;padding:130px 24px 40px}
+.contact-header{max-width:640px;margin-bottom:44px}
+.contact-header p{color:var(--text-dim);margin-top:12px}
+.contact-main-section{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,64px);align-items:start}
+.contact-column{display:flex;flex-direction:column;gap:14px}
+.contact-info p{color:var(--text-dim);margin-bottom:14px}
+.contact-info strong{color:var(--text)}
+.contact-info a{color:var(--accent-2)}
+.map-container iframe{width:100%;height:300px;border:1px solid var(--border);border-radius:var(--radius)}
+@media(max-width:900px){.contact-main-section{grid-template-columns:1fr}}

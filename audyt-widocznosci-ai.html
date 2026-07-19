@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("consent", "default", {
+            "analytics_storage": "denied",
+            "ad_storage": "denied",
+            "ad_user_data": "denied",
+            "ad_personalization": "denied"
+        });
+    </script>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    // USUNIĘTO: fbq init i track - teraz zarządza tym cookie-banner.js
+    </script>
+     <script>
+    // Helper do odczytu cookies
+    function getCookie(name) {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? match[2] : null;
+    }
+
+    // Helper do sprawdzania zgody
+    function hasMarketingConsent() {
+        try {
+            const consentData = localStorage.getItem('cookie_consent');
+            if (!consentData) return false;
+            const parsed = JSON.parse(consentData);
+            return parsed.data && parsed.data.marketing === true;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    async function sendToFBCAPI(eventName, customData = {}, extraData = {}, manualEventID = null) {
+      // 1. Sprawdź zgodę przed wysyłką (RODO)
+      if (!hasMarketingConsent()) {
+          console.warn(`CAPI [${eventName}]: Blocked due to no marketing consent 🛑`);
+          return;
+      }
+
+      const workerUrl = 'https://fb-capi-collytics.business-8be.workers.dev/';
+      // Użyj przekazanego ID lub wygeneruj nowe
+      const eventId = manualEventID || crypto.randomUUID();
+
+      try {
+        const response = await fetch(workerUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            eventName: eventName,
+            eventId: eventId,              // Przekazujemy ID
+            fbp: getCookie('_fbp'),        // cookie Facebook Pixel
+            fbc: getCookie('_fbc'),        // cookie Facebook Click ID
+            sourceUrl: window.location.href,
+            customData: customData,
+            ...extraData                   // np. email
+          }),
+        });
+
+        if (response.ok) {
+          console.log(`CAPI [${eventName}]: Sent ✅ (ID: ${eventId})`);
+        } else {
+          console.log(`CAPI [${eventName}]: Server Error ❌`);
+        }
+      } catch (err) {
+        console.error('CAPI Connection Error:', err);
+      }
+    }
+
+    // USUNIĘTO automatyczne wywołanie PageView - teraz zarządza tym cookie-banner.js
+     </script>
+    <script src="js/cookie-banner.js" defer></script>
+    <script>
+        (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "GT-5R3VKTJG");
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", "G-S90XQQ06FW");
+    </script>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Audyt Widoczności AI - ChatGPT i Gemini | Collytics</title>
+
+    <link href="css/navbar-universal.css" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/services.css" rel="stylesheet">
+
+    <link href="assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
+    <link href="assets/images/Wordpress Transparent.png" rel="icon" type="image/png">
+    <meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Audyt Widocznosci AI",
+      "description": "Kompleksowy audyt widoczności firmy w asystentach AI: ChatGPT, Google Gemini, Perplexity AI, Claude i Google AI Overviews. Optymalizacja GEO (Generative Engine Optimization) i dane strukturalne JSON-LD.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Collytics",
+        "url": "https://www.collytics.io",
+        "logo": "https://www.collytics.io/assets/images/logo main transparent.png"
+      },
+      "url": "https://www.collytics.io/audyt-widocznosci-ai",
+      "areaServed": "PL",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "OBECNOŚĆ AI",
+          "price": "490",
+          "priceCurrency": "PLN",
+          "description": "Fundament widoczności w AI: dane strukturalne JSON-LD i raport startowy."
+        },
+        {
+          "@type": "Offer",
+          "name": "EKSPERT AI",
+          "price": "1490",
+          "priceCurrency": "PLN",
+          "description": "Optymalizacja GEO: tresci gotowe do cytowania przez asystentów AI."
+        },
+        {
+          "@type": "Offer",
+          "name": "AI DOMINATOR",
+          "price": "3490",
+          "priceCurrency": "PLN",
+          "description": "Pełna dominacja w AI: przejecie pozycji konkurencji i monitoring miesieczny."
+        }
+      ],
+      "mainEntityOfPage": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Mam już SEO. Po co mi audyt widoczności AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SEO to walka o miejsce na liście linków w Google. Asystenci AI nie pokazuja listy linkow i podaja jedna rekomendacje. Albo Twoja firma jest w tej odpowiedzi, albo jej nie ma. SEO tam nie sięga."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Które platformy AI sprawdzacie?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Audytujemy ChatGPT, Gemini, Perplexity, Claude i Google AI Overviews."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kiedy zobaczę pierwsze efekty?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zwykle po 2 do 4 tygodni od wdrożenia danych strukturalnych i optymalizacji treści."
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <link href="css/cookie-banner.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color-new: #F47851;
+            --accent-gradient-new: linear-gradient(135deg, #D96848 0%, #B81E72 100%);
+            --dark-card: #1a1a1a;
+        }
+
+        .gradient-text-new {
+            background: var(--accent-gradient-new);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .hero.services-hero {
+            padding-bottom: 80px;
+        }
+
+        .problem-section {
+            padding: 80px 5%;
+            background: var(--dark-bg);
+            text-align: center;
+        }
+        .problem-section h2 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .problem-card {
+            background: var(--dark-card);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+        .problem-card h3 {
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .problem-card p {
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+        }
+
+        .solution-section {
+            padding: 80px 5%;
+            background: var(--dark-secondary);
+        }
+        .solution-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .solution-container h2 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .solution-container .service-features {
+            list-style: none !important;
+            padding-left: 0 !important;
+            margin-top: 0 !important;
+        }
+        .solution-container .service-features li {
+            font-size: 0.88rem;
+            margin-bottom: 10px;
+        }
+
+        .process-section {
+            padding: 100px 5%;
+            background: var(--dark-bg);
+            text-align: center;
+        }
+        .process-section h2 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .process-step {
+            background: var(--dark-card);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        .process-step .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-gradient-new);
+            border-radius: 50%;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .process-step h3 {
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .process-step p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .pricing-section {
+            padding: 100px 5%;
+            background: var(--dark-secondary);
+            text-align: center;
+        }
+        .pricing-section h2 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+        .pricing-card {
+            background: var(--dark-card);
+            padding: 40px;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .pricing-card .price {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        .pricing-card .price-note {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .pricing-card .package-goal {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--primary-color-new);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .pricing-card .service-features {
+            margin-top: 0;
+            margin-bottom: 30px;
+            flex-grow: 1;
+            list-style: none;
+            padding: 0;
+        }
+        .pricing-card .service-features li {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .pricing-card .service-features li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color-new);
+            font-weight: bold;
+        }
+        .pricing-card .cta-button, .pricing-card .btn-outline {
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .btn-outline {
+            display: inline-block;
+            padding: 14px 20px;
+            border: 1px solid var(--primary-color-new);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background: var(--primary-color-new);
+        }
+        .pricing-card.recommended {
+            border-color: var(--primary-color-new);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+        }
+        .recommend-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary-color-new);
+            color: white;
+            padding: 5px 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+        }
+
+        .faq-section {
+            padding: 100px 5%;
+            background: var(--dark-bg);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.1rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+            background: var(--accent-gradient-new);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .faq-item summary {
+            font-size: 0.88rem;
+            font-weight: 500;
+            padding: 24px 0;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            padding-right: 36px;
+            color: var(--text-primary);
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            background: var(--accent-gradient-new);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: transform 0.2s;
+        }
+        .faq-item[open] summary::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+        .faq-content {
+            padding-bottom: 24px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            font-size: 0.88rem;
+        }
+
+        .final-cta-section .footer-cta {
+             margin-bottom: 0;
+             margin-top: -50px;
+             position: relative;
+             z-index: 2;
+        }
+
+        #kontakt-form h2 {
+            font-size: 2.1rem;
+            margin-bottom: 16px;
+        }
+        .form-group-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-group .form-input.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .hero-with-grid-bg {
+            position: relative;
+            overflow: visible;
+            padding-top: 120px;
+            padding-bottom: 140px;
+        }
+
+        /* siatka */
+        .hero-with-grid-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 48px 48px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* glowy kolorowe - rozlane daleko poza sekcje */
+        .hero-with-grid-bg::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 160%;
+            background-image:
+                radial-gradient(ellipse 60% 55% at 15% 40%, rgba(185, 50, 120, 0.22) 0%, transparent 70%),
+                radial-gradient(ellipse 55% 50% at 85% 60%, rgba(80, 60, 200, 0.18) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 35% at 50% 90%, rgba(120, 40, 160, 0.12) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-with-grid-bg h1,
+        .hero-with-grid-bg p,
+        .hero-with-grid-bg .cta-button,
+        .hero-with-grid-bg .hero-tech-logos {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tech-logos {
+            margin-top: 48px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-tech-logos p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .tech-logo-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .tech-logo-item {
+            display: inline-flex;
+            padding: 8px 18px;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            background-clip: padding-box;
+            background: var(--accent-gradient-new);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        .tech-logo-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, rgba(99,102,241,0.4), rgba(236,72,153,0.4)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .tech-logo-item:hover::before {
+            background: linear-gradient(135deg, rgba(99,102,241,0.8), rgba(236,72,153,0.8)) border-box;
+        }
+
+        @media (max-width: 992px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card { max-width: 500px; margin: 0 auto; }
+            .solution-container { grid-template-columns: 1fr; }
+            .hero.services-hero h1 { font-size: 2.4rem !important; }
+        }
+        @media (max-width: 768px) {
+            .problem-grid { grid-template-columns: 1fr; }
+            .form-group-grid { grid-template-columns: 1fr; }
+            .hero.services-hero h1 { font-size: 1.9rem !important; }
+            .hero.services-hero p { font-size: 0.82rem !important; }
+            .case-buttons { flex-direction: column; align-items: center; }
+            .case-buttons a { width: 100%; text-align: center; max-width: 300px; }
+            .hero-tech-logos { max-width: 90%; }
+            .tech-logo-list { gap: 10px; }
+            .tech-logo-item { font-size: 0.8rem; padding: 6px 12px; }
+        }
+    </style>
+
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZCR8FPZ');</script>
+
+  <link rel="canonical" href="https://www.collytics.io/audyt-widocznosci-ai">
+  <meta name="description" content="Audyt techniczny przygotowania strony pod asystentów AI. Sprawdzamy strukturę danych, JSON-LD i widoczność w ChatGPT, Gemini i Perplexity. Raport w 48h. Bez zobowiązań.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.collytics.io/audyt-widocznosci-ai">
+  <meta property="og:title" content="Audyt Widoczności AI - ChatGPT i Gemini | Collytics">
+  <meta property="og:description" content="Audyt techniczny przygotowania strony pod asystentów AI. Sprawdzamy strukturę danych, JSON-LD i widoczność w ChatGPT, Gemini i Perplexity. Raport w 48h. Bez zobowiązań.">
+  <meta property="og:image" content="https://www.collytics.io/img/og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Audyt Widoczności AI - ChatGPT i Gemini | Collytics">
+  <meta name="twitter:description" content="Audyt techniczny przygotowania strony pod asystentów AI. Sprawdzamy strukturę danych, JSON-LD i widoczność w ChatGPT, Gemini i Perplexity. Raport w 48h. Bez zobowiązań.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Audyt Widoczności AI - ChatGPT i Gemini | Collytics",
+    "url": "https://www.collytics.io/audyt-widocznosci-ai",
+    "description": "Audyt techniczny przygotowania strony pod asystentów AI. Sprawdzamy strukturę danych, JSON-LD i widoczność w ChatGPT, Gemini i Perplexity. Raport w 48h. Bez zobowiązań.",
+    "isPartOf": {"@type": "WebSite", "name": "Collytics", "url": "https://www.collytics.io"}
+  }
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+</head>
+
+<body>
+<script src="/js/navbar-component.js" defer></script>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a class="logo" href="index.html">
+                <img alt="Collytics" src="assets/images/logo main transparent.png">
+            </a>
+            <button class="menu-trigger" id="menuTrigger">Menu</button>
+        </div>
+    </nav>
+
+    <div class="dropdown-menu" id="dropdownMenu">
+        <button class="dropdown-close" id="closeMenu">Close</button>
+        <div class="dropdown-menu-inner">
+            <div class="menu-section">
+                <a href="index.html">Home</a>
+                <a href="services.html">Oferta</a>
+                <a href="blog/index.html">Blog</a>
+                <a href="about.html">O nas</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <section class="hero services-hero hero-with-grid-bg" style="display: block;">
+      <h1 style="font-size: 3rem; line-height: 1.2; margin-bottom: 24px; width: 100%; text-align: center;">
+          Czy AI poleca Twoją firmę,<br>czy <span class="gradient-text-new">Twoją konkurencję?</span>
+      </h1>
+      <p style="font-size: 0.88rem; max-width: 700px; margin: 0 auto; color: var(--text-secondary); text-align: center;">
+          Twoi klienci już teraz pytają asystentów AI o polecenie firmy, produktu, specjalisty. Jeśli AI nie zna Twojej marki, poleca kogoś innego. Sprawdzamy to i naprawiamy.
+      </p>
+      <br>
+      <a class="cta-button" href="#kontakt-form" style="background: var(--accent-gradient-new); margin-bottom: 48px;">Sprawdź jak asystenci AI widzą Twoją firmę</a>
+
+      <div class="hero-tech-logos">
+        <p>Sprawdzamy widoczność Twojej firmy na wszystkich ważnych platformach AI</p>
+        <div class="tech-logo-list">
+            <span class="tech-logo-item">Google AI Search</span>
+            <span class="tech-logo-item">ChatGPT (OpenAI)</span>
+            <span class="tech-logo-item">Gemini (Google)</span>
+            <span class="tech-logo-item">Claude (Anthropic)</span>
+            <span class="tech-logo-item">Perplexity AI</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem-section">
+        <h2>SEO to już za mało.<br>Klienci szukaja rekomendacji w asystentach AI.</h2>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h3>Twoja firma nie istnieje dla AI</h3>
+                <p>Twoje SEO jest bez zarzutu. Strona ładuje się w 2 sekundy. Ale kiedy klient pyta asystenta AI o firmę w Twojej branży, pada nazwa konkurencji. Twoja marka? Cisza.</p>
+            </div>
+            <div class="problem-card">
+                <h3>AI mówi o Tobie rzeczy, których nie powiedziałeś</h3>
+                <p>Modele AI interpolują dane. Jeśli nie znają Twojej aktualnej oferty, generują przybliżenie: błędne ceny, nieistniejące usługi, przestarzałe godziny. Klient nie zaufa zanim zadzwoni.</p>
+            </div>
+            <div class="problem-card">
+                <h3>Każde pytanie do AI bez Twojej odpowiedzi to lead dla konkurencji</h3>
+                <p>AI kształtuje decyzje zakupowe zanim klient trafi na Google. Firmy które zadziałają teraz, przez kolejne lata będą w tych odpowiedziach. Firmy które poczekają, nie.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution-section">
+        <div class="solution-container">
+            <div>
+                <h2>Jak sprawić żeby asystenci AI mówili o Tobie dobrze i często</h2>
+                <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7;">
+                    Audytujemy co ChatGPT, Gemini i Perplexity mówią o Twojej firmie. Naprawiamy techniczne podstawy które decydują o tym czy AI Cię cytuje. Monitorujemy zmiany co miesiąc.
+                </p>
+            </div>
+            <div>
+                <ul class="service-features">
+                    <li>Zdominuj Rekomendacje AI</li>
+                    <li>Kontroluj Swój Przekaz w 100%</li>
+                    <li>Zbuduj Autorytet Eksperta</li>
+                    <li>Wyprzedź Rynek</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-study" style="background: var(--dark-bg);">
+        <div class="case-study-container">
+            <img alt="BDental" src="assets/images/partners/bdental.webp" style="width: 200px;" loading="lazy">
+            <div class="case-content">
+                <p style="color: var(--text-secondary); margin-bottom: 16px;">CASE STUDY:</p>
+                <h2>Klinika BDental</h2>
+                <h3>BDental: 7 na 10 zapytań w asystentach AI kończy się ich rekomendacją. W 4 tygodnie.</h3>
+                <p class="case-description">Klinika BDental w Gliwicach miała świetne SEO, ale asystenci AI jej nie znali. Po wdrożeniu pełnego zestawu danych strukturalnych, w ciągu 4 tygodni 7 na 10 testowanych zapytań o stomatologię w regionie zwracalo BDental jako rekomendację numer 1.</p>
+                <div class="case-buttons" style="display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
+                    <a class="cta-button" href="#kontakt-form" style="margin: 0; background: var(--primary-color);">Chcę takich wyników dla swojej firmy</a>
+                    <a class="btn-outline" href="https://www.collytics.io/blog/jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai.html" target="_blank" style="margin: 0;">Przeczytaj Case Study</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <h2>Jak działamy: 3 kroki do widoczności w AI</h2>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Audyt: widzimy co AI o Tobie mówi</h3>
+                <p>Testujemy setki zapytań na ChatGPT, Gemini, Perplexity i Google AI. Pokazujemy na czarno-białym co działa, co jest błędem i gdzie jest Twoja konkurencja.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Wdrożenie: naprawiamy to co AI widzi</h3>
+                <p>Implementujemy dane strukturalne, formatujemy treści pod cytowanie przez AI i budujemy techniczne podstawy autorytetu. Wdrożenie w 7 do 14 dni roboczych.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Monitoring: pilnujemy Twojej pozycji co miesiąc</h3>
+                <p>Algorytmy AI zmieniają się co kilka tygodni. Monitorujemy Twoją widoczność w cyklu miesięcznym i reagujemy zanim stracisz zdobytą pozycję.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <h2>Wybierz pakiet dopasowany do Twoich celów</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Pakiet 🥉 OBECNOŚĆ AI</h3>
+                <div class="price">490 PLN netto</div>
+                <div class="price-note">(jednorazowo)</div>
+                <div class="package-goal">Punkt wyjścia. Sprawiamy że AI rozumie kim jestes, co sprzedajesz i komu. Bez tego kroku zadna dalsza optymalizacja nie ma sensu.</div>
+                <ul class="service-features">
+                    <li><strong>Wizytówka dla AI:</strong> Twoja firma dostaje czytelny opis w jezyku ktory rozumieją algorytmy. Asystenci AI wiedzą czym się zajmujesz.</li>
+                    <li><strong>Raport startowy:</strong> Widzisz dokładnie co asystenci AI mówią o Twojej firmie dzisiaj. Dobrego i złego.</li>
+                </ul>
+                <a href="#kontakt-form" class="btn-outline">Chcę żeby AI mnie znało</a>
+            </div>
+
+            <div class="pricing-card recommended">
+                <div class="recommend-badge">NAJCZĘŚCIEJ WYBIERANY</div>
+                <h3>Pakiet 🥈 EKSPERT AI</h3>
+                <div class="price">1 490 PLN netto</div>
+                <div class="price-note">(jednorazowo)</div>
+                <div class="package-goal">AI nie tylko Cię zna, zaczyna Cię cytować. Twoje treści stają się źródłem z którego asystenci AI czerpią odpowiedzi dla użytkowników.</div>
+                <ul class="service-features">
+                    <li>Wszystko z pakietu OBECNOŚĆ AI.</li>
+                    <li><strong>Treści gotowe do cytowania:</strong> Twoje usługi i ceny są sformatowane tak żeby asystent AI mógł je dosłownie przytoczyć klientowi.</li>
+                    <li><strong>Dotarcie bez klikania:</strong> Trafiasz do klientów którzy nigdy nie wchodzą na strony, bo ufają odpowiedzi AI bardziej niż linkom.</li>
+                    <li><strong>Techniczny autorytet:</strong> AI traktuje Twoje treści jako wiarygodne źródło, nie jedną z wielu stron w sieci.</li>
+                </ul>
+                <a href="#kontakt-form" class="cta-button" style="background: var(--accent-gradient-new);">Chcę być cytowany przez AI</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Pakiet 🥇 LIDER AI</h3>
+                <div class="price">3 490 PLN netto</div>
+                <div class="price-note">(jednorazowo)</div>
+                <div class="package-goal">Pełna dominacja. Analizujemy co AI mówi o Twojej konkurencji, przejmujemy ich miejsce w rekomendacjach i budujemy autorytet ktory sprawia ze AI nie wyobaza sobie tej branzy bez Twojej firmy.</div>
+                <ul class="service-features">
+                    <li>Wszystko z pakietu Authority.</li>
+                    <li><strong>Dokumentacja ekspertyzy:</strong> Technicznie udowadniamy AI że jesteś ekspertem. Nie deklarujesz kompetencji, tylko je dokumentujesz w języku który modele rozumieją.</li>
+                    <li><strong>Przejecie pozycji konkurencji:</strong> Wiemy co asystenci AI polecają zamiast Ciebie i wiemy jak zabrać im to miejsce.</li>
+                    <li><strong>Bonus Google CSS:</strong> Obniżamy koszty kampanii Google Shopping o ok. 20% bez zmiany budzetu.</li>
+                </ul>
+                <a href="#kontakt-form" class="btn-outline">Chcę zdominować AI w swojej branży</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2>Najczęściej zadawane pytania</h2>
+        <details class="faq-item">
+            <summary>Mam już SEO. Po co mi to?</summary>
+            <div class="faq-content">
+                <p>SEO to walka o miejsce na liście linków w Google. Ale kiedy ktoś pyta Gemini albo Perplexity o polecenie firmy, żadna lista linków się nie pojawia. Dostaje jedną odpowiedź. Albo Twoja firma jest w tej odpowiedzi, albo jej nie ma. SEO tam nie sięga.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Które platformy AI sprawdzacie?</summary>
+            <div class="faq-content">
+                <p>Te z których korzystają Twoi klienci: ChatGPT, Gemini, Perplexity, Claude i Google AI Overviews. Każda działa trochę inaczej i każdą sprawdzamy osobno, bo wyniki potrafią się różnić.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Kiedy zobaczę pierwsze efekty?</summary>
+            <div class="faq-content">
+                <p>Zwykle po 2 do 4 tygodni. Nie jest to magia tylko techniczne wdrożenie, które AI musi zobaczyć i zaindeksować. U BDental zajęło to 4 tygodnie.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Prowadzę mały biznes lokalny. Czy to w ogóle dla mnie?</summary>
+            <div class="faq-content">
+                <p>Szczególnie dla Ciebie. Ludzie pytają asystentów AI o rzeczy w stylu "dobry dentysta niedaleko" albo "polecana księgowość w Warszawie". Lokalne firmy które teraz zadbają o widocznosc będą wygrywać te pytania przez lata. Twoja konkurencja pewnie jeszcze o tym nie wie.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>AI już coś o mnie mowi i to są bzdury. Da się to naprawić?</summary>
+            <div class="faq-content">
+                <p>Tak i to jeden z powodów dla których warto zacząć od razu. Mieliśmy klientów którzy dowiedzieli się od nas że asystent AI podawał ich starą lokalizację i nieaktualne godziny otwarcia. Klient dostawał złe informacje zanim w ogóle zdążył zadzwonić.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Czy będę musiał przerabiać całą stronę?</summary>
+            <div class="faq-content">
+                <p>Nie. Pracujemy na tym co już masz. Dodajemy dane strukturalne w tle i dostosowujemy istniejące treści. Nie dotykamy wyglądu strony.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Co zostaje po współpracy?</summary>
+            <div class="faq-content">
+                <p>Wszystko co wdrożyliśmy zostaje na Twojej stronie na zawsze. Asystenci AI będą to czytać niezależnie od tego czy będziemy dalej współpracować. Monitoring to już osobna sprawa dla firm które chcą wiedzieć co się zmienia na bieżąco.</p>
+            </div>
+        </details>
+    </section>
+
+    <section id="kontakt-form" style="padding: 100px 5%; background: var(--dark-bg);">
+        <div class="contact-container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <div class="contact-column">
+                <h3 style="color: var(--text-primary); font-size: 1.75rem; font-weight: 700; margin-bottom: 16px;">Sprawdzamy jak Twoja strona jest przygotowana pod AI</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 32px;">Wpisz adres strony i dane kontaktowe. W ciągu 48 godzin przysyłamy raport z oceną technicznego przygotowania strony pod asystentów AI. Bez zobowiązań.</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <div class="form-group-grid">
+                            <input class="form-input" name="name" placeholder="Imię" required type="text">
+                            <input class="form-input" name="email" placeholder="Email" required type="email">
+                        </div>
+                        <input class="form-input full-width" name="phone" placeholder="Numer telefonu" required type="tel" style="margin-top: 20px;">
+                        <input class="form-input full-width" name="website" placeholder="https://twojafirma.pl" required type="url" style="margin-top: 20px;" pattern="https?://.+" title="Podaj adres strony zaczynający się od http:// lub https://">
+                        <textarea class="form-input full-width" name="message" placeholder="Który pakiet Cię interesuje? (opcjonalnie)" rows="4" style="margin-top: 20px;"></textarea>
+                        <div class="form-checkbox">
+                            <input id="consent-new" required type="checkbox">
+                            <label for="consent-new">Wyrażam zgodę na przetwarzanie moich danych osobowych przez Collytics OÜ w celu odpowiedzi na zapytanie. <a href="/polityka-prywatnosci.html" target="_blank" style="color: #F47851; text-decoration: underline;">Polityka prywatnosci</a></label>
+                        </div>
+                        <button class="cta-button" style="width: 100%; background: var(--accent-gradient-new);" type="submit">Wyślij mi raport</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('.contact-form');
+            if (form) {
+                // Auto-dodaj https:// jeśli użytkownik wpisał bez protokołu
+                const websiteInput = form.querySelector('input[name="website"]');
+                websiteInput.addEventListener('blur', function () {
+                    let val = this.value.trim();
+                    if (val && !val.match(/^https?:\/\//)) {
+                        this.value = 'https://' + val;
+                    }
+                });
+
+                form.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    // Walidacja URL
+                    const websiteVal = websiteInput.value.trim();
+                    try {
+                        new URL(websiteVal);
+                    } catch (_) {
+                        websiteInput.setCustomValidity('Podaj prawidłowy adres strony, np. https://twojafirma.pl');
+                        websiteInput.reportValidity();
+                        return;
+                    }
+                    websiteInput.setCustomValidity('');
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+
+                    const formData = {
+                        name: form.querySelector('input[name="name"]').value,
+                        email: form.querySelector('input[name="email"]').value,
+                        phone: form.querySelector('input[name="phone"]').value,
+                        website: form.querySelector('input[name="website"]').value,
+                        message: form.querySelector('textarea[name="message"]').value
+                    };
+
+                    submitButton.textContent = 'Wysyłanie...';
+                    submitButton.disabled = true;
+
+                    try {
+                        const response = await fetch('https://api.web3forms.com/submit', {
+                            method: 'POST',
+                            headers: { 
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                access_key: "7eb642f4-bed3-4900-9563-7901d60120c8",
+                                name: formData.name,
+                                email: formData.email,
+                                from_name: "Collytics WWW (Audyt AI)",
+                                subject: `Nowe zgłoszenie Audyt AI - ${formData.name}`,
+                                message: `Imię: ${formData.name}\nEmail: ${formData.email}\nTelefon: ${formData.phone || 'Brak'}\nStrona WWW: ${formData.website}\nPakiet/Opis: ${formData.message || 'Brak'}`
+                            })
+                        });
+
+                        const result = await response.json();
+                        if (result.success) {
+                            // 1. Wygeneruj WSPÓLNE ID zdarzenia dla deduplikacji
+                            const leadEventID = crypto.randomUUID();
+
+                            // 2. Piksel przeglądarkowy (browser-side) z ID
+                            if (typeof fbq !== 'undefined') {
+                                fbq('track', 'Lead', {}, { eventID: leadEventID });
+                            }
+                            
+                            // 3. CAPI (server-side) z TYM SAMYM ID
+                            sendToFBCAPI('Lead', {
+                                content_name: 'Formularz Kontaktowy',
+                                status: 'Sent'
+                            }, {
+                                email: formData.email
+                            }, leadEventID);
+                            
+                            form.reset();
+                            showFormMessage(form, 'Dziękujemy! Raport zostanie przygotowany wkrótce.', 'success');
+                            submitButton.textContent = '✓ Wysłano!';
+                            submitButton.style.background = '#10b981';
+                        } else {
+                            showFormMessage(form, 'Błąd: ' + result.message, 'error');
+                        }
+                    } catch (error) {
+                        showFormMessage(form, 'Wystąpił błąd połączenia. Spróbuj ponownie.', 'error');
+                    } finally {
+                        setTimeout(() => {
+                            submitButton.textContent = originalText;
+                            submitButton.disabled = false;
+                            submitButton.style.background = '';
+                        }, 5000);
+                    }
+                });
+            }
+
+            function showFormMessage(form, message, type) {
+                const existing = form.parentElement.querySelector('.form-message');
+                if (existing) existing.remove();
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'form-message';
+                messageDiv.textContent = message;
+                messageDiv.style.cssText = `margin-top: 20px; padding: 15px; border-radius: 8px; text-align: center; animation: fadeIn 0.3s ease;`;
+                if (type === 'success') {
+                    messageDiv.style.cssText += `background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid #10b981;`;
+                } else {
+                    messageDiv.style.cssText += `background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444;`;
+                }
+                form.parentElement.appendChild(messageDiv);
+                setTimeout(() => { if (messageDiv.parentNode) messageDiv.remove(); }, 7000);
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+        });
+
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const nav = document.querySelector('.navbar');
+            if (scrollTop > lastScrollTop && scrollTop > 100) nav.style.transform = 'translateY(-100%)';
+            else nav.style.transform = 'translateY(0)';
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        document.addEventListener("click", function (e) {
+            if (e.target.id === "menuTrigger") {
+                document.getElementById("dropdownMenu").classList.add("active");
+                document.getElementById("menuOverlay").classList.add("active");
+            }
+            if (e.target.id === "closeMenu" || e.target.id === "menuOverlay") {
+                document.getElementById("dropdownMenu").classList.remove("active");
+                document.getElementById("menuOverlay").classList.remove("active");
+            }
+        });
+    </script>
+    <script src="js/menu.js"></script>
+    <script src="js/cookie-banner.js" defer></script>
+<script src="/js/footer-component.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+/* ABOUT — theme v2 */
+.about-hero{max-width:1140px;margin:0 auto;padding:130px 24px 40px}
+.about-hero .subtitle{color:var(--text-dim);margin-top:14px;max-width:640px}
+.mission-section{background:var(--bg-soft);border-block:1px solid var(--border-soft)}
+.mission-card{max-width:820px;margin:0 auto;text-align:center}
+.mission-title{margin-bottom:16px}
+.mission-text{color:var(--text-dim);font-size:1.05rem}
+.audience-section{padding:80px 24px}
+.audience-container{max-width:1140px;margin:0 auto}
+.audience-title{margin-bottom:44px}
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.audience-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:28px 26px}
+.audience-icon{width:46px;height:46px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.2rem}
+.audience-name{margin-bottom:8px}
+.audience-description{color:var(--text-dim);font-size:.92rem}
+.cta-section{text-align:center;padding:80px 24px;background:var(--navy)}
+.cta-section .cta-title{color:#fff;margin-bottom:26px}
+@media(max-width:900px){.audience-grid{grid-template-columns:1fr}}
