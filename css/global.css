@@ -90,3 +90,11 @@ section[style*="background"]{background:var(--bg-soft)!important;color:var(--tex
 .service-image-wrapper{flex:0 1 320px;max-width:320px;margin:0!important}
 .service-image-wrapper img{width:100%;max-height:210px;object-fit:cover;border-radius:14px}
 @media(max-width:760px){.service-image-wrapper{flex-basis:100%;max-width:100%}}
+
+/* HOTFIX 3 */
+.dropdown-menu{background:#fff!important}
+.blog-hero,.page-header,[class*="hero"][style],.article-hero-dark{background:var(--bg-soft)!important}
+.blog-hero *,.page-header *{color:var(--text)!important}
+.category-badge,[class*="badge"]{background:var(--accent-soft)!important;color:var(--accent-2)!important}
+.nav-container{min-height:96px}
+.nav-kontakt{display:inline-flex!important}
