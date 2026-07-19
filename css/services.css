@@ -3,11 +3,17 @@
 .services-hero-new{max-width:700px;margin-bottom:56px}
 .services-hero-new p{color:var(--text-dim);margin-top:14px}
 .service-list-new{border-top:1px solid var(--border)}
-.service-row{display:grid;grid-template-columns:56px 1fr 320px;gap:20px 28px;padding:34px 0;border-bottom:1px solid var(--border);align-items:center}
-.service-number{font-family:'Sora',sans-serif;font-weight:700;font-size:.9rem;color:var(--accent)}
+.service-row{display:grid;grid-template-columns:56px 1fr 320px;gap:20px 28px;padding:34px 0;border-bottom:1px solid var(--border);align-items:center;transition:background .25s}
+.service-row:hover{background:var(--bg-soft)}
+.service-number{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;color:var(--accent)}
 .service-content h2,.service-content h3{margin-bottom:8px}
-.service-content p{color:var(--text-dim);font-size:.95rem}
-.service-image-wrapper{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md)}
+.service-content p{color:var(--text-dim);font-size:.95rem;margin-bottom:14px}
+.service-content ul{list-style:none;margin:0;padding:0}
+.service-content ul li{position:relative;padding-left:22px;margin-bottom:8px;font-size:.92rem;color:var(--text-dim)}
+.service-content ul li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--accent-grad)}
+.service-content .text-link{display:inline-flex;align-items:center;gap:6px;margin-top:6px}
+.service-image-wrapper{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md);transition:transform .3s}
+.service-row:hover .service-image-wrapper{transform:translateY(-4px)}
 .service-image-wrapper img{aspect-ratio:16/10;object-fit:cover;width:100%}
 .bottom-cta{text-align:center;background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:20px;padding:clamp(36px,5vw,56px);margin-top:64px}
 .bottom-cta h2{margin-bottom:14px}
