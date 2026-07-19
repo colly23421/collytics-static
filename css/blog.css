@@ -1,5 +1,5 @@
 /* BLOG — theme v2 */
-.breadcrumbs-container{max-width:820px;margin:0 auto;padding:110px 24px 0}
+.breadcrumbs-container{max-width:820px;margin:0 auto;padding:140px 24px 0}
 .breadcrumbs{font-size:.8rem;color:var(--text-dimmer)}
 .breadcrumbs a{color:var(--text-dim);text-decoration:none}
 .breadcrumbs a:hover{color:var(--accent-2)}
