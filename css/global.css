@@ -74,3 +74,10 @@ textarea{resize:vertical;min-height:120px}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s,transform .55s}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+
+/* HOTFIX */
+.footer-logo-small{height:48px}
+.service-image-wrapper{max-width:420px;margin-left:auto}
+.service-image-wrapper img{max-height:260px}
+.services-page-container,.blog-list-container,.article-container{padding-top:150px}
+section[style*="background"]{background:var(--bg-soft)!important;color:var(--text)!important}
