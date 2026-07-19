@@ -182,7 +182,48 @@
             --primary-color-new: #F47851;
             --accent-gradient-new: linear-gradient(135deg, #D96848 0%, #B81E72 100%);
             --dark-card: #1a1a1a;
+            --dark-bg: #0a0a0a;
+            --dark-secondary: #141414;
+            --text-primary: #ffffff;
+            --text-secondary: #94969c;
+            --primary-color: #F47851;
         }
+
+        /* Ta strona ma zamierzenie ciemny motyw (osobna landing page kampanii),
+           niezalezny od jasnego motywu v2 reszty serwisu - global.css ustawia
+           jasne tlo strony, wiec trzeba je tu nadpisac. */
+        body {
+            background: var(--dark-bg);
+            color: var(--text-primary);
+        }
+
+        .hero.services-hero {
+            background: var(--dark-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .case-study-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .case-content h2 { font-size: 2.2rem; margin-bottom: 12px; }
+        .case-content h3 { font-size: 1.3rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 16px; }
+        .case-description { color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; }
+        @media (max-width: 768px) {
+            .case-study-container { grid-template-columns: 1fr; text-align: center; }
+        }
+
+        /* Formularz kontaktowy siedzi na ciemnej sekcji, wiec checkbox zgody
+           (domyslnie var(--text-dim) z jasnego motywu) trzeba rozjasnic */
+        #kontakt-form .form-checkbox { color: var(--text-secondary); }
 
         .gradient-text-new {
             background: var(--accent-gradient-new);
