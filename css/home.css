@@ -1,6 +1,6 @@
 /* COLLYTICS — HOME (theme v2) */
 /* ---------- Hero ---------- */
-.hero { padding: 118px 24px 40px; }
+.hero { padding: 190px 24px 40px; }
 .hero-grid {
   max-width: 1140px;
   margin: 0 auto;
@@ -38,7 +38,7 @@
 .hm-col-2 .media img, .hm-col-3 .media img { aspect-ratio: 4 / 5; }
 
 @media (max-width: 900px) {
-  .hero { padding-top: 120px; }
+  .hero { padding-top: 190px; }
   .hero-grid { grid-template-columns: 1fr; }
 }
 
