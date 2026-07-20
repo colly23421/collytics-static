@@ -26,8 +26,8 @@ section{padding:80px 24px}
 /* Navbar: Kontakt | logo | Menu */
 .navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border-soft)}
 .nav-container{max-width:1140px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;position:relative;min-height:106px}
-.logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
-.logo img{height:90px;width:auto}
+.logo{position:absolute;left:50%;top:8px;transform:translateX(-50%)}
+.logo img{height:140px;width:auto}
 .nav-kontakt,.menu-trigger,.dropdown-close{background:transparent;border:1px solid var(--border);border-radius:50px;color:var(--text);padding:9px 22px;font:600 .85rem 'Inter',sans-serif;text-decoration:none;cursor:pointer;transition:border-color .2s,background .2s}
 .nav-kontakt:hover,.menu-trigger:hover,.dropdown-close:hover{border-color:#b8b2a6;background:rgba(0,0,0,.02)}
 main,.page-offset{padding-top:96px}
@@ -76,14 +76,14 @@ textarea{resize:vertical;min-height:120px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
 
 /* HOTFIX */
-.footer-logo-small{height:48px}
+.footer-logo-small{height:72px}
 .service-image-wrapper{max-width:420px;margin-left:auto}
 .service-image-wrapper img{max-height:260px}
 .services-page-container,.blog-list-container,.article-container{padding-top:150px}
 section[style*="background"]{background:var(--bg-soft)!important;color:var(--text)!important}
 
 /* HOTFIX 2 */
-.logo img{height:90px!important;width:auto}
+.logo img{height:140px!important;width:auto}
 .service-row{display:flex!important;flex-wrap:wrap;gap:20px 28px;align-items:flex-start;padding:36px 0;border-bottom:1px solid var(--border)}
 .service-number{width:100%;font-family:Sora,sans-serif;font-weight:700;color:var(--accent);font-size:.9rem}
 .service-content{flex:1 1 460px;max-width:640px}

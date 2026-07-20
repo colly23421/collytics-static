@@ -1,5 +1,5 @@
 /* KONTAKT — theme v2 */
-.contact-page-container{max-width:1140px;margin:0 auto;padding:150px 24px 40px}
+.contact-page-container{max-width:1140px;margin:0 auto;padding:190px 24px 40px}
 .contact-header{max-width:640px;margin-bottom:44px;margin-top:24px}
 .contact-header p{color:var(--text-dim);margin-top:12px}
 .contact-main-section{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,64px);align-items:start}
