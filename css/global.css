@@ -77,19 +77,20 @@ textarea{resize:vertical;min-height:120px}
 
 /* HOTFIX */
 .footer-logo-small{height:72px}
-.service-image-wrapper{max-width:420px;margin-left:auto}
-.service-image-wrapper img{max-height:260px}
+.services-page-container .service-image-wrapper{max-width:420px;margin-left:auto}
+.services-page-container .service-image-wrapper img{max-height:260px}
 .services-page-container,.blog-list-container,.article-container{padding-top:150px}
 section[style*="background"]{background:var(--bg-soft)!important;color:var(--text)!important}
 
-/* HOTFIX 2 */
+/* HOTFIX 2 (dotyczy tylko /services - .service-row na stronie glownej to inny,
+   niezalezny layout w home.css i nie moze byc tu lapany przez ta sama nazwe klasy) */
 .logo img{height:140px!important;width:auto}
-.service-row{display:flex!important;flex-wrap:wrap;gap:20px 28px;align-items:flex-start;padding:36px 0;border-bottom:1px solid var(--border)}
-.service-number{width:100%;font-family:Sora,sans-serif;font-weight:700;color:var(--accent);font-size:.9rem}
-.service-content{flex:1 1 460px;max-width:640px}
-.service-image-wrapper{flex:0 1 320px;max-width:320px;margin:0!important}
-.service-image-wrapper img{width:100%;max-height:210px;object-fit:cover;border-radius:14px}
-@media(max-width:760px){.service-image-wrapper{flex-basis:100%;max-width:100%}}
+.services-page-container .service-row{display:flex!important;flex-wrap:wrap;gap:20px 28px;align-items:flex-start;padding:36px 0;border-bottom:1px solid var(--border)}
+.services-page-container .service-number{width:100%;font-family:Sora,sans-serif;font-weight:700;color:var(--accent);font-size:.9rem}
+.services-page-container .service-content{flex:1 1 460px;max-width:640px}
+.services-page-container .service-image-wrapper{flex:0 1 320px;max-width:320px;margin:0!important}
+.services-page-container .service-image-wrapper img{width:100%;max-height:210px;object-fit:cover;border-radius:14px}
+@media(max-width:760px){.services-page-container .service-image-wrapper{flex-basis:100%;max-width:100%}}
 
 /* HOTFIX 3 */
 .dropdown-menu{background:#fff!important}
