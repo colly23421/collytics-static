@@ -1,6 +1,6 @@
 /* ==========================================================================
    Collytics — case study (use-case-lab-wet)
-   Uzupełnienie global.css: style dla sekcji, których brakowało.
+   
    Ładować ZAWSZE po global.css.
    ========================================================================== */
 
@@ -9,6 +9,24 @@
 .content,
 .content * {
   box-sizing: border-box;
+}
+
+/* --- Tło strony ---------------------------------------------------------- */
+/* Bez tego jasna typografia lądowała na białym body. Arkusz jest ładowany
+   tylko na tej podstronie, więc nie wpływa na resztę serwisu.               */
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0a0a0a;
+}
+
+/* .gradient-bg z global.css zostaje pod spodem */
+.hero-case,
+.content {
+  position: relative;
+  background: transparent;
 }
 
 /* --- Zmienne lokalne (nie nadpisują globalnych) -------------------------- */
@@ -328,4 +346,29 @@
   .step-card:hover {
     transform: none;
   }
+}
+
+/* ==========================================================================
+   WARIANT JASNY (opcjonalny)
+   Jeśli ta podstrona ma jednak zostać na białym tle, usuń powyższy blok
+   "Tło strony" i dodaj klasę cs-light do <body>: <body class="cs-light">
+   ========================================================================== */
+.cs-light {
+  background-color: #ffffff;
+}
+
+.cs-light .hero-case,
+.cs-light .content {
+  --cs-bg-card: #f6f6f7;
+  --cs-border: rgba(0, 0, 0, 0.12);
+  --cs-text: #101014;
+  --cs-muted: rgba(16, 16, 20, 0.62);
+}
+
+.cs-light .content {
+  color: rgba(16, 16, 20, 0.78);
+}
+
+.cs-light .step-card:hover {
+  border-color: rgba(0, 0, 0, 0.28);
 }
