@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="footer-col">
                 <p class="footer-label">Kontakt</p>
                 <p><a href="mailto:hello@collytics.io" class="email-link">hello@collytics.io</a></p>
-                <p><strong>Warszawa:</strong> Marszałkowska Centre, 126/134</p>
+                
                 <p><strong>Estonia, Tallinn:</strong> Karamelli tn 2, 11317</p>
             </div>
             <div class="footer-col">
