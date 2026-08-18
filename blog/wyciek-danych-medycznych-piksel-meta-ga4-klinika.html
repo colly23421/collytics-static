@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pl">
+ <head>
+  
+  <!-- GTM Consent Mode - MUSI BYĆ PRZED GTM -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("consent", "default", {
+    "analytics_storage": "denied",
+    "ad_storage": "denied",
+    "ad_user_data": "denied",
+    "ad_personalization": "denied"
+  });
+  </script>
+  <script src="/js/cookie-banner.js"></script>  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Wyciek danych medycznych a piksel na stronie kliniki | Collytics</title>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');
+  </script>
+  <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../css/global.css" rel="stylesheet">
+  <link href="../css/blog.css" rel="stylesheet">
+  <!-- Cookie Banner Styles -->
+  <link href="../css/cookie-banner.css" rel="stylesheet">
+ <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZCR8FPZ');</script>
+<!-- End Google Tag Manager -->
+
+  <link rel="canonical" href="https://www.collytics.io/blog/wyciek-danych-medycznych-piksel-meta-ga4-klinika">
+  <meta name="description" content="Po wycieku z MyDr wszyscy mowia o cyberbezpieczenstwie. Nikt nie mowi o tym, ze piksel Meta i GA4 na stronie Twojej kliniki wysylaja dane o zdrowiu pacjentow.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.collytics.io/blog/wyciek-danych-medycznych-piksel-meta-ga4-klinika">
+  <meta property="og:title" content="Wyciek z MyDr nie byl jedyny. Drugi masz na wlasnej stronie | Collytics">
+  <meta property="og:description" content="Po wycieku z MyDr wszyscy mowia o cyberbezpieczenstwie. Nikt nie mowi o tym, ze piksel Meta i GA4 na stronie Twojej kliniki wysylaja dane o zdrowiu pacjentow.">
+  <meta property="og:image" content="https://www.collytics.io/img/og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wyciek z MyDr nie byl jedyny. Drugi masz na wlasnej stronie | Collytics">
+  <meta name="twitter:description" content="Po wycieku z MyDr wszyscy mowia o cyberbezpieczenstwie. Nikt nie mowi o tym, ze piksel Meta i GA4 na stronie Twojej kliniki wysylaja dane o zdrowiu pacjentow.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Wyciek z MyDr nie był jedyny. Drugi masz na własnej stronie",
+    "url": "https://www.collytics.io/blog/wyciek-danych-medycznych-piksel-meta-ga4-klinika",
+    "datePublished": "2026-08-18",
+    "dateModified": "2026-08-18",
+    "description": "Jak piksel Meta i GA4 na stronie kliniki wysyłają dane o stanie zdrowia pacjentów i jak to naprawić bez utraty danych o kampaniach.",
+    "keywords": "wyciek danych medycznych, RODO, piksel Meta, GA4, server-side tracking, Consent Mode v2, marketing medyczny",
+    "articleSection": "Analityka i dane",
+    "inLanguage": "pl-PL",
+    "author": {"@type": "Organization", "name": "Collytics", "url": "https://www.collytics.io"},
+    "publisher": {"@type": "Organization", "name": "Collytics", "logo": {"@type": "ImageObject", "url": "https://www.collytics.io/img/logo.png"}},
+    "isPartOf": {"@type": "WebSite", "name": "Collytics", "url": "https://www.collytics.io"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Czy piksel Meta na stronie kliniki narusza RODO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sam piksel nie jest zakazany. Problemem jest to, co przez niego wychodzi. Jeśli nazwa podstrony zawiera schorzenie lub procedurę, a formularz przekazuje dane kontaktowe pacjenta, dochodzi do przekazania informacji o stanie zdrowia. To szczególna kategoria danych z art. 9 RODO, której przetwarzanie w celach reklamowych wymaga wyraźnej zgody i zwykle nie jest objęte standardową zgodą na cookies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak sprawdzić, jakie dane wysyła strona mojej kliniki?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sprawdź pięć miejsc. W GA4 raport Strony i ekrany pokaże, czy w adresach podstron są nazwy schorzeń. W Meta Events Manager narzędzie Test Events pokaże parametry content_name i page_title wysyłane w czasie rzeczywistym. Zweryfikuj też enhanced measurement w GA4, maskowanie pól w narzędziach do nagrywania sesji oraz definicje list remarketingowych opartych na podstronach usług."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czym jest server-side tracking i czy pomaga w zgodności z RODO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Server-side tracking kieruje dane z przeglądarki najpierw na serwer należący do właściciela strony, a dopiero potem do platform reklamowych. Na tym serwerze można usunąć z adresu segment ze schorzeniem, podmienić tytuł strony i odfiltrować parametry. Do Meta czy Google trafia informacja o wysłaniu formularza bez kontekstu medycznego. Kampanie zachowują dane do optymalizacji, a dane wrażliwe nie opuszczają infrastruktury placówki."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy trzeba wyłączyć całe śledzenie na stronie medycznej?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nie. Wyłączenie wszystkiego to zamiana wycieku danych na brak danych, czyli powrót do optymalizacji kampanii na wyczucie. Rozwiązaniem jest redakcja danych na poziomie serwera, warstwa abstrakcji na adresach podstron, poprawnie wdrożony Consent Mode v2 oraz whitelista parametrów, które mogą opuścić serwer."
+        }
+      }
+    ]
+  }
+  </script>
+ </head>
+ <body>
+<script src="/js/navbar-component.js"></script>
+
+  <nav class="navbar" id="navbar">
+   <div class="nav-container">
+    <a class="logo" href="/index.html">
+     <img alt="Collytics" src="../assets/images/logo main transparent.png">
+    </a>
+    <button class="menu-trigger" id="menuTrigger">
+     Menu
+    </button>
+   </div>
+  </nav>
+  <div class="dropdown-menu" id="dropdownMenu">
+   <button class="dropdown-close" id="closeMenu">
+    Close
+   </button>
+   <div class="dropdown-menu-inner">
+    <div class="menu-section">
+     <a href="/index.html">
+      Home
+     </a>
+     <a href="/services.html">
+      Serwis
+     </a>
+     <a href="/blog/index.html">
+      Blog
+     </a>
+     <a href="/about.html">
+      O nas
+     </a>
+     <a href="/kontakt.html">
+      Kontakt
+     </a>
+    </div>
+    <div class="social-links">
+     <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
+      <img alt="Facebook" src="../assets/images/facebook.png">
+     </a>
+     <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
+      <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg">
+     </a>
+     <a href="https://x.com/collytics" target="_blank" title="Twitter">
+      <img alt="X" src="../assets/images/cons8-twitter-500.svg">
+     </a>
+    </div>
+   </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+  </div>
+  <div class="breadcrumbs">
+   <div class="breadcrumbs-container">
+    <a href="../index.html">
+     Strona główna
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <a href="index.html">
+     Blog
+    </a>
+    <span class="breadcrumbs-separator">
+     &rsaquo;
+    </span>
+    <span class="breadcrumbs-current">
+     Wyciek z MyDr nie był jedyny...
+    </span>
+   </div>
+  </div>
+  <header class="article-hero">
+   <div class="article-container">
+    <div class="article-meta">
+     <span class="category-badge">
+      ANALITYKA I DANE
+     </span>
+     <span>
+      7 min czytania
+     </span>
+     <span>
+      &bull;
+     </span>
+     <span>
+      18 sierpnia 2026
+     </span>
+    </div>
+    <h1>
+     Wyciek z MyDr nie był jedyny. Drugi masz na własnej stronie — i sam go zainstalowałeś
+    </h1>
+   </div>
+  </header>
+  <main class="article-content">
+   <div class="article-container">
+    <p>
+     12 sierpnia 2026 Ministerstwo Cyfryzacji potwierdziło atak na systemy MyDr, dostawcy elektronicznej dokumentacji medycznej dla ponad 10 tysięcy placówek. Wykradziona baza to ponad 2 TB danych — imiona, nazwiska, numery PESEL, telefony, e-maile, notatki z wizyt i informacje o receptach. Skala: około 19 milionów osób. Wicepremier Gawkowski nazwał to jednym z największych incydentów w historii polskiej infosfery.
+    </p>
+    <p>
+     Przez tydzień „jak zastrzec PESEL" było jedną z najczęściej wyszukiwanych fraz w Polsce. 200 tysięcy zapytań. Cały kraj sprawdzał, czy jest na liście.
+    </p>
+    <p>
+     I to jest dobry moment, żeby powiedzieć rzecz, której nikt w tej dyskusji nie mówi.
+    </p>
+    <div class="highlight-box">
+     <p style="margin-bottom: 0;">
+      <strong>
+       MyDr wyciekł przez atak. Twoja strona wycieka codziennie, legalnie, bez żadnego ataku — bo tak ją skonfigurowano.
+      </strong>
+     </p>
+    </div>
+    <h2>
+     Anatomia cichego wycieku
+    </h2>
+    <p>
+     Otwórz stronę swojej kliniki. Wejdź w zakładkę usług. Spójrz na adres URL:
+    </p>
+    <pre><code>twojaklinika.pl/uslugi/leczenie-nietrzymania-moczu
+twojaklinika.pl/umow-wizyte?usluga=konsultacja-psychiatryczna
+twojaklinika.pl/oferta/implantologia/cennik</code></pre>
+    <p>
+     Ten adres nie zostaje na Twoim serwerze. Trafia do GA4 jako <code>page_location</code>. Trafia do Meta jako parametr zdarzenia <code>PageView</code>. Trafia do Google Ads razem z listą remarketingową. A jeśli używasz narzędzia do nagrywania sesji — trafia tam razem z nagraniem tego, co pacjent wpisywał w formularzu.
+    </p>
+    <p>
+     Teraz połącz to z drugim elementem. Pacjent wypełnia formularz rejestracji. Podaje imię, nazwisko, telefon, e-mail. Meta Advanced Matching zbiera te dane (tak, zahaszowane) i przypisuje je do konkretnego profilu użytkownika. Piksel wie już nie tylko, że <em>ktoś</em> oglądał podstronę o leczeniu depresji. Wie <strong>kto</strong>.
+    </p>
+    <p>
+     To jest, w praktyce, przetwarzanie danych o stanie zdrowia. Art. 9 RODO klasyfikuje je jako szczególną kategorię danych osobowych — z zakazem przetwarzania i wąskim katalogiem wyjątków, z których „chcieliśmy zoptymalizować kampanię" nie jest żadnym. A operatorem, do którego te dane płyną, jest amerykańska platforma reklamowa.
+    </p>
+    <p>
+     Nikt Cię nie zaatakował. Sam to wysłałeś. Wtyczką, którą wkleiłeś w 2019 roku.
+    </p>
+    <h2>
+     To nie jest hipoteza — to już się rozliczało
+    </h2>
+    <p>
+     W USA temat przeszedł pełny cykl. The Markup przeskanował strony 100 największych amerykańskich szpitali i znalazł piksel Meta na 33 z nich — w tym w formularzach umawiania wizyt. Efekt: fala pozwów zbiorowych. Novant Health zapłacił 6,6 mln dolarów ugody. Advocate Aurora Health — 12,25 mln. FTC ukarała GoodRx i BetterHelp za udostępnianie danych zdrowotnych platformom reklamowym w celach marketingowych.
+    </p>
+    <p>
+     W Polsce ten temat dopiero dojrzewa. Ale wyciek z MyDr właśnie ustawił dane medyczne w centrum uwagi UODO, mediów i — co istotniejsze — samych pacjentów. Pierwsza polska klinika, której ktoś pokaże zrzut z Meta Events Managera z nazwą podstrony o leczeniu onkologicznym, będzie miała problem znacznie tańszy do uniknięcia niż do rozwiązania.
+    </p>
+    <h2>
+     Pięć rzeczy, które sprawdzisz w 20 minut
+    </h2>
+    <div class="match-type-box">
+     <h3>
+      1. Adresy URL
+     </h3>
+     <p>
+      Otwórz GA4 → Raporty → Strony i ekrany. Przewiń listę. Czy widzisz w niej nazwy schorzeń, procedur, specjalizacji? Jeśli tak, ta lista jest dokładnie tym samym, czym dysponuje Google.
+     </p>
+    </div>
+    <div class="match-type-box">
+     <h3>
+      2. Meta Events Manager → Test Events
+     </h3>
+     <p>
+      Wejdź na podstronę usługi i patrz, co się wysyła. Sprawdź parametry <code>content_name</code>, <code>content_category</code>, <code>page_title</code>. Zobaczysz, ile kontekstu medycznego wychodzi z Twojej strony w czasie rzeczywistym.
+     </p>
+    </div>
+    <div class="match-type-box">
+     <h3>
+      3. Formularze
+     </h3>
+     <p>
+      Czy pole „opisz swój problem" albo „powód wizyty" jest zaciągane przez automatyczne śledzenie formularzy w GTM? Enhanced measurement w GA4 potrafi zbierać zawartość pól bez pytania Cię o zdanie.
+     </p>
+    </div>
+    <div class="match-type-box">
+     <h3>
+      4. Nagrywanie sesji
+     </h3>
+     <p>
+      Hotjar, Clarity, Smartlook na stronie z formularzem medycznym bez maskowania pól to nagranie pacjenta wpisującego objawy. Domyślne maskowanie nie zawsze łapie niestandardowe pola.
+     </p>
+    </div>
+    <div class="match-type-box">
+     <h3>
+      5. Listy remarketingowe
+     </h3>
+     <p>
+      „Osoby, które odwiedziły stronę o leczeniu niepłodności" to nie jest segment marketingowy. To jest kategoria wrażliwa — zakazana także przez politykę spersonalizowanych reklam samego Google.
+     </p>
+    </div>
+    <h2>
+     Jak to naprawić, nie tracąc danych
+    </h2>
+    <p>
+     Najczęstsza reakcja właściciela kliniki po takim audycie: „to wyłączamy wszystko". To nadmierna korekta. Tracisz wtedy zdolność mierzenia kampanii i wracasz do zgadywania — a zgadywanie kosztuje więcej niż wyciek, tylko wolniej.
+    </p>
+    <p>
+     Da się mieć jedno i drugie. Konfiguracja, którą wdrażamy u klientów z branży medycznej:
+    </p>
+    <ul>
+     <li>
+      <strong>Server-side tracking (sGTM).</strong> Dane z przeglądarki idą najpierw na Twój serwer, a nie prosto do Meta. Na serwerze redagujesz: usuwasz z URL-a segment ze schorzeniem, podmieniasz <code>page_title</code>, wycinasz parametry query. Do platformy reklamowej wychodzi zdarzenie „wysłano formularz" — bez informacji, jakiej usługi dotyczyło.
+     </li>
+     <li>
+      <strong>Warstwa abstrakcji na URL-ach.</strong> Zamiast <code>/uslugi/psychiatria</code> w danych analitycznych ląduje <code>/uslugi/kategoria-c</code>. Ty w raporcie widzisz wszystko, Meta widzi identyfikator bez znaczenia.
+     </li>
+     <li>
+      <strong>Consent Mode v2 skonfigurowany faktycznie, a nie klikany w kreatorze.</strong> Sygnały <code>ad_user_data</code> i <code>ad_personalization</code> muszą realnie sterować tym, co wychodzi — a nie tylko zapalać zielone światełko w Google Tag Assistant.
+     </li>
+     <li>
+      <strong>Whitelist zamiast blacklisty.</strong> Definiujesz, które parametry mogą opuścić serwer. Wszystko inne jest domyślnie blokowane. Odwrotna kolejność zawsze przecieka przy pierwszej nowej podstronie.
+     </li>
+     <li>
+      <strong>Twarde maskowanie w narzędziach do nagrywania sesji</strong> — na poziomie selektorów CSS, nie na domyślnych ustawieniach.
+     </li>
+    </ul>
+    <p>
+     Efekt: kampanie mają dane do optymalizacji, a Ty nie wysyłasz do Kalifornii listy pacjentów onkologicznych.
+    </p>
+    <h2>
+     Dlaczego piszemy o tym akurat teraz
+    </h2>
+    <p>
+     Bo przez najbliższe tygodnie Twoi pacjenci będą wyjątkowo wyczuleni na to, co dzieje się z ich danymi medycznymi. Sprawdzali PESEL na bezpiecznedane.gov.pl, czytali o 2 TB notatek z wizyt w rękach przestępców, wchodzili w mObywatela zastrzec numer.
+    </p>
+    <p>
+     Klinika, która w tym momencie potrafi powiedzieć „sprawdziliśmy naszą stronę i wiemy dokładnie, jakie dane z niej wychodzą i dokąd", zyskuje coś, czego nie kupi się w Google Ads.
+    </p>
+    <p>
+     A klinika, która nie sprawdziła, po prostu nie wie. Co jest gorszą pozycją niż się wydaje — bo dowiaduje się zwykle od kogoś innego.
+    </p>
+    <p>
+     Przy okazji warto sprawdzić drugą stronę tego samego medalu: to, co asystenci AI mówią dziś o Twojej placówce. Opisaliśmy to w
+     <a href="jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai.html">
+      case study rynku stomatologicznego w Gliwicach
+     </a>
+     .
+    </p>
+    <div class="highlight-box">
+     <h3 style="margin-top: 0;">
+      Audyt warstwy trackingowej dla placówek medycznych
+     </h3>
+     <p>
+      Sprawdzamy, co dokładnie wypływa z Twojej strony do GA4, Meta i Google Ads, i przebudowujemy to tak, żeby dane o kampaniach zostały, a dane o pacjentach — nie.
+     </p>
+     <p style="margin-bottom: 0;">
+      Napisz: <a href="mailto:hello@collytics.io">hello@collytics.io</a>
+     </p>
+    </div>
+    <div class="article-cta">
+     <a href="../kontakt.html" style="display:inline-block;padding:16px 36px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.05rem;">
+      Zamów audyt trackingu
+     </a>
+    </div>
+    <p>
+     <em>
+      Ten tekst nie jest opinią prawną. Ocenę zgodności konkretnej konfiguracji z RODO warto potwierdzić z IOD lub prawnikiem — my odpowiadamy za warstwę techniczną.
+     </em>
+    </p>
+   </div>
+  </main>
+ <script src="/js/footer-component.js"></script></body>
+</html>
