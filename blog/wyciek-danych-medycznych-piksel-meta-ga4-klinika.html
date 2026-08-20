@@ -165,7 +165,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="highlight-box">
      <p style="margin-bottom: 0;">
       <strong>
-       MyDr wyciekł przez atak. Twoja strona wycieka codziennie, legalnie, bez żadnego ataku — bo tak ją skonfigurowano.
+       MyDr wyciekł przez atak. Twoja strona wycieka codziennie, bez żadnego ataku, z Twojej własnej konfiguracji.
       </strong>
      </p>
     </div>
@@ -184,9 +184,37 @@ twojaklinika.pl/oferta/implantologia/cennik</code></pre>
     <p>
      Teraz połącz to z drugim elementem. Pacjent wypełnia formularz rejestracji. Podaje imię, nazwisko, telefon, e-mail. Meta Advanced Matching zbiera te dane (tak, zahaszowane) i przypisuje je do konkretnego profilu użytkownika. Piksel wie już nie tylko, że <em>ktoś</em> oglądał podstronę o leczeniu depresji. Wie <strong>kto</strong>.
     </p>
-    <p>
-     To jest, w praktyce, przetwarzanie danych o stanie zdrowia. Art. 9 RODO klasyfikuje je jako szczególną kategorię danych osobowych — z zakazem przetwarzania i wąskim katalogiem wyjątków, z których „chcieliśmy zoptymalizować kampanię" nie jest żadnym. A operatorem, do którego te dane płyną, jest amerykańska platforma reklamowa.
-    </p>
+
+<p>To jest, w praktyce, przetwarzanie danych o stanie zdrowia. I nie jest to nasza
+interpretacja — jest to stanowisko Trybunału Sprawiedliwości UE. W wyroku z 4 lipca
+2023 r. w sprawie
+<a href="https://curia.europa.eu/juris/liste.jsf?num=C-252/21&amp;language=pl"
+   target="_blank" rel="noopener" rel"nofollow" >C-252/21 (Meta Platforms przeciwko Bundeskartellamt)</a>
+Wielka Izba orzekła, że dane o odwiedzinach stron i aplikacji podlegają art. 9 RODO
+wtedy, gdy pozwalają ujawnić informację z kategorii szczególnej.</p>
+
+<p>Nie musisz więc wysyłać do Meta diagnozy. Wystarczy, że wyślesz adres podstrony,
+z którego tę diagnozę da się wywnioskować. Art. 9 ustanawia dla takich danych zakaz
+przetwarzania z wąskim katalogiem wyjątków — a „chcieliśmy zoptymalizować kampanię"
+nie jest żadnym z nich. Zgoda z art. 9 ust. 2 lit. a musi być wyraźna i odrębna, czyli
+taka, jakiej Twój baner cookie z przyciskiem „Akceptuj wszystkie" nie zbiera.</p>
+
+<p>Do tego dochodzą dwie warstwy, o których w klinikach mówi się jeszcze rzadziej.
+Pierwsza: od listopada 2024 obowiązuje ustawa Prawo komunikacji elektronicznej, która
+zastąpiła art. 173 Prawa telekomunikacyjnego i reguluje zapis oraz odczyt informacji
+w urządzeniu końcowym użytkownika. Piksel i identyfikator GA4 to dokładnie to. Druga:
+regulamin narzędzi biznesowych Meta wprost zakazuje przesyłania danych wrażliwych,
+w tym informacji o zdrowiu — analogicznie polityka reklam spersonalizowanych Google.</p>
+
+<div class="highlight-box">
+  <p style="margin-bottom:0;">Klinika, która wysyła do Meta URL z nazwą schorzenia,
+  narusza nie tylko RODO. Narusza też umowę z platformą, której to wysyła. A to znaczy,
+  że w razie sporu nie ma po tamtej stronie sojusznika — Meta powie, że zakazała tego
+  w regulaminie, i będzie miała rację.</p>
+</div>
+
+
+    
     <p>
      Nikt Cię nie zaatakował. Sam to wysłałeś. Wtyczką, którą wkleiłeś w 2019 roku.
     </p>
@@ -286,9 +314,13 @@ twojaklinika.pl/oferta/implantologia/cennik</code></pre>
     <p>
      Przy okazji warto sprawdzić drugą stronę tego samego medalu: to, co asystenci AI mówią dziś o Twojej placówce. Opisaliśmy to w
      <a href="jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai.html">
-      case study rynku stomatologicznego w Gliwicach
+      case study rynku stomatologicznego w Gliwicach.
      </a>
-     .
+   
+
+
+
+     
     </p>
     <div class="highlight-box">
      <h3 style="margin-top: 0;">
