@@ -99,3 +99,6 @@ section[style*="background"]{background:var(--bg-soft)!important;color:var(--tex
 .category-badge,[class*="badge"]{background:var(--accent-soft)!important;color:var(--accent-2)!important}
 .nav-container{min-height:106px}
 .nav-kontakt{display:inline-flex!important}
+
+/* Mobile: ukryj przycisk Kontakt w headerze */
+@media(max-width:768px){.nav-kontakt{display:none!important}}
