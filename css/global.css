@@ -103,7 +103,8 @@ section[style*="background"]{background:var(--bg-soft)!important;color:var(--tex
 /* Mobile: ukryj Kontakt, mniejsze i wyśrodkowane logo, Menu po prawej */
 @media(max-width:768px){
   .nav-kontakt{display:none!important}
+  .nav-container{min-height:64px}
   .logo{top:50%;transform:translate(-50%,-50%)}
-  .logo img{height:56px!important;width:auto!important}
+  .logo img{height:110px!important;width:auto!important}
   .menu-trigger{margin-left:auto}
 }
