@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <div class="nav-container">
         <a href="/kontakt" class="nav-kontakt">Kontakt</a>
         <a href="/" class="logo">
-          <img src="/assets/images/Transparent Logo.png" alt="Collytics"
+          <img src="/assets/images/logo-header.png" alt="Collytics"
                onerror="this.onerror=null;this.src='/assets/images/logo main transparent.png';">
         </a>
         <button class="menu-trigger" id="menuTrigger">Menu</button>
