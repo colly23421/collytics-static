@@ -8,3 +8,12 @@
 .contact-person__mail:hover{border-color:#e8517f}
 .contact-person__note{margin:16px 0 0;max-width:36ch;color:#a7adb5;font-size:.875rem;line-height:1.65}
 @media(max-width:768px){.contact-person{flex-direction:column;align-items:flex-start;padding:26px;gap:20px}.contact-person__note{max-width:none}}
+
+/* Przycisk i odstepy */
+.cta-button{background:#15171b !important;border-radius:12px !important;letter-spacing:.01em}
+.cta-button:hover{background:#000 !important}
+.contact-page-container section{padding-top:48px;padding-bottom:48px}
+.contact-page-container h1{margin-bottom:14px}
+.contact-main-section{padding-top:16px}
+.contact-column .form-group{gap:14px !important}
+@media(max-width:768px){.contact-page-container section{padding-top:32px;padding-bottom:32px}}
