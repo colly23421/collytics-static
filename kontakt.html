@@ -74,6 +74,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="css/contact.css">
 </head>
  <body>
 <script src="/js/navbar-component.js" defer></script>
@@ -165,31 +166,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
      </h2>
 
       <div class="contact-person">
-        <img src="assets/images/piotr-janczuk.jpeg" alt="Piotr Janczuk - Collytics" loading="lazy">
+        <img src="assets/images/piotr-janczuk.jpeg" alt="Piotr Ja&#324;czuk" loading="lazy">
         <div class="contact-person__info">
-          <h3>Piotr Ja&#324;czuk</h3>
-          <p class="contact-person__role">Founder &amp; Data Strategist</p>
+          <p class="contact-person__name">Piotr Ja&#324;czuk</p>
+          <p class="contact-person__role">CEO</p>
           <a href="mailto:piotr@collytics.io" class="contact-person__mail">piotr@collytics.io</a>
           <p class="contact-person__note">Napisz do mnie bezpo&#347;rednio &mdash; ch&#281;tnie porozmawiam o Twoim projekcie.</p>
         </div>
       </div>
-
-     <div style="background: #f8fafc; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0;">
+<div style="background: #f8fafc; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0;">
       <p style="font-size: 18px; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
-       <span style="font-size: 24px;">📧</span> 
+       <span style="font-size: 24px;"></span> 
        <a href="mailto:hello@collytics.io" style="color: #2563eb; text-decoration: none; font-weight: 500;">hello@collytics.io</a>
       </p>
       <p style="font-size: 18px; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
      
       </p>
       <p style="font-size: 18px; margin-bottom: 0; display: flex; align-items: center; gap: 12px;">
-       <span style="font-size: 24px;">💬</span> 
+       <span style="font-size: 24px;"></span> 
        <span style="color: #1e293b;">Odpowiadamy w ciągu 24h</span>
       </p>
      </div>
      <div style="margin-top: 20px; background: #eef2ff; padding: 20px 30px; border-radius: 16px; border-left: 4px solid #2563eb;">
       <p style="margin: 0; font-size: 15px; color: #1e293b;">
-       <strong>💡 Masz pomysł na projekt?</strong><br>
+       <strong> Masz pomysł na projekt?</strong><br>
        Napisz do nas — pomożemy Ci go zrealizować!
       </p>
      </div>
@@ -260,7 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       trackContactForm();
                       form.reset();
                       showFormMessage(form, 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success');
-                      submitButton.textContent = '✓ Wysłano!';
+                      submitButton.textContent = ' Wysłano!';
                       submitButton.style.background = '#10b981';
 
                       setTimeout(() => {
@@ -275,7 +275,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   console.error('Błąd wysyłania:', error);
                   form.reset();
                   showFormMessage(form, 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success');
-                  submitButton.textContent = '✓ Wysłano!';
+                  submitButton.textContent = ' Wysłano!';
                   submitButton.style.background = '#10b981';
               } finally {
                   setTimeout(() => {

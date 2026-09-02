@@ -1,0 +1,10 @@
+/* Karta osoby kontaktowej */
+.contact-person{display:flex;gap:24px;align-items:center;padding:30px;margin:0 0 32px;border-radius:18px;background:#15171b;border:1px solid rgba(255,255,255,.07)}
+.contact-person img{width:92px;height:92px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.contact-person__info{min-width:0}
+.contact-person__name{margin:0 0 4px;font-size:1.05rem;font-weight:600;color:#fff}
+.contact-person__role{margin:0 0 16px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#8e949c}
+.contact-person__mail{display:inline-block;color:#fff;font-size:.95rem;text-decoration:none;padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,.25);transition:border-color .25s}
+.contact-person__mail:hover{border-color:#e8517f}
+.contact-person__note{margin:16px 0 0;max-width:36ch;color:#a7adb5;font-size:.875rem;line-height:1.65}
+@media(max-width:768px){.contact-person{flex-direction:column;align-items:flex-start;padding:26px;gap:20px}.contact-person__note{max-width:none}}

@@ -105,12 +105,3 @@ section[style*="background"]{background:var(--bg-soft)!important;color:var(--tex
   main{padding-top:56px}
 }
 
-/* Karta osoby kontaktowej */
-.contact-person{display:flex;gap:20px;align-items:center;padding:24px;border:1px solid var(--border-soft,#e5e7eb);border-radius:16px;background:#fafafa;margin-bottom:24px}
-.contact-person img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
-.contact-person__info h3{margin:0 0 4px;font-size:1.25rem}
-.contact-person__role{margin:0 0 8px;color:#6b7280;font-size:.875rem}
-.contact-person__mail{color:#2f4fe0;text-decoration:none;font-weight:500}
-.contact-person__mail:hover{text-decoration:underline}
-.contact-person__note{margin:8px 0 0;color:#4b5563;font-size:.875rem;line-height:1.5}
-@media(max-width:768px){.contact-person{flex-direction:column;text-align:center}}
