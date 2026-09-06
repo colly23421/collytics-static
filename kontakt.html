@@ -145,7 +145,102 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 @media (max-width: 600px) {
   .contact-person { flex-direction: column; }
   .contact-person img { width: 72px; height: 72px; }
-}</style>
+}
+
+<style>
+/* === KOMPAKTOWY WIDOK KONTAKTU — mieści się bez scrolla === */
+@media (min-width: 900px) {
+
+  .contact-page-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 32px 48px 24px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100dvh - 88px - var(--footer-reserve, 190px));
+  }
+
+  /* Nagłówek */
+  .contact-header { margin-bottom: 28px !important; }
+
+  .contact-header h1 {
+    font-size: clamp(30px, 3vw, 44px) !important;
+    line-height: 1.08 !important;
+    margin: 0 0 10px !important;
+    max-width: 20ch;
+  }
+
+  .contact-header p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    max-width: 62ch;
+  }
+
+  /* Dwie kolumny */
+  .contact-main-section { gap: 56px !important; align-items: flex-start; }
+  .contact-main-section .contact-column { flex: 1 1 420px !important; }
+  .contact-main-section h2 {
+    font-size: 22px !important;
+    margin: 0 0 16px !important;
+  }
+
+  /* Formularz */
+  .contact-form .form-group { gap: 12px !important; }
+
+  .contact-form .form-input {
+    padding: 11px 14px !important;
+    font-size: 15px !important;
+    border-radius: 8px !important;
+  }
+
+  .contact-form textarea.form-input {
+    height: 92px !important;
+    min-height: 92px !important;
+    resize: none !important;
+  }
+
+  .contact-form .form-checkbox { margin-top: 0 !important; gap: 8px !important; }
+  .contact-form .form-checkbox label {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  .contact-form .cta-button {
+    padding: 12px 28px !important;
+    font-size: 15px !important;
+    margin-top: 0 !important;
+    align-self: flex-start;
+  }
+
+  /* Wizytówka */
+  .contact-person {
+    margin-top: 0 !important;
+    gap: 14px !important;
+    padding: 20px !important;
+  }
+  .contact-person img { width: 76px !important; height: 76px !important; }
+  .contact-person__name { font-size: 15px !important; }
+  .contact-person__role { font-size: 12px !important; margin-bottom: 4px !important; }
+  .contact-person__mail { font-size: 13px !important; }
+  .contact-person__linkedin {
+    margin-top: 6px !important;
+    padding: 5px 11px !important;
+    font-size: 12px !important;
+  }
+  .contact-person__note {
+    font-size: 12px !important;
+    margin-top: 8px !important;
+    max-width: 34ch;
+  }
+}
+</style>
+
+
+
+
+</style>
   
   <div class="gradient-bg">
   </div>
