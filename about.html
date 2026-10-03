@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="pl">
  <head>
+  <!-- Consent Mode v2 + GTM (collytics fix) -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    analytics_storage: 'denied', ad_storage: 'denied',
+    ad_user_data: 'denied', ad_personalization: 'denied',
+    wait_for_update: 500
+  });
+  try {
+    var s = JSON.parse(localStorage.getItem('cookie_consent'));
+    var c = s && s.data && (!s.expiryDate || new Date(s.expiryDate) > new Date()) ? s.data : null;
+    if (c) gtag('consent', 'update', {
+      analytics_storage: c.analytics ? 'granted' : 'denied',
+      ad_storage: c.marketing ? 'granted' : 'denied',
+      ad_user_data: c.marketing ? 'granted' : 'denied',
+      ad_personalization: c.personalization ? 'granted' : 'denied'
+    });
+  } catch(e) {}
+  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TZCR8FPZ');</script>
+  <script src="/js/cookie-banner.js?v=4" defer></script>
+  <!-- /Consent Mode v2 + GTM -->
   
-  <!-- GTM Consent Mode - MUSI BYĆ PRZED GTM -->
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("consent", "default", {
-    "analytics_storage": "denied",
-    "ad_storage": "denied",
-    "ad_user_data": "denied",
-    "ad_personalization": "denied"
-  });
-  </script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("consent", "default", {
-    "analytics_storage": "denied",
-    "ad_storage": "denied",
-    "ad_user_data": "denied",
-    "ad_personalization": "denied"
-  });
-  </script>
-  <script src="/js/cookie-banner.js" defer></script>  
-  <!-- Google Analytics - ZABLOKOWANY DO ZGODY -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
-  </script>
-  <script>
-   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S90XQQ06FW");
-  </script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>O nas - Collytics | Agencja marketingowa Warszawa</title>
@@ -43,16 +42,6 @@
   <link href="/css/about.css" rel="stylesheet">
   <meta content="Bk55i41mEAzaRP8XtRWsSefROPtVJxRmySIgp-tHIGY" name="google-site-verification">
   <!-- Cookie Banner Script -->
-  <script src="/js/cookie-banner.js">
-  </script>
- <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TZCR8FPZ');</script>
-<!-- End Google Tag Manager -->
-
   <link rel="canonical" href="https://www.collytics.io/about">
   <meta name="description" content="Poznaj zespół Collytics. Specjalizujemy się w analityce cyfrowej, reklamach płatnych i wdrożeniach AI. Działamy zdalnie z Warszawy i Tallina.">
   <meta name="robots" content="index, follow">
@@ -80,6 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
 </head>
  <body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="/js/navbar-component.js" defer></script>
 
   <div class="gradient-bg">

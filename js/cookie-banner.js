@@ -4,6 +4,7 @@
 
 (function() {
     'use strict';
+    if (window.CookieBanner) return;
 
     const COOKIE_NAME = 'cookie_consent';
     const CONSENT_EXPIRY_DAYS = 365;
@@ -19,7 +20,7 @@
                                 <h2>Ta strona używa plików cookie</h2>
                             </div>
                             <p class="banner-text">
-                                Używamy cookie do analizy ruchu i personalizacji reklam. Możesz zaakceptować wszystkie lub <a href="/polityka-prywatnosci.html">dostosować preferencje</a>.
+                                Używamy cookie do analizy ruchu i personalizacji reklam. Możesz zaakceptować wszystkie lub <a href="/legal/privacy-policy">dostosować preferencje</a>.
                             </p>
                         </div>
                         <div class="banner-buttons-block" id="mainButtons">
@@ -103,7 +104,8 @@
                 this.showBanner();
             } else {
                 console.log('[Cookie Banner] Znaleziono zgody:', consent);
-                this.updateGTMConsent(consent);
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ 'event': 'cookie_consent_update', 'cookie_consent': consent });
             }
         },
 
@@ -247,6 +249,10 @@
     };
 
     // Eksportuj do window
+    CookieBanner.open = function() {
+        if (!document.getElementById('cookieBanner')) injectBannerHTML();
+        CookieBanner.showBanner();
+    };
     window.CookieBanner = CookieBanner;
 
     // ===== FUNKCJE TESTOWE - DOSTĘPNE W KONSOLI =====

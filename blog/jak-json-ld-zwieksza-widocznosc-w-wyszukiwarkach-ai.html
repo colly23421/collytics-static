@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="pl">
  <head>
-
-  <!-- GTM Consent Mode - MUSI BYĆ PRZED GTM -->
+  <!-- Consent Mode v2 + GTM (collytics fix) -->
   <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag("consent", "default", {
-    "analytics_storage": "denied",
-    "ad_storage": "denied",
-    "ad_user_data": "denied",
-    "ad_personalization": "denied"
+  gtag('consent', 'default', {
+    analytics_storage: 'denied', ad_storage: 'denied',
+    ad_user_data: 'denied', ad_personalization: 'denied',
+    wait_for_update: 500
   });
+  try {
+    var s = JSON.parse(localStorage.getItem('cookie_consent'));
+    var c = s && s.data && (!s.expiryDate || new Date(s.expiryDate) > new Date()) ? s.data : null;
+    if (c) gtag('consent', 'update', {
+      analytics_storage: c.analytics ? 'granted' : 'denied',
+      ad_storage: c.marketing ? 'granted' : 'denied',
+      ad_user_data: c.marketing ? 'granted' : 'denied',
+      ad_personalization: c.personalization ? 'granted' : 'denied'
+    });
+  } catch(e) {}
   </script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("consent", "default", {
-    "analytics_storage": "denied",
-    "ad_storage": "denied",
-    "ad_user_data": "denied",
-    "ad_personalization": "denied"
-  });
-  </script>
-  <script src="/js/cookie-banner.js" defer></script>  <meta charset="utf-8">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TZCR8FPZ');</script>
+  <script src="/js/cookie-banner.js?v=4" defer></script>
+  <!-- /Consent Mode v2 + GTM -->
+  <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>JSON-LD i widoczność w wyszukiwarkach AI | Collytics</title>
-  <script>
-   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GT-5R3VKTJG');
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S90XQQ06FW">
-  </script>
-  <script>
-   window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-S90XQQ06FW');
-  </script>
   <link href="../assets/images/Wordpress Transparent.png" rel="shortcut icon" type="image/png">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   
@@ -41,15 +38,7 @@
   <link href="../css/blog.css" rel="stylesheet">
   <!-- Cookie Banner Styles -->
   <link href="../css/cookie-banner.css" rel="stylesheet">
- <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TZCR8FPZ');</script>
-<!-- End Google Tag Manager -->
-
-  <link rel="canonical" href="https://www.collytics.io/blog/jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai">
+ <link rel="canonical" href="https://www.collytics.io/blog/jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai">
   <meta name="description" content="Jak dane strukturalne JSON-LD wpływają na to co mówi ChatGPT i Gemini o Twojej firmie. Case study ze stomatologii w Gliwicach.">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="article">
@@ -80,6 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
 </head>
  <body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZCR8FPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="/js/navbar-component.js" defer></script>
 
   <nav class="navbar" id="navbar">
@@ -483,8 +473,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         });
   </script>
   <!-- Cookie Banner Script -->
-  <script src="../js/cookie-banner.js">
-  </script>
- <script src="/js/footer-component.js" defer></script>
+  <script src="/js/footer-component.js" defer></script>
 </body>
 </html>
