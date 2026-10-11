@@ -81,7 +81,7 @@
                 <div class="banner-footer">
                     <span class="powered-by">
                         <span class="powered-by-text">Powered by</span>
-                        <img src="/assets/images/logo main transparent.png" alt="Collytics" class="powered-by-logo-img">
+                        <img src="/assets/images/logo-main-transparent.png" alt="Collytics" class="powered-by-logo-img">
                     </span>
                 </div>
                 </div>
