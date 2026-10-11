@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
         <div class="menu-divider"></div>
         <div class="social-links">
-          <a href="https://www.facebook.com/collytics" target="_blank" rel="noopener noreferrer" title="Facebook"><img src="/assets/images/facebook-white.png" alt="Facebook"></a>
-          <a href="https://www.linkedin.com/company/collytics/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><img src="/assets/images/linkedin-white.png" alt="LinkedIn"></a>
-          <a href="https://x.com/collytics" target="_blank" rel="noopener noreferrer" title="X"><img src="/assets/images/x-white.png" alt="X"></a>
+          <a href="https://www.facebook.com/collytics" target="_blank" rel="noopener noreferrer" title="Facebook"><img src="/assets/images/cons8-facebook-500.svg" alt="Facebook"></a>
+          <a href="https://www.linkedin.com/company/collytics/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><img src="/assets/images/cons8-linkedin-500.svg" alt="LinkedIn"></a>
+          <a href="https://x.com/collytics" target="_blank" rel="noopener noreferrer" title="X"><img src="/assets/images/cons8-twitter-500.svg" alt="X"></a>
         </div>
       </div>
     </div>`;
