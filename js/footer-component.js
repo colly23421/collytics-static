@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <li><a href="/services">Oferta</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/audyt-widocznosci-ai">AI w firmie</a></li>
-                    <li><a href="/legal/privacy-policy">Polityka Prywatności</a></li>
+                    <li><a href="/polityka-prywatnosci">Polityka Prywatności</a></li>
                 </ul>
             </div>
             <div class="footer-col">

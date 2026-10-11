@@ -20,7 +20,7 @@
                                 <h2>Ta strona używa plików cookie</h2>
                             </div>
                             <p class="banner-text">
-                                Używamy cookie do analizy ruchu i personalizacji reklam. Możesz zaakceptować wszystkie lub <a href="/legal/privacy-policy">dostosować preferencje</a>.
+                                Używamy cookie do analizy ruchu i personalizacji reklam. Możesz zaakceptować wszystkie lub <a href="/polityka-prywatnosci">dostosować preferencje</a>.
                             </p>
                         </div>
                         <div class="banner-buttons-block" id="mainButtons">
