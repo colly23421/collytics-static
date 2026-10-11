@@ -27,9 +27,12 @@
     }
   ],
   "rewrites": [
-    { "source": "/send-mail.php", "destination": "/api/send-mail" }
+    { "source": "/send-mail.php", "destination": "/api/send-mail" },
+    { "source": "/polityka-prywatnosci", "destination": "/legal/privacy-policy.html" }
   ],
   "redirects": [
+    { "source": "/legal/privacy-policy", "destination": "/polityka-prywatnosci", "permanent": true },
+    { "source": "/legal/privacy-policy.html", "destination": "/polityka-prywatnosci", "permanent": true },
     { "source": "/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej", "destination": "/blog/czy-llms-txt-pomoze-ai-zrozumiec-twoja-strone-lepiej", "permanent": true },
     { "source": "/facebook-conversion-api-api-konwersji-bezpieczniejsze-i-bardziej-niezawodne-zrodlo-danych", "destination": "/blog/facebook-conversion-api-api-konwersji-bezpieczniejsze-i-bardziej-niezawodne-zrodlo-danych", "permanent": true },
     { "source": "/jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai", "destination": "/blog/jak-json-ld-zwieksza-widocznosc-w-wyszukiwarkach-ai", "permanent": true },

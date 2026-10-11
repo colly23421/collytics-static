@@ -32,21 +32,21 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Google Tag Manager w WordPress - instalacja | Collytics</title>
-  <link href="../assets/images/WordPress Transparent.png" rel="shortcut icon" type="image/png">
+  <link href="../assets/images/wordpress-transparent.png" rel="shortcut icon" type="image/png">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   
   <link href="../css/global.css" rel="stylesheet">
   <link href="../css/blog.css" rel="stylesheet">
   <!-- Cookie Banner Styles -->
   <link href="../css/cookie-banner.css" rel="stylesheet">
- <link rel="canonical" href="https://www.collytics.io/blog/google-tag-manager-w-WordPress-jak-zainstalowac">
+ <link rel="canonical" href="https://www.collytics.io/blog/google-tag-manager-w-wordpress-jak-zainstalowac">
   <meta name="description" content="Krok po kroku: jak zainstalować Google Tag Manager na stronie WordPress bez wtyczek i z użyciem wtyczki. Konfiguracja GA4 i Meta Pixel w GTM.">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://www.collytics.io/blog/google-tag-manager-w-WordPress-jak-zainstalowac">
+  <meta property="og:url" content="https://www.collytics.io/blog/google-tag-manager-w-wordpress-jak-zainstalowac">
   <meta property="og:title" content="Google Tag Manager w WordPress - instalacja | Collytics">
   <meta property="og:description" content="Krok po kroku: jak zainstalować Google Tag Manager na stronie WordPress bez wtyczek i z użyciem wtyczki. Konfiguracja GA4 i Meta Pixel w GTM.">
-  <meta property="og:image" content="https://www.collytics.io/assets/images/677318361ed26d286da7e839_google-tag-manager-w-WordPress-jak-zainstalowac.jpeg">
+  <meta property="og:image" content="https://www.collytics.io/assets/images/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Google Tag Manager w WordPress - instalacja | Collytics">
   <meta name="twitter:description" content="Krok po kroku: jak zainstalować Google Tag Manager na stronie WordPress bez wtyczek i z użyciem wtyczki. Konfiguracja GA4 i Meta Pixel w GTM.">
@@ -55,13 +55,13 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Google Tag Manager w WordPress - instalacja",
-    "url": "https://www.collytics.io/blog/google-tag-manager-w-WordPress-jak-zainstalowac",
+    "url": "https://www.collytics.io/blog/google-tag-manager-w-wordpress-jak-zainstalowac",
     "datePublished": "2024-05-01",
     "dateModified": "2024-05-01",
     "description": "Krok po kroku: jak zainstalować Google Tag Manager na stronie WordPress bez wtyczek i z użyciem wtyczki. Konfiguracja GA4 i Meta Pixel w GTM.",
-    "image": "https://www.collytics.io/assets/images/677318361ed26d286da7e839_google-tag-manager-w-WordPress-jak-zainstalowac.jpeg",
+    "image": "https://www.collytics.io/assets/images/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg",
     "author": {"@type": "Organization", "name": "Collytics", "url": "https://www.collytics.io"},
-    "publisher": {"@type": "Organization", "name": "Collytics", "logo": {"@type": "ImageObject", "url": "https://www.collytics.io/img/logo.png"}},
+    "publisher": {"@type": "Organization", "name": "Collytics", "logo": {"@type": "ImageObject", "url": "https://www.collytics.io/assets/images/logo-header.png"}},
     "isPartOf": {"@type": "WebSite", "name": "Collytics", "url": "https://www.collytics.io"}
   }
   </script>
@@ -77,8 +77,8 @@
   <nav class="navbar" id="navbar">
    <div class="nav-container">
     <a href="/kontakt" class="nav-kontakt">Kontakt</a>
-    <a class="logo" href="/index.html">
-     <img alt="Collytics" src="../assets/images/logo-header.png">
+    <a class="logo" href="/">
+     <img alt="Collytics" src="/assets/images/logo-header.png">
     </a>
     <button class="menu-trigger" id="menuTrigger">
      Menu
@@ -91,28 +91,28 @@
    </button>
    <div class="dropdown-menu-inner">
     <div class="menu-section">
-     <a href="/index.html">
+     <a href="/">
       Home
      </a>
-     <a href="/services.html">
+     <a href="/services">
       Oferta
      </a>
-     <a href="/blog/index.html">
+     <a href="/blog/">
       Blog
      </a>
-     <a href="/kontakt.html">
+     <a href="/kontakt">
       Kontakt
      </a>
     </div>
     <div class="social-links">
      <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
-      <img alt="Facebook" src="../assets/images/facebook.webp" loading="lazy">
+      <img alt="Facebook" src="/assets/images/facebook.webp" loading="lazy">
      </a>
      <a href="https://www.linkedin.com/company/collytics/" target="_blank" title="LinkedIn">
-      <img alt="LinkedIn" src="../assets/images/cons8-linkedin-500.svg" loading="lazy">
+      <img alt="LinkedIn" src="/assets/images/cons8-linkedin-500.svg" loading="lazy">
      </a>
      <a href="https://x.com/collytics" target="_blank" title="Twitter">
-      <img alt="X" src="../assets/images/cons8-twitter-500.svg" loading="lazy">
+      <img alt="X" src="/assets/images/cons8-twitter-500.svg" loading="lazy">
      </a>
     </div>
    </div>
@@ -121,13 +121,13 @@
   </div>
   <div class="breadcrumbs">
    <div class="breadcrumbs-container">
-    <a href="../index.html">
+    <a href="/">
      Strona g&lstrok;&oacute;wna
     </a>
     <span class="breadcrumbs-separator">
      &rsaquo;
     </span>
-    <a href="index.html">
+    <a href="/blog/">
      Blog
     </a>
     <span class="breadcrumbs-separator">
@@ -162,7 +162,7 @@
     </p>
    </div>
    <div class="featured-image">
-    <img alt="Google Tag Manager WordPress" src="../assets/images/677318361ed26d286da7e839_google-tag-manager-w-WordPress-jak-zainstalowac.jpeg" loading="lazy">
+    <img alt="Google Tag Manager WordPress" src="/assets/images/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg" loading="lazy">
    </div>
   </header>
   <main class="article-content">
@@ -285,7 +285,7 @@
     <p>
      Przejd&zacute; do &bdquo;Wygl&aogon;d" &gt; &bdquo;Edytor motyw&oacute;w".
     </p>
-    <img alt="Edytor motyw&oacute;w WordPress" src="../assets/images/6792e7de02034a92325f6fa6_6792e7b5f651b8679a436990_edytor.png" loading="lazy">
+    <img alt="Edytor motyw&oacute;w WordPress" src="/assets/images/6792e7de02034a92325f6fa6_6792e7b5f651b8679a436990_edytor.png" loading="lazy">
     <p>
      Otw&oacute;rz plik &bdquo;header.php".
     </p>
@@ -306,7 +306,7 @@
      </code>
      .
     </p>
-    <img alt="Kod GTM w WordPress" src="../assets/images/6792e7de02034a92325f6fb9_6792e7d7b95297293dfdc932_kod.png" loading="lazy">
+    <img alt="Kod GTM w WordPress" src="/assets/images/6792e7de02034a92325f6fb9_6792e7d7b95297293dfdc932_kod.png" loading="lazy">
     <p>
      Po wklejeniu kod&oacute;w, kliknij &bdquo;Zaktualizuj plik", aby zapisa&cacute; zmiany.
     </p>
@@ -376,7 +376,7 @@
      <p>
       Nasz zesp&oacute;&lstrok; ekspert&oacute;w pomo&zdot;e Ci w profesjonalnej instalacji i konfiguracji GTM na Twojej stronie WordPress. Skonfigurujemy wszystkie potrzebne tagi i nauczymy Ci&eogon; jak z nich korzysta&cacute;.
      </p>
-     <a class="cta-button" href="../kontakt.html">
+     <a class="cta-button" href="/kontakt">
       Skontaktuj si&eogon; z nami
      </a>
     </div>
@@ -386,7 +386,7 @@
     <p>Usługa</p>
     <h3>Chcesz żeby Twoje kampanie miały tak samo skonfigurowany tracking?</h3>
     <p>Wdrażamy GA4, GTM server-side, konwersje rozszerzone i Meta CAPI jako standard przy każdej kampanii Google Ads. Żadnych dziur w danych.</p>
-    <a class="text-link" href="/google-ads.html">Sprawdź naszą ofertę Google Ads</a>
+    <a class="text-link" href="/google-ads">Sprawdź naszą ofertę Google Ads</a>
    </div>
   </main>
   
