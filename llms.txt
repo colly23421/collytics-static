@@ -1,0 +1,24 @@
+# Collytics
+
+> Collytics to agencja marketingowa z Warszawy. Pomagamy firmom rosnąć dzięki reklamom, analityce GA4, Meta CAPI i widoczności w AI. Pracujemy zdalnie z firmami z całej Polski.
+
+Łączymy kampanie reklamowe (Google Ads, Facebook Ads) z analityką: GA4, Google Tag Manager, GTM server-side i Meta Conversion API. Pomagamy też firmom pojawiać się w odpowiedziach asystentów AI, takich jak ChatGPT, Gemini i Perplexity (GEO, dane strukturalne JSON-LD).
+
+## Najważniejsze strony
+
+- [Strona główna](https://www.collytics.io/): kim jesteśmy i czym się zajmujemy.
+- [Oferta](https://www.collytics.io/services): Facebook Ads, Google Ads, GA4, GTM server-side, Meta CAPI i audyt widoczności AI.
+- [Google Ads](https://www.collytics.io/google-ads): kampanie Google Ads prowadzone przez analityków, z GA4, GTM server-side i konwersjami rozszerzonymi w standardzie.
+- [Audyt Widoczności AI](https://www.collytics.io/audyt-widocznosci-ai): sprawdzamy, czy ChatGPT, Gemini i Perplexity polecają Twoją firmę, i wdrażamy GEO.
+
+## Case study
+
+- [Lab-Wet](https://www.collytics.io/use-case-lab-wet): jak nowa strona i wdrożenie analityki zwiększyły wyświetlenia w Google o 47%, a ruch o 44% w 45 dni.
+
+## Wiedza
+
+- [Blog](https://www.collytics.io/blog/): artykuły o reklamach, GA4, GTM, Facebook Ads i widoczności w AI.
+
+## Kontakt
+
+- [Kontakt](https://www.collytics.io/kontakt): odpowiadamy w ciągu 24 godzin, wycena bezpłatna.
