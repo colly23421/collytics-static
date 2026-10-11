@@ -27,8 +27,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/send-mail.php", "destination": "/api/send-mail" },
-    { "source": "/polityka-prywatnosci", "destination": "/legal/privacy-policy.html" }
+    { "source": "/send-mail.php", "destination": "/api/send-mail" }
   ],
   "redirects": [
     { "source": "/legal/privacy-policy", "destination": "/polityka-prywatnosci", "permanent": true },
