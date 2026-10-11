@@ -31,7 +31,7 @@
   
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Google Tag Manager w WordPress - instalacja | Collytics</title>
+  <title>Google Tag Manager w WordPress: 3 sposoby instalacji (2026)</title>
   <link href="../assets/images/wordpress-transparent.png" rel="shortcut icon" type="image/png">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   
@@ -40,29 +40,61 @@
   <!-- Cookie Banner Styles -->
   <link href="../css/cookie-banner.css" rel="stylesheet">
  <link rel="canonical" href="https://www.collytics.io/blog/google-tag-manager-w-wordpress-jak-zainstalowac">
-  <meta name="description" content="Krok po kroku: jak zainstalować Google Tag Manager na stronie WordPress bez wtyczek i z użyciem wtyczki. Konfiguracja GA4 i Meta Pixel w GTM.">
+  <meta name="description" content="Jak zainstalować Google Tag Manager w WordPress? Wtyczka GTM4WP, Site Kit lub kod w functions.php. Instrukcja krok po kroku, test działania i najczęstsze błędy.">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.collytics.io/blog/google-tag-manager-w-wordpress-jak-zainstalowac">
-  <meta property="og:title" content="Google Tag Manager w WordPress - instalacja | Collytics">
-  <meta property="og:description" content="Krok po kroku: jak zainstalować Google Tag Manager na stronie WordPress bez wtyczek i z użyciem wtyczki. Konfiguracja GA4 i Meta Pixel w GTM.">
+  <meta property="og:title" content="Google Tag Manager w WordPress: 3 sposoby instalacji (2026)">
+  <meta property="og:description" content="Jak zainstalować Google Tag Manager w WordPress? Wtyczka GTM4WP, Site Kit lub kod w functions.php. Instrukcja krok po kroku, test działania i najczęstsze błędy.">
   <meta property="og:image" content="https://www.collytics.io/assets/images/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Google Tag Manager w WordPress - instalacja | Collytics">
-  <meta name="twitter:description" content="Krok po kroku: jak zainstalować Google Tag Manager na stronie WordPress bez wtyczek i z użyciem wtyczki. Konfiguracja GA4 i Meta Pixel w GTM.">
+  <meta name="twitter:title" content="Google Tag Manager w WordPress: 3 sposoby instalacji (2026)">
+  <meta name="twitter:description" content="Jak zainstalować Google Tag Manager w WordPress? Wtyczka GTM4WP, Site Kit lub kod w functions.php. Instrukcja krok po kroku, test działania i najczęstsze błędy.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Google Tag Manager w WordPress - instalacja",
     "url": "https://www.collytics.io/blog/google-tag-manager-w-wordpress-jak-zainstalowac",
-    "datePublished": "2024-05-01",
-    "dateModified": "2024-05-01",
-    "description": "Krok po kroku: jak zainstalować Google Tag Manager na stronie WordPress bez wtyczek i z użyciem wtyczki. Konfiguracja GA4 i Meta Pixel w GTM.",
+    "datePublished": "2024-11-14",
+    "dateModified": "2026-10-11",
+    "description": "Jak zainstalować Google Tag Manager w WordPress? Wtyczka GTM4WP, Site Kit lub kod w functions.php. Instrukcja krok po kroku, test działania i najczęstsze błędy.",
     "image": "https://www.collytics.io/assets/images/677318361ed26d286da7e839_google-tag-manager-w-wordpress-jak-zainstalowac.jpeg",
     "author": {"@type": "Organization", "name": "Collytics", "url": "https://www.collytics.io"},
     "publisher": {"@type": "Organization", "name": "Collytics", "logo": {"@type": "ImageObject", "url": "https://www.collytics.io/assets/images/logo-header.png"}},
     "isPartOf": {"@type": "WebSite", "name": "Collytics", "url": "https://www.collytics.io"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Czy do instalacji Google Tag Manager w WordPress potrzebuję wtyczki?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nie. GTM możesz dodać kodem w pliku functions.php motywu potomnego, bez żadnej wtyczki. Wtyczka GTM4WP lub Site Kit jest po prostu wygodniejsza, jeśli nie chcesz edytować plików motywu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy Google Tag Manager spowalnia stronę WordPress?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sam kontener GTM ładuje się asynchronicznie, więc nie blokuje wyświetlania strony. Na szybkość wpływa przede wszystkim to, ile i jakich tagów uruchamiasz w kontenerze, dlatego warto regularnie usuwać te, których już nie używasz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy po instalacji GTM muszę usunąć dotychczasowy kod GA4?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak, jeśli GA4 konfigurujesz w GTM. Kod GA4 wklejony w motyw albo dodany przez inną wtyczkę zostaje wtedy na stronie obok tagu z GTM i każda odsłona liczy się podwójnie."
+        }
+      }
+    ]
   }
   </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -153,6 +185,12 @@
      <span>
       14 listopada 2024
      </span>
+     <span>
+      &bull;
+     </span>
+     <span>
+      Zaktualizowano: 11 października 2026
+     </span>
     </div>
     <h1>
      Google tag manager w WordPress &ndash; jak zainstalowa&cacute;
@@ -167,6 +205,11 @@
   </header>
   <main class="article-content">
    <div class="article-container">
+    <div class="highlight-box">
+     <p style="margin-bottom: 0;">
+      <strong>Krótka odpowiedź:</strong> Google Tag Manager zainstalujesz w WordPress na trzy sposoby: wtyczką GTM4WP (najprostsza droga dla większości stron), wtyczką Site Kit by Google (jeśli i tak korzystasz z niej do innych usług Google) albo kodem w pliku functions.php motywu potomnego (bez wtyczek, pełna kontrola nad kodem). Niezależnie od sposobu najpierw zakładasz konto i kontener GTM.
+     </p>
+    </div>
     <p>
      GTM ma ca&lstrok;&aogon; mas&eogon; wbudowanych skrypt&oacute;w kt&oacute;re u&lstrok;atwiaj&aogon; prac&eogon; na tym narz&eogon;dziu. Bez dw&oacute;ch zda&nacute; jest to narz&eogon;dzie kt&oacute;re warto wykorzystywa&cacute; w pracy przy digital marketingu.
     </p>
@@ -276,9 +319,94 @@
     <p>
      Skopiuj oba fragmenty kodu.
     </p>
+    <p>
+     Masz już identyfikator kontenera (w formacie GTM-XXXXXXX) i oba fragmenty kodu. Teraz wybierz jeden z trzech sposobów instalacji. Używaj tylko jednego naraz.
+    </p>
+    <h2>
+     Sposób 1: wtyczka GTM4WP
+    </h2>
+    <p>
+     GTM4WP to darmowa wtyczka do WordPressa przeznaczona wyłącznie do Google Tag Managera. Nie musisz w niej wklejać kodu, wystarczy identyfikator kontenera.
+    </p>
+    <ol>
+     <li>
+      W panelu WordPress przejdź do „Wtyczki” &gt; „Dodaj nową”, wyszukaj „GTM4WP”, zainstaluj i włącz wtyczkę.
+     </li>
+     <li>
+      Przejdź do „Ustawienia” &gt; „Google Tag Manager”.
+     </li>
+     <li>
+      W zakładce „General” wklej identyfikator kontenera w polu „Google Tag Manager ID” i zapisz zmiany.
+     </li>
+    </ol>
+    <p>
+     Wtyczka sama dodaje kod kontenera na wszystkich podstronach. Dodatkowo potrafi przekazywać do warstwy danych informacje z WordPressa i WooCommerce, co przydaje się przy śledzeniu e-commerce.
+    </p>
+    <h2>
+     Sposób 2: Site Kit by Google
+    </h2>
+    <p>
+     Site Kit to oficjalna wtyczka Google, która łączy WordPressa z Search Console, Analytics i innymi usługami Google, w tym z Tag Managerem.
+    </p>
+    <ol>
+     <li>
+      Zainstaluj i włącz wtyczkę „Site Kit by Google”, a następnie połącz ją ze swoim kontem Google.
+     </li>
+     <li>
+      W ustawieniach Site Kit podłącz usługę Tag Manager i wybierz konto oraz kontener GTM.
+     </li>
+     <li>
+      Zapisz ustawienia. Site Kit doda kod kontenera na stronie.
+     </li>
+    </ol>
+    <p>
+     Jeśli GA4 konfigurujesz w GTM, sprawdź w ustawieniach Analytics w Site Kit, czy wtyczka nie wstawia na stronę własnego tagu GA4. Inaczej dane będą zbierane podwójnie.
+    </p>
+    <h2>
+     Sposób 3: kod w functions.php motywu potomnego
+    </h2>
+    <p>
+     Jeśli nie chcesz dodawać wtyczek, wklej poniższy kod na końcu pliku functions.php. Zamień GTM-XXXXXXX na identyfikator swojego kontenera. Pierwsza funkcja dodaje skrypt GTM w sekcji
+     <code>
+      &lt;head&gt;
+     </code>
+     , druga dodaje fragment noscript zaraz po otwarciu
+     <code>
+      &lt;body&gt;
+     </code>
+     .
+    </p>
+    <pre><code>add_action( 'wp_head', function () { ?&gt;
+&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+&lt;?php }, 1 );
+
+add_action( 'wp_body_open', function () { ?&gt;
+&lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+&lt;?php } );</code></pre>
+    <div class="highlight-box">
+     <p style="margin-bottom: 0;">
+      <strong>Edytuj motyw potomny (child theme), a nie motyw główny.</strong> Zmiany w plikach motywu głównego znikają przy jego aktualizacji. Fragment noscript zadziała tylko wtedy, gdy motyw wywołuje funkcję
+      <code>
+       wp_body_open()
+      </code>
+      , co robi większość współczesnych motywów.
+     </p>
+    </div>
     <h3>
-     Krok 3: instalacja w WordPress
+     Wariant: wklejenie kodu w header.php
     </h3>
+    <p>
+     Kod możesz też wkleić bezpośrednio w plik header.php. Ten sposób również wymaga motywu potomnego, bo po aktualizacji motywu głównego kod zniknie.
+    </p>
     <p>
      Zaloguj si&eogon; do panelu administracyjnego WordPress.
     </p>
@@ -289,9 +417,6 @@
     <p>
      Otw&oacute;rz plik &bdquo;header.php".
     </p>
-    <h3>
-     Krok 4: wklejenie kod&oacute;w
-    </h3>
     <p>
      Wklej pierwszy kod jak najwy&zdot;ej w elemencie
      <code>
@@ -310,18 +435,53 @@
     <p>
      Po wklejeniu kod&oacute;w, kliknij &bdquo;Zaktualizuj plik", aby zapisa&cacute; zmiany.
     </p>
-    <h3>
-     Krok 5: weryfikacja instalacji
-    </h3>
+    <h2>
+     Jak sprawdzić, czy GTM działa
+    </h2>
     <p>
      Sprawd&zacute; instalacj&eogon; - przejd&zacute; do swojej strony i u&zdot;yj narz&eogon;dzia do sprawdzania poprawno&sacute;ci instalacji Tag Managera (np. Google Tag Assistant), aby upewni&cacute; si&eogon;, &zdot;e kody zosta&lstrok;y poprawnie wdro&zdot;one.
+    </p>
+    <p>
+     Najprościej zrobisz to w trybie podglądu: w Google Tag Manager kliknij „Podgląd” i wpisz adres swojej strony. Otworzy się Tag Assistant, a strona w nowej karcie. Jeśli instalacja jest poprawna, Tag Assistant pokaże komunikat o połączeniu z kontenerem i listę zdarzeń, a przy każdym z nich tagi, które się uruchomiły.
+    </p>
+    <p>
+     Przy okazji zajrzyj do źródła strony (Ctrl+U) i wyszukaj swój identyfikator GTM. Powinien pojawić się w jednym skrypcie w sekcji head i jednym fragmencie noscript. Więcej wystąpień oznacza, że kontener jest zainstalowany kilka razy.
     </p>
     <h2>
      Instalacja przez wtyczk&eogon; vs r&eogon;czna
     </h2>
     <p>
-     Opisali&sacute;my tutaj r&eogon;czn&aogon; instalacj&eogon;, jest te&zdot; mo&zdot;liwa instalacja za pomoc&aogon; wtyczki w WordPress. Instalacja poprzez wtyczk&eogon; jest prostsza, ale r&eogon;czna metoda daje wi&eogon;ksz&aogon; kontrol&eogon; nad kodem i jego umiejscowieniem.
+     Instalacja poprzez wtyczk&eogon; (GTM4WP lub Site Kit) jest prostsza, ale r&eogon;czna metoda daje wi&eogon;ksz&aogon; kontrol&eogon; nad kodem i jego umiejscowieniem.
     </p>
+    <h2>
+     Najczęstsze błędy
+    </h2>
+    <ul>
+     <li>
+      <strong>
+       Podwójny kod GA4
+      </strong>
+      - tag GA4 dodany przez wtyczkę (np. Site Kit lub wtyczkę SEO) i równocześnie skonfigurowany w GTM. Każda odsłona liczy się dwa razy.
+     </li>
+     <li>
+      <strong>
+       Brak fragmentu w body
+      </strong>
+      - wklejony jest tylko skrypt w head, a brakuje fragmentu noscript zaraz po otwarciu znacznika body.
+     </li>
+     <li>
+      <strong>
+       Brak Consent Mode v2
+      </strong>
+      - tagi uruchamiają się bez względu na decyzję użytkownika na banerze cookie, a Google Ads nie dostaje sygnałów zgody.
+     </li>
+     <li>
+      <strong>
+       Kontener zainstalowany dwa razy
+      </strong>
+      - np. przez wtyczkę i dodatkowo kodem w motywie. Zdarzenia dublują się w GA4 i w systemach reklamowych.
+     </li>
+    </ul>
     <h2>
      Dlaczego warto u&zdot;ywa&cacute; gtm?
     </h2>
@@ -363,6 +523,31 @@
       - kontrola nad tym, jakie skrypty s&aogon; uruchamiane
      </li>
     </ul>
+    <p>
+     Chcesz poznać GTM szerzej: tagi, reguły, warstwę danych i server-side? Przeczytaj nasz
+     <a href="/blog/google-tag-manager-kompleksowy-przewodnik">kompleksowy przewodnik po Google Tag Manager</a>.
+    </p>
+    <h2>
+     Najczęstsze pytania
+    </h2>
+    <h3>
+     Czy do instalacji Google Tag Manager w WordPress potrzebuję wtyczki?
+    </h3>
+    <p>
+     Nie. GTM możesz dodać kodem w pliku functions.php motywu potomnego, bez żadnej wtyczki. Wtyczka GTM4WP lub Site Kit jest po prostu wygodniejsza, jeśli nie chcesz edytować plików motywu.
+    </p>
+    <h3>
+     Czy Google Tag Manager spowalnia stronę WordPress?
+    </h3>
+    <p>
+     Sam kontener GTM ładuje się asynchronicznie, więc nie blokuje wyświetlania strony. Na szybkość wpływa przede wszystkim to, ile i jakich tagów uruchamiasz w kontenerze, dlatego warto regularnie usuwać te, których już nie używasz.
+    </p>
+    <h3>
+     Czy po instalacji GTM muszę usunąć dotychczasowy kod GA4?
+    </h3>
+    <p>
+     Tak, jeśli GA4 konfigurujesz w GTM. Kod GA4 wklejony w motyw albo dodany przez inną wtyczkę zostaje wtedy na stronie obok tagu z GTM i każda odsłona liczy się podwójnie.
+    </p>
     <h2>
      Podsumowanie
     </h2>
@@ -371,13 +556,13 @@
     </p>
     <div class="article-cta">
      <h3>
-      Potrzebujesz pomocy z Google Tag Manager?
+      Wolisz, żebyśmy wdrożyli GTM i GA4 za Ciebie?
      </h3>
      <p>
       Nasz zesp&oacute;&lstrok; ekspert&oacute;w pomo&zdot;e Ci w profesjonalnej instalacji i konfiguracji GTM na Twojej stronie WordPress. Skonfigurujemy wszystkie potrzebne tagi i nauczymy Ci&eogon; jak z nich korzysta&cacute;.
      </p>
      <a class="cta-button" href="/kontakt">
-      Skontaktuj si&eogon; z nami
+      Napisz do nas
      </a>
     </div>
    </div>
