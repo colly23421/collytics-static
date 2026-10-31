@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Nie dubluj, jeśli strona ma już navbar w HTML
   if (!document.querySelector('.navbar')) {
+    const enMap = {
+      '/': 'https://www.collytics.io/',
+      '/services': 'https://www.collytics.io/services',
+      '/kontakt': 'https://www.collytics.io/contact',
+      '/polityka-prywatnosci': 'https://www.collytics.io/privacy'
+    };
+    const enUrl = enMap[window.location.pathname] || 'https://www.collytics.io/';
     const navbarHTML = `
     <nav class="navbar">
       <div class="nav-container">
@@ -23,6 +30,10 @@ document.addEventListener("DOMContentLoaded", function() {
           <a href="/kontakt">Kontakt</a>
         </div>
         <div class="menu-divider"></div>
+        <div class="menu-lang">
+          <span class="lang-link lang-active" aria-current="true">PL</span>
+          <a href="${enUrl}" class="lang-link" hreflang="en" lang="en" rel="alternate">EN</a>
+        </div>
         <div class="social-links">
           <a href="https://www.facebook.com/collytics" target="_blank" rel="noopener noreferrer" title="Facebook"><img src="/assets/images/cons8-facebook-500.svg" alt="Facebook"></a>
           <a href="https://www.linkedin.com/company/collytics/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><img src="/assets/images/cons8-linkedin-500.svg" alt="LinkedIn"></a>

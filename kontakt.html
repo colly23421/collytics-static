@@ -31,21 +31,23 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Porozmawiajmy o projekcie | Collytics | Kontakt</title>
-  <meta content="Skontaktuj się z zespołem Collytics. Wypełnij formularz lub znajdź nas w naszym biurze w Warszawie. Jesteśmy gotowi pomóc Ci rosnąć." name="description">
   <link href="assets/images/wordpress-transparent.png" rel="shortcut icon" type="image/png">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   
   <link href="/css/global.css" rel="stylesheet">
   <link href="/css/kontakt.css" rel="stylesheet">
   <link href="../css/cookie-banner.css" rel="stylesheet">
- <link rel="canonical" href="https://www.collytics.io/kontakt">
+ <link rel="canonical" href="https://www.collytics.pl/kontakt">
+  <link rel="alternate" hreflang="pl" href="https://www.collytics.pl/kontakt">
+  <link rel="alternate" hreflang="en" href="https://www.collytics.io/contact">
+  <link rel="alternate" hreflang="x-default" href="https://www.collytics.io/contact">
   <meta name="description" content="Skontaktuj się z Collytics. Odpowiadamy w ciągu 24 godzin. Wycena bezpłatna. Warszawa, praca zdalna w całej Polsce i Europie.">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.collytics.io/kontakt">
+  <meta property="og:url" content="https://www.collytics.pl/kontakt">
   <meta property="og:title" content="Kontakt - Collytics | Porozmawiajmy o projekcie">
   <meta property="og:description" content="Skontaktuj się z Collytics. Odpowiadamy w ciągu 24 godzin. Wycena bezpłatna. Warszawa, praca zdalna w całej Polsce i Europie.">
-  <meta property="og:image" content="https://www.collytics.io/assets/images/digital-marketing-warszawa-fb.jpeg">
+  <meta property="og:image" content="https://www.collytics.pl/assets/images/digital-marketing-warszawa-fb.jpeg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kontakt - Collytics | Porozmawiajmy o projekcie">
   <meta name="twitter:description" content="Skontaktuj się z Collytics. Odpowiadamy w ciągu 24 godzin. Wycena bezpłatna. Warszawa, praca zdalna w całej Polsce i Europie.">
@@ -54,9 +56,9 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Kontakt - Collytics | Porozmawiajmy o projekcie",
-    "url": "https://www.collytics.io/kontakt",
+    "url": "https://www.collytics.pl/kontakt",
     "description": "Skontaktuj się z Collytics. Odpowiadamy w ciągu 24 godzin. Wycena bezpłatna. Warszawa, praca zdalna w całej Polsce i Europie.",
-    "isPartOf": {"@type": "WebSite", "name": "Collytics", "url": "https://www.collytics.io"}
+    "isPartOf": {"@type": "WebSite", "name": "Collytics", "url": "https://www.collytics.pl"}
   }
   </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -260,11 +262,15 @@
      <a href="/blog/">
       Blog
      </a>
-     <a href="/kontakt">
-      Kontakt
-     </a>
-    </div>
-    <div class="social-links">
+      <a href="/kontakt">
+       Kontakt
+      </a>
+     </div>
+     <div class="menu-lang">
+      <span class="lang-link lang-active" aria-current="true">PL</span>
+      <a href="https://www.collytics.io/contact" class="lang-link" hreflang="en" lang="en" rel="alternate">EN</a>
+     </div>
+     <div class="social-links">
      <a href="https://www.facebook.com/collytics" target="_blank" title="Facebook">
       <img alt="Facebook" src="/assets/images/cons8-facebook-500.svg" loading="lazy">
      </a>
@@ -378,7 +384,7 @@
                   message: form.querySelector('textarea[name="message"]').value,
                   consent: form.querySelector('input[name="consent"]').checked,
                   access_key: '7eb642f4-bed3-4900-9563-7901d60120c8',
-                  to: 'hello@collytics.io',
+                  to: 'piotr@collytics.io',
                   subject: `Nowa wiadomość od ${form.querySelector('input[name="name"]').value}`
               };
 
