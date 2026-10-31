@@ -425,12 +425,8 @@
                       showFormMessage(form, result.message || 'Wystąpił błąd. Spróbuj ponownie.', 'error');
                   }
               } catch (error) {
-                  // Wiadomość mogła zostać wysłana mimo błędu po stronie przeglądarki
                   console.error('Błąd wysyłania:', error);
-                  form.reset();
-                  showFormMessage(form, 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success');
-                  submitButton.textContent = ' Wysłano!';
-                  submitButton.style.background = '#10b981';
+                  showFormMessage(form, 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz do nas na piotr@collytics.io.', 'error');
               } finally {
                   setTimeout(() => {
                       submitButton.textContent = originalButtonText;

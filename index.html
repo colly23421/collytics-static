@@ -461,9 +461,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       } catch (err) {
         console.error('Błąd wysyłania:', err);
-        form.reset();
-        showMessage(form, 'Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.', 'success');
-        btn.textContent = '✓ Wysłano';
+        showMessage(form, 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz do nas na piotr@collytics.io.', 'error');
       } finally {
         setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 3000);
       }
