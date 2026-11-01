@@ -39,6 +39,10 @@ main,.page-offset{padding-top:64px}
 .menu-section a{display:block;font-family:'Sora',sans-serif;font-size:1.7rem;font-weight:600;color:var(--text);text-decoration:none;padding:10px}
 .menu-section a:hover{color:var(--accent)}
 .menu-divider{height:1px;background:var(--border);margin:24px auto;max-width:200px}
+.menu-lang{display:flex;gap:10px;justify-content:center;margin-bottom:24px}
+.lang-link{display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:36px;padding:0 14px;border:1px solid var(--border);border-radius:50px;font:600 .85rem 'Inter',sans-serif;color:var(--text);text-decoration:none;transition:border-color .2s,background .2s,color .2s}
+.lang-link:hover{border-color:#b8b2a6}
+.lang-active{background:var(--accent-grad);color:#fff;border-color:transparent;cursor:default}
 .social-links{display:flex;gap:14px;justify-content:center}
 .social-links a{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:50%}
 .social-links img{width:16px;height:16px;filter:invert(1) brightness(.2)}
